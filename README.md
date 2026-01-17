@@ -71,3 +71,5 @@ export default defineConfig([
   },
 ])
 ```
+## 開発メモ
+- Mac / Windows 両対応テスト完了
