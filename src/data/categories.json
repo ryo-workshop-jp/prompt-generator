@@ -1,0 +1,28 @@
+﻿{
+  "folders": [
+    { "id": "root", "name": "root", "parentId": null },
+    { "id": "basic", "name": "基本", "parentId": "root" },
+    { "id": "appearance", "name": "外見", "parentId": "root" },
+    { "id": "expression", "name": "表情", "parentId": "root" },
+    { "id": "expression_angry", "name": "怒り", "parentId": "expression" },
+    { "id": "appearance_hair", "name": "髪", "parentId": "appearance" },
+    { "id": "appearance_hair_color", "name": "髪色", "parentId": "appearance_hair" },
+    { "id": "appearance_hair_style", "name": "髪型", "parentId": "appearance_hair" }
+  ],
+  "words": [
+    { "id": "girl", "folderId": "basic", "label_jp": "女の子", "value_en": "girl", "nsfw": false },
+    { "id": "boy", "folderId": "basic", "label_jp": "男の子", "value_en": "boy", "nsfw": false },
+    { "id": "masterpiece", "folderId": "basic", "label_jp": "最高品質", "value_en": "masterpiece", "nsfw": false },
+    { "id": "best_quality", "folderId": "basic", "label_jp": "高品質", "value_en": "best quality", "nsfw": false },
+    { "id": "blonde_hair", "folderId": "appearance", "label_jp": "金髪", "value_en": "blonde hair", "nsfw": false },
+    { "id": "black_hair", "folderId": "appearance", "label_jp": "黒髪", "value_en": "black hair", "nsfw": false },
+    { "id": "brown_hair", "folderId": "appearance_hair_color", "label_jp": "茶髪", "value_en": "brown hair", "nsfw": false },
+    { "id": "blue_hair", "folderId": "appearance_hair_color", "label_jp": "青髪", "value_en": "blue hair", "nsfw": false },
+    { "id": "white_hair", "folderId": "appearance_hair_color", "label_jp": "白髪", "value_en": "white hair", "nsfw": false },
+    { "id": "long_hair", "folderId": "appearance_hair_style", "label_jp": "ロングヘア", "value_en": "long hair", "nsfw": false },
+    { "id": "short_hair", "folderId": "appearance_hair_style", "label_jp": "ショートヘア", "value_en": "short hair", "nsfw": false },
+    { "id": "angry", "folderId": "expression_angry", "label_jp": "怒り", "value_en": "angry", "nsfw": false },
+    { "id": "glaring", "folderId": "expression_angry", "label_jp": "にらみ", "value_en": "glaring", "nsfw": false }
+  ],
+  "templates": []
+}

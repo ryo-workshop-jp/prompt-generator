@@ -1,0 +1,4846 @@
+{
+  "folders": [
+    {
+      "id": "root",
+      "name": "root",
+      "parentId": null
+    },
+    {
+      "id": "人物",
+      "name": "人物",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "appearance_hair",
+      "name": "髪",
+      "parentId": "appearance"
+    },
+    {
+      "id": "appearance_hair_color",
+      "name": "髪色",
+      "parentId": "appearance_hair"
+    },
+    {
+      "id": "appearance_hair_style",
+      "name": "髪型",
+      "parentId": "appearance_hair"
+    },
+    {
+      "id": "キャラクター",
+      "name": "キャラクター",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "appearance",
+      "name": "外見",
+      "parentId": "root"
+    },
+    {
+      "id": "女性",
+      "name": "女性",
+      "parentId": "人物",
+      "nsfw": false
+    },
+    {
+      "id": "男性",
+      "name": "男性",
+      "parentId": "人物",
+      "nsfw": false
+    },
+    {
+      "id": "人種",
+      "name": "人種",
+      "parentId": "人物",
+      "nsfw": false
+    },
+    {
+      "id": "種族",
+      "name": "種族",
+      "parentId": "人物",
+      "nsfw": false
+    },
+    {
+      "id": "ポジティブ向け",
+      "name": "ポジティブ向け",
+      "parentId": "品質",
+      "nsfw": false
+    },
+    {
+      "id": "ネガティブ向け",
+      "name": "ネガティブ向け",
+      "parentId": "品質",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1",
+      "name": "服装",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "品質",
+      "name": "品質",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "nsfw",
+      "name": "NSFW",
+      "parentId": "シュチュエーション",
+      "nsfw": true
+    },
+    {
+      "id": "体位",
+      "name": "体位",
+      "parentId": "nsfw",
+      "nsfw": false
+    },
+    {
+      "id": "前戯",
+      "name": "前戯",
+      "parentId": "nsfw",
+      "nsfw": false
+    },
+    {
+      "id": "プレイ",
+      "name": "プレイ",
+      "parentId": "nsfw",
+      "nsfw": false
+    },
+    {
+      "id": "道具",
+      "name": "道具",
+      "parentId": "nsfw",
+      "nsfw": false
+    },
+    {
+      "id": "そのほか",
+      "name": "そのほか",
+      "parentId": "nsfw",
+      "nsfw": false
+    },
+    {
+      "id": "nsfw_精液",
+      "name": "精液",
+      "parentId": "nsfw",
+      "nsfw": false
+    },
+    {
+      "id": "ポーズ",
+      "name": "ポーズ",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "アングル_フレーミング",
+      "name": "フレーミング",
+      "parentId": "アングル",
+      "nsfw": false
+    },
+    {
+      "id": "シュチュエーション",
+      "name": "シュチュエーション",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_上半身の服",
+      "name": "上半身の服",
+      "parentId": "服装_1",
+      "nsfw": false
+    },
+    {
+      "id": "アングル",
+      "name": "アングル",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "ポーズ_立ちポーズ",
+      "name": "立ちポーズ",
+      "parentId": "ポーズ",
+      "nsfw": false
+    },
+    {
+      "id": "ポーズ_座りポーズ",
+      "name": "座りポーズ",
+      "parentId": "ポーズ",
+      "nsfw": false
+    },
+    {
+      "id": "ポーズ_腕",
+      "name": "腕",
+      "parentId": "ポーズ",
+      "nsfw": false
+    },
+    {
+      "id": "ポーズ_動きのあるポーズ",
+      "name": "動きのあるポーズ",
+      "parentId": "ポーズ",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下半身の服",
+      "name": "下半身の服",
+      "parentId": "服装_1",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_制服系_学校系",
+      "name": "学校系",
+      "parentId": "服装_1_制服系",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_制服系_医療・研究・福祉",
+      "name": "医療・研究・福祉系",
+      "parentId": "服装_1_制服系",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_制服系_公共・行政・治安系",
+      "name": "公共・行政・治安系",
+      "parentId": "服装_1_制服系",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_制服系_接客・サービス業",
+      "name": "接客・サービス業",
+      "parentId": "服装_1_制服系",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_制服系_仕事・作業・専門職",
+      "name": "仕事・作業・専門職",
+      "parentId": "服装_1_制服系",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_制服系_特殊・イベント・その他",
+      "name": "特殊・イベント・その他",
+      "parentId": "服装_1_制服系",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_靴・タイツ",
+      "name": "靴・タイツ",
+      "parentId": "服装_1",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_上半身の服_普段着・汎用",
+      "name": "普段着・汎用",
+      "parentId": "服装_1_上半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_上半身の服_ニット・厚手系",
+      "name": "ニット・厚手系",
+      "parentId": "服装_1_上半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_上半身の服_カジュアル・ストリート系",
+      "name": "カジュアル・ストリート系",
+      "parentId": "服装_1_上半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_上半身の服_フォーマル・きれいめ",
+      "name": "フォーマル・きれいめ",
+      "parentId": "服装_1_上半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_上半身の服_コート系",
+      "name": "コート系",
+      "parentId": "服装_1_上半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_上半身の服_ジャケット系",
+      "name": "ジャケット系",
+      "parentId": "服装_1_上半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_上半身の服_防寒・アウトドア系",
+      "name": "防寒・アウトドア系",
+      "parentId": "服装_1_上半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_制服系",
+      "name": "制服系",
+      "parentId": "服装_1",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下半身の服_パンツ系",
+      "name": "パンツ系",
+      "parentId": "服装_1_下半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下半身の服_スカート系",
+      "name": "スカート系",
+      "parentId": "服装_1_下半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下半身の服_特殊・組み合わせ系",
+      "name": "特殊・組み合わせ系",
+      "parentId": "服装_1_下半身の服",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_ファンタジー系",
+      "name": "ファンタジー系",
+      "parentId": "服装_1",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_靴・タイツ_靴",
+      "name": "靴",
+      "parentId": "服装_1_靴・タイツ",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_靴・タイツ_靴_カジュアル・日常",
+      "name": "カジュアル・日常",
+      "parentId": "服装_1_靴・タイツ_靴",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_靴・タイツ_靴_フォーマル・女性向け",
+      "name": "フォーマル・女性向け",
+      "parentId": "服装_1_靴・タイツ_靴",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_靴・タイツ_靴_ブーツ系",
+      "name": "ブーツ系",
+      "parentId": "服装_1_靴・タイツ_靴",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "name": "靴下・脚装備",
+      "parentId": "服装_1_靴・タイツ_靴",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下着・水着",
+      "name": "下着・水着",
+      "parentId": "服装_1",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_着用状態_フィット感・サイズ感",
+      "name": "フィット感・サイズ感",
+      "parentId": "服装_1_着用状態",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_着用状態_フード・頭まわり",
+      "name": "フード・頭まわり",
+      "parentId": "服装_1_着用状態",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_着用状態_前開き・閉じ",
+      "name": "前開き・閉じ",
+      "parentId": "服装_1_着用状態",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_着用状態_ずらす・着崩し",
+      "name": "ずらす・着崩し",
+      "parentId": "服装_1_着用状態",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_着用状態_重ね着・組み合わせ",
+      "name": "重ね着・組み合わせ",
+      "parentId": "服装_1_着用状態",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_着用状態",
+      "name": "着用状態",
+      "parentId": "服装_1",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下着・水着_上半身の下着",
+      "name": "上半身の下着",
+      "parentId": "服装_1_下着・水着",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下着・水着_上半身の下着(nsfw)",
+      "name": "上半身の下着(NSFW)",
+      "parentId": "服装_1_下着・水着",
+      "nsfw": true
+    },
+    {
+      "id": "服装_1_下着・水着_下半身の下着",
+      "name": "下半身の下着",
+      "parentId": "服装_1_下着・水着",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "name": "下半身の下着(NSFW)",
+      "parentId": "服装_1_下着・水着",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_露出度補助",
+      "name": "露出度補助",
+      "parentId": "服装_1",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下着・水着_水着",
+      "name": "水着",
+      "parentId": "服装_1_下着・水着",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_下着・水着_水着(nsfw)",
+      "name": "水着(NSFW)",
+      "parentId": "服装_1_下着・水着",
+      "nsfw": false
+    },
+    {
+      "id": "服装_1_裸",
+      "name": "裸",
+      "parentId": "服装_1",
+      "nsfw": true
+    },
+    {
+      "id": "服装_1_露出度補助_nsfw",
+      "name": "NSFW",
+      "parentId": "服装_1_露出度補助",
+      "nsfw": false
+    },
+    {
+      "id": "appearance_体型",
+      "name": "体型",
+      "parentId": "appearance",
+      "nsfw": false
+    },
+    {
+      "id": "appearance_胸の特徴",
+      "name": "胸の特徴",
+      "parentId": "appearance",
+      "nsfw": false
+    },
+    {
+      "id": "アングル_カメラアングル",
+      "name": "カメラアングル",
+      "parentId": "アングル",
+      "nsfw": false
+    },
+    {
+      "id": "道具_ピンクローター",
+      "name": "ピンクローター",
+      "parentId": "道具",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "1768561333486",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ベリーショート",
+      "value_en": "very short hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "short_hair",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ショートヘア",
+      "value_en": "short hair",
+      "nsfw": false,
+      "favorite": false
+    },
+    {
+      "id": "1768547812184",
+      "folderId": "女性",
+      "label_jp": "女の子(子供)",
+      "value_en": "1girl, child",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768547833580",
+      "folderId": "女性",
+      "label_jp": "女の子",
+      "value_en": "1girl",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768547879884",
+      "folderId": "女性",
+      "label_jp": "成人女性",
+      "value_en": "1woman",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768547894731",
+      "folderId": "女性",
+      "label_jp": "中年女性",
+      "value_en": "1woman, middle-aged",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768547911418",
+      "folderId": "女性",
+      "label_jp": "高齢女性",
+      "value_en": "1woman, elderly",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768547983731",
+      "folderId": "男性",
+      "label_jp": "男の子(子供)",
+      "value_en": "1boy, child",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768547995113",
+      "folderId": "男性",
+      "label_jp": "男の子",
+      "value_en": "1boy",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548005332",
+      "folderId": "男性",
+      "label_jp": "成人男性",
+      "value_en": "1man",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548020162",
+      "folderId": "男性",
+      "label_jp": "中年男性",
+      "value_en": "1man, middle-aged",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548035184",
+      "folderId": "男性",
+      "label_jp": "高齢男性",
+      "value_en": "1man, elderly",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548177007",
+      "folderId": "人種",
+      "label_jp": "白人系",
+      "value_en": "white",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548194488",
+      "folderId": "人種",
+      "label_jp": "黒人系1",
+      "value_en": "black",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548229450",
+      "folderId": "人種",
+      "label_jp": "黒人系2",
+      "value_en": "dark skin",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548245135",
+      "folderId": "人種",
+      "label_jp": "アジア系",
+      "value_en": "asian",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548275536",
+      "folderId": "人種",
+      "label_jp": "ラテン系女性",
+      "value_en": "latina",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548314650",
+      "folderId": "人種",
+      "label_jp": "ラテン系男性",
+      "value_en": "latino",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548327179",
+      "folderId": "人種",
+      "label_jp": "中東系",
+      "value_en": "middle eastern",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548340707",
+      "folderId": "人種",
+      "label_jp": "インド系",
+      "value_en": "indian",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548629523",
+      "folderId": "種族",
+      "label_jp": "エルフ",
+      "value_en": "elf",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548639489",
+      "folderId": "種族",
+      "label_jp": "ダークエルフ",
+      "value_en": "dark elf",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548652144",
+      "folderId": "種族",
+      "label_jp": "ハーフエルフ",
+      "value_en": "half elf",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548776996",
+      "folderId": "種族",
+      "label_jp": "獣人",
+      "value_en": "beastman",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548786469",
+      "folderId": "種族",
+      "label_jp": "吸血鬼",
+      "value_en": "vampire",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548798301",
+      "folderId": "種族",
+      "label_jp": "天使",
+      "value_en": "angel",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548806931",
+      "folderId": "種族",
+      "label_jp": "悪魔",
+      "value_en": "succubus",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548828977",
+      "folderId": "種族",
+      "label_jp": "サキュバス",
+      "value_en": "succubus",
+      "nsfw": true,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768548863414",
+      "folderId": "種族",
+      "label_jp": "スライム娘",
+      "value_en": "slime girl",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549308452",
+      "folderId": "ポジティブ向け",
+      "label_jp": "最高品質",
+      "value_en": "masterpiece",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549321519",
+      "folderId": "ポジティブ向け",
+      "label_jp": "高品質",
+      "value_en": "best quality",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549330974",
+      "folderId": "ポジティブ向け",
+      "label_jp": "高精細",
+      "value_en": "high quality",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549341144",
+      "folderId": "ポジティブ向け",
+      "label_jp": "超高精細",
+      "value_en": "ultra detailed",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549351915",
+      "folderId": "ポジティブ向け",
+      "label_jp": "非常に詳細",
+      "value_en": "highly detailed",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549373847",
+      "folderId": "ポジティブ向け",
+      "label_jp": "美しいライティング",
+      "value_en": "beautiful lighting",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549384688",
+      "folderId": "ポジティブ向け",
+      "label_jp": "鮮やかな色彩",
+      "value_en": "vivid colors",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549390014",
+      "folderId": "ポジティブ向け",
+      "label_jp": "シャープなフォーカス",
+      "value_en": "sharp focus",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549430083",
+      "folderId": "ネガティブ向け",
+      "label_jp": "低品質",
+      "value_en": "low quality",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549440499",
+      "folderId": "ネガティブ向け",
+      "label_jp": "最低品質",
+      "value_en": "worst quality",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549449484",
+      "folderId": "ネガティブ向け",
+      "label_jp": "体の破綻",
+      "value_en": "bad anatomy",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549468464",
+      "folderId": "ネガティブ向け",
+      "label_jp": "比率がおかしい",
+      "value_en": "bad proportions",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549479803",
+      "folderId": "ネガティブ向け",
+      "label_jp": "手足が多い",
+      "value_en": "extra limbs",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549488199",
+      "folderId": "ネガティブ向け",
+      "label_jp": "指が欠けている",
+      "value_en": "missing fingers",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549527217",
+      "folderId": "ネガティブ向け",
+      "label_jp": "顔が崩れている",
+      "value_en": "bad face",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549535107",
+      "folderId": "ネガティブ向け",
+      "label_jp": "寄り目",
+      "value_en": "cross-eyed",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549544149",
+      "folderId": "ネガティブ向け",
+      "label_jp": "顔の変形",
+      "value_en": "deformed face",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549552184",
+      "folderId": "ネガティブ向け",
+      "label_jp": "ぼやけ",
+      "value_en": "blurry",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549562695",
+      "folderId": "ネガティブ向け",
+      "label_jp": "低解像度",
+      "value_en": "low resolution",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549572519",
+      "folderId": "ネガティブ向け",
+      "label_jp": "JPEGノイズ",
+      "value_en": "jpeg artifacts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549642100",
+      "folderId": "キャラクター",
+      "label_jp": "結月ゆかり",
+      "value_en": "yuzuki yukari",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768549693509",
+      "folderId": "キャラクター",
+      "label_jp": "紲星あかり",
+      "value_en": "kizuna akari",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550299508",
+      "folderId": "そのほか",
+      "label_jp": "ローション",
+      "value_en": "lotion",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550310099",
+      "folderId": "そのほか",
+      "label_jp": "潮吹き",
+      "value_en": "female ejaculation",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550317891",
+      "folderId": "そのほか",
+      "label_jp": "愛液",
+      "value_en": "pussy juices",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550517777",
+      "folderId": "道具",
+      "label_jp": "大人のおもちゃ",
+      "value_en": "sex toy",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550420783",
+      "folderId": "道具",
+      "label_jp": "ディルド",
+      "value_en": "dildo",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550430649",
+      "folderId": "道具",
+      "label_jp": "バイブ",
+      "value_en": "vibrator",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550496714",
+      "folderId": "プレイ",
+      "label_jp": "オナニー",
+      "value_en": "masturbation",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550800269",
+      "folderId": "道具",
+      "label_jp": "膣にバイブ挿入",
+      "value_en": "vaginal vibrator",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550757472",
+      "folderId": "プレイ",
+      "label_jp": "膣に指を入れる",
+      "value_en": "putting own finger deep into vagina",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550592493",
+      "folderId": "プレイ",
+      "label_jp": "くぱぁ",
+      "value_en": "spread pussy",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550709995",
+      "folderId": "そのほか",
+      "label_jp": "愛液のしみ",
+      "value_en": "pussy juice stain",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550724339",
+      "folderId": "そのほか",
+      "label_jp": "愛液の水溜まり",
+      "value_en": "puddle of love juice",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550624991",
+      "folderId": "プレイ",
+      "label_jp": "スカートをたくし上げる",
+      "value_en": "lift up skirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550780107",
+      "folderId": "プレイ",
+      "label_jp": "膣を指で広げる",
+      "value_en": "spread pussy wide,vaginal fingers",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550925841",
+      "folderId": "前戯",
+      "label_jp": "手コキ",
+      "value_en": "hand penis",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550971924",
+      "folderId": "前戯",
+      "label_jp": "髪コキ",
+      "value_en": "hairjob",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550955113",
+      "folderId": "前戯",
+      "label_jp": "手マン",
+      "value_en": "fingering",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550985059",
+      "folderId": "前戯",
+      "label_jp": "クンニ",
+      "value_en": "cunnilingus",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768550999008",
+      "folderId": "前戯",
+      "label_jp": "素股",
+      "value_en": "thigh job",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551008387",
+      "folderId": "前戯",
+      "label_jp": "乳首舐め",
+      "value_en": "nipple licking",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551014728",
+      "folderId": "前戯",
+      "label_jp": "パイズリ",
+      "value_en": "paizuri",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551024009",
+      "folderId": "前戯",
+      "label_jp": "着衣パイズリ",
+      "value_en": "paizuri under clothes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551035848",
+      "folderId": "前戯",
+      "label_jp": "フェラチオ",
+      "value_en": "fellatio",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551053220",
+      "folderId": "前戯",
+      "label_jp": "フェラチオ（舐める）",
+      "value_en": "licking penis",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551059665",
+      "folderId": "前戯",
+      "label_jp": "フェラチオ（玉舐め）",
+      "value_en": "licking testicle",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551067692",
+      "folderId": "前戯",
+      "label_jp": "ディープスロート",
+      "value_en": "deep throat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551078060",
+      "folderId": "前戯",
+      "label_jp": "パイズリフェラ",
+      "value_en": "breasts blowjob",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551230717",
+      "folderId": "体位",
+      "label_jp": "正常位",
+      "value_en": "missionary",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551262913",
+      "folderId": "体位",
+      "label_jp": "背後位1",
+      "value_en": "sex from behind",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551276651",
+      "folderId": "体位",
+      "label_jp": "背後位・バック2",
+      "value_en": "doggy style",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551295977",
+      "folderId": "体位",
+      "label_jp": "騎乗位1",
+      "value_en": "cowgirl position",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551305890",
+      "folderId": "体位",
+      "label_jp": "騎乗位2",
+      "value_en": "girl on top",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551351857",
+      "folderId": "体位",
+      "label_jp": "背面騎乗位",
+      "value_en": "from behind",
+      "nsfw": false,
+      "note": "騎乗位と合わせて使う",
+      "favorite": false
+    },
+    {
+      "id": "1768551429676",
+      "folderId": "体位",
+      "label_jp": "側位1",
+      "value_en": "side fuck",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551451775",
+      "folderId": "体位",
+      "label_jp": "側位2",
+      "value_en": "spooning position",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551370170",
+      "folderId": "体位",
+      "label_jp": "立ちバック",
+      "value_en": "standing sex from behind",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551394724",
+      "folderId": "体位",
+      "label_jp": "立ちバック(おしりを突き上げる)",
+      "value_en": "top-down bottom-up",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551467148",
+      "folderId": "体位",
+      "label_jp": "だいしゅきホールド",
+      "value_en": "supright straddle",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551475988",
+      "folderId": "体位",
+      "label_jp": "駅弁",
+      "value_en": "suspended congress",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551485991",
+      "folderId": "体位",
+      "label_jp": "背面駅弁",
+      "value_en": "reverse suspended congress",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551606685",
+      "folderId": "プレイ",
+      "label_jp": "肩ひもずらす",
+      "value_en": "strap slip",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551615063",
+      "folderId": "プレイ",
+      "label_jp": "パンツを下す",
+      "value_en": "panties pull down",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768551686946",
+      "folderId": "プレイ",
+      "label_jp": "パンツを足にかける",
+      "value_en": "panties around one leg",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553028828",
+      "folderId": "nsfw_精液",
+      "label_jp": "体に射精",
+      "value_en": "cum on body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553044575",
+      "folderId": "nsfw_精液",
+      "label_jp": "顔に射精",
+      "value_en": "facial",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553059065",
+      "folderId": "nsfw_精液",
+      "label_jp": "胸に射精",
+      "value_en": "cum on breasts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553072963",
+      "folderId": "nsfw_精液",
+      "label_jp": "口内射精",
+      "value_en": "cum in mouth",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553088548",
+      "folderId": "nsfw_精液",
+      "label_jp": "服に精液",
+      "value_en": "cum on clothes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553826687",
+      "folderId": "アングル_フレーミング",
+      "label_jp": "全身",
+      "value_en": "full body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553844150",
+      "folderId": "アングル_フレーミング",
+      "label_jp": "上半身",
+      "value_en": "upper body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553859282",
+      "folderId": "アングル_フレーミング",
+      "label_jp": "下半身",
+      "value_en": "lower body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553868525",
+      "folderId": "アングル_フレーミング",
+      "label_jp": "バストアップ",
+      "value_en": "bust shot",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553876792",
+      "folderId": "アングル_フレーミング",
+      "label_jp": "ウエストまで",
+      "value_en": "waist up",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553886135",
+      "folderId": "アングル_フレーミング",
+      "label_jp": "膝上",
+      "value_en": "from knees up",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553902572",
+      "folderId": "アングル_フレーミング",
+      "label_jp": "顔アップ",
+      "value_en": "close-up",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553911702",
+      "folderId": "アングル_フレーミング",
+      "label_jp": "顔中心",
+      "value_en": "portrait",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768553923369",
+      "folderId": "アングル_フレーミング",
+      "label_jp": "肩から上",
+      "value_en": "head and shoulders",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561317740",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ミディアムヘア",
+      "value_en": "medium hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "long_hair",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ロングヘア",
+      "value_en": "long hair",
+      "nsfw": false
+    },
+    {
+      "id": "1768561574707",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ストレートヘア",
+      "value_en": "straight hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561374293",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ツインテール",
+      "value_en": "twin tails",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561383606",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ローツイン",
+      "value_en": "low twin tails",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561393787",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ハイツイン",
+      "value_en": "high twin tails",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561669229",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ツインドリル",
+      "value_en": "twin drills",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561409073",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ポニーテール",
+      "value_en": "ponytail",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561419304",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ハイポニー",
+      "value_en": "high ponytail",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561430148",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ローポニー",
+      "value_en": "low ponytail",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561441012",
+      "folderId": "appearance_hair_style",
+      "label_jp": "お団子",
+      "value_en": "hair bun",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561451912",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ダブルお団子",
+      "value_en": "double bun",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561473338",
+      "folderId": "appearance_hair_style",
+      "label_jp": "三つ編み",
+      "value_en": "braid",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561481553",
+      "folderId": "appearance_hair_style",
+      "label_jp": "編み込み",
+      "value_en": "side braid",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561493034",
+      "folderId": "appearance_hair_style",
+      "label_jp": "フィッシュボーン",
+      "value_en": "fishtail braid",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561503317",
+      "folderId": "appearance_hair_style",
+      "label_jp": "おさげ",
+      "value_en": "twin braids",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561519936",
+      "folderId": "appearance_hair_style",
+      "label_jp": "巻き髪",
+      "value_en": "curly hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561529545",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ウェーブヘア",
+      "value_en": "wavy hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561538865",
+      "folderId": "appearance_hair_style",
+      "label_jp": "ゆる巻き",
+      "value_en": "loose curls",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561548349",
+      "folderId": "appearance_hair_style",
+      "label_jp": "強いカール",
+      "value_en": "tight curls",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561557058",
+      "folderId": "appearance_hair_style",
+      "label_jp": "縦ロール",
+      "value_en": "drill hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561606358",
+      "folderId": "appearance_hair_style",
+      "label_jp": "アシンメトリー",
+      "value_en": "asymmetrical hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561615097",
+      "folderId": "appearance_hair_style",
+      "label_jp": "片目隠れ",
+      "value_en": "hair over one eye",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561624073",
+      "folderId": "appearance_hair_style",
+      "label_jp": "目隠れ",
+      "value_en": "hair covering eyes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561631417",
+      "folderId": "appearance_hair_style",
+      "label_jp": "寝癖",
+      "value_en": "messy hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561638872",
+      "folderId": "appearance_hair_style",
+      "label_jp": "無造作ヘア",
+      "value_en": "tousled hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561701808",
+      "folderId": "appearance_hair_style",
+      "label_jp": "オールバック",
+      "value_en": "slicked back hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561713843",
+      "folderId": "appearance_hair_style",
+      "label_jp": "センター分け（男性向け）",
+      "value_en": "middle parted hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561827547",
+      "folderId": "appearance_hair_color",
+      "label_jp": "黒髪",
+      "value_en": "black hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561834546",
+      "folderId": "appearance_hair_color",
+      "label_jp": "茶髪",
+      "value_en": "brown hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561841793",
+      "folderId": "appearance_hair_color",
+      "label_jp": "金髪",
+      "value_en": "blonde hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561849039",
+      "folderId": "appearance_hair_color",
+      "label_jp": "白髪",
+      "value_en": "white hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561857242",
+      "folderId": "appearance_hair_color",
+      "label_jp": "銀髪",
+      "value_en": "silver hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561864288",
+      "folderId": "appearance_hair_color",
+      "label_jp": "灰色の髪",
+      "value_en": "gray hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561877512",
+      "folderId": "appearance_hair_color",
+      "label_jp": "赤髪",
+      "value_en": "red hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561896464",
+      "folderId": "appearance_hair_color",
+      "label_jp": "深紅の髪",
+      "value_en": "dark red hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561912993",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ワインレッド",
+      "value_en": "wine red hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561918371",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ピンク髪",
+      "value_en": "pink hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561928263",
+      "folderId": "appearance_hair_color",
+      "label_jp": "薄ピンク",
+      "value_en": "light pink hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561937853",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ローズピンク",
+      "value_en": "rose pink hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561950074",
+      "folderId": "appearance_hair_color",
+      "label_jp": "青髪",
+      "value_en": "blue hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561962089",
+      "folderId": "appearance_hair_color",
+      "label_jp": "薄青",
+      "value_en": "light blue hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561971689",
+      "folderId": "appearance_hair_color",
+      "label_jp": "水色",
+      "value_en": "aqua hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561979160",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ネイビーブルー",
+      "value_en": "navy blue hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561986940",
+      "folderId": "appearance_hair_color",
+      "label_jp": "紫髪",
+      "value_en": "purple hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768561993960",
+      "folderId": "appearance_hair_color",
+      "label_jp": "薄紫",
+      "value_en": "light purple hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562001617",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ラベンダー",
+      "value_en": "lavender hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562014779",
+      "folderId": "appearance_hair_color",
+      "label_jp": "緑髪",
+      "value_en": "green hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562023243",
+      "folderId": "appearance_hair_color",
+      "label_jp": "黄緑",
+      "value_en": "light green hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562032468",
+      "folderId": "appearance_hair_color",
+      "label_jp": "エメラルドグリーン",
+      "value_en": "emerald green hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562040900",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ミントグリーン",
+      "value_en": "mint green hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562053689",
+      "folderId": "appearance_hair_color",
+      "label_jp": "黄色い髪",
+      "value_en": "yellow hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562062062",
+      "folderId": "appearance_hair_color",
+      "label_jp": "オレンジ髪",
+      "value_en": "orange hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562071092",
+      "folderId": "appearance_hair_color",
+      "label_jp": "金橙色",
+      "value_en": "golden orange hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562086421",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ダークブラウン",
+      "value_en": "dark brown hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562093508",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ライトブラウン",
+      "value_en": "light brown hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562102720",
+      "folderId": "appearance_hair_color",
+      "label_jp": "チョコレート色",
+      "value_en": "chocolate brown hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562111811",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ベージュ髪",
+      "value_en": "beige hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562120127",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ハニーブロンド",
+      "value_en": "honey blonde hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562131655",
+      "folderId": "appearance_hair_color",
+      "label_jp": "虹色の髪",
+      "value_en": "rainbow hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562142694",
+      "folderId": "appearance_hair_color",
+      "label_jp": "グラデーション髪",
+      "value_en": "gradient hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562151333",
+      "folderId": "appearance_hair_color",
+      "label_jp": "ツートンカラー",
+      "value_en": "two-tone hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562161259",
+      "folderId": "appearance_hair_color",
+      "label_jp": "メッシュ入り",
+      "value_en": "highlighted hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562170404",
+      "folderId": "appearance_hair_color",
+      "label_jp": "メタリックカラー",
+      "value_en": "metallic hair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562830416",
+      "folderId": "ポーズ_立ちポーズ",
+      "label_jp": "立っている",
+      "value_en": "standing",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562858794",
+      "folderId": "ポーズ_立ちポーズ",
+      "label_jp": "まっすぐ立つ",
+      "value_en": "standing upright",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562867588",
+      "folderId": "ポーズ_立ちポーズ",
+      "label_jp": "立ちポーズ",
+      "value_en": "standing pose",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562900857",
+      "folderId": "ポーズ_立ちポーズ",
+      "label_jp": "静かに立っている",
+      "value_en": "standing still",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562964348",
+      "folderId": "ポーズ_腕",
+      "label_jp": "腰に手を当てる",
+      "value_en": "hands on hips",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768562990419",
+      "folderId": "ポーズ_腕",
+      "label_jp": "腕を組む",
+      "value_en": "arms crossed",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768563044697",
+      "folderId": "ポーズ_座りポーズ",
+      "label_jp": "座る1",
+      "value_en": "sitting",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768563063075",
+      "folderId": "ポーズ_座りポーズ",
+      "label_jp": "座る2",
+      "value_en": "seated",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768563072761",
+      "folderId": "ポーズ_座りポーズ",
+      "label_jp": "座る3",
+      "value_en": "sitting pose",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768563084492",
+      "folderId": "ポーズ_座りポーズ",
+      "label_jp": "椅子に座る",
+      "value_en": "sitting on a chair",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768563093874",
+      "folderId": "ポーズ_座りポーズ",
+      "label_jp": "地面に座る",
+      "value_en": "sitting on the ground",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768563102652",
+      "folderId": "ポーズ_座りポーズ",
+      "label_jp": "正座",
+      "value_en": "seiza",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768563143020",
+      "folderId": "ポーズ",
+      "label_jp": "歩いている",
+      "value_en": "walking",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768563151827",
+      "folderId": "ポーズ",
+      "label_jp": "走っている",
+      "value_en": "running",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768563161655",
+      "folderId": "ポーズ",
+      "label_jp": "振り返る",
+      "value_en": "looking back",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567636638",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "魔法使いのローブ",
+      "value_en": "mage robe",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567698211",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "フード付きローブ",
+      "value_en": "hooded robe",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567656678",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "魔導士の衣装",
+      "value_en": "sorcerer outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567667791",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "魔女の服",
+      "value_en": "witch outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567675587",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "司祭服",
+      "value_en": "priest robe",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567687415",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "神官の衣装",
+      "value_en": "cleric outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567715735",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "冒険者の服",
+      "value_en": "adventurer outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567723274",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "戦士の服",
+      "value_en": "warrior outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567732667",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "剣士の衣装",
+      "value_en": "swordsman outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567741628",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "レンジャー装備",
+      "value_en": "ranger outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567748966",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "盗賊の服",
+      "value_en": "rogue outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567758763",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "旅人の服",
+      "value_en": "traveler outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567768309",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "鎧",
+      "value_en": "armor",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567779525",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "フルアーマー",
+      "value_en": "full armor",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567788671",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "軽装鎧",
+      "value_en": "light armor",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567796843",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "重装鎧",
+      "value_en": "heavy armor",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567805182",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "騎士の鎧",
+      "value_en": "knight armor",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567812108",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "プレートアーマー",
+      "value_en": "plate armor",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567822691",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "エルフの衣装",
+      "value_en": "elf outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567833482",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "ダークエルフの服",
+      "value_en": "dark elf outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567845038",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "ドワーフの服",
+      "value_en": "dwarf outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567849862",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "獣人の服",
+      "value_en": "beastfolk outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567857522",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "竜人の服",
+      "value_en": "dragonborn outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567871469",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "王族の衣装",
+      "value_en": "royal outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567879162",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "貴族の服",
+      "value_en": "noble outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567888557",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "王女のドレス",
+      "value_en": "princess dress",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567895478",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "女王の衣装",
+      "value_en": "queen outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768567904170",
+      "folderId": "服装_1_ファンタジー系",
+      "label_jp": "神官長の服",
+      "value_en": "high priest outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568085171",
+      "folderId": "服装_1_制服系_学校系",
+      "label_jp": "学生服",
+      "value_en": "school uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568092433",
+      "folderId": "服装_1_制服系_学校系",
+      "label_jp": "セーラー服",
+      "value_en": "sailor uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568101667",
+      "folderId": "服装_1_制服系_学校系",
+      "label_jp": "ブレザー制服",
+      "value_en": "blazer uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568111544",
+      "folderId": "服装_1_制服系_学校系",
+      "label_jp": "学ラン",
+      "value_en": "gakuran",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568121590",
+      "folderId": "服装_1_制服系_学校系",
+      "label_jp": "チアリーダー制服",
+      "value_en": "cheerleader uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568130007",
+      "folderId": "服装_1_制服系_学校系",
+      "label_jp": "体操服",
+      "value_en": "gym uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568137717",
+      "folderId": "服装_1_制服系_学校系",
+      "label_jp": "ジャージ",
+      "value_en": "tracksuit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568148485",
+      "folderId": "服装_1_制服系_学校系",
+      "label_jp": "スクール水着",
+      "value_en": "school swimsuit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568160551",
+      "folderId": "服装_1_制服系_学校系",
+      "label_jp": "卒業式の制服",
+      "value_en": "graduation uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568196350",
+      "folderId": "服装_1_制服系_医療・研究・福祉",
+      "label_jp": "ナース服",
+      "value_en": "nurse uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568202984",
+      "folderId": "服装_1_制服系_医療・研究・福祉",
+      "label_jp": "医師の制服",
+      "value_en": "doctor uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568209517",
+      "folderId": "服装_1_制服系_医療・研究・福祉",
+      "label_jp": "白衣",
+      "value_en": "lab coat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568227306",
+      "folderId": "服装_1_制服系_医療・研究・福祉",
+      "label_jp": "救急隊員の服",
+      "value_en": "paramedic uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568279747",
+      "folderId": "服装_1_制服系_公共・行政・治安系",
+      "label_jp": "警察官の制服",
+      "value_en": "police uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568287007",
+      "folderId": "服装_1_制服系_公共・行政・治安系",
+      "label_jp": "消防士の制服",
+      "value_en": "firefighter uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568295396",
+      "folderId": "服装_1_制服系_公共・行政・治安系",
+      "label_jp": "自衛官の制服",
+      "value_en": "military uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568302481",
+      "folderId": "服装_1_制服系_公共・行政・治安系",
+      "label_jp": "海軍制服",
+      "value_en": "navy uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568310483",
+      "folderId": "服装_1_制服系_公共・行政・治安系",
+      "label_jp": "空軍制服",
+      "value_en": "air force uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568318221",
+      "folderId": "服装_1_制服系_公共・行政・治安系",
+      "label_jp": "刑務官の制服",
+      "value_en": "prison guard uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568345756",
+      "folderId": "服装_1_制服系_接客・サービス業",
+      "label_jp": "メイド服",
+      "value_en": "maid outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568351498",
+      "folderId": "服装_1_制服系_接客・サービス業",
+      "label_jp": "執事服",
+      "value_en": "butler uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568360616",
+      "folderId": "服装_1_制服系_接客・サービス業",
+      "label_jp": "ウェイトレス制服",
+      "value_en": "waitress uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568367533",
+      "folderId": "服装_1_制服系_接客・サービス業",
+      "label_jp": "カフェ制服",
+      "value_en": "cafe uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568375277",
+      "folderId": "服装_1_制服系_接客・サービス業",
+      "label_jp": "ファストフード制服",
+      "value_en": "fast food uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568383167",
+      "folderId": "服装_1_制服系_接客・サービス業",
+      "label_jp": "ホテルスタッフ制服",
+      "value_en": "hotel staff uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568426909",
+      "folderId": "服装_1_制服系_仕事・作業・専門職",
+      "label_jp": "作業着",
+      "value_en": "work uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568434526",
+      "folderId": "服装_1_制服系_仕事・作業・専門職",
+      "label_jp": "工場制服",
+      "value_en": "factory uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568443055",
+      "folderId": "服装_1_制服系_仕事・作業・専門職",
+      "label_jp": "整備士の制服",
+      "value_en": "mechanic uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568450908",
+      "folderId": "服装_1_制服系_仕事・作業・専門職",
+      "label_jp": "建設作業員の服",
+      "value_en": "construction uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568459263",
+      "folderId": "服装_1_制服系_仕事・作業・専門職",
+      "label_jp": "配送員の制服",
+      "value_en": "delivery uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568466925",
+      "folderId": "服装_1_制服系_仕事・作業・専門職",
+      "label_jp": "パイロット制服",
+      "value_en": "pilot uniform",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568495603",
+      "folderId": "服装_1_制服系_特殊・イベント・その他",
+      "label_jp": "宇宙飛行士の服",
+      "value_en": "astronaut suit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568505423",
+      "folderId": "服装_1_制服系_特殊・イベント・その他",
+      "label_jp": "レーシングスーツ",
+      "value_en": "racing suit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568714516",
+      "folderId": "服装_1_上半身の服_普段着・汎用",
+      "label_jp": "シャツ",
+      "value_en": "shirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568690909",
+      "folderId": "服装_1_上半身の服_普段着・汎用",
+      "label_jp": "Tシャツ",
+      "value_en": "t-shirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568700038",
+      "folderId": "服装_1_上半身の服_普段着・汎用",
+      "label_jp": "ロングTシャツ",
+      "value_en": "long-sleeve t-shirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568706512",
+      "folderId": "服装_1_上半身の服_普段着・汎用",
+      "label_jp": "ワイシャツ",
+      "value_en": "dress shirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568725803",
+      "folderId": "服装_1_上半身の服_普段着・汎用",
+      "label_jp": "ブラウス",
+      "value_en": "blouse",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568734109",
+      "folderId": "服装_1_上半身の服_普段着・汎用",
+      "label_jp": "ポロシャツ",
+      "value_en": "polo shirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568744730",
+      "folderId": "服装_1_上半身の服_普段着・汎用",
+      "label_jp": "タンクトップ",
+      "value_en": "tank top",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568756464",
+      "folderId": "服装_1_上半身の服_普段着・汎用",
+      "label_jp": "キャミソール",
+      "value_en": "camisole",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568809707",
+      "folderId": "服装_1_上半身の服_ニット・厚手系",
+      "label_jp": "セーター",
+      "value_en": "sweater",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568821559",
+      "folderId": "服装_1_上半身の服_ニット・厚手系",
+      "label_jp": "ニット",
+      "value_en": "knit top",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568828727",
+      "folderId": "服装_1_上半身の服_ニット・厚手系",
+      "label_jp": "タートルネック",
+      "value_en": "turtleneck",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568835419",
+      "folderId": "服装_1_上半身の服_ニット・厚手系",
+      "label_jp": "ハイネック",
+      "value_en": "high-neck top",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568855394",
+      "folderId": "服装_1_上半身の服_ニット・厚手系",
+      "label_jp": "リブニット",
+      "value_en": "ribbed knit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568869356",
+      "folderId": "服装_1_上半身の服_ニット・厚手系",
+      "label_jp": "カーディガン",
+      "value_en": "cardigan",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568897629",
+      "folderId": "服装_1_上半身の服_カジュアル・ストリート系",
+      "label_jp": "パーカー",
+      "value_en": "hoodie",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568906254",
+      "folderId": "服装_1_上半身の服_カジュアル・ストリート系",
+      "label_jp": "スウェット",
+      "value_en": "sweatshirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568915811",
+      "folderId": "服装_1_上半身の服_カジュアル・ストリート系",
+      "label_jp": "トレーナー",
+      "value_en": "crewneck sweatshirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568925430",
+      "folderId": "服装_1_上半身の服_カジュアル・ストリート系",
+      "label_jp": "ジャージトップ",
+      "value_en": "track jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568932569",
+      "folderId": "服装_1_上半身の服_カジュアル・ストリート系",
+      "label_jp": "ベスト",
+      "value_en": "vest",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568954606",
+      "folderId": "服装_1_上半身の服_フォーマル・きれいめ",
+      "label_jp": "ジャケット",
+      "value_en": "jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568961112",
+      "folderId": "服装_1_上半身の服_フォーマル・きれいめ",
+      "label_jp": "ブレザー",
+      "value_en": "blazer",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568969793",
+      "folderId": "服装_1_上半身の服_フォーマル・きれいめ",
+      "label_jp": "スーツ上着",
+      "value_en": "suit jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768568979144",
+      "folderId": "服装_1_上半身の服_フォーマル・きれいめ",
+      "label_jp": "ベスト（スーツ）",
+      "value_en": "waistcoat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569036908",
+      "folderId": "服装_1_上半身の服_コート系",
+      "label_jp": "コート",
+      "value_en": "coat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569045146",
+      "folderId": "服装_1_上半身の服_コート系",
+      "label_jp": "ロングコート",
+      "value_en": "long coat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569052629",
+      "folderId": "服装_1_上半身の服_コート系",
+      "label_jp": "トレンチコート",
+      "value_en": "trench coat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569062775",
+      "folderId": "服装_1_上半身の服_コート系",
+      "label_jp": "チェスターコート",
+      "value_en": "chesterfield coat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569072916",
+      "folderId": "服装_1_上半身の服_コート系",
+      "label_jp": "ピーコート",
+      "value_en": "peacoat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569081375",
+      "folderId": "服装_1_上半身の服_コート系",
+      "label_jp": "ダッフルコート",
+      "value_en": "duffle coat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569090602",
+      "folderId": "服装_1_上半身の服_コート系",
+      "label_jp": "ケープコート",
+      "value_en": "cape coat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569114019",
+      "folderId": "服装_1_上半身の服_ジャケット系",
+      "label_jp": "ジャケット",
+      "value_en": "jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569120885",
+      "folderId": "服装_1_上半身の服_ジャケット系",
+      "label_jp": "レザージャケット",
+      "value_en": "leather jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569129414",
+      "folderId": "服装_1_上半身の服_ジャケット系",
+      "label_jp": "デニムジャケット",
+      "value_en": "denim jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569138932",
+      "folderId": "服装_1_上半身の服_ジャケット系",
+      "label_jp": "テーラードジャケット",
+      "value_en": "tailored jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569146839",
+      "folderId": "服装_1_上半身の服_ジャケット系",
+      "label_jp": "ブルゾン",
+      "value_en": "blouson",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569173186",
+      "folderId": "服装_1_上半身の服_ジャケット系",
+      "label_jp": "フライトジャケット",
+      "value_en": "bomber jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569180722",
+      "folderId": "服装_1_上半身の服_ジャケット系",
+      "label_jp": "ライダースジャケット",
+      "value_en": "biker jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569213227",
+      "folderId": "服装_1_上半身の服_防寒・アウトドア系",
+      "label_jp": "ダウンジャケット",
+      "value_en": "down jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569222988",
+      "folderId": "服装_1_上半身の服_防寒・アウトドア系",
+      "label_jp": "中綿ジャケット",
+      "value_en": "padded jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569230316",
+      "folderId": "服装_1_上半身の服_防寒・アウトドア系",
+      "label_jp": "マウンテンパーカー",
+      "value_en": "mountain parka",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569245804",
+      "folderId": "服装_1_上半身の服_防寒・アウトドア系",
+      "label_jp": "アノラック",
+      "value_en": "anorak",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569254213",
+      "folderId": "服装_1_上半身の服_防寒・アウトドア系",
+      "label_jp": "フリース",
+      "value_en": "fleece jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569261710",
+      "folderId": "服装_1_上半身の服_防寒・アウトドア系",
+      "label_jp": "ウィンドブレーカー",
+      "value_en": "windbreaker",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569351166",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "ズボン",
+      "value_en": "pants",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569357739",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "スラックス",
+      "value_en": "slacks",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569364132",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "ジーンズ",
+      "value_en": "jeans",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569372113",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "デニムパンツ",
+      "value_en": "denim pants",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569379680",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "チノパン",
+      "value_en": "chino pants",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569390592",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "ワイドパンツ",
+      "value_en": "wide pants",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569397576",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "スキニーパンツ",
+      "value_en": "skinny pants",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569405522",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "カーゴパンツ",
+      "value_en": "cargo pants",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569412167",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "ショートパンツ",
+      "value_en": "shorts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569420148",
+      "folderId": "服装_1_下半身の服_パンツ系",
+      "label_jp": "ホットパンツ",
+      "value_en": "hot pants",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569440134",
+      "folderId": "服装_1_下半身の服_スカート系",
+      "label_jp": "スカート",
+      "value_en": "skirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569447503",
+      "folderId": "服装_1_下半身の服_スカート系",
+      "label_jp": "ミニスカート",
+      "value_en": "mini skirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569453676",
+      "folderId": "服装_1_下半身の服_スカート系",
+      "label_jp": "ロングスカート",
+      "value_en": "long skirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569459979",
+      "folderId": "服装_1_下半身の服_スカート系",
+      "label_jp": "プリーツスカート",
+      "value_en": "pleated skirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569468205",
+      "folderId": "服装_1_下半身の服_スカート系",
+      "label_jp": "フレアスカート",
+      "value_en": "flared skirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569475024",
+      "folderId": "服装_1_下半身の服_スカート系",
+      "label_jp": "タイトスカート",
+      "value_en": "pencil skirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569490982",
+      "folderId": "服装_1_下半身の服_スカート系",
+      "label_jp": "ラップスカート",
+      "value_en": "wrap skirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569538204",
+      "folderId": "服装_1_下半身の服_特殊・組み合わせ系",
+      "label_jp": "レギンス",
+      "value_en": "leggings",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569544137",
+      "folderId": "服装_1_下半身の服_特殊・組み合わせ系",
+      "label_jp": "タイツ",
+      "value_en": "tights",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569554979",
+      "folderId": "服装_1_下半身の服_特殊・組み合わせ系",
+      "label_jp": "スパッツ",
+      "value_en": "spats",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569561950",
+      "folderId": "服装_1_下半身の服_特殊・組み合わせ系",
+      "label_jp": "ガーターベルト",
+      "value_en": "garter belt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569570355",
+      "folderId": "服装_1_下半身の服_特殊・組み合わせ系",
+      "label_jp": "オーバーオール",
+      "value_en": "overalls",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569807077",
+      "folderId": "服装_1_靴・タイツ_靴_カジュアル・日常",
+      "label_jp": "スニーカー",
+      "value_en": "sneakers",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569825438",
+      "folderId": "服装_1_靴・タイツ_靴_カジュアル・日常",
+      "label_jp": "スリッポン",
+      "value_en": "slip-on shoes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569850655",
+      "folderId": "服装_1_靴・タイツ_靴_カジュアル・日常",
+      "label_jp": "サンダル",
+      "value_en": "sandals",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569857608",
+      "folderId": "服装_1_靴・タイツ_靴_カジュアル・日常",
+      "label_jp": "スポーツシューズ",
+      "value_en": "athletic shoes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569900650",
+      "folderId": "服装_1_靴・タイツ_靴_フォーマル・女性向け",
+      "label_jp": "パンプス",
+      "value_en": "pumps",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569916826",
+      "folderId": "服装_1_靴・タイツ_靴_フォーマル・女性向け",
+      "label_jp": "ハイヒール",
+      "value_en": "high heels",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569931263",
+      "folderId": "服装_1_靴・タイツ_靴_フォーマル・女性向け",
+      "label_jp": "ストラップヒール",
+      "value_en": "strap heels",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569939781",
+      "folderId": "服装_1_靴・タイツ_靴_フォーマル・女性向け",
+      "label_jp": "オープントゥ",
+      "value_en": "open-toe heels",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569953200",
+      "folderId": "服装_1_靴・タイツ_靴_フォーマル・女性向け",
+      "label_jp": "ウェッジソール",
+      "value_en": "wedge heels",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768569999731",
+      "folderId": "服装_1_靴・タイツ_靴_カジュアル・日常",
+      "label_jp": "ローファー",
+      "value_en": "loafers",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570020458",
+      "folderId": "服装_1_靴・タイツ_靴_ブーツ系",
+      "label_jp": "ブーツ",
+      "value_en": "boots",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570028448",
+      "folderId": "服装_1_靴・タイツ_靴_ブーツ系",
+      "label_jp": "ショートブーツ",
+      "value_en": "ankle boots",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570035477",
+      "folderId": "服装_1_靴・タイツ_靴_ブーツ系",
+      "label_jp": "ロングブーツ",
+      "value_en": "long boots",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570052420",
+      "folderId": "服装_1_靴・タイツ_靴_ブーツ系",
+      "label_jp": "ニーハイブーツ",
+      "value_en": "thigh-high boots",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570059950",
+      "folderId": "服装_1_靴・タイツ_靴_ブーツ系",
+      "label_jp": "コンバットブーツ",
+      "value_en": "combat boots",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570079833",
+      "folderId": "服装_1_靴・タイツ_靴_ブーツ系",
+      "label_jp": "レースアップブーツ",
+      "value_en": "lace-up boots",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570123017",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "靴下",
+      "value_en": "socks",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570130291",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "ショートソックス",
+      "value_en": "ankle socks",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570136731",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "ハイソックス",
+      "value_en": "knee-high socks",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570143029",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "ニーソックス",
+      "value_en": "thigh-high socks",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570149646",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "ルーズソックス",
+      "value_en": "loose socks",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570155689",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "タイツ",
+      "value_en": "tights",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570162817",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "ストッキング",
+      "value_en": "stockings",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570171452",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "網タイツ",
+      "value_en": "fishnet stockings",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570184130",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "レッグウォーマー",
+      "value_en": "leg warmers",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768570195997",
+      "folderId": "服装_1_靴・タイツ_靴_靴下・脚装備",
+      "label_jp": "ガーターベルト",
+      "value_en": "garter belt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571296078",
+      "folderId": "服装_1_着用状態_フード・頭まわり",
+      "label_jp": "帽子を被る",
+      "value_en": "wearing a hat",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571302991",
+      "folderId": "服装_1_着用状態_フード・頭まわり",
+      "label_jp": "フードを被る",
+      "value_en": "hood up",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571310475",
+      "folderId": "服装_1_着用状態_フード・頭まわり",
+      "label_jp": "フードを下ろす",
+      "value_en": "hood down",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571319704",
+      "folderId": "服装_1_着用状態_フード・頭まわり",
+      "label_jp": "フードで顔を隠す",
+      "value_en": "hood covering face",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571327572",
+      "folderId": "服装_1_着用状態_フード・頭まわり",
+      "label_jp": "深く被ったフード",
+      "value_en": "hood pulled low",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571347153",
+      "folderId": "服装_1_着用状態_前開き・閉じ",
+      "label_jp": "前を開ける",
+      "value_en": "open jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571353640",
+      "folderId": "服装_1_着用状態_前開き・閉じ",
+      "label_jp": "前を閉める",
+      "value_en": "zipped jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571363044",
+      "folderId": "服装_1_着用状態_前開き・閉じ",
+      "label_jp": "ボタンを留める",
+      "value_en": "buttoned shirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571370693",
+      "folderId": "服装_1_着用状態_前開き・閉じ",
+      "label_jp": "ボタンを外す",
+      "value_en": "unbuttoned shirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571377244",
+      "folderId": "服装_1_着用状態_前開き・閉じ",
+      "label_jp": "はだけた服",
+      "value_en": "partially open clothes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571406762",
+      "folderId": "服装_1_着用状態_ずらす・着崩し",
+      "label_jp": "肩を出す",
+      "value_en": "off-shoulder",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571422339",
+      "folderId": "服装_1_着用状態_ずらす・着崩し",
+      "label_jp": "片肩ずらし",
+      "value_en": "one shoulder off",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571433093",
+      "folderId": "服装_1_着用状態_ずらす・着崩し",
+      "label_jp": "ずり落ちた服",
+      "value_en": "slipping clothes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571441305",
+      "folderId": "服装_1_着用状態_ずらす・着崩し",
+      "label_jp": "着崩した服",
+      "value_en": "disheveled clothes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571453411",
+      "folderId": "服装_1_着用状態_ずらす・着崩し",
+      "label_jp": "だらしなく着る",
+      "value_en": "loosely worn",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571475435",
+      "folderId": "服装_1_着用状態_重ね着・組み合わせ",
+      "label_jp": "重ね着",
+      "value_en": "layered clothing",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571481748",
+      "folderId": "服装_1_着用状態_重ね着・組み合わせ",
+      "label_jp": "上着を羽織る",
+      "value_en": "wearing outerwear",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571489518",
+      "folderId": "服装_1_着用状態_重ね着・組み合わせ",
+      "label_jp": "中にシャツを着る",
+      "value_en": "shirt under jacket",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571495929",
+      "folderId": "服装_1_着用状態_重ね着・組み合わせ",
+      "label_jp": "マントを羽織る",
+      "value_en": "wearing a cloak",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571533379",
+      "folderId": "服装_1_着用状態_フィット感・サイズ感",
+      "label_jp": "ぴったりした服",
+      "value_en": "tight-fitting clothes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571541412",
+      "folderId": "服装_1_着用状態_フィット感・サイズ感",
+      "label_jp": "ゆったりした服",
+      "value_en": "loose-fitting clothes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571551093",
+      "folderId": "服装_1_着用状態_フィット感・サイズ感",
+      "label_jp": "オーバーサイズ",
+      "value_en": "oversized clothing",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768571559339",
+      "folderId": "服装_1_着用状態_フィット感・サイズ感",
+      "label_jp": "体に密着した服",
+      "value_en": "form-fitting clothes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572049518",
+      "folderId": "服装_1_下着・水着_上半身の下着",
+      "label_jp": "インナーシャツ",
+      "value_en": "undershirt",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572015520",
+      "folderId": "服装_1_下着・水着_上半身の下着",
+      "label_jp": "ブラジャー",
+      "value_en": "bra",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572032875",
+      "folderId": "服装_1_下着・水着_上半身の下着",
+      "label_jp": "スポーツブラ",
+      "value_en": "sports bra",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572074639",
+      "folderId": "服装_1_下着・水着_上半身の下着",
+      "label_jp": "チューブトップ",
+      "value_en": "tube top",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572081589",
+      "folderId": "服装_1_下着・水着_上半身の下着",
+      "label_jp": "ブラトップ",
+      "value_en": "bra top",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572496155",
+      "folderId": "服装_1_下着・水着_上半身の下着(nsfw)",
+      "label_jp": "上半身裸",
+      "value_en": "topless",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572960300",
+      "folderId": "服装_1_下着・水着_上半身の下着(nsfw)",
+      "label_jp": "ノーブラ",
+      "value_en": "no bra",
+      "nsfw": false,
+      "note": "アウターと組み合わせる",
+      "favorite": false
+    },
+    {
+      "id": "1768572121289",
+      "folderId": "服装_1_下着・水着_上半身の下着(nsfw)",
+      "label_jp": "ランジェリー",
+      "value_en": "lingerie",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572130629",
+      "folderId": "服装_1_下着・水着_上半身の下着(nsfw)",
+      "label_jp": "セクシー下着",
+      "value_en": "sexy underwear",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572139356",
+      "folderId": "服装_1_下着・水着_上半身の下着(nsfw)",
+      "label_jp": "レースブラ",
+      "value_en": "lace bra",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572146777",
+      "folderId": "服装_1_下着・水着_上半身の下着(nsfw)",
+      "label_jp": "シースルーブラ",
+      "value_en": "sheer bra",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572272920",
+      "folderId": "服装_1_下着・水着_下半身の下着",
+      "label_jp": "ショーツ",
+      "value_en": "shorts underwear",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572279352",
+      "folderId": "服装_1_下着・水着_下半身の下着",
+      "label_jp": "ボクサーショーツ",
+      "value_en": "boxer shorts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572286667",
+      "folderId": "服装_1_下着・水着_下半身の下着",
+      "label_jp": "ボーイレッグ",
+      "value_en": "boyshorts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572295152",
+      "folderId": "服装_1_下着・水着_下半身の下着",
+      "label_jp": "ハイウエストショーツ",
+      "value_en": "high-waist underwear",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572303347",
+      "folderId": "服装_1_下着・水着_下半身の下着",
+      "label_jp": "スポーツショーツ",
+      "value_en": "sports underwear",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572311296",
+      "folderId": "服装_1_下着・水着_下半身の下着",
+      "label_jp": "インナーショーツ",
+      "value_en": "inner shorts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572480496",
+      "folderId": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "label_jp": "下半身裸",
+      "value_en": "bottomless",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572981397",
+      "folderId": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "label_jp": "ノーパン",
+      "value_en": "no panties",
+      "nsfw": false,
+      "note": "アウターと組み合わせる",
+      "favorite": false
+    },
+    {
+      "id": "1768572349116",
+      "folderId": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "label_jp": "パンティ",
+      "value_en": "panties",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572356668",
+      "folderId": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "label_jp": "Tバック",
+      "value_en": "thong",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572373830",
+      "folderId": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "label_jp": "Gストリング",
+      "value_en": "g-string",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572386042",
+      "folderId": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "label_jp": "ランジェリーショーツ",
+      "value_en": "lingerie panties",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572399021",
+      "folderId": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "label_jp": "レースショーツ",
+      "value_en": "lace panties",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572405832",
+      "folderId": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "label_jp": "シースルーショーツ",
+      "value_en": "sheer panties",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572162194",
+      "folderId": "服装_1_下着・水着_上半身の下着(nsfw)",
+      "label_jp": "オープンブラ",
+      "value_en": "open bra",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572533212",
+      "folderId": "服装_1_裸",
+      "label_jp": "上半身裸",
+      "value_en": "topless",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572540439",
+      "folderId": "服装_1_裸",
+      "label_jp": "下半身裸",
+      "value_en": "bottomless",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572838388",
+      "folderId": "服装_1_裸",
+      "label_jp": "裸",
+      "value_en": "nude",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572874123",
+      "folderId": "服装_1_裸",
+      "label_jp": "裸(強調表現)",
+      "value_en": "fully nude",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572169531",
+      "folderId": "服装_1_下着・水着_上半身の下着(nsfw)",
+      "label_jp": "ボンデージトップ",
+      "value_en": "bondage top",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768572414376",
+      "folderId": "服装_1_下着・水着_下半身の下着(nsfw)",
+      "label_jp": "オープンショーツ",
+      "value_en": "open panties",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573160619",
+      "folderId": "服装_1_下着・水着_水着",
+      "label_jp": "水着",
+      "value_en": "swimsuit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573174505",
+      "folderId": "服装_1_下着・水着_水着",
+      "label_jp": "ビキニ",
+      "value_en": "bikini",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573182687",
+      "folderId": "服装_1_下着・水着_水着",
+      "label_jp": "スポーツ水着",
+      "value_en": "competitive swimsuit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573190314",
+      "folderId": "服装_1_下着・水着_水着",
+      "label_jp": "競泳水着",
+      "value_en": "racing swimsuit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573206568",
+      "folderId": "服装_1_下着・水着_水着",
+      "label_jp": "タンキニ",
+      "value_en": "tankini",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573214070",
+      "folderId": "服装_1_下着・水着_水着",
+      "label_jp": "サーフスーツ",
+      "value_en": "surf suit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573224801",
+      "folderId": "服装_1_下着・水着_水着",
+      "label_jp": "ラッシュガード",
+      "value_en": "rash guard",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573232548",
+      "folderId": "服装_1_下着・水着_水着",
+      "label_jp": "メンズ水着",
+      "value_en": "swim trunks",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573273827",
+      "folderId": "服装_1_下着・水着_水着(nsfw)",
+      "label_jp": "マイクロビキニ",
+      "value_en": "micro bikini",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573280763",
+      "folderId": "服装_1_下着・水着_水着(nsfw)",
+      "label_jp": "Tバック水着",
+      "value_en": "thong bikini",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573289035",
+      "folderId": "服装_1_下着・水着_水着(nsfw)",
+      "label_jp": "ハイレグ水着",
+      "value_en": "high-leg swimsuit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573295697",
+      "folderId": "服装_1_下着・水着_水着(nsfw)",
+      "label_jp": "スリングショット水着",
+      "value_en": "slingshot swimsuit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573304181",
+      "folderId": "服装_1_下着・水着_水着(nsfw)",
+      "label_jp": "ストリングビキニ",
+      "value_en": "string bikini",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573310880",
+      "folderId": "服装_1_下着・水着_水着(nsfw)",
+      "label_jp": "シースルー水着",
+      "value_en": "sheer swimsuit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573317917",
+      "folderId": "服装_1_下着・水着_水着(nsfw)",
+      "label_jp": "カットアウト水着",
+      "value_en": "cut-out swimsuit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573494822",
+      "folderId": "服装_1_露出度補助",
+      "label_jp": "肌見せ",
+      "value_en": "skin exposure",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573504875",
+      "folderId": "服装_1_露出度補助",
+      "label_jp": "胸元が開いた",
+      "value_en": "low neckline",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573511855",
+      "folderId": "服装_1_露出度補助",
+      "label_jp": "背中が開いた",
+      "value_en": "open back",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573521921",
+      "folderId": "服装_1_露出度補助",
+      "label_jp": "ノースリーブ",
+      "value_en": "sleeveless",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573529222",
+      "folderId": "服装_1_露出度補助",
+      "label_jp": "ショート丈",
+      "value_en": "short length",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573536142",
+      "folderId": "服装_1_露出度補助",
+      "label_jp": "脚が見える",
+      "value_en": "legs visible",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573546666",
+      "folderId": "服装_1_露出度補助",
+      "label_jp": "へそ出し",
+      "value_en": "midriff exposed",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573563943",
+      "folderId": "服装_1_露出度補助",
+      "label_jp": "サイドカット",
+      "value_en": "side cut",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573571744",
+      "folderId": "服装_1_露出度補助",
+      "label_jp": "カットアウト",
+      "value_en": "cut-out design",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573619301",
+      "folderId": "服装_1_露出度補助_nsfw",
+      "label_jp": "露出多め",
+      "value_en": "revealing outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573626356",
+      "folderId": "服装_1_露出度補助_nsfw",
+      "label_jp": "過激な露出",
+      "value_en": "extreme exposure",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573634569",
+      "folderId": "服装_1_露出度補助_nsfw",
+      "label_jp": "胸元が大きく開いた",
+      "value_en": "deep cleavage",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573642066",
+      "folderId": "服装_1_露出度補助_nsfw",
+      "label_jp": "下半身露出多め",
+      "value_en": "high cut bottom",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573651623",
+      "folderId": "服装_1_露出度補助_nsfw",
+      "label_jp": "ほぼ露出",
+      "value_en": "barely covered",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573687519",
+      "folderId": "服装_1_露出度補助_nsfw",
+      "label_jp": "事故的露出",
+      "value_en": "wardrobe malfunction",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573692918",
+      "folderId": "服装_1_露出度補助_nsfw",
+      "label_jp": "ギリギリ",
+      "value_en": "barely decent",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573704082",
+      "folderId": "服装_1_露出度補助_nsfw",
+      "label_jp": "際どい衣装",
+      "value_en": "skimpy outfit",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768573992035",
+      "folderId": "appearance_体型",
+      "label_jp": "標準体型",
+      "value_en": "average body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574000190",
+      "folderId": "appearance_体型",
+      "label_jp": "スリム",
+      "value_en": "slim body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574030132",
+      "folderId": "appearance_体型",
+      "label_jp": "痩せ型",
+      "value_en": "skinny body",
+      "nsfw": false,
+      "note": "スリムよりも細い",
+      "favorite": false
+    },
+    {
+      "id": "1768574044370",
+      "folderId": "appearance_体型",
+      "label_jp": "グラマラス",
+      "value_en": "curvy body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574052745",
+      "folderId": "appearance_体型",
+      "label_jp": "ぽっちゃり",
+      "value_en": "chubby body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574278939",
+      "folderId": "appearance_体型",
+      "label_jp": "太った体型",
+      "value_en": "fat body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574310379",
+      "folderId": "appearance_体型",
+      "label_jp": "肥満体型",
+      "value_en": "obese body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574059982",
+      "folderId": "appearance_体型",
+      "label_jp": "筋肉質",
+      "value_en": "muscular body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574091398",
+      "folderId": "appearance_体型",
+      "label_jp": "細身で華奢",
+      "value_en": "petite body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574108034",
+      "folderId": "appearance_体型",
+      "label_jp": "砂時計型",
+      "value_en": "hourglass figure",
+      "nsfw": false,
+      "note": "ぼんきゅっぼん",
+      "favorite": false
+    },
+    {
+      "id": "1768574120588",
+      "folderId": "appearance_体型",
+      "label_jp": "モデル体型",
+      "value_en": "model-like body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574128841",
+      "folderId": "appearance_体型",
+      "label_jp": "健康的",
+      "value_en": "healthy body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574143373",
+      "folderId": "appearance_体型",
+      "label_jp": "柔らかい体型",
+      "value_en": "soft body",
+      "nsfw": false,
+      "note": "肉感があり優しい印象",
+      "favorite": false
+    },
+    {
+      "id": "1768574165799",
+      "folderId": "appearance_体型",
+      "label_jp": "細身男性",
+      "value_en": "slim male body",
+      "nsfw": false,
+      "note": "少年〜青年向け",
+      "favorite": false
+    },
+    {
+      "id": "1768574174754",
+      "folderId": "appearance_体型",
+      "label_jp": "がっしり",
+      "value_en": "well-built body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574184289",
+      "folderId": "appearance_体型",
+      "label_jp": "逆三角形",
+      "value_en": "v-shaped body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574192418",
+      "folderId": "appearance_体型",
+      "label_jp": "細マッチョ",
+      "value_en": "lean muscular body",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574203930",
+      "folderId": "appearance_体型",
+      "label_jp": "脚が長い",
+      "value_en": "long legs",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574213951",
+      "folderId": "appearance_体型",
+      "label_jp": "腕が細い",
+      "value_en": "slender arms",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574222903",
+      "folderId": "appearance_体型",
+      "label_jp": "ウエストが細い",
+      "value_en": "slim waist",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574230475",
+      "folderId": "appearance_体型",
+      "label_jp": "肩幅が広い",
+      "value_en": "broad shoulders",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574332027",
+      "folderId": "appearance_体型",
+      "label_jp": "筋肉質の腕",
+      "value_en": "muscular arms",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574336608",
+      "folderId": "appearance_体型",
+      "label_jp": "がっしりした腕",
+      "value_en": "strong arms",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574344899",
+      "folderId": "appearance_体型",
+      "label_jp": "太い腕",
+      "value_en": "thick arms",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574355640",
+      "folderId": "appearance_体型",
+      "label_jp": "筋肉質の脚",
+      "value_en": "muscular legs",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574364283",
+      "folderId": "appearance_体型",
+      "label_jp": "たくましい脚",
+      "value_en": "strong legs",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574374009",
+      "folderId": "appearance_体型",
+      "label_jp": "太い脚",
+      "value_en": "thick thighs",
+      "nsfw": false,
+      "note": "太もも特化",
+      "favorite": false
+    },
+    {
+      "id": "1768574500045",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "貧乳",
+      "value_en": "small breasts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574506987",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "平胸",
+      "value_en": "flat chest",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574514010",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "普通の胸",
+      "value_en": "medium breasts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574520513",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "巨乳",
+      "value_en": "large breasts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574539240",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "超巨乳",
+      "value_en": "huge breasts",
+      "nsfw": false,
+      "note": "破綻しやすい注意",
+      "favorite": false
+    },
+    {
+      "id": "1768574560654",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "控えめな胸",
+      "value_en": "modest breasts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574567188",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "豊満な胸",
+      "value_en": "full breasts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574575050",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "柔らかそうな胸",
+      "value_en": "soft breasts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574582255",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "張りのある胸",
+      "value_en": "firm breasts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574591723",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "筋肉質な胸",
+      "value_en": "muscular chest",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574599191",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "厚い胸板",
+      "value_en": "broad chest",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574609337",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "発達した胸筋",
+      "value_en": "developed pectorals",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574622058",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "胸が離れている",
+      "value_en": "wide-set breasts",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768574629925",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "胸が寄っている",
+      "value_en": "close-set breasts",
+      "nsfw": false,
+      "note": "谷間が出やすい",
+      "favorite": false
+    },
+    {
+      "id": "1768574639847",
+      "folderId": "appearance_胸の特徴",
+      "label_jp": "小ぶりで丸い",
+      "value_en": "安定＆可愛い",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575618864",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "上から",
+      "value_en": "from above",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575628196",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "下から",
+      "value_en": "from below",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575696006",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "横から",
+      "value_en": "side view",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575745643",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "斜め横から",
+      "value_en": "three-quarter view",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575637037",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "右から",
+      "value_en": "from the right",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575645532",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "左から",
+      "value_en": "from the left",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575654147",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "後ろから",
+      "value_en": "from behind",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575437609",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "ローアングル",
+      "value_en": "low angle shot",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575447380",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "ハイアングル",
+      "value_en": "high angle shot",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768575469299",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "アイレベル",
+      "value_en": "eye-level shot",
+      "nsfw": false,
+      "note": "目線と同じ高さ",
+      "favorite": false
+    },
+    {
+      "id": "1768575509340",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "俯瞰（ふかん）",
+      "value_en": "bird's-eye view",
+      "nsfw": false,
+      "note": "真上から見下ろす",
+      "favorite": false
+    },
+    {
+      "id": "1768575528917",
+      "folderId": "アングル_カメラアングル",
+      "label_jp": "あおり（ワームズアイ）",
+      "value_en": "worm's-eye view",
+      "nsfw": false,
+      "note": "地面レベルから真上を見る",
+      "favorite": false
+    },
+    {
+      "id": "1768576252038",
+      "folderId": "服装_1",
+      "label_jp": "完全に服を着ている",
+      "value_en": "fully clothed",
+      "nsfw": false,
+      "note": "服が脱げるのを防ぐプロンプト",
+      "favorite": false
+    },
+    {
+      "id": "1768651995420",
+      "folderId": "道具_ピンクローター",
+      "label_jp": "ピンクローター",
+      "value_en": "pink rotor vibrator",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768652078127",
+      "folderId": "道具_ピンクローター",
+      "label_jp": "ピンクローターを乳首に当てる",
+      "value_en": "pressing pink vibrator against nipple",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768652105409",
+      "folderId": "道具_ピンクローター",
+      "label_jp": "ピンクローターを乳首に貼り付ける",
+      "value_en": "pink rotor taped to nipple",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768652159678",
+      "folderId": "道具_ピンクローター",
+      "label_jp": "ピンクローターをクリトリスに当てる",
+      "value_en": "pressing pink rotor against clitoris",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768652192495",
+      "folderId": "道具_ピンクローター",
+      "label_jp": "ピンクローターをクリトリスに貼り付ける",
+      "value_en": "pink rotor taped to clitoris",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768652241781",
+      "folderId": "道具_ピンクローター",
+      "label_jp": "パンツの中にピンクローター",
+      "value_en": "pink vibrator taped over panties on clitoris",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1768652363661",
+      "folderId": "道具_ピンクローター",
+      "label_jp": "ピンクローターを膣に入れる",
+      "value_en": "pink egg vibrator",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    }
+  ]
+}
