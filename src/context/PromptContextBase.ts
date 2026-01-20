@@ -7,6 +7,7 @@ export interface PromptContextType {
     selectedPositive: SelectedWord[];
     selectedNegative: SelectedWord[];
     favorites: PromptFavorite[];
+    qualityTemplates: PromptFavorite[];
     templates: TemplateItem[];
     nsfwEnabled: boolean;
     showDescendantWords: boolean;
@@ -21,6 +22,10 @@ export interface PromptContextType {
     addPromptFavorite: (name: string, type: 'positive' | 'negative', words: SelectedWord[], nsfw: boolean) => void;
     applyPromptFavorite: (favorite: PromptFavorite) => void;
     removePromptFavorite: (id: string) => void;
+    addQualityTemplate: (name: string, type: 'positive' | 'negative', words: SelectedWord[], nsfw: boolean) => void;
+    removeQualityTemplate: (id: string) => void;
+    selectQualityTemplate: (type: 'positive' | 'negative', id: string | null) => void;
+    selectedQualityTemplateIds: { positive: string | null; negative: string | null };
     clearPositive: () => void;
     clearNegative: () => void;
     undo: () => void;

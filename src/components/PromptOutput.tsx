@@ -93,12 +93,14 @@ const SortableChip: React.FC<{ word: SelectedWord; type: 'positive' | 'negative'
 };
 
 const PromptOutput: React.FC = () => {
-    const { selectedPositive, selectedNegative, favorites, nsfwEnabled, addPromptFavorite, applyPromptFavorite, removePromptFavorite, clearPositive, clearNegative, reorderSelected } = usePrompt();
+    const { selectedPositive, selectedNegative, favorites, qualityTemplates, nsfwEnabled, addPromptFavorite, addQualityTemplate, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds } = usePrompt();
     const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | null>(null);
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
+    const [qualityType, setQualityType] = useState<'positive' | 'negative' | null>(null);
     const [loadType, setLoadType] = useState<'positive' | 'negative' | null>(null);
     const [favoriteName, setFavoriteName] = useState('');
     const [favoriteNsfw, setFavoriteNsfw] = useState(false);
+    const [saveAsQuality, setSaveAsQuality] = useState(false);
 
     const posString = formatPrompt(selectedPositive);
     const negString = formatPrompt(selectedNegative);
@@ -106,6 +108,26 @@ const PromptOutput: React.FC = () => {
     const filteredFavorites = useMemo(() => {
         return favorites.filter(fav => (nsfwEnabled ? true : !fav.nsfw));
     }, [favorites, nsfwEnabled]);
+
+    const filteredQualityTemplates = useMemo(() => {
+        return qualityTemplates.filter(template => (nsfwEnabled ? true : !template.nsfw));
+    }, [qualityTemplates, nsfwEnabled]);
+
+    const getQualityPrompt = (type: 'positive' | 'negative') => {
+        const selectedId = selectedQualityTemplateIds[type];
+        if (!selectedId) return '';
+        const selected = qualityTemplates.find(template => template.id === selectedId);
+        if (!selected) return '';
+        if (!nsfwEnabled && selected.nsfw) return '';
+        return formatPrompt(selected.words);
+    };
+
+    const buildCopyText = (type: 'positive' | 'negative', base: string) => {
+        const quality = getQualityPrompt(type);
+        if (!quality) return base;
+        if (!base) return quality;
+        return `${quality}, ${base}`;
+    };
 
     const inferFavoriteNsfw = (source: SelectedWord[]) => {
         return source.some(word => {
@@ -119,6 +141,7 @@ const PromptOutput: React.FC = () => {
         const source = type === 'positive' ? selectedPositive : selectedNegative;
         setFavoriteNsfw(inferFavoriteNsfw(source));
         setSaveType(type);
+        setSaveAsQuality(false);
     };
 
     const handleCopy = (text: string, type: 'pos' | 'neg') => {
@@ -131,9 +154,14 @@ const PromptOutput: React.FC = () => {
         const source = type === 'positive' ? selectedPositive : selectedNegative;
         const combinedLabels = source.map(word => word.label_jp).filter(Boolean);
         const name = favoriteName.trim() || combinedLabels.join(' / ') || 'Favorite';
-        addPromptFavorite(name, type, source, favoriteNsfw);
+        if (saveAsQuality) {
+            addQualityTemplate(name, type, source, favoriteNsfw);
+        } else {
+            addPromptFavorite(name, type, source, favoriteNsfw);
+        }
         setFavoriteName('');
         setFavoriteNsfw(false);
+        setSaveAsQuality(false);
         setSaveType(null);
     };
 
@@ -169,6 +197,12 @@ const PromptOutput: React.FC = () => {
                             <BookmarkIcon className="w-4 h-4" /> Add
                         </button>
                         <button
+                            onClick={() => setQualityType('positive')}
+                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                        >
+                            <Bars3Icon className="w-4 h-4" /> Quality
+                        </button>
+                        <button
                             onClick={() => setLoadType('positive')}
                             className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
@@ -181,7 +215,7 @@ const PromptOutput: React.FC = () => {
                             <XMarkIcon className="w-4 h-4" /> Clear
                         </button>
                         <button
-                            onClick={() => handleCopy(posString, 'pos')}
+                            onClick={() => handleCopy(buildCopyText('positive', posString), 'pos')}
                             className="flex items-center gap-1 text-sm px-3 py-1.5 rounded-md border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-colors"
                         >
                             {copyFeedback === 'pos' ? <span className="text-green-300">Copied!</span> : (
@@ -236,6 +270,12 @@ const PromptOutput: React.FC = () => {
                             <BookmarkIcon className="w-4 h-4" /> Add
                         </button>
                         <button
+                            onClick={() => setQualityType('negative')}
+                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
+                        >
+                            <Bars3Icon className="w-4 h-4" /> Quality
+                        </button>
+                        <button
                             onClick={() => setLoadType('negative')}
                             className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
@@ -248,7 +288,7 @@ const PromptOutput: React.FC = () => {
                             <XMarkIcon className="w-4 h-4" /> Clear
                         </button>
                         <button
-                            onClick={() => handleCopy(negString, 'neg')}
+                            onClick={() => handleCopy(buildCopyText('negative', negString), 'neg')}
                             className="flex items-center gap-1 text-sm px-3 py-1.5 rounded-md border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 transition-colors"
                         >
                             {copyFeedback === 'neg' ? <span className="text-green-300">Copied!</span> : (
@@ -316,6 +356,15 @@ const PromptOutput: React.FC = () => {
                                 />
                                 <span className="text-sm text-slate-300">NSFWを含む</span>
                             </label>
+                            <label className="flex items-center gap-2 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    checked={saveAsQuality}
+                                    onChange={(e) => setSaveAsQuality(e.target.checked)}
+                                    className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                />
+                                <span className="text-sm text-slate-300">品質テンプレートとして保存</span>
+                            </label>
                             <div className="text-xs text-slate-500">
                                 {(saveType === 'positive' ? selectedPositive.length : selectedNegative.length) === 0
                                     ? '現在のプロンプトは空です。'
@@ -327,6 +376,7 @@ const PromptOutput: React.FC = () => {
                                     onClick={() => {
                                         setFavoriteName('');
                                         setFavoriteNsfw(false);
+                                        setSaveAsQuality(false);
                                         setSaveType(null);
                                     }}
                                     className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
@@ -396,6 +446,80 @@ const PromptOutput: React.FC = () => {
                             <button
                                 type="button"
                                 onClick={() => setLoadType(null)}
+                                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {qualityType && (
+                <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                        <h3 className="text-lg font-bold mb-4 text-white">Quality Template</h3>
+                        <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-3 pr-1">
+                            {filteredQualityTemplates.filter(template => template.type === qualityType).length === 0 && (
+                                <div className="text-sm text-slate-500">No quality templates available.</div>
+                            )}
+                            {filteredQualityTemplates.filter(template => template.type === qualityType).map((template: PromptFavorite) => {
+                                const jpLabels = template.words.map(word => word.label_jp).filter(Boolean).join(', ');
+                                const prompt = formatPrompt(template.words);
+                                const isSelected = selectedQualityTemplateIds[qualityType] === template.id;
+                                return (
+                                    <div
+                                        key={template.id}
+                                        className={`border rounded-xl p-3 transition-all flex items-start justify-between gap-3 ${isSelected
+                                            ? 'border-cyan-500/60 bg-cyan-950/20'
+                                            : 'border-slate-800 hover:border-cyan-500/40 hover:bg-slate-900'
+                                            }`}
+                                    >
+                                        <button
+                                            onClick={() => {
+                                                selectQualityTemplate(qualityType, template.id);
+                                                setQualityType(null);
+                                            }}
+                                            className="text-left flex-1"
+                                        >
+                                            <div className="text-sm font-bold text-slate-200">{template.name}</div>
+                                            <div className="text-[11px] text-slate-500 mt-1">
+                                                {jpLabels || 'No labels'}
+                                            </div>
+                                            <div className="text-[11px] text-slate-500 mt-1">
+                                                {qualityType === 'positive' ? <span className="text-cyan-400">P:</span> : <span className="text-rose-400">N:</span>} {prompt || '-'}
+                                            </div>
+                                            {template.nsfw && (
+                                                <div className="text-[10px] text-red-400 mt-1">NSFW</div>
+                                            )}
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => removeQualityTemplate(template.id)}
+                                            className="text-slate-500 hover:text-rose-400"
+                                            title="Delete"
+                                        >
+                                            <TrashIcon className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        <div className="flex items-center justify-between mt-4">
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    if (!qualityType) return;
+                                    selectQualityTemplate(qualityType, null);
+                                    setQualityType(null);
+                                }}
+                                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                            >
+                                Clear Selection
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => setQualityType(null)}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
                                 Close

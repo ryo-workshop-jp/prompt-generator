@@ -6,6 +6,8 @@ import { PromptContext } from './PromptContextBase';
 const STORAGE_KEY = 'promptgen:data';
 const UI_STORAGE_KEY = 'promptgen:ui';
 const FAVORITES_KEY = 'promptgen:favorites';
+const QUALITY_KEY = 'promptgen:quality-templates';
+const QUALITY_SELECTION_KEY = 'promptgen:quality-selection';
 
 const readUiSettings = () => {
     try {
@@ -142,6 +144,31 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         } catch (e) {
             console.warn('Failed to load favorites, using defaults.', e);
             return [];
+        }
+    });
+    const [qualityTemplates, setQualityTemplates] = useState<PromptFavorite[]>(() => {
+        try {
+            const stored = localStorage.getItem(QUALITY_KEY);
+            if (!stored) return [];
+            const parsed = JSON.parse(stored) as PromptFavorite[];
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (e) {
+            console.warn('Failed to load quality templates, using defaults.', e);
+            return [];
+        }
+    });
+    const [selectedQualityTemplateIds, setSelectedQualityTemplateIds] = useState<{ positive: string | null; negative: string | null }>(() => {
+        try {
+            const stored = localStorage.getItem(QUALITY_SELECTION_KEY);
+            if (!stored) return { positive: null, negative: null };
+            const parsed = JSON.parse(stored) as { positive?: string | null; negative?: string | null };
+            return {
+                positive: parsed.positive ?? null,
+                negative: parsed.negative ?? null
+            };
+        } catch (e) {
+            console.warn('Failed to load quality selection, using defaults.', e);
+            return { positive: null, negative: null };
         }
     });
     const [nsfwEnabled, setNsfwEnabled] = useState<boolean>(() => {
@@ -325,6 +352,25 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         });
     };
 
+    const addQualityTemplate = (name: string, type: 'positive' | 'negative', words: SelectedWord[], nsfw: boolean) => {
+        const payload: PromptFavorite = {
+            id: Date.now().toString(),
+            name,
+            type,
+            words: words.map(word => ({ ...word, type })),
+            nsfw
+        };
+        setQualityTemplates(prev => {
+            const next = [payload, ...prev];
+            try {
+                localStorage.setItem(QUALITY_KEY, JSON.stringify(next));
+            } catch (e) {
+                console.warn('Failed to save quality templates.', e);
+            }
+            return next;
+        });
+    };
+
     const applyPromptFavorite = (favorite: PromptFavorite) => {
         if (favorite.type === 'positive') {
             setSelectedPositive(favorite.words.map(word => ({ ...word, type: 'positive' })));
@@ -340,6 +386,43 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
                 localStorage.setItem(FAVORITES_KEY, JSON.stringify(next));
             } catch (e) {
                 console.warn('Failed to save favorites.', e);
+            }
+            return next;
+        });
+    };
+
+    const removeQualityTemplate = (id: string) => {
+        setQualityTemplates(prev => {
+            const next = prev.filter(template => template.id !== id);
+            try {
+                localStorage.setItem(QUALITY_KEY, JSON.stringify(next));
+            } catch (e) {
+                console.warn('Failed to save quality templates.', e);
+            }
+            return next;
+        });
+        setSelectedQualityTemplateIds(prev => {
+            if (prev.positive !== id && prev.negative !== id) return prev;
+            const next = {
+                positive: prev.positive === id ? null : prev.positive,
+                negative: prev.negative === id ? null : prev.negative
+            };
+            try {
+                localStorage.setItem(QUALITY_SELECTION_KEY, JSON.stringify(next));
+            } catch (e) {
+                console.warn('Failed to save quality selection.', e);
+            }
+            return next;
+        });
+    };
+
+    const selectQualityTemplate = (type: 'positive' | 'negative', id: string | null) => {
+        setSelectedQualityTemplateIds(prev => {
+            const next = { ...prev, [type]: id };
+            try {
+                localStorage.setItem(QUALITY_SELECTION_KEY, JSON.stringify(next));
+            } catch (e) {
+                console.warn('Failed to save quality selection.', e);
             }
             return next;
         });
@@ -429,6 +512,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             selectedPositive,
             selectedNegative,
             favorites,
+            qualityTemplates,
             nsfwEnabled,
             showDescendantWords,
             autoNsfwOn,
@@ -442,6 +526,10 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             addPromptFavorite,
             applyPromptFavorite,
             removePromptFavorite,
+            addQualityTemplate,
+            removeQualityTemplate,
+            selectQualityTemplate,
+            selectedQualityTemplateIds,
             clearPositive,
             clearNegative,
             undo,
