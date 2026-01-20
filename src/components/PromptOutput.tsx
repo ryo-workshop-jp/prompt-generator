@@ -1,4 +1,5 @@
 ﻿import React, { useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { DndContext, KeyboardSensor, PointerSensor, closestCenter, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, rectSortingStrategy, sortableKeyboardCoordinates, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -192,6 +193,12 @@ const PromptOutput: React.FC = () => {
         reorderSelected(type, arrayMove(source, oldIndex, newIndex));
     };
 
+    const modalRoot = typeof document !== 'undefined' ? document.body : null;
+    const renderModal = (node: React.ReactNode) => {
+        if (!modalRoot) return null;
+        return createPortal(node, modalRoot);
+    };
+
     return (
         <div className="h-full flex flex-col p-4 gap-3">
             <div className="flex flex-1 gap-4">
@@ -365,7 +372,7 @@ const PromptOutput: React.FC = () => {
             </div>
             </div>
 
-            {saveType && (
+            {saveType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <h3 className="text-lg font-bold mb-4 text-white">Save Favorite</h3>
@@ -429,7 +436,7 @@ const PromptOutput: React.FC = () => {
                 </div>
             )}
 
-            {loadType && (
+            {loadType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <h3 className="text-lg font-bold mb-4 text-white">Load Favorite</h3>
@@ -488,7 +495,7 @@ const PromptOutput: React.FC = () => {
                 </div>
             )}
 
-            {qualityType && (
+            {qualityType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <h3 className="text-lg font-bold mb-4 text-white">Quality Template</h3>
@@ -562,7 +569,7 @@ const PromptOutput: React.FC = () => {
                 </div>
             )}
 
-            {expandType && (
+            {expandType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-3xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <div className="flex items-center justify-between mb-4">
@@ -609,6 +616,8 @@ const PromptOutput: React.FC = () => {
 };
 
 export default PromptOutput;
+
+
 
 
 
