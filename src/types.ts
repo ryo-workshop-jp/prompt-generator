@@ -15,6 +15,7 @@ export interface WordItem {
     note?: string;
     favorite?: boolean;
     templateId?: string;
+    templateIds?: string[];
     templatePrefix?: string;
     templateSuffix?: string;
 }

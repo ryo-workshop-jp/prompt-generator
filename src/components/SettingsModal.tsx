@@ -1,5 +1,5 @@
-﻿import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { usePrompt } from '../context/PromptContext';
+﻿import React, { useMemo, useRef, useState } from 'react';
+import { usePrompt } from '../context/usePrompt';
 import type { FolderItem, WordItem, TemplateItem, TemplateOption } from '../types';
 
 
@@ -12,24 +12,8 @@ const TemplateModal: React.FC<{
     const [name, setName] = useState(template?.name ?? '');
     const [options, setOptions] = useState<TemplateOption[]>(template?.options ?? []);
     const [allowFree, setAllowFree] = useState(!!template?.allowFree);
-    const [defaultOptionId, setDefaultOptionId] = useState(template?.defaultOptionId ?? '');
     const [newLabel, setNewLabel] = useState('');
     const [newValue, setNewValue] = useState('');
-
-    useEffect(() => {
-        setName(template?.name ?? '');
-        setOptions(template?.options ?? []);
-        setAllowFree(!!template?.allowFree);
-        setDefaultOptionId(template?.defaultOptionId ?? '');
-        setNewLabel('');
-        setNewValue('');
-    }, [template]);
-
-    useEffect(() => {
-        if (defaultOptionId && options.every(option => option.id !== defaultOptionId)) {
-            setDefaultOptionId('');
-        }
-    }, [defaultOptionId, options]);
 
     const canSave = useMemo(() => name.trim().length > 0, [name]);
 
@@ -42,7 +26,6 @@ const TemplateModal: React.FC<{
         const id = Date.now().toString();
         const next = [...options, { id, label, value }];
         setOptions(next);
-        if (!defaultOptionId) setDefaultOptionId(id);
         setNewLabel('');
         setNewValue('');
     };
@@ -53,8 +36,7 @@ const TemplateModal: React.FC<{
             id: template?.id ?? Date.now().toString(),
             name: name.trim(),
             options,
-            allowFree,
-            defaultOptionId: defaultOptionId || undefined
+            allowFree
         };
         onSave(payload);
         onClose();
@@ -62,12 +44,12 @@ const TemplateModal: React.FC<{
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-bold text-white">{template ? '前置語を編集' : '前置語を追加'}</h3>
                     <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
                 </div>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 overflow-y-auto pr-1">
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">前置語名</label>
                         <input
@@ -149,22 +131,7 @@ const TemplateModal: React.FC<{
                             ))}
                         </div>
                     </div>
-                    <div>
-                        <label className="block text-xs text-slate-400 mb-1">デフォルト</label>
-                        <select
-                            value={defaultOptionId}
-                            onChange={(event) => setDefaultOptionId(event.target.value)}
-                            className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                        >
-                            <option value="">未設定</option>
-                            {options.map(option => (
-                                <option key={option.id} value={option.id}>
-                                    {option.label}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 sticky bottom-0 bg-slate-900 pt-2">
                         <button
                             type="button"
                             onClick={onClose}
@@ -406,6 +373,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 </div>
             </div>
             <TemplateModal
+                key={editingTemplate?.id ?? 'new'}
                 isOpen={isTemplateModalOpen}
                 template={editingTemplate}
                 onClose={() => setIsTemplateModalOpen(false)}
@@ -422,3 +390,5 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 };
 
 export default SettingsModal;
+
+

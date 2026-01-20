@@ -2,7 +2,7 @@
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { usePrompt } from '../context/PromptContext';
+import { usePrompt } from '../context/usePrompt';
 import CategoryNav from './CategoryNav';
 import WordGrid, { WordCard } from './WordGrid';
 import PromptOutput from './PromptOutput';
@@ -37,9 +37,9 @@ const AddNodeModal: React.FC<{
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-sm shadow-2xl">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-sm shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <h3 className="text-lg font-bold mb-4 text-white">{title}</h3>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 overflow-y-auto pr-1">
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">Name (Display)</label>
                         <input
@@ -70,7 +70,7 @@ const AddNodeModal: React.FC<{
                         />
                         <span className="text-sm text-slate-300">NSFW content</span>
                     </label>
-                    <div className="flex gap-2 mt-2">
+                    <div className="flex gap-2 mt-2 sticky bottom-0 bg-slate-900 pt-2">
                         <button type="button" onClick={onClose} className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700">
                             Cancel
                         </button>
@@ -92,11 +92,6 @@ const EditFolderModal: React.FC<{
     const [name, setName] = useState(folder?.name ?? '');
     const [nsfw, setNsfw] = useState(folder?.nsfw ?? false);
 
-    useEffect(() => {
-        setName(folder?.name ?? '');
-        setNsfw(folder?.nsfw ?? false);
-    }, [folder]);
-
     if (!folder) return null;
 
     const handleSubmit = (event: React.FormEvent) => {
@@ -108,9 +103,9 @@ const EditFolderModal: React.FC<{
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-sm shadow-2xl">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-sm shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <h3 className="text-lg font-bold mb-4 text-white">Edit Folder</h3>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 overflow-y-auto pr-1">
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">Name</label>
                         <input
@@ -130,7 +125,7 @@ const EditFolderModal: React.FC<{
                         />
                         <span className="text-sm text-slate-300">NSFW content</span>
                     </label>
-                    <div className="flex gap-2 mt-2">
+                    <div className="flex gap-2 mt-2 sticky bottom-0 bg-slate-900 pt-2">
                         <button type="button" onClick={onClose} className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700">
                             Cancel
                         </button>
@@ -300,13 +295,13 @@ const Layout: React.FC = () => {
         setActiveFolderId(id);
     };
 
-    const handleNavigateUp = () => {
+    const handleNavigateUp = React.useCallback(() => {
         if (activeFolderId === 'root') return;
         const currentFolder = folderById.get(activeFolderId);
         const parentId = currentFolder?.parentId ?? 'root';
         setActiveFolderId(parentId || 'root');
         setSearchQuery('');
-    };
+    }, [activeFolderId, folderById]);
 
     const normalizeName = (value: string) => value.trim().toLowerCase();
 
@@ -517,7 +512,7 @@ const Layout: React.FC = () => {
         window.history.pushState({ app: true, folderId: activeFolderId }, '', window.location.href);
     }, [activeFolderId]);
 
-    const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateId?: string, templatePrefix?: string, templateSuffix?: string) => {
+    const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[], templatePrefix?: string, templateSuffix?: string) => {
         if (hasDuplicateWordLabel(label, activeFolderId)) {
             alert('同じフォルダ内に同じ名前の語句は作成できません。');
             return;
@@ -530,7 +525,7 @@ const Layout: React.FC = () => {
             nsfw,
             note,
             favorite: false,
-            templateId: templateId || undefined,
+            templateIds: templateIds && templateIds.length > 0 ? templateIds : undefined,
             templatePrefix: templatePrefix || undefined,
             templateSuffix: templateSuffix || undefined
         });
@@ -748,6 +743,7 @@ const Layout: React.FC = () => {
 
             <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
             <EditFolderModal
+                key={editingFolder?.id ?? 'none'}
                 folder={editingFolder}
                 onClose={() => setEditingFolder(null)}
                 onSave={(updates) => {
@@ -773,6 +769,5 @@ const Layout: React.FC = () => {
 };
 
 export default Layout;
-
 
 

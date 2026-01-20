@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo, useState } from 'react';
+﻿import React, { useMemo, useState } from 'react';
 import type { WordItem, TemplateItem } from '../types';
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { PlusIcon, MinusIcon, PlusSmallIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid';
 import { StarIcon, Cog6ToothIcon, TrashIcon, Bars3Icon } from '@heroicons/react/24/outline';
-import { usePrompt } from '../context/PromptContext';
+import { usePrompt } from '../context/usePrompt';
 
 type WordCardProps = {
     word: WordItem;
@@ -18,83 +18,89 @@ type WordCardProps = {
 
 const TemplateSelectModal: React.FC<{
     word: WordItem;
-    template: TemplateItem | null;
+    templates: TemplateItem[];
     isOpen: boolean;
     onClose: () => void;
     onApply: (label: string, value: string) => void;
-}> = ({ word, template, isOpen, onClose, onApply }) => {
+}> = ({ word, templates, isOpen, onClose, onApply }) => {
     const [freeValue, setFreeValue] = useState('');
+    const [selectedTemplateId, setSelectedTemplateId] = useState(() => templates[0]?.id ?? '');
 
-    useEffect(() => {
-        if (!isOpen) return;
-        setFreeValue('');
-    }, [isOpen, word.id]);
+    const activeTemplate = useMemo(() => {
+        if (templates.length === 0) return null;
+        return templates.find(item => item.id === selectedTemplateId) ?? templates[0];
+    }, [templates, selectedTemplateId]);
 
     if (!isOpen) return null;
 
-    const defaultOption = template?.options.find(option => option.id === template.defaultOptionId);
-
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-lg shadow-2xl">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-lg shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <div className="flex items-center justify-between mb-4">
                     <div>
-                        <h3 className="text-lg font-bold text-white">前置語</h3>
-                        <div className="text-xs text-slate-500">{word.label_jp}</div>
+                        <h3 className="text-lg font-bold text-white">Template</h3>
+                        <div className="text-xs text-slate-500">{word.label_jp}{activeTemplate ? ` / ${activeTemplate.name}` : ''}</div>
                     </div>
                     <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
                 </div>
-                {!template && (
-                    <div className="text-sm text-slate-400">前置語が見つかりません。</div>
-                )}
-                {template && (
-                    <div className="flex flex-col gap-3">
-                        {defaultOption && (
-                            <button
-                                type="button"
-                                onClick={() => onApply(defaultOption.label || defaultOption.value, defaultOption.value)}
-                                className="w-full px-3 py-2 rounded-lg border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 text-sm"
-                            >
-                                デフォルト: {defaultOption.label}
-                            </button>
-                        )}
-                        <div className="grid grid-cols-2 gap-2">
-                            {template.options.map(option => (
-                                <button
-                                    key={option.id}
-                                    type="button"
-                                    onClick={() => onApply(option.label || option.value, option.value)}
-                                    className="px-3 py-2 rounded-lg border border-slate-700 bg-slate-950 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-900 text-sm"
-                                >
-                                    <div className="font-semibold">{option.label}</div>
-                                    <div className="text-[10px] text-slate-500">{option.value}</div>
-                                </button>
-                            ))}
-                        </div>
-                        {template.allowFree && (
-                            <div className="flex items-center gap-2">
-                                <input
-                                    type="text"
-                                    value={freeValue}
-                                    onChange={(event) => setFreeValue(event.target.value)}
-                                    className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
-                                    placeholder="自由入力"
-                                />
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        const trimmed = freeValue.trim();
-                                        if (!trimmed) return;
-                                        onApply(trimmed, trimmed);
-                                    }}
-                                    className="px-3 py-2 rounded-lg bg-slate-700 text-slate-200 hover:bg-slate-600 text-sm"
-                                >
-                                    追加
-                                </button>
+                <div className="overflow-y-auto pr-1">
+                    {!activeTemplate && (
+                        <div className="text-sm text-slate-400">No templates found.</div>
+                    )}
+                    {activeTemplate && (
+                        <div className="flex flex-col gap-3">
+                            {templates.length > 1 && (
+                                <div className="flex flex-wrap gap-2">
+                                    {templates.map(template => (
+                                        <button
+                                            key={template.id}
+                                            type="button"
+                                            onClick={() => setSelectedTemplateId(template.id)}
+                                            className={`px-3 py-1 rounded-full border text-xs ${template.id === activeTemplate.id ? 'border-cyan-500 text-cyan-300 bg-cyan-500/10' : 'border-slate-700 text-slate-300 bg-slate-950'}`}
+                                        >
+                                            {template.name}
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+                            <div className="grid grid-cols-2 gap-2">
+                                {activeTemplate.options.map(option => (
+                                    <button
+                                        key={option.id}
+                                        type="button"
+                                        onClick={() => onApply(option.label || option.value, option.value)}
+                                        className="px-3 py-2 rounded-lg border border-slate-700 bg-slate-950 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-900 text-sm"
+                                    >
+                                        <div className="font-semibold">{option.label}</div>
+                                        <div className="text-[10px] text-slate-500">{option.value}</div>
+                                    </button>
+                                ))}
                             </div>
-                        )}
-                    </div>
-                )}
+                            {activeTemplate.allowFree && (
+                                <div className="flex items-center gap-2">
+                                    <input
+                                        type="text"
+                                        value={freeValue}
+                                        onChange={(event) => setFreeValue(event.target.value)}
+                                        className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
+                                        placeholder="Custom"
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            const trimmed = freeValue.trim();
+                                            if (!trimmed) return;
+                                            onApply(trimmed, trimmed);
+                                        }}
+                                        className="px-3 py-2 rounded-lg bg-slate-700 text-slate-200 hover:bg-slate-600 text-sm"
+                                    >
+                                        Add
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );
@@ -104,10 +110,16 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
     const { addWord, removeWord, updateWordStrength, toggleFavorite, selectedPositive, selectedNegative, templates } = usePrompt();
     const [isTemplateOpen, setIsTemplateOpen] = useState(false);
 
-    const template = useMemo(() => {
-        if (!word.templateId) return null;
-        return templates.find(item => item.id === word.templateId) ?? null;
-    }, [templates, word.templateId]);
+    const templateIds = useMemo(() => {
+        if (word.templateIds && word.templateIds.length > 0) return word.templateIds;
+        return word.templateId ? [word.templateId] : [];
+    }, [word.templateId, word.templateIds]);
+
+    const templatesForWord = useMemo(() => {
+        if (templateIds.length === 0) return [];
+        const lookup = new Map(templates.map(item => [item.id, item]));
+        return templateIds.map(id => lookup.get(id)).filter((item): item is TemplateItem => !!item);
+    }, [templateIds, templates]);
 
     const makeTemplateId = (value: string) => {
         const normalized = value.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 24);
@@ -126,6 +138,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
             value_en: finalValue,
             label_jp: finalLabel,
             templateId: undefined,
+            templateIds: undefined,
             templatePrefix: undefined,
             templateSuffix: undefined
         };
@@ -285,7 +298,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
                 )}
                 {!editMode && (
                     <>
-                    {template && (
+                    {templatesForWord.length > 0 && (
                         <button
                             type="button"
                             onClick={(event) => {
@@ -338,8 +351,9 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
             )}
         </button>
         <TemplateSelectModal
+            key={`${word.id}-${isTemplateOpen ? 'open' : 'closed'}`}
             word={word}
-            template={template}
+            templates={templatesForWord}
             isOpen={isTemplateOpen}
             onClose={() => setIsTemplateOpen(false)}
             onApply={applyTemplate}
@@ -351,28 +365,33 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
 const AddWordModal: React.FC<{
     isOpen: boolean;
     onClose: () => void;
-    onAdd: (label: string, value: string, nsfw: boolean, note?: string, templateId?: string, templatePrefix?: string, templateSuffix?: string) => void;
+    onAdd: (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[], templatePrefix?: string, templateSuffix?: string) => void;
     templates: TemplateItem[];
 }> = ({ isOpen, onClose, onAdd, templates }) => {
     const [label, setLabel] = useState('');
     const [value, setValue] = useState('');
     const [note, setNote] = useState('');
     const [nsfw, setNsfw] = useState(false);
-    const [templateId, setTemplateId] = useState('');
+    const [templateIds, setTemplateIds] = useState<string[]>([]);
     const [templatePrefix, setTemplatePrefix] = useState('');
     const [templateSuffix, setTemplateSuffix] = useState('');
 
     if (!isOpen) return null;
 
+    const toggleTemplateId = (id: string) => {
+        setTemplateIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!label || !value) return;
-        onAdd(label, value, nsfw, note, templateId || undefined, templatePrefix || undefined, templateSuffix || undefined);
+        const hasTemplates = templateIds.length > 0;
+        onAdd(label, value, nsfw, note, hasTemplates ? templateIds : undefined, hasTemplates ? (templatePrefix || undefined) : undefined, hasTemplates ? (templateSuffix || undefined) : undefined);
         setLabel('');
         setValue('');
         setNote('');
         setNsfw(false);
-        setTemplateId('');
+        setTemplateIds([]);
         setTemplatePrefix('');
         setTemplateSuffix('');
         onClose();
@@ -380,9 +399,9 @@ const AddWordModal: React.FC<{
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <h3 className="text-lg font-bold mb-4 text-white">Add New Word</h3>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 overflow-y-auto pr-1">
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">Japanese Label</label>
                         <input
@@ -390,7 +409,7 @@ const AddWordModal: React.FC<{
                             value={label}
                             onChange={e => setLabel(e.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                            placeholder="e.g. 魔法少女"
+                            placeholder="e.g. ????"
                             required
                         />
                     </div>
@@ -425,29 +444,28 @@ const AddWordModal: React.FC<{
                         <span className="text-sm text-slate-300">NSFW content</span>
                     </label>
                     <div>
-                        <label className="block text-xs text-slate-400 mb-1">前置語（任意）</label>
-                        <select
-                            value={templateId}
-                            onChange={(event) => {
-                                const next = event.target.value;
-                                setTemplateId(next);
-                                if (!next) {
-                                    setTemplatePrefix('');
-                                    setTemplateSuffix('');
-                                }
-                            }}
-                            className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                        >
-                            <option value="">未設定</option>
+                        <label className="block text-xs text-slate-400 mb-1">Templates (Optional)</label>
+                        <div className="bg-slate-950 border border-slate-700 rounded-lg p-2 max-h-32 overflow-y-auto custom-scrollbar">
+                            {templates.length === 0 && (
+                                <div className="text-xs text-slate-500">No templates available.</div>
+                            )}
                             {templates.map(template => (
-                                <option key={template.id} value={template.id}>{template.name}</option>
+                                <label key={template.id} className="flex items-center gap-2 text-sm text-slate-300">
+                                    <input
+                                        type="checkbox"
+                                        checked={templateIds.includes(template.id)}
+                                        onChange={() => toggleTemplateId(template.id)}
+                                        className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                    />
+                                    <span>{template.name}</span>
+                                </label>
                             ))}
-                        </select>
+                        </div>
                     </div>
-                    {templateId && (
+                    {templateIds.length > 0 && (
                         <div className="grid grid-cols-2 gap-2">
                             <div>
-                                <label className="block text-xs text-slate-400 mb-1">前置</label>
+                                <label className="block text-xs text-slate-400 mb-1">Prefix</label>
                                 <input
                                     type="text"
                                     value={templatePrefix}
@@ -457,7 +475,7 @@ const AddWordModal: React.FC<{
                                 />
                             </div>
                             <div>
-                                <label className="block text-xs text-slate-400 mb-1">後置</label>
+                                <label className="block text-xs text-slate-400 mb-1">Suffix</label>
                                 <input
                                     type="text"
                                     value={templateSuffix}
@@ -469,7 +487,7 @@ const AddWordModal: React.FC<{
                         </div>
                     )}
 
-                    <div className="flex gap-2 mt-2">
+                    <div className="flex gap-2 mt-2 sticky bottom-0 bg-slate-900 pt-2">
                         <button
                             type="button"
                             onClick={onClose}
@@ -493,52 +511,53 @@ const AddWordModal: React.FC<{
 const EditWordModal: React.FC<{
     word: WordItem | null;
     onClose: () => void;
-    onSave: (updates: { label_jp: string; value_en: string; nsfw: boolean; note?: string; favorite?: boolean; templateId?: string; templatePrefix?: string; templateSuffix?: string }) => void;
+    onSave: (updates: { label_jp: string; value_en: string; nsfw: boolean; note?: string; favorite?: boolean; templateId?: string; templateIds?: string[]; templatePrefix?: string; templateSuffix?: string }) => void;
     templates: TemplateItem[];
 }> = ({ word, onClose, onSave, templates }) => {
+    const extractTemplateIds = (target: WordItem | null) => {
+        if (!target) return [] as string[];
+        if (target.templateIds && target.templateIds.length > 0) return target.templateIds;
+        return target.templateId ? [target.templateId] : [];
+    };
+
     const [label, setLabel] = useState(word?.label_jp ?? '');
     const [value, setValue] = useState(word?.value_en ?? '');
     const [note, setNote] = useState(word?.note ?? '');
     const [nsfw, setNsfw] = useState(word?.nsfw ?? false);
     const [favorite, setFavorite] = useState(word?.favorite ?? false);
-    const [templateId, setTemplateId] = useState(word?.templateId ?? '');
+    const [templateIds, setTemplateIds] = useState<string[]>(extractTemplateIds(word ?? null));
     const [templatePrefix, setTemplatePrefix] = useState(word?.templatePrefix ?? '');
     const [templateSuffix, setTemplateSuffix] = useState(word?.templateSuffix ?? '');
 
-    useEffect(() => {
-        setLabel(word?.label_jp ?? '');
-        setValue(word?.value_en ?? '');
-        setNote(word?.note ?? '');
-        setNsfw(word?.nsfw ?? false);
-        setFavorite(word?.favorite ?? false);
-        setTemplateId(word?.templateId ?? '');
-        setTemplatePrefix(word?.templatePrefix ?? '');
-        setTemplateSuffix(word?.templateSuffix ?? '');
-    }, [word]);
-
     if (!word) return null;
+
+    const toggleTemplateId = (id: string) => {
+        setTemplateIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
+    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!label || !value) return;
+        const hasTemplates = templateIds.length > 0;
         onSave({
             label_jp: label,
             value_en: value,
             nsfw,
             note,
             favorite,
-            templateId: templateId || undefined,
-            templatePrefix: templatePrefix || undefined,
-            templateSuffix: templateSuffix || undefined
+            templateId: undefined,
+            templateIds: hasTemplates ? templateIds : undefined,
+            templatePrefix: hasTemplates ? (templatePrefix || undefined) : undefined,
+            templateSuffix: hasTemplates ? (templateSuffix || undefined) : undefined
         });
         onClose();
     };
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <h3 className="text-lg font-bold mb-4 text-white">Edit Word</h3>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 overflow-y-auto pr-1">
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">Japanese Label</label>
                         <input
@@ -587,29 +606,28 @@ const EditWordModal: React.FC<{
                         <span className="text-sm text-slate-300">Favorite</span>
                     </label>
                     <div>
-                        <label className="block text-xs text-slate-400 mb-1">前置語（任意）</label>
-                        <select
-                            value={templateId}
-                            onChange={(event) => {
-                                const next = event.target.value;
-                                setTemplateId(next);
-                                if (!next) {
-                                    setTemplatePrefix('');
-                                    setTemplateSuffix('');
-                                }
-                            }}
-                            className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                        >
-                            <option value="">未設定</option>
+                        <label className="block text-xs text-slate-400 mb-1">Templates (Optional)</label>
+                        <div className="bg-slate-950 border border-slate-700 rounded-lg p-2 max-h-32 overflow-y-auto custom-scrollbar">
+                            {templates.length === 0 && (
+                                <div className="text-xs text-slate-500">No templates available.</div>
+                            )}
                             {templates.map(template => (
-                                <option key={template.id} value={template.id}>{template.name}</option>
+                                <label key={template.id} className="flex items-center gap-2 text-sm text-slate-300">
+                                    <input
+                                        type="checkbox"
+                                        checked={templateIds.includes(template.id)}
+                                        onChange={() => toggleTemplateId(template.id)}
+                                        className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                    />
+                                    <span>{template.name}</span>
+                                </label>
                             ))}
-                        </select>
+                        </div>
                     </div>
-                    {templateId && (
+                    {templateIds.length > 0 && (
                         <div className="grid grid-cols-2 gap-2">
                             <div>
-                                <label className="block text-xs text-slate-400 mb-1">前置</label>
+                                <label className="block text-xs text-slate-400 mb-1">Prefix</label>
                                 <input
                                     type="text"
                                     value={templatePrefix}
@@ -619,7 +637,7 @@ const EditWordModal: React.FC<{
                                 />
                             </div>
                             <div>
-                                <label className="block text-xs text-slate-400 mb-1">後置</label>
+                                <label className="block text-xs text-slate-400 mb-1">Suffix</label>
                                 <input
                                     type="text"
                                     value={templateSuffix}
@@ -631,7 +649,7 @@ const EditWordModal: React.FC<{
                         </div>
                     )}
 
-                    <div className="flex gap-2 mt-2">
+                    <div className="flex gap-2 mt-2 sticky bottom-0 bg-slate-900 pt-2">
                         <button
                             type="button"
                             onClick={onClose}
@@ -672,7 +690,7 @@ const SortableWordCard: React.FC<WordCardProps & { id: string }> = ({ id, ...pro
 
 const WordGrid: React.FC<{
     words: WordItem[];
-    onAddWord: (label: string, value: string, nsfw: boolean, note?: string, templateId?: string, templatePrefix?: string, templateSuffix?: string) => void;
+    onAddWord: (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[], templatePrefix?: string, templateSuffix?: string) => void;
     folderPathForWord?: (word: WordItem) => string;
     editMode?: boolean;
     onEditWord?: (word: WordItem) => void;
@@ -694,8 +712,8 @@ const WordGrid: React.FC<{
         return words;
     }, [words]);
 
-    const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateId?: string, templatePrefix?: string, templateSuffix?: string) => {
-        onAddWord(label, value, nsfw, note, templateId, templatePrefix, templateSuffix);
+    const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[], templatePrefix?: string, templateSuffix?: string) => {
+        onAddWord(label, value, nsfw, note, templateIds, templatePrefix, templateSuffix);
     };
 
     return (
@@ -760,6 +778,7 @@ const WordGrid: React.FC<{
                 templates={templates}
             />
             <EditWordModal
+                key={editingWord?.id ?? 'none'}
                 word={editingWord}
                 onClose={() => setEditingWord(null)}
                 onSave={(updates) => {
@@ -773,3 +792,5 @@ const WordGrid: React.FC<{
 };
 
 export default WordGrid;
+
+

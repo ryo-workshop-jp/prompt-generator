@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { usePrompt } from '../context/PromptContext';
+﻿import React, { useMemo, useState } from 'react';
+import { usePrompt } from '../context/usePrompt';
 import type { SelectedWord, PromptStrength, PromptFavorite } from '../types';
 import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon } from '@heroicons/react/24/outline';
 
@@ -77,6 +77,20 @@ const PromptOutput: React.FC = () => {
         return favorites.filter(fav => (nsfwEnabled ? true : !fav.nsfw));
     }, [favorites, nsfwEnabled]);
 
+    const inferFavoriteNsfw = (source: SelectedWord[]) => {
+        return source.some(word => {
+            const jp = word.label_jp?.toLowerCase();
+            const en = word.value_en?.toLowerCase();
+            return word.nsfw || jp === 'nsfw' || en === 'nsfw';
+        });
+    };
+
+    const openSaveModal = (type: 'positive' | 'negative') => {
+        const source = type === 'positive' ? selectedPositive : selectedNegative;
+        setFavoriteNsfw(inferFavoriteNsfw(source));
+        setSaveType(type);
+    };
+
     const handleCopy = (text: string, type: 'pos' | 'neg') => {
         navigator.clipboard.writeText(text);
         setCopyFeedback(type);
@@ -93,17 +107,6 @@ const PromptOutput: React.FC = () => {
         setSaveType(null);
     };
 
-    useEffect(() => {
-        if (!saveType) return;
-        const source = saveType === 'positive' ? selectedPositive : selectedNegative;
-        const hasNsfwWord = source.some(word => {
-            const jp = word.label_jp?.toLowerCase();
-            const en = word.value_en?.toLowerCase();
-            return word.nsfw || jp === 'nsfw' || en === 'nsfw';
-        });
-        setFavoriteNsfw(hasNsfwWord);
-    }, [saveType, selectedPositive, selectedNegative]);
-
     return (
         <div className="h-full flex flex-col p-4 gap-3">
             <div className="flex flex-1 gap-4">
@@ -113,7 +116,7 @@ const PromptOutput: React.FC = () => {
                     <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-wider">Positive Prompt</h3>
                     <div className="flex items-center gap-2">
                         <button
-                            onClick={() => setSaveType('positive')}
+                            onClick={() => openSaveModal('positive')}
                             className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
                             <BookmarkIcon className="w-4 h-4" /> Add
@@ -167,7 +170,7 @@ const PromptOutput: React.FC = () => {
                     <h3 className="text-sm font-bold text-rose-400 uppercase tracking-wider">Negative Prompt</h3>
                     <div className="flex items-center gap-2">
                         <button
-                            onClick={() => setSaveType('negative')}
+                            onClick={() => openSaveModal('negative')}
                             className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
                             <BookmarkIcon className="w-4 h-4" /> Add
@@ -218,9 +221,9 @@ const PromptOutput: React.FC = () => {
 
             {saveType && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <h3 className="text-lg font-bold mb-4 text-white">Save Favorite</h3>
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4 overflow-y-auto pr-1">
                             <div>
                                 <label className="block text-xs text-slate-400 mb-1">Favorite Name</label>
                                 <input
@@ -228,7 +231,7 @@ const PromptOutput: React.FC = () => {
                                     value={favoriteName}
                                     onChange={(e) => setFavoriteName(e.target.value)}
                                     className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                                    placeholder="(空欄なら選択語群名)"
+                                    placeholder="(未入力の場合は自動生成)"
                                 />
                             </div>
                             <label className="flex items-center gap-2 cursor-pointer">
@@ -238,14 +241,14 @@ const PromptOutput: React.FC = () => {
                                     onChange={(e) => setFavoriteNsfw(e.target.checked)}
                                     className="rounded bg-slate-800 border-slate-600 text-red-500 focus:ring-red-500/50"
                                 />
-                                <span className="text-sm text-slate-300">NSFWお気に入り</span>
+                                <span className="text-sm text-slate-300">NSFWを含む</span>
                             </label>
                             <div className="text-xs text-slate-500">
                                 {(saveType === 'positive' ? selectedPositive.length : selectedNegative.length) === 0
                                     ? '現在のプロンプトは空です。'
-                                    : `選択中: ${saveType === 'positive' ? selectedPositive.length : selectedNegative.length}`}
+                                    : `選択語数: ${saveType === 'positive' ? selectedPositive.length : selectedNegative.length}`}
                             </div>
-                            <div className="flex gap-2 mt-2">
+                            <div className="flex gap-2 mt-2 sticky bottom-0 bg-slate-900 pt-2">
                                 <button
                                     type="button"
                                     onClick={() => {
@@ -272,9 +275,9 @@ const PromptOutput: React.FC = () => {
 
             {loadType && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <h3 className="text-lg font-bold mb-4 text-white">Load Favorite</h3>
-                        <div className="max-h-[60vh] overflow-y-auto custom-scrollbar flex flex-col gap-3">
+                        <div className="flex-1 max-h-[60vh] overflow-y-auto custom-scrollbar flex flex-col gap-3 pr-1">
                             {filteredFavorites.filter(fav => fav.type === loadType).length === 0 && (
                                 <div className="text-sm text-slate-500">No favorites available.</div>
                             )}
@@ -316,7 +319,7 @@ const PromptOutput: React.FC = () => {
                                 );
                             })}
                         </div>
-                        <div className="flex justify-end mt-4">
+                        <div className="flex justify-end mt-4 sticky bottom-0 bg-slate-900 pt-2">
                             <button
                                 type="button"
                                 onClick={() => setLoadType(null)}
@@ -333,3 +336,5 @@ const PromptOutput: React.FC = () => {
 };
 
 export default PromptOutput;
+
+

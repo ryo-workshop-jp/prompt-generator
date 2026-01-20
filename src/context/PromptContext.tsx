@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import type { DataStore, FolderItem, SelectedWord, PromptStrength, WordItem, PromptFavorite, TemplateItem } from '../types';
+﻿import React, { useEffect, useState, type ReactNode } from 'react';
+import type { DataStore, SelectedWord, PromptStrength, WordItem, PromptFavorite, TemplateItem } from '../types';
 import { initialData } from '../data/initialData';
+import { PromptContext } from './PromptContextBase';
 
 const STORAGE_KEY = 'promptgen:data';
 const UI_STORAGE_KEY = 'promptgen:ui';
@@ -24,6 +25,7 @@ const readUiSettings = () => {
 const writeUiSettings = (updates: {
     showDescendantWords?: boolean;
     autoNsfwOn?: boolean;
+    nsfwEnabled?: boolean;
 }) => {
     try {
         const current = readUiSettings();
@@ -81,43 +83,6 @@ const ensureUniqueFolderIds = (input: DataStore): DataStore => {
     if (!changed) return input;
     return { folders: normalizedFolders, words: normalizedWords, templates: input.templates };
 };
-
-interface PromptContextType {
-    folders: FolderItem[];
-    words: WordItem[];
-    selectedPositive: SelectedWord[];
-    selectedNegative: SelectedWord[];
-    favorites: PromptFavorite[];
-    templates: TemplateItem[];
-    nsfwEnabled: boolean;
-    showDescendantWords: boolean;
-    autoNsfwOn: boolean;
-    toggleNsfw: () => void;
-    toggleShowDescendantWords: () => void;
-    toggleAutoNsfwOn: () => void;
-    addWord: (word: WordItem, type: 'positive' | 'negative', strength?: PromptStrength) => void;
-    removeWord: (id: string, type: 'positive' | 'negative') => void;
-    updateWordStrength: (id: string, type: 'positive' | 'negative', strength: PromptStrength) => void;
-    toggleFavorite: (id: string) => void;
-    addPromptFavorite: (name: string, type: 'positive' | 'negative', words: SelectedWord[], nsfw: boolean) => void;
-    applyPromptFavorite: (favorite: PromptFavorite) => void;
-    removePromptFavorite: (id: string) => void;
-    clearPositive: () => void;
-    clearNegative: () => void;
-    undo: () => void;
-    canUndo: boolean;
-    clearAll: () => void;
-    addWordToFolder: (folderId: string, newWord: WordItem) => void;
-    addFolder: (name: string, id: string, parentId: string, nsfw?: boolean) => void;
-    addTemplate: (template: TemplateItem) => void;
-    updateTemplate: (template: TemplateItem) => void;
-    removeTemplate: (id: string) => void;
-    setData: (data: DataStore) => void;
-    saveChanges: () => Promise<boolean>;
-    hasUnsavedChanges: boolean;
-}
-
-const PromptContext = createContext<PromptContextType | undefined>(undefined);
 
 export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [data, setDataState] = useState<DataStore>(() => {
@@ -290,10 +255,12 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             ...prev,
             templates: prev.templates.filter(item => item.id !== id),
             words: prev.words.map(word => {
-                if (word.templateId !== id) return word;
+                if (word.templateId !== id && !(word.templateIds ?? []).includes(id)) return word;
+                const nextTemplateIds = (word.templateIds ?? []).filter(item => item !== id);
                 return {
                     ...word,
-                    templateId: undefined,
+                    templateId: word.templateId === id ? undefined : word.templateId,
+                    templateIds: nextTemplateIds.length > 0 ? nextTemplateIds : undefined,
                     templatePrefix: undefined,
                     templateSuffix: undefined
                 };
@@ -387,7 +354,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         setHasUnsavedChanges(true);
     };
 
-    function getNsfwWord() {
+    const getNsfwWord = React.useCallback(() => {
         const found = data.words.find(word => {
             const id = word.id?.toLowerCase();
             const jp = word.label_jp?.toLowerCase();
@@ -402,7 +369,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             value_en: 'nsfw',
             nsfw: true
         };
-    }
+    }, [data.words]);
 
     const clearAll = () => {
         if (nsfwEnabled && autoNsfwOn) {
@@ -433,12 +400,13 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
         const shouldPositive = nsfwEnabled && autoNsfwOn;
 
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setSelectedPositive(prev => {
             if (!shouldPositive) return prev.filter(w => w.id !== nsfwWord.id);
             if (prev.some(w => w.id === nsfwWord.id)) return prev;
             return [...prev, { ...nsfwWord, type: 'positive', strength: 1.0 }];
         });
-    }, [data.words, nsfwEnabled, autoNsfwOn]);
+    }, [autoNsfwOn, getNsfwWord, nsfwEnabled]);
 
     useEffect(() => {
         if (!hasUnsavedChanges) return;
@@ -487,10 +455,4 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     );
 };
 
-export const usePrompt = () => {
-    const context = useContext(PromptContext);
-    if (context === undefined) {
-        throw new Error('usePrompt must be used within a PromptProvider');
-    }
-    return context;
-};
+
