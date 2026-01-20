@@ -516,7 +516,7 @@ const Layout: React.FC = () => {
         window.history.pushState({ app: true, folderId: activeFolderId }, '', window.location.href);
     }, [activeFolderId]);
 
-    const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[], templatePrefix?: string, templateSuffix?: string) => {
+    const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[]) => {
         if (hasDuplicateWordLabel(label, activeFolderId)) {
             alert('同じフォルダ内に同じ名前の語句は作成できません。');
             return;
@@ -529,9 +529,7 @@ const Layout: React.FC = () => {
             nsfw,
             note,
             favorite: false,
-            templateIds: templateIds && templateIds.length > 0 ? templateIds : undefined,
-            templatePrefix: templatePrefix || undefined,
-            templateSuffix: templateSuffix || undefined
+            templateIds: templateIds && templateIds.length > 0 ? templateIds : undefined
         });
     };
 
@@ -636,7 +634,7 @@ const Layout: React.FC = () => {
                     </div>
                 </header>
 
-                <div className="flex-1 overflow-y-auto p-6 relative z-0 custom-scrollbar">
+                <div className="flex-1 overflow-y-auto p-6 relative custom-scrollbar">
                     {searchResults ? (
                         <div className="flex flex-col gap-8">
                             <div>

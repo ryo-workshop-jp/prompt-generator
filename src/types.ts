@@ -16,8 +16,6 @@ export interface WordItem {
     favorite?: boolean;
     templateId?: string;
     templateIds?: string[];
-    templatePrefix?: string;
-    templateSuffix?: string;
 }
 
 export interface TemplateOption {

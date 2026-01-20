@@ -128,9 +128,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
     };
 
     const applyTemplate = (label: string, value: string) => {
-        const prefix = word.templatePrefix ?? '';
-        const suffix = word.templateSuffix ?? '';
-        const finalValue = `${prefix}${value}${suffix}${word.value_en}`;
+        const finalValue = `${value}${word.value_en}`;
         const finalLabel = `${label}${word.label_jp}`;
         const templatedWord: WordItem = {
             ...word,
@@ -138,9 +136,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
             value_en: finalValue,
             label_jp: finalLabel,
             templateId: undefined,
-            templateIds: undefined,
-            templatePrefix: undefined,
-            templateSuffix: undefined
+            templateIds: undefined
         };
         addWord(templatedWord, 'positive', 1.0);
         setIsTemplateOpen(false);
@@ -365,7 +361,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
 const AddWordModal: React.FC<{
     isOpen: boolean;
     onClose: () => void;
-    onAdd: (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[], templatePrefix?: string, templateSuffix?: string) => void;
+    onAdd: (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[]) => void;
     templates: TemplateItem[];
 }> = ({ isOpen, onClose, onAdd, templates }) => {
     const [label, setLabel] = useState('');
@@ -373,8 +369,6 @@ const AddWordModal: React.FC<{
     const [note, setNote] = useState('');
     const [nsfw, setNsfw] = useState(false);
     const [templateIds, setTemplateIds] = useState<string[]>([]);
-    const [templatePrefix, setTemplatePrefix] = useState('');
-    const [templateSuffix, setTemplateSuffix] = useState('');
 
     if (!isOpen) return null;
 
@@ -386,14 +380,12 @@ const AddWordModal: React.FC<{
         e.preventDefault();
         if (!label || !value) return;
         const hasTemplates = templateIds.length > 0;
-        onAdd(label, value, nsfw, note, hasTemplates ? templateIds : undefined, hasTemplates ? (templatePrefix || undefined) : undefined, hasTemplates ? (templateSuffix || undefined) : undefined);
+        onAdd(label, value, nsfw, note, hasTemplates ? templateIds : undefined);
         setLabel('');
         setValue('');
         setNote('');
         setNsfw(false);
         setTemplateIds([]);
-        setTemplatePrefix('');
-        setTemplateSuffix('');
         onClose();
     };
 
@@ -463,31 +455,6 @@ const AddWordModal: React.FC<{
                             ))}
                         </div>
                     </div>
-                    {templateIds.length > 0 && (
-                        <div className="grid grid-cols-2 gap-2">
-                            <div>
-                                <label className="block text-xs text-slate-400 mb-1">Prefix</label>
-                                <input
-                                    type="text"
-                                    value={templatePrefix}
-                                    onChange={(event) => setTemplatePrefix(event.target.value)}
-                                    className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                                    placeholder="e.g. "
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-xs text-slate-400 mb-1">Suffix</label>
-                                <input
-                                    type="text"
-                                    value={templateSuffix}
-                                    onChange={(event) => setTemplateSuffix(event.target.value)}
-                                    className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                                    placeholder="e.g. "
-                                />
-                            </div>
-                        </div>
-                    )}
-
                     </div>
                     <div className="flex gap-2 pt-2">
                         <button
@@ -513,7 +480,7 @@ const AddWordModal: React.FC<{
 const EditWordModal: React.FC<{
     word: WordItem | null;
     onClose: () => void;
-    onSave: (updates: { label_jp: string; value_en: string; nsfw: boolean; note?: string; favorite?: boolean; templateId?: string; templateIds?: string[]; templatePrefix?: string; templateSuffix?: string }) => void;
+    onSave: (updates: { label_jp: string; value_en: string; nsfw: boolean; note?: string; favorite?: boolean; templateId?: string; templateIds?: string[] }) => void;
     templates: TemplateItem[];
 }> = ({ word, onClose, onSave, templates }) => {
     const extractTemplateIds = (target: WordItem | null) => {
@@ -528,8 +495,6 @@ const EditWordModal: React.FC<{
     const [nsfw, setNsfw] = useState(word?.nsfw ?? false);
     const [favorite, setFavorite] = useState(word?.favorite ?? false);
     const [templateIds, setTemplateIds] = useState<string[]>(extractTemplateIds(word ?? null));
-    const [templatePrefix, setTemplatePrefix] = useState(word?.templatePrefix ?? '');
-    const [templateSuffix, setTemplateSuffix] = useState(word?.templateSuffix ?? '');
 
     if (!word) return null;
 
@@ -548,9 +513,7 @@ const EditWordModal: React.FC<{
             note,
             favorite,
             templateId: undefined,
-            templateIds: hasTemplates ? templateIds : undefined,
-            templatePrefix: hasTemplates ? (templatePrefix || undefined) : undefined,
-            templateSuffix: hasTemplates ? (templateSuffix || undefined) : undefined
+            templateIds: hasTemplates ? templateIds : undefined
         });
         onClose();
     };
@@ -627,31 +590,6 @@ const EditWordModal: React.FC<{
                             ))}
                         </div>
                     </div>
-                    {templateIds.length > 0 && (
-                        <div className="grid grid-cols-2 gap-2">
-                            <div>
-                                <label className="block text-xs text-slate-400 mb-1">Prefix</label>
-                                <input
-                                    type="text"
-                                    value={templatePrefix}
-                                    onChange={(event) => setTemplatePrefix(event.target.value)}
-                                    className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                                    placeholder="e.g. "
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-xs text-slate-400 mb-1">Suffix</label>
-                                <input
-                                    type="text"
-                                    value={templateSuffix}
-                                    onChange={(event) => setTemplateSuffix(event.target.value)}
-                                    className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                                    placeholder="e.g. "
-                                />
-                            </div>
-                        </div>
-                    )}
-
                     </div>
                     <div className="flex gap-2 pt-2">
                         <button
@@ -694,7 +632,7 @@ const SortableWordCard: React.FC<WordCardProps & { id: string }> = ({ id, ...pro
 
 const WordGrid: React.FC<{
     words: WordItem[];
-    onAddWord: (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[], templatePrefix?: string, templateSuffix?: string) => void;
+    onAddWord: (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[]) => void;
     folderPathForWord?: (word: WordItem) => string;
     editMode?: boolean;
     onEditWord?: (word: WordItem) => void;
@@ -716,8 +654,8 @@ const WordGrid: React.FC<{
         return words;
     }, [words]);
 
-    const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[], templatePrefix?: string, templateSuffix?: string) => {
-        onAddWord(label, value, nsfw, note, templateIds, templatePrefix, templateSuffix);
+    const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[]) => {
+        onAddWord(label, value, nsfw, note, templateIds);
     };
 
     return (

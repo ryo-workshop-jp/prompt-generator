@@ -260,9 +260,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
                 return {
                     ...word,
                     templateId: word.templateId === id ? undefined : word.templateId,
-                    templateIds: nextTemplateIds.length > 0 ? nextTemplateIds : undefined,
-                    templatePrefix: undefined,
-                    templateSuffix: undefined
+                    templateIds: nextTemplateIds.length > 0 ? nextTemplateIds : undefined
                 };
             })
         }));
@@ -345,6 +343,14 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             }
             return next;
         });
+    };
+
+    const reorderSelected = (type: 'positive' | 'negative', ordered: SelectedWord[]) => {
+        if (type === 'positive') {
+            setSelectedPositive(ordered);
+        } else {
+            setSelectedNegative(ordered);
+        }
     };
 
     const undo = () => {
@@ -441,6 +447,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             undo,
             canUndo: !!undoData,
             clearAll,
+            reorderSelected,
             addWordToFolder,
             addFolder,
             addTemplate,

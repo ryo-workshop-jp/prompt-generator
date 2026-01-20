@@ -26,6 +26,7 @@ export interface PromptContextType {
     undo: () => void;
     canUndo: boolean;
     clearAll: () => void;
+    reorderSelected: (type: 'positive' | 'negative', ordered: SelectedWord[]) => void;
     addWordToFolder: (folderId: string, newWord: WordItem) => void;
     addFolder: (name: string, id: string, parentId: string, nsfw?: boolean) => void;
     addTemplate: (template: TemplateItem) => void;

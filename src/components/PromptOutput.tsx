@@ -1,7 +1,10 @@
 ﻿import React, { useMemo, useState } from 'react';
+import { DndContext, KeyboardSensor, PointerSensor, closestCenter, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
+import { arrayMove, SortableContext, rectSortingStrategy, sortableKeyboardCoordinates, useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import { usePrompt } from '../context/usePrompt';
 import type { SelectedWord, PromptStrength, PromptFavorite } from '../types';
-import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon } from '@heroicons/react/24/outline';
 
 const formatPrompt = (words: SelectedWord[]) => {
     return words.map(w => {
@@ -62,8 +65,35 @@ const Chip: React.FC<{ word: SelectedWord, type: 'positive' | 'negative' }> = ({
     );
 };
 
+const SortableChip: React.FC<{ word: SelectedWord; type: 'positive' | 'negative' }> = ({ word, type }) => {
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
+        id: `${type}:${word.id}`,
+        data: { type }
+    });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition
+    };
+
+    return (
+        <div ref={setNodeRef} style={style} className="relative">
+            <Chip word={word} type={type} />
+            <button
+                type="button"
+                {...attributes}
+                {...listeners}
+                className="absolute -left-2 -top-2 p-1 rounded-full bg-slate-900/80 border border-slate-700 text-slate-400 hover:text-slate-200 cursor-grab"
+                title="Drag to reorder"
+            >
+                <Bars3Icon className="w-3 h-3" />
+            </button>
+        </div>
+    );
+};
+
 const PromptOutput: React.FC = () => {
-    const { selectedPositive, selectedNegative, favorites, nsfwEnabled, addPromptFavorite, applyPromptFavorite, removePromptFavorite, clearPositive, clearNegative } = usePrompt();
+    const { selectedPositive, selectedNegative, favorites, nsfwEnabled, addPromptFavorite, applyPromptFavorite, removePromptFavorite, clearPositive, clearNegative, reorderSelected } = usePrompt();
     const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | null>(null);
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
     const [loadType, setLoadType] = useState<'positive' | 'negative' | null>(null);
@@ -107,6 +137,23 @@ const PromptOutput: React.FC = () => {
         setSaveType(null);
     };
 
+    const sensors = useSensors(
+        useSensor(PointerSensor),
+        useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
+    );
+
+    const handleDragEnd = (event: DragEndEvent, type: 'positive' | 'negative') => {
+        const { active, over } = event;
+        if (!over || active.id === over.id) return;
+        const source = type === 'positive' ? selectedPositive : selectedNegative;
+        const activeId = String(active.id).replace(`${type}:`, '');
+        const overId = String(over.id).replace(`${type}:`, '');
+        const oldIndex = source.findIndex(word => word.id === activeId);
+        const newIndex = source.findIndex(word => word.id === overId);
+        if (oldIndex === -1 || newIndex === -1) return;
+        reorderSelected(type, arrayMove(source, oldIndex, newIndex));
+    };
+
     return (
         <div className="h-full flex flex-col p-4 gap-3">
             <div className="flex flex-1 gap-4">
@@ -148,10 +195,23 @@ const PromptOutput: React.FC = () => {
 
                 {/* Visual Chips Area */}
                 <div className="flex-1 bg-slate-900/50 border border-slate-800 rounded-xl p-3 overflow-y-auto mb-2 custom-scrollbar">
-                    <div className="flex flex-wrap gap-2">
-                        {selectedPositive.length === 0 && <span className="text-slate-600 text-sm italic">Select words...</span>}
-                        {selectedPositive.map(w => <Chip key={w.id} word={w} type="positive" />)}
-                    </div>
+                    <DndContext
+                        sensors={sensors}
+                        collisionDetection={closestCenter}
+                        onDragEnd={(event) => handleDragEnd(event, 'positive')}
+                    >
+                        <SortableContext
+                            items={selectedPositive.map(word => `positive:${word.id}`)}
+                            strategy={rectSortingStrategy}
+                        >
+                            <div className="flex flex-wrap gap-2">
+                                {selectedPositive.length === 0 && <span className="text-slate-600 text-sm italic">Select words...</span>}
+                                {selectedPositive.map(word => (
+                                    <SortableChip key={word.id} word={word} type="positive" />
+                                ))}
+                            </div>
+                        </SortableContext>
+                    </DndContext>
                 </div>
 
                 {/* Raw Text Output (Read Only) */}
@@ -202,10 +262,23 @@ const PromptOutput: React.FC = () => {
 
                 {/* Visual Chips Area */}
                 <div className="flex-1 bg-slate-900/50 border border-slate-800 rounded-xl p-3 overflow-y-auto mb-2 custom-scrollbar">
-                    <div className="flex flex-wrap gap-2">
-                        {selectedNegative.length === 0 && <span className="text-slate-600 text-sm italic">Select words...</span>}
-                        {selectedNegative.map(w => <Chip key={w.id} word={w} type="negative" />)}
-                    </div>
+                    <DndContext
+                        sensors={sensors}
+                        collisionDetection={closestCenter}
+                        onDragEnd={(event) => handleDragEnd(event, 'negative')}
+                    >
+                        <SortableContext
+                            items={selectedNegative.map(word => `negative:${word.id}`)}
+                            strategy={rectSortingStrategy}
+                        >
+                            <div className="flex flex-wrap gap-2">
+                                {selectedNegative.length === 0 && <span className="text-slate-600 text-sm italic">Select words...</span>}
+                                {selectedNegative.map(word => (
+                                    <SortableChip key={word.id} word={word} type="negative" />
+                                ))}
+                            </div>
+                        </SortableContext>
+                    </DndContext>
                 </div>
 
                 {/* Raw Text Output */}
@@ -336,6 +409,7 @@ const PromptOutput: React.FC = () => {
 };
 
 export default PromptOutput;
+
 
 
 
