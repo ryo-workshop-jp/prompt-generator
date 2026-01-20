@@ -71,4 +71,3 @@ export default defineConfig([
   },
 ])
 ```
-更新の確認用
