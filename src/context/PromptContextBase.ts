@@ -12,9 +12,11 @@ export interface PromptContextType {
     nsfwEnabled: boolean;
     showDescendantWords: boolean;
     autoNsfwOn: boolean;
+    collapseInactiveFolders: boolean;
     toggleNsfw: () => void;
     toggleShowDescendantWords: () => void;
     toggleAutoNsfwOn: () => void;
+    toggleCollapseInactiveFolders: () => void;
     addWord: (word: WordItem, type: 'positive' | 'negative', strength?: PromptStrength) => void;
     removeWord: (id: string, type: 'positive' | 'negative') => void;
     updateWordStrength: (id: string, type: 'positive' | 'negative', strength: PromptStrength) => void;

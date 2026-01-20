@@ -17,6 +17,7 @@ const readUiSettings = () => {
             showDescendantWords?: boolean;
             autoNsfwOn?: boolean;
             nsfwEnabled?: boolean;
+            collapseInactiveFolders?: boolean;
         };
     } catch (e) {
         console.warn('Failed to load UI settings, using defaults.', e);
@@ -28,6 +29,7 @@ const writeUiSettings = (updates: {
     showDescendantWords?: boolean;
     autoNsfwOn?: boolean;
     nsfwEnabled?: boolean;
+    collapseInactiveFolders?: boolean;
 }) => {
     try {
         const current = readUiSettings();
@@ -183,6 +185,10 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         const parsed = readUiSettings();
         return parsed.autoNsfwOn ?? false;
     });
+    const [collapseInactiveFolders, setCollapseInactiveFolders] = useState<boolean>(() => {
+        const parsed = readUiSettings();
+        return parsed.collapseInactiveFolders ?? false;
+    });
 
     const saveToStorage = async (currentData: DataStore) => {
         try {
@@ -236,6 +242,13 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         setAutoNsfwOn(prev => {
             const next = !prev;
             writeUiSettings({ autoNsfwOn: next });
+            return next;
+        });
+    };
+    const toggleCollapseInactiveFolders = () => {
+        setCollapseInactiveFolders(prev => {
+            const next = !prev;
+            writeUiSettings({ collapseInactiveFolders: next });
             return next;
         });
     };
@@ -516,9 +529,11 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             nsfwEnabled,
             showDescendantWords,
             autoNsfwOn,
+            collapseInactiveFolders,
             toggleNsfw,
             toggleShowDescendantWords,
             toggleAutoNsfwOn,
+            toggleCollapseInactiveFolders,
             addWord,
             removeWord,
             updateWordStrength,

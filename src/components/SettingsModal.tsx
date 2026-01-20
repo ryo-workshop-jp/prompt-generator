@@ -158,7 +158,7 @@ const TemplateModal: React.FC<{
 };
 
 const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
-    const { folders, words, templates, setData, addTemplate, updateTemplate, removeTemplate, nsfwEnabled, showDescendantWords, autoNsfwOn, toggleNsfw, toggleShowDescendantWords, toggleAutoNsfwOn, saveChanges, hasUnsavedChanges } = usePrompt();
+    const { folders, words, templates, setData, addTemplate, updateTemplate, removeTemplate, nsfwEnabled, showDescendantWords, autoNsfwOn, collapseInactiveFolders, toggleNsfw, toggleShowDescendantWords, toggleAutoNsfwOn, toggleCollapseInactiveFolders, saveChanges, hasUnsavedChanges } = usePrompt();
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [editingTemplate, setEditingTemplate] = useState<TemplateItem | null>(null);
     const [isTemplateModalOpen, setIsTemplateModalOpen] = useState(false);
@@ -262,6 +262,22 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                 >
                                     <span
                                         className={`${autoNsfwOn ? 'translate-x-6' : 'translate-x-1'
+                                            } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                                    />
+                                </button>
+                            </div>
+                            <div className="flex items-center justify-between mt-4">
+                                <div className="flex flex-col">
+                                    <span className="text-sm font-bold text-slate-200">フォルダは選択中のみ展開</span>
+                                    <span className="text-xs text-slate-500">オフの場合は展開状態を保持します。</span>
+                                </div>
+                                <button
+                                    onClick={toggleCollapseInactiveFolders}
+                                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${collapseInactiveFolders ? 'bg-cyan-500' : 'bg-slate-600'
+                                        }`}
+                                >
+                                    <span
+                                        className={`${collapseInactiveFolders ? 'translate-x-6' : 'translate-x-1'
                                             } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
                                     />
                                 </button>

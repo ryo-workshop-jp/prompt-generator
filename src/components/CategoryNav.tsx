@@ -81,7 +81,7 @@ const AddFolderModal: React.FC<{
 };
 
 const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderId }) => {
-    const { folders, addFolder, nsfwEnabled } = usePrompt();
+    const { folders, addFolder, nsfwEnabled, collapseInactiveFolders } = usePrompt();
     const [expandedFolders, setExpandedFolders] = useState<string[]>(['root']);
 
     // Modal states
@@ -112,15 +112,36 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderI
         return map;
     }, [filteredFolders]);
 
+    const getFolderPathIds = React.useCallback((folderId: string) => {
+        const ids: string[] = [];
+        let cursor: string | null = folderId;
+        while (cursor) {
+            ids.push(cursor);
+            const next = folders.find(folder => folder.id === cursor)?.parentId ?? null;
+            cursor = next;
+        }
+        if (!ids.includes('root')) ids.push('root');
+        return ids;
+    }, [folders]);
+
     const toggleExpand = (folderId: string) => {
+        if (collapseInactiveFolders) {
+            onSelectFolder(folderId);
+            return;
+        }
         setExpandedFolders(prev =>
             prev.includes(folderId) ? prev.filter(id => id !== folderId) : [...prev, folderId]
         );
     };
 
+    const derivedExpandedFolders = useMemo(() => {
+        if (!collapseInactiveFolders || !activeFolderId) return expandedFolders;
+        return getFolderPathIds(activeFolderId);
+    }, [collapseInactiveFolders, activeFolderId, expandedFolders, getFolderPathIds]);
+
     const renderFolder = (folder: FolderItem, depth: number) => {
         const children = childrenByParent.get(folder.id) ?? [];
-        const isExpanded = expandedFolders.includes(folder.id);
+        const isExpanded = derivedExpandedFolders.includes(folder.id);
         const isActive = activeFolderId === folder.id;
 
         return (
@@ -135,7 +156,7 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderI
                     <button
                         onClick={() => {
                             onSelectFolder(folder.id);
-                            if (children.length > 0) toggleExpand(folder.id);
+                            if (children.length > 0 && !collapseInactiveFolders) toggleExpand(folder.id);
                         }}
                         className="flex items-center gap-2 flex-1 text-left"
                     >
@@ -223,5 +244,6 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderI
 };
 
 export default CategoryNav;
+
 
 
