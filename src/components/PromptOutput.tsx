@@ -220,7 +220,7 @@ const PromptOutput: React.FC = () => {
             </div>
 
             {saveType && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <h3 className="text-lg font-bold mb-4 text-white">Save Favorite</h3>
                         <div className="flex flex-col gap-4 flex-1 min-h-0 overflow-y-auto pr-1">
@@ -274,7 +274,7 @@ const PromptOutput: React.FC = () => {
             )}
 
             {loadType && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <h3 className="text-lg font-bold mb-4 text-white">Load Favorite</h3>
                         <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-3 pr-1">
@@ -336,5 +336,6 @@ const PromptOutput: React.FC = () => {
 };
 
 export default PromptOutput;
+
 
 

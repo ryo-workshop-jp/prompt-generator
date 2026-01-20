@@ -34,7 +34,7 @@ const AddFolderModal: React.FC<{
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-sm shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <h3 className="text-lg font-bold mb-4 text-white">{title}</h3>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
@@ -223,4 +223,5 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderI
 };
 
 export default CategoryNav;
+
 
