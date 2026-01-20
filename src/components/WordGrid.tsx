@@ -43,7 +43,7 @@ const TemplateSelectModal: React.FC<{
                     </div>
                     <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
                 </div>
-                <div className="overflow-y-auto pr-1">
+                <div className="flex-1 min-h-0 overflow-y-auto pr-1">
                     {!activeTemplate && (
                         <div className="text-sm text-slate-400">No templates found.</div>
                     )}
@@ -401,7 +401,8 @@ const AddWordModal: React.FC<{
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <h3 className="text-lg font-bold mb-4 text-white">Add New Word</h3>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4 overflow-y-auto pr-1">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
+                    <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">Japanese Label</label>
                         <input
@@ -487,7 +488,8 @@ const AddWordModal: React.FC<{
                         </div>
                     )}
 
-                    <div className="flex gap-2 mt-2 sticky bottom-0 bg-slate-900 pt-2">
+                    </div>
+                    <div className="flex gap-2 pt-2">
                         <button
                             type="button"
                             onClick={onClose}
@@ -557,7 +559,8 @@ const EditWordModal: React.FC<{
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <h3 className="text-lg font-bold mb-4 text-white">Edit Word</h3>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4 overflow-y-auto pr-1">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
+                    <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">Japanese Label</label>
                         <input
@@ -649,7 +652,8 @@ const EditWordModal: React.FC<{
                         </div>
                     )}
 
-                    <div className="flex gap-2 mt-2 sticky bottom-0 bg-slate-900 pt-2">
+                    </div>
+                    <div className="flex gap-2 pt-2">
                         <button
                             type="button"
                             onClick={onClose}

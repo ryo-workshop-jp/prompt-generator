@@ -223,7 +223,7 @@ const PromptOutput: React.FC = () => {
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <h3 className="text-lg font-bold mb-4 text-white">Save Favorite</h3>
-                        <div className="flex flex-col gap-4 overflow-y-auto pr-1">
+                        <div className="flex flex-col gap-4 flex-1 min-h-0 overflow-y-auto pr-1">
                             <div>
                                 <label className="block text-xs text-slate-400 mb-1">Favorite Name</label>
                                 <input
@@ -248,7 +248,7 @@ const PromptOutput: React.FC = () => {
                                     ? '現在のプロンプトは空です。'
                                     : `選択語数: ${saveType === 'positive' ? selectedPositive.length : selectedNegative.length}`}
                             </div>
-                            <div className="flex gap-2 mt-2 sticky bottom-0 bg-slate-900 pt-2">
+                            <div className="flex gap-2 pt-2">
                                 <button
                                     type="button"
                                     onClick={() => {
@@ -277,7 +277,7 @@ const PromptOutput: React.FC = () => {
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <h3 className="text-lg font-bold mb-4 text-white">Load Favorite</h3>
-                        <div className="flex-1 max-h-[60vh] overflow-y-auto custom-scrollbar flex flex-col gap-3 pr-1">
+                        <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-3 pr-1">
                             {filteredFavorites.filter(fav => fav.type === loadType).length === 0 && (
                                 <div className="text-sm text-slate-500">No favorites available.</div>
                             )}
@@ -319,7 +319,7 @@ const PromptOutput: React.FC = () => {
                                 );
                             })}
                         </div>
-                        <div className="flex justify-end mt-4 sticky bottom-0 bg-slate-900 pt-2">
+                        <div className="flex justify-end mt-4">
                             <button
                                 type="button"
                                 onClick={() => setLoadType(null)}

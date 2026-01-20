@@ -49,7 +49,7 @@ const TemplateModal: React.FC<{
                     <h3 className="text-lg font-bold text-white">{template ? '前置語を編集' : '前置語を追加'}</h3>
                     <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
                 </div>
-                <div className="flex flex-col gap-4 overflow-y-auto pr-1">
+                <div className="flex flex-col gap-4 flex-1 min-h-0 overflow-y-auto pr-1">
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">前置語名</label>
                         <input
@@ -131,7 +131,7 @@ const TemplateModal: React.FC<{
                             ))}
                         </div>
                     </div>
-                    <div className="flex gap-2 sticky bottom-0 bg-slate-900 pt-2">
+                    <div className="flex gap-2 pt-2">
                         <button
                             type="button"
                             onClick={onClose}
