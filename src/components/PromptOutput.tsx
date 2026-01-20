@@ -98,6 +98,7 @@ const PromptOutput: React.FC = () => {
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
     const [qualityType, setQualityType] = useState<'positive' | 'negative' | null>(null);
     const [loadType, setLoadType] = useState<'positive' | 'negative' | null>(null);
+    const [expandType, setExpandType] = useState<'positive' | 'negative' | null>(null);
     const [favoriteName, setFavoriteName] = useState('');
     const [favoriteNsfw, setFavoriteNsfw] = useState(false);
     const [saveAsQuality, setSaveAsQuality] = useState(false);
@@ -242,7 +243,13 @@ const PromptOutput: React.FC = () => {
                 </div>
 
                 {/* Visual Chips Area */}
-                <div className="flex-1 bg-slate-900/50 border border-slate-800 rounded-xl p-3 overflow-y-auto mb-2 custom-scrollbar">
+                <div className="relative h-32 bg-slate-900/50 border border-slate-800 rounded-xl p-3 overflow-y-auto mb-2 custom-scrollbar">
+                    <button
+                        onClick={() => setExpandType('positive')}
+                        className="absolute right-2 top-2 z-10 flex items-center gap-1 text-[10px] px-2 py-1 rounded-md border border-slate-800 bg-slate-950/70 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                    >
+                        <Bars3Icon className="w-3 h-3" /> More
+                    </button>
                     <DndContext
                         sensors={sensors}
                         collisionDetection={closestCenter}
@@ -321,7 +328,13 @@ const PromptOutput: React.FC = () => {
                 </div>
 
                 {/* Visual Chips Area */}
-                <div className="flex-1 bg-slate-900/50 border border-slate-800 rounded-xl p-3 overflow-y-auto mb-2 custom-scrollbar">
+                <div className="relative h-32 bg-slate-900/50 border border-slate-800 rounded-xl p-3 overflow-y-auto mb-2 custom-scrollbar">
+                    <button
+                        onClick={() => setExpandType('negative')}
+                        className="absolute right-2 top-2 z-10 flex items-center gap-1 text-[10px] px-2 py-1 rounded-md border border-slate-800 bg-slate-950/70 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
+                    >
+                        <Bars3Icon className="w-3 h-3" /> More
+                    </button>
                     <DndContext
                         sensors={sensors}
                         collisionDetection={closestCenter}
@@ -540,6 +553,49 @@ const PromptOutput: React.FC = () => {
                             <button
                                 type="button"
                                 onClick={() => setQualityType(null)}
+                                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {expandType && (
+                <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-3xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                        <div className="flex items-center justify-between mb-4">
+                            <h3 className={`text-lg font-bold ${expandType === 'positive' ? 'text-cyan-400' : 'text-rose-400'}`}>
+                                {expandType === 'positive' ? 'Positive Prompt' : 'Negative Prompt'}
+                            </h3>
+                            <button onClick={() => setExpandType(null)} className="text-slate-400 hover:text-white text-xl">&times;</button>
+                        </div>
+                        <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
+                            <DndContext
+                                sensors={sensors}
+                                collisionDetection={closestCenter}
+                                onDragEnd={(event) => handleDragEnd(event, expandType)}
+                            >
+                                <SortableContext
+                                    items={(expandType === 'positive' ? selectedPositive : selectedNegative).map(word => `${expandType}:${word.id}`)}
+                                    strategy={rectSortingStrategy}
+                                >
+                                    <div className="flex flex-wrap gap-2">
+                                        {(expandType === 'positive' ? selectedPositive : selectedNegative).length === 0 && (
+                                            <span className="text-slate-600 text-sm italic">Select words...</span>
+                                        )}
+                                        {(expandType === 'positive' ? selectedPositive : selectedNegative).map(word => (
+                                            <SortableChip key={word.id} word={word} type={expandType} />
+                                        ))}
+                                    </div>
+                                </SortableContext>
+                            </DndContext>
+                        </div>
+                        <div className="flex items-center justify-end gap-2 mt-4">
+                            <button
+                                type="button"
+                                onClick={() => setExpandType(null)}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
                                 Close
