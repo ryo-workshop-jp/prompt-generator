@@ -40,8 +40,6 @@ export interface PromptContextType {
     updateTemplate: (template: TemplateItem) => void;
     removeTemplate: (id: string) => void;
     setData: (data: DataStore) => void;
-    saveChanges: () => Promise<boolean>;
-    hasUnsavedChanges: boolean;
 }
 
 export const PromptContext = createContext<PromptContextType | undefined>(undefined);

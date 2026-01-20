@@ -218,12 +218,6 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         setHasUnsavedChanges(true);
     };
 
-    const saveChanges = async () => {
-        const ok = await saveToStorage(data);
-        if (ok) setHasUnsavedChanges(false);
-        return ok;
-    };
-
     const toggleNsfw = () => {
         setNsfwEnabled(prev => {
             const next = !prev;
@@ -556,9 +550,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             addTemplate,
             updateTemplate,
             removeTemplate,
-            setData,
-            saveChanges,
-            hasUnsavedChanges
+            setData
         }}>
             {children}
         </PromptContext.Provider>

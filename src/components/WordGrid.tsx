@@ -151,8 +151,9 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
     const currentStrength = posWord?.strength || negWord?.strength || 0;
     const isFavorite = !!word.favorite;
 
-    const handleLeftClick = () => {
+    const handleLeftClick = (event?: React.MouseEvent) => {
         if (editMode) return;
+        const isShift = !!event?.shiftKey;
         // Left Click Logic (Positive Only):
         // Neutral -> Pos 1.0 (Add)
         // Pos 1.0 -> Pos 1.2 (Update)
@@ -176,6 +177,19 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
 
         // Left Click: Move Right on Axis
         // Right Click: Move Left on Axis
+
+        if (isShift) {
+            if (isPositive) {
+                removeWord(word.id, 'positive');
+            }
+            if (negWord) {
+                if (negWord.strength === 1.0) updateWordStrength(word.id, 'negative', 1.2);
+                else if (negWord.strength === 1.2) updateWordStrength(word.id, 'negative', 1.4);
+            } else {
+                addWord(word, 'negative', 1.0);
+            }
+            return;
+        }
 
         if (isNegative) {
             // Negative -> Reduce Negative Strength (Move towards Neutral/Positive)
@@ -232,7 +246,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
     return (
         <>
         <button
-            onClick={handleLeftClick}
+            onClick={(event) => handleLeftClick(event)}
             onContextMenu={handleContextMenu}
             className={`relative group flex flex-col items-start p-3 rounded-xl border transition-all duration-200 text-left w-full h-full min-h-[80px] ${stateClass}`}
         >

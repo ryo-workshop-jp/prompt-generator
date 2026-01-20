@@ -261,7 +261,10 @@ const PromptOutput: React.FC = () => {
             {/* Negative Section */}
             <div className="flex-1 flex flex-col gap-2 border-l border-slate-800 pl-4">
                 <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-rose-400 uppercase tracking-wider">Negative Prompt</h3>
+                    <div className="flex items-center gap-2">
+                        <h3 className="text-sm font-bold text-rose-400 uppercase tracking-wider">Negative Prompt</h3>
+                        <span className="text-[10px] text-slate-500">(右クリック / Shift+クリックで登録)</span>
+                    </div>
                     <div className="flex items-center gap-2">
                         <button
                             onClick={() => openSaveModal('negative')}

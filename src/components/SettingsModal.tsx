@@ -158,21 +158,12 @@ const TemplateModal: React.FC<{
 };
 
 const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
-    const { folders, words, templates, setData, addTemplate, updateTemplate, removeTemplate, nsfwEnabled, showDescendantWords, autoNsfwOn, collapseInactiveFolders, toggleNsfw, toggleShowDescendantWords, toggleAutoNsfwOn, toggleCollapseInactiveFolders, saveChanges, hasUnsavedChanges } = usePrompt();
+    const { folders, words, templates, setData, addTemplate, updateTemplate, removeTemplate, nsfwEnabled, showDescendantWords, autoNsfwOn, collapseInactiveFolders, toggleNsfw, toggleShowDescendantWords, toggleAutoNsfwOn, toggleCollapseInactiveFolders } = usePrompt();
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [editingTemplate, setEditingTemplate] = useState<TemplateItem | null>(null);
     const [isTemplateModalOpen, setIsTemplateModalOpen] = useState(false);
 
     if (!isOpen) return null;
-
-    const handleSave = async () => {
-        const ok = await saveChanges();
-        if (ok) {
-            window.location.reload();
-        } else {
-            alert('保存に失敗しました。');
-        }
-    };
 
     const handleExport = () => {
         const payload = JSON.stringify({ folders, words, templates }, null, 2);
@@ -364,28 +355,13 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                         </div>
                     </div>
                 </div>
-                <div className="p-4 border-t border-slate-700 bg-slate-950 rounded-b-2xl flex items-center justify-between gap-3">
-                    <p className="text-xs text-slate-500">
-                        {hasUnsavedChanges ? '未保存の変更があります' : 'すべて保存済みです'}
-                    </p>
-                    <div className="flex items-center gap-2">
-                        <button
-                            onClick={onClose}
-                            className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-400 hover:bg-slate-700"
-                        >
-                            閉じる
-                        </button>
-                        <button
-                            onClick={handleSave}
-                            disabled={!hasUnsavedChanges}
-                            className={`px-3 py-1.5 text-xs rounded font-bold transition-colors ${hasUnsavedChanges
-                                ? 'bg-cyan-600 text-white hover:bg-cyan-500'
-                                : 'bg-slate-800 text-slate-500 cursor-not-allowed'
-                                }`}
-                        >
-                            保存
-                        </button>
-                    </div>
+                <div className="p-4 border-t border-slate-700 bg-slate-950 rounded-b-2xl flex items-center justify-end gap-3">
+                    <button
+                        onClick={onClose}
+                        className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-400 hover:bg-slate-700"
+                    >
+                        閉じる
+                    </button>
                 </div>
             </div>
             <TemplateModal
