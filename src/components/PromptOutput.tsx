@@ -122,6 +122,15 @@ const PromptOutput: React.FC = () => {
         return formatPrompt(selected.words);
     };
 
+    const getQualityName = (type: 'positive' | 'negative') => {
+        const selectedId = selectedQualityTemplateIds[type];
+        if (!selectedId) return '';
+        const selected = qualityTemplates.find(template => template.id === selectedId);
+        if (!selected) return '';
+        if (!nsfwEnabled && selected.nsfw) return '';
+        return selected.name;
+    };
+
     const buildCopyText = (type: 'positive' | 'negative', base: string) => {
         const quality = getQualityPrompt(type);
         if (!quality) return base;
@@ -188,7 +197,9 @@ const PromptOutput: React.FC = () => {
             {/* Positive Section */}
             <div className="flex-1 flex flex-col gap-2">
                 <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-wider">Positive Prompt</h3>
+                    <div className="flex items-center gap-2">
+                        <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-wider">Positive Prompt</h3>
+                    </div>
                     <div className="flex items-center gap-2">
                         <button
                             onClick={() => openSaveModal('positive')}
@@ -201,6 +212,9 @@ const PromptOutput: React.FC = () => {
                             className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
                             <Bars3Icon className="w-4 h-4" /> Quality
+                            {getQualityName('positive') && (
+                                <span className="text-[10px] text-cyan-200">{getQualityName('positive')}</span>
+                            )}
                         </button>
                         <button
                             onClick={() => setLoadType('positive')}
@@ -277,6 +291,9 @@ const PromptOutput: React.FC = () => {
                             className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
                             <Bars3Icon className="w-4 h-4" /> Quality
+                            {getQualityName('negative') && (
+                                <span className="text-[10px] text-rose-200">{getQualityName('negative')}</span>
+                            )}
                         </button>
                         <button
                             onClick={() => setLoadType('negative')}
