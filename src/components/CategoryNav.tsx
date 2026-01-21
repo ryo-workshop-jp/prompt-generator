@@ -103,7 +103,7 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderI
     };
 
     const childrenByParent = useMemo(() => {
-        const map = new Map<string | null, NodeItem[]>();
+        const map = new Map<string | null, FolderItem[]>();
         for (const folder of filteredFolders) {
             const key = folder.parentId;
             if (!map.has(key)) map.set(key, []);

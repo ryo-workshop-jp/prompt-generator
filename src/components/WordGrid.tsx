@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useMemo, useState } from 'react';
-import type { WordItem, TemplateItem, TemplateOption } from '../types';
+import type { WordItem, TemplateItem } from '../types';
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -841,7 +841,6 @@ const WordGrid: React.FC<{
 
                         {currentWords.map(word => {
                             const card = {
-                                key: word.id,
                                 word,
                                 folderPath: folderPathForWord ? folderPathForWord(word) : undefined,
                                 editMode,

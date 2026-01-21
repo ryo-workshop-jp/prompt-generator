@@ -397,7 +397,7 @@ const Layout: React.FC = () => {
 
     const normalizeName = (value: string) => value.trim().toLowerCase();
 
-    const hasDuplicateFolderName = (name: string, parentId: string, excludeId?: string) => {
+    const hasDuplicateFolderName = (name: string, parentId: string | null, excludeId?: string) => {
         const target = normalizeName(name);
         return folders.some(folder =>
             folder.parentId === parentId &&
@@ -797,7 +797,6 @@ const Layout: React.FC = () => {
                                             )}
                                             {visibleFolders.map(folder => {
                                                 const cardProps = {
-                                                    key: folder.id,
                                                     folder,
                                                     onOpen: () => handleSelectFolder(folder.id),
                                                     editMode,
