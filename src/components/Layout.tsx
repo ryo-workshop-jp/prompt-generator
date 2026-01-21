@@ -219,7 +219,7 @@ const SortableFolderCard: React.FC<{
     );
 };
 const Layout: React.FC = () => {
-    const { folders, words, templates, nsfwEnabled, showDescendantWords, toggleNsfw, clearAll, addFolder, addWordToFolder, undo, canUndo, setData } = usePrompt();
+    const { folders, words, templates, nsfwEnabled, showDescendantWords, clearAll, addFolder, addWordToFolder, undo, canUndo, setData } = usePrompt();
     const [activeFolderId, setActiveFolderId] = useState<string>('root');
     const [searchQuery, setSearchQuery] = useState('');
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -597,16 +597,6 @@ const Layout: React.FC = () => {
                                 </button>
                             )}
                         </div>
-                        <button
-                            onClick={toggleNsfw}
-                            className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold transition-all border ${nsfwEnabled
-                                ? 'bg-red-500/10 border-red-500 text-red-400 shadow-[0_0_10px_rgba(239,68,68,0.3)]'
-                                : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'
-                                }`}
-                        >
-                            <span>NSFW</span>
-                            <span className={`w-2 h-2 rounded-full ${nsfwEnabled ? 'bg-red-500 animate-pulse' : 'bg-slate-500'}`}></span>
-                        </button>
                         <button
                             onClick={() => setEditMode(prev => !prev)}
                             className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold transition-all border ${editMode

@@ -3,6 +3,30 @@ import { usePrompt } from '../context/usePrompt';
 import type { FolderItem, WordItem, TemplateItem, TemplateOption } from '../types';
 
 
+const UI_STORAGE_KEY = 'promptgen:ui';
+
+const readUiSettings = () => {
+    try {
+        if (typeof window === 'undefined') return {};
+        const stored = localStorage.getItem(UI_STORAGE_KEY);
+        if (!stored) return {};
+        return JSON.parse(stored) as { nsfwConfirmSkip?: boolean };
+    } catch (e) {
+        console.warn('Failed to load UI settings.', e);
+        return {};
+    }
+};
+
+const writeUiSettings = (updates: { nsfwConfirmSkip?: boolean }) => {
+    try {
+        if (typeof window === 'undefined') return;
+        const current = readUiSettings();
+        localStorage.setItem(UI_STORAGE_KEY, JSON.stringify({ ...current, ...updates }));
+    } catch (e) {
+        console.warn('Failed to save UI settings.', e);
+    }
+};
+
 const TemplateModal: React.FC<{
     isOpen: boolean;
     template: TemplateItem | null;
@@ -162,6 +186,12 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [editingTemplate, setEditingTemplate] = useState<TemplateItem | null>(null);
     const [isTemplateModalOpen, setIsTemplateModalOpen] = useState(false);
+    const [isNsfwConfirmOpen, setIsNsfwConfirmOpen] = useState(false);
+    const [skipNsfwConfirm, setSkipNsfwConfirm] = useState(false);
+    const [nsfwConfirmSkipped, setNsfwConfirmSkipped] = useState(() => {
+        const settings = readUiSettings();
+        return !!settings.nsfwConfirmSkip;
+    });
 
     if (!isOpen) return null;
 
@@ -197,6 +227,28 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         }
     };
 
+    const handleToggleNsfw = () => {
+        if (nsfwEnabled) {
+            toggleNsfw();
+            return;
+        }
+        if (nsfwConfirmSkipped) {
+            toggleNsfw();
+            return;
+        }
+        setSkipNsfwConfirm(false);
+        setIsNsfwConfirmOpen(true);
+    };
+
+    const handleConfirmNsfw = () => {
+        if (skipNsfwConfirm) {
+            writeUiSettings({ nsfwConfirmSkip: true });
+            setNsfwConfirmSkipped(true);
+        }
+        toggleNsfw();
+        setIsNsfwConfirmOpen(false);
+    };
+
     return (
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
             <div className="bg-slate-900 border border-slate-700 w-full max-w-2xl h-[80vh] rounded-2xl shadow-2xl flex flex-col">
@@ -215,7 +267,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     <span className="text-xs text-slate-500">NSFWのフォルダ・語句を全体で有効/無効にします。</span>
                                 </div>
                                 <button
-                                    onClick={toggleNsfw}
+                                    onClick={handleToggleNsfw}
                                     className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${nsfwEnabled ? 'bg-red-500' : 'bg-slate-600'
                                         }`}
                                 >
@@ -364,6 +416,51 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     </button>
                 </div>
             </div>
+            {isNsfwConfirmOpen && (
+                <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl flex flex-col gap-4">
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-bold text-white">コンテンツ表示の確認</h3>
+                            <button
+                                onClick={() => setIsNsfwConfirmOpen(false)}
+                                className="text-slate-400 hover:text-white text-xl"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                        <div className="text-sm text-slate-300 leading-relaxed whitespace-pre-line">
+                            NSFW表示を有効にすると、
+                            一部ユーザーにとって不適切と感じられる表現が表示される可能性があります
+                            本機能の利用はご自身の判断と責任で行ってください
+                        </div>
+                        <label className="flex items-center gap-2 text-sm text-slate-300">
+                            <input
+                                type="checkbox"
+                                checked={skipNsfwConfirm}
+                                onChange={(event) => setSkipNsfwConfirm(event.target.checked)}
+                                className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                            />
+                            <span>次回からこの表示をしない</span>
+                        </label>
+                        <div className="flex gap-2 pt-2">
+                            <button
+                                type="button"
+                                onClick={() => setIsNsfwConfirmOpen(false)}
+                                className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                            >
+                                キャンセル
+                            </button>
+                            <button
+                                type="button"
+                                onClick={handleConfirmNsfw}
+                                className="flex-1 px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-red-500 font-bold"
+                            >
+                                同意して表示
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
             <TemplateModal
                 key={editingTemplate?.id ?? 'new'}
                 isOpen={isTemplateModalOpen}
