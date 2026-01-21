@@ -195,7 +195,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     });
     const [showDescendantWords, setShowDescendantWords] = useState<boolean>(() => {
         const parsed = readUiSettings();
-        return parsed.showDescendantWords ?? true;
+        return parsed.showDescendantWords ?? false;
     });
     const [autoNsfwOn, setAutoNsfwOn] = useState<boolean>(() => {
         const parsed = readUiSettings();
@@ -203,7 +203,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     });
     const [collapseInactiveFolders, setCollapseInactiveFolders] = useState<boolean>(() => {
         const parsed = readUiSettings();
-        return parsed.collapseInactiveFolders ?? false;
+        return parsed.collapseInactiveFolders ?? true;
     });
 
     const saveToStorage = async (currentData: DataStore) => {
