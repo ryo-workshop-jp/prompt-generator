@@ -73,12 +73,12 @@ const TemplateModal: React.FC<{
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-bold text-white">{template ? '前置語を編集' : '前置語を追加'}</h3>
+                    <h3 className="text-lg font-bold text-white">{template ? '装飾を編集' : '装飾を追加'}</h3>
                     <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
                 </div>
                 <div className="flex flex-col gap-4 flex-1 min-h-0 overflow-y-auto pr-1">
                     <div>
-                        <label className="block text-xs text-slate-400 mb-1">前置語名</label>
+                        <label className="block text-xs text-slate-400 mb-1">装飾名</label>
                         <input
                             type="text"
                             value={name}
@@ -103,7 +103,7 @@ const TemplateModal: React.FC<{
                             onChange={(event) => setSpaceEnabled(event.target.checked)}
                             className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
                         />
-                        <span className="text-sm text-slate-300">前置とプロンプトの間にスペースを入れる</span>
+                        <span className="text-sm text-slate-300">装飾とプロンプトの間にスペースを入れる</span>
                     </label>
                     <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-3">
                         <div className="flex items-center justify-between mb-2">
@@ -310,7 +310,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     alert('JSON形式が正しくありません。{ templates: [] } が必要です。');
                     return;
                 }
-                if (!confirm('インポートすると現在の前置語が上書きされます。続行しますか？')) return;
+                if (!confirm('インポートすると現在の装飾が上書きされます。続行しますか？')) return;
                 setData({ folders, words, templates: nextTemplates });
                 alert('インポートが完了しました。');
                 return;
@@ -436,7 +436,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     : 'text-slate-500 hover:text-slate-200'
                                     }`}
                             >
-                                前置の設定
+                                装飾の設定
                             </button>
                         </div>
                     </div>
@@ -536,8 +536,8 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                             onClick={() => openResetModal('clearExtras')}
                                             className="text-left px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-700 text-slate-200 hover:border-rose-500/40 hover:bg-slate-900"
                                         >
-                                            <div className="text-sm font-bold">お気に入り・品質テンプレート・前置の全データ消去</div>
-                                            <div className="text-xs text-slate-500">お気に入り・品質テンプレート・前置データを消去します。</div>
+                                            <div className="text-sm font-bold">お気に入り・品質テンプレート・装飾の全データ消去</div>
+                                            <div className="text-xs text-slate-500">お気に入り・品質テンプレート・装飾データを消去します。</div>
                                         </button>
                                     </div>
                                 </div>
@@ -549,7 +549,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     <div className="flex items-center justify-between gap-4">
                                         <div>
                                             <div className="text-sm font-bold text-slate-200">全データ</div>
-                                            <div className="text-xs text-slate-500">語群・お気に入り・品質テンプレート・前置の全データ</div>
+                                            <div className="text-xs text-slate-500">語群・お気に入り・品質テンプレート・装飾の全データ</div>
                                         </div>
                                         <div className="flex gap-2">
                                             <button
@@ -636,8 +636,8 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                 <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
                                     <div className="flex items-center justify-between gap-4">
                                         <div>
-                                            <div className="text-sm font-bold text-slate-200">前置データのみ</div>
-                                            <div className="text-xs text-slate-500">前置語テンプレートのデータ</div>
+                                            <div className="text-sm font-bold text-slate-200">装飾データのみ</div>
+                                            <div className="text-xs text-slate-500">装飾テンプレートのデータ</div>
                                         </div>
                                         <div className="flex gap-2">
                                             <button
@@ -667,7 +667,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                         {activeTab === 'templates' && (
                             <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
                                 <div className="flex items-center justify-between mb-3">
-                                    <h3 className="text-lg font-bold text-white">前置語</h3>
+                                    <h3 className="text-lg font-bold text-white">装飾</h3>
                                     <button
                                         onClick={() => {
                                             setEditingTemplate(null);
@@ -680,7 +680,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     {templates.length === 0 && (
-                                        <div className="text-xs text-slate-500">前置語がありません。</div>
+                                        <div className="text-xs text-slate-500">装飾がありません。</div>
                                     )}
                                     {templates.map(template => (
                                         <div key={template.id} className="flex items-center justify-between gap-3 border border-slate-700 rounded-lg px-3 py-2">
@@ -838,7 +838,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                         <div className="text-xs text-slate-500 leading-relaxed">
                             {resetAction === 'resetWords' && '語群の初期化を行います。'}
                             {resetAction === 'clearWords' && '語群・フォルダの全データを消去します。'}
-                            {resetAction === 'clearExtras' && 'お気に入り・品質テンプレート・前置データを消去します。'}
+                            {resetAction === 'clearExtras' && 'お気に入り・品質テンプレート・装飾データを消去します。'}
                         </div>
                         <label className="flex items-center gap-2 text-sm text-slate-300">
                             <input
