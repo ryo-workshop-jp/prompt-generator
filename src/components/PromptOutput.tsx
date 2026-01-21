@@ -6,12 +6,13 @@ import { CSS } from '@dnd-kit/utilities';
 import { usePrompt } from '../context/usePrompt';
 import type { SelectedWord, PromptStrength, PromptFavorite } from '../types';
 import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon } from '@heroicons/react/24/outline';
+import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid';
 
 const formatPrompt = (words: SelectedWord[]) => {
     return words.map(w => {
         const val = w.value_en;
         if (w.strength === 1.0) return val;
-        return `(${val}:${w.strength})`;
+        return `(${val}:${w.strength.toFixed(1)})`;
     }).join(', ');
 };
 
@@ -19,21 +20,47 @@ const StrengthSelector: React.FC<{
     strength: PromptStrength,
     onChange: (s: PromptStrength) => void
 }> = ({ strength, onChange }) => {
-    const levels: PromptStrength[] = [1.0, 1.2, 1.4];
+    const minStrength = 0.5;
+    const maxStrength = 1.5;
+    const step = 0.1;
+    const roundStrength = (value: number) => Math.round(value * 10) / 10;
+    const clampStrength = (value: number) => Math.min(maxStrength, Math.max(minStrength, roundStrength(value)));
+    const canDecrease = strength > minStrength;
+    const canIncrease = strength < maxStrength;
+
     return (
-        <div className="flex bg-slate-900 rounded-lg p-0.5 border border-slate-700">
-            {levels.map(lvl => (
-                <button
-                    key={lvl}
-                    onClick={(e) => { e.stopPropagation(); onChange(lvl); }}
-                    className={`text-[10px] px-2 py-0.5 rounded-md transition-all ${strength === lvl
-                        ? 'bg-slate-700 text-white shadow-sm'
-                        : 'text-slate-500 hover:text-slate-300'
-                        }`}
-                >
-                    {lvl}
-                </button>
-            ))}
+        <div className="flex items-center gap-1 bg-slate-900 rounded-lg px-1.5 py-0.5 border border-slate-700 font-mono">
+            <button
+                type="button"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    if (!canDecrease) return;
+                    onChange(clampStrength(strength - step));
+                }}
+                disabled={!canDecrease}
+                className={`text-[11px] px-1.5 rounded-md transition-all ${canDecrease
+                    ? 'text-slate-300 hover:text-white hover:bg-slate-700/70'
+                    : 'text-slate-600 cursor-not-allowed'
+                    }`}
+            >
+                <MinusSmallIcon className="w-4 h-4" />
+            </button>
+            <span className="text-[11px] text-slate-200 min-w-[34px] text-center">{strength.toFixed(1)}</span>
+            <button
+                type="button"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    if (!canIncrease) return;
+                    onChange(clampStrength(strength + step));
+                }}
+                disabled={!canIncrease}
+                className={`text-[11px] px-1.5 rounded-md transition-all ${canIncrease
+                    ? 'text-slate-300 hover:text-white hover:bg-slate-700/70'
+                    : 'text-slate-600 cursor-not-allowed'
+                    }`}
+            >
+                <PlusSmallIcon className="w-4 h-4" />
+            </button>
         </div>
     );
 };

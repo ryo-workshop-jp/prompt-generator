@@ -109,6 +109,8 @@ const TemplateSelectModal: React.FC<{
 export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode = false, onEdit, onDelete, dragHandleProps }) => {
     const { addWord, removeWord, updateWordStrength, toggleFavorite, selectedPositive, selectedNegative, templates } = usePrompt();
     const [isTemplateOpen, setIsTemplateOpen] = useState(false);
+    const clickStep = 0.1;
+    const maxClickStrength = 1.5;
 
     const templateIds = useMemo(() => {
         if (word.templateIds && word.templateIds.length > 0) return word.templateIds;
@@ -149,31 +151,33 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
     const isPositive = !!posWord;
     const isNegative = !!negWord;
     const currentStrength = posWord?.strength || negWord?.strength || 0;
+    const displayStrength = currentStrength ? currentStrength.toFixed(1) : '0.0';
     const isFavorite = !!word.favorite;
+
+    const roundStrength = (value: number) => Math.round(value * 10) / 10;
+    const increaseStrength = (value: number) => roundStrength(Math.min(maxClickStrength, value + clickStep));
+    const decreaseStrength = (value: number) => roundStrength(value - clickStep);
 
     const handleLeftClick = (event?: React.MouseEvent) => {
         if (editMode) return;
         const isShift = !!event?.shiftKey;
         // Left Click Logic (Positive Only):
         // Neutral -> Pos 1.0 (Add)
-        // Pos 1.0 -> Pos 1.2 (Update)
-        // Pos 1.2 -> Pos 1.4 (Update)
-        // Pos 1.4 -> Neutral (Remove - Cycle, or Max?)
+        // Pos 1.0 -> Pos 1.1 -> ... -> Pos 1.5
         // User requested: "Click once reduces strength" <- Wait, the request said:
         // "Currently if Pos is high, Right Click -> Neutral. Change to: Click once reduces strength by one."
         // "Left Click increases Pos strength by one. Right Click increases Neg strength by one."
 
         // Re-interpreting User Request:
-        // Left Click: Neutral -> Pos 1.0 -> Pos 1.2 -> Pos 1.4
-        // (What happens at 1.4? Maybe stay or cycle? "Raise strength by one") -> Let's cap at 1.4
+        // Left Click: Neutral -> Pos 1.0 -> Pos 1.1 -> ... -> Pos 1.5
 
         // But what about: "Currently Pos High -> Right Click -> Neutral"?
         // User wants: "Right click reduces strength".
-        // Ah, so if I am Pos 1.4:
-        // Right Click -> Pos 1.2 -> Pos 1.0 -> Neutral -> Neg 1.0 -> Neg 1.2 ...
+        // Ah, so if I am Pos 1.5:
+        // Right Click -> Pos 1.4 -> Pos 1.3 -> ... -> Pos 1.0 -> Neutral -> Neg 1.0 -> Neg 1.1 ...
 
         // Let's implement this "Scalar" Axis model:
-        // Neg 1.4 <- Neg 1.2 <- Neg 1.0 <- Neutral -> Pos 1.0 -> Pos 1.2 -> Pos 1.4
+        // Neg 1.5 <- ... <- Neg 1.0 <- Neutral -> Pos 1.0 -> ... -> Pos 1.5
 
         // Left Click: Move Right on Axis
         // Right Click: Move Left on Axis
@@ -183,8 +187,9 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
                 removeWord(word.id, 'positive');
             }
             if (negWord) {
-                if (negWord.strength === 1.0) updateWordStrength(word.id, 'negative', 1.2);
-                else if (negWord.strength === 1.2) updateWordStrength(word.id, 'negative', 1.4);
+                if (negWord.strength < maxClickStrength) {
+                    updateWordStrength(word.id, 'negative', increaseStrength(negWord.strength));
+                }
             } else {
                 addWord(word, 'negative', 1.0);
             }
@@ -194,16 +199,19 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
         if (isNegative) {
             // Negative -> Reduce Negative Strength (Move towards Neutral/Positive)
             if (negWord) {
-                if (negWord.strength === 1.4) updateWordStrength(word.id, 'negative', 1.2);
-                else if (negWord.strength === 1.2) updateWordStrength(word.id, 'negative', 1.0);
-                else if (negWord.strength === 1.0) removeWord(word.id, 'negative'); // Becomes Neutral
+                const nextStrength = decreaseStrength(negWord.strength);
+                if (nextStrength < 1.0) {
+                    removeWord(word.id, 'negative'); // Becomes Neutral
+                } else {
+                    updateWordStrength(word.id, 'negative', nextStrength);
+                }
             }
         } else if (isPositive) {
             // Positive -> Increase Positive Strength
             if (posWord) {
-                if (posWord.strength === 1.0) updateWordStrength(word.id, 'positive', 1.2);
-                else if (posWord.strength === 1.2) updateWordStrength(word.id, 'positive', 1.4);
-                // 1.4 Stay
+                if (posWord.strength < maxClickStrength) {
+                    updateWordStrength(word.id, 'positive', increaseStrength(posWord.strength));
+                }
             }
         } else {
             // Neutral -> Become Positive 1.0
@@ -219,16 +227,19 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
         if (isPositive) {
             // Positive -> Reduce Positive Strength (Move towards Neutral/Negative)
             if (posWord) {
-                if (posWord.strength === 1.4) updateWordStrength(word.id, 'positive', 1.2);
-                else if (posWord.strength === 1.2) updateWordStrength(word.id, 'positive', 1.0);
-                else if (posWord.strength === 1.0) removeWord(word.id, 'positive'); // Becomes Neutral
+                const nextStrength = decreaseStrength(posWord.strength);
+                if (nextStrength < 1.0) {
+                    removeWord(word.id, 'positive'); // Becomes Neutral
+                } else {
+                    updateWordStrength(word.id, 'positive', nextStrength);
+                }
             }
         } else if (isNegative) {
             // Negative -> Increase Negative Strength (Deeper Negative)
             if (negWord) {
-                if (negWord.strength === 1.0) updateWordStrength(word.id, 'negative', 1.2);
-                else if (negWord.strength === 1.2) updateWordStrength(word.id, 'negative', 1.4);
-                // 1.4 Stay
+                if (negWord.strength < maxClickStrength) {
+                    updateWordStrength(word.id, 'negative', increaseStrength(negWord.strength));
+                }
             }
         } else {
             // Neutral -> Become Negative 1.0
@@ -270,13 +281,13 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
                 )}
                 {isPositive && (
                     <div className="flex items-center gap-1">
-                        <span className="text-[10px] font-bold bg-cyan-950 px-1 rounded text-cyan-400">{currentStrength}</span>
+                        <span className="text-[10px] font-bold bg-cyan-950 px-1 rounded text-cyan-400">{displayStrength}</span>
                         <PlusIcon className="w-4 h-4 text-cyan-500" />
                     </div>
                 )}
                 {isNegative && (
                     <div className="flex items-center gap-1">
-                        <span className="text-[10px] font-bold bg-rose-950 px-1 rounded text-rose-400">{currentStrength}</span>
+                        <span className="text-[10px] font-bold bg-rose-950 px-1 rounded text-rose-400">{displayStrength}</span>
                         <MinusIcon className="w-4 h-4 text-rose-500" />
                     </div>
                     )}

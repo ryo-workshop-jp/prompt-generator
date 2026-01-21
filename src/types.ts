@@ -38,7 +38,7 @@ export interface DataStore {
     templates: TemplateItem[];
 }
 
-export type PromptStrength = 1.0 | 1.2 | 1.4;
+export type PromptStrength = number;
 
 export interface SelectedWord extends WordItem {
     strength: PromptStrength;
