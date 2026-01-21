@@ -31,6 +31,7 @@ export interface TemplateItem {
     allowFree?: boolean;
     defaultOptionId?: string;
     spaceEnabled?: boolean;
+    position?: 'before' | 'after';
 }
 
 export interface DataStore {

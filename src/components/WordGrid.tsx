@@ -23,6 +23,7 @@ type DecorOption = {
     templateId: string;
     templateName: string;
     spaceEnabled: boolean;
+    position: 'before' | 'after';
 };
 
 const TemplateSelectModal: React.FC<{
@@ -30,7 +31,7 @@ const TemplateSelectModal: React.FC<{
     templates: TemplateItem[];
     isOpen: boolean;
     onClose: () => void;
-    onApply: (labels: string[], values: string[], spaceEnabled: boolean) => void;
+    onApply: (options: DecorOption[]) => void;
 }> = ({ word, templates, isOpen, onClose, onApply }) => {
     const [selectedTemplateId, setSelectedTemplateId] = useState(() => templates[0]?.id ?? '');
     const [freeValues, setFreeValues] = useState<Record<string, string>>({});
@@ -43,11 +44,16 @@ const TemplateSelectModal: React.FC<{
     }, [templates, selectedTemplateId]);
 
     const preview = useMemo(() => {
-        const prefixValue = selectedOptions.map(option => option.value).join(' ');
-        const spacingAllowed = selectedOptions.every(option => option.spaceEnabled);
-        const spacer = spacingAllowed && prefixValue ? ' ' : '';
-        if (!prefixValue) return word.value_en;
-        return `${prefixValue}${spacer}${word.value_en}`;
+        const beforeOptions = selectedOptions.filter(option => option.position !== 'after');
+        const afterOptions = selectedOptions.filter(option => option.position === 'after');
+        const beforeValue = beforeOptions.map(option => option.value).join(' ');
+        const afterValue = afterOptions.map(option => option.value).join(' ');
+        const beforeSpacing = beforeOptions.every(option => option.spaceEnabled);
+        const afterSpacing = afterOptions.every(option => option.spaceEnabled);
+        const beforeSpacer = beforeSpacing && beforeValue ? ' ' : '';
+        const afterSpacer = afterSpacing && afterValue ? ' ' : '';
+        const withBefore = beforeValue ? `${beforeValue}${beforeSpacer}${word.value_en}` : word.value_en;
+        return afterValue ? `${withBefore}${afterSpacer}${afterValue}` : withBefore;
     }, [selectedOptions, word.value_en]);
 
     useEffect(() => {
@@ -76,7 +82,8 @@ const TemplateSelectModal: React.FC<{
             value: trimmed,
             templateId: template.id,
             templateName: template.name,
-            spaceEnabled: template.spaceEnabled ?? true
+            spaceEnabled: template.spaceEnabled ?? true,
+            position: template.position ?? 'before'
         };
         setCustomOptions(prev => ({
             ...prev,
@@ -88,10 +95,7 @@ const TemplateSelectModal: React.FC<{
 
     const handleApply = () => {
         if (selectedOptions.length === 0) return;
-        const labels = selectedOptions.map(option => option.label || option.value);
-        const values = selectedOptions.map(option => option.value);
-        const spacingAllowed = selectedOptions.every(option => option.spaceEnabled);
-        onApply(labels, values, spacingAllowed);
+        onApply(selectedOptions);
     };
 
     if (!isOpen) return null;
@@ -126,12 +130,13 @@ const TemplateSelectModal: React.FC<{
                             </div>
                             {activeTemplate && (() => {
                                 const options: DecorOption[] = [
-                                    ...activeTemplate.options.map(option => ({
-                                        ...option,
-                                        templateId: activeTemplate.id,
-                                        templateName: activeTemplate.name,
-                                        spaceEnabled: activeTemplate.spaceEnabled ?? true
-                                    })),
+                                        ...activeTemplate.options.map(option => ({
+                                            ...option,
+                                            templateId: activeTemplate.id,
+                                            templateName: activeTemplate.name,
+                                            spaceEnabled: activeTemplate.spaceEnabled ?? true,
+                                            position: activeTemplate.position ?? 'before'
+                                        })),
                                     ...(customOptions[activeTemplate.id] ?? [])
                                 ];
                                 return (
@@ -236,15 +241,23 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
         return `${word.id}__tpl__${token}`;
     };
 
-    const applyTemplate = (labels: string[], values: string[], spaceEnabled: boolean) => {
-        const prefixValue = values.join(' ');
-        const prefixLabel = labels.join('');
-        const spacer = spaceEnabled && prefixValue ? ' ' : '';
-        const finalValue = `${prefixValue}${spacer}${word.value_en}`;
-        const finalLabel = `${prefixLabel}${word.label_jp}`;
+    const applyTemplate = (options: DecorOption[]) => {
+        const beforeOptions = options.filter(option => option.position !== 'after');
+        const afterOptions = options.filter(option => option.position === 'after');
+        const beforeValue = beforeOptions.map(option => option.value).join(' ');
+        const afterValue = afterOptions.map(option => option.value).join(' ');
+        const beforeLabel = beforeOptions.map(option => option.label || option.value).join('');
+        const afterLabel = afterOptions.map(option => option.label || option.value).join('');
+        const beforeSpacing = beforeOptions.every(option => option.spaceEnabled);
+        const afterSpacing = afterOptions.every(option => option.spaceEnabled);
+        const beforeSpacer = beforeSpacing && beforeValue ? ' ' : '';
+        const afterSpacer = afterSpacing && afterValue ? ' ' : '';
+        const withBefore = beforeValue ? `${beforeValue}${beforeSpacer}${word.value_en}` : word.value_en;
+        const finalValue = afterValue ? `${withBefore}${afterSpacer}${afterValue}` : withBefore;
+        const finalLabel = `${beforeLabel}${word.label_jp}${afterLabel}`;
         const templatedWord: WordItem = {
             ...word,
-            id: makeTemplateId(prefixValue || Date.now().toString()),
+            id: makeTemplateId((beforeValue || afterValue) || Date.now().toString()),
             value_en: finalValue,
             label_jp: finalLabel,
             templateId: undefined,

@@ -38,6 +38,7 @@ const TemplateModal: React.FC<{
     const [options, setOptions] = useState<TemplateOption[]>(template?.options ?? []);
     const [allowFree, setAllowFree] = useState(!!template?.allowFree);
     const [spaceEnabled, setSpaceEnabled] = useState(template?.spaceEnabled ?? true);
+    const [position, setPosition] = useState<TemplateItem['position']>(template?.position ?? 'before');
     const [newLabel, setNewLabel] = useState('');
     const [newValue, setNewValue] = useState('');
 
@@ -63,7 +64,8 @@ const TemplateModal: React.FC<{
             name: name.trim(),
             options,
             allowFree,
-            spaceEnabled
+            spaceEnabled,
+            position
         };
         onSave(payload);
         onClose();
@@ -104,6 +106,17 @@ const TemplateModal: React.FC<{
                             className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
                         />
                         <span className="text-sm text-slate-300">装飾とプロンプトの間にスペースを入れる</span>
+                    </label>
+                    <label className="block text-xs text-slate-400">
+                        挿入位置
+                        <select
+                            value={position ?? 'before'}
+                            onChange={(event) => setPosition(event.target.value as TemplateItem['position'])}
+                            className="mt-1 w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
+                        >
+                            <option value="before">前方</option>
+                            <option value="after">後方</option>
+                        </select>
                     </label>
                     <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-3">
                         <div className="flex items-center justify-between mb-2">
