@@ -21,7 +21,7 @@ const TemplateSelectModal: React.FC<{
     templates: TemplateItem[];
     isOpen: boolean;
     onClose: () => void;
-    onApply: (label: string, value: string) => void;
+    onApply: (label: string, value: string, spaceEnabled: boolean) => void;
 }> = ({ word, templates, isOpen, onClose, onApply }) => {
     const [freeValue, setFreeValue] = useState('');
     const [selectedTemplateId, setSelectedTemplateId] = useState(() => templates[0]?.id ?? '');
@@ -68,7 +68,7 @@ const TemplateSelectModal: React.FC<{
                                     <button
                                         key={option.id}
                                         type="button"
-                                        onClick={() => onApply(option.label || option.value, option.value)}
+                                        onClick={() => onApply(option.label || option.value, option.value, activeTemplate?.spaceEnabled ?? true)}
                                         className="px-3 py-2 rounded-lg border border-slate-700 bg-slate-950 text-slate-200 hover:border-cyan-500/50 hover:bg-slate-900 text-sm"
                                     >
                                         <div className="font-semibold">{option.label}</div>
@@ -90,7 +90,7 @@ const TemplateSelectModal: React.FC<{
                                         onClick={() => {
                                             const trimmed = freeValue.trim();
                                             if (!trimmed) return;
-                                            onApply(trimmed, trimmed);
+                                            onApply(trimmed, trimmed, activeTemplate?.spaceEnabled ?? true);
                                         }}
                                         className="px-3 py-2 rounded-lg bg-slate-700 text-slate-200 hover:bg-slate-600 text-sm"
                                     >
@@ -129,8 +129,9 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
         return `${word.id}__tpl__${token}`;
     };
 
-    const applyTemplate = (label: string, value: string) => {
-        const finalValue = `${value}${word.value_en}`;
+    const applyTemplate = (label: string, value: string, spaceEnabled: boolean) => {
+        const spacer = spaceEnabled && value ? ' ' : '';
+        const finalValue = `${value}${spacer}${word.value_en}`;
         const finalLabel = `${label}${word.label_jp}`;
         const templatedWord: WordItem = {
             ...word,

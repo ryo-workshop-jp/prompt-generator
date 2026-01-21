@@ -37,6 +37,7 @@ const TemplateModal: React.FC<{
     const [name, setName] = useState(template?.name ?? '');
     const [options, setOptions] = useState<TemplateOption[]>(template?.options ?? []);
     const [allowFree, setAllowFree] = useState(!!template?.allowFree);
+    const [spaceEnabled, setSpaceEnabled] = useState(template?.spaceEnabled ?? true);
     const [newLabel, setNewLabel] = useState('');
     const [newValue, setNewValue] = useState('');
 
@@ -61,7 +62,8 @@ const TemplateModal: React.FC<{
             id: template?.id ?? Date.now().toString(),
             name: name.trim(),
             options,
-            allowFree
+            allowFree,
+            spaceEnabled
         };
         onSave(payload);
         onClose();
@@ -93,6 +95,15 @@ const TemplateModal: React.FC<{
                             className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
                         />
                         <span className="text-sm text-slate-300">自由入力を許可</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                            type="checkbox"
+                            checked={spaceEnabled}
+                            onChange={(event) => setSpaceEnabled(event.target.checked)}
+                            className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                        />
+                        <span className="text-sm text-slate-300">前置とプロンプトの間にスペースを入れる</span>
                     </label>
                     <div className="bg-slate-950/60 border border-slate-800 rounded-xl p-3">
                         <div className="flex items-center justify-between mb-2">

@@ -30,6 +30,7 @@ export interface TemplateItem {
     options: TemplateOption[];
     allowFree?: boolean;
     defaultOptionId?: string;
+    spaceEnabled?: boolean;
 }
 
 export interface DataStore {
