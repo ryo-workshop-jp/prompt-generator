@@ -24,8 +24,10 @@ export interface PromptContextType {
     addPromptFavorite: (name: string, type: 'positive' | 'negative', words: SelectedWord[], nsfw: boolean) => void;
     applyPromptFavorite: (favorite: PromptFavorite) => void;
     removePromptFavorite: (id: string) => void;
+    setFavoritesData: (favorites: PromptFavorite[]) => void;
     addQualityTemplate: (name: string, type: 'positive' | 'negative', words: SelectedWord[], nsfw: boolean) => void;
     removeQualityTemplate: (id: string) => void;
+    setQualityTemplatesData: (templates: PromptFavorite[]) => void;
     selectQualityTemplate: (type: 'positive' | 'negative', id: string | null) => void;
     selectedQualityTemplateIds: { positive: string | null; negative: string | null };
     clearPositive: () => void;

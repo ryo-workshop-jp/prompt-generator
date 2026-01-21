@@ -47,6 +47,22 @@ const normalizeDataStore = (input: Partial<DataStore>): DataStore => {
     };
 };
 
+const normalizeFavoritesList = (input: unknown): PromptFavorite[] => {
+    if (!Array.isArray(input)) return [];
+    return input.reduce<PromptFavorite[]>((acc, entry) => {
+        if (!entry || typeof entry !== 'object') return acc;
+        const candidate = entry as PromptFavorite;
+        if (!candidate.id || !candidate.name) return acc;
+        if (candidate.type !== 'positive' && candidate.type !== 'negative') return acc;
+        if (!Array.isArray(candidate.words)) return acc;
+        const nsfw = typeof candidate.nsfw === 'boolean'
+            ? candidate.nsfw
+            : candidate.words.some(word => word.nsfw);
+        acc.push({ ...candidate, nsfw });
+        return acc;
+    }, []);
+};
+
 const ensureUniqueFolderIds = (input: DataStore): DataStore => {
     const used = new Set<string>();
     const counters = new Map<string, number>();
@@ -153,7 +169,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             const stored = localStorage.getItem(QUALITY_KEY);
             if (!stored) return [];
             const parsed = JSON.parse(stored) as PromptFavorite[];
-            return Array.isArray(parsed) ? parsed : [];
+            return normalizeFavoritesList(parsed);
         } catch (e) {
             console.warn('Failed to load quality templates, using defaults.', e);
             return [];
@@ -359,6 +375,16 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         });
     };
 
+    const setFavoritesData = (items: PromptFavorite[]) => {
+        const normalized = normalizeFavoritesList(items);
+        setFavorites(normalized);
+        try {
+            localStorage.setItem(FAVORITES_KEY, JSON.stringify(normalized));
+        } catch (e) {
+            console.warn('Failed to save favorites.', e);
+        }
+    };
+
     const addQualityTemplate = (name: string, type: 'positive' | 'negative', words: SelectedWord[], nsfw: boolean) => {
         const payload: PromptFavorite = {
             id: Date.now().toString(),
@@ -393,6 +419,30 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
                 localStorage.setItem(FAVORITES_KEY, JSON.stringify(next));
             } catch (e) {
                 console.warn('Failed to save favorites.', e);
+            }
+            return next;
+        });
+    };
+
+    const setQualityTemplatesData = (items: PromptFavorite[]) => {
+        const normalized = normalizeFavoritesList(items);
+        setQualityTemplates(normalized);
+        try {
+            localStorage.setItem(QUALITY_KEY, JSON.stringify(normalized));
+        } catch (e) {
+            console.warn('Failed to save quality templates.', e);
+        }
+        setSelectedQualityTemplateIds(prev => {
+            const ids = new Set(normalized.map(template => template.id));
+            const next = {
+                positive: prev.positive && ids.has(prev.positive) ? prev.positive : null,
+                negative: prev.negative && ids.has(prev.negative) ? prev.negative : null
+            };
+            if (next.positive === prev.positive && next.negative === prev.negative) return prev;
+            try {
+                localStorage.setItem(QUALITY_SELECTION_KEY, JSON.stringify(next));
+            } catch (e) {
+                console.warn('Failed to save quality selection.', e);
             }
             return next;
         });
@@ -535,8 +585,10 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             addPromptFavorite,
             applyPromptFavorite,
             removePromptFavorite,
+            setFavoritesData,
             addQualityTemplate,
             removeQualityTemplate,
+            setQualityTemplatesData,
             selectQualityTemplate,
             selectedQualityTemplateIds,
             clearPositive,

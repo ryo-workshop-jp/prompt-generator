@@ -1,6 +1,6 @@
 ﻿import React, { useMemo, useRef, useState } from 'react';
 import { usePrompt } from '../context/usePrompt';
-import type { FolderItem, WordItem, TemplateItem, TemplateOption } from '../types';
+import type { FolderItem, WordItem, TemplateItem, TemplateOption, PromptFavorite } from '../types';
 
 
 const UI_STORAGE_KEY = 'promptgen:ui';
@@ -182,7 +182,7 @@ const TemplateModal: React.FC<{
 };
 
 const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
-    const { folders, words, templates, setData, addTemplate, updateTemplate, removeTemplate, nsfwEnabled, showDescendantWords, autoNsfwOn, collapseInactiveFolders, toggleNsfw, toggleShowDescendantWords, toggleAutoNsfwOn, toggleCollapseInactiveFolders } = usePrompt();
+    const { folders, words, templates, favorites, qualityTemplates, setData, addTemplate, updateTemplate, removeTemplate, setFavoritesData, setQualityTemplatesData, nsfwEnabled, showDescendantWords, autoNsfwOn, collapseInactiveFolders, toggleNsfw, toggleShowDescendantWords, toggleAutoNsfwOn, toggleCollapseInactiveFolders } = usePrompt();
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [editingTemplate, setEditingTemplate] = useState<TemplateItem | null>(null);
     const [isTemplateModalOpen, setIsTemplateModalOpen] = useState(false);
@@ -192,39 +192,153 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         const settings = readUiSettings();
         return !!settings.nsfwConfirmSkip;
     });
+    const [activeTab, setActiveTab] = useState<'general' | 'io' | 'templates'>('general');
+    const [importMode, setImportMode] = useState<'all' | 'words' | 'favorites' | 'quality' | 'templates' | null>(null);
+    const [pendingWordsImport, setPendingWordsImport] = useState<{ folders: FolderItem[]; words: WordItem[] } | null>(null);
 
     if (!isOpen) return null;
 
-    const handleExport = () => {
-        const payload = JSON.stringify({ folders, words, templates }, null, 2);
-        const blob = new Blob([payload], { type: 'application/json' });
+    const downloadJson = (payload: unknown, filename: string) => {
+        const json = JSON.stringify(payload, null, 2);
+        const blob = new Blob([json], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'promptgen-data.json';
+        link.download = filename;
         link.click();
         URL.revokeObjectURL(url);
     };
 
+    const handleExportAll = () => {
+        downloadJson({ folders, words, templates, favorites, qualityTemplates }, 'promptgen-all.json');
+    };
+
+    const handleExportWords = () => {
+        downloadJson({ folders, words }, 'promptgen-words.json');
+    };
+
+    const handleExportFavorites = () => {
+        downloadJson({ favorites }, 'promptgen-favorites.json');
+    };
+
+    const handleExportQuality = () => {
+        downloadJson({ qualityTemplates }, 'promptgen-quality-templates.json');
+    };
+
+    const handleExportTemplates = () => {
+        downloadJson({ templates }, 'promptgen-templates.json');
+    };
+
+    const requestImport = (mode: 'all' | 'words' | 'favorites' | 'quality' | 'templates') => {
+        setImportMode(mode);
+        fileInputRef.current?.click();
+    };
+
     const handleImport = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
-        if (!file) return;
+        if (!file || !importMode) return;
         try {
             const text = await file.text();
-            const parsed = JSON.parse(text) as { folders?: FolderItem[]; words?: WordItem[]; templates?: TemplateItem[] };
-            if (!Array.isArray(parsed.folders) || !Array.isArray(parsed.words)) {
-                alert('JSON形式が正しくありません。{ folders: [], words: [] } が必要です。');
+            const parsed = JSON.parse(text) as any;
+            const asArray = (value: unknown): unknown[] | null => Array.isArray(value) ? value : null;
+            if (importMode === 'all') {
+                const nextFolders = asArray(parsed?.folders) as FolderItem[] | null;
+                const nextWords = asArray(parsed?.words) as WordItem[] | null;
+                if (!nextFolders || !nextWords) {
+                    alert('JSON形式が正しくありません。{ folders: [], words: [] } が必要です。');
+                    return;
+                }
+                const nextTemplates = (asArray(parsed?.templates) ?? []) as TemplateItem[];
+                const nextFavorites = (asArray(parsed?.favorites) ?? []) as PromptFavorite[];
+                const nextQuality = (asArray(parsed?.qualityTemplates) ?? []) as PromptFavorite[];
+                if (!confirm('インポートすると現在のデータが上書きされます。続行しますか？')) return;
+                setData({ folders: nextFolders, words: nextWords, templates: nextTemplates });
+                setFavoritesData(nextFavorites);
+                setQualityTemplatesData(nextQuality);
+                alert('インポートが完了しました。');
                 return;
             }
-            if (!confirm('インポートすると現在のデータが上書きされます。続行しますか？')) return;
-            setData({ folders: parsed.folders, words: parsed.words, templates: parsed.templates ?? [] });
-            alert('インポートが完了しました。');
+            if (importMode === 'words') {
+                const nextFolders = asArray(parsed?.folders) as FolderItem[] | null;
+                const nextWords = asArray(parsed?.words) as WordItem[] | null;
+                if (!nextFolders || !nextWords) {
+                    alert('JSON形式が正しくありません。{ folders: [], words: [] } が必要です。');
+                    return;
+                }
+                setPendingWordsImport({ folders: nextFolders, words: nextWords });
+                return;
+            }
+            if (importMode === 'favorites') {
+                const nextFavorites = (asArray(parsed?.favorites) ?? asArray(parsed)) as PromptFavorite[] | null;
+                if (!nextFavorites) {
+                    alert('JSON形式が正しくありません。{ favorites: [] } が必要です。');
+                    return;
+                }
+                if (!confirm('インポートすると現在のお気に入りが上書きされます。続行しますか？')) return;
+                setFavoritesData(nextFavorites);
+                alert('インポートが完了しました。');
+                return;
+            }
+            if (importMode === 'quality') {
+                const nextQuality = (asArray(parsed?.qualityTemplates) ?? asArray(parsed)) as PromptFavorite[] | null;
+                if (!nextQuality) {
+                    alert('JSON形式が正しくありません。{ qualityTemplates: [] } が必要です。');
+                    return;
+                }
+                if (!confirm('インポートすると現在の品質テンプレートが上書きされます。続行しますか？')) return;
+                setQualityTemplatesData(nextQuality);
+                alert('インポートが完了しました。');
+                return;
+            }
+            if (importMode === 'templates') {
+                const nextTemplates = (asArray(parsed?.templates) ?? asArray(parsed)) as TemplateItem[] | null;
+                if (!nextTemplates) {
+                    alert('JSON形式が正しくありません。{ templates: [] } が必要です。');
+                    return;
+                }
+                if (!confirm('インポートすると現在の前置語が上書きされます。続行しますか？')) return;
+                setData({ folders, words, templates: nextTemplates });
+                alert('インポートが完了しました。');
+                return;
+            }
         } catch (error) {
             console.error('Failed to import data', error);
             alert('JSONファイルの読み込みに失敗しました。');
         } finally {
             if (event.target) event.target.value = '';
+            setImportMode(null);
         }
+    };
+
+    const applyWordsOverwrite = () => {
+        if (!pendingWordsImport) return;
+        setData({ folders: pendingWordsImport.folders, words: pendingWordsImport.words, templates });
+        setPendingWordsImport(null);
+        alert('インポートが完了しました。');
+    };
+
+    const applyWordsAdd = () => {
+        if (!pendingWordsImport) return;
+        const folderMap = new Map(folders.map(folder => [folder.id, folder]));
+        const wordMap = new Map(words.map(word => [word.id, word]));
+        const mergedFolders = [...folders];
+        for (const folder of pendingWordsImport.folders) {
+            if (!folderMap.has(folder.id)) {
+                folderMap.set(folder.id, folder);
+                mergedFolders.push(folder);
+            }
+        }
+        const mergedFolderIds = new Set(mergedFolders.map(folder => folder.id));
+        const mergedWords = [...words];
+        for (const word of pendingWordsImport.words) {
+            if (wordMap.has(word.id)) continue;
+            if (!mergedFolderIds.has(word.folderId)) continue;
+            wordMap.set(word.id, word);
+            mergedWords.push(word);
+        }
+        setData({ folders: mergedFolders, words: mergedWords, templates });
+        setPendingWordsImport(null);
+        alert('インポートが完了しました。');
     };
 
     const handleToggleNsfw = () => {
@@ -257,154 +371,288 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
                 </div>
 
-                <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
-                    <div className="flex flex-col gap-4">
-                        <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                            <h3 className="text-lg font-bold text-white mb-2">全体設定</h3>
-                            <div className="flex items-center justify-between">
-                                <div className="flex flex-col">
-                                    <span className="text-sm font-bold text-slate-200">NSFWコンテンツ</span>
-                                    <span className="text-xs text-slate-500">NSFWのフォルダ・語句を全体で有効/無効にします。</span>
-                                </div>
-                                <button
-                                    onClick={handleToggleNsfw}
-                                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${nsfwEnabled ? 'bg-red-500' : 'bg-slate-600'
-                                        }`}
-                                >
-                                    <span
-                                        className={`${nsfwEnabled ? 'translate-x-6' : 'translate-x-1'
-                                            } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
-                                    />
-                                </button>
-                            </div>
-                            <div className="flex items-center justify-between mt-4">
-                                <div className="flex flex-col">
-                                    <span className="text-sm font-bold text-slate-200">下層フォルダの語群を表示</span>
-                                    <span className="text-xs text-slate-500">選択中フォルダ配下の語群をまとめて表示します。</span>
-                                </div>
-                                <button
-                                    onClick={toggleShowDescendantWords}
-                                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${showDescendantWords ? 'bg-cyan-500' : 'bg-slate-600'
-                                        }`}
-                                >
-                                    <span
-                                        className={`${showDescendantWords ? 'translate-x-6' : 'translate-x-1'
-                                            } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
-                                    />
-                                </button>
-                            </div>
-                            <div className="flex items-center justify-between mt-4">
-                                <div className="flex flex-col">
-                                    <span className="text-sm font-bold text-slate-200">NSFW ON時に自動でNSFWを追加</span>
-                                    <span className="text-xs text-slate-500">NSFW表示がONのとき自動で追加します。</span>
-                                </div>
-                                <button
-                                    onClick={toggleAutoNsfwOn}
-                                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${autoNsfwOn ? 'bg-cyan-500' : 'bg-slate-600'
-                                        }`}
-                                >
-                                    <span
-                                        className={`${autoNsfwOn ? 'translate-x-6' : 'translate-x-1'
-                                            } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
-                                    />
-                                </button>
-                            </div>
-                            <div className="flex items-center justify-between mt-4">
-                                <div className="flex flex-col">
-                                    <span className="text-sm font-bold text-slate-200">フォルダは選択中のみ展開</span>
-                                    <span className="text-xs text-slate-500">オフの場合は展開状態を保持します。</span>
-                                </div>
-                                <button
-                                    onClick={toggleCollapseInactiveFolders}
-                                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${collapseInactiveFolders ? 'bg-cyan-500' : 'bg-slate-600'
-                                        }`}
-                                >
-                                    <span
-                                        className={`${collapseInactiveFolders ? 'translate-x-6' : 'translate-x-1'
-                                            } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
-                                    />
-                                </button>
-                            </div>
+                <div className="flex-1 flex flex-col min-h-0">
+                    <div className="px-4 pt-4">
+                        <div className="flex gap-2 border-b border-slate-700 text-xs font-bold uppercase tracking-wider">
+                            <button
+                                type="button"
+                                onClick={() => setActiveTab('general')}
+                                className={`px-3 py-2 rounded-t-lg transition-colors ${activeTab === 'general'
+                                    ? 'bg-slate-800 text-slate-100 border border-b-0 border-slate-700'
+                                    : 'text-slate-500 hover:text-slate-200'
+                                    }`}
+                            >
+                                全体の設定
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => setActiveTab('io')}
+                                className={`px-3 py-2 rounded-t-lg transition-colors ${activeTab === 'io'
+                                    ? 'bg-slate-800 text-slate-100 border border-b-0 border-slate-700'
+                                    : 'text-slate-500 hover:text-slate-200'
+                                    }`}
+                            >
+                                語群データの入出力
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => setActiveTab('templates')}
+                                className={`px-3 py-2 rounded-t-lg transition-colors ${activeTab === 'templates'
+                                    ? 'bg-slate-800 text-slate-100 border border-b-0 border-slate-700'
+                                    : 'text-slate-500 hover:text-slate-200'
+                                    }`}
+                            >
+                                前置の設定
+                            </button>
                         </div>
-                        <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                            <h3 className="text-lg font-bold text-white mb-2">データのバックアップ</h3>
-                            <p className="text-xs text-slate-500 mb-4">
-                                フォルダと語句をJSONで書き出し/読み込みします。
-                            </p>
-                            <div className="flex gap-2">
-                                <button
-                                    onClick={handleExport}
-                                    className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
-                                >
-                                    JSONを書き出し
-                                </button>
-                                <button
-                                    onClick={() => fileInputRef.current?.click()}
-                                    className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
-                                >
-                                    JSONを読み込み
-                                </button>
-                            </div>
-                            <input
-                                ref={fileInputRef}
-                                type="file"
-                                accept="application/json"
-                                onChange={handleImport}
-                                className="hidden"
-                            />
-                        </div>
-                        <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                            <div className="flex items-center justify-between mb-3">
-                                <h3 className="text-lg font-bold text-white">前置語</h3>
-                                <button
-                                    onClick={() => {
-                                        setEditingTemplate(null);
-                                        setIsTemplateModalOpen(true);
-                                    }}
-                                    className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
-                                >
-                                    追加
-                                </button>
-                            </div>
-                            <div className="flex flex-col gap-2">
-                                {templates.length === 0 && (
-                                    <div className="text-xs text-slate-500">前置語がありません。</div>
-                                )}
-                                {templates.map(template => (
-                                    <div key={template.id} className="flex items-center justify-between gap-3 border border-slate-700 rounded-lg px-3 py-2">
-                                        <div>
-                                            <div className="text-sm font-bold text-slate-200">{template.name}</div>
-                                            <div className="text-[11px] text-slate-500">
-                                                {template.options.length} 件
-                                                {template.allowFree ? ' + 自由入力' : ''}
-                                            </div>
+                    </div>
+                    <div className="flex-1 overflow-y-auto p-4 pt-3 custom-scrollbar">
+                        {activeTab === 'general' && (
+                            <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                <h3 className="text-lg font-bold text-white mb-2">全体設定</h3>
+                                <div className="flex items-center justify-between">
+                                    <div className="flex flex-col">
+                                        <span className="text-sm font-bold text-slate-200">NSFWコンテンツ</span>
+                                        <span className="text-xs text-slate-500">NSFWのフォルダ・語句を全体で有効/無効にします。</span>
+                                    </div>
+                                    <button
+                                        onClick={handleToggleNsfw}
+                                        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${nsfwEnabled ? 'bg-red-500' : 'bg-slate-600'
+                                            }`}
+                                    >
+                                        <span
+                                            className={`${nsfwEnabled ? 'translate-x-6' : 'translate-x-1'
+                                                } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                                        />
+                                    </button>
+                                </div>
+                                {nsfwEnabled && (
+                                    <div className="flex items-center justify-between mt-4">
+                                        <div className="flex flex-col">
+                                            <span className="text-sm font-bold text-slate-200">NSFW ON時に自動でNSFWを追加</span>
+                                            <span className="text-xs text-slate-500">NSFW表示がONのとき自動で追加します。</span>
                                         </div>
-                                        <div className="flex items-center gap-2">
+                                        <button
+                                            onClick={toggleAutoNsfwOn}
+                                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${autoNsfwOn ? 'bg-cyan-500' : 'bg-slate-600'
+                                                }`}
+                                        >
+                                            <span
+                                                className={`${autoNsfwOn ? 'translate-x-6' : 'translate-x-1'
+                                                    } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                                            />
+                                        </button>
+                                    </div>
+                                )}
+                                <div className="flex items-center justify-between mt-4">
+                                    <div className="flex flex-col">
+                                        <span className="text-sm font-bold text-slate-200">下層フォルダの語群を表示</span>
+                                        <span className="text-xs text-slate-500">選択中フォルダ配下の語群をまとめて表示します。</span>
+                                    </div>
+                                    <button
+                                        onClick={toggleShowDescendantWords}
+                                        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${showDescendantWords ? 'bg-cyan-500' : 'bg-slate-600'
+                                            }`}
+                                    >
+                                        <span
+                                            className={`${showDescendantWords ? 'translate-x-6' : 'translate-x-1'
+                                                } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                                        />
+                                    </button>
+                                </div>
+                                <div className="flex items-center justify-between mt-4">
+                                    <div className="flex flex-col">
+                                        <span className="text-sm font-bold text-slate-200">フォルダは選択中のみ展開</span>
+                                        <span className="text-xs text-slate-500">オフの場合は展開状態を保持します。</span>
+                                    </div>
+                                    <button
+                                        onClick={toggleCollapseInactiveFolders}
+                                        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${collapseInactiveFolders ? 'bg-cyan-500' : 'bg-slate-600'
+                                            }`}
+                                    >
+                                        <span
+                                            className={`${collapseInactiveFolders ? 'translate-x-6' : 'translate-x-1'
+                                                } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                                        />
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                        {activeTab === 'io' && (
+                            <div className="flex flex-col gap-3">
+                                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                    <div className="flex items-center justify-between gap-4">
+                                        <div>
+                                            <div className="text-sm font-bold text-slate-200">全データ</div>
+                                            <div className="text-xs text-slate-500">語群・お気に入り・品質テンプレート・前置の全データ</div>
+                                        </div>
+                                        <div className="flex gap-2">
                                             <button
-                                                type="button"
-                                                onClick={() => {
-                                                    setEditingTemplate(template);
-                                                    setIsTemplateModalOpen(true);
-                                                }}
-                                                className="px-2 py-1 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                                onClick={handleExportAll}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                編集
+                                                出力
                                             </button>
                                             <button
-                                                type="button"
-                                                onClick={() => {
-                                                    if (!confirm('Delete this template? Linked words will revert to normal words.')) return;
-                                                    removeTemplate(template.id);
-                                                }}
-                                                className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-400 hover:text-rose-400"
+                                                onClick={() => requestImport('all')}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                削除
+                                                入力
                                             </button>
                                         </div>
                                     </div>
-                                ))}
+                                </div>
+                                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                    <div className="flex items-center justify-between gap-4">
+                                        <div>
+                                            <div className="text-sm font-bold text-slate-200">語群データのみ</div>
+                                            <div className="text-xs text-slate-500">フォルダと語群のデータ</div>
+                                        </div>
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={handleExportWords}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                出力
+                                            </button>
+                                            <button
+                                                onClick={() => requestImport('words')}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                入力
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                    <div className="flex items-center justify-between gap-4">
+                                        <div>
+                                            <div className="text-sm font-bold text-slate-200">お気に入りのみ</div>
+                                            <div className="text-xs text-slate-500">お気に入りプロンプトのデータ</div>
+                                        </div>
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={handleExportFavorites}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                出力
+                                            </button>
+                                            <button
+                                                onClick={() => requestImport('favorites')}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                入力
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                    <div className="flex items-center justify-between gap-4">
+                                        <div>
+                                            <div className="text-sm font-bold text-slate-200">品質テンプレートのみ</div>
+                                            <div className="text-xs text-slate-500">品質テンプレートのデータ</div>
+                                        </div>
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={handleExportQuality}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                出力
+                                            </button>
+                                            <button
+                                                onClick={() => requestImport('quality')}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                入力
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                    <div className="flex items-center justify-between gap-4">
+                                        <div>
+                                            <div className="text-sm font-bold text-slate-200">前置データのみ</div>
+                                            <div className="text-xs text-slate-500">前置語テンプレートのデータ</div>
+                                        </div>
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={handleExportTemplates}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                出力
+                                            </button>
+                                            <button
+                                                onClick={() => requestImport('templates')}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                入力
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input
+                                    ref={fileInputRef}
+                                    type="file"
+                                    accept="application/json"
+                                    onChange={handleImport}
+                                    className="hidden"
+                                />
                             </div>
-                        </div>
+                        )}
+                        {activeTab === 'templates' && (
+                            <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-lg font-bold text-white">前置語</h3>
+                                    <button
+                                        onClick={() => {
+                                            setEditingTemplate(null);
+                                            setIsTemplateModalOpen(true);
+                                        }}
+                                        className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                    >
+                                        追加
+                                    </button>
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    {templates.length === 0 && (
+                                        <div className="text-xs text-slate-500">前置語がありません。</div>
+                                    )}
+                                    {templates.map(template => (
+                                        <div key={template.id} className="flex items-center justify-between gap-3 border border-slate-700 rounded-lg px-3 py-2">
+                                            <div>
+                                                <div className="text-sm font-bold text-slate-200">{template.name}</div>
+                                                <div className="text-[11px] text-slate-500">
+                                                    {template.options.length} 件
+                                                    {template.allowFree ? ' + 自由入力' : ''}
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        setEditingTemplate(template);
+                                                        setIsTemplateModalOpen(true);
+                                                    }}
+                                                    className="px-2 py-1 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                                >
+                                                    編集
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        if (!confirm('Delete this template? Linked words will revert to normal words.')) return;
+                                                        removeTemplate(template.id);
+                                                    }}
+                                                    className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-400 hover:text-rose-400"
+                                                >
+                                                    削除
+                                                </button>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="p-4 border-t border-slate-700 bg-slate-950 rounded-b-2xl flex items-center justify-end gap-3">
@@ -456,6 +704,52 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                 className="flex-1 px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-red-500 font-bold"
                             >
                                 同意して表示
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {pendingWordsImport && (
+                <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl flex flex-col gap-4">
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-bold text-white">語群データの取り込み</h3>
+                            <button
+                                onClick={() => setPendingWordsImport(null)}
+                                className="text-slate-400 hover:text-white text-xl"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                        <div className="text-sm text-slate-300 leading-relaxed">
+                            取り込み方法を選択してください。
+                        </div>
+                        <div className="text-xs text-slate-500 leading-relaxed">
+                            上書き: 既存の語群を入力データで置き換えます。入力データにない語群は削除されます。
+                            <br />
+                            追加: 既存の語群にない語群のみ追加します。
+                        </div>
+                        <div className="flex gap-2 pt-2">
+                            <button
+                                type="button"
+                                onClick={() => setPendingWordsImport(null)}
+                                className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                            >
+                                キャンセル
+                            </button>
+                            <button
+                                type="button"
+                                onClick={applyWordsAdd}
+                                className="flex-1 px-4 py-2 rounded-lg bg-slate-700 text-slate-100 hover:bg-slate-600 font-bold"
+                            >
+                                追加
+                            </button>
+                            <button
+                                type="button"
+                                onClick={applyWordsOverwrite}
+                                className="flex-1 px-4 py-2 rounded-lg bg-rose-600 text-white hover:bg-rose-500 font-bold"
+                            >
+                                上書き
                             </button>
                         </div>
                     </div>
