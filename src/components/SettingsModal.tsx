@@ -817,17 +817,17 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                             </button>
                             <button
                                 type="button"
-                                onClick={applyWordsAdd}
+                                onClick={applyWordsOverwrite}
                                 className="flex-1 px-4 py-2 rounded-lg bg-slate-700 text-slate-100 hover:bg-slate-600 font-bold"
                             >
-                                追加
+                                上書き
                             </button>
                             <button
                                 type="button"
-                                onClick={applyWordsOverwrite}
-                                className="flex-1 px-4 py-2 rounded-lg bg-rose-600 text-white hover:bg-rose-500 font-bold"
+                                onClick={applyWordsAdd}
+                                className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-rose-300 hover:bg-slate-700 hover:text-rose-200 font-bold border border-rose-500/40"
                             >
-                                上書き
+                                追加
                             </button>
                         </div>
                     </div>
