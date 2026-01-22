@@ -85,7 +85,9 @@ const Chip: React.FC<{
     stepperDisplay: 'inside' | 'above';
     onHoverStart?: (id: string, type: 'positive' | 'negative', rect: DOMRect) => void;
     onHoverEnd?: () => void;
-}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd }) => {
+    onHighlightStart?: (id: string, type: 'positive' | 'negative') => void;
+    onHighlightEnd?: () => void;
+}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd, onHighlightStart, onHighlightEnd }) => {
     const { removeWord, updateWordStrength } = usePrompt();
     const chipRef = useRef<HTMLDivElement | null>(null);
 
@@ -101,6 +103,8 @@ const Chip: React.FC<{
             ref={chipRef}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={stepperDisplay === 'above' ? onHoverEnd : undefined}
+            onPointerEnter={() => onHighlightStart?.(word.id, type)}
+            onPointerLeave={onHighlightEnd}
             className={`relative inline-flex items-center gap-2 pl-3 pr-1 py-1 rounded-full text-xs font-medium border group transition-all animate-fadeIn ${type === 'positive'
             ? 'bg-cyan-950/40 border-cyan-800 text-cyan-300'
             : 'bg-rose-950/40 border-rose-800 text-rose-300'
@@ -130,7 +134,9 @@ const SortableChip: React.FC<{
     stepperDisplay: 'inside' | 'above';
     onHoverStart?: (id: string, type: 'positive' | 'negative', rect: DOMRect) => void;
     onHoverEnd?: () => void;
-}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd }) => {
+    onHighlightStart?: (id: string, type: 'positive' | 'negative') => void;
+    onHighlightEnd?: () => void;
+}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd, onHighlightStart, onHighlightEnd }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
         id: `${type}:${word.id}`,
         data: { type }
@@ -143,7 +149,15 @@ const SortableChip: React.FC<{
 
     return (
         <div ref={setNodeRef} style={style} className="relative">
-            <Chip word={word} type={type} stepperDisplay={stepperDisplay} onHoverStart={onHoverStart} onHoverEnd={onHoverEnd} />
+            <Chip
+                word={word}
+                type={type}
+                stepperDisplay={stepperDisplay}
+                onHoverStart={onHoverStart}
+                onHoverEnd={onHoverEnd}
+                onHighlightStart={onHighlightStart}
+                onHighlightEnd={onHighlightEnd}
+            />
             <button
                 type="button"
                 {...attributes}
@@ -167,6 +181,7 @@ const PromptOutput: React.FC = () => {
     const [favoriteName, setFavoriteName] = useState('');
     const [favoriteNsfw, setFavoriteNsfw] = useState(false);
     const [saveAsQuality, setSaveAsQuality] = useState(false);
+    const [highlightedPrompt, setHighlightedPrompt] = useState<{ id: string; type: 'positive' | 'negative' } | null>(null);
     const [stepperDisplay, setStepperDisplay] = useState<'inside' | 'above'>(() => {
         const settings = readUiSettings();
         return settings.stepperDisplay ?? 'above';
@@ -181,6 +196,20 @@ const PromptOutput: React.FC = () => {
         const source = hoveredStrength.type === 'positive' ? selectedPositive : selectedNegative;
         return source.find(word => word.id === hoveredStrength.id) ?? null;
     }, [hoveredStrength, selectedPositive, selectedNegative]);
+
+    const renderPromptTokens = (words: SelectedWord[], highlightId?: string) => {
+        return words.map((word, index) => {
+            const value = word.strength === 1.0 ? word.value_en : `(${word.value_en}:${word.strength.toFixed(1)})`;
+            return (
+                <span key={word.id}>
+                    <span className={word.id === highlightId ? 'bg-amber-400/30 text-amber-200 rounded px-0.5' : undefined}>
+                        {value}
+                    </span>
+                    {index < words.length - 1 ? ', ' : ''}
+                </span>
+            );
+        });
+    };
 
     useEffect(() => {
         if (!hoveredStrength) return;
@@ -417,6 +446,8 @@ const PromptOutput: React.FC = () => {
                                         stepperDisplay={stepperDisplay}
                                         onHoverStart={stepperDisplay === 'above' ? handleHoverStart : undefined}
                                         onHoverEnd={stepperDisplay === 'above' ? handleHoverEnd : undefined}
+                                        onHighlightStart={(id, type) => setHighlightedPrompt({ id, type })}
+                                        onHighlightEnd={() => setHighlightedPrompt(null)}
                                     />
                                 ))}
                             </div>
@@ -426,11 +457,9 @@ const PromptOutput: React.FC = () => {
 
                 {/* Raw Text Output (Read Only) */}
                 <div className="h-16 relative">
-                    <textarea
-                        readOnly
-                        value={posString}
-                        className="w-full h-full bg-black/40 border border-slate-800 rounded-lg p-2 text-xs font-mono text-cyan-100/70 focus:outline-none resize-none"
-                    />
+                    <div className="w-full h-full bg-black/40 border border-slate-800 rounded-lg p-2 text-xs font-mono text-cyan-100/70 overflow-y-auto whitespace-pre-wrap break-words">
+                        {posString ? renderPromptTokens(selectedPositive, highlightedPrompt?.type === 'positive' ? highlightedPrompt.id : undefined) : ''}
+                    </div>
                 </div>
             </div>
 
@@ -509,6 +538,8 @@ const PromptOutput: React.FC = () => {
                                         stepperDisplay={stepperDisplay}
                                         onHoverStart={stepperDisplay === 'above' ? handleHoverStart : undefined}
                                         onHoverEnd={stepperDisplay === 'above' ? handleHoverEnd : undefined}
+                                        onHighlightStart={(id, type) => setHighlightedPrompt({ id, type })}
+                                        onHighlightEnd={() => setHighlightedPrompt(null)}
                                     />
                                 ))}
                             </div>
@@ -518,11 +549,9 @@ const PromptOutput: React.FC = () => {
 
                 {/* Raw Text Output */}
                 <div className="h-16 relative">
-                    <textarea
-                        readOnly
-                        value={negString}
-                        className="w-full h-full bg-black/40 border border-slate-800 rounded-lg p-2 text-xs font-mono text-rose-100/70 focus:outline-none resize-none"
-                    />
+                    <div className="w-full h-full bg-black/40 border border-slate-800 rounded-lg p-2 text-xs font-mono text-rose-100/70 overflow-y-auto whitespace-pre-wrap break-words">
+                        {negString ? renderPromptTokens(selectedNegative, highlightedPrompt?.type === 'negative' ? highlightedPrompt.id : undefined) : ''}
+                    </div>
                 </div>
             </div>
             </div>
@@ -755,6 +784,8 @@ const PromptOutput: React.FC = () => {
                                                 stepperDisplay={stepperDisplay}
                                                 onHoverStart={stepperDisplay === 'above' ? handleHoverStart : undefined}
                                                 onHoverEnd={stepperDisplay === 'above' ? handleHoverEnd : undefined}
+                                                onHighlightStart={(id, type) => setHighlightedPrompt({ id, type })}
+                                                onHighlightEnd={() => setHighlightedPrompt(null)}
                                             />
                                         ))}
                                     </div>
