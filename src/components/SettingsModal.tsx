@@ -11,18 +11,20 @@ const readUiSettings = () => {
         if (typeof window === 'undefined') return {};
         const stored = localStorage.getItem(UI_STORAGE_KEY);
         if (!stored) return {};
-        return JSON.parse(stored) as { nsfwConfirmSkip?: boolean };
+        return JSON.parse(stored) as { nsfwConfirmSkip?: boolean; stepperDisplay?: 'inside' | 'above' };
     } catch (e) {
         console.warn('Failed to load UI settings.', e);
         return {};
     }
 };
 
-const writeUiSettings = (updates: { nsfwConfirmSkip?: boolean }) => {
+const writeUiSettings = (updates: { nsfwConfirmSkip?: boolean; stepperDisplay?: 'inside' | 'above' }) => {
     try {
         if (typeof window === 'undefined') return;
         const current = readUiSettings();
-        localStorage.setItem(UI_STORAGE_KEY, JSON.stringify({ ...current, ...updates }));
+        const next = { ...current, ...updates };
+        localStorage.setItem(UI_STORAGE_KEY, JSON.stringify(next));
+        window.dispatchEvent(new CustomEvent('promptgen:ui-update', { detail: next }));
     } catch (e) {
         console.warn('Failed to save UI settings.', e);
     }
@@ -217,6 +219,10 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         const settings = readUiSettings();
         return !!settings.nsfwConfirmSkip;
     });
+    const [stepperDisplay, setStepperDisplay] = useState<'inside' | 'above'>(() => {
+        const settings = readUiSettings();
+        return settings.stepperDisplay ?? 'above';
+    });
     const [activeTab, setActiveTab] = useState<'general' | 'io' | 'templates'>('general');
     const [importMode, setImportMode] = useState<'all' | 'words' | 'favorites' | 'quality' | 'templates' | null>(null);
     const [pendingWordsImport, setPendingWordsImport] = useState<{ folders: FolderItem[]; words: WordItem[] } | null>(null);
@@ -390,6 +396,11 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         setIsNsfwConfirmOpen(false);
     };
 
+    const handleStepperDisplay = (next: 'inside' | 'above') => {
+        setStepperDisplay(next);
+        writeUiSettings({ stepperDisplay: next });
+    };
+
     const openResetModal = (action: 'resetWords' | 'clearWords' | 'clearExtras') => {
         setResetAction(action);
         setResetConfirmed(false);
@@ -523,6 +534,34 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                     } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
                                             />
                                         </button>
+                                    </div>
+                                    <div className="flex items-center justify-between mt-4">
+                                        <div className="flex flex-col">
+                                            <span className="text-sm font-bold text-slate-200">チップのステッパー表示</span>
+                                            <span className="text-xs text-slate-500">チップ内に固定するか、上に表示するか選択します。</span>
+                                        </div>
+                                        <div className="inline-flex rounded-lg border border-slate-700 bg-slate-900/60 p-0.5 text-xs">
+                                            <button
+                                                type="button"
+                                                onClick={() => handleStepperDisplay('inside')}
+                                                className={`px-2 py-1 rounded-md transition-colors ${stepperDisplay === 'inside'
+                                                    ? 'bg-cyan-600 text-white'
+                                                    : 'text-slate-400 hover:text-slate-200'
+                                                    }`}
+                                            >
+                                                チップ内
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => handleStepperDisplay('above')}
+                                                className={`px-2 py-1 rounded-md transition-colors ${stepperDisplay === 'above'
+                                                    ? 'bg-cyan-600 text-white'
+                                                    : 'text-slate-400 hover:text-slate-200'
+                                                    }`}
+                                            >
+                                                チップ上
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">

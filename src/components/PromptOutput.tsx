@@ -1,4 +1,4 @@
-﻿import React, { useMemo, useState } from 'react';
+﻿import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { DndContext, KeyboardSensor, PointerSensor, closestCenter, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, rectSortingStrategy, sortableKeyboardCoordinates, useSortable } from '@dnd-kit/sortable';
@@ -7,6 +7,20 @@ import { usePrompt } from '../context/usePrompt';
 import type { SelectedWord, PromptStrength, PromptFavorite } from '../types';
 import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid';
+
+const UI_STORAGE_KEY = 'promptgen:ui';
+
+const readUiSettings = () => {
+    try {
+        if (typeof window === 'undefined') return {};
+        const stored = localStorage.getItem(UI_STORAGE_KEY);
+        if (!stored) return {};
+        return JSON.parse(stored) as { stepperDisplay?: 'inside' | 'above' };
+    } catch (e) {
+        console.warn('Failed to load UI settings.', e);
+        return {};
+    }
+};
 
 const formatPrompt = (words: SelectedWord[]) => {
     return words.map(w => {
@@ -65,24 +79,41 @@ const StrengthSelector: React.FC<{
     );
 };
 
-const Chip: React.FC<{ word: SelectedWord, type: 'positive' | 'negative' }> = ({ word, type }) => {
+const Chip: React.FC<{
+    word: SelectedWord;
+    type: 'positive' | 'negative';
+    stepperDisplay: 'inside' | 'above';
+    onHoverStart?: (id: string, type: 'positive' | 'negative', rect: DOMRect) => void;
+    onHoverEnd?: () => void;
+}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd }) => {
     const { removeWord, updateWordStrength } = usePrompt();
+    const chipRef = useRef<HTMLDivElement | null>(null);
+
+    const handleMouseEnter = () => {
+        if (stepperDisplay !== 'above') return;
+        const rect = chipRef.current?.getBoundingClientRect();
+        if (!rect) return;
+        onHoverStart?.(word.id, type, rect);
+    };
 
     return (
-        <div className={`inline-flex items-center gap-2 pl-3 pr-1 py-1 rounded-full text-xs font-medium border group transition-all animate-fadeIn ${type === 'positive'
+        <div
+            ref={chipRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={stepperDisplay === 'above' ? onHoverEnd : undefined}
+            className={`relative inline-flex items-center gap-2 pl-3 pr-1 py-1 rounded-full text-xs font-medium border group transition-all animate-fadeIn ${type === 'positive'
             ? 'bg-cyan-950/40 border-cyan-800 text-cyan-300'
             : 'bg-rose-950/40 border-rose-800 text-rose-300'
             }`}>
             <span>{word.label_jp}</span>
-            <span className="opacity-50 text-[10px]">{word.value_en}</span>
-
-            <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
-                <StrengthSelector
-                    strength={word.strength}
-                    onChange={(s) => updateWordStrength(word.id, type, s)}
-                />
-            </div>
-
+            {stepperDisplay === 'inside' && (
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+                    <StrengthSelector
+                        strength={word.strength}
+                        onChange={(s) => updateWordStrength(word.id, type, s)}
+                    />
+                </div>
+            )}
             <button
                 onClick={() => removeWord(word.id, type)}
                 className="p-1 hover:bg-black/20 rounded-full ml-1"
@@ -93,7 +124,13 @@ const Chip: React.FC<{ word: SelectedWord, type: 'positive' | 'negative' }> = ({
     );
 };
 
-const SortableChip: React.FC<{ word: SelectedWord; type: 'positive' | 'negative' }> = ({ word, type }) => {
+const SortableChip: React.FC<{
+    word: SelectedWord;
+    type: 'positive' | 'negative';
+    stepperDisplay: 'inside' | 'above';
+    onHoverStart?: (id: string, type: 'positive' | 'negative', rect: DOMRect) => void;
+    onHoverEnd?: () => void;
+}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
         id: `${type}:${word.id}`,
         data: { type }
@@ -106,7 +143,7 @@ const SortableChip: React.FC<{ word: SelectedWord; type: 'positive' | 'negative'
 
     return (
         <div ref={setNodeRef} style={style} className="relative">
-            <Chip word={word} type={type} />
+            <Chip word={word} type={type} stepperDisplay={stepperDisplay} onHoverStart={onHoverStart} onHoverEnd={onHoverEnd} />
             <button
                 type="button"
                 {...attributes}
@@ -121,7 +158,7 @@ const SortableChip: React.FC<{ word: SelectedWord; type: 'positive' | 'negative'
 };
 
 const PromptOutput: React.FC = () => {
-    const { selectedPositive, selectedNegative, favorites, qualityTemplates, nsfwEnabled, addPromptFavorite, addQualityTemplate, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds } = usePrompt();
+    const { selectedPositive, selectedNegative, favorites, qualityTemplates, nsfwEnabled, addPromptFavorite, addQualityTemplate, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength } = usePrompt();
     const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | null>(null);
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
     const [qualityType, setQualityType] = useState<'positive' | 'negative' | null>(null);
@@ -130,9 +167,50 @@ const PromptOutput: React.FC = () => {
     const [favoriteName, setFavoriteName] = useState('');
     const [favoriteNsfw, setFavoriteNsfw] = useState(false);
     const [saveAsQuality, setSaveAsQuality] = useState(false);
+    const [stepperDisplay, setStepperDisplay] = useState<'inside' | 'above'>(() => {
+        const settings = readUiSettings();
+        return settings.stepperDisplay ?? 'above';
+    });
+    const [hoveredStrength, setHoveredStrength] = useState<{ id: string; type: 'positive' | 'negative'; rect: DOMRect } | null>(null);
+    const hoverTimeoutRef = useRef<number | null>(null);
 
     const posString = formatPrompt(selectedPositive);
     const negString = formatPrompt(selectedNegative);
+    const hoveredWord = useMemo(() => {
+        if (!hoveredStrength) return null;
+        const source = hoveredStrength.type === 'positive' ? selectedPositive : selectedNegative;
+        return source.find(word => word.id === hoveredStrength.id) ?? null;
+    }, [hoveredStrength, selectedPositive, selectedNegative]);
+
+    useEffect(() => {
+        if (!hoveredStrength) return;
+        if (!hoveredWord) {
+            setHoveredStrength(null);
+        }
+    }, [hoveredStrength, hoveredWord]);
+
+    useEffect(() => {
+        const handleUiUpdate = (event: Event) => {
+            const detail = (event as CustomEvent).detail as { stepperDisplay?: 'inside' | 'above' } | undefined;
+            setStepperDisplay(detail?.stepperDisplay ?? readUiSettings().stepperDisplay ?? 'above');
+        };
+        const handleStorage = (event: StorageEvent) => {
+            if (event.key !== UI_STORAGE_KEY) return;
+            setStepperDisplay(readUiSettings().stepperDisplay ?? 'above');
+        };
+        window.addEventListener('promptgen:ui-update', handleUiUpdate);
+        window.addEventListener('storage', handleStorage);
+        return () => {
+            window.removeEventListener('promptgen:ui-update', handleUiUpdate);
+            window.removeEventListener('storage', handleStorage);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (stepperDisplay === 'inside') {
+            setHoveredStrength(null);
+        }
+    }, [stepperDisplay]);
 
     const filteredFavorites = useMemo(() => {
         return favorites.filter(fav => (nsfwEnabled ? true : !fav.nsfw));
@@ -226,8 +304,44 @@ const PromptOutput: React.FC = () => {
         return createPortal(node, modalRoot);
     };
 
+    const handleHoverStart = (id: string, type: 'positive' | 'negative', rect: DOMRect) => {
+        if (stepperDisplay !== 'above') return;
+        if (hoverTimeoutRef.current) {
+            window.clearTimeout(hoverTimeoutRef.current);
+            hoverTimeoutRef.current = null;
+        }
+        setHoveredStrength({ id, type, rect });
+    };
+
+    const handleHoverEnd = () => {
+        if (stepperDisplay !== 'above') return;
+        if (hoverTimeoutRef.current) {
+            window.clearTimeout(hoverTimeoutRef.current);
+        }
+        hoverTimeoutRef.current = window.setTimeout(() => {
+            setHoveredStrength(null);
+        }, 120);
+    };
+
     return (
         <div className="h-full flex flex-col p-4 gap-3">
+            {stepperDisplay === 'above' && hoveredWord && hoveredStrength && renderModal(
+                <div
+                    className="fixed z-[200] bg-slate-900/95 border border-slate-700 rounded-lg px-2 py-1 shadow-xl"
+                    style={{
+                        top: hoveredStrength.rect.top - 6,
+                        left: hoveredStrength.rect.left + hoveredStrength.rect.width / 2,
+                        transform: 'translate(-50%, -100%)'
+                    }}
+                    onMouseEnter={() => handleHoverStart(hoveredStrength.id, hoveredStrength.type, hoveredStrength.rect)}
+                    onMouseLeave={handleHoverEnd}
+                >
+                    <StrengthSelector
+                        strength={hoveredWord.strength}
+                        onChange={(s) => updateWordStrength(hoveredWord.id, hoveredStrength.type, s)}
+                    />
+                </div>
+            )}
             <div className="flex flex-1 gap-4">
             {/* Positive Section */}
             <div className="flex-1 flex flex-col gap-2">
@@ -296,7 +410,14 @@ const PromptOutput: React.FC = () => {
                             <div className="flex flex-wrap gap-2">
                                 {selectedPositive.length === 0 && <span className="text-slate-600 text-sm italic">Select words...</span>}
                                 {selectedPositive.map(word => (
-                                    <SortableChip key={word.id} word={word} type="positive" />
+                                    <SortableChip
+                                        key={word.id}
+                                        word={word}
+                                        type="positive"
+                                        stepperDisplay={stepperDisplay}
+                                        onHoverStart={stepperDisplay === 'above' ? handleHoverStart : undefined}
+                                        onHoverEnd={stepperDisplay === 'above' ? handleHoverEnd : undefined}
+                                    />
                                 ))}
                             </div>
                         </SortableContext>
@@ -381,7 +502,14 @@ const PromptOutput: React.FC = () => {
                             <div className="flex flex-wrap gap-2">
                                 {selectedNegative.length === 0 && <span className="text-slate-600 text-sm italic">Select words...</span>}
                                 {selectedNegative.map(word => (
-                                    <SortableChip key={word.id} word={word} type="negative" />
+                                    <SortableChip
+                                        key={word.id}
+                                        word={word}
+                                        type="negative"
+                                        stepperDisplay={stepperDisplay}
+                                        onHoverStart={stepperDisplay === 'above' ? handleHoverStart : undefined}
+                                        onHoverEnd={stepperDisplay === 'above' ? handleHoverEnd : undefined}
+                                    />
                                 ))}
                             </div>
                         </SortableContext>
@@ -620,7 +748,14 @@ const PromptOutput: React.FC = () => {
                                             <span className="text-slate-600 text-sm italic">Select words...</span>
                                         )}
                                         {(expandType === 'positive' ? selectedPositive : selectedNegative).map(word => (
-                                            <SortableChip key={word.id} word={word} type={expandType} />
+                                            <SortableChip
+                                                key={word.id}
+                                                word={word}
+                                                type={expandType}
+                                                stepperDisplay={stepperDisplay}
+                                                onHoverStart={stepperDisplay === 'above' ? handleHoverStart : undefined}
+                                                onHoverEnd={stepperDisplay === 'above' ? handleHoverEnd : undefined}
+                                            />
                                         ))}
                                     </div>
                                 </SortableContext>
