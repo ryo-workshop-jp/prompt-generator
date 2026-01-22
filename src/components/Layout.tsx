@@ -7,7 +7,7 @@ import CategoryNav from './CategoryNav';
 import WordGrid, { WordCard } from './WordGrid';
 import PromptOutput from './PromptOutput';
 import SettingsModal from './SettingsModal';
-import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon } from '@heroicons/react/24/outline';
+import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import type { FolderItem, WordItem, TemplateItem } from '../types';
 
 const AddNodeModal: React.FC<{
@@ -310,6 +310,7 @@ const Layout: React.FC = () => {
     const [editMode, setEditMode] = useState(false);
     const [editingFolder, setEditingFolder] = useState<FolderItem | null>(null);
     const [isBulkEditOpen, setIsBulkEditOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const isPopStateRef = useRef(false);
 
     const sensors = useSensors(
@@ -642,39 +643,50 @@ const Layout: React.FC = () => {
     return (
         <div className="flex h-screen bg-slate-950 text-slate-200 font-sans overflow-hidden">
             {/* Sidebar */}
-            <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0 z-20 shadow-xl">
-                <div className="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/50 backdrop-blur-sm">
-                    <h1 className="text-xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent tracking-tighter">
-                        PROMPT<span className="text-slate-500 font-light">GEN</span>
-                    </h1>
-                    <button
-                        onClick={() => setIsSettingsOpen(true)}
-                        className="text-slate-500 hover:text-cyan-400 transition-colors p-1 rounded-full hover:bg-slate-800"
-                        title="Manage Data"
-                    >
-                        <Cog6ToothIcon className="w-5 h-5" />
-                    </button>
-                </div>
+            <aside className={`bg-slate-900 border-r border-slate-800 flex flex-col shrink-0 z-20 shadow-xl transition-all duration-300 ${isSidebarOpen ? 'w-64' : 'w-0'} overflow-hidden`}>
+                {isSidebarOpen && (
+                    <>
+                        <div className="flex-1 overflow-hidden">
+                            <CategoryNav
+                                onSelectFolder={handleSelectFolder}
+                                activeFolderId={activeFolderId}
+                            />
+                        </div>
 
-                <div className="flex-1 overflow-hidden">
-                    <CategoryNav
-                        onSelectFolder={handleSelectFolder}
-                        activeFolderId={activeFolderId}
-                    />
-                </div>
-
-                <div className="p-3 border-t border-slate-800 text-[10px] text-slate-600 text-center font-mono">
-                    v1.0.0 • LocalStorage Mode
-                </div>
+                        <div className="p-3 border-t border-slate-800 text-[10px] text-slate-600 flex items-center justify-between font-mono">
+                            <button
+                                onClick={() => setIsSettingsOpen(true)}
+                                className="text-cyan-400 hover:text-cyan-300 transition-colors p-1.5 rounded-full hover:bg-slate-800"
+                                title="Manage Data"
+                            >
+                                <Cog6ToothIcon className="w-5 h-5" />
+                            </button>
+                            <span>v1.0.0 • LocalStorage Mode</span>
+                        </div>
+                    </>
+                )}
             </aside>
 
             {/* Main Content */}
             <main className="flex-1 flex flex-col relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950">
                 <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
-                {/* Header Area */}
-                <header className="h-16 border-b border-slate-800/50 flex items-center px-6 justify-between backdrop-blur-sm z-10">
-                    <div className="text-sm font-medium text-slate-400 flex items-center gap-2">
+                {/* Top Bar */}
+                <div className="h-12 border-b border-slate-800/70 flex items-center px-4 justify-between backdrop-blur-sm z-20 gap-4">
+                    <div className="flex items-center gap-3 shrink-0">
+                        <button
+                            onClick={() => setIsSidebarOpen(prev => !prev)}
+                            className="text-slate-400 hover:text-slate-200 transition-colors p-1.5 rounded-full hover:bg-slate-800"
+                            title={isSidebarOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+                        >
+                            {isSidebarOpen ? <ChevronLeftIcon className="w-5 h-5" /> : <ChevronRightIcon className="w-5 h-5" />}
+                        </button>
+                        <h1 className="text-lg font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent tracking-tighter">
+                            PROMPT<span className="text-slate-500 font-light">GEN</span>
+                        </h1>
+                    </div>
+                    <div className="flex items-center gap-4 flex-1 justify-end">
+                        <div className="text-xs font-medium text-slate-400 flex items-center gap-2">
                         {activeFolderId !== 'root' ? (
                             <>
                                 <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
@@ -683,8 +695,7 @@ const Layout: React.FC = () => {
                         ) : (
                             <span>Browse folders or search</span>
                         )}
-                    </div>
-                    <div className="flex items-center gap-2">
+                        </div>
                         <div className="relative hidden md:block">
                             <input
                                 type="search"
@@ -724,11 +735,14 @@ const Layout: React.FC = () => {
                         >
                             Undo
                         </button>
-                        <button onClick={clearAll} className="text-xs bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded transition-colors text-slate-300">
+                        <button
+                            onClick={clearAll}
+                            className="text-xs bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded transition-colors text-slate-300"
+                        >
                             Clear
                         </button>
                     </div>
-                </header>
+                </div>
 
                 <div className="flex-1 overflow-y-auto p-6 relative custom-scrollbar">
                     {searchResults ? (
