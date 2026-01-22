@@ -246,15 +246,18 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
         const afterOptions = options.filter(option => option.position === 'after');
         const beforeValue = beforeOptions.map(option => option.value).join(' ');
         const afterValue = afterOptions.map(option => option.value).join(' ');
-        const beforeLabel = beforeOptions.map(option => option.label || option.value).join('');
-        const afterLabel = afterOptions.map(option => option.label || option.value).join('');
+        const beforeLabel = beforeOptions.map(option => option.label || option.value).join(' ');
+        const afterLabel = afterOptions.map(option => option.label || option.value).join(' ');
         const beforeSpacing = beforeOptions.every(option => option.spaceEnabled);
         const afterSpacing = afterOptions.every(option => option.spaceEnabled);
         const beforeSpacer = beforeSpacing && beforeValue ? ' ' : '';
         const afterSpacer = afterSpacing && afterValue ? ' ' : '';
         const withBefore = beforeValue ? `${beforeValue}${beforeSpacer}${word.value_en}` : word.value_en;
         const finalValue = afterValue ? `${withBefore}${afterSpacer}${afterValue}` : withBefore;
-        const finalLabel = `${beforeLabel}${word.label_jp}${afterLabel}`;
+        const labelBeforeSpacer = beforeSpacing && beforeLabel ? ' ' : '';
+        const labelAfterSpacer = afterSpacing && afterLabel ? ' ' : '';
+        const baseLabel = beforeLabel ? `${beforeLabel}${labelBeforeSpacer}${word.label_jp}` : word.label_jp;
+        const finalLabel = afterLabel ? `${baseLabel}${labelAfterSpacer}${afterLabel}` : baseLabel;
         const templatedWord: WordItem = {
             ...word,
             id: makeTemplateId((beforeValue || afterValue) || Date.now().toString()),
