@@ -1,8 +1,8 @@
-﻿import React, { useMemo, useRef, useState } from 'react';
+﻿import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import { Bars3Icon, ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { usePrompt } from '../context/usePrompt';
 import type { FolderItem, WordItem, TemplateItem, TemplateOption, PromptFavorite } from '../types';
 import { initialData } from '../data/initialData';
@@ -339,6 +339,18 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     const [pendingWordsImport, setPendingWordsImport] = useState<{ folders: FolderItem[]; words: WordItem[] } | null>(null);
     const [resetAction, setResetAction] = useState<'resetWords' | 'clearWords' | 'clearExtras' | null>(null);
     const [resetConfirmed, setResetConfirmed] = useState(false);
+    const [selectedFolderExportIds, setSelectedFolderExportIds] = useState<string[]>([]);
+    const [selectedWordExportIds, setSelectedWordExportIds] = useState<string[]>([]);
+    const [selectedFavoriteExportIds, setSelectedFavoriteExportIds] = useState<string[]>([]);
+    const [selectedQualityExportIds, setSelectedQualityExportIds] = useState<string[]>([]);
+    const [selectedTemplateExportIds, setSelectedTemplateExportIds] = useState<string[]>([]);
+    const [isWordExportPickerOpen, setIsWordExportPickerOpen] = useState(false);
+    const [isFavoriteExportPickerOpen, setIsFavoriteExportPickerOpen] = useState(false);
+    const [isQualityExportPickerOpen, setIsQualityExportPickerOpen] = useState(false);
+    const [isTemplateExportPickerOpen, setIsTemplateExportPickerOpen] = useState(false);
+    const [wordExportActiveFolderId, setWordExportActiveFolderId] = useState('root');
+    const [wordExportSearch, setWordExportSearch] = useState('');
+    const [wordExportExpandedFolderIds, setWordExportExpandedFolderIds] = useState<string[]>(['root']);
     const templateSensors = useSensors(
         useSensor(PointerSensor, { activationConstraint: { distance: 4 } }),
         useSensor(KeyboardSensor, {
@@ -346,7 +358,146 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         })
     );
 
-    if (!isOpen) return null;
+    const folderById = useMemo(() => {
+        return new Map(folders.map(folder => [folder.id, folder]));
+    }, [folders]);
+
+    const getFolderPath = useCallback((folderId: string | null) => {
+        if (!folderId) return 'root';
+        const path: string[] = [];
+        let cursor: string | null = folderId;
+        while (cursor) {
+            const folder = folderById.get(cursor);
+            if (!folder) break;
+            path.unshift(folder.name);
+            cursor = folder.parentId;
+        }
+        if (path.length === 0) return 'root';
+        if (path[0] === 'root') return path.join(' / ');
+        return `root / ${path.join(' / ')}`;
+    }, [folderById]);
+
+    const favoriteExportOptions = useMemo(() => {
+        return favorites
+            .map(fav => ({
+                id: fav.id,
+                label: `${fav.name} (${fav.type})`
+            }))
+            .sort((a, b) => a.label.localeCompare(b.label));
+    }, [favorites]);
+
+    const qualityExportOptions = useMemo(() => {
+        return qualityTemplates
+            .map(template => ({
+                id: template.id,
+                label: `${template.name} (${template.type})`
+            }))
+            .sort((a, b) => a.label.localeCompare(b.label));
+    }, [qualityTemplates]);
+
+    const templateExportOptions = useMemo(() => {
+        return templates
+            .map(template => ({
+                id: template.id,
+                label: `${template.name} (${template.options.length}件)`
+            }))
+            .sort((a, b) => a.label.localeCompare(b.label));
+    }, [templates]);
+
+    const collectDescendantFolderIds = (startIds: string[]) => {
+        const visited = new Set<string>();
+        const queue = [...startIds];
+        while (queue.length > 0) {
+            const current = queue.shift();
+            if (!current || visited.has(current)) continue;
+            visited.add(current);
+            const children = folders.filter(folder => folder.parentId === current);
+            for (const child of children) queue.push(child.id);
+        }
+        return visited;
+    };
+
+    const collectAncestorFolderIds = (startIds: Set<string>) => {
+        const visited = new Set<string>();
+        for (const startId of startIds) {
+            let cursor: string | null = startId;
+            while (cursor) {
+                const folder = folderById.get(cursor);
+                if (!folder) break;
+                if (!visited.has(folder.id)) {
+                    visited.add(folder.id);
+                }
+                cursor = folder.parentId ?? null;
+            }
+        }
+        return visited;
+    };
+
+    const selectedFolderIdSet = useMemo(() => new Set(selectedFolderExportIds), [selectedFolderExportIds]);
+    const isRootSelectedForExport = selectedFolderIdSet.has('root');
+    const selectedFolderDescendantIds = useMemo(() => {
+        if (isRootSelectedForExport) {
+            return new Set(folders.map(folder => folder.id));
+        }
+        return collectDescendantFolderIds(selectedFolderExportIds.filter(id => id !== 'root'));
+    }, [folders, isRootSelectedForExport, selectedFolderExportIds]);
+    const selectedWordIdSet = useMemo(() => new Set(selectedWordExportIds), [selectedWordExportIds]);
+    const totalSelectedWordCount = useMemo(() => {
+        if (isRootSelectedForExport) return words.length;
+        const ids = new Set<string>();
+        words.forEach(word => {
+            if (selectedFolderDescendantIds.has(word.folderId) || selectedWordIdSet.has(word.id)) {
+                ids.add(word.id);
+            }
+        });
+        return ids.size;
+    }, [isRootSelectedForExport, selectedFolderDescendantIds, selectedWordIdSet, words]);
+    const wordExportVisibleWords = useMemo(() => {
+        const query = wordExportSearch.trim().toLowerCase();
+        if (query) {
+            return words.filter(word => {
+                const target = `${word.label_jp} ${word.value_en} ${word.note ?? ''}`.toLowerCase();
+                return target.includes(query);
+            });
+        }
+        if (wordExportActiveFolderId === 'root') {
+            return words.filter(word => word.folderId === 'root');
+        }
+        return words.filter(word => word.folderId === wordExportActiveFolderId);
+    }, [wordExportActiveFolderId, wordExportSearch, words]);
+
+    const folderChildrenByParent = useMemo(() => {
+        const map = new Map<string | null, FolderItem[]>();
+        for (const folder of folders) {
+            const key = folder.parentId ?? null;
+            if (!map.has(key)) map.set(key, []);
+            map.get(key)?.push(folder);
+        }
+        for (const list of map.values()) {
+            list.sort((a, b) => a.name.localeCompare(b.name));
+        }
+        return map;
+    }, [folders]);
+
+    useEffect(() => {
+        if (!isWordExportPickerOpen) return;
+        const next = new Set<string>(['root']);
+        let cursor: string | null = wordExportActiveFolderId;
+        while (cursor && cursor !== 'root') {
+            next.add(cursor);
+            const folder = folderById.get(cursor);
+            cursor = folder?.parentId ?? null;
+        }
+        setWordExportExpandedFolderIds(Array.from(next));
+    }, [folderById, isWordExportPickerOpen, wordExportActiveFolderId]);
+
+    const wordExportExpandedSet = useMemo(() => new Set(wordExportExpandedFolderIds), [wordExportExpandedFolderIds]);
+    const toggleWordExportFolderExpanded = (id: string) => {
+        setWordExportExpandedFolderIds(prev => prev.includes(id)
+            ? prev.filter(item => item !== id)
+            : [...prev, id]
+        );
+    };
 
     const downloadJson = (payload: unknown, filename: string) => {
         const json = JSON.stringify(payload, null, 2);
@@ -377,6 +528,132 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 
     const handleExportTemplates = () => {
         downloadJson({ templates }, 'promptgen-templates.json');
+    };
+
+    const handleExportSelectedTemplates = () => {
+        if (selectedTemplateExportIds.length === 0) {
+            alert('出力する装飾を選択してください。');
+            return;
+        }
+        const selected = templates.filter(template => selectedTemplateExportIds.includes(template.id));
+        downloadJson({ templates: selected }, 'promptgen-templates-selected.json');
+    };
+
+    const handleExportSelectedWords = () => {
+        if (selectedFolderExportIds.length === 0 && selectedWordExportIds.length === 0) {
+            alert('出力する語群を選択してください。');
+            return;
+        }
+        const isRootSelected = selectedFolderExportIds.includes('root');
+        const folderIds = isRootSelected
+            ? new Set(folders.map(folder => folder.id))
+            : collectDescendantFolderIds(selectedFolderExportIds.filter(id => id !== 'root'));
+
+        const selectedWordIds = new Set<string>();
+        if (isRootSelected) {
+            words.forEach(word => selectedWordIds.add(word.id));
+        } else {
+            words.forEach(word => {
+                if (folderIds.has(word.folderId)) selectedWordIds.add(word.id);
+            });
+            selectedWordExportIds.forEach(id => selectedWordIds.add(id));
+        }
+
+        const folderIdsFromWords = collectAncestorFolderIds(
+            new Set(words.filter(word => selectedWordIds.has(word.id)).map(word => word.folderId))
+        );
+        const allFolderIds = isRootSelected
+            ? folderIds
+            : new Set([...folderIds, ...folderIdsFromWords]);
+        const selectedFolders = folders.filter(folder => allFolderIds.has(folder.id));
+        const selectedWords = words.filter(word => selectedWordIds.has(word.id));
+        downloadJson({ folders: selectedFolders, words: selectedWords }, 'promptgen-words-selected.json');
+    };
+
+    const handleExportSelectedFavorites = () => {
+        if (selectedFavoriteExportIds.length === 0) {
+            alert('出力するお気に入りを選択してください。');
+            return;
+        }
+        const selected = favorites.filter(fav => selectedFavoriteExportIds.includes(fav.id));
+        downloadJson({ favorites: selected }, 'promptgen-favorites-selected.json');
+    };
+
+    const handleExportSelectedQuality = () => {
+        if (selectedQualityExportIds.length === 0) {
+            alert('出力する品質テンプレートを選択してください。');
+            return;
+        }
+        const selected = qualityTemplates.filter(template => selectedQualityExportIds.includes(template.id));
+        downloadJson({ qualityTemplates: selected }, 'promptgen-quality-templates-selected.json');
+    };
+
+    const handleToggleFavoriteExport = (id: string) => {
+        setSelectedFavoriteExportIds(prev => prev.includes(id)
+            ? prev.filter(item => item !== id)
+            : [...prev, id]
+        );
+    };
+
+    const handleToggleQualityExport = (id: string) => {
+        setSelectedQualityExportIds(prev => prev.includes(id)
+            ? prev.filter(item => item !== id)
+            : [...prev, id]
+        );
+    };
+
+    const handleToggleTemplateExport = (id: string) => {
+        setSelectedTemplateExportIds(prev => prev.includes(id)
+            ? prev.filter(item => item !== id)
+            : [...prev, id]
+        );
+    };
+
+    const handleToggleFolderExport = (id: string) => {
+        if (id === 'root') {
+            setSelectedFolderExportIds(prev => prev.includes('root') ? [] : ['root']);
+            setSelectedWordExportIds([]);
+            return;
+        }
+        setSelectedFolderExportIds(prev => {
+            const withoutRoot = prev.filter(item => item !== 'root');
+            if (withoutRoot.includes(id)) {
+                return withoutRoot.filter(item => item !== id);
+            }
+            return [...withoutRoot, id];
+        });
+    };
+
+    const handleToggleWordExport = (id: string) => {
+        if (isRootSelectedForExport) return;
+        const targetWord = words.find(word => word.id === id);
+        if (targetWord && selectedFolderDescendantIds.has(targetWord.folderId)) return;
+        setSelectedWordExportIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
+    };
+
+    const handleSelectAllVisibleWords = () => {
+        if (isRootSelectedForExport) return;
+        setSelectedWordExportIds(prev => {
+            const next = new Set(prev);
+            for (const word of wordExportVisibleWords) {
+                if (!selectedFolderDescendantIds.has(word.folderId)) {
+                    next.add(word.id);
+                }
+            }
+            return Array.from(next);
+        });
+    };
+
+    const handleClearVisibleWords = () => {
+        setSelectedWordExportIds(prev => {
+            const visibleIds = new Set(wordExportVisibleWords.map(word => word.id));
+            return prev.filter(id => !visibleIds.has(id));
+        });
+    };
+
+    const handleClearAllExportSelection = () => {
+        setSelectedFolderExportIds([]);
+        setSelectedWordExportIds([]);
     };
 
     const requestImport = (mode: 'all' | 'words' | 'favorites' | 'quality' | 'templates') => {
@@ -537,6 +814,8 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         setResetAction(null);
         setResetConfirmed(false);
     };
+
+    if (!isOpen) return null;
 
     return (
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
@@ -750,6 +1029,13 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                 出力
                                             </button>
                                             <button
+                                                type="button"
+                                                onClick={() => setIsWordExportPickerOpen(true)}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                選択して出力
+                                            </button>
+                                            <button
                                                 onClick={() => requestImport('words')}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
@@ -770,6 +1056,13 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
                                                 出力
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => setIsFavoriteExportPickerOpen(true)}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                選択して出力
                                             </button>
                                             <button
                                                 onClick={() => requestImport('favorites')}
@@ -794,6 +1087,13 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                 出力
                                             </button>
                                             <button
+                                                type="button"
+                                                onClick={() => setIsQualityExportPickerOpen(true)}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                選択して出力
+                                            </button>
+                                            <button
                                                 onClick={() => requestImport('quality')}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
@@ -814,6 +1114,13 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
                                                 出力
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => setIsTemplateExportPickerOpen(true)}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                選択して出力
                                             </button>
                                             <button
                                                 onClick={() => requestImport('templates')}
@@ -988,6 +1295,397 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     </div>
                 </div>
             )}
+            {isWordExportPickerOpen && (
+                <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-5xl shadow-2xl flex flex-col gap-4 max-h-[90vh]">
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-bold text-white">語群を選択</h3>
+                            <button
+                                onClick={() => setIsWordExportPickerOpen(false)}
+                                className="text-slate-400 hover:text-white text-xl"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="text-xs text-slate-400">
+                                フォルダ選択: <span className="text-slate-200 font-bold">{selectedFolderExportIds.length}</span>
+                                {' '}・語句選択: <span className="text-slate-200 font-bold">{selectedWordExportIds.length}</span>
+                                {' '}・合計語句: <span className="text-cyan-300 font-bold">{totalSelectedWordCount}</span>
+                                {isRootSelectedForExport && <span className="ml-2 text-[10px] text-cyan-300">全語句選択中</span>}
+                            </div>
+                            <div className="flex gap-2">
+                                <button
+                                    type="button"
+                                    onClick={handleClearAllExportSelection}
+                                    className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                >
+                                    全解除
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        if (selectedFolderExportIds.length === 0 && selectedWordExportIds.length === 0) {
+                                            alert('出力する語群を選択してください。');
+                                            return;
+                                        }
+                                        handleExportSelectedWords();
+                                        setIsWordExportPickerOpen(false);
+                                    }}
+                                    className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
+                                >
+                                    選択して出力
+                                </button>
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-[240px,1fr] gap-4 min-h-0 flex-1">
+                            <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar">
+                                {(() => {
+                                    const rootFolders = folderChildrenByParent.get('root') ?? folderChildrenByParent.get(null) ?? [];
+                                    const renderFolder = (target: FolderItem, depth: number): React.ReactNode => {
+                                        const children = folderChildrenByParent.get(target.id) ?? [];
+                                        const hasChildren = children.length > 0;
+                                        const isSelected = selectedFolderIdSet.has(target.id);
+                                        const isActive = wordExportActiveFolderId === target.id;
+                                        const isExpanded = wordExportExpandedSet.has(target.id);
+                                        const isDisabled = isRootSelectedForExport && !isSelected;
+                                        return (
+                                            <div key={target.id}>
+                                                <div className="flex items-center gap-2" style={{ paddingLeft: depth * 12 }}>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => hasChildren && toggleWordExportFolderExpanded(target.id)}
+                                                        className={`flex h-4 w-4 items-center justify-center text-slate-500 ${hasChildren ? 'hover:text-slate-200' : 'opacity-30'}`}
+                                                        title={hasChildren ? (isExpanded ? 'Collapse' : 'Expand') : 'No children'}
+                                                    >
+                                                        {hasChildren ? (isExpanded ? <ChevronDownIcon className="h-3 w-3" /> : <ChevronRightIcon className="h-3 w-3" />) : <span className="h-3 w-3" />}
+                                                    </button>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={isSelected}
+                                                        disabled={isDisabled}
+                                                        onChange={() => handleToggleFolderExport(target.id)}
+                                                        className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setWordExportActiveFolderId(target.id)}
+                                                        className={`text-sm ${isActive ? 'text-cyan-300 font-bold' : 'text-slate-300'} ${isDisabled ? 'opacity-50' : ''}`}
+                                                    >
+                                                        {target.name}
+                                                    </button>
+                                                </div>
+                                                {hasChildren && isExpanded && children.map(child => renderFolder(child, depth + 1))}
+                                            </div>
+                                        );
+                                    };
+                                    return (
+                                        <>
+                                            <div className="flex items-center gap-2 mb-2">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => toggleWordExportFolderExpanded('root')}
+                                                    className="flex h-4 w-4 items-center justify-center text-slate-500 hover:text-slate-200"
+                                                    title={wordExportExpandedSet.has('root') ? 'Collapse' : 'Expand'}
+                                                >
+                                                    {wordExportExpandedSet.has('root')
+                                                        ? <ChevronDownIcon className="h-3 w-3" />
+                                                        : <ChevronRightIcon className="h-3 w-3" />}
+                                                </button>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={selectedFolderIdSet.has('root')}
+                                                    onChange={() => handleToggleFolderExport('root')}
+                                                    className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                                />
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setWordExportActiveFolderId('root')}
+                                                    className={`text-sm ${wordExportActiveFolderId === 'root' ? 'text-cyan-300 font-bold' : 'text-slate-300'}`}
+                                                >
+                                                    root
+                                                </button>
+                                            </div>
+                                            {wordExportExpandedSet.has('root') && rootFolders.map(folder => renderFolder(folder, 1))}
+                                        </>
+                                    );
+                                })()}
+                            </div>
+                            <div className="flex flex-col gap-3 min-h-0">
+                                <div className="flex flex-col gap-2">
+                                    <input
+                                        type="search"
+                                        value={wordExportSearch}
+                                        onChange={(event) => setWordExportSearch(event.target.value)}
+                                        className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
+                                        placeholder="語句を検索..."
+                                    />
+                                    <div className="flex flex-wrap gap-2">
+                                        <button
+                                            type="button"
+                                            onClick={handleSelectAllVisibleWords}
+                                            className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                        >
+                                            表示中を全選択
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={handleClearVisibleWords}
+                                            className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                        >
+                                            表示中を解除
+                                        </button>
+                                        {wordExportSearch && (
+                                            <span className="text-[10px] text-slate-500">
+                                                検索結果: {wordExportVisibleWords.length} 件
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar flex-1">
+                                    {wordExportVisibleWords.length === 0 && (
+                                        <div className="text-xs text-slate-500">語句がありません。</div>
+                                    )}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                        {wordExportVisibleWords.map(word => {
+                                            const isImplicit = isRootSelectedForExport || selectedFolderDescendantIds.has(word.folderId);
+                                            const isSelected = isImplicit || selectedWordIdSet.has(word.id);
+                                            return (
+                                                <label
+                                                    key={word.id}
+                                                    className={`flex items-start gap-2 rounded-lg border px-3 py-2 text-sm ${isSelected ? 'border-cyan-500/50 bg-cyan-500/10' : 'border-slate-800 bg-slate-900/40'}`}
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={isSelected}
+                                                        disabled={isImplicit}
+                                                        onChange={() => handleToggleWordExport(word.id)}
+                                                        className="mt-1 rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                                    />
+                                                    <div className="flex-1">
+                                                        <div className="font-semibold text-slate-200">{word.label_jp}</div>
+                                                        <div className="text-[10px] text-slate-500">{word.value_en}</div>
+                                                        {wordExportSearch && (
+                                                            <div className="text-[10px] text-slate-500">{getFolderPath(word.folderId)}</div>
+                                                        )}
+                                                        {isImplicit && (
+                                                            <div className="text-[10px] text-cyan-300 mt-1">フォルダ選択に含まれます</div>
+                                                        )}
+                                                    </div>
+                                                </label>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {isFavoriteExportPickerOpen && (
+                <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl flex flex-col gap-4 max-h-[90vh]">
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-bold text-white">お気に入りを選択</h3>
+                            <button
+                                onClick={() => setIsFavoriteExportPickerOpen(false)}
+                                className="text-slate-400 hover:text-white text-xl"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                        <div className="flex items-center justify-between gap-3">
+                            <div className="text-xs text-slate-400">
+                                選択数: <span className="text-cyan-300 font-bold">{selectedFavoriteExportIds.length}</span>
+                            </div>
+                            <div className="flex gap-2">
+                                <button
+                                    type="button"
+                                    onClick={() => setSelectedFavoriteExportIds(favoriteExportOptions.map(option => option.id))}
+                                    className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                >
+                                    全選択
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setSelectedFavoriteExportIds([])}
+                                    className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                >
+                                    解除
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        if (selectedFavoriteExportIds.length === 0) {
+                                            alert('出力するお気に入りを選択してください。');
+                                            return;
+                                        }
+                                        handleExportSelectedFavorites();
+                                        setIsFavoriteExportPickerOpen(false);
+                                    }}
+                                    className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
+                                >
+                                    選択して出力
+                                </button>
+                            </div>
+                        </div>
+                        <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar">
+                            {favoriteExportOptions.length === 0 && (
+                                <div className="text-xs text-slate-500">お気に入りがありません。</div>
+                            )}
+                            <div className="flex flex-col gap-2">
+                                {favoriteExportOptions.map(option => (
+                                    <label key={option.id} className="flex items-center gap-2 text-sm text-slate-300">
+                                        <input
+                                            type="checkbox"
+                                            checked={selectedFavoriteExportIds.includes(option.id)}
+                                            onChange={() => handleToggleFavoriteExport(option.id)}
+                                            className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                        />
+                                        <span>{option.label}</span>
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {isQualityExportPickerOpen && (
+                <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl flex flex-col gap-4 max-h-[90vh]">
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-bold text-white">品質テンプレートを選択</h3>
+                            <button
+                                onClick={() => setIsQualityExportPickerOpen(false)}
+                                className="text-slate-400 hover:text-white text-xl"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                        <div className="flex items-center justify-between gap-3">
+                            <div className="text-xs text-slate-400">
+                                選択数: <span className="text-cyan-300 font-bold">{selectedQualityExportIds.length}</span>
+                            </div>
+                            <div className="flex gap-2">
+                                <button
+                                    type="button"
+                                    onClick={() => setSelectedQualityExportIds(qualityExportOptions.map(option => option.id))}
+                                    className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                >
+                                    全選択
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setSelectedQualityExportIds([])}
+                                    className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                >
+                                    解除
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        if (selectedQualityExportIds.length === 0) {
+                                            alert('出力する品質テンプレートを選択してください。');
+                                            return;
+                                        }
+                                        handleExportSelectedQuality();
+                                        setIsQualityExportPickerOpen(false);
+                                    }}
+                                    className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
+                                >
+                                    選択して出力
+                                </button>
+                            </div>
+                        </div>
+                        <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar">
+                            {qualityExportOptions.length === 0 && (
+                                <div className="text-xs text-slate-500">品質テンプレートがありません。</div>
+                            )}
+                            <div className="flex flex-col gap-2">
+                                {qualityExportOptions.map(option => (
+                                    <label key={option.id} className="flex items-center gap-2 text-sm text-slate-300">
+                                        <input
+                                            type="checkbox"
+                                            checked={selectedQualityExportIds.includes(option.id)}
+                                            onChange={() => handleToggleQualityExport(option.id)}
+                                            className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                        />
+                                        <span>{option.label}</span>
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {isTemplateExportPickerOpen && (
+                <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl flex flex-col gap-4 max-h-[90vh]">
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-bold text-white">装飾テンプレートを選択</h3>
+                            <button
+                                onClick={() => setIsTemplateExportPickerOpen(false)}
+                                className="text-slate-400 hover:text-white text-xl"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                        <div className="flex items-center justify-between gap-3">
+                            <div className="text-xs text-slate-400">
+                                選択数: <span className="text-cyan-300 font-bold">{selectedTemplateExportIds.length}</span>
+                            </div>
+                            <div className="flex gap-2">
+                                <button
+                                    type="button"
+                                    onClick={() => setSelectedTemplateExportIds(templateExportOptions.map(option => option.id))}
+                                    className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                >
+                                    全選択
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setSelectedTemplateExportIds([])}
+                                    className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                >
+                                    解除
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        if (selectedTemplateExportIds.length === 0) {
+                                            alert('出力する装飾を選択してください。');
+                                            return;
+                                        }
+                                        handleExportSelectedTemplates();
+                                        setIsTemplateExportPickerOpen(false);
+                                    }}
+                                    className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
+                                >
+                                    選択して出力
+                                </button>
+                            </div>
+                        </div>
+                        <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar">
+                            {templateExportOptions.length === 0 && (
+                                <div className="text-xs text-slate-500">装飾がありません。</div>
+                            )}
+                            <div className="flex flex-col gap-2">
+                                {templateExportOptions.map(option => (
+                                    <label key={option.id} className="flex items-center gap-2 text-sm text-slate-300">
+                                        <input
+                                            type="checkbox"
+                                            checked={selectedTemplateExportIds.includes(option.id)}
+                                            onChange={() => handleToggleTemplateExport(option.id)}
+                                            className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                        />
+                                        <span>{option.label}</span>
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
             {resetAction && (
                 <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl flex flex-col gap-4">
@@ -1058,6 +1756,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 };
 
 export default SettingsModal;
+
 
 
 
