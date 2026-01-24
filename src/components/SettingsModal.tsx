@@ -1,4 +1,8 @@
 ﻿import React, { useMemo, useRef, useState } from 'react';
+import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
+import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import { Bars3Icon } from '@heroicons/react/24/outline';
 import { usePrompt } from '../context/usePrompt';
 import type { FolderItem, WordItem, TemplateItem, TemplateOption, PromptFavorite } from '../types';
 import { initialData } from '../data/initialData';
@@ -30,6 +34,52 @@ const writeUiSettings = (updates: { nsfwConfirmSkip?: boolean; stepperDisplay?: 
     }
 };
 
+const SortableOptionRow: React.FC<{
+    option: TemplateOption;
+    onLabelChange: (value: string) => void;
+    onValueChange: (value: string) => void;
+    onDelete: () => void;
+}> = ({ option, onLabelChange, onValueChange, onDelete }) => {
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: option.id });
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition
+    };
+
+    return (
+        <div ref={setNodeRef} style={style} className="flex items-center gap-2">
+            <button
+                type="button"
+                {...attributes}
+                {...listeners}
+                title="Drag to reorder"
+                className="flex h-7 w-7 items-center justify-center rounded bg-slate-800 text-slate-400 hover:text-slate-200"
+            >
+                <Bars3Icon className="h-4 w-4" />
+            </button>
+            <input
+                type="text"
+                value={option.label}
+                onChange={(event) => onLabelChange(event.target.value)}
+                className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+            />
+            <input
+                type="text"
+                value={option.value}
+                onChange={(event) => onValueChange(event.target.value)}
+                className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+            />
+            <button
+                type="button"
+                onClick={onDelete}
+                className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-400 hover:text-rose-400"
+            >
+                削除
+            </button>
+        </div>
+    );
+};
+
 const TemplateModal: React.FC<{
     isOpen: boolean;
     template: TemplateItem | null;
@@ -45,6 +95,12 @@ const TemplateModal: React.FC<{
     const [newValue, setNewValue] = useState('');
 
     const canSave = useMemo(() => name.trim().length > 0, [name]);
+    const optionSensors = useSensors(
+        useSensor(PointerSensor, { activationConstraint: { distance: 4 } }),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates,
+        })
+    );
 
     if (!isOpen) return null;
 
@@ -147,40 +203,44 @@ const TemplateModal: React.FC<{
                                 </button>
                             </div>
                         </div>
-                        <div className="max-h-40 overflow-y-auto custom-scrollbar flex flex-col gap-2">
-                            {options.length === 0 && (
-                                <div className="text-xs text-slate-500">候補がまだありません。</div>
-                            )}
-                            {options.map(option => (
-                                <div key={option.id} className="flex items-center gap-2">
-                                    <input
-                                        type="text"
-                                        value={option.label}
-                                        onChange={(event) => {
-                                            const next = options.map(item => item.id === option.id ? { ...item, label: event.target.value } : item);
-                                            setOptions(next);
-                                        }}
-                                        className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
-                                    />
-                                    <input
-                                        type="text"
-                                        value={option.value}
-                                        onChange={(event) => {
-                                            const next = options.map(item => item.id === option.id ? { ...item, value: event.target.value } : item);
-                                            setOptions(next);
-                                        }}
-                                        className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
-                                    />
-                                    <button
-                                        type="button"
-                                        onClick={() => setOptions(options.filter(item => item.id !== option.id))}
-                                        className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-400 hover:text-rose-400"
-                                    >
-                                        削除
-                                    </button>
+                        <DndContext
+                            sensors={optionSensors}
+                            collisionDetection={closestCenter}
+                            onDragEnd={(event: DragEndEvent) => {
+                                const { active, over } = event;
+                                if (!over || active.id === over.id) return;
+                                const oldIndex = options.findIndex(item => item.id === active.id);
+                                const newIndex = options.findIndex(item => item.id === over.id);
+                                if (oldIndex === -1 || newIndex === -1) return;
+                                setOptions(arrayMove(options, oldIndex, newIndex));
+                            }}
+                        >
+                            <SortableContext
+                                items={options.map(option => option.id)}
+                                strategy={rectSortingStrategy}
+                            >
+                                <div className="max-h-40 overflow-y-auto custom-scrollbar flex flex-col gap-2">
+                                    {options.length === 0 && (
+                                        <div className="text-xs text-slate-500">候補がまだありません。</div>
+                                    )}
+                                    {options.map(option => (
+                                        <SortableOptionRow
+                                            key={option.id}
+                                            option={option}
+                                            onLabelChange={(value) => {
+                                                const next = options.map(item => item.id === option.id ? { ...item, label: value } : item);
+                                                setOptions(next);
+                                            }}
+                                            onValueChange={(value) => {
+                                                const next = options.map(item => item.id === option.id ? { ...item, value } : item);
+                                                setOptions(next);
+                                            }}
+                                            onDelete={() => setOptions(options.filter(item => item.id !== option.id))}
+                                        />
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
+                            </SortableContext>
+                        </DndContext>
                     </div>
                     <div className="flex gap-2 pt-2">
                         <button
@@ -208,6 +268,57 @@ const TemplateModal: React.FC<{
     );
 };
 
+const SortableTemplateRow: React.FC<{
+    template: TemplateItem;
+    onEdit: () => void;
+    onDelete: () => void;
+}> = ({ template, onEdit, onDelete }) => {
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: template.id });
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition
+    };
+
+    return (
+        <div ref={setNodeRef} style={style} className="flex items-center justify-between gap-3 border border-slate-700 rounded-lg px-3 py-2">
+            <div className="flex items-center gap-3">
+                <button
+                    type="button"
+                    {...attributes}
+                    {...listeners}
+                    title="Drag to reorder"
+                    className="flex h-7 w-7 items-center justify-center rounded bg-slate-800 text-slate-400 hover:text-slate-200"
+                >
+                    <Bars3Icon className="h-4 w-4" />
+                </button>
+                <div>
+                    <div className="text-sm font-bold text-slate-200">{template.name}</div>
+                    <div className="text-[11px] text-slate-500">
+                        {template.options.length} 件
+                        {template.allowFree ? ' + 自由入力' : ''}
+                    </div>
+                </div>
+            </div>
+            <div className="flex items-center gap-2">
+                <button
+                    type="button"
+                    onClick={onEdit}
+                    className="px-2 py-1 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                >
+                    編集
+                </button>
+                <button
+                    type="button"
+                    onClick={onDelete}
+                    className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-400 hover:text-rose-400"
+                >
+                    削除
+                </button>
+            </div>
+        </div>
+    );
+};
+
 const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
     const { folders, words, templates, favorites, qualityTemplates, setData, addTemplate, updateTemplate, removeTemplate, setFavoritesData, setQualityTemplatesData, nsfwEnabled, showDescendantWords, autoNsfwOn, collapseInactiveFolders, toggleNsfw, toggleShowDescendantWords, toggleAutoNsfwOn, toggleCollapseInactiveFolders } = usePrompt();
     const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -228,6 +339,12 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     const [pendingWordsImport, setPendingWordsImport] = useState<{ folders: FolderItem[]; words: WordItem[] } | null>(null);
     const [resetAction, setResetAction] = useState<'resetWords' | 'clearWords' | 'clearExtras' | null>(null);
     const [resetConfirmed, setResetConfirmed] = useState(false);
+    const templateSensors = useSensors(
+        useSensor(PointerSensor, { activationConstraint: { distance: 4 } }),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates,
+        })
+    );
 
     if (!isOpen) return null;
 
@@ -730,44 +847,43 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                         追加
                                     </button>
                                 </div>
-                                <div className="flex flex-col gap-2">
-                                    {templates.length === 0 && (
-                                        <div className="text-xs text-slate-500">装飾がありません。</div>
-                                    )}
-                                    {templates.map(template => (
-                                        <div key={template.id} className="flex items-center justify-between gap-3 border border-slate-700 rounded-lg px-3 py-2">
-                                            <div>
-                                                <div className="text-sm font-bold text-slate-200">{template.name}</div>
-                                                <div className="text-[11px] text-slate-500">
-                                                    {template.options.length} 件
-                                                    {template.allowFree ? ' + 自由入力' : ''}
-                                                </div>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <button
-                                                    type="button"
-                                                    onClick={() => {
+                                <DndContext
+                                    sensors={templateSensors}
+                                    collisionDetection={closestCenter}
+                                    onDragEnd={(event: DragEndEvent) => {
+                                        const { active, over } = event;
+                                        if (!over || active.id === over.id) return;
+                                        const oldIndex = templates.findIndex(item => item.id === active.id);
+                                        const newIndex = templates.findIndex(item => item.id === over.id);
+                                        if (oldIndex === -1 || newIndex === -1) return;
+                                        setData({ folders, words, templates: arrayMove(templates, oldIndex, newIndex) });
+                                    }}
+                                >
+                                    <SortableContext
+                                        items={templates.map(template => template.id)}
+                                        strategy={rectSortingStrategy}
+                                    >
+                                        <div className="flex flex-col gap-2">
+                                            {templates.length === 0 && (
+                                                <div className="text-xs text-slate-500">装飾がありません。</div>
+                                            )}
+                                            {templates.map(template => (
+                                                <SortableTemplateRow
+                                                    key={template.id}
+                                                    template={template}
+                                                    onEdit={() => {
                                                         setEditingTemplate(template);
                                                         setIsTemplateModalOpen(true);
                                                     }}
-                                                    className="px-2 py-1 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
-                                                >
-                                                    編集
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => {
+                                                    onDelete={() => {
                                                         if (!confirm('Delete this template? Linked words will revert to normal words.')) return;
                                                         removeTemplate(template.id);
                                                     }}
-                                                    className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-400 hover:text-rose-400"
-                                                >
-                                                    削除
-                                                </button>
-                                            </div>
+                                                />
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
+                                    </SortableContext>
+                                </DndContext>
                             </div>
                         )}
                     </div>
