@@ -7,7 +7,7 @@ import CategoryNav from './CategoryNav';
 import WordGrid, { WordCard } from './WordGrid';
 import PromptOutput from './PromptOutput';
 import SettingsModal from './SettingsModal';
-import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon } from '@heroicons/react/24/outline';
+import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import type { FolderItem, WordItem, TemplateItem } from '../types';
 
 const AddNodeModal: React.FC<{
@@ -226,14 +226,74 @@ const BulkWordSettingsModal: React.FC<{
     );
 };
 
+const MoveItemModal: React.FC<{
+    isOpen: boolean;
+    title: string;
+    description?: string;
+    itemLabel: string;
+    options: { id: string; label: string }[];
+    value: string;
+    onChange: (value: string) => void;
+    onClose: () => void;
+    onConfirm: () => void;
+}> = ({ isOpen, title, description, itemLabel, options, value, onChange, onClose, onConfirm }) => {
+    if (!isOpen) return null;
+
+    return (
+        <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl flex flex-col gap-4">
+                <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-bold text-white">{title}</h3>
+                    <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
+                </div>
+                <div className="text-xs text-slate-400">対象: <span className="text-slate-200 font-bold">{itemLabel}</span></div>
+                {description && (
+                    <div className="text-xs text-slate-500 leading-relaxed">{description}</div>
+                )}
+                <label className="block text-xs text-slate-400">
+                    移動先フォルダ
+                    <select
+                        value={value}
+                        onChange={(event) => onChange(event.target.value)}
+                        className="mt-1 w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
+                    >
+                        {options.map(option => (
+                            <option key={option.id} value={option.id}>
+                                {option.label}
+                            </option>
+                        ))}
+                    </select>
+                </label>
+                <div className="flex gap-2 pt-2">
+                    <button
+                        type="button"
+                        onClick={onClose}
+                        className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                    >
+                        キャンセル
+                    </button>
+                    <button
+                        type="button"
+                        onClick={onConfirm}
+                        className="flex-1 px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
+                    >
+                        移動
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const FolderCard: React.FC<{
     folder: FolderItem;
     onOpen: () => void;
     editMode?: boolean;
     onEdit?: () => void;
     onDelete?: () => void;
+    onMove?: () => void;
     dragHandleProps?: React.HTMLAttributes<HTMLButtonElement>;
-}> = ({ folder, onOpen, editMode = false, onEdit, onDelete, dragHandleProps }) => {
+}> = ({ folder, onOpen, editMode = false, onEdit, onDelete, onMove, dragHandleProps }) => {
     return (
         <button
             onClick={onOpen}
@@ -251,6 +311,17 @@ const FolderCard: React.FC<{
                         onClick={(event) => event.stopPropagation()}
                     >
                         <Bars3Icon className="w-4 h-4" />
+                    </button>
+                    <button
+                        type="button"
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            onMove?.();
+                        }}
+                        className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
+                        title="Move"
+                    >
+                        <ArrowRightIcon className="w-4 h-4" />
                     </button>
                     <button
                         type="button"
@@ -287,6 +358,7 @@ const SortableFolderCard: React.FC<{
     editMode?: boolean;
     onEdit?: () => void;
     onDelete?: () => void;
+    onMove?: () => void;
 }> = ({ id, ...props }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
@@ -310,6 +382,9 @@ const Layout: React.FC = () => {
     const [editMode, setEditMode] = useState(false);
     const [editingFolder, setEditingFolder] = useState<FolderItem | null>(null);
     const [isBulkEditOpen, setIsBulkEditOpen] = useState(false);
+    const [movingFolder, setMovingFolder] = useState<FolderItem | null>(null);
+    const [movingWord, setMovingWord] = useState<WordItem | null>(null);
+    const [moveTargetId, setMoveTargetId] = useState('root');
     const isPopStateRef = useRef(false);
 
     const sensors = useSensors(
@@ -318,6 +393,18 @@ const Layout: React.FC = () => {
             coordinateGetter: sortableKeyboardCoordinates,
         })
     );
+
+    useEffect(() => {
+        if (movingFolder) {
+            setMoveTargetId(movingFolder.parentId ?? 'root');
+        }
+    }, [movingFolder]);
+
+    useEffect(() => {
+        if (movingWord) {
+            setMoveTargetId(movingWord.folderId ?? 'root');
+        }
+    }, [movingWord]);
 
     const folderById = useMemo(() => {
         return new Map(folders.map(folder => [folder.id, folder]));
@@ -556,6 +643,25 @@ const Layout: React.FC = () => {
         return `root / ${path.join(' / ')}`;
     };
 
+    const folderOptions = useMemo(() => {
+        const options = folders.map(folder => ({
+            id: folder.id,
+            label: getFolderPath(folder.id)
+        }));
+        options.sort((a, b) => a.label.localeCompare(b.label));
+        return [{ id: 'root', label: 'root' }, ...options];
+    }, [folders, folderById, getFolderPath]);
+
+    const blockedMoveFolderIds = useMemo(() => {
+        if (!movingFolder) return new Set<string>();
+        return collectDescendantFolderIds(movingFolder.id);
+    }, [movingFolder, folders]);
+
+    const folderMoveOptions = useMemo(() => {
+        if (!movingFolder) return folderOptions;
+        return folderOptions.filter(option => !blockedMoveFolderIds.has(option.id));
+    }, [blockedMoveFolderIds, folderOptions, movingFolder]);
+
     const handleOpenFolder = (folder: FolderItem) => {
         setActiveFolderId(folder.id);
         setSearchQuery('');
@@ -637,6 +743,54 @@ const Layout: React.FC = () => {
             })
         });
         setIsBulkEditOpen(false);
+    };
+
+    const handleConfirmMoveFolder = () => {
+        if (!movingFolder) return;
+        const targetId = moveTargetId || 'root';
+        if (blockedMoveFolderIds.has(targetId)) {
+            alert('移動先に同じフォルダ、もしくは配下フォルダは指定できません。');
+            return;
+        }
+        if (targetId === movingFolder.parentId) {
+            setMovingFolder(null);
+            return;
+        }
+        if (hasDuplicateFolderName(movingFolder.name, targetId, movingFolder.id)) {
+            alert('同じ階層に同じ名前のフォルダは作成できません。');
+            return;
+        }
+        setData({
+            folders: folders.map(folder => folder.id === movingFolder.id
+                ? { ...folder, parentId: targetId }
+                : folder
+            ),
+            words,
+            templates
+        });
+        setMovingFolder(null);
+    };
+
+    const handleConfirmMoveWord = () => {
+        if (!movingWord) return;
+        const targetId = moveTargetId || 'root';
+        if (targetId === movingWord.folderId) {
+            setMovingWord(null);
+            return;
+        }
+        if (hasDuplicateWordLabel(movingWord.label_jp, targetId, movingWord.id)) {
+            alert('同じフォルダ内に同じ名前の語句は作成できません。');
+            return;
+        }
+        setData({
+            folders,
+            words: words.map(word => word.id === movingWord.id
+                ? { ...word, folderId: targetId }
+                : word
+            ),
+            templates
+        });
+        setMovingWord(null);
     };
 
     return (
@@ -745,6 +899,10 @@ const Layout: React.FC = () => {
                                             folder={folder}
                                             onOpen={() => handleOpenFolder(folder)}
                                             editMode={editMode}
+                                            onMove={() => {
+                                                setMovingWord(null);
+                                                setMovingFolder(folder);
+                                            }}
                                             onEdit={() => setEditingFolder(folder)}
                                             onDelete={() => handleDeleteFolder(folder.id)}
                                         />
@@ -801,7 +959,11 @@ const Layout: React.FC = () => {
                                                     onOpen: () => handleSelectFolder(folder.id),
                                                     editMode,
                                                     onEdit: () => setEditingFolder(folder),
-                                                    onDelete: () => handleDeleteFolder(folder.id)
+                                                    onDelete: () => handleDeleteFolder(folder.id),
+                                                    onMove: () => {
+                                                        setMovingWord(null);
+                                                        setMovingFolder(folder);
+                                                    }
                                                 };
 
                                                 if (editMode) {
@@ -833,6 +995,10 @@ const Layout: React.FC = () => {
                                     editMode={editMode}
                                     onEditWord={(updated) => handleUpdateWord(updated)}
                                     onDeleteWord={(word) => handleDeleteWord(word.id)}
+                                    onMoveWord={(word) => {
+                                        setMovingFolder(null);
+                                        setMovingWord(word);
+                                    }}
                                     onReorderWords={handleReorderWords}
                                 />
                             </div>
@@ -861,6 +1027,27 @@ const Layout: React.FC = () => {
                 hasDecorations={hasDecorationsInFolder}
                 onClose={() => setIsBulkEditOpen(false)}
                 onApply={handleApplyBulkSettings}
+            />
+            <MoveItemModal
+                isOpen={!!movingFolder}
+                title="フォルダを移動"
+                description="配下のフォルダと語群も含めて移動します。"
+                itemLabel={movingFolder?.name ?? ''}
+                options={folderMoveOptions}
+                value={moveTargetId}
+                onChange={setMoveTargetId}
+                onClose={() => setMovingFolder(null)}
+                onConfirm={handleConfirmMoveFolder}
+            />
+            <MoveItemModal
+                isOpen={!!movingWord}
+                title="語群を移動"
+                itemLabel={movingWord?.label_jp ?? ''}
+                options={folderOptions}
+                value={moveTargetId}
+                onChange={setMoveTargetId}
+                onClose={() => setMovingWord(null)}
+                onConfirm={handleConfirmMoveWord}
             />
             <AddNodeModal
                 isOpen={showAddFolder}

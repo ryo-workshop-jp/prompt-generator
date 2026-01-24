@@ -4,7 +4,7 @@ import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, us
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { PlusIcon, MinusIcon, PlusSmallIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid';
-import { StarIcon, Cog6ToothIcon, TrashIcon, Bars3Icon } from '@heroicons/react/24/outline';
+import { StarIcon, Cog6ToothIcon, TrashIcon, Bars3Icon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { usePrompt } from '../context/usePrompt';
 
 type WordCardProps = {
@@ -13,6 +13,7 @@ type WordCardProps = {
     editMode?: boolean;
     onEdit?: (word: WordItem) => void;
     onDelete?: (word: WordItem) => void;
+    onMove?: (word: WordItem) => void;
     dragHandleProps?: React.HTMLAttributes<HTMLButtonElement>;
 };
 
@@ -218,7 +219,7 @@ const TemplateSelectModal: React.FC<{
     );
 };
 
-export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode = false, onEdit, onDelete, dragHandleProps }) => {
+export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode = false, onEdit, onDelete, onMove, dragHandleProps }) => {
     const { addWord, removeWord, updateWordStrength, toggleFavorite, selectedPositive, selectedNegative, templates } = usePrompt();
     const [isTemplateOpen, setIsTemplateOpen] = useState(false);
     const clickStep = 0.1;
@@ -428,6 +429,19 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
                         title="Edit"
                     >
                         <Cog6ToothIcon className="w-4 h-4" />
+                    </button>
+                )}
+                {editMode && onMove && (
+                    <button
+                        type="button"
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            onMove(word);
+                        }}
+                        className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
+                        title="Move"
+                    >
+                        <ArrowRightIcon className="w-4 h-4" />
                     </button>
                 )}
                 {editMode && onDelete && (
@@ -788,8 +802,9 @@ const WordGrid: React.FC<{
     editMode?: boolean;
     onEditWord?: (word: WordItem) => void;
     onDeleteWord?: (word: WordItem) => void;
+    onMoveWord?: (word: WordItem) => void;
     onReorderWords?: (ordered: WordItem[]) => void;
-}> = ({ words, onAddWord, folderPathForWord, editMode = false, onEditWord, onDeleteWord, onReorderWords }) => {
+}> = ({ words, onAddWord, folderPathForWord, editMode = false, onEditWord, onDeleteWord, onMoveWord, onReorderWords }) => {
     const [isAddModalOpen, setIsAddModalOpen] = useState(false);
     const [editingWord, setEditingWord] = useState<WordItem | null>(null);
     const { templates } = usePrompt();
@@ -850,7 +865,8 @@ const WordGrid: React.FC<{
                                 onEdit: editMode ? (w: WordItem) => {
                                     setEditingWord(w);
                                 } : undefined,
-                                onDelete: editMode ? (w: WordItem) => onDeleteWord?.(w) : undefined
+                                onDelete: editMode ? (w: WordItem) => onDeleteWord?.(w) : undefined,
+                                onMove: editMode ? (w: WordItem) => onMoveWord?.(w) : undefined
                             };
 
                             if (editMode) {
