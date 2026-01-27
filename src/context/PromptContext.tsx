@@ -472,6 +472,19 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             return next;
         });
     };
+    const updateQualityTemplateName = (id: string, name: string) => {
+        const trimmed = name.trim();
+        if (!trimmed) return;
+        setQualityTemplates(prev => {
+            const next = prev.map(template => template.id === id ? { ...template, name: trimmed } : template);
+            try {
+                localStorage.setItem(QUALITY_KEY, JSON.stringify(next));
+            } catch (e) {
+                console.warn('Failed to save quality templates.', e);
+            }
+            return next;
+        });
+    };
 
     const selectQualityTemplate = (type: 'positive' | 'negative', id: string | null) => {
         setSelectedQualityTemplateIds(prev => {
@@ -588,6 +601,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             setFavoritesData,
             addQualityTemplate,
             removeQualityTemplate,
+            updateQualityTemplateName,
             setQualityTemplatesData,
             selectQualityTemplate,
             selectedQualityTemplateIds,

@@ -172,7 +172,7 @@ const SortableChip: React.FC<{
 };
 
 const PromptOutput: React.FC = () => {
-    const { selectedPositive, selectedNegative, favorites, qualityTemplates, nsfwEnabled, addPromptFavorite, addQualityTemplate, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength } = usePrompt();
+    const { selectedPositive, selectedNegative, favorites, qualityTemplates, nsfwEnabled, addPromptFavorite, addQualityTemplate, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, updateQualityTemplateName, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength } = usePrompt();
     const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | 'both' | null>(null);
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
     const [qualityType, setQualityType] = useState<'positive' | 'negative' | null>(null);
@@ -181,6 +181,8 @@ const PromptOutput: React.FC = () => {
     const [favoriteName, setFavoriteName] = useState('');
     const [favoriteNsfw, setFavoriteNsfw] = useState(false);
     const [saveAsQuality, setSaveAsQuality] = useState(false);
+    const [editingQualityId, setEditingQualityId] = useState<string | null>(null);
+    const [editingQualityName, setEditingQualityName] = useState('');
     const [highlightedPrompt, setHighlightedPrompt] = useState<{ id: string; type: 'positive' | 'negative' } | null>(null);
     const [stepperDisplay, setStepperDisplay] = useState<'inside' | 'above'>(() => {
         const settings = readUiSettings();
@@ -248,6 +250,15 @@ const PromptOutput: React.FC = () => {
             setHoveredStrength(null);
         }
     }, [stepperDisplay]);
+    useEffect(() => {
+        if (!qualityType) {
+            cancelEditQualityName();
+            return;
+        }
+        if (!editingQualityId) return;
+        const exists = qualityTemplates.some(template => template.id === editingQualityId);
+        if (!exists) cancelEditQualityName();
+    }, [editingQualityId, qualityTemplates, qualityType]);
 
     const filteredFavorites = useMemo(() => {
         return favorites.filter(fav => (nsfwEnabled ? true : !fav.nsfw));
@@ -321,6 +332,19 @@ const PromptOutput: React.FC = () => {
         setFavoriteNsfw(false);
         setSaveAsQuality(false);
         setSaveType(null);
+    };
+    const startEditQualityName = (template: PromptFavorite) => {
+        setEditingQualityId(template.id);
+        setEditingQualityName(template.name);
+    };
+    const cancelEditQualityName = () => {
+        setEditingQualityId(null);
+        setEditingQualityName('');
+    };
+    const submitEditQualityName = () => {
+        if (!editingQualityId) return;
+        updateQualityTemplateName(editingQualityId, editingQualityName);
+        cancelEditQualityName();
     };
 
     const sensors = useSensors(
@@ -720,6 +744,7 @@ const PromptOutput: React.FC = () => {
                                 const jpLabels = template.words.map(word => word.label_jp).filter(Boolean).join(', ');
                                 const prompt = formatPrompt(template.words);
                                 const isSelected = selectedQualityTemplateIds[qualityType] === template.id;
+                                const isEditingName = editingQualityId === template.id;
                                 return (
                                     <div
                                         key={template.id}
@@ -735,7 +760,26 @@ const PromptOutput: React.FC = () => {
                                             }}
                                             className="text-left flex-1"
                                         >
-                                            <div className="text-sm font-bold text-slate-200">{template.name}</div>
+                                            {isEditingName ? (
+                                                <div className="flex items-center gap-2">
+                                                    <input
+                                                        type="text"
+                                                        value={editingQualityName}
+                                                        onChange={(event) => setEditingQualityName(event.target.value)}
+                                                        onKeyDown={(event) => {
+                                                            if (event.key === 'Enter') {
+                                                                event.preventDefault();
+                                                                submitEditQualityName();
+                                                            }
+                                                        }}
+                                                        onClick={(event) => event.stopPropagation()}
+                                                        className="w-full max-w-xs bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-sm text-white focus:border-cyan-500 focus:outline-none"
+                                                        autoFocus
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="text-sm font-bold text-slate-200">{template.name}</div>
+                                            )}
                                             <div className="text-[11px] text-slate-500 mt-1">
                                                 {jpLabels || 'No labels'}
                                             </div>
@@ -746,14 +790,56 @@ const PromptOutput: React.FC = () => {
                                                 <div className="text-[10px] text-red-400 mt-1">NSFW</div>
                                             )}
                                         </button>
-                                        <button
-                                            type="button"
-                                            onClick={() => removeQualityTemplate(template.id)}
-                                            className="text-slate-500 hover:text-rose-400"
-                                            title="Delete"
-                                        >
-                                            <TrashIcon className="w-4 h-4" />
-                                        </button>
+                                        <div className="flex items-center gap-2">
+                                            {isEditingName ? (
+                                                <>
+                                                    <button
+                                                        type="button"
+                                                        onClick={(event) => {
+                                                            event.stopPropagation();
+                                                            submitEditQualityName();
+                                                        }}
+                                                        className="px-2 py-1 text-[11px] rounded bg-cyan-600 text-white hover:bg-cyan-500"
+                                                    >
+                                                        保存
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={(event) => {
+                                                            event.stopPropagation();
+                                                            cancelEditQualityName();
+                                                        }}
+                                                        className="px-2 py-1 text-[11px] rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                                    >
+                                                        キャンセル
+                                                    </button>
+                                                </>
+                                            ) : (
+                                                <button
+                                                    type="button"
+                                                    onClick={(event) => {
+                                                        event.stopPropagation();
+                                                        startEditQualityName(template);
+                                                    }}
+                                                    className="px-2 py-1 text-[11px] rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                                    title="名前を編集"
+                                                >
+                                                    編集
+                                                </button>
+                                            )}
+                                            <button
+                                                type="button"
+                                                onClick={(event) => {
+                                                    event.stopPropagation();
+                                                    removeQualityTemplate(template.id);
+                                                    if (editingQualityId === template.id) cancelEditQualityName();
+                                                }}
+                                                className="text-slate-500 hover:text-rose-400"
+                                                title="Delete"
+                                            >
+                                                <TrashIcon className="w-4 h-4" />
+                                            </button>
+                                        </div>
                                     </div>
                                 );
                             })}
