@@ -15,7 +15,7 @@ const readUiSettings = () => {
         if (typeof window === 'undefined') return {};
         const stored = localStorage.getItem(UI_STORAGE_KEY);
         if (!stored) return {};
-        return JSON.parse(stored) as { stepperDisplay?: 'inside' | 'above' };
+        return JSON.parse(stored) as { stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean };
     } catch (e) {
         console.warn('Failed to load UI settings.', e);
         return {};
@@ -173,7 +173,7 @@ const SortableChip: React.FC<{
 
 const PromptOutput: React.FC = () => {
     const { selectedPositive, selectedNegative, favorites, qualityTemplates, nsfwEnabled, addPromptFavorite, addQualityTemplate, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength } = usePrompt();
-    const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | null>(null);
+    const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | 'both' | null>(null);
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
     const [qualityType, setQualityType] = useState<'positive' | 'negative' | null>(null);
     const [loadType, setLoadType] = useState<'positive' | 'negative' | null>(null);
@@ -185,6 +185,10 @@ const PromptOutput: React.FC = () => {
     const [stepperDisplay, setStepperDisplay] = useState<'inside' | 'above'>(() => {
         const settings = readUiSettings();
         return settings.stepperDisplay ?? 'above';
+    });
+    const [combinedCopyEnabled, setCombinedCopyEnabled] = useState<boolean>(() => {
+        const settings = readUiSettings();
+        return !!settings.combinedCopyEnabled;
     });
     const [hoveredStrength, setHoveredStrength] = useState<{ id: string; type: 'positive' | 'negative'; rect: DOMRect } | null>(null);
     const hoverTimeoutRef = useRef<number | null>(null);
@@ -220,12 +224,16 @@ const PromptOutput: React.FC = () => {
 
     useEffect(() => {
         const handleUiUpdate = (event: Event) => {
-            const detail = (event as CustomEvent).detail as { stepperDisplay?: 'inside' | 'above' } | undefined;
-            setStepperDisplay(detail?.stepperDisplay ?? readUiSettings().stepperDisplay ?? 'above');
+            const detail = (event as CustomEvent).detail as { stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean } | undefined;
+            const next = detail ?? readUiSettings();
+            setStepperDisplay(next.stepperDisplay ?? 'above');
+            setCombinedCopyEnabled(!!next.combinedCopyEnabled);
         };
         const handleStorage = (event: StorageEvent) => {
             if (event.key !== UI_STORAGE_KEY) return;
-            setStepperDisplay(readUiSettings().stepperDisplay ?? 'above');
+            const next = readUiSettings();
+            setStepperDisplay(next.stepperDisplay ?? 'above');
+            setCombinedCopyEnabled(!!next.combinedCopyEnabled);
         };
         window.addEventListener('promptgen:ui-update', handleUiUpdate);
         window.addEventListener('storage', handleStorage);
@@ -273,6 +281,11 @@ const PromptOutput: React.FC = () => {
         if (!base) return quality;
         return `${quality}, ${base}`;
     };
+    const buildCombinedCopyText = () => {
+        const pos = buildCopyText('positive', posString);
+        const neg = buildCopyText('negative', negString);
+        return `Positive prompt: ${pos}\nNegative prompt: ${neg}`;
+    };
 
     const inferFavoriteNsfw = (source: SelectedWord[]) => {
         return source.some(word => {
@@ -289,7 +302,7 @@ const PromptOutput: React.FC = () => {
         setSaveAsQuality(false);
     };
 
-    const handleCopy = (text: string, type: 'pos' | 'neg') => {
+    const handleCopy = (text: string, type: 'pos' | 'neg' | 'both') => {
         navigator.clipboard.writeText(text);
         setCopyFeedback(type);
         setTimeout(() => setCopyFeedback(null), 2000);
@@ -369,6 +382,22 @@ const PromptOutput: React.FC = () => {
                         strength={hoveredWord.strength}
                         onChange={(s) => updateWordStrength(hoveredWord.id, hoveredStrength.type, s)}
                     />
+                </div>
+            )}
+            {combinedCopyEnabled && (
+                <div className="flex justify-end -mb-1">
+                    <button
+                        type="button"
+                        onClick={() => handleCopy(buildCombinedCopyText(), 'both')}
+                        className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
+                        title="Positive/Negative をまとめてコピー"
+                    >
+                        {copyFeedback === 'both' ? <span className="text-green-300">Copied!</span> : (
+                            <>
+                                <DocumentDuplicateIcon className="w-4 h-4" /> Copy Both
+                            </>
+                        )}
+                    </button>
                 </div>
             )}
             <div className="flex flex-1 gap-4">
