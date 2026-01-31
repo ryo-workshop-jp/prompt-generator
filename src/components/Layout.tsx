@@ -7,6 +7,7 @@ import CategoryNav from './CategoryNav';
 import WordGrid, { WordCard } from './WordGrid';
 import PromptOutput from './PromptOutput';
 import SettingsModal from './SettingsModal';
+import NoticeModal, { readNoticeDismissed, writeNoticeDismissed } from './NoticeModal';
 import HelpModal from './HelpModal';
 import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 import type { FolderItem, WordItem, TemplateItem } from '../types';
@@ -384,6 +385,7 @@ const Layout: React.FC = () => {
     const [editingFolder, setEditingFolder] = useState<FolderItem | null>(null);
     const [isBulkEditOpen, setIsBulkEditOpen] = useState(false);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
+    const [isNoticeOpen, setIsNoticeOpen] = useState(false);
     const [movingFolder, setMovingFolder] = useState<FolderItem | null>(null);
     const [movingWord, setMovingWord] = useState<WordItem | null>(null);
     const [moveTargetId, setMoveTargetId] = useState('root');
@@ -407,6 +409,12 @@ const Layout: React.FC = () => {
             setMoveTargetId(movingWord.folderId ?? 'root');
         }
     }, [movingWord]);
+
+    useEffect(() => {
+        if (!readNoticeDismissed()) {
+            setIsNoticeOpen(true);
+        }
+    }, []);
 
     const folderById = useMemo(() => {
         return new Map(folders.map(folder => [folder.id, folder]));
@@ -1025,6 +1033,13 @@ const Layout: React.FC = () => {
 
             <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
             <HelpModal isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
+            <NoticeModal
+                isOpen={isNoticeOpen}
+                onConfirm={(skipNext) => {
+                    writeNoticeDismissed(skipNext);
+                    setIsNoticeOpen(false);
+                }}
+            />
             <EditFolderModal
                 key={editingFolder?.id ?? 'none'}
                 folder={editingFolder}
