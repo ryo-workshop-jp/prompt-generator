@@ -15,14 +15,32 @@ const readUiSettings = () => {
         if (typeof window === 'undefined') return {};
         const stored = localStorage.getItem(UI_STORAGE_KEY);
         if (!stored) return {};
-        return JSON.parse(stored) as { nsfwConfirmSkip?: boolean; stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean };
+        const parsed = JSON.parse(stored) as {
+            nsfwConfirmSkip?: boolean;
+            stepperDisplay?: 'inside' | 'above';
+            combinedCopyEnabled?: boolean;
+            showRootInPaths?: boolean;
+            showItemFolderPath?: boolean;
+        };
+        const showFolderPath = parsed.showItemFolderPath ?? parsed.showRootInPaths ?? false;
+        return {
+            ...parsed,
+            showItemFolderPath: showFolderPath,
+            showRootInPaths: showFolderPath
+        };
     } catch (e) {
         console.warn('Failed to load UI settings.', e);
         return {};
     }
 };
 
-const writeUiSettings = (updates: { nsfwConfirmSkip?: boolean; stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean }) => {
+const writeUiSettings = (updates: {
+    nsfwConfirmSkip?: boolean;
+    stepperDisplay?: 'inside' | 'above';
+    combinedCopyEnabled?: boolean;
+    showRootInPaths?: boolean;
+    showItemFolderPath?: boolean;
+}) => {
     try {
         if (typeof window === 'undefined') return;
         const current = readUiSettings();
@@ -337,6 +355,10 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     const [combinedCopyEnabled, setCombinedCopyEnabled] = useState<boolean>(() => {
         const settings = readUiSettings();
         return !!settings.combinedCopyEnabled;
+    });
+    const [showItemFolderPath, setShowItemFolderPath] = useState<boolean>(() => {
+        const settings = readUiSettings();
+        return settings.showItemFolderPath ?? false;
     });
     const [activeTab, setActiveTab] = useState<'general' | 'io' | 'templates'>('general');
     const [importMode, setImportMode] = useState<'all' | 'words' | 'favorites' | 'quality' | 'templates' | null>(null);
@@ -805,6 +827,13 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             return next;
         });
     };
+    const handleShowFolderPathToggle = () => {
+        setShowItemFolderPath(prev => {
+            const next = !prev;
+            writeUiSettings({ showItemFolderPath: next, showRootInPaths: next });
+            return next;
+        });
+    };
 
     const openResetModal = (action: 'resetWords' | 'clearWords' | 'clearExtras') => {
         setResetAction(action);
@@ -983,6 +1012,23 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                         >
                                             <span
                                                 className={`${combinedCopyEnabled ? 'translate-x-6' : 'translate-x-1'
+                                                    } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                                            />
+                                        </button>
+                                    </div>
+                                    <div className="flex items-center justify-between mt-4">
+                                        <div className="flex flex-col">
+                                            <span className="text-sm font-bold text-slate-200">フォルダパス表示（root含む）</span>
+                                            <span className="text-xs text-slate-500">カードや語句の下にフォルダパスを表示します。</span>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            onClick={handleShowFolderPathToggle}
+                                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${showItemFolderPath ? 'bg-cyan-500' : 'bg-slate-600'
+                                                }`}
+                                        >
+                                            <span
+                                                className={`${showItemFolderPath ? 'translate-x-6' : 'translate-x-1'
                                                     } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
                                             />
                                         </button>

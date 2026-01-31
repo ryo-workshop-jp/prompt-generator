@@ -12,6 +12,26 @@ import HelpModal from './HelpModal';
 import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 import type { FolderItem, WordItem, TemplateItem, CardItem } from '../types';
 
+const UI_STORAGE_KEY = 'promptgen:ui';
+
+const readUiSettings = () => {
+    try {
+        if (typeof window === 'undefined') return {};
+        const stored = localStorage.getItem(UI_STORAGE_KEY);
+        if (!stored) return {};
+        const parsed = JSON.parse(stored) as { showRootInPaths?: boolean; showItemFolderPath?: boolean };
+        const showFolderPath = parsed.showItemFolderPath ?? parsed.showRootInPaths ?? false;
+        return {
+            ...parsed,
+            showItemFolderPath: showFolderPath,
+            showRootInPaths: showFolderPath
+        };
+    } catch (e) {
+        console.warn('Failed to load UI settings.', e);
+        return {};
+    }
+};
+
 const AddNodeModal: React.FC<{
     isOpen: boolean;
     title: string;
@@ -388,8 +408,17 @@ const Layout: React.FC = () => {
     const [isNoticeOpen, setIsNoticeOpen] = useState(false);
     const [movingFolder, setMovingFolder] = useState<FolderItem | null>(null);
     const [movingWord, setMovingWord] = useState<WordItem | null>(null);
+    const [movingCard, setMovingCard] = useState<CardItem | null>(null);
     const [moveTargetId, setMoveTargetId] = useState('root');
     const isPopStateRef = useRef(false);
+    const [showRootInPaths, setShowRootInPaths] = useState<boolean>(() => {
+        const settings = readUiSettings();
+        return settings.showRootInPaths ?? false;
+    });
+    const [showItemFolderPath, setShowItemFolderPath] = useState<boolean>(() => {
+        const settings = readUiSettings();
+        return settings.showItemFolderPath ?? false;
+    });
 
     const sensors = useSensors(
         useSensor(PointerSensor),
@@ -411,9 +440,38 @@ const Layout: React.FC = () => {
     }, [movingWord]);
 
     useEffect(() => {
+        if (movingCard) {
+            setMoveTargetId(movingCard.folderId ?? 'root');
+        }
+    }, [movingCard]);
+
+    useEffect(() => {
         if (!readNoticeDismissed()) {
             setIsNoticeOpen(true);
         }
+    }, []);
+
+    useEffect(() => {
+        const handleUiUpdate = (event: Event) => {
+            const detail = (event as CustomEvent).detail as { showRootInPaths?: boolean; showItemFolderPath?: boolean } | undefined;
+            const next = detail ?? readUiSettings();
+            const showFolderPath = next.showItemFolderPath ?? next.showRootInPaths ?? false;
+            setShowRootInPaths(showFolderPath);
+            setShowItemFolderPath(showFolderPath);
+        };
+        const handleStorage = (event: StorageEvent) => {
+            if (event.key !== UI_STORAGE_KEY) return;
+            const next = readUiSettings();
+            const showFolderPath = next.showItemFolderPath ?? next.showRootInPaths ?? false;
+            setShowRootInPaths(showFolderPath);
+            setShowItemFolderPath(showFolderPath);
+        };
+        window.addEventListener('promptgen:ui-update', handleUiUpdate);
+        window.addEventListener('storage', handleStorage);
+        return () => {
+            window.removeEventListener('promptgen:ui-update', handleUiUpdate);
+            window.removeEventListener('storage', handleStorage);
+        };
     }, []);
 
     const folderById = useMemo(() => {
@@ -614,6 +672,15 @@ const Layout: React.FC = () => {
         });
     };
 
+    const handleReorderCards = (ordered: CardItem[]) => {
+        setData({
+            folders,
+            words,
+            templates,
+            cards: reorderSubset(cards, ordered)
+        });
+    };
+
     const searchResults = useMemo(() => {
         const query = searchQuery.trim().toLowerCase();
         if (!query) return null;
@@ -655,9 +722,13 @@ const Layout: React.FC = () => {
             cursor = folder.parentId;
         }
         if (path.length === 0) return 'root';
+        if (!showRootInPaths) {
+            const trimmed = path[0] === 'root' ? path.slice(1) : path;
+            return trimmed.length > 0 ? trimmed.join(' / ') : '';
+        }
         if (path[0] !== 'root') path.unshift('root');
         return path.join(' / ');
-    }, [activeFolderId, folderById]);
+    }, [activeFolderId, folderById, showRootInPaths]);
 
     const getFolderPath = (folderId: string | null) => {
         if (!folderId) return 'root';
@@ -670,6 +741,10 @@ const Layout: React.FC = () => {
             cursor = folder.parentId;
         }
         if (path.length === 0) return 'root';
+        if (!showRootInPaths) {
+            const trimmed = path[0] === 'root' ? path.slice(1) : path;
+            return trimmed.length > 0 ? trimmed.join(' / ') : '';
+        }
         if (path[0] === 'root') return path.join(' / ');
         return `root / ${path.join(' / ')}`;
     };
@@ -677,7 +752,7 @@ const Layout: React.FC = () => {
     const folderOptions = useMemo(() => {
         const options = folders.map(folder => ({
             id: folder.id,
-            label: getFolderPath(folder.id)
+            label: getFolderPath(folder.id) || 'root'
         }));
         options.sort((a, b) => a.label.localeCompare(b.label));
         return [{ id: 'root', label: 'root' }, ...options];
@@ -827,6 +902,25 @@ const Layout: React.FC = () => {
         setMovingWord(null);
     };
 
+    const handleConfirmMoveCard = () => {
+        if (!movingCard) return;
+        const targetId = moveTargetId || 'root';
+        if (targetId === movingCard.folderId) {
+            setMovingCard(null);
+            return;
+        }
+        setData({
+            folders,
+            words,
+            templates,
+            cards: cards.map(card => card.id === movingCard.id
+                ? { ...card, folderId: targetId }
+                : card
+            )
+        });
+        setMovingCard(null);
+    };
+
     return (
         <div className="flex h-screen bg-slate-950 text-slate-200 font-sans overflow-hidden">
             {/* Sidebar */}
@@ -945,6 +1039,7 @@ const Layout: React.FC = () => {
                                             editMode={editMode}
                                             onMove={() => {
                                                 setMovingWord(null);
+                                                setMovingCard(null);
                                                 setMovingFolder(folder);
                                             }}
                                             onEdit={() => setEditingFolder(folder)}
@@ -960,7 +1055,12 @@ const Layout: React.FC = () => {
                                         <div className="text-xs text-slate-500">No matching words.</div>
                                     )}
                                     {searchResults.matchingWords.map(word => (
-                                        <WordCard key={word.id} word={word} folderPath={getFolderPath(word.folderId)} />
+                                        <WordCard
+                                            key={word.id}
+                                            word={word}
+                                            folderPath={showItemFolderPath ? getFolderPath(word.folderId) : undefined}
+                                            compact={!showItemFolderPath}
+                                        />
                                     ))}
                                 </div>
                             </div>
@@ -1006,6 +1106,7 @@ const Layout: React.FC = () => {
                                                     onDelete: () => handleDeleteFolder(folder.id),
                                                     onMove: () => {
                                                         setMovingWord(null);
+                                                        setMovingCard(null);
                                                         setMovingFolder(folder);
                                                     }
                                                 };
@@ -1021,6 +1122,35 @@ const Layout: React.FC = () => {
                                 </DndContext>
                             </div>
 
+                            {cardsForGrid.length > 0 && (
+                                <div>
+                                    <div className="flex items-center justify-between mb-3">
+                                        <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">Cards</h2>
+                                    </div>
+                                    <WordGrid
+                                        words={[]}
+                                        cards={cardsForGrid}
+                                        onAddWord={() => {}}
+                                        folderPathForCard={showItemFolderPath ? (card: CardItem) => getFolderPath(card.folderId) : undefined}
+                                        compact={!showItemFolderPath}
+                                        editMode={editMode}
+                                        gridPaddingClass="pb-0"
+                                        onMoveCard={(card) => {
+                                            setMovingFolder(null);
+                                            setMovingWord(null);
+                                            setMovingCard(card);
+                                        }}
+                                        onReorderCards={handleReorderCards}
+                                        onDeleteCard={(card) => {
+                                            if (!confirm('このカードを削除します。よろしいですか？')) return;
+                                            removeCard(card.id);
+                                        }}
+                                        showAddWordButton={false}
+                                        showWordModals={false}
+                                    />
+                                </div>
+                            )}
+
                             <div>
                                 <div className="flex items-center justify-between mb-3">
                                     <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">Words</h2>
@@ -1034,19 +1164,17 @@ const Layout: React.FC = () => {
                                 </div>
                                 <WordGrid
                                     words={wordsForGrid}
-                                    cards={cardsForGrid}
+                                    cards={[]}
                                     onAddWord={handleAddWord}
-                                    folderPathForWord={(word: WordItem) => getFolderPath(word.folderId)}
-                                    folderPathForCard={(card: CardItem) => getFolderPath(card.folderId)}
+                                    folderPathForWord={showItemFolderPath ? (word: WordItem) => getFolderPath(word.folderId) : undefined}
+                                    folderPathForCard={showItemFolderPath ? (card: CardItem) => getFolderPath(card.folderId) : undefined}
+                                    compact={!showItemFolderPath}
                                     editMode={editMode}
                                     onEditWord={(updated) => handleUpdateWord(updated)}
                                     onDeleteWord={(word) => handleDeleteWord(word.id)}
-                                    onDeleteCard={(card) => {
-                                        if (!confirm('このカードを削除します。よろしいですか？')) return;
-                                        removeCard(card.id);
-                                    }}
                                     onMoveWord={(word) => {
                                         setMovingFolder(null);
+                                        setMovingCard(null);
                                         setMovingWord(word);
                                     }}
                                     onReorderWords={handleReorderWords}
@@ -1106,6 +1234,16 @@ const Layout: React.FC = () => {
                 onChange={setMoveTargetId}
                 onClose={() => setMovingWord(null)}
                 onConfirm={handleConfirmMoveWord}
+            />
+            <MoveItemModal
+                isOpen={!!movingCard}
+                title="カードを移動"
+                itemLabel={movingCard?.name ?? ''}
+                options={folderOptions}
+                value={moveTargetId}
+                onChange={setMoveTargetId}
+                onClose={() => setMovingCard(null)}
+                onConfirm={handleConfirmMoveCard}
             />
             <AddNodeModal
                 isOpen={showAddFolder}

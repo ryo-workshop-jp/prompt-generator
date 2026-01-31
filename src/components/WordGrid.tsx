@@ -10,6 +10,7 @@ import { usePrompt } from '../context/usePrompt';
 type WordCardProps = {
     word: WordItem;
     folderPath?: string;
+    compact?: boolean;
     editMode?: boolean;
     onEdit?: (word: WordItem) => void;
     onDelete?: (word: WordItem) => void;
@@ -20,8 +21,11 @@ type WordCardProps = {
 type CardCardProps = {
     card: CardItem;
     folderPath?: string;
+    compact?: boolean;
     editMode?: boolean;
+    onMove?: (card: CardItem) => void;
     onDelete?: (card: CardItem) => void;
+    dragHandleProps?: React.HTMLAttributes<HTMLButtonElement>;
 };
 
 type DecorOption = {
@@ -226,11 +230,12 @@ const TemplateSelectModal: React.FC<{
     );
 };
 
-export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode = false, onEdit, onDelete, onMove, dragHandleProps }) => {
+export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = false, editMode = false, onEdit, onDelete, onMove, dragHandleProps }) => {
     const { addWord, removeWord, updateWordStrength, toggleFavorite, selectedPositive, selectedNegative, templates } = usePrompt();
     const [isTemplateOpen, setIsTemplateOpen] = useState(false);
     const clickStep = 0.1;
     const maxClickStrength = 1.5;
+    const showFolderPath = !!folderPath && folderPath !== 'root';
 
     const templateIds = useMemo(() => {
         if (word.templateIds && word.templateIds.length > 0) return word.templateIds;
@@ -393,7 +398,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
         <button
             onClick={(event) => handleLeftClick(event)}
             onContextMenu={handleContextMenu}
-            className={`relative group flex flex-col items-start p-3 rounded-xl border transition-all duration-200 text-left w-full h-full min-h-[80px] ${stateClass}`}
+            className={`relative group flex flex-col items-start ${compact ? 'pt-2.5 px-2.5 pb-2 min-h-[56px]' : showFolderPath ? 'p-3 min-h-[80px]' : 'pt-3 px-3 pb-2 min-h-[68px]'} rounded-xl border transition-all duration-200 text-left w-full ${stateClass}`}
         >
             <div className="flex justify-between w-full">
                 <span className="text-xs text-slate-500 font-mono mb-1 truncate w-full">{word.value_en}</span>
@@ -502,7 +507,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
                 )}
             </div>
             <span className="font-bold text-sm line-clamp-2">{word.label_jp}</span>
-            {folderPath && (
+            {folderPath && folderPath !== 'root' && (
                 <span className="text-[10px] text-slate-500 mt-1 line-clamp-1">{folderPath}</span>
             )}
             {word.note && (
@@ -530,9 +535,10 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
     );
 };
 
-const CardCard: React.FC<CardCardProps> = ({ card, folderPath, editMode = false, onDelete }) => {
+const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, editMode = false, onMove, onDelete, dragHandleProps }) => {
     const { applyCard, addWord, words } = usePrompt();
     const wordMap = useMemo(() => new Map(words.map(word => [word.id, word])), [words]);
+    const showFolderPath = !!folderPath && folderPath !== 'root';
     const labels = useMemo(() => {
         const parts = card.words.map(ref => {
             const found = wordMap.get(ref.wordId);
@@ -588,7 +594,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, editMode = false,
                     handleClick();
                 }
             }}
-            className={`relative flex h-full w-full flex-col items-start p-3 rounded-xl border ${borderTone} bg-slate-900/40 hover:bg-slate-900 transition-all text-left group`}
+            className={`relative flex w-full flex-col items-start ${compact ? 'pt-2.5 px-2.5 pb-2 min-h-[56px]' : showFolderPath ? 'p-3 min-h-[80px]' : 'pt-3 px-3 pb-2 min-h-[68px]'} rounded-xl border ${borderTone} bg-slate-900/40 hover:bg-slate-900 transition-all text-left group`}
         >
             <div className="flex items-center gap-2 mb-1 w-full">
                 <RectangleStackIcon className="w-4 h-4 text-amber-400/80" />
@@ -611,11 +617,36 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, editMode = false,
             {labels && (
                 <span className="text-[10px] text-slate-400 mt-1 line-clamp-2">{labels}</span>
             )}
-            {folderPath && (
+            {showFolderPath && (
                 <span className="text-[10px] text-slate-500 mt-1 line-clamp-1">{folderPath}</span>
             )}
             {editMode && (
-                <div className="absolute top-2 right-2 flex gap-1">
+                <div className="absolute top-2 right-2 flex gap-1 items-center">
+                    <button
+                        type="button"
+                        {...dragHandleProps}
+                        className="p-1 rounded-md text-slate-500 hover:text-slate-300 cursor-grab"
+                        title="Drag to reorder"
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            dragHandleProps?.onClick?.(event);
+                        }}
+                    >
+                        <Bars3Icon className="w-4 h-4" />
+                    </button>
+                    {onMove && (
+                        <button
+                            type="button"
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                onMove(card);
+                            }}
+                            className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
+                            title="Move"
+                        >
+                            <ArrowRightIcon className="w-4 h-4" />
+                        </button>
+                    )}
                     <button
                         type="button"
                         onClick={(event) => {
@@ -629,6 +660,23 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, editMode = false,
                     </button>
                 </div>
             )}
+        </div>
+    );
+};
+
+const SortableCardCard: React.FC<CardCardProps & { id: string }> = ({ id, ...props }) => {
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition
+    };
+
+    return (
+        <div ref={setNodeRef} style={style} className="h-full">
+            <CardCard
+                {...props}
+                dragHandleProps={{ ...attributes, ...listeners }}
+            />
         </div>
     );
 };
@@ -911,13 +959,19 @@ const WordGrid: React.FC<{
     onAddWord: (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[]) => void;
     folderPathForWord?: (word: WordItem) => string;
     folderPathForCard?: (card: CardItem) => string;
+    compact?: boolean;
     editMode?: boolean;
     onEditWord?: (word: WordItem) => void;
     onDeleteWord?: (word: WordItem) => void;
     onMoveWord?: (word: WordItem) => void;
     onReorderWords?: (ordered: WordItem[]) => void;
+    onMoveCard?: (card: CardItem) => void;
+    onReorderCards?: (cards: CardItem[]) => void;
     onDeleteCard?: (card: CardItem) => void;
-}> = ({ words, cards = [], onAddWord, folderPathForWord, folderPathForCard, editMode = false, onEditWord, onDeleteWord, onMoveWord, onReorderWords, onDeleteCard }) => {
+    showAddWordButton?: boolean;
+    showWordModals?: boolean;
+    gridPaddingClass?: string;
+}> = ({ words, cards = [], onAddWord, folderPathForWord, folderPathForCard, compact = false, editMode = false, onEditWord, onDeleteWord, onMoveWord, onReorderWords, onMoveCard, onReorderCards, onDeleteCard, showAddWordButton = true, showWordModals = true, gridPaddingClass = 'pb-20' }) => {
     const [isAddModalOpen, setIsAddModalOpen] = useState(false);
     const [editingWord, setEditingWord] = useState<WordItem | null>(null);
     const { templates } = usePrompt();
@@ -930,6 +984,7 @@ const WordGrid: React.FC<{
     );
 
     const currentWords = useMemo(() => words, [words]);
+    const currentCards = useMemo(() => cards, [cards]);
     const displayItems = useMemo(() => {
         const combined: Array<{ kind: 'word'; word: WordItem } | { kind: 'card'; card: CardItem }> = [];
         words.forEach(word => combined.push({ kind: 'word', word }));
@@ -948,48 +1003,85 @@ const WordGrid: React.FC<{
                 collisionDetection={closestCenter}
                 onDragEnd={(event: DragEndEvent) => {
                     const { active, over } = event;
-                    if (!editMode || !onReorderWords) return;
-                    if (active.id !== over?.id) {
-                        const oldIndex = currentWords.findIndex(item => item.id === active.id);
-                        const newIndex = currentWords.findIndex(item => item.id === over?.id);
+                    if (!editMode) return;
+                    const activeId = active.id;
+                    const overId = over?.id;
+                    const isCardId = (id: typeof activeId | undefined) => typeof id === 'string' && id.startsWith('card:');
+
+                    if (isCardId(activeId)) {
+                        if (!isCardId(overId) || !onReorderCards) return;
+                        const activeCardId = (activeId as string).replace('card:', '');
+                        const overCardId = (overId as string).replace('card:', '');
+                        if (activeCardId === overCardId) return;
+                        const oldIndex = currentCards.findIndex(item => item.id === activeCardId);
+                        const newIndex = currentCards.findIndex(item => item.id === overCardId);
                         if (oldIndex === -1 || newIndex === -1) return;
-                        const reordered = arrayMove(currentWords, oldIndex, newIndex);
-                        onReorderWords(reordered);
+                        const reordered = arrayMove(currentCards, oldIndex, newIndex);
+                        onReorderCards(reordered);
+                        return;
                     }
+
+                    if (!onReorderWords || activeId === overId) return;
+                    const oldIndex = currentWords.findIndex(item => item.id === activeId);
+                    const newIndex = currentWords.findIndex(item => item.id === overId);
+                    if (oldIndex === -1 || newIndex === -1) return;
+                    const reordered = arrayMove(currentWords, oldIndex, newIndex);
+                    onReorderWords(reordered);
                 }}
             >
                 <SortableContext
-                    items={editMode ? currentWords.map(word => word.id) : []}
+                    items={editMode ? [
+                        ...currentWords.map(word => word.id),
+                        ...currentCards.map(card => `card:${card.id}`)
+                    ] : []}
                     strategy={rectSortingStrategy}
                 >
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 pb-20">
+                    <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 ${gridPaddingClass}`}>
                         {/* 語群を追加 Button */}
-                        <button
-                            onClick={() => setIsAddModalOpen(true)}
-                            className="flex flex-col items-center justify-center p-3 rounded-xl border border-dashed border-slate-700 hover:border-cyan-500/50 hover:bg-cyan-950/20 text-slate-500 hover:text-cyan-400 transition-all min-h-[80px]"
-                        >
-                            <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center mb-2">
-                                <PlusSmallIcon className="w-5 h-5" />
-                            </div>
-                            <span className="text-xs font-bold">追加</span>
-                        </button>
+                        {showAddWordButton && (
+                            <button
+                                onClick={() => setIsAddModalOpen(true)}
+                                className={`flex flex-col items-center justify-center ${compact ? 'p-2.5 min-h-[56px]' : 'p-3 min-h-[80px]'} rounded-xl border border-dashed border-slate-700 hover:border-cyan-500/50 hover:bg-cyan-950/20 text-slate-500 hover:text-cyan-400 transition-all`}
+                            >
+                                <div className={`${compact ? 'w-6 h-6 mb-1' : 'w-8 h-8 mb-2'} rounded-full bg-slate-800 flex items-center justify-center`}>
+                                    <PlusSmallIcon className={`${compact ? 'w-4 h-4' : 'w-5 h-5'}`} />
+                                </div>
+                                <span className={`${compact ? 'text-[10px]' : 'text-xs'} font-bold`}>追加</span>
+                            </button>
+                        )}
 
                         {displayItems.map(item => {
                             if (item.kind === 'card') {
                                 return (
-                                    <CardCard
-                                        key={`card:${item.card.id}`}
-                                        card={item.card}
-                                        folderPath={folderPathForCard ? folderPathForCard(item.card) : undefined}
-                                        editMode={editMode}
-                                        onDelete={editMode ? (card) => onDeleteCard?.(card) : undefined}
-                                    />
+                                    editMode ? (
+                                        <SortableCardCard
+                                            key={`card:${item.card.id}`}
+                                            id={`card:${item.card.id}`}
+                                            card={item.card}
+                                            folderPath={folderPathForCard ? folderPathForCard(item.card) : undefined}
+                                            compact={compact}
+                                            editMode={editMode}
+                                            onMove={onMoveCard}
+                                            onDelete={editMode ? (card) => onDeleteCard?.(card) : undefined}
+                                        />
+                                    ) : (
+                                        <CardCard
+                                            key={`card:${item.card.id}`}
+                                            card={item.card}
+                                            folderPath={folderPathForCard ? folderPathForCard(item.card) : undefined}
+                                            compact={compact}
+                                            editMode={editMode}
+                                            onMove={onMoveCard}
+                                            onDelete={editMode ? (card) => onDeleteCard?.(card) : undefined}
+                                        />
+                                    )
                                 );
                             }
                             const word = item.word;
                             const card = {
                                 word,
                                 folderPath: folderPathForWord ? folderPathForWord(word) : undefined,
+                                compact,
                                 editMode,
                                 onEdit: editMode ? (w: WordItem) => {
                                     setEditingWord(w);
@@ -1008,27 +1100,33 @@ const WordGrid: React.FC<{
                 </SortableContext>
             </DndContext>
 
-            <AddWordModal
-                isOpen={isAddModalOpen}
-                onClose={() => setIsAddModalOpen(false)}
-                onAdd={handleAddWord}
-                templates={templates}
-            />
-            <EditWordModal
-                key={editingWord?.id ?? 'none'}
-                word={editingWord}
-                onClose={() => setEditingWord(null)}
-                onSave={(updates) => {
-                    if (!editingWord) return;
-                    onEditWord?.({ ...editingWord, ...updates });
-                }}
-                templates={templates}
-            />
+            {showWordModals && (
+                <>
+                    <AddWordModal
+                        isOpen={isAddModalOpen}
+                        onClose={() => setIsAddModalOpen(false)}
+                        onAdd={handleAddWord}
+                        templates={templates}
+                    />
+                    <EditWordModal
+                        key={editingWord?.id ?? 'none'}
+                        word={editingWord}
+                        onClose={() => setEditingWord(null)}
+                        onSave={(updates) => {
+                            if (!editingWord) return;
+                            onEditWord?.({ ...editingWord, ...updates });
+                        }}
+                        templates={templates}
+                    />
+                </>
+            )}
         </>
     );
 };
 
 export default WordGrid;
+
+
 
 
 

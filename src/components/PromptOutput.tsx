@@ -15,7 +15,11 @@ const readUiSettings = () => {
         if (typeof window === 'undefined') return {};
         const stored = localStorage.getItem(UI_STORAGE_KEY);
         if (!stored) return {};
-        return JSON.parse(stored) as { stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean };
+        return JSON.parse(stored) as {
+            stepperDisplay?: 'inside' | 'above';
+            combinedCopyEnabled?: boolean;
+            showRootInPaths?: boolean;
+        };
     } catch (e) {
         console.warn('Failed to load UI settings.', e);
         return {};
@@ -218,6 +222,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         const settings = readUiSettings();
         return !!settings.combinedCopyEnabled;
     });
+    const [showRootInPaths, setShowRootInPaths] = useState<boolean>(() => {
+        const settings = readUiSettings();
+        return settings.showRootInPaths ?? false;
+    });
     const [hoveredStrength, setHoveredStrength] = useState<{ id: string; type: 'positive' | 'negative'; rect: DOMRect } | null>(null);
     const hoverTimeoutRef = useRef<number | null>(null);
 
@@ -256,16 +264,18 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
 
     useEffect(() => {
         const handleUiUpdate = (event: Event) => {
-            const detail = (event as CustomEvent).detail as { stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean } | undefined;
+            const detail = (event as CustomEvent).detail as { stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean; showRootInPaths?: boolean } | undefined;
             const next = detail ?? readUiSettings();
             setStepperDisplay(next.stepperDisplay ?? 'above');
             setCombinedCopyEnabled(!!next.combinedCopyEnabled);
+            setShowRootInPaths(next.showRootInPaths ?? false);
         };
         const handleStorage = (event: StorageEvent) => {
             if (event.key !== UI_STORAGE_KEY) return;
             const next = readUiSettings();
             setStepperDisplay(next.stepperDisplay ?? 'above');
             setCombinedCopyEnabled(!!next.combinedCopyEnabled);
+            setShowRootInPaths(next.showRootInPaths ?? false);
         };
         window.addEventListener('promptgen:ui-update', handleUiUpdate);
         window.addEventListener('storage', handleStorage);
@@ -313,6 +323,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             cursor = folder.parentId ?? null;
         }
         if (path.length === 0) return 'root';
+        if (!showRootInPaths) {
+            const trimmed = path[0] === 'root' ? path.slice(1) : path;
+            return trimmed.length > 0 ? trimmed.join(' / ') : '';
+        }
         if (path[0] === 'root') return path.join(' / ');
         return `root / ${path.join(' / ')}`;
     };
