@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useState, type ReactNode } from 'react';
-import type { DataStore, SelectedWord, PromptStrength, WordItem, PromptFavorite, TemplateItem } from '../types';
+import type { DataStore, SelectedWord, PromptStrength, WordItem, PromptFavorite, TemplateItem, CardItem, CardWordRef } from '../types';
 import { initialData } from '../data/initialData';
 import { PromptContext } from './PromptContextBase';
 
@@ -43,8 +43,52 @@ const normalizeDataStore = (input: Partial<DataStore>): DataStore => {
     return {
         folders: Array.isArray(input.folders) ? input.folders : [],
         words: Array.isArray(input.words) ? input.words : [],
-        templates: Array.isArray(input.templates) ? input.templates : []
+        templates: Array.isArray(input.templates) ? input.templates : [],
+        cards: Array.isArray(input.cards) ? input.cards : []
     };
+};
+
+const normalizeCardWords = (input: unknown): CardWordRef[] => {
+    if (!Array.isArray(input)) return [];
+    return input.reduce<CardWordRef[]>((acc, entry) => {
+        if (!entry || typeof entry !== 'object') return acc;
+        const candidate = entry as CardWordRef;
+        if (!candidate.wordId) return acc;
+        const strength = typeof candidate.strength === 'number' ? candidate.strength : undefined;
+        const repeatRaw = typeof candidate.repeat === 'number' ? candidate.repeat : undefined;
+        const repeat = repeatRaw && repeatRaw > 1 ? Math.round(repeatRaw) : undefined;
+        acc.push({
+            wordId: candidate.wordId,
+            strength,
+            repeat,
+            label_jp: typeof candidate.label_jp === 'string' ? candidate.label_jp : undefined,
+            value_en: typeof candidate.value_en === 'string' ? candidate.value_en : undefined,
+            nsfw: typeof candidate.nsfw === 'boolean' ? candidate.nsfw : undefined,
+            note: typeof candidate.note === 'string' ? candidate.note : undefined
+        });
+        return acc;
+    }, []);
+};
+
+const normalizeCards = (cards: CardItem[] | undefined, words: WordItem[]): CardItem[] => {
+    if (!Array.isArray(cards)) return [];
+    const wordMap = new Map(words.map(word => [word.id, word]));
+    return cards.reduce<CardItem[]>((acc, entry) => {
+        if (!entry || typeof entry !== 'object') return acc;
+        const candidate = entry as CardItem;
+        if (!candidate.id || !candidate.name || !candidate.folderId) return acc;
+        if (candidate.type !== 'positive' && candidate.type !== 'negative') return acc;
+        const wordsRef = normalizeCardWords(candidate.words);
+        const nsfw = typeof candidate.nsfw === 'boolean'
+            ? candidate.nsfw
+            : wordsRef.some(ref => (ref.nsfw ?? wordMap.get(ref.wordId)?.nsfw) === true);
+        acc.push({
+            ...candidate,
+            words: wordsRef,
+            nsfw
+        });
+        return acc;
+    }, []);
 };
 
 const normalizeFavoritesList = (input: unknown): PromptFavorite[] => {
@@ -101,7 +145,13 @@ const ensureUniqueFolderIds = (input: DataStore): DataStore => {
     });
 
     if (!changed) return input;
-    return { folders: normalizedFolders, words: normalizedWords, templates: input.templates };
+    const normalizedCards = (input.cards ?? []).map(card => {
+        const mappedFolder = firstIdMap.get(card.folderId) ?? card.folderId;
+        if (mappedFolder === card.folderId) return card;
+        changed = true;
+        return { ...card, folderId: mappedFolder };
+    });
+    return { folders: normalizedFolders, words: normalizedWords, templates: input.templates, cards: normalizedCards };
 };
 
 export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -111,14 +161,16 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             if (stored) {
                 const parsed = JSON.parse(stored) as Partial<DataStore>;
                 const normalized = normalizeDataStore(parsed);
-                if (normalized.folders.length > 0 || normalized.words.length > 0 || normalized.templates.length > 0) {
-                    return ensureUniqueFolderIds(normalized);
+                if (normalized.folders.length > 0 || normalized.words.length > 0 || normalized.templates.length > 0 || (normalized.cards?.length ?? 0) > 0) {
+                    const unique = ensureUniqueFolderIds(normalized);
+                    return { ...unique, cards: normalizeCards(unique.cards, unique.words) };
                 }
             }
         } catch (e) {
             console.warn('Failed to load local data, falling back to defaults.', e);
         }
-        return ensureUniqueFolderIds(normalizeDataStore(initialData));
+        const normalized = ensureUniqueFolderIds(normalizeDataStore(initialData));
+        return { ...normalized, cards: normalizeCards(normalized.cards, normalized.words) };
     });
     const [hasUnsavedChanges, setHasUnsavedChanges] = useState<boolean>(false);
     const [undoData, setUndoData] = useState<DataStore | null>(null);
@@ -219,9 +271,10 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     const setData = (nextData: DataStore) => {
         const normalized = ensureUniqueFolderIds(normalizeDataStore(nextData));
+        const withCards = { ...normalized, cards: normalizeCards(normalized.cards, normalized.words) };
         setDataState(prev => {
             setUndoData(prev);
-            return normalized;
+            return withCards;
         });
         setHasUnsavedChanges(true);
     };
@@ -314,6 +367,58 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
                 };
             })
         }));
+    };
+
+    const addCard = (card: CardItem) => {
+        updateData(prev => ({
+            ...prev,
+            cards: [...(prev.cards ?? []), card]
+        }));
+    };
+
+    const removeCard = (id: string) => {
+        updateData(prev => ({
+            ...prev,
+            cards: (prev.cards ?? []).filter(card => card.id !== id)
+        }));
+    };
+
+    const applyCard = (card: CardItem) => {
+        const wordMap = new Map(data.words.map(word => [word.id, word]));
+        const mergeSelected = (prev: SelectedWord[], type: 'positive' | 'negative') => {
+            const next = [...prev];
+            card.words.forEach(ref => {
+                const base = wordMap.get(ref.wordId) ?? (ref.label_jp || ref.value_en ? {
+                    id: ref.wordId,
+                    folderId: card.folderId,
+                    label_jp: ref.label_jp ?? ref.wordId,
+                    value_en: ref.value_en ?? ref.wordId,
+                    nsfw: ref.nsfw ?? false,
+                    note: ref.note
+                } : null);
+                if (!base) return;
+                const existingIndex = next.findIndex(word => word.id === base.id);
+                if (existingIndex >= 0) {
+                    const existing = next[existingIndex];
+                    const repeat = typeof ref.repeat === 'number' && ref.repeat > 1
+                        ? Math.max(existing.repeat ?? 1, Math.round(ref.repeat))
+                        : existing.repeat;
+                    if (repeat !== existing.repeat) {
+                        next[existingIndex] = { ...existing, repeat };
+                    }
+                    return;
+                }
+                const strength = typeof ref.strength === 'number' ? ref.strength : 1.0;
+                const repeat = typeof ref.repeat === 'number' && ref.repeat > 1 ? Math.round(ref.repeat) : undefined;
+                next.push({ ...base, type, strength, repeat });
+            });
+            return next;
+        };
+        if (card.type === 'positive') {
+            setSelectedPositive(prev => mergeSelected(prev, 'positive'));
+        } else {
+            setSelectedNegative(prev => mergeSelected(prev, 'negative'));
+        }
     };
 
     const addWord = (word: WordItem, type: 'positive' | 'negative', strength: PromptStrength = 1.0) => {
@@ -578,6 +683,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         <PromptContext.Provider value={{
             folders: data.folders,
             words: data.words,
+            cards: data.cards ?? [],
             templates: data.templates,
             selectedPositive,
             selectedNegative,
@@ -616,6 +722,9 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             addTemplate,
             updateTemplate,
             removeTemplate,
+            addCard,
+            applyCard,
+            removeCard,
             setData
         }}>
             {children}

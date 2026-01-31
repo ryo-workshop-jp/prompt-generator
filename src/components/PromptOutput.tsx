@@ -22,11 +22,28 @@ const readUiSettings = () => {
     }
 };
 
+const expandRepeatedWords = (words: SelectedWord[]) => {
+    const expanded: { word: SelectedWord; instance: number }[] = [];
+    words.forEach(word => {
+        if (word.cardId) {
+            expanded.push({ word, instance: 0 });
+            return;
+        }
+        const repeatRaw = word.repeat ?? 1;
+        const repeat = Number.isFinite(repeatRaw) ? Math.max(1, Math.round(repeatRaw)) : 1;
+        for (let i = 0; i < repeat; i += 1) {
+            expanded.push({ word, instance: i });
+        }
+    });
+    return expanded;
+};
+
 const formatPrompt = (words: SelectedWord[]) => {
-    return words.map(w => {
-        const val = w.value_en;
-        if (w.strength === 1.0) return val;
-        return `(${val}:${w.strength.toFixed(1)})`;
+    return expandRepeatedWords(words).map(({ word }) => {
+        const val = word.cardId ? `(${word.cardPrompt ?? word.value_en})` : word.value_en;
+        if (word.cardId) return val;
+        if (word.strength === 1.0) return val;
+        return `(${val}:${word.strength.toFixed(1)})`;
     }).join(', ');
 };
 
@@ -90,9 +107,10 @@ const Chip: React.FC<{
 }> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd, onHighlightStart, onHighlightEnd }) => {
     const { removeWord, updateWordStrength } = usePrompt();
     const chipRef = useRef<HTMLDivElement | null>(null);
+    const isCardToken = !!word.cardId;
 
     const handleMouseEnter = () => {
-        if (stepperDisplay !== 'above') return;
+        if (stepperDisplay !== 'above' || isCardToken) return;
         const rect = chipRef.current?.getBoundingClientRect();
         if (!rect) return;
         onHoverStart?.(word.id, type, rect);
@@ -110,7 +128,10 @@ const Chip: React.FC<{
             : 'bg-rose-950/40 border-rose-800 text-rose-300'
             }`}>
             <span>{word.label_jp}</span>
-            {stepperDisplay === 'inside' && (
+            {isCardToken && (
+                <span className="text-[10px] uppercase text-amber-300/80 border border-amber-400/30 px-1 rounded">Card</span>
+            )}
+            {stepperDisplay === 'inside' && !isCardToken && (
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
                     <StrengthSelector
                         strength={word.strength}
@@ -171,8 +192,8 @@ const SortableChip: React.FC<{
     );
 };
 
-const PromptOutput: React.FC = () => {
-    const { selectedPositive, selectedNegative, favorites, qualityTemplates, nsfwEnabled, addPromptFavorite, addQualityTemplate, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, updateQualityTemplateName, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength } = usePrompt();
+const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) => {
+    const { selectedPositive, selectedNegative, favorites, qualityTemplates, nsfwEnabled, folders, addPromptFavorite, addQualityTemplate, addCard, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, updateQualityTemplateName, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength } = usePrompt();
     const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | 'both' | null>(null);
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
     const [qualityType, setQualityType] = useState<'positive' | 'negative' | null>(null);
@@ -181,6 +202,11 @@ const PromptOutput: React.FC = () => {
     const [favoriteName, setFavoriteName] = useState('');
     const [favoriteNsfw, setFavoriteNsfw] = useState(false);
     const [saveAsQuality, setSaveAsQuality] = useState(false);
+    const [saveAsCard, setSaveAsCard] = useState(false);
+    const [cardFolderMode, setCardFolderMode] = useState<'current' | 'custom'>('current');
+    const [selectedCardFolderId, setSelectedCardFolderId] = useState('root');
+    const [isFolderPickerOpen, setIsFolderPickerOpen] = useState(false);
+    const [folderSearch, setFolderSearch] = useState('');
     const [editingQualityId, setEditingQualityId] = useState<string | null>(null);
     const [editingQualityName, setEditingQualityName] = useState('');
     const [highlightedPrompt, setHighlightedPrompt] = useState<{ id: string; type: 'positive' | 'negative' } | null>(null);
@@ -204,14 +230,18 @@ const PromptOutput: React.FC = () => {
     }, [hoveredStrength, selectedPositive, selectedNegative]);
 
     const renderPromptTokens = (words: SelectedWord[], highlightId?: string) => {
-        return words.map((word, index) => {
-            const value = word.strength === 1.0 ? word.value_en : `(${word.value_en}:${word.strength.toFixed(1)})`;
+        const expanded = expandRepeatedWords(words);
+        return expanded.map(({ word, instance }, index) => {
+            const base = word.cardPrompt ?? word.value_en;
+            const value = word.cardId
+                ? `(${base})`
+                : (word.strength === 1.0 ? base : `(${base}:${word.strength.toFixed(1)})`);
             return (
-                <span key={word.id}>
+                <span key={`${word.id}:${instance}`}>
                     <span className={word.id === highlightId ? 'bg-amber-400/30 text-amber-200 rounded px-0.5' : undefined}>
                         {value}
                     </span>
-                    {index < words.length - 1 ? ', ' : ''}
+                    {index < expanded.length - 1 ? ', ' : ''}
                 </span>
             );
         });
@@ -268,6 +298,55 @@ const PromptOutput: React.FC = () => {
         return qualityTemplates.filter(template => (nsfwEnabled ? true : !template.nsfw));
     }, [qualityTemplates, nsfwEnabled]);
 
+    const folderById = useMemo(() => {
+        return new Map(folders.map(folder => [folder.id, folder]));
+    }, [folders]);
+
+    const getFolderPath = (folderId: string) => {
+        if (!folderId) return 'root';
+        const path: string[] = [];
+        let cursor: string | null = folderId;
+        while (cursor) {
+            const folder = folderById.get(cursor);
+            if (!folder) break;
+            path.unshift(folder.name);
+            cursor = folder.parentId ?? null;
+        }
+        if (path.length === 0) return 'root';
+        if (path[0] === 'root') return path.join(' / ');
+        return `root / ${path.join(' / ')}`;
+    };
+
+    const folderTreeOptions = useMemo(() => {
+        const childrenMap = new Map<string, { id: string; name: string }[]>();
+        folders.filter(folder => folder.id !== 'root').forEach(folder => {
+            const parent = folder.parentId ?? 'root';
+            const list = childrenMap.get(parent) ?? [];
+            list.push({ id: folder.id, name: folder.name });
+            childrenMap.set(parent, list);
+        });
+        const options: { id: string; name: string; depth: number; path: string }[] = [];
+        const walk = (parentId: string, depth: number) => {
+            const children = childrenMap.get(parentId) ?? [];
+            children.forEach(child => {
+                const path = getFolderPath(child.id);
+                options.push({ id: child.id, name: child.name, depth, path });
+                walk(child.id, depth + 1);
+            });
+        };
+        options.push({ id: 'root', name: 'root', depth: 0, path: 'root' });
+        walk('root', 1);
+        return options;
+    }, [folders, folderById]);
+
+    const filteredFolderOptions = useMemo(() => {
+        if (!folderSearch.trim()) return folderTreeOptions;
+        const query = folderSearch.trim().toLowerCase();
+        return folderTreeOptions.filter(option => {
+            return option.name.toLowerCase().includes(query) || option.path.toLowerCase().includes(query);
+        });
+    }, [folderSearch, folderTreeOptions]);
+
     const getQualityPrompt = (type: 'positive' | 'negative') => {
         const selectedId = selectedQualityTemplateIds[type];
         if (!selectedId) return '';
@@ -311,6 +390,9 @@ const PromptOutput: React.FC = () => {
         setFavoriteNsfw(inferFavoriteNsfw(source));
         setSaveType(type);
         setSaveAsQuality(false);
+        setSaveAsCard(false);
+        setCardFolderMode('current');
+        setSelectedCardFolderId(activeFolderId || 'root');
     };
 
     const handleCopy = (text: string, type: 'pos' | 'neg' | 'both') => {
@@ -322,8 +404,32 @@ const PromptOutput: React.FC = () => {
     const handleSaveFavorite = (type: 'positive' | 'negative') => {
         const source = type === 'positive' ? selectedPositive : selectedNegative;
         const combinedLabels = source.map(word => word.label_jp).filter(Boolean);
-        const name = favoriteName.trim() || combinedLabels.join(' / ') || 'Favorite';
-        if (saveAsQuality) {
+        const trimmedName = favoriteName.trim();
+        if (saveAsCard && !trimmedName) {
+            alert('カード名を入力してください。');
+            return;
+        }
+        const name = saveAsCard ? trimmedName : (trimmedName || combinedLabels.join(' / ') || 'Favorite');
+        if (saveAsCard) {
+            const targetFolderId = cardFolderMode === 'current' ? (activeFolderId || 'root') : selectedCardFolderId || 'root';
+            addCard({
+                id: Date.now().toString(),
+                name,
+                folderId: targetFolderId,
+                type,
+                nsfw: favoriteNsfw,
+                words: source.map(word => ({
+                    wordId: word.id,
+                    strength: word.strength,
+                    repeat: word.repeat,
+                    label_jp: word.label_jp,
+                    value_en: word.value_en,
+                    nsfw: word.nsfw,
+                    note: word.note
+                })),
+                createdAt: Date.now()
+            });
+        } else if (saveAsQuality) {
             addQualityTemplate(name, type, source, favoriteNsfw);
         } else {
             addPromptFavorite(name, type, source, favoriteNsfw);
@@ -331,7 +437,9 @@ const PromptOutput: React.FC = () => {
         setFavoriteName('');
         setFavoriteNsfw(false);
         setSaveAsQuality(false);
+        setSaveAsCard(false);
         setSaveType(null);
+        setIsFolderPickerOpen(false);
     };
     const startEditQualityName = (template: PromptFavorite) => {
         setEditingQualityId(template.id);
@@ -615,7 +723,7 @@ const PromptOutput: React.FC = () => {
                         <h3 className="text-lg font-bold mb-4 text-white">Save Favorite</h3>
                         <div className="flex flex-col gap-4 flex-1 min-h-0 overflow-y-auto pr-1">
                             <div>
-                                <label className="block text-xs text-slate-400 mb-1">Favorite Name</label>
+                                <label className="block text-xs text-slate-400 mb-1">{saveAsCard ? 'Card Name' : 'Favorite Name'}</label>
                                 <input
                                     type="text"
                                     value={favoriteName}
@@ -623,6 +731,9 @@ const PromptOutput: React.FC = () => {
                                     className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
                                     placeholder="(未入力の場合は自動生成)"
                                 />
+                                {saveAsCard && (
+                                    <div className="mt-1 text-[10px] text-amber-300">カード名は必須です。</div>
+                                )}
                             </div>
                             <label className="flex items-center gap-2 cursor-pointer">
                                 <input
@@ -637,11 +748,64 @@ const PromptOutput: React.FC = () => {
                                 <input
                                     type="checkbox"
                                     checked={saveAsQuality}
-                                    onChange={(e) => setSaveAsQuality(e.target.checked)}
+                                    onChange={(e) => {
+                                        setSaveAsQuality(e.target.checked);
+                                        if (e.target.checked) setSaveAsCard(false);
+                                    }}
                                     className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
                                 />
                                 <span className="text-sm text-slate-300">品質テンプレートとして保存</span>
                             </label>
+                            <label className="flex items-center gap-2 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    checked={saveAsCard}
+                                    onChange={(e) => {
+                                        setSaveAsCard(e.target.checked);
+                                        if (e.target.checked) setSaveAsQuality(false);
+                                    }}
+                                    className="rounded bg-slate-800 border-slate-600 text-amber-500 focus:ring-amber-500/50"
+                                />
+                                <span className="text-sm text-slate-300">カードとして保存</span>
+                            </label>
+                            {saveAsCard && (
+                                <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-xs text-slate-400">
+                                    <div className="flex items-center gap-4">
+                                        <label className="flex items-center gap-2 cursor-pointer">
+                                            <input
+                                                type="radio"
+                                                checked={cardFolderMode === 'current'}
+                                                onChange={() => setCardFolderMode('current')}
+                                                className="rounded-full bg-slate-800 border-slate-600 text-amber-500 focus:ring-amber-500/50"
+                                            />
+                                            <span>現在のフォルダ</span>
+                                        </label>
+                                        <label className="flex items-center gap-2 cursor-pointer">
+                                            <input
+                                                type="radio"
+                                                checked={cardFolderMode === 'custom'}
+                                                onChange={() => setCardFolderMode('custom')}
+                                                className="rounded-full bg-slate-800 border-slate-600 text-amber-500 focus:ring-amber-500/50"
+                                            />
+                                            <span>任意のフォルダ</span>
+                                        </label>
+                                    </div>
+                                    <div className="mt-2 flex items-center justify-between gap-2">
+                                        <div className="text-[11px] text-slate-500">
+                                            保存先: <span className="text-slate-200">{cardFolderMode === 'current' ? getFolderPath(activeFolderId || 'root') : getFolderPath(selectedCardFolderId || 'root')}</span>
+                                        </div>
+                                        {cardFolderMode === 'custom' && (
+                                            <button
+                                                type="button"
+                                                onClick={() => setIsFolderPickerOpen(true)}
+                                                className="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px]"
+                                            >
+                                                フォルダを選択
+                                            </button>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
                             <div className="text-xs text-slate-500">
                                 {(saveType === 'positive' ? selectedPositive.length : selectedNegative.length) === 0
                                     ? '現在のプロンプトは空です。'
@@ -654,7 +818,9 @@ const PromptOutput: React.FC = () => {
                                         setFavoriteName('');
                                         setFavoriteNsfw(false);
                                         setSaveAsQuality(false);
+                                        setSaveAsCard(false);
                                         setSaveType(null);
+                                        setIsFolderPickerOpen(false);
                                     }}
                                     className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                                 >
@@ -668,6 +834,64 @@ const PromptOutput: React.FC = () => {
                                     Save
                                 </button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {isFolderPickerOpen && renderModal(
+                <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-5 rounded-2xl w-full max-w-lg shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                        <div className="flex items-center justify-between mb-3">
+                            <h3 className="text-lg font-bold text-white">フォルダを選択</h3>
+                            <button
+                                type="button"
+                                onClick={() => setIsFolderPickerOpen(false)}
+                                className="text-slate-400 hover:text-white text-xl"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                        <input
+                            type="search"
+                            value={folderSearch}
+                            onChange={(event) => setFolderSearch(event.target.value)}
+                            placeholder="Search folders..."
+                            className="mb-3 bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                        />
+                        <div className="flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-2 pr-1">
+                            {filteredFolderOptions.length === 0 && (
+                                <div className="text-xs text-slate-500">No matching folders.</div>
+                            )}
+                            {filteredFolderOptions.map(option => (
+                                <button
+                                    key={option.id}
+                                    type="button"
+                                    onClick={() => {
+                                        setSelectedCardFolderId(option.id);
+                                        setCardFolderMode('custom');
+                                        setIsFolderPickerOpen(false);
+                                    }}
+                                    className={`text-left w-full rounded-lg border px-3 py-2 text-sm transition-colors ${selectedCardFolderId === option.id
+                                        ? 'border-cyan-500/60 bg-cyan-500/10 text-cyan-100'
+                                        : 'border-slate-800 bg-slate-950 text-slate-200 hover:border-cyan-500/40 hover:bg-slate-900'
+                                        }`}
+                                >
+                                    <div className="flex items-center gap-2" style={{ paddingLeft: `${option.depth * 12}px` }}>
+                                        <span className="font-semibold">{option.name}</span>
+                                    </div>
+                                    <div className="text-[10px] text-slate-500 mt-1">{option.path}</div>
+                                </button>
+                            ))}
+                        </div>
+                        <div className="flex justify-end mt-4">
+                            <button
+                                type="button"
+                                onClick={() => setIsFolderPickerOpen(false)}
+                                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                            >
+                                Close
+                            </button>
                         </div>
                     </div>
                 </div>

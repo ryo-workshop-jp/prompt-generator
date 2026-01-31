@@ -1,10 +1,10 @@
 ﻿import React, { useEffect, useMemo, useState } from 'react';
-import type { WordItem, TemplateItem } from '../types';
+import type { WordItem, TemplateItem, CardItem } from '../types';
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { PlusIcon, MinusIcon, PlusSmallIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid';
-import { StarIcon, Cog6ToothIcon, TrashIcon, Bars3Icon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { StarIcon, Cog6ToothIcon, TrashIcon, Bars3Icon, ArrowRightIcon, RectangleStackIcon } from '@heroicons/react/24/outline';
 import { usePrompt } from '../context/usePrompt';
 
 type WordCardProps = {
@@ -15,6 +15,13 @@ type WordCardProps = {
     onDelete?: (word: WordItem) => void;
     onMove?: (word: WordItem) => void;
     dragHandleProps?: React.HTMLAttributes<HTMLButtonElement>;
+};
+
+type CardCardProps = {
+    card: CardItem;
+    folderPath?: string;
+    editMode?: boolean;
+    onDelete?: (card: CardItem) => void;
 };
 
 type DecorOption = {
@@ -523,6 +530,109 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, editMode =
     );
 };
 
+const CardCard: React.FC<CardCardProps> = ({ card, folderPath, editMode = false, onDelete }) => {
+    const { applyCard, addWord, words } = usePrompt();
+    const wordMap = useMemo(() => new Map(words.map(word => [word.id, word])), [words]);
+    const labels = useMemo(() => {
+        const parts = card.words.map(ref => {
+            const found = wordMap.get(ref.wordId);
+            return found?.label_jp ?? ref.label_jp ?? ref.value_en ?? '';
+        }).filter(Boolean) as string[];
+        return parts.slice(0, 4).join(', ');
+    }, [card.words, wordMap]);
+    const wordCount = card.words.reduce((count, ref) => count + (ref.repeat && ref.repeat > 1 ? ref.repeat : 1), 0);
+    const borderTone = card.type === 'positive' ? 'border-cyan-500/40 hover:border-cyan-400/70' : 'border-rose-500/40 hover:border-rose-400/70';
+
+    const buildCardPrompt = () => {
+        const parts: string[] = [];
+        card.words.forEach(ref => {
+            const base = wordMap.get(ref.wordId);
+            const value = base?.value_en ?? ref.value_en ?? ref.label_jp ?? ref.wordId;
+            const strength = typeof ref.strength === 'number' ? ref.strength : 1.0;
+            const token = strength === 1.0 ? value : `(${value}:${strength.toFixed(1)})`;
+            const repeat = typeof ref.repeat === 'number' && ref.repeat > 1 ? Math.round(ref.repeat) : 1;
+            for (let i = 0; i < repeat; i += 1) parts.push(token);
+        });
+        return parts.join(', ');
+    };
+
+    const handleApplyAsCardToken = () => {
+        if (editMode) return;
+        const prompt = buildCardPrompt();
+        const pseudoWord: WordItem = {
+            id: `__card__${card.id}`,
+            folderId: card.folderId,
+            label_jp: card.name,
+            value_en: prompt || card.name,
+            nsfw: card.nsfw,
+            note: `Card: ${card.name}`,
+            cardId: card.id,
+            cardName: card.name,
+            cardPrompt: prompt
+        };
+        addWord(pseudoWord, card.type, 1.0);
+    };
+
+    const handleClick = () => {
+        handleApplyAsCardToken();
+    };
+
+    return (
+        <div
+            role="button"
+            tabIndex={0}
+            onClick={handleClick}
+            onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    handleClick();
+                }
+            }}
+            className={`relative flex h-full w-full flex-col items-start p-3 rounded-xl border ${borderTone} bg-slate-900/40 hover:bg-slate-900 transition-all text-left group`}
+        >
+            <div className="flex items-center gap-2 mb-1 w-full">
+                <RectangleStackIcon className="w-4 h-4 text-amber-400/80" />
+                <span className="text-sm font-bold text-slate-200 line-clamp-2">{card.name}</span>
+                {!editMode && (
+                    <button
+                        type="button"
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            applyCard(card);
+                        }}
+                        className="ml-auto px-2 py-0.5 text-[10px] rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                        title="展開追加"
+                    >
+                        展開
+                    </button>
+                )}
+            </div>
+            <span className="text-[10px] text-slate-500">{wordCount} words</span>
+            {labels && (
+                <span className="text-[10px] text-slate-400 mt-1 line-clamp-2">{labels}</span>
+            )}
+            {folderPath && (
+                <span className="text-[10px] text-slate-500 mt-1 line-clamp-1">{folderPath}</span>
+            )}
+            {editMode && (
+                <div className="absolute top-2 right-2 flex gap-1">
+                    <button
+                        type="button"
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            onDelete?.(card);
+                        }}
+                        className="p-1 rounded-md text-slate-500 hover:text-rose-400"
+                        title="Delete"
+                    >
+                        <TrashIcon className="w-4 h-4" />
+                    </button>
+                </div>
+            )}
+        </div>
+    );
+};
+
 const AddWordModal: React.FC<{
     isOpen: boolean;
     onClose: () => void;
@@ -797,14 +907,17 @@ const SortableWordCard: React.FC<WordCardProps & { id: string }> = ({ id, ...pro
 
 const WordGrid: React.FC<{
     words: WordItem[];
+    cards?: CardItem[];
     onAddWord: (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[]) => void;
     folderPathForWord?: (word: WordItem) => string;
+    folderPathForCard?: (card: CardItem) => string;
     editMode?: boolean;
     onEditWord?: (word: WordItem) => void;
     onDeleteWord?: (word: WordItem) => void;
     onMoveWord?: (word: WordItem) => void;
     onReorderWords?: (ordered: WordItem[]) => void;
-}> = ({ words, onAddWord, folderPathForWord, editMode = false, onEditWord, onDeleteWord, onMoveWord, onReorderWords }) => {
+    onDeleteCard?: (card: CardItem) => void;
+}> = ({ words, cards = [], onAddWord, folderPathForWord, folderPathForCard, editMode = false, onEditWord, onDeleteWord, onMoveWord, onReorderWords, onDeleteCard }) => {
     const [isAddModalOpen, setIsAddModalOpen] = useState(false);
     const [editingWord, setEditingWord] = useState<WordItem | null>(null);
     const { templates } = usePrompt();
@@ -816,9 +929,13 @@ const WordGrid: React.FC<{
         })
     );
 
-    const currentWords = useMemo(() => {
-        return words;
-    }, [words]);
+    const currentWords = useMemo(() => words, [words]);
+    const displayItems = useMemo(() => {
+        const combined: Array<{ kind: 'word'; word: WordItem } | { kind: 'card'; card: CardItem }> = [];
+        words.forEach(word => combined.push({ kind: 'word', word }));
+        cards.forEach(card => combined.push({ kind: 'card', card }));
+        return combined;
+    }, [words, cards]);
 
     const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[]) => {
         onAddWord(label, value, nsfw, note, templateIds);
@@ -857,7 +974,19 @@ const WordGrid: React.FC<{
                             <span className="text-xs font-bold">追加</span>
                         </button>
 
-                        {currentWords.map(word => {
+                        {displayItems.map(item => {
+                            if (item.kind === 'card') {
+                                return (
+                                    <CardCard
+                                        key={`card:${item.card.id}`}
+                                        card={item.card}
+                                        folderPath={folderPathForCard ? folderPathForCard(item.card) : undefined}
+                                        editMode={editMode}
+                                        onDelete={editMode ? (card) => onDeleteCard?.(card) : undefined}
+                                    />
+                                );
+                            }
+                            const word = item.word;
                             const card = {
                                 word,
                                 folderPath: folderPathForWord ? folderPathForWord(word) : undefined,

@@ -1,9 +1,10 @@
 import { createContext } from 'react';
-import type { DataStore, FolderItem, SelectedWord, PromptStrength, WordItem, PromptFavorite, TemplateItem } from '../types';
+import type { DataStore, FolderItem, SelectedWord, PromptStrength, WordItem, PromptFavorite, TemplateItem, CardItem } from '../types';
 
 export interface PromptContextType {
     folders: FolderItem[];
     words: WordItem[];
+    cards: CardItem[];
     selectedPositive: SelectedWord[];
     selectedNegative: SelectedWord[];
     favorites: PromptFavorite[];
@@ -42,6 +43,9 @@ export interface PromptContextType {
     addTemplate: (template: TemplateItem) => void;
     updateTemplate: (template: TemplateItem) => void;
     removeTemplate: (id: string) => void;
+    addCard: (card: CardItem) => void;
+    applyCard: (card: CardItem) => void;
+    removeCard: (id: string) => void;
     setData: (data: DataStore) => void;
 }
 

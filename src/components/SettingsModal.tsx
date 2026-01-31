@@ -320,7 +320,7 @@ const SortableTemplateRow: React.FC<{
 };
 
 const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
-    const { folders, words, templates, favorites, qualityTemplates, setData, addTemplate, updateTemplate, removeTemplate, setFavoritesData, setQualityTemplatesData, nsfwEnabled, showDescendantWords, autoNsfwOn, collapseInactiveFolders, toggleNsfw, toggleShowDescendantWords, toggleAutoNsfwOn, toggleCollapseInactiveFolders } = usePrompt();
+    const { folders, words, cards, templates, favorites, qualityTemplates, setData, addTemplate, updateTemplate, removeTemplate, setFavoritesData, setQualityTemplatesData, nsfwEnabled, showDescendantWords, autoNsfwOn, collapseInactiveFolders, toggleNsfw, toggleShowDescendantWords, toggleAutoNsfwOn, toggleCollapseInactiveFolders } = usePrompt();
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [editingTemplate, setEditingTemplate] = useState<TemplateItem | null>(null);
     const [isTemplateModalOpen, setIsTemplateModalOpen] = useState(false);
@@ -515,7 +515,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     };
 
     const handleExportAll = () => {
-        downloadJson({ folders, words, templates, favorites, qualityTemplates }, 'promptgen-all.json');
+        downloadJson({ folders, words, cards, templates, favorites, qualityTemplates }, 'promptgen-all.json');
     };
 
     const handleExportWords = () => {
@@ -683,7 +683,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 const nextFavorites = (asArray(parsed?.favorites) ?? []) as PromptFavorite[];
                 const nextQuality = (asArray(parsed?.qualityTemplates) ?? []) as PromptFavorite[];
                 if (!confirm('インポートすると現在のデータが上書きされます。続行しますか？')) return;
-                setData({ folders: nextFolders, words: nextWords, templates: nextTemplates });
+                setData({ folders: nextFolders, words: nextWords, templates: nextTemplates, cards: Array.isArray(parsed?.cards) ? parsed?.cards : [] });
                 setFavoritesData(nextFavorites);
                 setQualityTemplatesData(nextQuality);
                 alert('インポートが完了しました。');
@@ -728,7 +728,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     return;
                 }
                 if (!confirm('インポートすると現在の装飾が上書きされます。続行しますか？')) return;
-                setData({ folders, words, templates: nextTemplates });
+                setData({ folders, words, templates: nextTemplates, cards });
                 alert('インポートが完了しました。');
                 return;
             }
@@ -743,7 +743,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 
     const applyWordsOverwrite = () => {
         if (!pendingWordsImport) return;
-        setData({ folders: pendingWordsImport.folders, words: pendingWordsImport.words, templates });
+        setData({ folders: pendingWordsImport.folders, words: pendingWordsImport.words, templates, cards });
         setPendingWordsImport(null);
         alert('インポートが完了しました。');
     };
@@ -767,7 +767,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             wordMap.set(word.id, word);
             mergedWords.push(word);
         }
-        setData({ folders: mergedFolders, words: mergedWords, templates });
+        setData({ folders: mergedFolders, words: mergedWords, templates, cards });
         setPendingWordsImport(null);
         alert('インポートが完了しました。');
     };
@@ -814,13 +814,13 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     const applyResetAction = () => {
         if (!resetAction) return;
         if (resetAction === 'resetWords') {
-            setData({ folders: initialData.folders, words: initialData.words, templates });
+            setData({ folders: initialData.folders, words: initialData.words, templates, cards: [] });
         } else if (resetAction === 'clearWords') {
-            setData({ folders: [], words: [], templates });
+            setData({ folders: [], words: [], templates, cards: [] });
         } else if (resetAction === 'clearExtras') {
             setFavoritesData([]);
             setQualityTemplatesData([]);
-            setData({ folders, words, templates: [] });
+            setData({ folders, words, templates: [], cards });
         }
         setResetAction(null);
         setResetConfirmed(false);
@@ -1191,7 +1191,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                         const oldIndex = templates.findIndex(item => item.id === active.id);
                                         const newIndex = templates.findIndex(item => item.id === over.id);
                                         if (oldIndex === -1 || newIndex === -1) return;
-                                        setData({ folders, words, templates: arrayMove(templates, oldIndex, newIndex) });
+                                        setData({ folders, words, templates: arrayMove(templates, oldIndex, newIndex), cards });
                                     }}
                                 >
                                     <SortableContext

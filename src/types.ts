@@ -16,6 +16,9 @@ export interface WordItem {
     favorite?: boolean;
     templateId?: string;
     templateIds?: string[];
+    cardId?: string;
+    cardName?: string;
+    cardPrompt?: string;
 }
 
 export interface TemplateOption {
@@ -38,6 +41,7 @@ export interface DataStore {
     folders: FolderItem[];
     words: WordItem[];
     templates: TemplateItem[];
+    cards?: CardItem[];
 }
 
 export type PromptStrength = number;
@@ -45,6 +49,7 @@ export type PromptStrength = number;
 export interface SelectedWord extends WordItem {
     strength: PromptStrength;
     type: 'positive' | 'negative';
+    repeat?: number;
 }
 
 export interface PromptFavorite {
@@ -53,4 +58,24 @@ export interface PromptFavorite {
     type: 'positive' | 'negative';
     words: SelectedWord[];
     nsfw: boolean;
+}
+
+export interface CardWordRef {
+    wordId: string;
+    strength?: PromptStrength;
+    repeat?: number;
+    label_jp?: string;
+    value_en?: string;
+    nsfw?: boolean;
+    note?: string;
+}
+
+export interface CardItem {
+    id: string;
+    name: string;
+    folderId: string;
+    type: 'positive' | 'negative';
+    words: CardWordRef[];
+    nsfw: boolean;
+    createdAt?: number;
 }

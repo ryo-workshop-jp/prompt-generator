@@ -10,7 +10,7 @@ import SettingsModal from './SettingsModal';
 import NoticeModal, { readNoticeDismissed, writeNoticeDismissed } from './NoticeModal';
 import HelpModal from './HelpModal';
 import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
-import type { FolderItem, WordItem, TemplateItem } from '../types';
+import type { FolderItem, WordItem, TemplateItem, CardItem } from '../types';
 
 const AddNodeModal: React.FC<{
     isOpen: boolean;
@@ -376,7 +376,7 @@ const SortableFolderCard: React.FC<{
     );
 };
 const Layout: React.FC = () => {
-    const { folders, words, templates, nsfwEnabled, showDescendantWords, clearAll, addFolder, addWordToFolder, undo, canUndo, setData } = usePrompt();
+    const { folders, words, cards, templates, nsfwEnabled, showDescendantWords, clearAll, addFolder, addWordToFolder, undo, canUndo, setData, removeCard } = usePrompt();
     const [activeFolderId, setActiveFolderId] = useState<string>('root');
     const [searchQuery, setSearchQuery] = useState('');
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -464,6 +464,21 @@ const Layout: React.FC = () => {
     }, [words, activeFolderId]);
 
     const wordsForGrid = editMode ? editableWords : visibleWords;
+    const visibleCards = useMemo(() => {
+        return cards.filter(card => {
+            if (!activeFolderIds.has(card.folderId)) return false;
+            const parentFolder = folderById.get(card.folderId);
+            if (!parentFolder) return false;
+            if (nsfwEnabled) return true;
+            return !card.nsfw && !parentFolder.nsfw;
+        });
+    }, [cards, activeFolderIds, nsfwEnabled, folderById]);
+
+    const editableCards = useMemo(() => {
+        return cards.filter(card => card.folderId === activeFolderId);
+    }, [cards, activeFolderId]);
+
+    const cardsForGrid = editMode ? editableCards : visibleCards;
     const hasDecorationsInFolder = useMemo(() => {
         return words.some(word => word.folderId === activeFolderId && (!!word.templateId || (word.templateIds?.length ?? 0) > 0));
     }, [words, activeFolderId]);
@@ -531,7 +546,8 @@ const Layout: React.FC = () => {
         setData({
             folders: folders.filter(folder => !folderIds.has(folder.id)),
             words: words.filter(word => !folderIds.has(word.folderId)),
-            templates
+            templates,
+            cards: cards.filter(card => !folderIds.has(card.folderId))
         });
     };
 
@@ -545,7 +561,8 @@ const Layout: React.FC = () => {
         setData({
             folders: folders.map(folder => folder.id === id ? { ...folder, ...updates } : folder),
             words,
-            templates
+            templates,
+            cards
         });
     };
 
@@ -554,7 +571,8 @@ const Layout: React.FC = () => {
         setData({
             folders,
             words: words.filter(word => word.id !== id),
-            templates
+            templates,
+            cards
         });
     };
 
@@ -566,7 +584,8 @@ const Layout: React.FC = () => {
         setData({
             folders,
             words: words.map(word => word.id === updated.id ? { ...word, ...updated } : word),
-            templates
+            templates,
+            cards
         });
     };
 
@@ -580,7 +599,8 @@ const Layout: React.FC = () => {
             setData({
                 folders: reorderSubset(folders, reordered),
                 words,
-                templates
+                templates,
+                cards
             });
         }
     };
@@ -589,7 +609,8 @@ const Layout: React.FC = () => {
         setData({
             folders,
             words: reorderSubset(words, ordered),
-            templates
+            templates,
+            cards
         });
     };
 
@@ -750,7 +771,8 @@ const Layout: React.FC = () => {
                     templateId: undefined,
                     templateIds: nextTemplateIds
                 };
-            })
+            }),
+            cards
         });
         setIsBulkEditOpen(false);
     };
@@ -776,7 +798,8 @@ const Layout: React.FC = () => {
                 : folder
             ),
             words,
-            templates
+            templates,
+            cards
         });
         setMovingFolder(null);
     };
@@ -798,7 +821,8 @@ const Layout: React.FC = () => {
                 ? { ...word, folderId: targetId }
                 : word
             ),
-            templates
+            templates,
+            cards
         });
         setMovingWord(null);
     };
@@ -1010,11 +1034,17 @@ const Layout: React.FC = () => {
                                 </div>
                                 <WordGrid
                                     words={wordsForGrid}
+                                    cards={cardsForGrid}
                                     onAddWord={handleAddWord}
                                     folderPathForWord={(word: WordItem) => getFolderPath(word.folderId)}
+                                    folderPathForCard={(card: CardItem) => getFolderPath(card.folderId)}
                                     editMode={editMode}
                                     onEditWord={(updated) => handleUpdateWord(updated)}
                                     onDeleteWord={(word) => handleDeleteWord(word.id)}
+                                    onDeleteCard={(card) => {
+                                        if (!confirm('このカードを削除します。よろしいですか？')) return;
+                                        removeCard(card.id);
+                                    }}
                                     onMoveWord={(word) => {
                                         setMovingFolder(null);
                                         setMovingWord(word);
@@ -1027,7 +1057,7 @@ const Layout: React.FC = () => {
                 </div>
 
                 <div className="shrink-0 z-20">
-                    <PromptOutput />
+                    <PromptOutput activeFolderId={activeFolderId} />
                 </div>
             </main>
 
