@@ -436,7 +436,7 @@ const PromptOutput: React.FC = () => {
                             onClick={() => openSaveModal('positive')}
                             className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
-                            <BookmarkIcon className="w-4 h-4" /> Add
+                            <BookmarkIcon className="w-4 h-4" /> 保存
                         </button>
                         <button
                             onClick={() => setQualityType('positive')}
@@ -528,7 +528,7 @@ const PromptOutput: React.FC = () => {
                             onClick={() => openSaveModal('negative')}
                             className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
-                            <BookmarkIcon className="w-4 h-4" /> Add
+                            <BookmarkIcon className="w-4 h-4" /> 保存
                         </button>
                         <button
                             onClick={() => setQualityType('negative')}
