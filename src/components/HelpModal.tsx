@@ -52,10 +52,15 @@ const HelpModal: React.FC<{ isOpen: boolean; onClose: () => void; noteUrl?: stri
                     <div className="flex flex-col gap-3">
                         <div className="rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2">
                             <div className="text-xs font-bold text-slate-200 mb-1">アップデート履歴</div>
-                            <div className="text-xs text-slate-300">
-                                2026年1月30日 プレリリース
-                            </div>
+                        <div className="text-xs text-slate-300">2026年1月31日</div>
+                        <div className="text-xs text-slate-400 mt-2">
+                            ・軽微なバグの修正
                         </div>
+                        <div className="text-xs text-slate-400">
+                            ・表現の変更
+                        </div>
+                        <div className="text-xs text-slate-300 mt-3">2026年1月30日 プレリリース</div>
+                    </div>
                     </div>
                 </div>
             </div>

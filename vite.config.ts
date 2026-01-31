@@ -6,6 +6,19 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   base: '/prompt-generator/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return;
+          if (id.includes('@dnd-kit')) return 'dnd-kit';
+          if (id.includes('@heroicons')) return 'icons';
+          if (id.includes('react')) return 'react';
+          return 'vendor';
+        }
+      }
+    }
+  },
   plugins: [
     react(),
     {
