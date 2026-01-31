@@ -7,7 +7,8 @@ import CategoryNav from './CategoryNav';
 import WordGrid, { WordCard } from './WordGrid';
 import PromptOutput from './PromptOutput';
 import SettingsModal from './SettingsModal';
-import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import HelpModal from './HelpModal';
+import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 import type { FolderItem, WordItem, TemplateItem } from '../types';
 
 const AddNodeModal: React.FC<{
@@ -382,6 +383,7 @@ const Layout: React.FC = () => {
     const [editMode, setEditMode] = useState(false);
     const [editingFolder, setEditingFolder] = useState<FolderItem | null>(null);
     const [isBulkEditOpen, setIsBulkEditOpen] = useState(false);
+    const [isHelpOpen, setIsHelpOpen] = useState(false);
     const [movingFolder, setMovingFolder] = useState<FolderItem | null>(null);
     const [movingWord, setMovingWord] = useState<WordItem | null>(null);
     const [moveTargetId, setMoveTargetId] = useState('root');
@@ -801,13 +803,23 @@ const Layout: React.FC = () => {
                     <h1 className="text-xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent tracking-tighter">
                         PROMPT<span className="text-slate-500 font-light">GEN</span>
                     </h1>
-                    <button
-                        onClick={() => setIsSettingsOpen(true)}
-                        className="text-slate-500 hover:text-cyan-400 transition-colors p-1 rounded-full hover:bg-slate-800"
-                        title="Manage Data"
-                    >
-                        <Cog6ToothIcon className="w-5 h-5" />
-                    </button>
+                    <div className="flex items-center gap-1">
+                        <button
+                            onClick={() => setIsHelpOpen(true)}
+                            className="text-slate-500 hover:text-cyan-400 transition-colors p-1 rounded-full hover:bg-slate-800"
+                            title="使い方"
+                            aria-label="使い方"
+                        >
+                            <QuestionMarkCircleIcon className="w-5 h-5" />
+                        </button>
+                        <button
+                            onClick={() => setIsSettingsOpen(true)}
+                            className="text-slate-500 hover:text-cyan-400 transition-colors p-1 rounded-full hover:bg-slate-800"
+                            title="Manage Data"
+                        >
+                            <Cog6ToothIcon className="w-5 h-5" />
+                        </button>
+                    </div>
                 </div>
 
                 <div className="flex-1 overflow-hidden">
@@ -1012,6 +1024,7 @@ const Layout: React.FC = () => {
             </main>
 
             <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
+            <HelpModal isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
             <EditFolderModal
                 key={editingFolder?.id ?? 'none'}
                 folder={editingFolder}
