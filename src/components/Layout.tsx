@@ -647,6 +647,15 @@ const Layout: React.FC = () => {
         });
     };
 
+    const handleUpdateCard = (updated: CardItem) => {
+        setData({
+            folders,
+            words,
+            templates,
+            cards: cards.map(card => card.id === updated.id ? { ...card, ...updated } : card)
+        });
+    };
+
     const handleDragEndFolder = (event: DragEndEvent) => {
         const { active, over } = event;
         if (active.id !== over?.id) {
@@ -1134,6 +1143,7 @@ const Layout: React.FC = () => {
                                         folderPathForCard={showItemFolderPath ? (card: CardItem) => getFolderPath(card.folderId) : undefined}
                                         compact={!showItemFolderPath}
                                         editMode={editMode}
+                                        onEditCard={(card) => handleUpdateCard(card)}
                                         gridPaddingClass="pb-0"
                                         onMoveCard={(card) => {
                                             setMovingFolder(null);

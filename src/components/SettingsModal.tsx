@@ -361,7 +361,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         return settings.showItemFolderPath ?? false;
     });
     const [activeTab, setActiveTab] = useState<'general' | 'io' | 'templates'>('general');
-    const [importMode, setImportMode] = useState<'all' | 'words' | 'favorites' | 'quality' | 'templates' | null>(null);
+    const [importMode, setImportMode] = useState<'all' | 'words' | 'cards' | 'favorites' | 'quality' | 'templates' | null>(null);
     const [pendingWordsImport, setPendingWordsImport] = useState<{ folders: FolderItem[]; words: WordItem[] } | null>(null);
     const [resetAction, setResetAction] = useState<'resetWords' | 'clearWords' | 'clearExtras' | null>(null);
     const [resetConfirmed, setResetConfirmed] = useState(false);
@@ -370,13 +370,19 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     const [selectedFavoriteExportIds, setSelectedFavoriteExportIds] = useState<string[]>([]);
     const [selectedQualityExportIds, setSelectedQualityExportIds] = useState<string[]>([]);
     const [selectedTemplateExportIds, setSelectedTemplateExportIds] = useState<string[]>([]);
+    const [selectedCardExportIds, setSelectedCardExportIds] = useState<string[]>([]);
+    const [selectedCardFolderExportIds, setSelectedCardFolderExportIds] = useState<string[]>([]);
     const [isWordExportPickerOpen, setIsWordExportPickerOpen] = useState(false);
+    const [isCardExportPickerOpen, setIsCardExportPickerOpen] = useState(false);
     const [isFavoriteExportPickerOpen, setIsFavoriteExportPickerOpen] = useState(false);
     const [isQualityExportPickerOpen, setIsQualityExportPickerOpen] = useState(false);
     const [isTemplateExportPickerOpen, setIsTemplateExportPickerOpen] = useState(false);
     const [wordExportActiveFolderId, setWordExportActiveFolderId] = useState('root');
     const [wordExportSearch, setWordExportSearch] = useState('');
     const [wordExportExpandedFolderIds, setWordExportExpandedFolderIds] = useState<string[]>(['root']);
+    const [cardExportSearch, setCardExportSearch] = useState('');
+    const [cardExportActiveFolderId, setCardExportActiveFolderId] = useState('root');
+    const [cardExportExpandedFolderIds, setCardExportExpandedFolderIds] = useState<string[]>(['root']);
     const templateSensors = useSensors(
         useSensor(PointerSensor, { activationConstraint: { distance: 4 } }),
         useSensor(KeyboardSensor, {
@@ -429,6 +435,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             }))
             .sort((a, b) => a.label.localeCompare(b.label));
     }, [templates]);
+
 
     const collectDescendantFolderIds = (startIds: string[]) => {
         const visited = new Set<string>();
@@ -492,6 +499,46 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         return words.filter(word => word.folderId === wordExportActiveFolderId);
     }, [wordExportActiveFolderId, wordExportSearch, words]);
 
+    const selectedCardFolderIdSet = useMemo(() => new Set(selectedCardFolderExportIds), [selectedCardFolderExportIds]);
+    const isRootSelectedForCardExport = selectedCardFolderIdSet.has('root');
+    const selectedCardFolderDescendantIds = useMemo(() => {
+        if (isRootSelectedForCardExport) {
+            return new Set(folders.map(folder => folder.id));
+        }
+        return collectDescendantFolderIds(selectedCardFolderExportIds.filter(id => id !== 'root'));
+    }, [folders, isRootSelectedForCardExport, selectedCardFolderExportIds]);
+    const selectedCardIdSet = useMemo(() => new Set(selectedCardExportIds), [selectedCardExportIds]);
+    const totalSelectedCardCount = useMemo(() => {
+        if (isRootSelectedForCardExport) return cards.length;
+        const ids = new Set<string>();
+        cards.forEach(card => {
+            if (selectedCardFolderDescendantIds.has(card.folderId) || selectedCardIdSet.has(card.id)) {
+                ids.add(card.id);
+            }
+        });
+        return ids.size;
+    }, [cards, isRootSelectedForCardExport, selectedCardFolderDescendantIds, selectedCardIdSet]);
+    const cardExportVisibleCards = useMemo(() => {
+        const query = cardExportSearch.trim().toLowerCase();
+        if (query) {
+            return cards.filter(card => {
+                const target = `${card.name} ${getFolderPath(card.folderId)}`.toLowerCase();
+                return target.includes(query);
+            });
+        }
+        if (cardExportActiveFolderId === 'root') {
+            return cards.filter(card => card.folderId === 'root');
+        }
+        return cards.filter(card => card.folderId === cardExportActiveFolderId);
+    }, [cards, cardExportActiveFolderId, cardExportSearch, getFolderPath]);
+
+    const cardFolderIdsWithCards = useMemo(() => {
+        const direct = new Set(cards.map(card => card.folderId));
+        const withAncestors = collectAncestorFolderIds(direct);
+        direct.forEach(id => withAncestors.add(id));
+        return withAncestors;
+    }, [cards, collectAncestorFolderIds]);
+
     const folderChildrenByParent = useMemo(() => {
         const map = new Map<string | null, FolderItem[]>();
         for (const folder of folders) {
@@ -517,9 +564,28 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         setWordExportExpandedFolderIds(Array.from(next));
     }, [folderById, isWordExportPickerOpen, wordExportActiveFolderId]);
 
+    useEffect(() => {
+        if (!isCardExportPickerOpen) return;
+        const next = new Set<string>(['root']);
+        let cursor: string | null = cardExportActiveFolderId;
+        while (cursor && cursor !== 'root') {
+            next.add(cursor);
+            const folder = folderById.get(cursor);
+            cursor = folder?.parentId ?? null;
+        }
+        setCardExportExpandedFolderIds(Array.from(next));
+    }, [folderById, isCardExportPickerOpen, cardExportActiveFolderId]);
+
     const wordExportExpandedSet = useMemo(() => new Set(wordExportExpandedFolderIds), [wordExportExpandedFolderIds]);
     const toggleWordExportFolderExpanded = (id: string) => {
         setWordExportExpandedFolderIds(prev => prev.includes(id)
+            ? prev.filter(item => item !== id)
+            : [...prev, id]
+        );
+    };
+    const cardExportExpandedSet = useMemo(() => new Set(cardExportExpandedFolderIds), [cardExportExpandedFolderIds]);
+    const toggleCardExportFolderExpanded = (id: string) => {
+        setCardExportExpandedFolderIds(prev => prev.includes(id)
             ? prev.filter(item => item !== id)
             : [...prev, id]
         );
@@ -542,6 +608,41 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 
     const handleExportWords = () => {
         downloadJson({ folders, words }, 'promptgen-words.json');
+    };
+
+    const handleExportCards = () => {
+        downloadJson({ cards }, 'promptgen-cards.json');
+    };
+
+    const handleExportSelectedCards = () => {
+        if (selectedCardFolderExportIds.length === 0 && selectedCardExportIds.length === 0) {
+            alert('出力するカードを選択してください。');
+            return;
+        }
+        const isRootSelected = selectedCardFolderExportIds.includes('root');
+        const folderIds = isRootSelected
+            ? new Set(folders.map(folder => folder.id))
+            : collectDescendantFolderIds(selectedCardFolderExportIds.filter(id => id !== 'root'));
+
+        const selectedCardIds = new Set<string>();
+        if (isRootSelected) {
+            cards.forEach(card => selectedCardIds.add(card.id));
+        } else {
+            cards.forEach(card => {
+                if (folderIds.has(card.folderId)) selectedCardIds.add(card.id);
+            });
+            selectedCardExportIds.forEach(id => selectedCardIds.add(id));
+        }
+
+        const folderIdsFromCards = collectAncestorFolderIds(
+            new Set(cards.filter(card => selectedCardIds.has(card.id)).map(card => card.folderId))
+        );
+        const allFolderIds = isRootSelected
+            ? folderIds
+            : new Set([...folderIds, ...folderIdsFromCards]);
+        const selectedFolders = folders.filter(folder => allFolderIds.has(folder.id));
+        const selectedCards = cards.filter(card => selectedCardIds.has(card.id));
+        downloadJson({ folders: selectedFolders, cards: selectedCards }, 'promptgen-cards-selected.json');
     };
 
     const handleExportFavorites = () => {
@@ -657,6 +758,28 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         setSelectedWordExportIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
     };
 
+    const handleToggleCardFolderExport = (id: string) => {
+        if (id === 'root') {
+            setSelectedCardFolderExportIds(prev => prev.includes('root') ? [] : ['root']);
+            setSelectedCardExportIds([]);
+            return;
+        }
+        setSelectedCardFolderExportIds(prev => {
+            const withoutRoot = prev.filter(item => item !== 'root');
+            if (withoutRoot.includes(id)) {
+                return withoutRoot.filter(item => item !== id);
+            }
+            return [...withoutRoot, id];
+        });
+    };
+
+    const handleToggleCardExport = (id: string) => {
+        if (isRootSelectedForCardExport) return;
+        const targetCard = cards.find(card => card.id === id);
+        if (targetCard && selectedCardFolderDescendantIds.has(targetCard.folderId)) return;
+        setSelectedCardExportIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
+    };
+
     const handleSelectAllVisibleWords = () => {
         if (isRootSelectedForExport) return;
         setSelectedWordExportIds(prev => {
@@ -670,9 +793,29 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         });
     };
 
+    const handleSelectAllVisibleCards = () => {
+        if (isRootSelectedForCardExport) return;
+        setSelectedCardExportIds(prev => {
+            const next = new Set(prev);
+            for (const card of cardExportVisibleCards) {
+                if (!selectedCardFolderDescendantIds.has(card.folderId)) {
+                    next.add(card.id);
+                }
+            }
+            return Array.from(next);
+        });
+    };
+
     const handleClearVisibleWords = () => {
         setSelectedWordExportIds(prev => {
             const visibleIds = new Set(wordExportVisibleWords.map(word => word.id));
+            return prev.filter(id => !visibleIds.has(id));
+        });
+    };
+
+    const handleClearVisibleCards = () => {
+        setSelectedCardExportIds(prev => {
+            const visibleIds = new Set(cardExportVisibleCards.map(card => card.id));
             return prev.filter(id => !visibleIds.has(id));
         });
     };
@@ -682,7 +825,12 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         setSelectedWordExportIds([]);
     };
 
-    const requestImport = (mode: 'all' | 'words' | 'favorites' | 'quality' | 'templates') => {
+    const handleClearAllCardExportSelection = () => {
+        setSelectedCardFolderExportIds([]);
+        setSelectedCardExportIds([]);
+    };
+
+    const requestImport = (mode: 'all' | 'words' | 'cards' | 'favorites' | 'quality' | 'templates') => {
         setImportMode(mode);
         fileInputRef.current?.click();
     };
@@ -719,6 +867,17 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     return;
                 }
                 setPendingWordsImport({ folders: nextFolders, words: nextWords });
+                return;
+            }
+            if (importMode === 'cards') {
+                const nextCards = (asArray(parsed?.cards) ?? asArray(parsed)) as CardItem[] | null;
+                if (!nextCards) {
+                    alert('JSON形式が正しくありません。{ cards: [] } が必要です。');
+                    return;
+                }
+                if (!confirm('インポートすると現在のカードが上書きされます。続行しますか？')) return;
+                setData({ folders, words, templates, cards: nextCards });
+                alert('インポートが完了しました。');
                 return;
             }
             if (importMode === 'favorites') {
@@ -1111,6 +1270,35 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                             </button>
                                             <button
                                                 onClick={() => requestImport('words')}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                入力
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                    <div className="flex items-center justify-between gap-4">
+                                        <div>
+                                            <div className="text-sm font-bold text-slate-200">カードデータのみ</div>
+                                            <div className="text-xs text-slate-500">カードのデータ</div>
+                                        </div>
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={handleExportCards}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                出力
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => setIsCardExportPickerOpen(true)}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                選択して出力
+                                            </button>
+                                            <button
+                                                onClick={() => requestImport('cards')}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
                                                 入力
@@ -1755,6 +1943,195 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                         <span>{option.label}</span>
                                     </label>
                                 ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {isCardExportPickerOpen && (
+                <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-5xl shadow-2xl flex flex-col gap-4 max-h-[90vh]">
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-bold text-white">カードを選択</h3>
+                            <button
+                                onClick={() => setIsCardExportPickerOpen(false)}
+                                className="text-slate-400 hover:text-white text-xl"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="text-xs text-slate-400">
+                                フォルダ選択: <span className="text-slate-200 font-bold">{selectedCardFolderExportIds.length}</span>
+                                {' '}・カード選択: <span className="text-slate-200 font-bold">{selectedCardExportIds.length}</span>
+                                {' '}・合計カード: <span className="text-cyan-300 font-bold">{totalSelectedCardCount}</span>
+                                {isRootSelectedForCardExport && <span className="ml-2 text-[10px] text-cyan-300">全カード選択中</span>}
+                            </div>
+                            <div className="flex gap-2">
+                                <button
+                                    type="button"
+                                    onClick={handleClearAllCardExportSelection}
+                                    className="px-3 py-1.5 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                >
+                                    全解除
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        if (selectedCardFolderExportIds.length === 0 && selectedCardExportIds.length === 0) {
+                                            alert('出力するカードを選択してください。');
+                                            return;
+                                        }
+                                        handleExportSelectedCards();
+                                        setIsCardExportPickerOpen(false);
+                                    }}
+                                    className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
+                                >
+                                    選択して出力
+                                </button>
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-[240px,1fr] gap-4 min-h-0 flex-1">
+                            <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar">
+                                {(() => {
+                                    const rootFolders = (folderChildrenByParent.get('root') ?? folderChildrenByParent.get(null) ?? [])
+                                        .filter(folder => cardFolderIdsWithCards.has(folder.id));
+                                    const renderFolder = (target: FolderItem, depth: number): React.ReactNode => {
+                                        if (!cardFolderIdsWithCards.has(target.id)) return null;
+                                        const children = (folderChildrenByParent.get(target.id) ?? [])
+                                            .filter(folder => cardFolderIdsWithCards.has(folder.id));
+                                        const hasChildren = children.length > 0;
+                                        const isSelected = selectedCardFolderIdSet.has(target.id);
+                                        const isActive = cardExportActiveFolderId === target.id;
+                                        const isExpanded = cardExportExpandedSet.has(target.id);
+                                        const isDisabled = isRootSelectedForCardExport && !isSelected;
+                                        return (
+                                            <div key={target.id}>
+                                                <div className="flex items-center gap-2" style={{ paddingLeft: depth * 12 }}>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => hasChildren && toggleCardExportFolderExpanded(target.id)}
+                                                        className={`flex h-4 w-4 items-center justify-center text-slate-500 ${hasChildren ? 'hover:text-slate-200' : 'opacity-30'}`}
+                                                        title={hasChildren ? (isExpanded ? 'Collapse' : 'Expand') : 'No children'}
+                                                    >
+                                                        {hasChildren ? (isExpanded ? <ChevronDownIcon className="h-3 w-3" /> : <ChevronRightIcon className="h-3 w-3" />) : <span className="h-3 w-3" />}
+                                                    </button>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={isSelected}
+                                                        disabled={isDisabled}
+                                                        onChange={() => handleToggleCardFolderExport(target.id)}
+                                                        className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setCardExportActiveFolderId(target.id)}
+                                                        className={`text-sm ${isActive ? 'text-cyan-300 font-bold' : 'text-slate-300'} ${isDisabled ? 'opacity-50' : ''}`}
+                                                    >
+                                                        {target.name}
+                                                    </button>
+                                                </div>
+                                                {hasChildren && isExpanded && children.map(child => renderFolder(child, depth + 1))}
+                                            </div>
+                                        );
+                                    };
+                                    return (
+                                        <>
+                                            <div className="flex items-center gap-2 mb-2">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => toggleCardExportFolderExpanded('root')}
+                                                    className="flex h-4 w-4 items-center justify-center text-slate-500 hover:text-slate-200"
+                                                    title={cardExportExpandedSet.has('root') ? 'Collapse' : 'Expand'}
+                                                >
+                                                    {cardExportExpandedSet.has('root')
+                                                        ? <ChevronDownIcon className="h-3 w-3" />
+                                                        : <ChevronRightIcon className="h-3 w-3" />}
+                                                </button>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={selectedCardFolderIdSet.has('root')}
+                                                    onChange={() => handleToggleCardFolderExport('root')}
+                                                    className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                                />
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setCardExportActiveFolderId('root')}
+                                                    className={`text-sm ${cardExportActiveFolderId === 'root' ? 'text-cyan-300 font-bold' : 'text-slate-300'}`}
+                                                >
+                                                    root
+                                                </button>
+                                            </div>
+                                            {cardExportExpandedSet.has('root') && rootFolders.map(folder => renderFolder(folder, 1))}
+                                        </>
+                                    );
+                                })()}
+                            </div>
+                            <div className="flex flex-col gap-3 min-h-0">
+                                <div className="flex flex-col gap-2">
+                                    <input
+                                        type="search"
+                                        value={cardExportSearch}
+                                        onChange={(event) => setCardExportSearch(event.target.value)}
+                                        className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
+                                        placeholder="カードを検索..."
+                                    />
+                                    <div className="flex flex-wrap gap-2">
+                                        <button
+                                            type="button"
+                                            onClick={handleSelectAllVisibleCards}
+                                            className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                        >
+                                            表示中を全選択
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={handleClearVisibleCards}
+                                            className="px-2 py-1 text-xs rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                        >
+                                            表示中を解除
+                                        </button>
+                                        {cardExportSearch && (
+                                            <span className="text-[10px] text-slate-500">
+                                                検索結果: {cardExportVisibleCards.length} 件
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar flex-1">
+                                    {cardExportVisibleCards.length === 0 && (
+                                        <div className="text-xs text-slate-500">カードがありません。</div>
+                                    )}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                        {cardExportVisibleCards.map(card => {
+                                            const isImplicit = isRootSelectedForCardExport || selectedCardFolderDescendantIds.has(card.folderId);
+                                            const isSelected = isImplicit || selectedCardIdSet.has(card.id);
+                                            return (
+                                                <label
+                                                    key={card.id}
+                                                    className={`flex items-start gap-2 rounded-lg border px-3 py-2 text-sm ${isSelected ? 'border-cyan-500/50 bg-cyan-500/10' : 'border-slate-800 bg-slate-900/40'}`}
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={isSelected}
+                                                        disabled={isImplicit}
+                                                        onChange={() => handleToggleCardExport(card.id)}
+                                                        className="mt-1 rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                                    />
+                                                    <div className="flex-1">
+                                                        <div className="font-semibold text-slate-200">{card.name}</div>
+                                                        {cardExportSearch && (
+                                                            <div className="text-[10px] text-slate-500">{getFolderPath(card.folderId)}</div>
+                                                        )}
+                                                        {isImplicit && (
+                                                            <div className="text-[10px] text-cyan-300 mt-1">フォルダ選択に含まれます</div>
+                                                        )}
+                                                    </div>
+                                                </label>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -78,4 +78,5 @@ export interface CardItem {
     words: CardWordRef[];
     nsfw: boolean;
     createdAt?: number;
+    templateIds?: string[];
 }

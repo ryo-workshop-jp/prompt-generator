@@ -23,6 +23,7 @@ type CardCardProps = {
     folderPath?: string;
     compact?: boolean;
     editMode?: boolean;
+    onEdit?: (card: CardItem) => void;
     onMove?: (card: CardItem) => void;
     onDelete?: (card: CardItem) => void;
     dragHandleProps?: React.HTMLAttributes<HTMLButtonElement>;
@@ -36,6 +37,26 @@ type DecorOption = {
     templateName: string;
     spaceEnabled: boolean;
     position: 'before' | 'after';
+};
+
+const buildDecoratedValue = (baseValue: string, baseLabel: string, options: DecorOption[]) => {
+    const beforeOptions = options.filter(option => option.position !== 'after');
+    const afterOptions = options.filter(option => option.position === 'after');
+    const beforeValue = beforeOptions.map(option => option.value).join(' ');
+    const afterValue = afterOptions.map(option => option.value).join(' ');
+    const beforeLabel = beforeOptions.map(option => option.label || option.value).join(' ');
+    const afterLabel = afterOptions.map(option => option.label || option.value).join(' ');
+    const beforeSpacing = beforeOptions.every(option => option.spaceEnabled);
+    const afterSpacing = afterOptions.every(option => option.spaceEnabled);
+    const beforeSpacer = beforeSpacing && beforeValue ? ' ' : '';
+    const afterSpacer = afterSpacing && afterValue ? ' ' : '';
+    const withBefore = beforeValue ? `${beforeValue}${beforeSpacer}${baseValue}` : baseValue;
+    const finalValue = afterValue ? `${withBefore}${afterSpacer}${afterValue}` : withBefore;
+    const labelBeforeSpacer = beforeSpacing && beforeLabel ? ' ' : '';
+    const labelAfterSpacer = afterSpacing && afterLabel ? ' ' : '';
+    const labelWithBefore = beforeLabel ? `${beforeLabel}${labelBeforeSpacer}${baseLabel}` : baseLabel;
+    const finalLabel = afterLabel ? `${labelWithBefore}${labelAfterSpacer}${afterLabel}` : labelWithBefore;
+    return { value: finalValue, label: finalLabel };
 };
 
 const TemplateSelectModal: React.FC<{
@@ -255,25 +276,10 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
     };
 
     const applyTemplate = (options: DecorOption[]) => {
-        const beforeOptions = options.filter(option => option.position !== 'after');
-        const afterOptions = options.filter(option => option.position === 'after');
-        const beforeValue = beforeOptions.map(option => option.value).join(' ');
-        const afterValue = afterOptions.map(option => option.value).join(' ');
-        const beforeLabel = beforeOptions.map(option => option.label || option.value).join(' ');
-        const afterLabel = afterOptions.map(option => option.label || option.value).join(' ');
-        const beforeSpacing = beforeOptions.every(option => option.spaceEnabled);
-        const afterSpacing = afterOptions.every(option => option.spaceEnabled);
-        const beforeSpacer = beforeSpacing && beforeValue ? ' ' : '';
-        const afterSpacer = afterSpacing && afterValue ? ' ' : '';
-        const withBefore = beforeValue ? `${beforeValue}${beforeSpacer}${word.value_en}` : word.value_en;
-        const finalValue = afterValue ? `${withBefore}${afterSpacer}${afterValue}` : withBefore;
-        const labelBeforeSpacer = beforeSpacing && beforeLabel ? ' ' : '';
-        const labelAfterSpacer = afterSpacing && afterLabel ? ' ' : '';
-        const baseLabel = beforeLabel ? `${beforeLabel}${labelBeforeSpacer}${word.label_jp}` : word.label_jp;
-        const finalLabel = afterLabel ? `${baseLabel}${labelAfterSpacer}${afterLabel}` : baseLabel;
+        const { value: finalValue, label: finalLabel } = buildDecoratedValue(word.value_en, word.label_jp, options);
         const templatedWord: WordItem = {
             ...word,
-            id: makeTemplateId((beforeValue || afterValue) || Date.now().toString()),
+            id: makeTemplateId(finalValue || Date.now().toString()),
             value_en: finalValue,
             label_jp: finalLabel,
             templateId: undefined,
@@ -535,10 +541,17 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
     );
 };
 
-const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, editMode = false, onMove, onDelete, dragHandleProps }) => {
-    const { applyCard, addWord, words } = usePrompt();
+const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, editMode = false, onEdit, onMove, onDelete, dragHandleProps }) => {
+    const { applyCard, addWord, words, templates } = usePrompt();
+    const [isTemplateOpen, setIsTemplateOpen] = useState(false);
     const wordMap = useMemo(() => new Map(words.map(word => [word.id, word])), [words]);
     const showFolderPath = !!folderPath && folderPath !== 'root';
+    const templateIds = useMemo(() => card.templateIds ?? [], [card.templateIds]);
+    const templatesForCard = useMemo(() => {
+        if (templateIds.length === 0) return [];
+        const lookup = new Map(templates.map(item => [item.id, item]));
+        return templateIds.map(id => lookup.get(id)).filter((item): item is TemplateItem => !!item);
+    }, [templateIds, templates]);
     const labels = useMemo(() => {
         const parts = card.words.map(ref => {
             const found = wordMap.get(ref.wordId);
@@ -579,88 +592,152 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
         addWord(pseudoWord, card.type, 1.0);
     };
 
+    const handleApplyTemplate = (options: DecorOption[]) => {
+        if (editMode) return;
+        const prompt = buildCardPrompt();
+        const baseValue = prompt || card.name;
+        const { value: finalValue, label: finalLabel } = buildDecoratedValue(baseValue, card.name, options);
+        const pseudoWord: WordItem = {
+            id: `__card__${card.id}__tpl__${Date.now()}`,
+            folderId: card.folderId,
+            label_jp: finalLabel,
+            value_en: finalValue,
+            nsfw: card.nsfw,
+            note: `Card: ${card.name}`,
+            cardId: card.id,
+            cardName: card.name,
+            cardPrompt: finalValue
+        };
+        addWord(pseudoWord, card.type, 1.0);
+        setIsTemplateOpen(false);
+    };
+
     const handleClick = () => {
         handleApplyAsCardToken();
     };
 
     return (
-        <div
-            role="button"
-            tabIndex={0}
-            onClick={handleClick}
-            onKeyDown={(event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    handleClick();
-                }
-            }}
-            className={`relative flex w-full flex-col items-start ${compact ? 'pt-2.5 px-2.5 pb-2 min-h-[56px]' : showFolderPath ? 'p-3 min-h-[80px]' : 'pt-3 px-3 pb-2 min-h-[68px]'} rounded-xl border ${borderTone} bg-slate-900/40 hover:bg-slate-900 transition-all text-left group`}
-        >
-            <div className="flex items-center gap-2 mb-1 w-full">
-                <RectangleStackIcon className="w-4 h-4 text-amber-400/80" />
-                <span className="text-sm font-bold text-slate-200 line-clamp-2">{card.name}</span>
-                {!editMode && (
-                    <button
-                        type="button"
-                        onClick={(event) => {
-                            event.stopPropagation();
-                            applyCard(card);
-                        }}
-                        className="ml-auto px-2 py-0.5 text-[10px] rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
-                        title="展開追加"
-                    >
-                        展開
-                    </button>
+        <>
+            <div
+                role="button"
+                tabIndex={0}
+                onClick={handleClick}
+                onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        handleClick();
+                    }
+                }}
+                className={`relative flex w-full flex-col items-start ${compact ? 'pt-2.5 px-2.5 pb-2 min-h-[56px]' : showFolderPath ? 'p-3 min-h-[80px]' : 'pt-3 px-3 pb-2 min-h-[68px]'} rounded-xl border ${borderTone} bg-slate-900/40 hover:bg-slate-900 transition-all text-left group`}
+            >
+                <div className="flex items-center gap-2 mb-1 w-full">
+                    <RectangleStackIcon className="w-4 h-4 text-amber-400/80" />
+                    <span className="text-sm font-bold text-slate-200 line-clamp-2">{card.name}</span>
+                    {!editMode && (
+                        <div className="ml-auto flex items-center gap-2">
+                            {templatesForCard.length > 0 && (
+                                <button
+                                    type="button"
+                                    onClick={(event) => {
+                                        event.stopPropagation();
+                                        setIsTemplateOpen(true);
+                                    }}
+                                    className="px-2 py-0.5 text-[10px] rounded bg-slate-900 text-slate-300 border border-slate-700 hover:border-cyan-500/50 hover:text-cyan-300"
+                                    title="装飾を選択"
+                                >
+                                    装飾
+                                </button>
+                            )}
+                            <button
+                                type="button"
+                                onClick={(event) => {
+                                    event.stopPropagation();
+                                    applyCard(card);
+                                }}
+                                className="px-2 py-0.5 text-[10px] rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
+                                title="展開追加"
+                            >
+                                展開
+                            </button>
+                        </div>
+                    )}
+                </div>
+                <span className="text-[10px] text-slate-500">{wordCount} words</span>
+                {labels && (
+                    <span className="text-[10px] text-slate-400 mt-1 line-clamp-2">{labels}</span>
                 )}
-            </div>
-            <span className="text-[10px] text-slate-500">{wordCount} words</span>
-            {labels && (
-                <span className="text-[10px] text-slate-400 mt-1 line-clamp-2">{labels}</span>
-            )}
-            {showFolderPath && (
-                <span className="text-[10px] text-slate-500 mt-1 line-clamp-1">{folderPath}</span>
-            )}
-            {editMode && (
-                <div className="absolute top-2 right-2 flex gap-1 items-center">
-                    <button
-                        type="button"
-                        {...dragHandleProps}
-                        className="p-1 rounded-md text-slate-500 hover:text-slate-300 cursor-grab"
-                        title="Drag to reorder"
-                        onClick={(event) => {
-                            event.stopPropagation();
-                            dragHandleProps?.onClick?.(event);
-                        }}
-                    >
-                        <Bars3Icon className="w-4 h-4" />
-                    </button>
-                    {onMove && (
+                {showFolderPath && (
+                    <span className="text-[10px] text-slate-500 mt-1 line-clamp-1">{folderPath}</span>
+                )}
+                {editMode && (
+                    <div className="absolute top-2 right-2 flex gap-1 items-center">
+                        <button
+                            type="button"
+                            {...dragHandleProps}
+                            className="p-1 rounded-md text-slate-500 hover:text-slate-300 cursor-grab"
+                            title="Drag to reorder"
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                dragHandleProps?.onClick?.(event);
+                            }}
+                        >
+                            <Bars3Icon className="w-4 h-4" />
+                        </button>
+                        {onEdit && (
+                            <button
+                                type="button"
+                                onClick={(event) => {
+                                    event.stopPropagation();
+                                    onEdit(card);
+                                }}
+                                className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
+                                title="Edit"
+                            >
+                                <Cog6ToothIcon className="w-4 h-4" />
+                            </button>
+                        )}
+                        {onMove && (
+                            <button
+                                type="button"
+                                onClick={(event) => {
+                                    event.stopPropagation();
+                                    onMove(card);
+                                }}
+                                className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
+                                title="Move"
+                            >
+                                <ArrowRightIcon className="w-4 h-4" />
+                            </button>
+                        )}
                         <button
                             type="button"
                             onClick={(event) => {
                                 event.stopPropagation();
-                                onMove(card);
+                                onDelete?.(card);
                             }}
-                            className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
-                            title="Move"
+                            className="p-1 rounded-md text-slate-500 hover:text-rose-400"
+                            title="Delete"
                         >
-                            <ArrowRightIcon className="w-4 h-4" />
+                            <TrashIcon className="w-4 h-4" />
                         </button>
-                    )}
-                    <button
-                        type="button"
-                        onClick={(event) => {
-                            event.stopPropagation();
-                            onDelete?.(card);
-                        }}
-                        className="p-1 rounded-md text-slate-500 hover:text-rose-400"
-                        title="Delete"
-                    >
-                        <TrashIcon className="w-4 h-4" />
-                    </button>
-                </div>
-            )}
-        </div>
+                    </div>
+                )}
+            </div>
+            <TemplateSelectModal
+                key={`${card.id}-${isTemplateOpen ? 'open' : 'closed'}`}
+                word={{
+                    id: card.id,
+                    folderId: card.folderId,
+                    label_jp: card.name,
+                    value_en: buildCardPrompt() || card.name,
+                    nsfw: card.nsfw
+                }}
+                templates={templatesForCard}
+                isOpen={isTemplateOpen}
+                onClose={() => setIsTemplateOpen(false)}
+                onApply={handleApplyTemplate}
+            />
+        </>
     );
 };
 
@@ -935,6 +1012,75 @@ const EditWordModal: React.FC<{
     );
 };
 
+const CardEditModal: React.FC<{
+    card: CardItem | null;
+    onClose: () => void;
+    onSave: (updates: { templateIds?: string[] }) => void;
+    templates: TemplateItem[];
+}> = ({ card, onClose, onSave, templates }) => {
+    const [templateIds, setTemplateIds] = useState<string[]>(card?.templateIds ?? []);
+
+    if (!card) return null;
+
+    const toggleTemplateId = (id: string) => {
+        setTemplateIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const hasTemplates = templateIds.length > 0;
+        onSave({ templateIds: hasTemplates ? templateIds : undefined });
+        onClose();
+    };
+
+    return (
+        <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                <h3 className="text-lg font-bold mb-4 text-white">カードの装飾</h3>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
+                    <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
+                        <div className="text-xs text-slate-500">対象: <span className="text-slate-200 font-semibold">{card.name}</span></div>
+                        <div>
+                            <label className="block text-xs text-slate-400 mb-1">装飾 (任意)</label>
+                            <div className="bg-slate-950 border border-slate-700 rounded-lg p-2 max-h-40 overflow-y-auto custom-scrollbar">
+                                {templates.length === 0 && (
+                                    <div className="text-xs text-slate-500">装飾がありません。</div>
+                                )}
+                                {templates.map(template => (
+                                    <label key={template.id} className="flex items-center gap-2 text-sm text-slate-300">
+                                        <input
+                                            type="checkbox"
+                                            checked={templateIds.includes(template.id)}
+                                            onChange={() => toggleTemplateId(template.id)}
+                                            className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                        />
+                                        <span>{template.name}</span>
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex gap-2 pt-2">
+                        <button
+                            type="button"
+                            onClick={onClose}
+                            className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            type="submit"
+                            className="flex-1 px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
+                        >
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
+};
+
 const SortableWordCard: React.FC<WordCardProps & { id: string }> = ({ id, ...props }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
@@ -965,15 +1111,17 @@ const WordGrid: React.FC<{
     onDeleteWord?: (word: WordItem) => void;
     onMoveWord?: (word: WordItem) => void;
     onReorderWords?: (ordered: WordItem[]) => void;
+    onEditCard?: (card: CardItem) => void;
     onMoveCard?: (card: CardItem) => void;
     onReorderCards?: (cards: CardItem[]) => void;
     onDeleteCard?: (card: CardItem) => void;
     showAddWordButton?: boolean;
     showWordModals?: boolean;
     gridPaddingClass?: string;
-}> = ({ words, cards = [], onAddWord, folderPathForWord, folderPathForCard, compact = false, editMode = false, onEditWord, onDeleteWord, onMoveWord, onReorderWords, onMoveCard, onReorderCards, onDeleteCard, showAddWordButton = true, showWordModals = true, gridPaddingClass = 'pb-20' }) => {
+}> = ({ words, cards = [], onAddWord, folderPathForWord, folderPathForCard, compact = false, editMode = false, onEditWord, onDeleteWord, onMoveWord, onReorderWords, onEditCard, onMoveCard, onReorderCards, onDeleteCard, showAddWordButton = true, showWordModals = true, gridPaddingClass = 'pb-20' }) => {
     const [isAddModalOpen, setIsAddModalOpen] = useState(false);
     const [editingWord, setEditingWord] = useState<WordItem | null>(null);
+    const [editingCard, setEditingCard] = useState<CardItem | null>(null);
     const { templates } = usePrompt();
 
     const sensors = useSensors(
@@ -1061,6 +1209,7 @@ const WordGrid: React.FC<{
                                             folderPath={folderPathForCard ? folderPathForCard(item.card) : undefined}
                                             compact={compact}
                                             editMode={editMode}
+                                            onEdit={editMode ? (card) => setEditingCard(card) : undefined}
                                             onMove={onMoveCard}
                                             onDelete={editMode ? (card) => onDeleteCard?.(card) : undefined}
                                         />
@@ -1071,6 +1220,7 @@ const WordGrid: React.FC<{
                                             folderPath={folderPathForCard ? folderPathForCard(item.card) : undefined}
                                             compact={compact}
                                             editMode={editMode}
+                                            onEdit={editMode ? (card) => setEditingCard(card) : undefined}
                                             onMove={onMoveCard}
                                             onDelete={editMode ? (card) => onDeleteCard?.(card) : undefined}
                                         />
@@ -1119,6 +1269,18 @@ const WordGrid: React.FC<{
                         templates={templates}
                     />
                 </>
+            )}
+            {editingCard && (
+                <CardEditModal
+                    key={editingCard.id}
+                    card={editingCard}
+                    templates={templates}
+                    onClose={() => setEditingCard(null)}
+                    onSave={(updates) => {
+                        if (!editingCard) return;
+                        onEditCard?.({ ...editingCard, ...updates });
+                    }}
+                />
             )}
         </>
     );

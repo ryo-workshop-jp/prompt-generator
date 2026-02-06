@@ -5,7 +5,7 @@ import { arrayMove, SortableContext, rectSortingStrategy, sortableKeyboardCoordi
 import { CSS } from '@dnd-kit/utilities';
 import { usePrompt } from '../context/usePrompt';
 import type { SelectedWord, PromptStrength, PromptFavorite } from '../types';
-import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon } from '@heroicons/react/24/outline';
+import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon, ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid';
 
 const UI_STORAGE_KEY = 'promptgen:ui';
@@ -197,7 +197,7 @@ const SortableChip: React.FC<{
 };
 
 const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) => {
-    const { selectedPositive, selectedNegative, favorites, qualityTemplates, nsfwEnabled, folders, addPromptFavorite, addQualityTemplate, addCard, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, updateQualityTemplateName, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength } = usePrompt();
+    const { selectedPositive, selectedNegative, favorites, qualityTemplates, templates, nsfwEnabled, folders, addPromptFavorite, addQualityTemplate, addCard, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, updateQualityTemplateName, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength } = usePrompt();
     const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | 'both' | null>(null);
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
     const [qualityType, setQualityType] = useState<'positive' | 'negative' | null>(null);
@@ -211,6 +211,8 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
     const [selectedCardFolderId, setSelectedCardFolderId] = useState('root');
     const [isFolderPickerOpen, setIsFolderPickerOpen] = useState(false);
     const [folderSearch, setFolderSearch] = useState('');
+    const [cardTemplateIds, setCardTemplateIds] = useState<string[]>([]);
+    const [expandedFolderIds, setExpandedFolderIds] = useState<Set<string>>(() => new Set(['root']));
     const [editingQualityId, setEditingQualityId] = useState<string | null>(null);
     const [editingQualityName, setEditingQualityName] = useState('');
     const [highlightedPrompt, setHighlightedPrompt] = useState<{ id: string; type: 'positive' | 'negative' } | null>(null);
@@ -332,34 +334,50 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
     };
 
     const folderTreeOptions = useMemo(() => {
-        const childrenMap = new Map<string, { id: string; name: string }[]>();
+        const childrenMap = new Map<string, { id: string; name: string; nsfw?: boolean }[]>();
         folders.filter(folder => folder.id !== 'root').forEach(folder => {
+            if (!nsfwEnabled && folder.nsfw) return;
             const parent = folder.parentId ?? 'root';
             const list = childrenMap.get(parent) ?? [];
-            list.push({ id: folder.id, name: folder.name });
+            list.push({ id: folder.id, name: folder.name, nsfw: folder.nsfw });
             childrenMap.set(parent, list);
         });
-        const options: { id: string; name: string; depth: number; path: string }[] = [];
+        const options: { id: string; name: string; depth: number; path: string; hasChildren: boolean; parentId: string | null }[] = [];
         const walk = (parentId: string, depth: number) => {
             const children = childrenMap.get(parentId) ?? [];
             children.forEach(child => {
                 const path = getFolderPath(child.id);
-                options.push({ id: child.id, name: child.name, depth, path });
+                const hasChildren = (childrenMap.get(child.id) ?? []).length > 0;
+                options.push({ id: child.id, name: child.name, depth, path, hasChildren, parentId });
                 walk(child.id, depth + 1);
             });
         };
-        options.push({ id: 'root', name: 'root', depth: 0, path: 'root' });
+        const rootChildren = childrenMap.get('root') ?? [];
+        options.push({ id: 'root', name: 'root', depth: 0, path: 'root', hasChildren: rootChildren.length > 0, parentId: null });
         walk('root', 1);
         return options;
-    }, [folders, folderById]);
+    }, [folders, folderById, nsfwEnabled, getFolderPath]);
 
     const filteredFolderOptions = useMemo(() => {
-        if (!folderSearch.trim()) return folderTreeOptions;
         const query = folderSearch.trim().toLowerCase();
+        if (query) {
+            return folderTreeOptions.filter(option => {
+                return option.name.toLowerCase().includes(query) || option.path.toLowerCase().includes(query);
+            });
+        }
+        const expanded = expandedFolderIds;
+        const byId = new Map(folderTreeOptions.map(option => [option.id, option]));
         return folderTreeOptions.filter(option => {
-            return option.name.toLowerCase().includes(query) || option.path.toLowerCase().includes(query);
+            if (option.id === 'root') return true;
+            let cursor = option.parentId;
+            while (cursor) {
+                if (!expanded.has(cursor)) return false;
+                const parent = byId.get(cursor);
+                cursor = parent?.parentId ?? null;
+            }
+            return true;
         });
-    }, [folderSearch, folderTreeOptions]);
+    }, [folderSearch, folderTreeOptions, expandedFolderIds]);
 
     const getQualityPrompt = (type: 'positive' | 'negative') => {
         const selectedId = selectedQualityTemplateIds[type];
@@ -407,6 +425,23 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         setSaveAsCard(false);
         setCardFolderMode('current');
         setSelectedCardFolderId(activeFolderId || 'root');
+        setCardTemplateIds([]);
+    };
+
+    const toggleFolderExpand = (id: string) => {
+        setExpandedFolderIds(prev => {
+            const next = new Set(prev);
+            if (next.has(id)) {
+                next.delete(id);
+            } else {
+                next.add(id);
+            }
+            return next;
+        });
+    };
+
+    const toggleCardTemplateId = (id: string) => {
+        setCardTemplateIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
     };
 
     const handleCopy = (text: string, type: 'pos' | 'neg' | 'both') => {
@@ -426,12 +461,14 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         const name = saveAsCard ? trimmedName : (trimmedName || combinedLabels.join(' / ') || 'Favorite');
         if (saveAsCard) {
             const targetFolderId = cardFolderMode === 'current' ? (activeFolderId || 'root') : selectedCardFolderId || 'root';
+            const hasTemplates = cardTemplateIds.length > 0;
             addCard({
                 id: Date.now().toString(),
                 name,
                 folderId: targetFolderId,
                 type,
                 nsfw: favoriteNsfw,
+                templateIds: hasTemplates ? cardTemplateIds : undefined,
                 words: source.map(word => ({
                     wordId: word.id,
                     strength: word.strength,
@@ -783,39 +820,62 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 <span className="text-sm text-slate-300">カードとして保存</span>
                             </label>
                             {saveAsCard && (
-                                <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-xs text-slate-400">
-                                    <div className="flex items-center gap-4">
-                                        <label className="flex items-center gap-2 cursor-pointer">
-                                            <input
-                                                type="radio"
-                                                checked={cardFolderMode === 'current'}
-                                                onChange={() => setCardFolderMode('current')}
-                                                className="rounded-full bg-slate-800 border-slate-600 text-amber-500 focus:ring-amber-500/50"
-                                            />
-                                            <span>現在のフォルダ</span>
-                                        </label>
-                                        <label className="flex items-center gap-2 cursor-pointer">
-                                            <input
-                                                type="radio"
-                                                checked={cardFolderMode === 'custom'}
-                                                onChange={() => setCardFolderMode('custom')}
-                                                className="rounded-full bg-slate-800 border-slate-600 text-amber-500 focus:ring-amber-500/50"
-                                            />
-                                            <span>任意のフォルダ</span>
-                                        </label>
-                                    </div>
-                                    <div className="mt-2 flex items-center justify-between gap-2">
-                                        <div className="text-[11px] text-slate-500">
-                                            保存先: <span className="text-slate-200">{cardFolderMode === 'current' ? getFolderPath(activeFolderId || 'root') : getFolderPath(selectedCardFolderId || 'root')}</span>
+                                <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-xs text-slate-400 flex flex-col gap-3">
+                                    <div>
+                                        <div className="flex items-center gap-4">
+                                            <label className="flex items-center gap-2 cursor-pointer">
+                                                <input
+                                                    type="radio"
+                                                    checked={cardFolderMode === 'current'}
+                                                    onChange={() => setCardFolderMode('current')}
+                                                    className="rounded-full bg-slate-800 border-slate-600 text-amber-500 focus:ring-amber-500/50"
+                                                />
+                                                <span>現在のフォルダ</span>
+                                            </label>
+                                            <label className="flex items-center gap-2 cursor-pointer">
+                                                <input
+                                                    type="radio"
+                                                    checked={cardFolderMode === 'custom'}
+                                                    onChange={() => setCardFolderMode('custom')}
+                                                    className="rounded-full bg-slate-800 border-slate-600 text-amber-500 focus:ring-amber-500/50"
+                                                />
+                                                <span>任意のフォルダ</span>
+                                            </label>
                                         </div>
-                                        {cardFolderMode === 'custom' && (
-                                            <button
-                                                type="button"
-                                                onClick={() => setIsFolderPickerOpen(true)}
-                                                className="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px]"
-                                            >
-                                                フォルダを選択
-                                            </button>
+                                        <div className="mt-2 flex items-center justify-between gap-2">
+                                            <div className="text-[11px] text-slate-500">
+                                                保存先: <span className="text-slate-200">{cardFolderMode === 'current' ? getFolderPath(activeFolderId || 'root') : getFolderPath(selectedCardFolderId || 'root')}</span>
+                                            </div>
+                                            {cardFolderMode === 'custom' && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setIsFolderPickerOpen(true)}
+                                                    className="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px]"
+                                                >
+                                                    フォルダを選択
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="text-[11px] text-slate-500 mb-1">装飾 (任意)</div>
+                                        {templates.length === 0 && (
+                                            <div className="text-[11px] text-slate-600">装飾がありません。</div>
+                                        )}
+                                        {templates.length > 0 && (
+                                            <div className="flex flex-col gap-1">
+                                                {templates.map(template => (
+                                                    <label key={template.id} className="flex items-center gap-2 text-[11px] text-slate-300">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={cardTemplateIds.includes(template.id)}
+                                                            onChange={() => toggleCardTemplateId(template.id)}
+                                                            className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
+                                                        />
+                                                        <span>{template.name}</span>
+                                                    </label>
+                                                ))}
+                                            </div>
                                         )}
                                     </div>
                                 </div>
@@ -892,6 +952,29 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                         }`}
                                 >
                                     <div className="flex items-center gap-2" style={{ paddingLeft: `${option.depth * 12}px` }}>
+                                        {option.hasChildren ? (
+                                            <span
+                                                role="button"
+                                                tabIndex={0}
+                                                onClick={(event) => {
+                                                    event.stopPropagation();
+                                                    toggleFolderExpand(option.id);
+                                                }}
+                                                onKeyDown={(event) => {
+                                                    if (event.key === 'Enter' || event.key === ' ') {
+                                                        event.preventDefault();
+                                                        event.stopPropagation();
+                                                        toggleFolderExpand(option.id);
+                                                    }
+                                                }}
+                                                className="w-5 h-5 flex items-center justify-center rounded bg-slate-800/70 text-slate-300 hover:text-white"
+                                                title={expandedFolderIds.has(option.id) ? 'Collapse' : 'Expand'}
+                                            >
+                                                {expandedFolderIds.has(option.id) ? <ChevronDownIcon className="w-4 h-4" /> : <ChevronRightIcon className="w-4 h-4" />}
+                                            </span>
+                                        ) : (
+                                            <span className="w-5 h-5" />
+                                        )}
                                         <span className="font-semibold">{option.name}</span>
                                     </div>
                                     <div className="text-[10px] text-slate-500 mt-1">{option.path}</div>
