@@ -544,6 +544,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
 const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, editMode = false, onEdit, onMove, onDelete, dragHandleProps }) => {
     const { applyCard, addWord, words, templates } = usePrompt();
     const [isTemplateOpen, setIsTemplateOpen] = useState(false);
+    const [isPreviewOpen, setIsPreviewOpen] = useState(false);
     const wordMap = useMemo(() => new Map(words.map(word => [word.id, word])), [words]);
     const showFolderPath = !!folderPath && folderPath !== 'root';
     const templateIds = useMemo(() => card.templateIds ?? [], [card.templateIds]);
@@ -574,6 +575,13 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
         });
         return parts.join(', ');
     };
+
+    const previewItems = useMemo(() => {
+        return card.words.map(ref => {
+            const base = wordMap.get(ref.wordId);
+            return base?.label_jp ?? ref.label_jp ?? ref.value_en ?? ref.wordId;
+        }).filter(Boolean);
+    }, [card.words, wordMap]);
 
     const handleApplyAsCardToken = () => {
         if (editMode) return;
@@ -648,6 +656,17 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                                     装飾
                                 </button>
                             )}
+                            <button
+                                type="button"
+                                onClick={(event) => {
+                                    event.stopPropagation();
+                                    setIsPreviewOpen(true);
+                                }}
+                                className="px-2 py-0.5 text-[10px] rounded bg-slate-900 text-slate-300 border border-slate-700 hover:border-slate-500/70 hover:text-slate-100"
+                                title="内容を確認"
+                            >
+                                内容
+                            </button>
                             <button
                                 type="button"
                                 onClick={(event) => {
@@ -737,6 +756,42 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                 onClose={() => setIsTemplateOpen(false)}
                 onApply={handleApplyTemplate}
             />
+            {isPreviewOpen && (
+                <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-lg shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                        <div className="flex items-center justify-between mb-4">
+                            <div>
+                                <h3 className="text-lg font-bold text-white">カード内容</h3>
+                                <div className="text-xs text-slate-500">{card.name}</div>
+                            </div>
+                            <button onClick={() => setIsPreviewOpen(false)} className="text-slate-400 hover:text-white text-xl">&times;</button>
+                        </div>
+                        <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
+                            {previewItems.length === 0 && (
+                                <div className="text-sm text-slate-500">カードに語句がありません。</div>
+                            )}
+                            {previewItems.length > 0 && (
+                                <ul className="flex flex-col gap-2">
+                                    {previewItems.map((label, index) => (
+                                        <li key={`${card.id}-item-${index}`} className="text-sm text-slate-200 border-b border-white/5 pb-2">
+                                            {label}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                        <div className="mt-4 flex justify-end">
+                            <button
+                                type="button"
+                                onClick={() => setIsPreviewOpen(false)}
+                                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 };
