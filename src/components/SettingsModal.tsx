@@ -4,24 +4,25 @@ import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStr
 import { CSS } from '@dnd-kit/utilities';
 import { Bars3Icon, ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { usePrompt } from '../context/usePrompt';
-import type { FolderItem, WordItem, TemplateItem, TemplateOption, PromptFavorite } from '../types';
+import type { FolderItem, WordItem, TemplateItem, TemplateOption, PromptFavorite, CardItem } from '../types';
 import { initialData } from '../data/initialData';
 
 
 const UI_STORAGE_KEY = 'promptgen:ui';
+type UiSettings = {
+    nsfwConfirmSkip?: boolean;
+    stepperDisplay?: 'inside' | 'above';
+    combinedCopyEnabled?: boolean;
+    showRootInPaths?: boolean;
+    showItemFolderPath?: boolean;
+};
 
-const readUiSettings = () => {
+const readUiSettings = (): UiSettings => {
     try {
         if (typeof window === 'undefined') return {};
         const stored = localStorage.getItem(UI_STORAGE_KEY);
         if (!stored) return {};
-        const parsed = JSON.parse(stored) as {
-            nsfwConfirmSkip?: boolean;
-            stepperDisplay?: 'inside' | 'above';
-            combinedCopyEnabled?: boolean;
-            showRootInPaths?: boolean;
-            showItemFolderPath?: boolean;
-        };
+        const parsed = JSON.parse(stored) as UiSettings;
         const showFolderPath = parsed.showItemFolderPath ?? parsed.showRootInPaths ?? false;
         return {
             ...parsed,

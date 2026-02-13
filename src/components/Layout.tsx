@@ -13,13 +13,17 @@ import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIco
 import type { FolderItem, WordItem, TemplateItem, CardItem } from '../types';
 
 const UI_STORAGE_KEY = 'promptgen:ui';
+type UiSettings = {
+    showRootInPaths?: boolean;
+    showItemFolderPath?: boolean;
+};
 
-const readUiSettings = () => {
+const readUiSettings = (): UiSettings => {
     try {
         if (typeof window === 'undefined') return {};
         const stored = localStorage.getItem(UI_STORAGE_KEY);
         if (!stored) return {};
-        const parsed = JSON.parse(stored) as { showRootInPaths?: boolean; showItemFolderPath?: boolean };
+        const parsed = JSON.parse(stored) as UiSettings;
         const showFolderPath = parsed.showItemFolderPath ?? parsed.showRootInPaths ?? false;
         return {
             ...parsed,
