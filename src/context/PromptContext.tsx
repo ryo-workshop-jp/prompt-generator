@@ -454,6 +454,14 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         }
     };
 
+    const updateSelectedWord = (id: string, type: 'positive' | 'negative', updates: Partial<SelectedWord>) => {
+        if (type === 'positive') {
+            setSelectedPositive(selectedPositive.map(w => w.id === id ? { ...w, ...updates } : w));
+        } else {
+            setSelectedNegative(selectedNegative.map(w => w.id === id ? { ...w, ...updates } : w));
+        }
+    };
+
     const toggleFavorite = (id: string) => {
         updateData(prev => ({
             ...prev,
@@ -700,6 +708,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             addWord,
             removeWord,
             updateWordStrength,
+            updateSelectedWord,
             toggleFavorite,
             addPromptFavorite,
             applyPromptFavorite,

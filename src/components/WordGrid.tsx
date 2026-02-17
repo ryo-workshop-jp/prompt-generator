@@ -595,7 +595,9 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
             note: `Card: ${card.name}`,
             cardId: card.id,
             cardName: card.name,
-            cardPrompt: prompt
+            cardPrompt: prompt,
+            cardRefs: card.words.map(ref => ({ ...ref })),
+            cardDisabledWordIds: []
         };
         addWord(pseudoWord, card.type, 1.0);
     };
@@ -614,7 +616,9 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
             note: `Card: ${card.name}`,
             cardId: card.id,
             cardName: card.name,
-            cardPrompt: finalValue
+            cardPrompt: finalValue,
+            cardRefs: card.words.map(ref => ({ ...ref })),
+            cardDisabledWordIds: []
         };
         addWord(pseudoWord, card.type, 1.0);
         setIsTemplateOpen(false);

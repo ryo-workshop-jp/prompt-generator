@@ -4,7 +4,7 @@ import { DndContext, KeyboardSensor, PointerSensor, closestCenter, useSensor, us
 import { arrayMove, SortableContext, rectSortingStrategy, sortableKeyboardCoordinates, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { usePrompt } from '../context/usePrompt';
-import type { SelectedWord, PromptStrength, PromptFavorite } from '../types';
+import type { SelectedWord, PromptStrength, PromptFavorite, CardWordRef } from '../types';
 import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon, ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid';
 
@@ -42,9 +42,32 @@ const expandRepeatedWords = (words: SelectedWord[]) => {
     return expanded;
 };
 
+const formatCardPrompt = (refs: CardWordRef[], disabledWordIds: string[] = []) => {
+    const disabled = new Set(disabledWordIds);
+    const parts: string[] = [];
+    refs.forEach(ref => {
+        if (disabled.has(ref.wordId)) return;
+        const value = ref.value_en ?? ref.label_jp ?? ref.wordId;
+        const strength = typeof ref.strength === 'number' ? ref.strength : 1.0;
+        const token = strength === 1.0 ? value : `(${value}:${strength.toFixed(1)})`;
+        const repeat = typeof ref.repeat === 'number' && ref.repeat > 1 ? Math.max(1, Math.round(ref.repeat)) : 1;
+        for (let i = 0; i < repeat; i += 1) {
+            parts.push(token);
+        }
+    });
+    return parts.join(', ');
+};
+
+const getCardTokenPrompt = (word: SelectedWord) => {
+    if (word.cardRefs && word.cardRefs.length > 0) {
+        return formatCardPrompt(word.cardRefs, word.cardDisabledWordIds ?? []);
+    }
+    return word.cardPrompt ?? word.value_en;
+};
+
 const formatPrompt = (words: SelectedWord[]) => {
     return expandRepeatedWords(words).map(({ word }) => {
-        const val = word.cardId ? `(${word.cardPrompt ?? word.value_en})` : word.value_en;
+        const val = word.cardId ? `(${getCardTokenPrompt(word)})` : word.value_en;
         if (word.cardId) return val;
         if (word.strength === 1.0) return val;
         return `(${val}:${word.strength.toFixed(1)})`;
@@ -108,10 +131,13 @@ const Chip: React.FC<{
     onHoverEnd?: () => void;
     onHighlightStart?: (id: string, type: 'positive' | 'negative') => void;
     onHighlightEnd?: () => void;
-}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd, onHighlightStart, onHighlightEnd }) => {
+    onCardEdit?: (word: SelectedWord, type: 'positive' | 'negative') => void;
+}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd, onHighlightStart, onHighlightEnd, onCardEdit }) => {
     const { removeWord, updateWordStrength } = usePrompt();
     const chipRef = useRef<HTMLDivElement | null>(null);
     const isCardToken = !!word.cardId;
+    const offCount = (word.cardDisabledWordIds ?? []).length;
+    const hasCardOff = isCardToken && offCount > 0;
 
     const handleMouseEnter = () => {
         if (stepperDisplay !== 'above' || isCardToken) return;
@@ -127,13 +153,25 @@ const Chip: React.FC<{
             onMouseLeave={stepperDisplay === 'above' ? onHoverEnd : undefined}
             onPointerEnter={() => onHighlightStart?.(word.id, type)}
             onPointerLeave={onHighlightEnd}
-            className={`relative inline-flex items-center gap-2 pl-3 pr-1 py-1 rounded-full text-xs font-medium border group transition-all animate-fadeIn ${type === 'positive'
-            ? 'bg-cyan-950/40 border-cyan-800 text-cyan-300'
-            : 'bg-rose-950/40 border-rose-800 text-rose-300'
-            }`}>
+            className={`relative inline-flex items-center gap-2 pl-3 pr-1 py-1 rounded-full text-xs font-medium border group transition-all animate-fadeIn ${hasCardOff
+                ? 'bg-amber-950/40 border-amber-600/70 text-amber-200'
+                : type === 'positive'
+                    ? 'bg-cyan-950/40 border-cyan-800 text-cyan-300'
+                    : 'bg-rose-950/40 border-rose-800 text-rose-300'
+                }`}>
             <span>{word.label_jp}</span>
             {isCardToken && (
-                <span className="text-[10px] uppercase text-amber-300/80 border border-amber-400/30 px-1 rounded">Card</span>
+                <button
+                    type="button"
+                    onClick={() => onCardEdit?.(word, type)}
+                    className={`text-[10px] uppercase px-1 rounded border ${hasCardOff
+                        ? 'text-amber-200 border-amber-300/70 bg-amber-900/40'
+                        : 'text-amber-300/80 border-amber-400/30 hover:text-amber-200 hover:border-amber-300/50'
+                        }`}
+                    title="カード内容を調整"
+                >
+                    {hasCardOff ? `Card (${offCount} off)` : 'Card'}
+                </button>
             )}
             {stepperDisplay === 'inside' && !isCardToken && (
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
@@ -161,7 +199,8 @@ const SortableChip: React.FC<{
     onHoverEnd?: () => void;
     onHighlightStart?: (id: string, type: 'positive' | 'negative') => void;
     onHighlightEnd?: () => void;
-}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd, onHighlightStart, onHighlightEnd }) => {
+    onCardEdit?: (word: SelectedWord, type: 'positive' | 'negative') => void;
+}> = ({ word, type, stepperDisplay, onHoverStart, onHoverEnd, onHighlightStart, onHighlightEnd, onCardEdit }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
         id: `${type}:${word.id}`,
         data: { type }
@@ -182,6 +221,7 @@ const SortableChip: React.FC<{
                 onHoverEnd={onHoverEnd}
                 onHighlightStart={onHighlightStart}
                 onHighlightEnd={onHighlightEnd}
+                onCardEdit={onCardEdit}
             />
             <button
                 type="button"
@@ -197,7 +237,7 @@ const SortableChip: React.FC<{
 };
 
 const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) => {
-    const { selectedPositive, selectedNegative, favorites, qualityTemplates, templates, nsfwEnabled, folders, addPromptFavorite, addQualityTemplate, addCard, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, updateQualityTemplateName, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength } = usePrompt();
+    const { selectedPositive, selectedNegative, favorites, qualityTemplates, templates, nsfwEnabled, folders, addPromptFavorite, addQualityTemplate, addCard, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, updateQualityTemplateName, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength, updateSelectedWord } = usePrompt();
     const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | 'both' | null>(null);
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
     const [qualityType, setQualityType] = useState<'positive' | 'negative' | null>(null);
@@ -216,6 +256,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
     const [editingQualityId, setEditingQualityId] = useState<string | null>(null);
     const [editingQualityName, setEditingQualityName] = useState('');
     const [highlightedPrompt, setHighlightedPrompt] = useState<{ id: string; type: 'positive' | 'negative' } | null>(null);
+    const [cardEditorTarget, setCardEditorTarget] = useState<{ id: string; type: 'positive' | 'negative' } | null>(null);
     const [stepperDisplay, setStepperDisplay] = useState<'inside' | 'above'>(() => {
         const settings = readUiSettings();
         return settings.stepperDisplay ?? 'above';
@@ -238,11 +279,16 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         const source = hoveredStrength.type === 'positive' ? selectedPositive : selectedNegative;
         return source.find(word => word.id === hoveredStrength.id) ?? null;
     }, [hoveredStrength, selectedPositive, selectedNegative]);
+    const editingCardWord = useMemo(() => {
+        if (!cardEditorTarget) return null;
+        const source = cardEditorTarget.type === 'positive' ? selectedPositive : selectedNegative;
+        return source.find(word => word.id === cardEditorTarget.id) ?? null;
+    }, [cardEditorTarget, selectedPositive, selectedNegative]);
 
     const renderPromptTokens = (words: SelectedWord[], highlightId?: string) => {
         const expanded = expandRepeatedWords(words);
         return expanded.map(({ word, instance }, index) => {
-            const base = word.cardPrompt ?? word.value_en;
+            const base = word.cardId ? getCardTokenPrompt(word) : word.value_en;
             const value = word.cardId
                 ? `(${base})`
                 : (word.strength === 1.0 ? base : `(${base}:${word.strength.toFixed(1)})`);
@@ -263,6 +309,13 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             setHoveredStrength(null);
         }
     }, [hoveredStrength, hoveredWord]);
+
+    useEffect(() => {
+        if (!cardEditorTarget) return;
+        if (!editingCardWord) {
+            setCardEditorTarget(null);
+        }
+    }, [cardEditorTarget, editingCardWord]);
 
     useEffect(() => {
         const handleUiUpdate = (event: Event) => {
@@ -523,6 +576,18 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         reorderSelected(type, arrayMove(source, oldIndex, newIndex));
     };
 
+    const toggleCardWordEnabled = (target: SelectedWord, type: 'positive' | 'negative', wordId: string) => {
+        const current = new Set(target.cardDisabledWordIds ?? []);
+        if (current.has(wordId)) {
+            current.delete(wordId);
+        } else {
+            current.add(wordId);
+        }
+        updateSelectedWord(target.id, type, {
+            cardDisabledWordIds: Array.from(current)
+        });
+    };
+
     const modalRoot = typeof document !== 'undefined' ? document.body : null;
     const renderModal = (node: React.ReactNode) => {
         if (!modalRoot) return null;
@@ -660,6 +725,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                         onHoverEnd={stepperDisplay === 'above' ? handleHoverEnd : undefined}
                                         onHighlightStart={(id, type) => setHighlightedPrompt({ id, type })}
                                         onHighlightEnd={() => setHighlightedPrompt(null)}
+                                        onCardEdit={(target, kind) => setCardEditorTarget({ id: target.id, type: kind })}
                                     />
                                 ))}
                             </div>
@@ -752,6 +818,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                         onHoverEnd={stepperDisplay === 'above' ? handleHoverEnd : undefined}
                                         onHighlightStart={(id, type) => setHighlightedPrompt({ id, type })}
                                         onHighlightEnd={() => setHighlightedPrompt(null)}
+                                        onCardEdit={(target, kind) => setCardEditorTarget({ id: target.id, type: kind })}
                                     />
                                 ))}
                             </div>
@@ -1189,6 +1256,62 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                 </div>
             )}
 
+            {cardEditorTarget && editingCardWord && renderModal(
+                <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-lg shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                        <div className="flex items-center justify-between mb-4">
+                            <div>
+                                <h3 className="text-lg font-bold text-white">カード内プロンプトの一時無効</h3>
+                                <div className="text-xs text-slate-500">{editingCardWord.label_jp}</div>
+                            </div>
+                            <button onClick={() => setCardEditorTarget(null)} className="text-slate-400 hover:text-white text-xl">&times;</button>
+                        </div>
+                        <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-2 pr-1">
+                            {(!editingCardWord.cardRefs || editingCardWord.cardRefs.length === 0) && (
+                                <div className="text-sm text-slate-500">このカードには調整可能な語句がありません。</div>
+                            )}
+                            {(editingCardWord.cardRefs ?? []).map(ref => {
+                                const isDisabled = (editingCardWord.cardDisabledWordIds ?? []).includes(ref.wordId);
+                                const label = ref.label_jp ?? ref.value_en ?? ref.wordId;
+                                return (
+                                    <button
+                                        key={`${editingCardWord.id}:${ref.wordId}`}
+                                        type="button"
+                                        onClick={() => toggleCardWordEnabled(editingCardWord, cardEditorTarget.type, ref.wordId)}
+                                        className={`w-full text-left rounded-lg border px-3 py-2 transition-colors ${isDisabled
+                                            ? 'border-slate-700 bg-slate-950 text-slate-500'
+                                            : 'border-cyan-500/40 bg-cyan-500/10 text-slate-100'
+                                            }`}
+                                    >
+                                        <div className="flex items-center justify-between">
+                                            <span className="text-sm font-semibold">{label}</span>
+                                            <span className={`text-[10px] px-2 py-0.5 rounded ${isDisabled ? 'bg-slate-800 text-slate-400' : 'bg-cyan-900/60 text-cyan-200'}`}>
+                                                {isDisabled ? 'OFF' : 'ON'}
+                                            </span>
+                                        </div>
+                                        {ref.value_en && (
+                                            <div className="text-[10px] mt-1 opacity-80">{ref.value_en}</div>
+                                        )}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                        <div className="flex items-center justify-between mt-4 gap-2">
+                            <div className="text-[10px] text-slate-500">
+                                現在の出力: {getCardTokenPrompt(editingCardWord) || '(empty)'}
+                            </div>
+                            <button
+                                type="button"
+                                onClick={() => setCardEditorTarget(null)}
+                                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {expandType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-3xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
@@ -1222,6 +1345,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                                 onHoverEnd={stepperDisplay === 'above' ? handleHoverEnd : undefined}
                                                 onHighlightStart={(id, type) => setHighlightedPrompt({ id, type })}
                                                 onHighlightEnd={() => setHighlightedPrompt(null)}
+                                                onCardEdit={(target, kind) => setCardEditorTarget({ id: target.id, type: kind })}
                                             />
                                         ))}
                                     </div>

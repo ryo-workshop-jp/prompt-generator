@@ -19,6 +19,8 @@ export interface WordItem {
     cardId?: string;
     cardName?: string;
     cardPrompt?: string;
+    cardRefs?: CardWordRef[];
+    cardDisabledWordIds?: string[];
 }
 
 export interface TemplateOption {
