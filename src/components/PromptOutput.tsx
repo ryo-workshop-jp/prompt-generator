@@ -868,6 +868,15 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                 <div className="flex justify-end -mb-1 gap-2">
                     <button
                         type="button"
+                        onClick={() => setHistoryType('both')}
+                        className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
+                        title="Copy Both の履歴を開く"
+                    >
+                        <ClockIcon className="w-4 h-4" /> 履歴
+                        <span className="text-[10px] text-emerald-100/80">{historyCounts.both}</span>
+                    </button>
+                    <button
+                        type="button"
                         onClick={() => handleCopy(buildCombinedCopyText(), 'both')}
                         className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
                         title="Positive/Negative をまとめてコピー"
@@ -877,15 +886,6 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 <DocumentDuplicateIcon className="w-4 h-4" /> Copy Both
                             </>
                         )}
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => setHistoryType('both')}
-                        className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
-                        title="Copy Both の履歴を開く"
-                    >
-                        <ClockIcon className="w-4 h-4" /> 履歴
-                        <span className="text-[10px] text-emerald-100/80">{historyCounts.both}</span>
                     </button>
                 </div>
             )}
@@ -925,6 +925,15 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             <XMarkIcon className="w-4 h-4" /> Clear
                         </button>
                         <button
+                            type="button"
+                            onClick={() => setHistoryType('pos')}
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-colors"
+                            title="Positive の履歴を開く"
+                        >
+                            <ClockIcon className="w-4 h-4" /> 履歴
+                            <span className="text-[10px] text-cyan-100/80">{historyCounts.pos}</span>
+                        </button>
+                        <button
                             onClick={() => handleCopy(buildCopyText('positive', posString), 'pos')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-sm px-3 rounded-md border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-colors"
                         >
@@ -933,15 +942,6 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                     <DocumentDuplicateIcon className="w-4 h-4" /> Copy
                                 </>
                             )}
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => setHistoryType('pos')}
-                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-colors"
-                            title="Positive の履歴を開く"
-                        >
-                            <ClockIcon className="w-4 h-4" /> 履歴
-                            <span className="text-[10px] text-cyan-100/80">{historyCounts.pos}</span>
                         </button>
                     </div>
                 </div>
@@ -1027,6 +1027,15 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             <XMarkIcon className="w-4 h-4" /> Clear
                         </button>
                         <button
+                            type="button"
+                            onClick={() => setHistoryType('neg')}
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 transition-colors"
+                            title="Negative の履歴を開く"
+                        >
+                            <ClockIcon className="w-4 h-4" /> 履歴
+                            <span className="text-[10px] text-rose-100/80">{historyCounts.neg}</span>
+                        </button>
+                        <button
                             onClick={() => handleCopy(buildCopyText('negative', negString), 'neg')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-sm px-3 rounded-md border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 transition-colors"
                         >
@@ -1035,15 +1044,6 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                     <DocumentDuplicateIcon className="w-4 h-4" /> Copy
                                 </>
                             )}
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => setHistoryType('neg')}
-                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 transition-colors"
-                            title="Negative の履歴を開く"
-                        >
-                            <ClockIcon className="w-4 h-4" /> 履歴
-                            <span className="text-[10px] text-rose-100/80">{historyCounts.neg}</span>
                         </button>
                     </div>
                 </div>
