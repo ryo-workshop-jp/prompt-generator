@@ -5,10 +5,36 @@ import { arrayMove, SortableContext, rectSortingStrategy, sortableKeyboardCoordi
 import { CSS } from '@dnd-kit/utilities';
 import { usePrompt } from '../context/usePrompt';
 import type { SelectedWord, PromptStrength, PromptFavorite, CardWordRef } from '../types';
-import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon, ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon, ChevronRightIcon, ChevronDownIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid';
 
 const UI_STORAGE_KEY = 'promptgen:ui';
+const COPY_HISTORY_KEY = 'promptgen:copy-history';
+const COPY_HISTORY_LIMIT = 50;
+
+type CopyHistoryEntry = {
+    id: string;
+    type: 'pos' | 'neg' | 'both';
+    text: string;
+    createdAt: number;
+    positive: SelectedWord[];
+    negative: SelectedWord[];
+    qualitySelection: {
+        positive: string | null;
+        negative: string | null;
+    };
+};
+
+type CopyHistoryType = 'pos' | 'neg' | 'both';
+
+type RestoreSnapshot = {
+    positive: SelectedWord[];
+    negative: SelectedWord[];
+    qualitySelection: {
+        positive: string | null;
+        negative: string | null;
+    };
+};
 
 const readUiSettings = () => {
     try {
@@ -23,6 +49,70 @@ const readUiSettings = () => {
     } catch (e) {
         console.warn('Failed to load UI settings.', e);
         return {};
+    }
+};
+
+const cloneSelectedWords = (words: SelectedWord[], type: 'positive' | 'negative') => {
+    return words.map(word => ({
+        ...word,
+        type,
+        strength: typeof word.strength === 'number' ? word.strength : 1.0
+    }));
+};
+
+const normalizeHistoryWords = (input: unknown, type: 'positive' | 'negative') => {
+    if (!Array.isArray(input)) return [];
+    return input.reduce<SelectedWord[]>((acc, entry) => {
+        if (!entry || typeof entry !== 'object') return acc;
+        const candidate = entry as SelectedWord;
+        if (!candidate.id) return acc;
+        acc.push({
+            ...candidate,
+            type,
+            strength: typeof candidate.strength === 'number' ? candidate.strength : 1.0
+        });
+        return acc;
+    }, []);
+};
+
+const readCopyHistory = () => {
+    try {
+        if (typeof window === 'undefined') return [];
+        const raw = localStorage.getItem(COPY_HISTORY_KEY);
+        if (!raw) return [];
+        const parsed = JSON.parse(raw) as unknown;
+        if (!Array.isArray(parsed)) return [];
+        return parsed.reduce<CopyHistoryEntry[]>((acc, entry) => {
+            if (!entry || typeof entry !== 'object') return acc;
+            const candidate = entry as Partial<CopyHistoryEntry>;
+            if (!candidate.id || !candidate.text) return acc;
+            if (candidate.type !== 'pos' && candidate.type !== 'neg' && candidate.type !== 'both') return acc;
+            const qualitySelection = candidate.qualitySelection ?? { positive: null, negative: null };
+            acc.push({
+                id: candidate.id,
+                type: candidate.type,
+                text: candidate.text,
+                createdAt: typeof candidate.createdAt === 'number' ? candidate.createdAt : Date.now(),
+                positive: normalizeHistoryWords(candidate.positive, 'positive'),
+                negative: normalizeHistoryWords(candidate.negative, 'negative'),
+                qualitySelection: {
+                    positive: qualitySelection.positive ?? null,
+                    negative: qualitySelection.negative ?? null
+                }
+            });
+            return acc;
+        }, []).slice(0, COPY_HISTORY_LIMIT);
+    } catch (e) {
+        console.warn('Failed to load copy history.', e);
+        return [];
+    }
+};
+
+const writeCopyHistory = (entries: CopyHistoryEntry[]) => {
+    try {
+        localStorage.setItem(COPY_HISTORY_KEY, JSON.stringify(entries.slice(0, COPY_HISTORY_LIMIT)));
+    } catch (e) {
+        console.warn('Failed to save copy history.', e);
     }
 };
 
@@ -237,8 +327,35 @@ const SortableChip: React.FC<{
 };
 
 const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) => {
-    const { selectedPositive, selectedNegative, favorites, qualityTemplates, templates, nsfwEnabled, folders, addPromptFavorite, addQualityTemplate, addCard, applyPromptFavorite, removePromptFavorite, removeQualityTemplate, updateQualityTemplateName, clearPositive, clearNegative, reorderSelected, selectQualityTemplate, selectedQualityTemplateIds, updateWordStrength, updateSelectedWord } = usePrompt();
+    const {
+        selectedPositive,
+        selectedNegative,
+        favorites,
+        qualityTemplates,
+        templates,
+        nsfwEnabled,
+        folders,
+        addPromptFavorite,
+        addQualityTemplate,
+        addCard,
+        applyPromptFavorite,
+        removePromptFavorite,
+        removeQualityTemplate,
+        updateQualityTemplateName,
+        clearPositive,
+        clearNegative,
+        reorderSelected,
+        selectQualityTemplate,
+        selectedQualityTemplateIds,
+        updateWordStrength,
+        updateSelectedWord,
+        setSelectedWords
+    } = usePrompt();
     const [copyFeedback, setCopyFeedback] = useState<'pos' | 'neg' | 'both' | null>(null);
+    const [copyHistory, setCopyHistory] = useState<CopyHistoryEntry[]>(() => readCopyHistory());
+    const [historyType, setHistoryType] = useState<CopyHistoryType | null>(null);
+    const [restoreToast, setRestoreToast] = useState<string | null>(null);
+    const [restoreUndoSnapshot, setRestoreUndoSnapshot] = useState<RestoreSnapshot | null>(null);
     const [saveType, setSaveType] = useState<'positive' | 'negative' | null>(null);
     const [qualityType, setQualityType] = useState<'positive' | 'negative' | null>(null);
     const [loadType, setLoadType] = useState<'positive' | 'negative' | null>(null);
@@ -271,6 +388,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
     });
     const [hoveredStrength, setHoveredStrength] = useState<{ id: string; type: 'positive' | 'negative'; rect: DOMRect } | null>(null);
     const hoverTimeoutRef = useRef<number | null>(null);
+    const restoreToastTimerRef = useRef<number | null>(null);
 
     const posString = formatPrompt(selectedPositive);
     const negString = formatPrompt(selectedNegative);
@@ -345,6 +463,15 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             setHoveredStrength(null);
         }
     }, [stepperDisplay]);
+
+    useEffect(() => {
+        return () => {
+            if (restoreToastTimerRef.current) {
+                window.clearTimeout(restoreToastTimerRef.current);
+            }
+        };
+    }, []);
+
     useEffect(() => {
         if (!qualityType) {
             cancelEditQualityName();
@@ -432,6 +559,18 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         });
     }, [folderSearch, folderTreeOptions, expandedFolderIds]);
 
+    const historyCounts = useMemo(() => {
+        return copyHistory.reduce<{ pos: number; neg: number; both: number }>((acc, entry) => {
+            acc[entry.type] += 1;
+            return acc;
+        }, { pos: 0, neg: 0, both: 0 });
+    }, [copyHistory]);
+
+    const filteredHistory = useMemo(() => {
+        if (!historyType) return [];
+        return copyHistory.filter(entry => entry.type === historyType);
+    }, [copyHistory, historyType]);
+
     const getQualityPrompt = (type: 'positive' | 'negative') => {
         const selectedId = selectedQualityTemplateIds[type];
         if (!selectedId) return '';
@@ -497,8 +636,94 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         setCardTemplateIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
     };
 
-    const handleCopy = (text: string, type: 'pos' | 'neg' | 'both') => {
+    const clearRestoreToast = () => {
+        setRestoreToast(null);
+        setRestoreUndoSnapshot(null);
+        if (restoreToastTimerRef.current) {
+            window.clearTimeout(restoreToastTimerRef.current);
+            restoreToastTimerRef.current = null;
+        }
+    };
+
+    const showRestoreToast = (type: CopyHistoryType) => {
+        const message = type === 'both'
+            ? 'Positive/Negative を履歴から復元しました'
+            : type === 'pos'
+                ? 'Positive を履歴から復元しました'
+                : 'Negative を履歴から復元しました';
+        setRestoreToast(message);
+        if (restoreToastTimerRef.current) {
+            window.clearTimeout(restoreToastTimerRef.current);
+        }
+        restoreToastTimerRef.current = window.setTimeout(() => {
+            clearRestoreToast();
+        }, 5000);
+    };
+
+    const addHistoryEntry = (text: string, type: CopyHistoryType) => {
+        const payload: CopyHistoryEntry = {
+            id: `${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+            type,
+            text,
+            createdAt: Date.now(),
+            positive: cloneSelectedWords(selectedPositive, 'positive'),
+            negative: cloneSelectedWords(selectedNegative, 'negative'),
+            qualitySelection: { ...selectedQualityTemplateIds }
+        };
+        setCopyHistory(prev => {
+            const deduped = prev.filter(item => !(item.type === payload.type && item.text === payload.text));
+            const next = [payload, ...deduped].slice(0, COPY_HISTORY_LIMIT);
+            writeCopyHistory(next);
+            return next;
+        });
+    };
+
+    const removeHistoryEntry = (id: string) => {
+        setCopyHistory(prev => {
+            const next = prev.filter(entry => entry.id !== id);
+            writeCopyHistory(next);
+            return next;
+        });
+    };
+
+    const clearHistoryEntries = (type: CopyHistoryType) => {
+        setCopyHistory(prev => {
+            const next = prev.filter(entry => entry.type !== type);
+            writeCopyHistory(next);
+            return next;
+        });
+    };
+
+    const applyHistoryEntry = (entry: CopyHistoryEntry) => {
+        setRestoreUndoSnapshot({
+            positive: cloneSelectedWords(selectedPositive, 'positive'),
+            negative: cloneSelectedWords(selectedNegative, 'negative'),
+            qualitySelection: { ...selectedQualityTemplateIds }
+        });
+        if (entry.type === 'pos' || entry.type === 'both') {
+            setSelectedWords('positive', cloneSelectedWords(entry.positive, 'positive'));
+            selectQualityTemplate('positive', entry.qualitySelection.positive ?? null);
+        }
+        if (entry.type === 'neg' || entry.type === 'both') {
+            setSelectedWords('negative', cloneSelectedWords(entry.negative, 'negative'));
+            selectQualityTemplate('negative', entry.qualitySelection.negative ?? null);
+        }
+        setHistoryType(null);
+        showRestoreToast(entry.type);
+    };
+
+    const undoRestore = () => {
+        if (!restoreUndoSnapshot) return;
+        setSelectedWords('positive', cloneSelectedWords(restoreUndoSnapshot.positive, 'positive'));
+        setSelectedWords('negative', cloneSelectedWords(restoreUndoSnapshot.negative, 'negative'));
+        selectQualityTemplate('positive', restoreUndoSnapshot.qualitySelection.positive);
+        selectQualityTemplate('negative', restoreUndoSnapshot.qualitySelection.negative);
+        clearRestoreToast();
+    };
+
+    const handleCopy = (text: string, type: CopyHistoryType) => {
         navigator.clipboard.writeText(text);
+        addHistoryEntry(text, type);
         setCopyFeedback(type);
         setTimeout(() => setCopyFeedback(null), 2000);
     };
@@ -613,6 +838,13 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         }, 120);
     };
 
+    const getHistoryLabel = (type: CopyHistoryType | null) => {
+        if (type === 'pos') return 'Positive';
+        if (type === 'neg') return 'Negative';
+        if (type === 'both') return 'Copy Both';
+        return '';
+    };
+
     return (
         <div className="h-full flex flex-col p-4 gap-3">
             {stepperDisplay === 'above' && hoveredWord && hoveredStrength && renderModal(
@@ -633,11 +865,11 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                 </div>
             )}
             {combinedCopyEnabled && (
-                <div className="flex justify-end -mb-1">
+                <div className="flex justify-end -mb-1 gap-2">
                     <button
                         type="button"
                         onClick={() => handleCopy(buildCombinedCopyText(), 'both')}
-                        className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
+                        className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
                         title="Positive/Negative をまとめてコピー"
                     >
                         {copyFeedback === 'both' ? <span className="text-green-300">Copied!</span> : (
@@ -645,6 +877,15 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 <DocumentDuplicateIcon className="w-4 h-4" /> Copy Both
                             </>
                         )}
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => setHistoryType('both')}
+                        className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
+                        title="Copy Both の履歴を開く"
+                    >
+                        <ClockIcon className="w-4 h-4" /> 履歴
+                        <span className="text-[10px] text-emerald-100/80">{historyCounts.both}</span>
                     </button>
                 </div>
             )}
@@ -658,13 +899,13 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                     <div className="flex items-center gap-2">
                         <button
                             onClick={() => openSaveModal('positive')}
-                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
                             <BookmarkIcon className="w-4 h-4" /> 保存
                         </button>
                         <button
                             onClick={() => setQualityType('positive')}
-                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
                             <Bars3Icon className="w-4 h-4" /> Quality
                             {getQualityName('positive') && (
@@ -673,25 +914,34 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         </button>
                         <button
                             onClick={() => setLoadType('positive')}
-                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
                             <BookmarkIcon className="w-4 h-4" /> Load
                         </button>
                         <button
                             onClick={clearPositive}
-                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
                             <XMarkIcon className="w-4 h-4" /> Clear
                         </button>
                         <button
                             onClick={() => handleCopy(buildCopyText('positive', posString), 'pos')}
-                            className="flex items-center gap-1 text-sm px-3 py-1.5 rounded-md border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-sm px-3 rounded-md border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-colors"
                         >
                             {copyFeedback === 'pos' ? <span className="text-green-300">Copied!</span> : (
                                 <>
                                     <DocumentDuplicateIcon className="w-4 h-4" /> Copy
                                 </>
                             )}
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => setHistoryType('pos')}
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-colors"
+                            title="Positive の履歴を開く"
+                        >
+                            <ClockIcon className="w-4 h-4" /> 履歴
+                            <span className="text-[10px] text-cyan-100/80">{historyCounts.pos}</span>
                         </button>
                     </div>
                 </div>
@@ -744,20 +994,20 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             {/* Negative Section */}
             <div className="flex-1 flex flex-col gap-2 border-l border-slate-800 pl-4">
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <h3 className="text-sm font-bold text-rose-400 uppercase tracking-wider">Negative Prompt</h3>
-                        <span className="text-[10px] text-slate-500">(右クリック / Shift+クリックで登録)</span>
+                    <div className="flex items-center gap-1">
+                        <h3 className="text-sm font-bold text-rose-400 uppercase tracking-wider whitespace-nowrap">Negative Prompt</h3>
+                        <span className="text-[10px] text-slate-500 whitespace-nowrap">(右クリック / Shift+クリックで登録)</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <button
                             onClick={() => openSaveModal('negative')}
-                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
                             <BookmarkIcon className="w-4 h-4" /> 保存
                         </button>
                         <button
                             onClick={() => setQualityType('negative')}
-                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
                             <Bars3Icon className="w-4 h-4" /> Quality
                             {getQualityName('negative') && (
@@ -766,25 +1016,34 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         </button>
                         <button
                             onClick={() => setLoadType('negative')}
-                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
                             <BookmarkIcon className="w-4 h-4" /> Load
                         </button>
                         <button
                             onClick={clearNegative}
-                            className="flex items-center gap-1 text-xs px-2 py-1 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
                             <XMarkIcon className="w-4 h-4" /> Clear
                         </button>
                         <button
                             onClick={() => handleCopy(buildCopyText('negative', negString), 'neg')}
-                            className="flex items-center gap-1 text-sm px-3 py-1.5 rounded-md border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 transition-colors"
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-sm px-3 rounded-md border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 transition-colors"
                         >
                             {copyFeedback === 'neg' ? <span className="text-green-300">Copied!</span> : (
                                 <>
                                     <DocumentDuplicateIcon className="w-4 h-4" /> Copy
                                 </>
                             )}
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => setHistoryType('neg')}
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 transition-colors"
+                            title="Negative の履歴を開く"
+                        >
+                            <ClockIcon className="w-4 h-4" /> 履歴
+                            <span className="text-[10px] text-rose-100/80">{historyCounts.neg}</span>
                         </button>
                     </div>
                 </div>
@@ -834,6 +1093,79 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                 </div>
             </div>
             </div>
+
+            {historyType && renderModal(
+                <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-3xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                        <h3 className="text-lg font-bold mb-4 text-white">{getHistoryLabel(historyType)} 履歴</h3>
+                        <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-3 pr-1">
+                            {filteredHistory.length === 0 && (
+                                <div className="text-sm text-slate-500">履歴はありません。</div>
+                            )}
+                            {filteredHistory.map(entry => {
+                                const typeClass = entry.type === 'both'
+                                    ? 'text-emerald-300 bg-emerald-900/40 border-emerald-500/40'
+                                    : entry.type === 'pos'
+                                        ? 'text-cyan-300 bg-cyan-900/40 border-cyan-500/40'
+                                        : 'text-rose-300 bg-rose-900/40 border-rose-500/40';
+                                const typeLabel = entry.type === 'both'
+                                    ? 'Both'
+                                    : entry.type === 'pos'
+                                        ? 'Positive'
+                                        : 'Negative';
+                                return (
+                                    <div
+                                        key={entry.id}
+                                        className="border border-slate-800 rounded-xl p-3 hover:border-amber-500/40 hover:bg-slate-900 transition-all flex items-start justify-between gap-3"
+                                    >
+                                        <button
+                                            type="button"
+                                            onClick={() => applyHistoryEntry(entry)}
+                                            className="text-left flex-1"
+                                        >
+                                            <div className="flex items-center gap-2">
+                                                <span className={`text-[10px] px-2 py-0.5 rounded border ${typeClass}`}>{typeLabel}</span>
+                                                <span className="text-[10px] text-slate-500">{new Date(entry.createdAt).toLocaleString('ja-JP', { hour12: false })}</span>
+                                            </div>
+                                            <div className="text-[11px] text-slate-300 mt-2 whitespace-pre-wrap break-words">
+                                                {entry.text || '-'}
+                                            </div>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => removeHistoryEntry(entry.id)}
+                                            className="text-slate-500 hover:text-rose-400"
+                                            title="Delete"
+                                        >
+                                            <TrashIcon className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        <div className="flex items-center justify-between mt-4">
+                            <button
+                                type="button"
+                                onClick={() => clearHistoryEntries(historyType)}
+                                disabled={filteredHistory.length === 0}
+                                className={`px-4 py-2 rounded-lg ${filteredHistory.length === 0
+                                    ? 'bg-slate-800 text-slate-600 cursor-not-allowed'
+                                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                                    }`}
+                            >
+                                履歴をクリア
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => setHistoryType(null)}
+                                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {saveType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
@@ -1359,6 +1691,33 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
                                 Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {restoreToast && renderModal(
+                <div className="fixed right-4 bottom-4 z-[220] max-w-md rounded-xl border border-emerald-500/40 bg-slate-900/95 px-4 py-3 shadow-2xl">
+                    <div className="flex items-center gap-3">
+                        <div className="text-sm text-emerald-200">{restoreToast}</div>
+                        <div className="ml-auto flex items-center gap-2">
+                            {restoreUndoSnapshot && (
+                                <button
+                                    type="button"
+                                    onClick={undoRestore}
+                                    className="px-2 py-1 rounded bg-emerald-600 text-white text-xs hover:bg-emerald-500"
+                                >
+                                    元に戻す
+                                </button>
+                            )}
+                            <button
+                                type="button"
+                                onClick={clearRestoreToast}
+                                className="text-slate-400 hover:text-white"
+                                title="Close"
+                            >
+                                <XMarkIcon className="w-4 h-4" />
                             </button>
                         </div>
                     </div>

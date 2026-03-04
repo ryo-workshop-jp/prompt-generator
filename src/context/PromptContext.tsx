@@ -462,6 +462,19 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         }
     };
 
+    const setSelectedWords = (type: 'positive' | 'negative', words: SelectedWord[]) => {
+        const normalized = words.map(word => ({
+            ...word,
+            type,
+            strength: typeof word.strength === 'number' ? word.strength : 1.0
+        }));
+        if (type === 'positive') {
+            setSelectedPositive(normalized);
+        } else {
+            setSelectedNegative(normalized);
+        }
+    };
+
     const toggleFavorite = (id: string) => {
         updateData(prev => ({
             ...prev,
@@ -709,6 +722,7 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             removeWord,
             updateWordStrength,
             updateSelectedWord,
+            setSelectedWords,
             toggleFavorite,
             addPromptFavorite,
             applyPromptFavorite,

@@ -1,4 +1,5 @@
 ﻿import React, { useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { usePrompt } from '../context/usePrompt';
 import type { FolderItem } from '../types';
 import { ChevronDownIcon, ChevronRightIcon, FolderIcon, FolderOpenIcon, PlusIcon } from '@heroicons/react/24/outline';
@@ -20,6 +21,8 @@ const AddFolderModal: React.FC<{
     const [nsfw, setNsfw] = useState(false);
 
     if (!isOpen) return null;
+    const modalRoot = typeof document !== 'undefined' ? document.body : null;
+    if (!modalRoot) return null;
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -33,7 +36,7 @@ const AddFolderModal: React.FC<{
         onClose();
     };
 
-    return (
+    return createPortal(
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-sm shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <h3 className="text-lg font-bold mb-4 text-white">{title}</h3>
@@ -76,7 +79,8 @@ const AddFolderModal: React.FC<{
                     </div>
                 </form>
             </div>
-        </div>
+        </div>,
+        modalRoot
     );
 };
 

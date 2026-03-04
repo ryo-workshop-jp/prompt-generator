@@ -22,6 +22,7 @@ export interface PromptContextType {
     removeWord: (id: string, type: 'positive' | 'negative') => void;
     updateWordStrength: (id: string, type: 'positive' | 'negative', strength: PromptStrength) => void;
     updateSelectedWord: (id: string, type: 'positive' | 'negative', updates: Partial<SelectedWord>) => void;
+    setSelectedWords: (type: 'positive' | 'negative', words: SelectedWord[]) => void;
     toggleFavorite: (id: string) => void;
     addPromptFavorite: (name: string, type: 'positive' | 'negative', words: SelectedWord[], nsfw: boolean) => void;
     applyPromptFavorite: (favorite: PromptFavorite) => void;
