@@ -258,7 +258,7 @@ const Chip: React.FC<{
                         ? 'text-amber-200 border-amber-300/70 bg-amber-900/40'
                         : 'text-amber-300/80 border-amber-400/30 hover:text-amber-200 hover:border-amber-300/50'
                         }`}
-                    title="カード内容を調整"
+                    title="デッキ内容を調整"
                 >
                     {hasCardOff ? `Card (${offCount} off)` : 'Card'}
                 </button>
@@ -733,7 +733,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         const combinedLabels = source.map(word => word.label_jp).filter(Boolean);
         const trimmedName = favoriteName.trim();
         if (saveAsCard && !trimmedName) {
-            alert('カード名を入力してください。');
+            alert('デッキ名を入力してください。');
             return;
         }
         const name = saveAsCard ? trimmedName : (trimmedName || combinedLabels.join(' / ') || 'Favorite');
@@ -1182,7 +1182,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                     placeholder="(未入力の場合は自動生成)"
                                 />
                                 {saveAsCard && (
-                                    <div className="mt-1 text-[10px] text-amber-300">カード名は必須です。</div>
+                                    <div className="mt-1 text-[10px] text-amber-300">デッキ名は必須です。</div>
                                 )}
                             </div>
                             <label className="flex items-center gap-2 cursor-pointer">
@@ -1216,7 +1216,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                     }}
                                     className="rounded bg-slate-800 border-slate-600 text-amber-500 focus:ring-amber-500/50"
                                 />
-                                <span className="text-sm text-slate-300">カードとして保存</span>
+                                <span className="text-sm text-slate-300">デッキとして保存</span>
                             </label>
                             {saveAsCard && (
                                 <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-xs text-slate-400 flex flex-col gap-3">
@@ -1281,7 +1281,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             )}
                             <div className="text-xs text-slate-500">
                                 {(saveType === 'positive' ? selectedPositive.length : selectedNegative.length) === 0
-                                    ? '現在のプロンプトは空です。'
+                                    ? '編集中のプロンプトは空です。'
                                     : `選択語数: ${saveType === 'positive' ? selectedPositive.length : selectedNegative.length}`}
                             </div>
                             <div className="flex gap-2 pt-2">
@@ -1593,14 +1593,14 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-lg shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <div className="flex items-center justify-between mb-4">
                             <div>
-                                <h3 className="text-lg font-bold text-white">カード内プロンプトの一時無効</h3>
+                                <h3 className="text-lg font-bold text-white">デッキ内プロンプトの一時無効</h3>
                                 <div className="text-xs text-slate-500">{editingCardWord.label_jp}</div>
                             </div>
                             <button onClick={() => setCardEditorTarget(null)} className="text-slate-400 hover:text-white text-xl">&times;</button>
                         </div>
                         <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-2 pr-1">
                             {(!editingCardWord.cardRefs || editingCardWord.cardRefs.length === 0) && (
-                                <div className="text-sm text-slate-500">このカードには調整可能な語句がありません。</div>
+                                <div className="text-sm text-slate-500">このデッキには調整可能なカードがありません。</div>
                             )}
                             {(editingCardWord.cardRefs ?? []).map(ref => {
                                 const isDisabled = (editingCardWord.cardDisabledWordIds ?? []).includes(ref.wordId);
@@ -1630,7 +1630,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         </div>
                         <div className="flex items-center justify-between mt-4 gap-2">
                             <div className="text-[10px] text-slate-500">
-                                現在の出力: {getCardTokenPrompt(editingCardWord) || '(empty)'}
+                                現在の生成プロンプト: {getCardTokenPrompt(editingCardWord) || '(empty)'}
                             </div>
                             <button
                                 type="button"

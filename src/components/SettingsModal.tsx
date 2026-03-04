@@ -1,4 +1,4 @@
-﻿import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -211,7 +211,7 @@ const TemplateModal: React.FC<{
                                     value={newValue}
                                     onChange={(event) => setNewValue(event.target.value)}
                                     className="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
-                                    placeholder="出力語句（省略可）"
+                                    placeholder="生成プロンプト（省略可）"
                                 />
                                 <button
                                     type="button"
@@ -617,7 +617,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 
     const handleExportSelectedCards = () => {
         if (selectedCardFolderExportIds.length === 0 && selectedCardExportIds.length === 0) {
-            alert('出力するカードを選択してください。');
+            alert('Exportするデッキを選択してください。');
             return;
         }
         const isRootSelected = selectedCardFolderExportIds.includes('root');
@@ -660,7 +660,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 
     const handleExportSelectedTemplates = () => {
         if (selectedTemplateExportIds.length === 0) {
-            alert('出力する装飾を選択してください。');
+            alert('Exportする装飾を選択してください。');
             return;
         }
         const selected = templates.filter(template => selectedTemplateExportIds.includes(template.id));
@@ -669,7 +669,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 
     const handleExportSelectedWords = () => {
         if (selectedFolderExportIds.length === 0 && selectedWordExportIds.length === 0) {
-            alert('出力する語群を選択してください。');
+            alert('Exportするカードを選択してください。');
             return;
         }
         const isRootSelected = selectedFolderExportIds.includes('root');
@@ -700,7 +700,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 
     const handleExportSelectedFavorites = () => {
         if (selectedFavoriteExportIds.length === 0) {
-            alert('出力するお気に入りを選択してください。');
+            alert('Exportするお気に入りを選択してください。');
             return;
         }
         const selected = favorites.filter(fav => selectedFavoriteExportIds.includes(fav.id));
@@ -709,7 +709,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 
     const handleExportSelectedQuality = () => {
         if (selectedQualityExportIds.length === 0) {
-            alert('出力する品質テンプレートを選択してください。');
+            alert('Exportする品質テンプレートを選択してください。');
             return;
         }
         const selected = qualityTemplates.filter(template => selectedQualityExportIds.includes(template.id));
@@ -853,11 +853,11 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 const nextTemplates = (asArray(parsed?.templates) ?? []) as TemplateItem[];
                 const nextFavorites = (asArray(parsed?.favorites) ?? []) as PromptFavorite[];
                 const nextQuality = (asArray(parsed?.qualityTemplates) ?? []) as PromptFavorite[];
-                if (!confirm('インポートすると現在のデータが上書きされます。続行しますか？')) return;
+                if (!confirm('Importすると現在のデータが上書きされます。続行しますか？')) return;
                 setData({ folders: nextFolders, words: nextWords, templates: nextTemplates, cards: Array.isArray(parsed?.cards) ? parsed?.cards : [] });
                 setFavoritesData(nextFavorites);
                 setQualityTemplatesData(nextQuality);
-                alert('インポートが完了しました。');
+                alert('Importが完了しました。');
                 return;
             }
             if (importMode === 'words') {
@@ -876,9 +876,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     alert('JSON形式が正しくありません。{ cards: [] } が必要です。');
                     return;
                 }
-                if (!confirm('インポートすると現在のカードが上書きされます。続行しますか？')) return;
+                if (!confirm('Importすると現在のデッキが上書きされます。続行しますか？')) return;
                 setData({ folders, words, templates, cards: nextCards });
-                alert('インポートが完了しました。');
+                alert('Importが完了しました。');
                 return;
             }
             if (importMode === 'favorites') {
@@ -887,9 +887,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     alert('JSON形式が正しくありません。{ favorites: [] } が必要です。');
                     return;
                 }
-                if (!confirm('インポートすると現在のお気に入りが上書きされます。続行しますか？')) return;
+                if (!confirm('Importすると現在のお気に入りが上書きされます。続行しますか？')) return;
                 setFavoritesData(nextFavorites);
-                alert('インポートが完了しました。');
+                alert('Importが完了しました。');
                 return;
             }
             if (importMode === 'quality') {
@@ -898,9 +898,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     alert('JSON形式が正しくありません。{ qualityTemplates: [] } が必要です。');
                     return;
                 }
-                if (!confirm('インポートすると現在の品質テンプレートが上書きされます。続行しますか？')) return;
+                if (!confirm('Importすると現在の品質テンプレートが上書きされます。続行しますか？')) return;
                 setQualityTemplatesData(nextQuality);
-                alert('インポートが完了しました。');
+                alert('Importが完了しました。');
                 return;
             }
             if (importMode === 'templates') {
@@ -909,9 +909,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     alert('JSON形式が正しくありません。{ templates: [] } が必要です。');
                     return;
                 }
-                if (!confirm('インポートすると現在の装飾が上書きされます。続行しますか？')) return;
+                if (!confirm('Importすると現在の装飾が上書きされます。続行しますか？')) return;
                 setData({ folders, words, templates: nextTemplates, cards });
-                alert('インポートが完了しました。');
+                alert('Importが完了しました。');
                 return;
             }
         } catch (error) {
@@ -927,7 +927,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         if (!pendingWordsImport) return;
         setData({ folders: pendingWordsImport.folders, words: pendingWordsImport.words, templates, cards });
         setPendingWordsImport(null);
-        alert('インポートが完了しました。');
+        alert('Importが完了しました。');
     };
 
     const applyWordsAdd = () => {
@@ -951,7 +951,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         }
         setData({ folders: mergedFolders, words: mergedWords, templates, cards });
         setPendingWordsImport(null);
-        alert('インポートが完了しました。');
+        alert('Importが完了しました。');
     };
 
     const handleToggleNsfw = () => {
@@ -1046,7 +1046,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     : 'text-slate-500 hover:text-slate-200'
                                     }`}
                             >
-                                語群データの入出力
+                                カードデータのExport/Import
                             </button>
                             <button
                                 type="button"
@@ -1068,7 +1068,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     <div className="flex items-center justify-between">
                                         <div className="flex flex-col">
                                             <span className="text-sm font-bold text-slate-200">NSFWコンテンツ</span>
-                                            <span className="text-xs text-slate-500">NSFWのフォルダ・語句を全体で有効/無効にします。</span>
+                                            <span className="text-xs text-slate-500">NSFWのフォルダ・カードを全体で有効/無効にします。</span>
                                         </div>
                                         <button
                                             onClick={handleToggleNsfw}
@@ -1101,8 +1101,8 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     )}
                                     <div className="flex items-center justify-between mt-4">
                                         <div className="flex flex-col">
-                                            <span className="text-sm font-bold text-slate-200">下層フォルダの語群を表示</span>
-                                            <span className="text-xs text-slate-500">選択中フォルダ配下の語群をまとめて表示します。</span>
+                                            <span className="text-sm font-bold text-slate-200">下層フォルダのカードを表示</span>
+                                            <span className="text-xs text-slate-500">選択中フォルダ配下のカードをまとめて表示します。</span>
                                         </div>
                                         <button
                                             onClick={toggleShowDescendantWords}
@@ -1179,7 +1179,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     <div className="flex items-center justify-between mt-4">
                                         <div className="flex flex-col">
                                             <span className="text-sm font-bold text-slate-200">フォルダパス表示（root含む）</span>
-                                            <span className="text-xs text-slate-500">カードや語句の下にフォルダパスを表示します。</span>
+                                            <span className="text-xs text-slate-500">デッキやカードの下にフォルダパスを表示します。</span>
                                         </div>
                                         <button
                                             type="button"
@@ -1202,16 +1202,16 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                             onClick={() => openResetModal('resetWords')}
                                             className="text-left px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-700 text-slate-200 hover:border-cyan-500/40 hover:bg-slate-900"
                                         >
-                                            <div className="text-sm font-bold">語群の初期化</div>
-                                            <div className="text-xs text-slate-500">初期の語群データに戻します。</div>
+                                            <div className="text-sm font-bold">カードの初期化</div>
+                                            <div className="text-xs text-slate-500">初期のカードデータに戻します。</div>
                                         </button>
                                         <button
                                             type="button"
                                             onClick={() => openResetModal('clearWords')}
                                             className="text-left px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-700 text-slate-200 hover:border-rose-500/40 hover:bg-slate-900"
                                         >
-                                            <div className="text-sm font-bold">語群の全データ消去</div>
-                                            <div className="text-xs text-slate-500">フォルダと語群をすべて消去します。</div>
+                                            <div className="text-sm font-bold">カードの全データ消去</div>
+                                            <div className="text-xs text-slate-500">フォルダとカードをすべて消去します。</div>
                                         </button>
                                         <button
                                             type="button"
@@ -1231,49 +1231,20 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     <div className="flex items-center justify-between gap-4">
                                         <div>
                                             <div className="text-sm font-bold text-slate-200">全データ</div>
-                                            <div className="text-xs text-slate-500">語群・お気に入り・品質テンプレート・装飾の全データ</div>
+                                            <div className="text-xs text-slate-500">カード・お気に入り・品質テンプレート・装飾の全データ</div>
                                         </div>
                                         <div className="flex gap-2">
                                             <button
                                                 onClick={handleExportAll}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                出力
+                                                Export
                                             </button>
                                             <button
                                                 onClick={() => requestImport('all')}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                入力
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                                    <div className="flex items-center justify-between gap-4">
-                                        <div>
-                                            <div className="text-sm font-bold text-slate-200">語群データのみ</div>
-                                            <div className="text-xs text-slate-500">フォルダと語群のデータ</div>
-                                        </div>
-                                        <div className="flex gap-2">
-                                            <button
-                                                onClick={handleExportWords}
-                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
-                                            >
-                                                出力
-                                            </button>
-                                            <button
-                                                type="button"
-                                                onClick={() => setIsWordExportPickerOpen(true)}
-                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
-                                            >
-                                                選択して出力
-                                            </button>
-                                            <button
-                                                onClick={() => requestImport('words')}
-                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
-                                            >
-                                                入力
+                                                Import
                                             </button>
                                         </div>
                                     </div>
@@ -1282,27 +1253,56 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     <div className="flex items-center justify-between gap-4">
                                         <div>
                                             <div className="text-sm font-bold text-slate-200">カードデータのみ</div>
-                                            <div className="text-xs text-slate-500">カードのデータ</div>
+                                            <div className="text-xs text-slate-500">フォルダとカードのデータ</div>
+                                        </div>
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={handleExportWords}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                Export
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => setIsWordExportPickerOpen(true)}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                選択してExport
+                                            </button>
+                                            <button
+                                                onClick={() => requestImport('words')}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                Import
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                    <div className="flex items-center justify-between gap-4">
+                                        <div>
+                                            <div className="text-sm font-bold text-slate-200">デッキデータのみ</div>
+                                            <div className="text-xs text-slate-500">デッキのデータ</div>
                                         </div>
                                         <div className="flex gap-2">
                                             <button
                                                 onClick={handleExportCards}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                出力
+                                                Export
                                             </button>
                                             <button
                                                 type="button"
                                                 onClick={() => setIsCardExportPickerOpen(true)}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                選択して出力
+                                                選択してExport
                                             </button>
                                             <button
                                                 onClick={() => requestImport('cards')}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                入力
+                                                Import
                                             </button>
                                         </div>
                                     </div>
@@ -1318,20 +1318,20 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                 onClick={handleExportFavorites}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                出力
+                                                Export
                                             </button>
                                             <button
                                                 type="button"
                                                 onClick={() => setIsFavoriteExportPickerOpen(true)}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                選択して出力
+                                                選択してExport
                                             </button>
                                             <button
                                                 onClick={() => requestImport('favorites')}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                入力
+                                                Import
                                             </button>
                                         </div>
                                     </div>
@@ -1347,20 +1347,20 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                 onClick={handleExportQuality}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                出力
+                                                Export
                                             </button>
                                             <button
                                                 type="button"
                                                 onClick={() => setIsQualityExportPickerOpen(true)}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                選択して出力
+                                                選択してExport
                                             </button>
                                             <button
                                                 onClick={() => requestImport('quality')}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                入力
+                                                Import
                                             </button>
                                         </div>
                                     </div>
@@ -1376,20 +1376,20 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                 onClick={handleExportTemplates}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                出力
+                                                Export
                                             </button>
                                             <button
                                                 type="button"
                                                 onClick={() => setIsTemplateExportPickerOpen(true)}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                選択して出力
+                                                選択してExport
                                             </button>
                                             <button
                                                 onClick={() => requestImport('templates')}
                                                 className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
                                             >
-                                                入力
+                                                Import
                                             </button>
                                         </div>
                                     </div>
@@ -1516,7 +1516,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl flex flex-col gap-4">
                         <div className="flex items-center justify-between">
-                            <h3 className="text-lg font-bold text-white">語群データの取り込み</h3>
+                            <h3 className="text-lg font-bold text-white">カードデータのImport</h3>
                             <button
                                 onClick={() => setPendingWordsImport(null)}
                                 className="text-slate-400 hover:text-white text-xl"
@@ -1525,12 +1525,12 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                             </button>
                         </div>
                         <div className="text-sm text-slate-300 leading-relaxed">
-                            取り込み方法を選択してください。
+                            Import方法を選択してください。
                         </div>
                         <div className="text-xs text-slate-500 leading-relaxed">
-                            上書き: 既存の語群を入力データで置き換えます。入力データにない語群は削除されます。
+                            上書き: 既存のカードをImportデータで置き換えます。Importデータにないカードは削除されます。
                             <br />
-                            追加: 既存の語群にない語群のみ追加します。
+                            追加: 既存のカードにないカードのみ追加します。
                         </div>
                         <div className="flex gap-2 pt-2">
                             <button
@@ -1562,7 +1562,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-5xl shadow-2xl flex flex-col gap-4 max-h-[90vh]">
                         <div className="flex items-center justify-between">
-                            <h3 className="text-lg font-bold text-white">語群を選択</h3>
+                            <h3 className="text-lg font-bold text-white">カードを選択</h3>
                             <button
                                 onClick={() => setIsWordExportPickerOpen(false)}
                                 className="text-slate-400 hover:text-white text-xl"
@@ -1573,9 +1573,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                         <div className="flex flex-wrap items-center justify-between gap-3">
                             <div className="text-xs text-slate-400">
                                 フォルダ選択: <span className="text-slate-200 font-bold">{selectedFolderExportIds.length}</span>
-                                {' '}・語句選択: <span className="text-slate-200 font-bold">{selectedWordExportIds.length}</span>
-                                {' '}・合計語句: <span className="text-cyan-300 font-bold">{totalSelectedWordCount}</span>
-                                {isRootSelectedForExport && <span className="ml-2 text-[10px] text-cyan-300">全語句選択中</span>}
+                                {' '}・カード選択: <span className="text-slate-200 font-bold">{selectedWordExportIds.length}</span>
+                                {' '}・合計カード: <span className="text-cyan-300 font-bold">{totalSelectedWordCount}</span>
+                                {isRootSelectedForExport && <span className="ml-2 text-[10px] text-cyan-300">全カード選択中</span>}
                             </div>
                             <div className="flex gap-2">
                                 <button
@@ -1589,7 +1589,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     type="button"
                                     onClick={() => {
                                         if (selectedFolderExportIds.length === 0 && selectedWordExportIds.length === 0) {
-                                            alert('出力する語群を選択してください。');
+                                            alert('Exportするカードを選択してください。');
                                             return;
                                         }
                                         handleExportSelectedWords();
@@ -1597,7 +1597,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     }}
                                     className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
                                 >
-                                    選択して出力
+                                    選択してExport
                                 </button>
                             </div>
                         </div>
@@ -1681,7 +1681,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                         value={wordExportSearch}
                                         onChange={(event) => setWordExportSearch(event.target.value)}
                                         className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
-                                        placeholder="語句を検索..."
+                                        placeholder="カードを検索..."
                                     />
                                     <div className="flex flex-wrap gap-2">
                                         <button
@@ -1707,7 +1707,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                 </div>
                                 <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar flex-1">
                                     {wordExportVisibleWords.length === 0 && (
-                                        <div className="text-xs text-slate-500">語句がありません。</div>
+                                        <div className="text-xs text-slate-500">カードがありません。</div>
                                     )}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                         {wordExportVisibleWords.map(word => {
@@ -1780,7 +1780,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     type="button"
                                     onClick={() => {
                                         if (selectedFavoriteExportIds.length === 0) {
-                                            alert('出力するお気に入りを選択してください。');
+                                            alert('Exportするお気に入りを選択してください。');
                                             return;
                                         }
                                         handleExportSelectedFavorites();
@@ -1788,7 +1788,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     }}
                                     className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
                                 >
-                                    選択して出力
+                                    選択してExport
                                 </button>
                             </div>
                         </div>
@@ -1848,7 +1848,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     type="button"
                                     onClick={() => {
                                         if (selectedQualityExportIds.length === 0) {
-                                            alert('出力する品質テンプレートを選択してください。');
+                                            alert('Exportする品質テンプレートを選択してください。');
                                             return;
                                         }
                                         handleExportSelectedQuality();
@@ -1856,7 +1856,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     }}
                                     className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
                                 >
-                                    選択して出力
+                                    選択してExport
                                 </button>
                             </div>
                         </div>
@@ -1916,7 +1916,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     type="button"
                                     onClick={() => {
                                         if (selectedTemplateExportIds.length === 0) {
-                                            alert('出力する装飾を選択してください。');
+                                            alert('Exportする装飾を選択してください。');
                                             return;
                                         }
                                         handleExportSelectedTemplates();
@@ -1924,7 +1924,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     }}
                                     className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
                                 >
-                                    選択して出力
+                                    選択してExport
                                 </button>
                             </div>
                         </div>
@@ -1953,7 +1953,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-5xl shadow-2xl flex flex-col gap-4 max-h-[90vh]">
                         <div className="flex items-center justify-between">
-                            <h3 className="text-lg font-bold text-white">カードを選択</h3>
+                            <h3 className="text-lg font-bold text-white">デッキを選択</h3>
                             <button
                                 onClick={() => setIsCardExportPickerOpen(false)}
                                 className="text-slate-400 hover:text-white text-xl"
@@ -1964,9 +1964,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                         <div className="flex flex-wrap items-center justify-between gap-3">
                             <div className="text-xs text-slate-400">
                                 フォルダ選択: <span className="text-slate-200 font-bold">{selectedCardFolderExportIds.length}</span>
-                                {' '}・カード選択: <span className="text-slate-200 font-bold">{selectedCardExportIds.length}</span>
-                                {' '}・合計カード: <span className="text-cyan-300 font-bold">{totalSelectedCardCount}</span>
-                                {isRootSelectedForCardExport && <span className="ml-2 text-[10px] text-cyan-300">全カード選択中</span>}
+                                {' '}・デッキ選択: <span className="text-slate-200 font-bold">{selectedCardExportIds.length}</span>
+                                {' '}・合計デッキ: <span className="text-cyan-300 font-bold">{totalSelectedCardCount}</span>
+                                {isRootSelectedForCardExport && <span className="ml-2 text-[10px] text-cyan-300">全デッキ選択中</span>}
                             </div>
                             <div className="flex gap-2">
                                 <button
@@ -1980,7 +1980,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     type="button"
                                     onClick={() => {
                                         if (selectedCardFolderExportIds.length === 0 && selectedCardExportIds.length === 0) {
-                                            alert('出力するカードを選択してください。');
+                                            alert('Exportするデッキを選択してください。');
                                             return;
                                         }
                                         handleExportSelectedCards();
@@ -1988,7 +1988,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     }}
                                     className="px-3 py-1.5 text-xs rounded bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
                                 >
-                                    選択して出力
+                                    選択してExport
                                 </button>
                             </div>
                         </div>
@@ -2075,7 +2075,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                         value={cardExportSearch}
                                         onChange={(event) => setCardExportSearch(event.target.value)}
                                         className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
-                                        placeholder="カードを検索..."
+                                        placeholder="デッキを検索..."
                                     />
                                     <div className="flex flex-wrap gap-2">
                                         <button
@@ -2101,7 +2101,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                 </div>
                                 <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar flex-1">
                                     {cardExportVisibleCards.length === 0 && (
-                                        <div className="text-xs text-slate-500">カードがありません。</div>
+                                        <div className="text-xs text-slate-500">デッキがありません。</div>
                                     )}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                         {cardExportVisibleCards.map(card => {
@@ -2154,8 +2154,8 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                             この操作は取り消せません。編集データがある場合は事前に保存することを推奨します。
                         </div>
                         <div className="text-xs text-slate-500 leading-relaxed">
-                            {resetAction === 'resetWords' && '語群の初期化を行います。'}
-                            {resetAction === 'clearWords' && '語群・フォルダの全データを消去します。'}
+                            {resetAction === 'resetWords' && 'カードの初期化を行います。'}
+                            {resetAction === 'clearWords' && 'カード・フォルダの全データを消去します。'}
                             {resetAction === 'clearExtras' && 'お気に入り・品質テンプレート・装飾データを消去します。'}
                         </div>
                         <label className="flex items-center gap-2 text-sm text-slate-300">

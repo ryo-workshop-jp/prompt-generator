@@ -53,10 +53,10 @@ const HelpModal: React.FC<{ isOpen: boolean; onClose: () => void; noteUrl?: stri
                         <div className="rounded-lg border border-slate-700 bg-slate-950/60 px-3 py-2">
                             <div className="text-xs font-bold text-slate-200 mb-1">アップデート履歴</div>
                             <div className="text-xs text-slate-300">2026年2月13日</div>
-                            <div className="text-xs text-slate-400 mt-2">・カードの機能の追加</div>
+                            <div className="text-xs text-slate-400 mt-2">・デッキの機能の追加</div>
                             <div className="text-xs text-slate-300 mt-3">2026年1月31日</div>
-                            <div className="text-xs text-slate-400 mt-2">・語句並び替え機能の追加</div>
-                            <div className="text-xs text-slate-400">・複数および単体のデータ出力機能の追加</div>
+                            <div className="text-xs text-slate-400 mt-2">・カード並び替え機能の追加</div>
+                            <div className="text-xs text-slate-400">・複数および単体のデータExport機能の追加</div>
                             <div className="text-xs text-slate-300 mt-3">2026年1月30日 プレリリース</div>
                         </div>
                     </div>

@@ -765,14 +765,14 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-lg shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <div className="flex items-center justify-between mb-4">
                             <div>
-                                <h3 className="text-lg font-bold text-white">カード内容</h3>
+                                <h3 className="text-lg font-bold text-white">デッキ内容</h3>
                                 <div className="text-xs text-slate-500">{card.name}</div>
                             </div>
                             <button onClick={() => setIsPreviewOpen(false)} className="text-slate-400 hover:text-white text-xl">&times;</button>
                         </div>
                         <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar">
                             {previewItems.length === 0 && (
-                                <div className="text-sm text-slate-500">カードに語句がありません。</div>
+                                <div className="text-sm text-slate-500">デッキにカードがありません。</div>
                             )}
                             {previewItems.length > 0 && (
                                 <ul className="flex flex-col gap-2">
@@ -851,7 +851,7 @@ const AddWordModal: React.FC<{
     return (
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
-                <h3 className="text-lg font-bold mb-4 text-white">語群を追加</h3>
+                <h3 className="text-lg font-bold mb-4 text-white">カードを追加</h3>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
                     <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
                     <div>
@@ -980,7 +980,7 @@ const EditWordModal: React.FC<{
     return (
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
-                <h3 className="text-lg font-bold mb-4 text-white">語群を編集</h3>
+                <h3 className="text-lg font-bold mb-4 text-white">カードを編集</h3>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
                     <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
                     <div>
@@ -1095,7 +1095,7 @@ const CardEditModal: React.FC<{
     return (
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
-                <h3 className="text-lg font-bold mb-4 text-white">カードの装飾</h3>
+                <h3 className="text-lg font-bold mb-4 text-white">デッキの装飾</h3>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
                     <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
                         <div className="text-xs text-slate-500">対象: <span className="text-slate-200 font-semibold">{card.name}</span></div>
@@ -1244,7 +1244,7 @@ const WordGrid: React.FC<{
                     strategy={rectSortingStrategy}
                 >
                     <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 ${gridPaddingClass}`}>
-                        {/* 語群を追加 Button */}
+                        {/* カードを追加 Button */}
                         {showAddWordButton && (
                             <button
                                 onClick={() => setIsAddModalOpen(true)}

@@ -18,11 +18,11 @@ const NoticeModal: React.FC<{ isOpen: boolean; onConfirm: (skipNext: boolean) =>
                     <div className="font-bold text-slate-200 mt-3 mb-1">生成結果・利用責任について</div>
                     <div>・本アプリを利用して生成された画像の内容や利用については、ご利用者ご自身の責任でお願いいたします。</div>
                     <div>・各画像生成サービス（Stable Diffusion、Webサービス等）の利用規約・ガイドラインを必ずご確認の上、ご利用ください。</div>
-                    <div className="font-bold text-slate-200 mt-3 mb-1">プロンプト・語群について</div>
-                    <div>・本アプリに含まれるプロンプトや語群は、一般的な表現や、公開情報をもとに整理・再構成したものです。</div>
-                    <div>・一部の語群は、外部サイト・個人の方の公開情報を参考にしています。</div>
+                    <div className="font-bold text-slate-200 mt-3 mb-1">プロンプト・カードについて</div>
+                    <div>・本アプリに含まれるプロンプトやカードは、一般的な表現や、公開情報をもとに整理・再構成したものです。</div>
+                    <div>・一部のカードは、外部サイト・個人の方の公開情報を参考にしています。</div>
                     <div className="font-bold text-slate-200 mt-3 mb-1">NSFWコンテンツについて</div>
-                    <div>・NSFW（閲覧注意）に該当する可能性のある語群は、設定により表示・非表示を切り替えることができます。</div>
+                    <div>・NSFW（閲覧注意）に該当する可能性のあるカードは、設定により表示・非表示を切り替えることができます。</div>
                     <div>・NSFW設定を有効にする場合は、各自の環境や利用目的に配慮した上でご利用ください。</div>
                     <div className="font-bold text-slate-200 mt-3 mb-1">免責事項</div>
                     <div>・本アプリの利用によって生じたいかなる損害・トラブルについても、開発者は責任を負いかねます。</div>

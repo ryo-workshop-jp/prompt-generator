@@ -195,12 +195,12 @@ const BulkWordSettingsModal: React.FC<{
         <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl flex flex-col gap-4">
                 <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-bold text-white">語群の一括設定</h3>
+                    <h3 className="text-lg font-bold text-white">カードの一括設定</h3>
                     <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
                 </div>
                 <div className="text-xs text-amber-300 bg-amber-950/40 border border-amber-500/30 rounded-lg px-3 py-2">
-                    既存の装飾設定は上書きされます。下階層の語群には適用されません。
-                    {hasDecorations && <div className="text-[10px] text-amber-200 mt-1">すでに装飾設定がある語句があります。</div>}
+                    既存の装飾設定は上書きされます。下階層のカードには適用されません。
+                    {hasDecorations && <div className="text-[10px] text-amber-200 mt-1">すでに装飾設定があるカードがあります。</div>}
                 </div>
                 <label className="flex items-center gap-2 cursor-pointer">
                     <input
@@ -629,7 +629,7 @@ const Layout: React.FC = () => {
     };
 
     const handleDeleteWord = (id: string) => {
-        if (!confirm('この語句を削除します。よろしいですか？')) return;
+        if (!confirm('このカードを削除します。よろしいですか？')) return;
         setData({
             folders,
             words: words.filter(word => word.id !== id),
@@ -640,7 +640,7 @@ const Layout: React.FC = () => {
 
     const handleUpdateWord = (updated: WordItem) => {
         if (hasDuplicateWordLabel(updated.label_jp, updated.folderId, updated.id)) {
-            alert('同じフォルダ内に同じ名前の語句は作成できません。');
+            alert('同じフォルダ内に同じ名前のカードは作成できません。');
             return;
         }
         setData({
@@ -831,7 +831,7 @@ const Layout: React.FC = () => {
 
     const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[]) => {
         if (hasDuplicateWordLabel(label, activeFolderId)) {
-            alert('同じフォルダ内に同じ名前の語句は作成できません。');
+            alert('同じフォルダ内に同じ名前のカードは作成できません。');
             return;
         }
         addWordToFolder(activeFolderId, {
@@ -900,7 +900,7 @@ const Layout: React.FC = () => {
             return;
         }
         if (hasDuplicateWordLabel(movingWord.label_jp, targetId, movingWord.id)) {
-            alert('同じフォルダ内に同じ名前の語句は作成できません。');
+            alert('同じフォルダ内に同じ名前のカードは作成できません。');
             return;
         }
         setData({
@@ -1156,7 +1156,7 @@ const Layout: React.FC = () => {
                                         }}
                                         onReorderCards={handleReorderCards}
                                         onDeleteCard={(card) => {
-                                            if (!confirm('このカードを削除します。よろしいですか？')) return;
+                                            if (!confirm('このデッキを削除します。よろしいですか？')) return;
                                             removeCard(card.id);
                                         }}
                                         showAddWordButton={false}
@@ -1231,7 +1231,7 @@ const Layout: React.FC = () => {
             <MoveItemModal
                 isOpen={!!movingFolder}
                 title="フォルダを移動"
-                description="配下のフォルダと語群も含めて移動します。"
+                description="配下のフォルダとカードも含めて移動します。"
                 itemLabel={movingFolder?.name ?? ''}
                 options={folderMoveOptions}
                 value={moveTargetId}
@@ -1241,7 +1241,7 @@ const Layout: React.FC = () => {
             />
             <MoveItemModal
                 isOpen={!!movingWord}
-                title="語群を移動"
+                title="カードを移動"
                 itemLabel={movingWord?.label_jp ?? ''}
                 options={folderOptions}
                 value={moveTargetId}
@@ -1251,7 +1251,7 @@ const Layout: React.FC = () => {
             />
             <MoveItemModal
                 isOpen={!!movingCard}
-                title="カードを移動"
+                title="デッキを移動"
                 itemLabel={movingCard?.name ?? ''}
                 options={folderOptions}
                 value={moveTargetId}
