@@ -165,6 +165,38 @@ const formatPrompt = (words: SelectedWord[]) => {
     }).join(', ');
 };
 
+const getHistoryTokens = (words: SelectedWord[]) => {
+    return words.map((word) => ({
+        id: word.id,
+        label: word.label_jp || word.cardName || word.value_en || word.id,
+        isDeck: Boolean(word.cardId)
+    }));
+};
+
+const renderHistoryTokens = (words: SelectedWord[]) => {
+    const tokens = getHistoryTokens(words);
+    if (tokens.length === 0) {
+        return <span className="text-slate-500">なし</span>;
+    }
+
+    return (
+        <div className="flex flex-wrap items-center gap-1.5">
+            {tokens.map(token => (
+                <span
+                    key={token.id}
+                    className={token.isDeck
+                        ? 'inline-flex items-center gap-1 rounded px-1.5 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-200 font-semibold'
+                        : 'text-slate-300'
+                    }
+                >
+                    {token.isDeck && <span className="text-[9px] text-amber-300/90">デッキ</span>}
+                    <span>{token.label}</span>
+                </span>
+            ))}
+        </div>
+    );
+};
+
 const StrengthSelector: React.FC<{
     strength: PromptStrength,
     onChange: (s: PromptStrength) => void
@@ -1139,8 +1171,19 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                                 <span className={`text-[10px] px-2 py-0.5 rounded border ${typeClass}`}>{typeLabel}</span>
                                                 <span className="text-[10px] text-slate-500">{new Date(entry.createdAt).toLocaleString('ja-JP', { hour12: false })}</span>
                                             </div>
-                                            <div className="text-[11px] text-slate-300 mt-2 whitespace-pre-wrap break-words">
-                                                {entry.text || '-'}
+                                            <div className="text-[11px] mt-2 break-words">
+                                                {entry.type === 'both' ? (
+                                                    <div className="flex flex-col gap-1.5">
+                                                        <div className="flex items-start gap-2">
+                                                            <span className="text-[10px] text-cyan-300 mt-[2px]">P:</span>
+                                                            {renderHistoryTokens(entry.positive)}
+                                                        </div>
+                                                        <div className="flex items-start gap-2">
+                                                            <span className="text-[10px] text-rose-300 mt-[2px]">N:</span>
+                                                            {renderHistoryTokens(entry.negative)}
+                                                        </div>
+                                                    </div>
+                                                ) : renderHistoryTokens(entry.type === 'pos' ? entry.positive : entry.negative)}
                                             </div>
                                         </button>
                                         <button
