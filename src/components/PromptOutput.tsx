@@ -7,6 +7,7 @@ import { usePrompt } from '../context/usePrompt';
 import type { SelectedWord, PromptStrength, PromptFavorite, CardWordRef } from '../types';
 import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon, ChevronRightIcon, ChevronDownIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid';
+import { trackEvent } from '../analytics';
 
 const UI_STORAGE_KEY = 'promptgen:ui';
 const COPY_HISTORY_KEY = 'promptgen:copy-history';
@@ -260,7 +261,7 @@ const Chip: React.FC<{
                         }`}
                     title="デッキ内容を調整"
                 >
-                    {hasCardOff ? `Card (${offCount} off)` : 'Card'}
+                    {hasCardOff ? `デッキ (${offCount} 無効)` : 'デッキ'}
                 </button>
             )}
             {stepperDisplay === 'inside' && !isCardToken && (
@@ -318,7 +319,7 @@ const SortableChip: React.FC<{
                 {...attributes}
                 {...listeners}
                 className="absolute -left-2 -top-2 p-1 rounded-full bg-slate-900/80 border border-slate-700 text-slate-400 hover:text-slate-200 cursor-grab"
-                title="Drag to reorder"
+                title="ドラッグして並び替え"
             >
                 <Bars3Icon className="w-3 h-3" />
             </button>
@@ -647,10 +648,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
 
     const showRestoreToast = (type: CopyHistoryType) => {
         const message = type === 'both'
-            ? 'Positive/Negative を履歴から復元しました'
+            ? 'ポジティブ/ネガティブを履歴から復元しました'
             : type === 'pos'
-                ? 'Positive を履歴から復元しました'
-                : 'Negative を履歴から復元しました';
+                ? 'ポジティブを履歴から復元しました'
+                : 'ネガティブを履歴から復元しました';
         setRestoreToast(message);
         if (restoreToastTimerRef.current) {
             window.clearTimeout(restoreToastTimerRef.current);
@@ -724,6 +725,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
     const handleCopy = (text: string, type: CopyHistoryType) => {
         navigator.clipboard.writeText(text);
         addHistoryEntry(text, type);
+        trackEvent('prompt_copy', {
+            copy_scope: type,
+            text_length: text.length
+        });
         setCopyFeedback(type);
         setTimeout(() => setCopyFeedback(null), 2000);
     };
@@ -732,6 +737,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         const source = type === 'positive' ? selectedPositive : selectedNegative;
         const combinedLabels = source.map(word => word.label_jp).filter(Boolean);
         const trimmedName = favoriteName.trim();
+        const saveMode = saveAsCard ? 'deck' : saveAsQuality ? 'quality_template' : 'favorite';
         if (saveAsCard && !trimmedName) {
             alert('デッキ名を入力してください。');
             return;
@@ -763,6 +769,12 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         } else {
             addPromptFavorite(name, type, source, favoriteNsfw);
         }
+        trackEvent('favorite_save', {
+            save_mode: saveMode,
+            prompt_type: type,
+            word_count: source.length,
+            nsfw: favoriteNsfw
+        });
         setFavoriteName('');
         setFavoriteNsfw(false);
         setSaveAsQuality(false);
@@ -839,9 +851,9 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
     };
 
     const getHistoryLabel = (type: CopyHistoryType | null) => {
-        if (type === 'pos') return 'Positive';
-        if (type === 'neg') return 'Negative';
-        if (type === 'both') return 'Copy Both';
+        if (type === 'pos') return 'ポジティブ';
+        if (type === 'neg') return 'ネガティブ';
+        if (type === 'both') return '両方コピー';
         return '';
     };
 
@@ -870,7 +882,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         type="button"
                         onClick={() => setHistoryType('both')}
                         className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
-                        title="Copy Both の履歴を開く"
+                        title="両方コピーの履歴を開く"
                     >
                         <ClockIcon className="w-4 h-4" /> 履歴
                         <span className="text-[10px] text-emerald-100/80">{historyCounts.both}</span>
@@ -879,11 +891,11 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         type="button"
                         onClick={() => handleCopy(buildCombinedCopyText(), 'both')}
                         className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
-                        title="Positive/Negative をまとめてコピー"
+                        title="ポジティブ/ネガティブをまとめてコピー"
                     >
-                        {copyFeedback === 'both' ? <span className="text-green-300">Copied!</span> : (
+                        {copyFeedback === 'both' ? <span className="text-green-300">コピーしました</span> : (
                             <>
-                                <DocumentDuplicateIcon className="w-4 h-4" /> Copy Both
+                                <DocumentDuplicateIcon className="w-4 h-4" /> 両方コピー
                             </>
                         )}
                     </button>
@@ -894,7 +906,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             <div className="flex-1 flex flex-col gap-2">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-wider">Positive Prompt</h3>
+                        <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-wider">ポジティブプロンプト</h3>
                     </div>
                     <div className="flex items-center gap-2">
                         <button
@@ -907,7 +919,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             onClick={() => setQualityType('positive')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
-                            <Bars3Icon className="w-4 h-4" /> Quality
+                            <Bars3Icon className="w-4 h-4" /> 品質
                             {getQualityName('positive') && (
                                 <span className="text-[10px] text-cyan-200">{getQualityName('positive')}</span>
                             )}
@@ -916,19 +928,19 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             onClick={() => setLoadType('positive')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
-                            <BookmarkIcon className="w-4 h-4" /> Load
+                            <BookmarkIcon className="w-4 h-4" /> 読み込み
                         </button>
                         <button
                             onClick={clearPositive}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
-                            <XMarkIcon className="w-4 h-4" /> Clear
+                            <XMarkIcon className="w-4 h-4" /> クリア
                         </button>
                         <button
                             type="button"
                             onClick={() => setHistoryType('pos')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-colors"
-                            title="Positive の履歴を開く"
+                            title="ポジティブの履歴を開く"
                         >
                             <ClockIcon className="w-4 h-4" /> 履歴
                             <span className="text-[10px] text-cyan-100/80">{historyCounts.pos}</span>
@@ -937,9 +949,9 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             onClick={() => handleCopy(buildCopyText('positive', posString), 'pos')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-sm px-3 rounded-md border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-colors"
                         >
-                            {copyFeedback === 'pos' ? <span className="text-green-300">Copied!</span> : (
+                            {copyFeedback === 'pos' ? <span className="text-green-300">コピーしました</span> : (
                                 <>
-                                    <DocumentDuplicateIcon className="w-4 h-4" /> Copy
+                                    <DocumentDuplicateIcon className="w-4 h-4" /> コピー
                                 </>
                             )}
                         </button>
@@ -952,7 +964,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         onClick={() => setExpandType('positive')}
                         className="absolute right-2 top-2 z-10 flex items-center gap-1 text-[10px] px-2 py-1 rounded-md border border-slate-800 bg-slate-950/70 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                     >
-                        <Bars3Icon className="w-3 h-3" /> More
+                        <Bars3Icon className="w-3 h-3" /> 展開
                     </button>
                     <DndContext
                         sensors={sensors}
@@ -964,7 +976,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             strategy={rectSortingStrategy}
                         >
                             <div className="flex flex-wrap gap-2">
-                                {selectedPositive.length === 0 && <span className="text-slate-600 text-sm italic">Select words...</span>}
+                                {selectedPositive.length === 0 && <span className="text-slate-600 text-sm italic">カードを選択...</span>}
                                 {selectedPositive.map(word => (
                                     <SortableChip
                                         key={word.id}
@@ -995,7 +1007,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             <div className="flex-1 flex flex-col gap-2 border-l border-slate-800 pl-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <h3 className="text-sm font-bold text-rose-400 uppercase tracking-wider whitespace-nowrap">Negative Prompt</h3>
+                        <h3 className="text-sm font-bold text-rose-400 uppercase tracking-wider whitespace-nowrap">ネガティブプロンプト</h3>
                         <span className="text-[10px] text-slate-500 whitespace-nowrap">(右クリック / Shift+クリックで登録)</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -1009,7 +1021,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             onClick={() => setQualityType('negative')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
-                            <Bars3Icon className="w-4 h-4" /> Quality
+                            <Bars3Icon className="w-4 h-4" /> 品質
                             {getQualityName('negative') && (
                                 <span className="text-[10px] text-rose-200">{getQualityName('negative')}</span>
                             )}
@@ -1018,19 +1030,19 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             onClick={() => setLoadType('negative')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
-                            <BookmarkIcon className="w-4 h-4" /> Load
+                            <BookmarkIcon className="w-4 h-4" /> 読み込み
                         </button>
                         <button
                             onClick={clearNegative}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
-                            <XMarkIcon className="w-4 h-4" /> Clear
+                            <XMarkIcon className="w-4 h-4" /> クリア
                         </button>
                         <button
                             type="button"
                             onClick={() => setHistoryType('neg')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 transition-colors"
-                            title="Negative の履歴を開く"
+                            title="ネガティブの履歴を開く"
                         >
                             <ClockIcon className="w-4 h-4" /> 履歴
                             <span className="text-[10px] text-rose-100/80">{historyCounts.neg}</span>
@@ -1039,9 +1051,9 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             onClick={() => handleCopy(buildCopyText('negative', negString), 'neg')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-sm px-3 rounded-md border border-rose-500/40 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 transition-colors"
                         >
-                            {copyFeedback === 'neg' ? <span className="text-green-300">Copied!</span> : (
+                            {copyFeedback === 'neg' ? <span className="text-green-300">コピーしました</span> : (
                                 <>
-                                    <DocumentDuplicateIcon className="w-4 h-4" /> Copy
+                                    <DocumentDuplicateIcon className="w-4 h-4" /> コピー
                                 </>
                             )}
                         </button>
@@ -1054,7 +1066,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         onClick={() => setExpandType('negative')}
                         className="absolute right-2 top-2 z-10 flex items-center gap-1 text-[10px] px-2 py-1 rounded-md border border-slate-800 bg-slate-950/70 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                     >
-                        <Bars3Icon className="w-3 h-3" /> More
+                        <Bars3Icon className="w-3 h-3" /> 展開
                     </button>
                     <DndContext
                         sensors={sensors}
@@ -1066,7 +1078,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             strategy={rectSortingStrategy}
                         >
                             <div className="flex flex-wrap gap-2">
-                                {selectedNegative.length === 0 && <span className="text-slate-600 text-sm italic">Select words...</span>}
+                                {selectedNegative.length === 0 && <span className="text-slate-600 text-sm italic">カードを選択...</span>}
                                 {selectedNegative.map(word => (
                                     <SortableChip
                                         key={word.id}
@@ -1109,10 +1121,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                         ? 'text-cyan-300 bg-cyan-900/40 border-cyan-500/40'
                                         : 'text-rose-300 bg-rose-900/40 border-rose-500/40';
                                 const typeLabel = entry.type === 'both'
-                                    ? 'Both'
+                                    ? '両方'
                                     : entry.type === 'pos'
-                                        ? 'Positive'
-                                        : 'Negative';
+                                        ? 'ポジティブ'
+                                        : 'ネガティブ';
                                 return (
                                     <div
                                         key={entry.id}
@@ -1135,7 +1147,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                             type="button"
                                             onClick={() => removeHistoryEntry(entry.id)}
                                             className="text-slate-500 hover:text-rose-400"
-                                            title="Delete"
+                                            title="削除"
                                         >
                                             <TrashIcon className="w-4 h-4" />
                                         </button>
@@ -1160,7 +1172,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 onClick={() => setHistoryType(null)}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
-                                Close
+                                閉じる
                             </button>
                         </div>
                     </div>
@@ -1170,10 +1182,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             {saveType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
-                        <h3 className="text-lg font-bold mb-4 text-white">Save Favorite</h3>
+                        <h3 className="text-lg font-bold mb-4 text-white">お気に入りを保存</h3>
                         <div className="flex flex-col gap-4 flex-1 min-h-0 overflow-y-auto pr-1">
                             <div>
-                                <label className="block text-xs text-slate-400 mb-1">{saveAsCard ? 'Card Name' : 'Favorite Name'}</label>
+                                <label className="block text-xs text-slate-400 mb-1">{saveAsCard ? 'デッキ名' : 'お気に入り名'}</label>
                                 <input
                                     type="text"
                                     value={favoriteName}
@@ -1329,12 +1341,12 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             type="search"
                             value={folderSearch}
                             onChange={(event) => setFolderSearch(event.target.value)}
-                            placeholder="Search folders..."
+                            placeholder="フォルダを検索..."
                             className="mb-3 bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-cyan-500 focus:outline-none"
                         />
                         <div className="flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-2 pr-1">
                             {filteredFolderOptions.length === 0 && (
-                                <div className="text-xs text-slate-500">No matching folders.</div>
+                                <div className="text-xs text-slate-500">該当するフォルダはありません。</div>
                             )}
                             {filteredFolderOptions.map(option => (
                                 <button
@@ -1367,7 +1379,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                                     }
                                                 }}
                                                 className="w-5 h-5 flex items-center justify-center rounded bg-slate-800/70 text-slate-300 hover:text-white"
-                                                title={expandedFolderIds.has(option.id) ? 'Collapse' : 'Expand'}
+                                                title={expandedFolderIds.has(option.id) ? '折りたたむ' : '展開'}
                                             >
                                                 {expandedFolderIds.has(option.id) ? <ChevronDownIcon className="w-4 h-4" /> : <ChevronRightIcon className="w-4 h-4" />}
                                             </span>
@@ -1386,7 +1398,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 onClick={() => setIsFolderPickerOpen(false)}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
-                                Close
+                                閉じる
                             </button>
                         </div>
                     </div>
@@ -1396,10 +1408,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             {loadType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
-                        <h3 className="text-lg font-bold mb-4 text-white">Load Favorite</h3>
+                        <h3 className="text-lg font-bold mb-4 text-white">お気に入りを読み込み</h3>
                         <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-3 pr-1">
                             {filteredFavorites.filter(fav => fav.type === loadType).length === 0 && (
-                                <div className="text-sm text-slate-500">No favorites available.</div>
+                                <div className="text-sm text-slate-500">お気に入りがありません。</div>
                             )}
                             {filteredFavorites.filter(fav => fav.type === loadType).map((fav: PromptFavorite) => {
                                 const jpLabels = fav.words.map(word => word.label_jp).filter(Boolean).join(', ');
@@ -1418,20 +1430,20 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                         >
                                             <div className="text-sm font-bold text-slate-200">{fav.name}</div>
                                             <div className="text-[11px] text-slate-500 mt-1">
-                                                {jpLabels || 'No labels'}
+                                                {jpLabels || 'ラベルなし'}
                                             </div>
                                             <div className="text-[11px] text-slate-500 mt-1">
                                                 {loadType === 'positive' ? <span className="text-cyan-400">P:</span> : <span className="text-rose-400">N:</span>} {prompt || '-'}
                                             </div>
                                             {fav.nsfw && (
-                                                <div className="text-[10px] text-red-400 mt-1">NSFW</div>
+                                                <div className="text-[10px] text-red-400 mt-1">NSFW含む</div>
                                             )}
                                         </button>
                                         <button
                                             type="button"
                                             onClick={() => removePromptFavorite(fav.id)}
                                             className="text-slate-500 hover:text-rose-400"
-                                            title="Delete"
+                                            title="削除"
                                         >
                                             <TrashIcon className="w-4 h-4" />
                                         </button>
@@ -1445,7 +1457,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 onClick={() => setLoadType(null)}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
-                                Close
+                                閉じる
                             </button>
                         </div>
                     </div>
@@ -1455,10 +1467,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             {qualityType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-2xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
-                        <h3 className="text-lg font-bold mb-4 text-white">Quality Template</h3>
+                        <h3 className="text-lg font-bold mb-4 text-white">品質テンプレート</h3>
                         <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-3 pr-1">
                             {filteredQualityTemplates.filter(template => template.type === qualityType).length === 0 && (
-                                <div className="text-sm text-slate-500">No quality templates available.</div>
+                                <div className="text-sm text-slate-500">品質テンプレートがありません。</div>
                             )}
                             {filteredQualityTemplates.filter(template => template.type === qualityType).map((template: PromptFavorite) => {
                                 const jpLabels = template.words.map(word => word.label_jp).filter(Boolean).join(', ');
@@ -1501,13 +1513,13 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                                 <div className="text-sm font-bold text-slate-200">{template.name}</div>
                                             )}
                                             <div className="text-[11px] text-slate-500 mt-1">
-                                                {jpLabels || 'No labels'}
+                                                {jpLabels || 'ラベルなし'}
                                             </div>
                                             <div className="text-[11px] text-slate-500 mt-1">
                                                 {qualityType === 'positive' ? <span className="text-cyan-400">P:</span> : <span className="text-rose-400">N:</span>} {prompt || '-'}
                                             </div>
                                             {template.nsfw && (
-                                                <div className="text-[10px] text-red-400 mt-1">NSFW</div>
+                                                <div className="text-[10px] text-red-400 mt-1">NSFW含む</div>
                                             )}
                                         </button>
                                         <div className="flex items-center gap-2">
@@ -1555,7 +1567,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                                     if (editingQualityId === template.id) cancelEditQualityName();
                                                 }}
                                                 className="text-slate-500 hover:text-rose-400"
-                                                title="Delete"
+                                                title="削除"
                                             >
                                                 <TrashIcon className="w-4 h-4" />
                                             </button>
@@ -1574,14 +1586,14 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 }}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
-                                Clear Selection
+                                選択解除
                             </button>
                             <button
                                 type="button"
                                 onClick={() => setQualityType(null)}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
-                                Close
+                                閉じる
                             </button>
                         </div>
                     </div>
@@ -1618,7 +1630,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                         <div className="flex items-center justify-between">
                                             <span className="text-sm font-semibold">{label}</span>
                                             <span className={`text-[10px] px-2 py-0.5 rounded ${isDisabled ? 'bg-slate-800 text-slate-400' : 'bg-cyan-900/60 text-cyan-200'}`}>
-                                                {isDisabled ? 'OFF' : 'ON'}
+                                                {isDisabled ? '無効' : '有効'}
                                             </span>
                                         </div>
                                         {ref.value_en && (
@@ -1630,14 +1642,14 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         </div>
                         <div className="flex items-center justify-between mt-4 gap-2">
                             <div className="text-[10px] text-slate-500">
-                                現在の生成プロンプト: {getCardTokenPrompt(editingCardWord) || '(empty)'}
+                                現在の生成プロンプト: {getCardTokenPrompt(editingCardWord) || '(空)'}
                             </div>
                             <button
                                 type="button"
                                 onClick={() => setCardEditorTarget(null)}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
-                                Close
+                                閉じる
                             </button>
                         </div>
                     </div>
@@ -1649,7 +1661,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                     <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-3xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                         <div className="flex items-center justify-between mb-4">
                             <h3 className={`text-lg font-bold ${expandType === 'positive' ? 'text-cyan-400' : 'text-rose-400'}`}>
-                                {expandType === 'positive' ? 'Positive Prompt' : 'Negative Prompt'}
+                                {expandType === 'positive' ? 'ポジティブプロンプト' : 'ネガティブプロンプト'}
                             </h3>
                             <button onClick={() => setExpandType(null)} className="text-slate-400 hover:text-white text-xl">&times;</button>
                         </div>
@@ -1665,7 +1677,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 >
                                     <div className="flex flex-wrap gap-2">
                                         {(expandType === 'positive' ? selectedPositive : selectedNegative).length === 0 && (
-                                            <span className="text-slate-600 text-sm italic">Select words...</span>
+                                            <span className="text-slate-600 text-sm italic">カードを選択...</span>
                                         )}
                                         {(expandType === 'positive' ? selectedPositive : selectedNegative).map(word => (
                                             <SortableChip
@@ -1690,7 +1702,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 onClick={() => setExpandType(null)}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
-                                Close
+                                閉じる
                             </button>
                         </div>
                     </div>
@@ -1715,7 +1727,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 type="button"
                                 onClick={clearRestoreToast}
                                 className="text-slate-400 hover:text-white"
-                                title="Close"
+                                title="閉じる"
                             >
                                 <XMarkIcon className="w-4 h-4" />
                             </button>

@@ -43,24 +43,24 @@ const AddFolderModal: React.FC<{
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
                     <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
                     <div>
-                        <label className="block text-xs text-slate-400 mb-1">Name (Display)</label>
+                        <label className="block text-xs text-slate-400 mb-1">名前（表示）</label>
                         <input
                             type="text"
                             value={name}
                             onChange={e => setName(e.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                            placeholder="e.g. My Favorites"
+                            placeholder="例: お気に入り"
                             required
                         />
                     </div>
                     <div>
-                        <label className="block text-xs text-slate-400 mb-1">ID (Optional)</label>
+                        <label className="block text-xs text-slate-400 mb-1">ID（任意）</label>
                         <input
                             type="text"
                             value={id}
                             onChange={e => setId(e.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                            placeholder="auto-generated-if-empty"
+                            placeholder="未入力の場合は自動生成"
                         />
                     </div>
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -70,12 +70,12 @@ const AddFolderModal: React.FC<{
                             onChange={e => setNsfw(e.target.checked)}
                             className="rounded bg-slate-800 border-slate-600 text-red-500 focus:ring-red-500/50"
                         />
-                        <span className="text-sm text-slate-300">NSFW content</span>
+                        <span className="text-sm text-slate-300">NSFWコンテンツ</span>
                     </label>
                     </div>
                     <div className="flex gap-2 pt-2">
-                        <button type="button" onClick={onClose} className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700">Cancel</button>
-                        <button type="submit" className="flex-1 px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-500 font-bold">Add</button>
+                        <button type="button" onClick={onClose} className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700">キャンセル</button>
+                        <button type="submit" className="flex-1 px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-500 font-bold">追加</button>
                     </div>
                 </form>
             </div>
@@ -185,7 +185,7 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderI
                         <button
                             onClick={() => setShowAddSubFolder(folder.id)}
                             className="text-slate-500 hover:text-cyan-400 p-1 rounded hover:bg-slate-800 transition-colors"
-                            title="Add Subfolder"
+                            title="サブフォルダを追加"
                         >
                             <PlusIcon className="w-3.5 h-3.5" />
                         </button>
@@ -203,7 +203,7 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderI
     return (
         <div className="flex flex-col h-full overflow-y-auto py-4 px-2 custom-scrollbar">
             <div className="mb-4 px-4 flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Folders</span>
+                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">フォルダ</span>
                 <button
                     onClick={() => setShowAddFolder(true)}
                     className="text-slate-500 hover:text-cyan-400 p-1 rounded hover:bg-slate-900 transition-colors"
@@ -227,7 +227,7 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderI
                     addFolder(name, id, parentId, nsfw);
                 }}
                 parentId="root"
-                title="Add Folder"
+                title="フォルダを追加"
             />
 
             <AddFolderModal
@@ -241,7 +241,7 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onSelectFolder, activeFolderI
                     addFolder(name, id, parentId, nsfw);
                 }}
                 parentId={showAddSubFolder ?? 'root'}
-                title="Add Subfolder"
+                title="サブフォルダを追加"
             />
         </div>
     );

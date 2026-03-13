@@ -71,7 +71,7 @@ const SortableOptionRow: React.FC<{
                 type="button"
                 {...attributes}
                 {...listeners}
-                title="Drag to reorder"
+                title="ドラッグして並び替え"
                 className="flex h-7 w-7 items-center justify-center rounded bg-slate-800 text-slate-400 hover:text-slate-200"
             >
                 <Bars3Icon className="h-4 w-4" />
@@ -163,7 +163,7 @@ const TemplateModal: React.FC<{
                             value={name}
                             onChange={(event) => setName(event.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                            placeholder="e.g. Color"
+                            placeholder="例: カラー"
                         />
                     </div>
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -305,7 +305,7 @@ const SortableTemplateRow: React.FC<{
                     type="button"
                     {...attributes}
                     {...listeners}
-                    title="Drag to reorder"
+                    title="ドラッグして並び替え"
                     className="flex h-7 w-7 items-center justify-center rounded bg-slate-800 text-slate-400 hover:text-slate-200"
                 >
                     <Bars3Icon className="h-4 w-4" />
@@ -1446,7 +1446,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                         setIsTemplateModalOpen(true);
                                                     }}
                                                     onDelete={() => {
-                                                        if (!confirm('Delete this template? Linked words will revert to normal words.')) return;
+                                                        if (!confirm('この装飾を削除します。紐付いたカードは通常カードに戻ります。よろしいですか？')) return;
                                                         removeTemplate(template.id);
                                                     }}
                                                 />
@@ -1619,7 +1619,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                         type="button"
                                                         onClick={() => hasChildren && toggleWordExportFolderExpanded(target.id)}
                                                         className={`flex h-4 w-4 items-center justify-center text-slate-500 ${hasChildren ? 'hover:text-slate-200' : 'opacity-30'}`}
-                                                        title={hasChildren ? (isExpanded ? 'Collapse' : 'Expand') : 'No children'}
+                                                        title={hasChildren ? (isExpanded ? '折りたたむ' : '展開') : '子要素なし'}
                                                     >
                                                         {hasChildren ? (isExpanded ? <ChevronDownIcon className="h-3 w-3" /> : <ChevronRightIcon className="h-3 w-3" />) : <span className="h-3 w-3" />}
                                                     </button>
@@ -1649,7 +1649,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                     type="button"
                                                     onClick={() => toggleWordExportFolderExpanded('root')}
                                                     className="flex h-4 w-4 items-center justify-center text-slate-500 hover:text-slate-200"
-                                                    title={wordExportExpandedSet.has('root') ? 'Collapse' : 'Expand'}
+                                                    title={wordExportExpandedSet.has('root') ? '折りたたむ' : '展開'}
                                                 >
                                                     {wordExportExpandedSet.has('root')
                                                         ? <ChevronDownIcon className="h-3 w-3" />
@@ -2013,7 +2013,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                         type="button"
                                                         onClick={() => hasChildren && toggleCardExportFolderExpanded(target.id)}
                                                         className={`flex h-4 w-4 items-center justify-center text-slate-500 ${hasChildren ? 'hover:text-slate-200' : 'opacity-30'}`}
-                                                        title={hasChildren ? (isExpanded ? 'Collapse' : 'Expand') : 'No children'}
+                                                        title={hasChildren ? (isExpanded ? '折りたたむ' : '展開') : '子要素なし'}
                                                     >
                                                         {hasChildren ? (isExpanded ? <ChevronDownIcon className="h-3 w-3" /> : <ChevronRightIcon className="h-3 w-3" />) : <span className="h-3 w-3" />}
                                                     </button>
@@ -2043,7 +2043,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                                     type="button"
                                                     onClick={() => toggleCardExportFolderExpanded('root')}
                                                     className="flex h-4 w-4 items-center justify-center text-slate-500 hover:text-slate-200"
-                                                    title={cardExportExpandedSet.has('root') ? 'Collapse' : 'Expand'}
+                                                    title={cardExportExpandedSet.has('root') ? '折りたたむ' : '展開'}
                                                 >
                                                     {cardExportExpandedSet.has('root')
                                                         ? <ChevronDownIcon className="h-3 w-3" />

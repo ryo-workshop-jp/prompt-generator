@@ -2,6 +2,18 @@
 
 Published URL: https://ryo-workshop-jp.github.io/prompt-generator/
 
+## Google Analytics (GA4)
+
+Set the measurement ID in `.env`:
+
+```bash
+VITE_GA_ID=G-XJG8B4JRV7
+# Optional: enable tracking in local dev
+VITE_GA_ENABLE_DEV=false
+```
+
+`VITE_GA_ENABLE_DEV` is `false` by default, so analytics events are sent in production builds.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

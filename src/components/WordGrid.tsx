@@ -415,7 +415,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
                         type="button"
                         {...dragHandleProps}
                         className="p-1 rounded-md text-slate-500 hover:text-slate-300 cursor-grab"
-                        title="Drag to reorder"
+                        title="ドラッグして並び替え"
                         onClick={(event) => {
                             event.stopPropagation();
                             dragHandleProps?.onClick?.(event);
@@ -444,7 +444,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
                             onEdit(word);
                         }}
                         className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
-                        title="Edit"
+                        title="編集"
                     >
                         <Cog6ToothIcon className="w-4 h-4" />
                     </button>
@@ -457,7 +457,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
                             onMove(word);
                         }}
                         className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
-                        title="Move"
+                        title="移動"
                     >
                         <ArrowRightIcon className="w-4 h-4" />
                     </button>
@@ -470,7 +470,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
                             onDelete(word);
                         }}
                         className="p-1 rounded-md text-slate-500 hover:text-rose-400"
-                        title="Delete"
+                        title="削除"
                     >
                         <TrashIcon className="w-4 h-4" />
                     </button>
@@ -505,7 +505,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
                             event.stopPropagation();
                         }}
                         className={`p-1 rounded-md transition-colors ${isFavorite ? 'text-amber-400 hover:text-amber-300' : 'text-slate-500 hover:text-amber-400'}`}
-                        title={isFavorite ? 'Remove favorite' : 'Add favorite'}
+                        title={isFavorite ? 'お気に入り解除' : 'お気に入り追加'}
                     >
                         {isFavorite ? <StarSolidIcon className="w-4 h-4" /> : <StarIcon className="w-4 h-4" />}
                     </span>
@@ -523,8 +523,8 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
             {!editMode && (
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity flex items-center justify-center bg-slate-950/80 backdrop-blur-[1px] rounded-xl z-20">
                     <div className="text-[10px] text-slate-300 flex flex-col gap-1 items-center font-mono">
-                        <span className="text-cyan-400">L-Click: + Pos</span>
-                        <span className="text-rose-400">R-Click: + Neg</span>
+                        <span className="text-cyan-400">左クリック: +Pos</span>
+                        <span className="text-rose-400">右クリック: +Neg</span>
                     </div>
                 </div>
             )}
@@ -592,7 +592,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
             label_jp: card.name,
             value_en: prompt || card.name,
             nsfw: card.nsfw,
-            note: `Card: ${card.name}`,
+            note: `デッキ: ${card.name}`,
             cardId: card.id,
             cardName: card.name,
             cardPrompt: prompt,
@@ -613,7 +613,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
             label_jp: finalLabel,
             value_en: finalValue,
             nsfw: card.nsfw,
-            note: `Card: ${card.name}`,
+            note: `デッキ: ${card.name}`,
             cardId: card.id,
             cardName: card.name,
             cardPrompt: finalValue,
@@ -685,7 +685,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                         </div>
                     )}
                 </div>
-                <span className="text-[10px] text-slate-500">{wordCount} words</span>
+                <span className="text-[10px] text-slate-500">{wordCount} カード</span>
                 {labels && (
                     <span className="text-[10px] text-slate-400 mt-1 line-clamp-2">{labels}</span>
                 )}
@@ -698,7 +698,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                             type="button"
                             {...dragHandleProps}
                             className="p-1 rounded-md text-slate-500 hover:text-slate-300 cursor-grab"
-                            title="Drag to reorder"
+                            title="ドラッグして並び替え"
                             onClick={(event) => {
                                 event.stopPropagation();
                                 dragHandleProps?.onClick?.(event);
@@ -714,7 +714,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                                     onEdit(card);
                                 }}
                                 className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
-                                title="Edit"
+                                title="編集"
                             >
                                 <Cog6ToothIcon className="w-4 h-4" />
                             </button>
@@ -727,7 +727,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                                     onMove(card);
                                 }}
                                 className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
-                                title="Move"
+                                title="移動"
                             >
                                 <ArrowRightIcon className="w-4 h-4" />
                             </button>
@@ -739,7 +739,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                                 onDelete?.(card);
                             }}
                             className="p-1 rounded-md text-slate-500 hover:text-rose-400"
-                            title="Delete"
+                            title="削除"
                         >
                             <TrashIcon className="w-4 h-4" />
                         </button>
@@ -790,7 +790,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                                 onClick={() => setIsPreviewOpen(false)}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
-                                Close
+                                閉じる
                             </button>
                         </div>
                     </div>
@@ -861,7 +861,7 @@ const AddWordModal: React.FC<{
                             value={label}
                             onChange={e => setLabel(e.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                            placeholder="e.g. ????"
+                            placeholder="例: 黒髪"
                             required
                         />
                     </div>
@@ -872,7 +872,7 @@ const AddWordModal: React.FC<{
                             value={value}
                             onChange={e => setValue(e.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                            placeholder="e.g. magical girl"
+                            placeholder="例: black hair"
                             required
                         />
                     </div>
@@ -883,7 +883,7 @@ const AddWordModal: React.FC<{
                             value={note}
                             onChange={e => setNote(e.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                            placeholder="e.g. Short explanation or usage tip"
+                            placeholder="例: 用途や補足説明"
                         />
                     </div>
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -893,7 +893,7 @@ const AddWordModal: React.FC<{
                             onChange={e => setNsfw(e.target.checked)}
                             className="rounded bg-slate-800 border-slate-600 text-red-500 focus:ring-red-500/50"
                         />
-                        <span className="text-sm text-slate-300">NSFW content</span>
+                        <span className="text-sm text-slate-300">NSFWコンテンツ</span>
                     </label>
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">装飾 (任意)</label>
@@ -921,7 +921,7 @@ const AddWordModal: React.FC<{
                             onClick={onClose}
                             className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                         >
-                            Cancel
+                            キャンセル
                         </button>
                         <button
                             type="submit"
@@ -1019,7 +1019,7 @@ const EditWordModal: React.FC<{
                             onChange={e => setNsfw(e.target.checked)}
                             className="rounded bg-slate-800 border-slate-600 text-red-500 focus:ring-red-500/50"
                         />
-                        <span className="text-sm text-slate-300">NSFW content</span>
+                        <span className="text-sm text-slate-300">NSFWコンテンツ</span>
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input
@@ -1028,7 +1028,7 @@ const EditWordModal: React.FC<{
                             onChange={e => setFavorite(e.target.checked)}
                             className="rounded bg-slate-800 border-slate-600 text-amber-500 focus:ring-amber-500/50"
                         />
-                        <span className="text-sm text-slate-300">Favorite</span>
+                        <span className="text-sm text-slate-300">お気に入り</span>
                     </label>
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">装飾 (任意)</label>
@@ -1056,13 +1056,13 @@ const EditWordModal: React.FC<{
                             onClick={onClose}
                             className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                         >
-                            Cancel
+                            キャンセル
                         </button>
                         <button
                             type="submit"
                             className="flex-1 px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
                         >
-                            Save
+                            保存
                         </button>
                     </div>
                 </form>
@@ -1125,13 +1125,13 @@ const CardEditModal: React.FC<{
                             onClick={onClose}
                             className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                         >
-                            Cancel
+                            キャンセル
                         </button>
                         <button
                             type="submit"
                             className="flex-1 px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-500 font-bold"
                         >
-                            Save
+                            保存
                         </button>
                     </div>
                 </form>

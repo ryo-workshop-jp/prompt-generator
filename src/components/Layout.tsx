@@ -11,6 +11,7 @@ import NoticeModal, { readNoticeDismissed, writeNoticeDismissed } from './Notice
 import HelpModal from './HelpModal';
 import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 import type { FolderItem, WordItem, TemplateItem, CardItem } from '../types';
+import { trackEvent } from '../analytics';
 
 const UI_STORAGE_KEY = 'promptgen:ui';
 type UiSettings = {
@@ -68,24 +69,24 @@ const AddNodeModal: React.FC<{
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
                     <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
                     <div>
-                        <label className="block text-xs text-slate-400 mb-1">Name (Display)</label>
+                        <label className="block text-xs text-slate-400 mb-1">名前（表示）</label>
                         <input
                             type="text"
                             value={name}
                             onChange={event => setName(event.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                            placeholder="e.g. My Folder"
+                            placeholder="例: マイフォルダ"
                             required
                         />
                     </div>
                     <div>
-                        <label className="block text-xs text-slate-400 mb-1">ID (Optional)</label>
+                        <label className="block text-xs text-slate-400 mb-1">ID（任意）</label>
                         <input
                             type="text"
                             value={id}
                             onChange={event => setId(event.target.value)}
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
-                            placeholder="auto-generated-if-empty"
+                            placeholder="未入力の場合は自動生成"
                         />
                     </div>
                     <label className="flex items-center gap-2 cursor-pointer">
@@ -95,15 +96,15 @@ const AddNodeModal: React.FC<{
                             onChange={event => setNsfw(event.target.checked)}
                             className="rounded bg-slate-800 border-slate-600 text-red-500 focus:ring-red-500/50"
                         />
-                        <span className="text-sm text-slate-300">NSFW content</span>
+                        <span className="text-sm text-slate-300">NSFWコンテンツ</span>
                     </label>
                     </div>
                     <div className="flex gap-2 pt-2">
                         <button type="button" onClick={onClose} className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700">
-                            Cancel
+                            キャンセル
                         </button>
                         <button type="submit" className="flex-1 px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-500 font-bold">
-                            Add
+                            追加
                         </button>
                     </div>
                 </form>
@@ -132,11 +133,11 @@ const EditFolderModal: React.FC<{
     return (
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
             <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-sm shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
-                <h3 className="text-lg font-bold mb-4 text-white">Edit Folder</h3>
+                <h3 className="text-lg font-bold mb-4 text-white">フォルダを編集</h3>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
                     <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
                     <div>
-                        <label className="block text-xs text-slate-400 mb-1">Name</label>
+                        <label className="block text-xs text-slate-400 mb-1">名前</label>
                         <input
                             type="text"
                             value={name}
@@ -152,15 +153,15 @@ const EditFolderModal: React.FC<{
                             onChange={event => setNsfw(event.target.checked)}
                             className="rounded bg-slate-800 border-slate-600 text-red-500 focus:ring-red-500/50"
                         />
-                        <span className="text-sm text-slate-300">NSFW content</span>
+                        <span className="text-sm text-slate-300">NSFWコンテンツ</span>
                     </label>
                     </div>
                     <div className="flex gap-2 pt-2">
                         <button type="button" onClick={onClose} className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700">
-                            Cancel
+                            キャンセル
                         </button>
                         <button type="submit" className="flex-1 px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-500 font-bold">
-                            Save
+                            保存
                         </button>
                     </div>
                 </form>
@@ -325,7 +326,7 @@ const FolderCard: React.FC<{
             onClick={onOpen}
             className="relative flex h-full w-full flex-col items-start p-3 rounded-xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/40 hover:bg-slate-900 transition-all text-left"
         >
-            <span className="text-xs text-slate-500 font-mono mb-1">Folder</span>
+            <span className="text-xs text-slate-500 font-mono mb-1">フォルダ</span>
             <span className="text-sm font-bold text-slate-200">{folder.name}</span>
             {editMode && (
                 <div className="absolute top-2 right-2 flex gap-1">
@@ -333,7 +334,7 @@ const FolderCard: React.FC<{
                         type="button"
                         {...dragHandleProps}
                         className="p-1 rounded-md text-slate-500 hover:text-slate-300 cursor-grab"
-                        title="Drag to reorder"
+                        title="ドラッグして並び替え"
                         onClick={(event) => event.stopPropagation()}
                     >
                         <Bars3Icon className="w-4 h-4" />
@@ -345,7 +346,7 @@ const FolderCard: React.FC<{
                             onMove?.();
                         }}
                         className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
-                        title="Move"
+                        title="移動"
                     >
                         <ArrowRightIcon className="w-4 h-4" />
                     </button>
@@ -356,7 +357,7 @@ const FolderCard: React.FC<{
                             onEdit?.();
                         }}
                         className="p-1 rounded-md text-slate-500 hover:text-cyan-400"
-                        title="Edit"
+                        title="編集"
                     >
                         <Cog6ToothIcon className="w-4 h-4" />
                     </button>
@@ -367,7 +368,7 @@ const FolderCard: React.FC<{
                             onDelete?.();
                         }}
                         className="p-1 rounded-md text-slate-500 hover:text-rose-400"
-                        title="Delete"
+                        title="削除"
                     >
                         <TrashIcon className="w-4 h-4" />
                     </button>
@@ -611,6 +612,10 @@ const Layout: React.FC = () => {
             templates,
             cards: cards.filter(card => !folderIds.has(card.folderId))
         });
+        trackEvent('folder_delete', {
+            folder_id: id,
+            removed_folder_count: folderIds.size
+        });
     };
 
     const handleUpdateFolder = (id: string, updates: { name: string; nsfw: boolean }) => {
@@ -635,6 +640,10 @@ const Layout: React.FC = () => {
             words: words.filter(word => word.id !== id),
             templates,
             cards
+        });
+        trackEvent('card_delete', {
+            card_id: id,
+            folder_id: activeFolderId
         });
     };
 
@@ -829,6 +838,10 @@ const Layout: React.FC = () => {
         window.history.pushState({ app: true, folderId: activeFolderId }, '', window.location.href);
     }, [activeFolderId]);
 
+    useEffect(() => {
+        trackEvent('folder_view', { folder_id: activeFolderId });
+    }, [activeFolderId]);
+
     const handleAddWord = (label: string, value: string, nsfw: boolean, note?: string, templateIds?: string[]) => {
         if (hasDuplicateWordLabel(label, activeFolderId)) {
             alert('同じフォルダ内に同じ名前のカードは作成できません。');
@@ -844,9 +857,15 @@ const Layout: React.FC = () => {
             favorite: false,
             templateIds: templateIds && templateIds.length > 0 ? templateIds : undefined
         });
+        trackEvent('card_add', {
+            folder_id: activeFolderId,
+            has_note: Boolean(note),
+            nsfw
+        });
     };
 
     const handleApplyBulkSettings = (nsfw: boolean, templateIds: string[]) => {
+        const targetCount = words.filter(word => word.folderId === activeFolderId).length;
         const nextTemplateIds = templateIds.length > 0 ? templateIds : undefined;
         setData({
             folders,
@@ -861,6 +880,12 @@ const Layout: React.FC = () => {
                 };
             }),
             cards
+        });
+        trackEvent('card_bulk_update', {
+            folder_id: activeFolderId,
+            affected_count: targetCount,
+            nsfw,
+            template_count: templateIds.length
         });
         setIsBulkEditOpen(false);
     };
@@ -889,6 +914,10 @@ const Layout: React.FC = () => {
             templates,
             cards
         });
+        trackEvent('folder_move', {
+            folder_id: movingFolder.id,
+            to_folder_id: targetId
+        });
         setMovingFolder(null);
     };
 
@@ -912,6 +941,10 @@ const Layout: React.FC = () => {
             templates,
             cards
         });
+        trackEvent('card_move', {
+            card_id: movingWord.id,
+            to_folder_id: targetId
+        });
         setMovingWord(null);
     };
 
@@ -930,6 +963,10 @@ const Layout: React.FC = () => {
                 ? { ...card, folderId: targetId }
                 : card
             )
+        });
+        trackEvent('deck_move', {
+            deck_id: movingCard.id,
+            to_folder_id: targetId
         });
         setMovingCard(null);
     };
@@ -954,7 +991,7 @@ const Layout: React.FC = () => {
                         <button
                             onClick={() => setIsSettingsOpen(true)}
                             className="text-slate-500 hover:text-cyan-400 transition-colors p-1 rounded-full hover:bg-slate-800"
-                            title="Manage Data"
+                            title="データ管理"
                         >
                             <Cog6ToothIcon className="w-5 h-5" />
                         </button>
@@ -969,7 +1006,7 @@ const Layout: React.FC = () => {
                 </div>
 
                 <div className="p-3 border-t border-slate-800 text-[10px] text-slate-600 text-center font-mono">
-                    v1.0.0 • LocalStorage Mode
+                    v1.0.0 • ローカル保存モード
                 </div>
             </aside>
 
@@ -983,10 +1020,10 @@ const Layout: React.FC = () => {
                         {activeFolderId !== 'root' ? (
                             <>
                                 <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-                                <span>Developing Prompt...</span>
+                                <span>プロンプト編集中...</span>
                             </>
                         ) : (
-                            <span>Browse folders or search</span>
+                            <span>フォルダを閲覧または検索</span>
                         )}
                     </div>
                     <div className="flex items-center gap-2">
@@ -996,13 +1033,13 @@ const Layout: React.FC = () => {
                                 value={searchQuery}
                                 onChange={(event) => setSearchQuery(event.target.value)}
                                 className="bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 w-56 pr-8"
-                                placeholder="Search folders or words..."
+                                placeholder="フォルダまたはカードを検索..."
                             />
                             {searchQuery && (
                                 <button
                                     onClick={() => setSearchQuery('')}
                                     className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
-                                    title="Clear search"
+                                    title="検索をクリア"
                                 >
                                     <XMarkIcon className="w-4 h-4" />
                                 </button>
@@ -1015,7 +1052,7 @@ const Layout: React.FC = () => {
                                 : 'bg-slate-800 border-slate-700 text-slate-400 hover:bg-slate-700'
                                 }`}
                         >
-                            <span>EDIT</span>
+                            <span>編集</span>
                             <span className={`w-2 h-2 rounded-full ${editMode ? 'bg-cyan-400 animate-pulse' : 'bg-slate-500'}`}></span>
                         </button>
                         <button
@@ -1025,12 +1062,18 @@ const Layout: React.FC = () => {
                                 ? 'bg-slate-800 hover:bg-slate-700 text-slate-300'
                                 : 'bg-slate-900 text-slate-600 cursor-not-allowed'
                                 }`}
-                            title="Undo (Ctrl/Cmd+Z)"
+                            title="元に戻す (Ctrl/Cmd+Z)"
                         >
-                            Undo
+                            元に戻す
                         </button>
-                        <button onClick={clearAll} className="text-xs bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded transition-colors text-slate-300">
-                            Clear
+                        <button
+                            onClick={() => {
+                                clearAll();
+                                trackEvent('workspace_clear');
+                            }}
+                            className="text-xs bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded transition-colors text-slate-300"
+                        >
+                            クリア
                         </button>
                     </div>
                 </header>
@@ -1039,10 +1082,10 @@ const Layout: React.FC = () => {
                     {searchResults ? (
                         <div className="flex flex-col gap-8">
                             <div>
-                                <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-3">Folders</h2>
+                                <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-3">フォルダ</h2>
                                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                                     {searchResults.matchingFolders.length === 0 && (
-                                        <div className="text-xs text-slate-500">No matching folders.</div>
+                                        <div className="text-xs text-slate-500">該当するフォルダはありません。</div>
                                     )}
                                     {searchResults.matchingFolders.map(folder => (
                                         <FolderCard
@@ -1062,10 +1105,10 @@ const Layout: React.FC = () => {
                                 </div>
                             </div>
                             <div>
-                                <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-3">Words</h2>
+                                <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-3">カード</h2>
                                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                                     {searchResults.matchingWords.length === 0 && (
-                                        <div className="text-xs text-slate-500">No matching words.</div>
+                                        <div className="text-xs text-slate-500">該当するカードはありません。</div>
                                     )}
                                     {searchResults.matchingWords.map(word => (
                                         <WordCard
@@ -1082,19 +1125,19 @@ const Layout: React.FC = () => {
                         <div className="flex flex-col gap-6">
                             <div className="flex items-center justify-between">
                                 <div className="text-xs text-slate-500 uppercase tracking-wider">
-                                    Current Folder: <span className="text-slate-300">{currentFolderPath}</span>
+                                    現在のフォルダ: <span className="text-slate-300">{currentFolderPath}</span>
                                 </div>
                             </div>
 
                             <div>
                                 <div className="flex items-center justify-between mb-3">
-                                    <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">Folders</h2>
+                                    <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">フォルダ</h2>
                                     <button
                                         onClick={() => setShowAddFolder(true)}
                                         className="text-xs text-slate-400 hover:text-cyan-400 flex items-center gap-1"
                                     >
                                         <PlusIcon className="w-4 h-4" />
-                                        Add Folder
+                                        フォルダを追加
                                     </button>
                                 </div>
                                 <DndContext
@@ -1108,7 +1151,7 @@ const Layout: React.FC = () => {
                                     >
                                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                                             {visibleFolders.length === 0 && (
-                                                <div className="text-xs text-slate-500">No folders.</div>
+                                                <div className="text-xs text-slate-500">フォルダがありません。</div>
                                             )}
                                             {visibleFolders.map(folder => {
                                                 const cardProps = {
@@ -1138,7 +1181,7 @@ const Layout: React.FC = () => {
                             {cardsForGrid.length > 0 && (
                                 <div>
                                     <div className="flex items-center justify-between mb-3">
-                                        <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">Cards</h2>
+                                        <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">デッキ</h2>
                                     </div>
                                     <WordGrid
                                         words={[]}
@@ -1158,6 +1201,10 @@ const Layout: React.FC = () => {
                                         onDeleteCard={(card) => {
                                             if (!confirm('このデッキを削除します。よろしいですか？')) return;
                                             removeCard(card.id);
+                                            trackEvent('deck_delete', {
+                                                deck_id: card.id,
+                                                folder_id: card.folderId
+                                            });
                                         }}
                                         showAddWordButton={false}
                                         showWordModals={false}
@@ -1167,7 +1214,7 @@ const Layout: React.FC = () => {
 
                             <div>
                                 <div className="flex items-center justify-between mb-3">
-                                    <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">Words</h2>
+                                    <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider">カード</h2>
                                     <button
                                         type="button"
                                         onClick={() => setIsBulkEditOpen(true)}
@@ -1261,7 +1308,7 @@ const Layout: React.FC = () => {
             />
             <AddNodeModal
                 isOpen={showAddFolder}
-                title="Add Folder"
+                title="フォルダを追加"
                 onClose={() => setShowAddFolder(false)}
                 onAdd={(name, id, nsfw) => {
                     if (hasDuplicateFolderName(name, activeFolderId)) {
@@ -1269,6 +1316,11 @@ const Layout: React.FC = () => {
                         return;
                     }
                     addFolder(name, id, activeFolderId, nsfw);
+                    trackEvent('folder_add', {
+                        folder_id: id,
+                        parent_id: activeFolderId,
+                        nsfw
+                    });
                 }}
                 parentId={activeFolderId}
             />
