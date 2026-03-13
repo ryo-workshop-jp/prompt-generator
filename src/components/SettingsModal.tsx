@@ -9,6 +9,7 @@ import { initialData } from '../data/initialData';
 
 
 const UI_STORAGE_KEY = 'promptgen:ui';
+const TEMPLATE_FOLDER_KEY = 'promptgen:template-folders';
 type UiSettings = {
     nsfwConfirmSkip?: boolean;
     stepperDisplay?: 'inside' | 'above';
@@ -50,6 +51,33 @@ const writeUiSettings = (updates: {
         window.dispatchEvent(new CustomEvent('promptgen:ui-update', { detail: next }));
     } catch (e) {
         console.warn('Failed to save UI settings.', e);
+    }
+};
+
+const readTemplateFolders = (): string[] => {
+    try {
+        if (typeof window === 'undefined') return [];
+        const stored = localStorage.getItem(TEMPLATE_FOLDER_KEY);
+        if (!stored) return [];
+        const parsed = JSON.parse(stored) as unknown;
+        if (!Array.isArray(parsed)) return [];
+        return parsed
+            .filter((item): item is string => typeof item === 'string')
+            .map(item => item.trim())
+            .filter(Boolean);
+    } catch (e) {
+        console.warn('Failed to load template folders.', e);
+        return [];
+    }
+};
+
+const writeTemplateFolders = (folders: string[]) => {
+    try {
+        if (typeof window === 'undefined') return;
+        const unique = Array.from(new Set(folders.map(item => item.trim()).filter(Boolean)));
+        localStorage.setItem(TEMPLATE_FOLDER_KEY, JSON.stringify(unique));
+    } catch (e) {
+        console.warn('Failed to save template folders.', e);
     }
 };
 
@@ -102,10 +130,13 @@ const SortableOptionRow: React.FC<{
 const TemplateModal: React.FC<{
     isOpen: boolean;
     template: TemplateItem | null;
+    availableFolders: string[];
+    defaultFolder?: string;
     onClose: () => void;
     onSave: (template: TemplateItem) => void;
-}> = ({ isOpen, template, onClose, onSave }) => {
+}> = ({ isOpen, template, availableFolders, defaultFolder, onClose, onSave }) => {
     const [name, setName] = useState(template?.name ?? '');
+    const [folderId, setFolderId] = useState(template?.folderId ?? defaultFolder ?? '');
     const [options, setOptions] = useState<TemplateOption[]>(template?.options ?? []);
     const [allowFree, setAllowFree] = useState(!!template?.allowFree);
     const [spaceEnabled, setSpaceEnabled] = useState(template?.spaceEnabled ?? true);
@@ -120,6 +151,18 @@ const TemplateModal: React.FC<{
             coordinateGetter: sortableKeyboardCoordinates,
         })
     );
+
+    useEffect(() => {
+        if (!isOpen) return;
+        setName(template?.name ?? '');
+        setFolderId(template?.folderId ?? defaultFolder ?? '');
+        setOptions(template?.options ?? []);
+        setAllowFree(!!template?.allowFree);
+        setSpaceEnabled(template?.spaceEnabled ?? true);
+        setPosition(template?.position ?? 'before');
+        setNewLabel('');
+        setNewValue('');
+    }, [isOpen, template, defaultFolder]);
 
     if (!isOpen) return null;
 
@@ -139,6 +182,7 @@ const TemplateModal: React.FC<{
         const payload: TemplateItem = {
             id: template?.id ?? Date.now().toString(),
             name: name.trim(),
+            folderId: folderId.trim() || undefined,
             options,
             allowFree,
             spaceEnabled,
@@ -165,6 +209,22 @@ const TemplateModal: React.FC<{
                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
                             placeholder="例: カラー"
                         />
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">フォルダ（任意）</label>
+                        <input
+                            list="template-folder-options"
+                            type="text"
+                            value={folderId}
+                            onChange={(event) => setFolderId(event.target.value)}
+                            className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-cyan-500 focus:outline-none"
+                            placeholder="例: 髪の特徴"
+                        />
+                        <datalist id="template-folder-options">
+                            {availableFolders.map(folder => (
+                                <option key={folder} value={folder} />
+                            ))}
+                        </datalist>
                     </div>
                     <label className="flex items-center gap-2 cursor-pointer">
                         <input
@@ -312,6 +372,9 @@ const SortableTemplateRow: React.FC<{
                 </button>
                 <div>
                     <div className="text-sm font-bold text-slate-200">{template.name}</div>
+                    {template.folderId && (
+                        <div className="text-[10px] text-amber-300">{template.folderId}</div>
+                    )}
                     <div className="text-[11px] text-slate-500">
                         {template.options.length} 件
                         {template.allowFree ? ' + 自由入力' : ''}
@@ -378,6 +441,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     const [isFavoriteExportPickerOpen, setIsFavoriteExportPickerOpen] = useState(false);
     const [isQualityExportPickerOpen, setIsQualityExportPickerOpen] = useState(false);
     const [isTemplateExportPickerOpen, setIsTemplateExportPickerOpen] = useState(false);
+    const [templateFolders, setTemplateFolders] = useState<string[]>(() => readTemplateFolders());
+    const [newTemplateFolderName, setNewTemplateFolderName] = useState('');
+    const [templateFolderFilter, setTemplateFolderFilter] = useState<string>('all');
     const [wordExportActiveFolderId, setWordExportActiveFolderId] = useState('root');
     const [wordExportSearch, setWordExportSearch] = useState('');
     const [wordExportExpandedFolderIds, setWordExportExpandedFolderIds] = useState<string[]>(['root']);
@@ -437,6 +503,48 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             .sort((a, b) => a.label.localeCompare(b.label));
     }, [templates]);
 
+
+    const templateFolderOptions = useMemo(() => {
+        const fromTemplates = templates
+            .map(template => template.folderId?.trim() ?? '')
+            .filter(folder => folder.length > 0);
+        const merged = [...templateFolders, ...fromTemplates];
+        return Array.from(new Set(merged)).sort((a, b) => a.localeCompare(b));
+    }, [templateFolders, templates]);
+
+    const filteredTemplates = useMemo(() => {
+        if (templateFolderFilter === 'all') return templates;
+        if (templateFolderFilter === '__none__') {
+            return templates.filter(template => !(template.folderId && template.folderId.trim()));
+        }
+        return templates.filter(template => (template.folderId ?? '').trim() === templateFolderFilter);
+    }, [templateFolderFilter, templates]);
+
+    const handleAddTemplateFolder = () => {
+        const name = newTemplateFolderName.trim();
+        if (!name) return;
+        const existingFolder = templateFolderOptions.find(folder => folder.toLowerCase() === name.toLowerCase());
+        if (existingFolder) {
+            setNewTemplateFolderName('');
+            setTemplateFolderFilter(existingFolder);
+            return;
+        }
+        const next = [...templateFolders, name];
+        setTemplateFolders(next);
+        writeTemplateFolders(next);
+        setTemplateFolderFilter(name);
+        setNewTemplateFolderName('');
+    };
+
+    const reorderTemplateSubset = (list: TemplateItem[], orderedSubset: TemplateItem[]) => {
+        const orderedIds = new Set(orderedSubset.map(item => item.id));
+        const queue = [...orderedSubset];
+        return list.map(item => {
+            if (!orderedIds.has(item.id)) return item;
+            const next = queue.shift();
+            return next ?? item;
+        });
+    };
 
     const collectDescendantFolderIds = (startIds: string[]) => {
         const visited = new Set<string>();
@@ -1417,27 +1525,60 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                         追加
                                     </button>
                                 </div>
+                                <div className="mb-3 grid grid-cols-1 md:grid-cols-[1fr,220px] gap-2">
+                                    <div className="flex items-center gap-2">
+                                        <input
+                                            type="text"
+                                            value={newTemplateFolderName}
+                                            onChange={(event) => setNewTemplateFolderName(event.target.value)}
+                                            className="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                            placeholder="フォルダ名を入力..."
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={handleAddTemplateFolder}
+                                            className="px-3 py-2 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                        >
+                                            フォルダ追加
+                                        </button>
+                                    </div>
+                                    <select
+                                        value={templateFolderFilter}
+                                        onChange={(event) => setTemplateFolderFilter(event.target.value)}
+                                        className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                    >
+                                        <option value="all">すべて表示</option>
+                                        <option value="__none__">未分類</option>
+                                        {templateFolderOptions.map(folder => (
+                                            <option key={folder} value={folder}>{folder}</option>
+                                        ))}
+                                    </select>
+                                </div>
                                 <DndContext
                                     sensors={templateSensors}
                                     collisionDetection={closestCenter}
                                     onDragEnd={(event: DragEndEvent) => {
                                         const { active, over } = event;
                                         if (!over || active.id === over.id) return;
-                                        const oldIndex = templates.findIndex(item => item.id === active.id);
-                                        const newIndex = templates.findIndex(item => item.id === over.id);
+                                        const oldIndex = filteredTemplates.findIndex(item => item.id === active.id);
+                                        const newIndex = filteredTemplates.findIndex(item => item.id === over.id);
                                         if (oldIndex === -1 || newIndex === -1) return;
-                                        setData({ folders, words, templates: arrayMove(templates, oldIndex, newIndex), cards });
+                                        const ordered = arrayMove(filteredTemplates, oldIndex, newIndex);
+                                        const nextTemplates = templateFolderFilter === 'all'
+                                            ? ordered
+                                            : reorderTemplateSubset(templates, ordered);
+                                        setData({ folders, words, templates: nextTemplates, cards });
                                     }}
                                 >
                                     <SortableContext
-                                        items={templates.map(template => template.id)}
+                                        items={filteredTemplates.map(template => template.id)}
                                         strategy={rectSortingStrategy}
                                     >
                                         <div className="flex flex-col gap-2">
-                                            {templates.length === 0 && (
+                                            {filteredTemplates.length === 0 && (
                                                 <div className="text-xs text-slate-500">装飾がありません。</div>
                                             )}
-                                            {templates.map(template => (
+                                            {filteredTemplates.map(template => (
                                                 <SortableTemplateRow
                                                     key={template.id}
                                                     template={template}
@@ -2194,8 +2335,15 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 key={editingTemplate?.id ?? 'new'}
                 isOpen={isTemplateModalOpen}
                 template={editingTemplate}
+                availableFolders={templateFolderOptions}
+                defaultFolder={templateFolderFilter !== 'all' && templateFolderFilter !== '__none__' ? templateFolderFilter : undefined}
                 onClose={() => setIsTemplateModalOpen(false)}
                 onSave={(payload) => {
+                    if (payload.folderId && !templateFolderOptions.some(folder => folder.toLowerCase() === payload.folderId?.toLowerCase())) {
+                        const nextFolders = [...templateFolders, payload.folderId];
+                        setTemplateFolders(nextFolders);
+                        writeTemplateFolders(nextFolders);
+                    }
                     if (editingTemplate) {
                         updateTemplate(payload);
                         return;
@@ -2208,7 +2356,3 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 };
 
 export default SettingsModal;
-
-
-
-

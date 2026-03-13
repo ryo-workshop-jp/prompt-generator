@@ -32,6 +32,7 @@ export interface TemplateOption {
 export interface TemplateItem {
     id: string;
     name: string;
+    folderId?: string;
     options: TemplateOption[];
     allowFree?: boolean;
     defaultOptionId?: string;

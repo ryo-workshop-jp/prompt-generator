@@ -9,6 +9,7 @@ import PromptOutput from './PromptOutput';
 import SettingsModal from './SettingsModal';
 import NoticeModal, { readNoticeDismissed, writeNoticeDismissed } from './NoticeModal';
 import HelpModal from './HelpModal';
+import TemplateFolderSelector from './TemplateFolderSelector';
 import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 import type { FolderItem, WordItem, TemplateItem, CardItem } from '../types';
 import { trackEvent } from '../analytics';
@@ -188,49 +189,37 @@ const BulkWordSettingsModal: React.FC<{
 
     if (!isOpen) return null;
 
-    const toggleTemplateId = (id: string) => {
-        setTemplateIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
-    };
-
     return (
         <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl flex flex-col gap-4">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                     <h3 className="text-lg font-bold text-white">カードの一括設定</h3>
                     <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
                 </div>
-                <div className="text-xs text-amber-300 bg-amber-950/40 border border-amber-500/30 rounded-lg px-3 py-2">
-                    既存の装飾設定は上書きされます。下階層のカードには適用されません。
-                    {hasDecorations && <div className="text-[10px] text-amber-200 mt-1">すでに装飾設定があるカードがあります。</div>}
-                </div>
-                <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                        type="checkbox"
-                        checked={nsfw}
-                        onChange={event => setNsfw(event.target.checked)}
-                        className="rounded bg-slate-800 border-slate-600 text-red-500 focus:ring-red-500/50"
-                    />
-                    <span className="text-sm text-slate-300">NSFWを付与</span>
-                </label>
-                <div>
-                    <div className="text-xs text-slate-400 mb-2">装飾テンプレート</div>
-                    <div className="bg-slate-950 border border-slate-700 rounded-lg p-2 max-h-40 overflow-y-auto custom-scrollbar">
-                        {templates.length === 0 && (
-                            <div className="text-xs text-slate-500">装飾がありません。</div>
-                        )}
-                        {templates.map(template => (
-                            <label key={template.id} className="flex items-center gap-2 text-sm text-slate-300">
-                                <input
-                                    type="checkbox"
-                                    checked={templateIds.includes(template.id)}
-                                    onChange={() => toggleTemplateId(template.id)}
-                                    className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
-                                />
-                                <span>{template.name}</span>
-                            </label>
-                        ))}
+                <div className="flex-1 min-h-0 overflow-y-auto pr-1 flex flex-col gap-4">
+                    <div className="text-xs text-amber-300 bg-amber-950/40 border border-amber-500/30 rounded-lg px-3 py-2">
+                        既存の装飾設定は上書きされます。下階層のカードには適用されません。
+                        {hasDecorations && <div className="text-[10px] text-amber-200 mt-1">すでに装飾設定があるカードがあります。</div>}
                     </div>
-                    <div className="text-[10px] text-slate-500 mt-1">未選択の場合は装飾を解除します。</div>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                            type="checkbox"
+                            checked={nsfw}
+                            onChange={event => setNsfw(event.target.checked)}
+                            className="rounded bg-slate-800 border-slate-600 text-red-500 focus:ring-red-500/50"
+                        />
+                        <span className="text-sm text-slate-300">NSFWを付与</span>
+                    </label>
+                    <div>
+                        <div className="text-xs text-slate-400 mb-2">装飾テンプレート</div>
+                        <TemplateFolderSelector
+                            templates={templates}
+                            selectedTemplateIds={templateIds}
+                            onChange={setTemplateIds}
+                            maxHeightClass="max-h-[52vh]"
+                        />
+                        <div className="text-[10px] text-slate-500 mt-1">未選択の場合は装飾を解除します。</div>
+                    </div>
                 </div>
                 <div className="flex gap-2 pt-2">
                     <button

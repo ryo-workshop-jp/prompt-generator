@@ -6,6 +6,7 @@ import { CSS } from '@dnd-kit/utilities';
 import { PlusIcon, MinusIcon, PlusSmallIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid';
 import { StarIcon, Cog6ToothIcon, TrashIcon, Bars3Icon, ArrowRightIcon, RectangleStackIcon } from '@heroicons/react/24/outline';
 import { usePrompt } from '../context/usePrompt';
+import TemplateFolderSelector from './TemplateFolderSelector';
 
 type WordCardProps = {
     word: WordItem;
@@ -135,7 +136,7 @@ const TemplateSelectModal: React.FC<{
 
     return (
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-lg shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-4xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <div className="flex items-center justify-between mb-4">
                     <div>
                         <h3 className="text-lg font-bold text-white">装飾</h3>
@@ -178,7 +179,7 @@ const TemplateSelectModal: React.FC<{
                                             <div className="text-xs text-slate-600">選択肢がありません。</div>
                                         )}
                                         {options.length > 0 && (
-                                            <div className="grid grid-cols-2 gap-2">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
                                                 {options.map(option => {
                                                     const selectedIndex = selectedOptions.findIndex(item => item.id === option.id && item.templateId === option.templateId);
                                                     const isSelected = selectedIndex >= 0;
@@ -831,10 +832,6 @@ const AddWordModal: React.FC<{
 
     if (!isOpen) return null;
 
-    const toggleTemplateId = (id: string) => {
-        setTemplateIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
-    };
-
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!label || !value) return;
@@ -897,22 +894,12 @@ const AddWordModal: React.FC<{
                     </label>
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">装飾 (任意)</label>
-                        <div className="bg-slate-950 border border-slate-700 rounded-lg p-2 max-h-32 overflow-y-auto custom-scrollbar">
-                            {templates.length === 0 && (
-                                <div className="text-xs text-slate-500">装飾がありません。</div>
-                            )}
-                            {templates.map(template => (
-                                <label key={template.id} className="flex items-center gap-2 text-sm text-slate-300">
-                                    <input
-                                        type="checkbox"
-                                        checked={templateIds.includes(template.id)}
-                                        onChange={() => toggleTemplateId(template.id)}
-                                        className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
-                                    />
-                                    <span>{template.name}</span>
-                                </label>
-                            ))}
-                        </div>
+                        <TemplateFolderSelector
+                            templates={templates}
+                            selectedTemplateIds={templateIds}
+                            onChange={setTemplateIds}
+                            maxHeightClass="max-h-32"
+                        />
                     </div>
                     </div>
                     <div className="flex gap-2 pt-2">
@@ -956,10 +943,6 @@ const EditWordModal: React.FC<{
     const [templateIds, setTemplateIds] = useState<string[]>(extractTemplateIds(word ?? null));
 
     if (!word) return null;
-
-    const toggleTemplateId = (id: string) => {
-        setTemplateIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
-    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -1032,22 +1015,12 @@ const EditWordModal: React.FC<{
                     </label>
                     <div>
                         <label className="block text-xs text-slate-400 mb-1">装飾 (任意)</label>
-                        <div className="bg-slate-950 border border-slate-700 rounded-lg p-2 max-h-32 overflow-y-auto custom-scrollbar">
-                            {templates.length === 0 && (
-                                <div className="text-xs text-slate-500">装飾がありません。</div>
-                            )}
-                            {templates.map(template => (
-                                <label key={template.id} className="flex items-center gap-2 text-sm text-slate-300">
-                                    <input
-                                        type="checkbox"
-                                        checked={templateIds.includes(template.id)}
-                                        onChange={() => toggleTemplateId(template.id)}
-                                        className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
-                                    />
-                                    <span>{template.name}</span>
-                                </label>
-                            ))}
-                        </div>
+                        <TemplateFolderSelector
+                            templates={templates}
+                            selectedTemplateIds={templateIds}
+                            onChange={setTemplateIds}
+                            maxHeightClass="max-h-32"
+                        />
                     </div>
                     </div>
                     <div className="flex gap-2 pt-2">
@@ -1081,10 +1054,6 @@ const CardEditModal: React.FC<{
 
     if (!card) return null;
 
-    const toggleTemplateId = (id: string) => {
-        setTemplateIds(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]);
-    };
-
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const hasTemplates = templateIds.length > 0;
@@ -1093,30 +1062,20 @@ const CardEditModal: React.FC<{
     };
 
     return (
-        <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm">
-            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+        <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-3xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
                 <h3 className="text-lg font-bold mb-4 text-white">デッキの装飾</h3>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1 min-h-0">
                     <div className="flex flex-col gap-4 overflow-y-auto pr-1 flex-1 min-h-0">
                         <div className="text-xs text-slate-500">対象: <span className="text-slate-200 font-semibold">{card.name}</span></div>
                         <div>
                             <label className="block text-xs text-slate-400 mb-1">装飾 (任意)</label>
-                            <div className="bg-slate-950 border border-slate-700 rounded-lg p-2 max-h-40 overflow-y-auto custom-scrollbar">
-                                {templates.length === 0 && (
-                                    <div className="text-xs text-slate-500">装飾がありません。</div>
-                                )}
-                                {templates.map(template => (
-                                    <label key={template.id} className="flex items-center gap-2 text-sm text-slate-300">
-                                        <input
-                                            type="checkbox"
-                                            checked={templateIds.includes(template.id)}
-                                            onChange={() => toggleTemplateId(template.id)}
-                                            className="rounded bg-slate-800 border-slate-600 text-cyan-500 focus:ring-cyan-500/50"
-                                        />
-                                        <span>{template.name}</span>
-                                    </label>
-                                ))}
-                            </div>
+                            <TemplateFolderSelector
+                                templates={templates}
+                                selectedTemplateIds={templateIds}
+                                onChange={setTemplateIds}
+                                maxHeightClass="max-h-[52vh]"
+                            />
                         </div>
                     </div>
                     <div className="flex gap-2 pt-2">
