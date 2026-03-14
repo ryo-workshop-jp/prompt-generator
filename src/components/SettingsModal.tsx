@@ -6,6 +6,7 @@ import { Bars3Icon, ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/2
 import { usePrompt } from '../context/usePrompt';
 import type { FolderItem, WordItem, TemplateItem, TemplateOption, PromptFavorite, CardItem } from '../types';
 import { initialData } from '../data/initialData';
+import { COMFY_PRESET_STORAGE_KEY, COMFY_PRESET_UPDATE_EVENT, DEFAULT_COMFY_PRESET_CONFIG, readComfyPresetConfig, writeComfyPresetConfig, type ComfyPresetConfig, type ComfyQualityPreset } from '../constants/comfyPresets';
 
 
 const UI_STORAGE_KEY = 'promptgen:ui';
@@ -81,6 +82,21 @@ const writeTemplateFolders = (folders: string[]) => {
     } catch (e) {
         console.warn('Failed to save template folders.', e);
     }
+};
+
+const clampPresetResolution = (value: number) => {
+    if (!Number.isFinite(value)) return 1024;
+    return Math.min(4096, Math.max(64, Math.round(value)));
+};
+
+const clampPresetSteps = (value: number) => {
+    if (!Number.isFinite(value)) return 28;
+    return Math.min(200, Math.max(1, Math.round(value)));
+};
+
+const clampPresetCfgScale = (value: number) => {
+    if (!Number.isFinite(value)) return 6;
+    return Math.min(30, Math.max(0, Math.round(value * 10) / 10));
 };
 
 const SortableOptionRow: React.FC<{
@@ -430,7 +446,10 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         const settings = readUiSettings();
         return settings.comfyExportEnabled ?? true;
     });
-    const [activeTab, setActiveTab] = useState<'general' | 'io' | 'templates'>('general');
+    
+    const [comfyPresetConfig, setComfyPresetConfig] = useState<Record<ComfyQualityPreset, ComfyPresetConfig>>(() => readComfyPresetConfig());
+    const comfyPresetConfigRef = useRef<Record<ComfyQualityPreset, ComfyPresetConfig>>(comfyPresetConfig);
+    const [activeTab, setActiveTab] = useState<'general' | 'io' | 'templates' | 'comfy'>('general');
     const [importMode, setImportMode] = useState<'all' | 'words' | 'cards' | 'favorites' | 'quality' | 'templates' | null>(null);
     const [pendingWordsImport, setPendingWordsImport] = useState<{ folders: FolderItem[]; words: WordItem[] } | null>(null);
     const [resetAction, setResetAction] = useState<'resetWords' | 'clearWords' | 'clearExtras' | null>(null);
@@ -1116,6 +1135,87 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         });
     };
 
+    const commitComfyPresetConfig = (next: Record<ComfyQualityPreset, ComfyPresetConfig>) => {
+        setComfyPresetConfig(next);
+        writeComfyPresetConfig(next);
+    };
+
+    const updateComfyPreset = (presetKey: ComfyQualityPreset, updates: Partial<ComfyPresetConfig>) => {
+        const current = comfyPresetConfigRef.current;
+        const target = current[presetKey];
+        if (!target) return;
+        const next: Record<ComfyQualityPreset, ComfyPresetConfig> = {
+            ...current,
+            [presetKey]: {
+                ...target,
+                ...updates
+            }
+        };
+        commitComfyPresetConfig(next);
+    };
+
+    const handleAddComfyPreset = () => {
+        const current = comfyPresetConfigRef.current;
+        const entries = Object.entries(current) as [ComfyQualityPreset, ComfyPresetConfig][];
+        const base = current.standard ?? entries[0]?.[1] ?? DEFAULT_COMFY_PRESET_CONFIG.standard;
+        let index = 1;
+        let nextId = `preset-${index}`;
+        while (current[nextId]) {
+            index += 1;
+            nextId = `preset-${index}`;
+        }
+        const next: Record<ComfyQualityPreset, ComfyPresetConfig> = {
+            ...current,
+            [nextId]: {
+                ...base,
+                label: `新規プリセット ${index}`,
+                description: ''
+            }
+        };
+        commitComfyPresetConfig(next);
+    };
+
+    const handleRemoveComfyPreset = (presetKey: ComfyQualityPreset) => {
+        if (!confirm('このプリセットを削除しますか？')) return;
+        const current = comfyPresetConfigRef.current;
+        const entries = Object.entries(current);
+        if (entries.length <= 1) {
+            alert('プリセットは最低1つ必要です。');
+            return;
+        }
+        if (!current[presetKey]) return;
+        const next: Record<ComfyQualityPreset, ComfyPresetConfig> = { ...current };
+        delete next[presetKey];
+        commitComfyPresetConfig(next);
+    };
+
+    const handleResetComfyPresets = () => {
+        if (!confirm('Comfyプリセットを初期値に戻しますか？')) return;
+        writeComfyPresetConfig(DEFAULT_COMFY_PRESET_CONFIG);
+        setComfyPresetConfig(readComfyPresetConfig());
+    };
+
+    useEffect(() => {
+        comfyPresetConfigRef.current = comfyPresetConfig;
+    }, [comfyPresetConfig]);
+
+    useEffect(() => {
+        const handlePresetUpdate = (event: Event) => {
+            const detail = (event as CustomEvent).detail as Record<ComfyQualityPreset, ComfyPresetConfig> | undefined;
+            setComfyPresetConfig(detail ?? readComfyPresetConfig());
+        };
+        const handleStorage = (event: StorageEvent) => {
+            if (event.key !== COMFY_PRESET_STORAGE_KEY) return;
+            setComfyPresetConfig(readComfyPresetConfig());
+        };
+        window.addEventListener(COMFY_PRESET_UPDATE_EVENT, handlePresetUpdate);
+        window.addEventListener('storage', handleStorage);
+        return () => {
+            window.removeEventListener(COMFY_PRESET_UPDATE_EVENT, handlePresetUpdate);
+            window.removeEventListener('storage', handleStorage);
+        };
+    }, []);
+
     const openResetModal = (action: 'resetWords' | 'clearWords' | 'clearExtras') => {
         setResetAction(action);
         setResetConfirmed(false);
@@ -1178,6 +1278,16 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     }`}
                             >
                                 装飾の設定
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => setActiveTab('comfy')}
+                                className={`px-3 py-2 rounded-t-lg transition-colors ${activeTab === 'comfy'
+                                    ? 'bg-slate-800 text-slate-100 border border-b-0 border-slate-700'
+                                    : 'text-slate-500 hover:text-slate-200'
+                                    }`}
+                            >
+                                Comfy JSON
                             </button>
                         </div>
                     </div>
@@ -1537,6 +1647,154 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     onChange={handleImport}
                                     className="hidden"
                                 />
+                            </div>
+                        )}
+                        {activeTab === 'comfy' && (
+                            <div className="flex flex-col gap-3">
+                                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                    <div className="flex flex-wrap items-center justify-between gap-3">
+                                        <div>
+                                            <div className="text-sm font-bold text-slate-200">ComfyUI 指示JSON 出力設定</div>
+                                            <div className="text-xs text-slate-500">プリセットの追加・削除・名称/説明編集ができます。変更は即時反映されます。</div>
+                                        </div>
+                                        <div className="flex gap-2">
+                                            <button
+                                                type="button"
+                                                onClick={handleAddComfyPreset}
+                                                className="px-3 py-1.5 text-xs rounded bg-cyan-700 text-white hover:bg-cyan-600"
+                                            >
+                                                プリセット追加
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={handleResetComfyPresets}
+                                                className="px-3 py-1.5 text-xs rounded bg-slate-700 text-slate-200 hover:bg-slate-600"
+                                            >
+                                                初期値に戻す
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center justify-between mt-4">
+                                        <div className="flex flex-col">
+                                            <span className="text-sm font-bold text-slate-200">ComfyUI指示JSON出力を表示</span>
+                                            <span className="text-xs text-slate-500">PromptOutputのComfy指示JSONボタンとモーダル表示を切り替えます。</span>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            onClick={handleComfyExportToggle}
+                                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${comfyExportEnabled ? 'bg-cyan-500' : 'bg-slate-600'}`}
+                                        >
+                                            <span
+                                                className={`${comfyExportEnabled ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                                            />
+                                        </button>
+                                    </div>
+                                </div>
+                                {(Object.entries(comfyPresetConfig) as [ComfyQualityPreset, ComfyPresetConfig][]).map(([key, preset]) => (
+                                    <div key={key} className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                        <div className="flex flex-wrap items-center justify-between gap-2">
+                                            <div className="text-[11px] text-slate-400 font-mono">id: {key}</div>
+                                            <button
+                                                type="button"
+                                                onClick={() => handleRemoveComfyPreset(key)}
+                                                className="px-2 py-1 text-xs rounded bg-rose-900/50 text-rose-200 hover:bg-rose-800/60"
+                                            >
+                                                消去
+                                            </button>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                                            <input
+                                                type="text"
+                                                value={preset.label}
+                                                onChange={(event) => updateComfyPreset(key, { label: event.target.value })}
+                                                className="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                                placeholder="名称"
+                                            />
+                                            <input
+                                                type="text"
+                                                value={preset.description}
+                                                onChange={(event) => updateComfyPreset(key, { description: event.target.value })}
+                                                className="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                                placeholder="説明文"
+                                            />
+                                        </div>
+                                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+                                            <input
+                                                type="number"
+                                                min={64}
+                                                max={4096}
+                                                value={preset.width}
+                                                onChange={(event) => {
+                                                    const next = Number(event.target.value);
+                                                    if (!Number.isFinite(next)) return;
+                                                    updateComfyPreset(key, { width: next });
+                                                }}
+                                                onBlur={() => updateComfyPreset(key, { width: clampPresetResolution(preset.width) })}
+                                                className="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                                placeholder="width"
+                                            />
+                                            <input
+                                                type="number"
+                                                min={64}
+                                                max={4096}
+                                                value={preset.height}
+                                                onChange={(event) => {
+                                                    const next = Number(event.target.value);
+                                                    if (!Number.isFinite(next)) return;
+                                                    updateComfyPreset(key, { height: next });
+                                                }}
+                                                onBlur={() => updateComfyPreset(key, { height: clampPresetResolution(preset.height) })}
+                                                className="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                                placeholder="height"
+                                            />
+                                            <input
+                                                type="number"
+                                                min={1}
+                                                max={200}
+                                                value={preset.steps}
+                                                onChange={(event) => {
+                                                    const next = Number(event.target.value);
+                                                    if (!Number.isFinite(next)) return;
+                                                    updateComfyPreset(key, { steps: next });
+                                                }}
+                                                onBlur={() => updateComfyPreset(key, { steps: clampPresetSteps(preset.steps) })}
+                                                className="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                                placeholder="steps"
+                                            />
+                                            <input
+                                                type="number"
+                                                min={0}
+                                                max={30}
+                                                step={0.1}
+                                                value={preset.cfgScale}
+                                                onChange={(event) => {
+                                                    const next = Number(event.target.value);
+                                                    if (!Number.isFinite(next)) return;
+                                                    updateComfyPreset(key, { cfgScale: next });
+                                                }}
+                                                onBlur={() => updateComfyPreset(key, { cfgScale: clampPresetCfgScale(preset.cfgScale) })}
+                                                className="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                                placeholder="cfg"
+                                            />
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-2 mt-2">
+                                            <input
+                                                type="text"
+                                                value={preset.sampler}
+                                                onChange={(event) => updateComfyPreset(key, { sampler: event.target.value })}
+                                                className="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                                placeholder="sampler"
+                                            />
+                                            <input
+                                                type="text"
+                                                value={preset.scheduler}
+                                                onChange={(event) => updateComfyPreset(key, { scheduler: event.target.value })}
+                                                className="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-xs text-white focus:border-cyan-500 focus:outline-none"
+                                                placeholder="scheduler"
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         )}
                         {activeTab === 'templates' && (

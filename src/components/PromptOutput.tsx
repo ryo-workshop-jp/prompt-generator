@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { DndContext, KeyboardSensor, PointerSensor, closestCenter, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, rectSortingStrategy, sortableKeyboardCoordinates, useSortable } from '@dnd-kit/sortable';
@@ -8,6 +8,7 @@ import type { SelectedWord, PromptStrength, PromptFavorite, CardWordRef } from '
 import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon, ChevronRightIcon, ChevronDownIcon, ClockIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid';
 import { trackEvent } from '../analytics';
+import { COMFY_PRESET_STORAGE_KEY, COMFY_PRESET_UPDATE_EVENT, DEFAULT_COMFY_PRESET_CONFIG, readComfyPresetConfig, type ComfyPresetConfig, type ComfyQualityPreset } from '../constants/comfyPresets';
 
 const UI_STORAGE_KEY = 'promptgen:ui';
 const COPY_HISTORY_KEY = 'promptgen:copy-history';
@@ -37,90 +38,12 @@ type RestoreSnapshot = {
     };
 };
 
-type ComfyQualityPreset = 'draft' | 'standard' | 'high' | 'square1524' | 'landscapeFhd' | 'portraitFhd' | 'custom';
-
-type ComfyPresetConfig = {
-    label: string;
-    description: string;
-    width: number;
-    height: number;
-    steps: number;
-    cfgScale: number;
-    sampler: string;
-    scheduler: string;
-};
-
-const COMFY_PRESET_CONFIG: Record<ComfyQualityPreset, ComfyPresetConfig> = {
-    draft: {
-        label: '\u4e0b\u66f8\u304d',
-        description: '\u78ba\u8a8d\u7528\u306e\u8efd\u91cf\u8a2d\u5b9a',
-        width: 768,
-        height: 1024,
-        steps: 18,
-        cfgScale: 5,
-        sampler: 'dpmpp_2m',
-        scheduler: 'karras'
-    },
-    standard: {
-        label: '\u6a19\u6e96',
-        description: '\u901a\u5e38\u54c1\u8cea\u306e\u6a19\u6e96\u8a2d\u5b9a',
-        width: 1024,
-        height: 1024,
-        steps: 28,
-        cfgScale: 6,
-        sampler: 'dpmpp_2m_sde',
-        scheduler: 'karras'
-    },
-    high: {
-        label: '\u9ad8\u54c1\u8cea',
-        description: '\u9ad8\u753b\u8cea\u5411\u3051\u8a2d\u5b9a',
-        width: 1344,
-        height: 1344,
-        steps: 40,
-        cfgScale: 6.5,
-        sampler: 'dpmpp_2m_sde',
-        scheduler: 'karras'
-    },
-    square1524: {
-        label: '\u6b63\u65b9\u5f62 1524',
-        description: '1524 x 1524',
-        width: 1524,
-        height: 1524,
-        steps: 36,
-        cfgScale: 6.5,
-        sampler: 'dpmpp_2m_sde',
-        scheduler: 'karras'
-    },
-    landscapeFhd: {
-        label: '\u6a2a\u9577 FHD',
-        description: '1920 x 1080',
-        width: 1920,
-        height: 1080,
-        steps: 32,
-        cfgScale: 6,
-        sampler: 'dpmpp_2m_sde',
-        scheduler: 'karras'
-    },
-    portraitFhd: {
-        label: '\u7e26\u9577 FHD',
-        description: '1080 x 1920',
-        width: 1080,
-        height: 1920,
-        steps: 32,
-        cfgScale: 6,
-        sampler: 'dpmpp_2m_sde',
-        scheduler: 'karras'
-    },
-    custom: {
-        label: '\u4efb\u610f\u30b5\u30a4\u30ba',
-        description: '\u5e45\u3068\u9ad8\u3055\u3092\u624b\u52d5\u6307\u5b9a',
-        width: 1024,
-        height: 1024,
-        steps: 28,
-        cfgScale: 6,
-        sampler: 'dpmpp_2m_sde',
-        scheduler: 'karras'
-    }
+type ComfyBatchJobDraft = {
+    id: string;
+    name: string;
+    count: number;
+    positive: string;
+    negative: string;
 };
 
 const pad2 = (value: number) => value.toString().padStart(2, '0');
@@ -155,6 +78,18 @@ const clampResolution = (value: number) => {
     return Math.min(4096, Math.max(64, Math.round(value)));
 };
 
+const clampComfySteps = (value: number) => {
+    if (!Number.isFinite(value)) return 28;
+    return Math.min(200, Math.max(1, Math.round(value)));
+};
+
+const clampComfyCfgScale = (value: number) => {
+    if (!Number.isFinite(value)) return 6;
+    return Math.min(30, Math.max(0, Math.round(value * 10) / 10));
+};
+
+const createDraftId = () => `${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+
 const downloadJson = (payload: unknown, filename: string) => {
     const json = JSON.stringify(payload, null, 2);
     const blob = new Blob([json], { type: 'application/json' });
@@ -166,14 +101,25 @@ const downloadJson = (payload: unknown, filename: string) => {
     URL.revokeObjectURL(url);
 };
 
-const resolveComfySize = (preset: ComfyQualityPreset, customWidth: number, customHeight: number) => {
+const resolveComfySize = (
+    preset: ComfyQualityPreset,
+    customWidth: number,
+    customHeight: number,
+    presetConfig: Record<ComfyQualityPreset, ComfyPresetConfig>
+) => {
     if (preset === 'custom') {
         return {
             width: clampResolution(customWidth),
             height: clampResolution(customHeight)
         };
     }
-    const selected = COMFY_PRESET_CONFIG[preset];
+    const selected = presetConfig[preset];
+    if (!selected) {
+        return {
+            width: clampResolution(customWidth),
+            height: clampResolution(customHeight)
+        };
+    }
     return {
         width: selected.width,
         height: selected.height
@@ -568,11 +514,21 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         return settings.comfyExportEnabled ?? true;
     });
     const [isComfyExportOpen, setIsComfyExportOpen] = useState(false);
+    const [comfyPresetConfig, setComfyPresetConfig] = useState<Record<ComfyQualityPreset, ComfyPresetConfig>>(() => readComfyPresetConfig());
     const [comfyQualityPreset, setComfyQualityPreset] = useState<ComfyQualityPreset>('standard');
     const [comfyImageCount, setComfyImageCount] = useState(4);
     const [comfyJobName, setComfyJobName] = useState('');
+    const [comfyBatchJobs, setComfyBatchJobs] = useState<ComfyBatchJobDraft[]>([]);
     const [comfyCustomWidth, setComfyCustomWidth] = useState(1524);
     const [comfyCustomHeight, setComfyCustomHeight] = useState(1524);
+    const [comfySteps, setComfySteps] = useState(() => {
+        const presets = readComfyPresetConfig();
+        return presets.standard?.steps ?? Object.values(presets)[0]?.steps ?? DEFAULT_COMFY_PRESET_CONFIG.standard.steps;
+    });
+    const [comfyCfgScale, setComfyCfgScale] = useState(() => {
+        const presets = readComfyPresetConfig();
+        return presets.standard?.cfgScale ?? Object.values(presets)[0]?.cfgScale ?? DEFAULT_COMFY_PRESET_CONFIG.standard.cfgScale;
+    });
     const [hoveredStrength, setHoveredStrength] = useState<{ id: string; type: 'positive' | 'negative'; rect: DOMRect } | null>(null);
     const hoverTimeoutRef = useRef<number | null>(null);
     const restoreToastTimerRef = useRef<number | null>(null);
@@ -589,9 +545,19 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         const source = cardEditorTarget.type === 'positive' ? selectedPositive : selectedNegative;
         return source.find(word => word.id === cardEditorTarget.id) ?? null;
     }, [cardEditorTarget, selectedPositive, selectedNegative]);
+    const comfyPresetEntries = useMemo(() => {
+        return Object.entries(comfyPresetConfig) as [ComfyQualityPreset, ComfyPresetConfig][];
+    }, [comfyPresetConfig]);
+    const comfyActivePresetKey = useMemo(() => {
+        if (comfyPresetConfig[comfyQualityPreset]) return comfyQualityPreset;
+        return comfyPresetEntries[0]?.[0] ?? 'standard';
+    }, [comfyPresetConfig, comfyQualityPreset, comfyPresetEntries]);
+    const comfyActivePreset = useMemo(() => {
+        return comfyPresetConfig[comfyActivePresetKey] ?? comfyPresetEntries[0]?.[1] ?? DEFAULT_COMFY_PRESET_CONFIG.standard;
+    }, [comfyPresetConfig, comfyActivePresetKey, comfyPresetEntries]);
     const comfyResolvedSize = useMemo(() => {
-        return resolveComfySize(comfyQualityPreset, comfyCustomWidth, comfyCustomHeight);
-    }, [comfyQualityPreset, comfyCustomWidth, comfyCustomHeight]);
+        return resolveComfySize(comfyActivePresetKey, comfyCustomWidth, comfyCustomHeight, comfyPresetConfig);
+    }, [comfyActivePresetKey, comfyCustomWidth, comfyCustomHeight, comfyPresetConfig]);
 
     const renderPromptTokens = (words: SelectedWord[], highlightId?: string) => {
         const expanded = expandRepeatedWords(words);
@@ -649,6 +615,32 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             window.removeEventListener('storage', handleStorage);
         };
     }, []);
+    useEffect(() => {
+        const handlePresetUpdate = (event: Event) => {
+            const detail = (event as CustomEvent).detail as Record<ComfyQualityPreset, ComfyPresetConfig> | undefined;
+            const next = detail ?? readComfyPresetConfig();
+            setComfyPresetConfig(next);
+        };
+        const handleStorage = (event: StorageEvent) => {
+            if (event.key !== COMFY_PRESET_STORAGE_KEY) return;
+            setComfyPresetConfig(readComfyPresetConfig());
+        };
+        window.addEventListener(COMFY_PRESET_UPDATE_EVENT, handlePresetUpdate);
+        window.addEventListener('storage', handleStorage);
+        return () => {
+            window.removeEventListener(COMFY_PRESET_UPDATE_EVENT, handlePresetUpdate);
+            window.removeEventListener('storage', handleStorage);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (comfyPresetConfig[comfyQualityPreset]) return;
+        const fallback = comfyPresetEntries[0];
+        if (!fallback) return;
+        setComfyQualityPreset(fallback[0]);
+        setComfySteps(fallback[1].steps);
+        setComfyCfgScale(fallback[1].cfgScale);
+    }, [comfyPresetConfig, comfyQualityPreset, comfyPresetEntries]);
 
     useEffect(() => {
         if (stepperDisplay === 'inside') {
@@ -793,60 +785,162 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         if (!base) return quality;
         return `${quality}, ${base}`;
     };
+    const comfyCurrentPositivePrompt = buildCopyText('positive', posString).trim();
+    const comfyCurrentNegativePrompt = buildCopyText('negative', negString).trim();
+    const comfyBatchStats = useMemo(() => {
+        let readyJobs = 0;
+        let totalImages = 0;
+        comfyBatchJobs.forEach(job => {
+            const hasPrompt = job.positive.trim().length > 0 || job.negative.trim().length > 0;
+            if (!hasPrompt) return;
+            readyJobs += 1;
+            totalImages += clampImageCount(job.count);
+        });
+        return {
+            readyJobs,
+            totalImages
+        };
+    }, [comfyBatchJobs]);
+
     const buildCombinedCopyText = () => {
         const pos = buildCopyText('positive', posString);
         const neg = buildCopyText('negative', negString);
         return `Positive prompt: ${pos}\nNegative prompt: ${neg}`;
     };
 
-    const handleExportComfyInstruction = () => {
-        const positivePrompt = buildCopyText('positive', posString).trim();
-        const negativePrompt = buildCopyText('negative', negString).trim();
-        if (!positivePrompt && !negativePrompt) {
-            alert('\u30d7\u30ed\u30f3\u30d7\u30c8\u304c\u7a7a\u3067\u3059\u3002\u5148\u306b\u8a9e\u53e5\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044\u3002');
-            return;
-        }
-
+    const openComfyExportModal = () => {
         const count = clampImageCount(comfyImageCount);
         if (count !== comfyImageCount) {
             setComfyImageCount(count);
         }
+        setIsComfyExportOpen(true);
+    };
+    const handleAddComfyBatchFromCurrent = () => {
+        if (!comfyCurrentPositivePrompt && !comfyCurrentNegativePrompt) {
+            alert('現在のプロンプトが空です。先に語句を選択してください。');
+            return;
+        }
+        const count = clampImageCount(comfyImageCount);
+        if (count !== comfyImageCount) {
+            setComfyImageCount(count);
+        }
+        setComfyBatchJobs(prev => ([
+            ...prev,
+            {
+                id: createDraftId(),
+                name: '',
+                count,
+                positive: comfyCurrentPositivePrompt,
+                negative: comfyCurrentNegativePrompt
+            }
+        ]));
+    };
 
-        const preset = COMFY_PRESET_CONFIG[comfyQualityPreset];
-        const exportSize = resolveComfySize(comfyQualityPreset, comfyCustomWidth, comfyCustomHeight);
-        if (comfyQualityPreset === 'custom') {
+    const updateComfyBatchJob = (id: string, updates: Partial<ComfyBatchJobDraft>) => {
+        setComfyBatchJobs(prev => prev.map(job => (job.id === id ? { ...job, ...updates } : job)));
+    };
+
+    const removeComfyBatchJob = (id: string) => {
+        setComfyBatchJobs(prev => prev.filter(job => job.id !== id));
+    };
+
+    const clearComfyBatchJobs = () => {
+        if (!confirm('ジョブ一覧をすべて消去しますか？')) return;
+        setComfyBatchJobs([]);
+    };
+
+    const handleExportComfyInstruction = () => {
+        const exportPresetKey = comfyPresetConfig[comfyQualityPreset] ? comfyQualityPreset : comfyPresetEntries[0]?.[0];
+        if (!exportPresetKey) {
+            alert('Comfyプリセットがありません。設定から追加してください。');
+            return;
+        }
+        const preset = comfyPresetConfig[exportPresetKey];
+        if (!preset) {
+            alert('選択されたComfyプリセットが見つかりません。');
+            return;
+        }
+
+        const exportSize = resolveComfySize(exportPresetKey, comfyCustomWidth, comfyCustomHeight, comfyPresetConfig);
+        if (exportPresetKey === 'custom') {
             if (exportSize.width !== comfyCustomWidth) setComfyCustomWidth(exportSize.width);
             if (exportSize.height !== comfyCustomHeight) setComfyCustomHeight(exportSize.height);
         }
 
+        const steps = clampComfySteps(comfySteps);
+        if (steps !== comfySteps) {
+            setComfySteps(steps);
+        }
+        const cfgScale = clampComfyCfgScale(comfyCfgScale);
+        if (cfgScale !== comfyCfgScale) {
+            setComfyCfgScale(cfgScale);
+        }
+
+        const normalizedJobs = comfyBatchJobs.map(job => ({
+            ...job,
+            name: job.name.trim(),
+            positive: job.positive.trim(),
+            negative: job.negative.trim(),
+            count: clampImageCount(job.count)
+        }));
+
+        const jobsChanged = normalizedJobs.some((job, index) => {
+            const original = comfyBatchJobs[index];
+            return !original
+                || original.name !== job.name
+                || original.positive !== job.positive
+                || original.negative !== job.negative
+                || original.count !== job.count;
+        });
+        if (jobsChanged) {
+            setComfyBatchJobs(normalizedJobs);
+        }
+
+        const exportJobs = normalizedJobs
+            .filter(job => job.positive.length > 0 || job.negative.length > 0)
+            .map((job, index) => ({
+                id: job.id,
+                name: job.name || `job-${index + 1}`,
+                count: job.count,
+                prompt: {
+                    positive: job.positive,
+                    negative: job.negative
+                }
+            }));
+
+        if (exportJobs.length === 0) {
+            alert('出力対象のジョブがありません。ジョブを追加してから出力してください。');
+            return;
+        }
+
+        const totalCount = exportJobs.reduce((sum, job) => sum + job.count, 0);
         const timestamp = new Date();
-        const jobBaseName = sanitizeFilenameBase(comfyJobName || `prompt-job-${formatFileTimestamp(timestamp)}`);
-        const filename = `${jobBaseName}.json`;
+        const fallbackBatchName = `prompt-batch-${formatFileTimestamp(timestamp)}`;
+        const batchName = comfyJobName.trim() || fallbackBatchName;
+        const filename = `${sanitizeFilenameBase(batchName)}.json`;
 
         const payload = {
-            schema: 'promptgen.comfy.job/v1',
+            schema: 'promptgen.comfy.batch/v1',
             createdAt: timestamp.toISOString(),
             source: {
                 app: 'PromptGenerator'
             },
-            job: {
-                name: comfyJobName.trim() || `prompt-job-${formatFileTimestamp(timestamp)}`,
-                qualityPreset: comfyQualityPreset,
-                count
-            },
-            prompt: {
-                positive: positivePrompt,
-                negative: negativePrompt
+            batch: {
+                name: batchName,
+                qualityPreset: exportPresetKey,
+                jobCount: exportJobs.length,
+                totalCount
             },
             generation: {
                 width: exportSize.width,
                 height: exportSize.height,
-                steps: preset.steps,
-                cfgScale: preset.cfgScale,
+                steps,
+                cfgScale,
                 sampler: preset.sampler,
                 scheduler: preset.scheduler,
                 seed: -1
             },
+            jobs: exportJobs,
             meta: {
                 qualityTemplate: {
                     positive: getQualityName('positive') || null,
@@ -879,16 +973,18 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
 
         downloadJson(payload, filename);
         trackEvent('comfy_instruction_export', {
-            quality_preset: comfyQualityPreset,
-            image_count: count,
+            quality_preset: exportPresetKey,
+            image_count: totalCount,
+            job_count: exportJobs.length,
             width: exportSize.width,
             height: exportSize.height,
-            has_positive: positivePrompt.length > 0,
-            has_negative: negativePrompt.length > 0
+            steps,
+            cfg_scale: cfgScale,
+            has_positive: exportJobs.some(job => job.prompt.positive.length > 0),
+            has_negative: exportJobs.some(job => job.prompt.negative.length > 0)
         });
         setIsComfyExportOpen(false);
     };
-
     const inferFavoriteNsfw = (source: SelectedWord[]) => {
         return source.some(word => {
             const jp = word.label_jp?.toLowerCase();
@@ -1192,7 +1288,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                 {comfyExportEnabled && (
                     <button
                         type="button"
-                        onClick={() => setIsComfyExportOpen(true)}
+                        onClick={openComfyExportModal}
                         className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-violet-500/40 bg-violet-500/10 text-violet-200 hover:bg-violet-500/20 transition-colors"
                         title={'ComfyUI\u5411\u3051\u306e\u6307\u793aJSON\u3092\u51fa\u529b'}
                     >
@@ -1411,30 +1507,35 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         <h3 className="text-lg font-bold mb-4 text-white">{'ComfyUI \u6307\u793aJSON\u3092\u51fa\u529b'}</h3>
                         <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-4 pr-1">
                             <div>
-                                <label className="block text-xs text-slate-400 mb-1">{'\u30b8\u30e7\u30d6\u540d (\u4efb\u610f)'}</label>
+                                <label className="block text-xs text-slate-400 mb-1">{'バッチ名 (任意)'}</label>
                                 <input
                                     type="text"
                                     value={comfyJobName}
                                     onChange={(event) => setComfyJobName(event.target.value)}
                                     className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
-                                    placeholder={'\u672a\u5165\u529b\u6642\u306f\u65e5\u6642\u30d9\u30fc\u30b9\u3067\u81ea\u52d5\u547d\u540d'}
+                                    placeholder={'未入力時は日時ベースで自動命名'}
                                 />
                             </div>
                             <div>
-                                <label className="block text-xs text-slate-400 mb-1">{'\u753b\u8cea\u30fb\u30b5\u30a4\u30ba\u30d7\u30ea\u30bb\u30c3\u30c8'}</label>
+                                <label className="block text-xs text-slate-400 mb-1">{'画質・サイズプリセット'}</label>
                                 <select
-                                    value={comfyQualityPreset}
-                                    onChange={(event) => setComfyQualityPreset(event.target.value as ComfyQualityPreset)}
+                                    value={comfyActivePresetKey}
+                                    onChange={(event) => {
+                                        const nextPreset = event.target.value as ComfyQualityPreset;
+                                        setComfyQualityPreset(nextPreset);
+                                        setComfySteps(comfyPresetConfig[nextPreset].steps);
+                                        setComfyCfgScale(comfyPresetConfig[nextPreset].cfgScale);
+                                    }}
                                     className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
                                 >
-                                    {(Object.entries(COMFY_PRESET_CONFIG) as [ComfyQualityPreset, ComfyPresetConfig][]).map(([key, preset]) => (
+                                    {comfyPresetEntries.map(([key, preset]) => (
                                         <option key={key} value={key}>{preset.label} - {preset.description}</option>
                                     ))}
                                 </select>
                             </div>
-                            {comfyQualityPreset === 'custom' && (
+                            {comfyActivePresetKey === 'custom' && (
                                 <div>
-                                    <label className="block text-xs text-slate-400 mb-1">{'\u4efb\u610f\u30b5\u30a4\u30ba (\u5e45 x \u9ad8\u3055)'}</label>
+                                    <label className="block text-xs text-slate-400 mb-1">{'任意サイズ (幅 x 高さ)'}</label>
                                     <div className="grid grid-cols-2 gap-2">
                                         <input
                                             type="number"
@@ -1444,7 +1545,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                             onChange={(event) => setComfyCustomWidth(Number(event.target.value))}
                                             onBlur={() => setComfyCustomWidth(prev => clampResolution(prev))}
                                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
-                                            placeholder={'\u5e45'}
+                                            placeholder={'幅'}
                                         />
                                         <input
                                             type="number"
@@ -1454,13 +1555,13 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                             onChange={(event) => setComfyCustomHeight(Number(event.target.value))}
                                             onBlur={() => setComfyCustomHeight(prev => clampResolution(prev))}
                                             className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
-                                            placeholder={'\u9ad8\u3055'}
+                                            placeholder={'高さ'}
                                         />
                                     </div>
                                 </div>
                             )}
                             <div>
-                                <label className="block text-xs text-slate-400 mb-1">{'\u751f\u6210\u679a\u6570'}</label>
+                                <label className="block text-xs text-slate-400 mb-1">{'新規ジョブの枚数 (追加時)'}</label>
                                 <input
                                     type="number"
                                     min={1}
@@ -1471,16 +1572,120 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                     className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
                                 />
                             </div>
-                            <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-xs text-slate-300 space-y-1">
-                                <div className="text-slate-100 font-semibold mb-1">{'\u51fa\u529b\u5185\u5bb9\u30d7\u30ec\u30d3\u30e5\u30fc'}</div>
-                                <div>positive: {buildCopyText('positive', posString) || '(\u7a7a)'}</div>
-                                <div>negative: {buildCopyText('negative', negString) || '(\u7a7a)'}</div>
-                                <div>size: {comfyResolvedSize.width} x {comfyResolvedSize.height}</div>
-                                <div>steps/cfg: {COMFY_PRESET_CONFIG[comfyQualityPreset].steps} / {COMFY_PRESET_CONFIG[comfyQualityPreset].cfgScale}</div>
-                                <div>sampler: {COMFY_PRESET_CONFIG[comfyQualityPreset].sampler} ({COMFY_PRESET_CONFIG[comfyQualityPreset].scheduler})</div>
+                            <div>
+                                <label className="block text-xs text-slate-400 mb-1">{'生成設定 (steps / cfg)'}</label>
+                                <div className="grid grid-cols-2 gap-2">
+                                    <input
+                                        type="number"
+                                        min={1}
+                                        max={200}
+                                        value={comfySteps}
+                                        onChange={(event) => setComfySteps(Number(event.target.value))}
+                                        onBlur={() => setComfySteps(prev => clampComfySteps(prev))}
+                                        className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
+                                        placeholder={'steps'}
+                                    />
+                                    <input
+                                        type="number"
+                                        min={0}
+                                        max={30}
+                                        step={0.1}
+                                        value={comfyCfgScale}
+                                        onChange={(event) => setComfyCfgScale(Number(event.target.value))}
+                                        onBlur={() => setComfyCfgScale(prev => clampComfyCfgScale(prev))}
+                                        className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
+                                        placeholder={'cfg'}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex gap-2 pt-4">
+                            <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-xs text-slate-300 space-y-2">
+                                <div className="text-slate-100 font-semibold">{'現在のプロンプトをジョブに追加'}</div>
+                                <div>positive: {comfyCurrentPositivePrompt || '(空)'}</div>
+                                <div>negative: {comfyCurrentNegativePrompt || '(空)'}</div>
+                                <div className="flex gap-2 pt-1">
+                                    <button
+                                        type="button"
+                                        onClick={handleAddComfyBatchFromCurrent}
+                                        className="px-3 py-1.5 rounded-lg bg-violet-600 text-white hover:bg-violet-500"
+                                    >
+                                        {'ジョブ追加'}
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={clearComfyBatchJobs}
+                                        className="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700"
+                                    >
+                                        {'ジョブ一覧を消去'}
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="space-y-2">
+                                {comfyBatchJobs.length === 0 && (
+                                    <div className="rounded-lg border border-dashed border-slate-700 bg-slate-950/40 p-3 text-xs text-slate-400">
+                                        {'ジョブがありません。"ジョブ追加"で追加してください。'}
+                                    </div>
+                                )}
+                                {comfyBatchJobs.map((job, index) => (
+                                    <div key={job.id} className="rounded-lg border border-slate-800 bg-slate-950/50 p-3 space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <div className="text-xs font-semibold text-slate-200">{`Job ${index + 1}`}</div>
+                                            <button
+                                                type="button"
+                                                onClick={() => removeComfyBatchJob(job.id)}
+                                                className="px-2 py-1 text-xs rounded bg-rose-900/50 text-rose-200 hover:bg-rose-800/60"
+                                            >
+                                                {'削除'}
+                                            </button>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-[1fr,110px] gap-2">
+                                            <input
+                                                type="text"
+                                                value={job.name}
+                                                onChange={(event) => updateComfyBatchJob(job.id, { name: event.target.value })}
+                                                className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
+                                                placeholder={'ジョブ名 (任意)'}
+                                            />
+                                            <input
+                                                type="number"
+                                                min={1}
+                                                max={256}
+                                                value={job.count}
+                                                onChange={(event) => {
+                                                    const next = Number(event.target.value);
+                                                    if (!Number.isFinite(next)) return;
+                                                    updateComfyBatchJob(job.id, { count: next });
+                                                }}
+                                                onBlur={() => updateComfyBatchJob(job.id, { count: clampImageCount(job.count) })}
+                                                className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
+                                                placeholder={'枚数'}
+                                            />
+                                        </div>
+                                        <div className="grid grid-cols-1 gap-2">
+                                            <textarea
+                                                value={job.positive}
+                                                onChange={(event) => updateComfyBatchJob(job.id, { positive: event.target.value })}
+                                                className="w-full min-h-20 bg-slate-950 border border-slate-700 rounded-lg p-2 text-xs text-cyan-100 focus:border-cyan-500 focus:outline-none"
+                                                placeholder={'positive prompt'}
+                                            />
+                                            <textarea
+                                                value={job.negative}
+                                                onChange={(event) => updateComfyBatchJob(job.id, { negative: event.target.value })}
+                                                className="w-full min-h-20 bg-slate-950 border border-slate-700 rounded-lg p-2 text-xs text-rose-100 focus:border-rose-500 focus:outline-none"
+                                                placeholder={'negative prompt'}
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-xs text-slate-300 space-y-1">
+                                <div className="text-slate-100 font-semibold mb-1">{'出力内容プレビュー'}</div>
+                                <div>jobs: {comfyBatchStats.readyJobs} 件</div>
+                                <div>total images: {comfyBatchStats.totalImages} 枚</div>
+                                <div>size: {comfyResolvedSize.width} x {comfyResolvedSize.height}</div>
+                                <div>steps/cfg: {clampComfySteps(comfySteps)} / {clampComfyCfgScale(comfyCfgScale)}</div>
+                                <div>sampler: {comfyActivePreset.sampler} ({comfyActivePreset.scheduler})</div>
+                            </div>
+                        </div>                        <div className="flex gap-2 pt-4">
                             <button
                                 type="button"
                                 onClick={() => setIsComfyExportOpen(false)}
