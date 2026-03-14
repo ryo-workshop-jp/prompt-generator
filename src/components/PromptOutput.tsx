@@ -5,7 +5,7 @@ import { arrayMove, SortableContext, rectSortingStrategy, sortableKeyboardCoordi
 import { CSS } from '@dnd-kit/utilities';
 import { usePrompt } from '../context/usePrompt';
 import type { SelectedWord, PromptStrength, PromptFavorite, CardWordRef } from '../types';
-import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon, ChevronRightIcon, ChevronDownIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { DocumentDuplicateIcon, XMarkIcon, BookmarkIcon, TrashIcon, Bars3Icon, ChevronRightIcon, ChevronDownIcon, ClockIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid';
 import { trackEvent } from '../analytics';
 
@@ -37,6 +37,149 @@ type RestoreSnapshot = {
     };
 };
 
+type ComfyQualityPreset = 'draft' | 'standard' | 'high' | 'square1524' | 'landscapeFhd' | 'portraitFhd' | 'custom';
+
+type ComfyPresetConfig = {
+    label: string;
+    description: string;
+    width: number;
+    height: number;
+    steps: number;
+    cfgScale: number;
+    sampler: string;
+    scheduler: string;
+};
+
+const COMFY_PRESET_CONFIG: Record<ComfyQualityPreset, ComfyPresetConfig> = {
+    draft: {
+        label: '\u4e0b\u66f8\u304d',
+        description: '\u78ba\u8a8d\u7528\u306e\u8efd\u91cf\u8a2d\u5b9a',
+        width: 768,
+        height: 1024,
+        steps: 18,
+        cfgScale: 5,
+        sampler: 'dpmpp_2m',
+        scheduler: 'karras'
+    },
+    standard: {
+        label: '\u6a19\u6e96',
+        description: '\u901a\u5e38\u54c1\u8cea\u306e\u6a19\u6e96\u8a2d\u5b9a',
+        width: 1024,
+        height: 1024,
+        steps: 28,
+        cfgScale: 6,
+        sampler: 'dpmpp_2m_sde',
+        scheduler: 'karras'
+    },
+    high: {
+        label: '\u9ad8\u54c1\u8cea',
+        description: '\u9ad8\u753b\u8cea\u5411\u3051\u8a2d\u5b9a',
+        width: 1344,
+        height: 1344,
+        steps: 40,
+        cfgScale: 6.5,
+        sampler: 'dpmpp_2m_sde',
+        scheduler: 'karras'
+    },
+    square1524: {
+        label: '\u6b63\u65b9\u5f62 1524',
+        description: '1524 x 1524',
+        width: 1524,
+        height: 1524,
+        steps: 36,
+        cfgScale: 6.5,
+        sampler: 'dpmpp_2m_sde',
+        scheduler: 'karras'
+    },
+    landscapeFhd: {
+        label: '\u6a2a\u9577 FHD',
+        description: '1920 x 1080',
+        width: 1920,
+        height: 1080,
+        steps: 32,
+        cfgScale: 6,
+        sampler: 'dpmpp_2m_sde',
+        scheduler: 'karras'
+    },
+    portraitFhd: {
+        label: '\u7e26\u9577 FHD',
+        description: '1080 x 1920',
+        width: 1080,
+        height: 1920,
+        steps: 32,
+        cfgScale: 6,
+        sampler: 'dpmpp_2m_sde',
+        scheduler: 'karras'
+    },
+    custom: {
+        label: '\u4efb\u610f\u30b5\u30a4\u30ba',
+        description: '\u5e45\u3068\u9ad8\u3055\u3092\u624b\u52d5\u6307\u5b9a',
+        width: 1024,
+        height: 1024,
+        steps: 28,
+        cfgScale: 6,
+        sampler: 'dpmpp_2m_sde',
+        scheduler: 'karras'
+    }
+};
+
+const pad2 = (value: number) => value.toString().padStart(2, '0');
+
+const formatFileTimestamp = (date: Date) => {
+    const yyyy = date.getFullYear();
+    const mm = pad2(date.getMonth() + 1);
+    const dd = pad2(date.getDate());
+    const hh = pad2(date.getHours());
+    const mi = pad2(date.getMinutes());
+    const ss = pad2(date.getSeconds());
+    return `${yyyy}${mm}${dd}-${hh}${mi}${ss}`;
+};
+
+const sanitizeFilenameBase = (name: string) => {
+    const cleaned = name
+        .trim()
+        .replace(/[<>:"/\\|?*\u0000-\u001F]/g, '-')
+        .replace(/\s+/g, '_')
+        .replace(/_+/g, '_')
+        .slice(0, 96);
+    return cleaned || 'prompt-job';
+};
+
+const clampImageCount = (value: number) => {
+    if (!Number.isFinite(value)) return 1;
+    return Math.min(256, Math.max(1, Math.round(value)));
+};
+
+const clampResolution = (value: number) => {
+    if (!Number.isFinite(value)) return 1024;
+    return Math.min(4096, Math.max(64, Math.round(value)));
+};
+
+const downloadJson = (payload: unknown, filename: string) => {
+    const json = JSON.stringify(payload, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(url);
+};
+
+const resolveComfySize = (preset: ComfyQualityPreset, customWidth: number, customHeight: number) => {
+    if (preset === 'custom') {
+        return {
+            width: clampResolution(customWidth),
+            height: clampResolution(customHeight)
+        };
+    }
+    const selected = COMFY_PRESET_CONFIG[preset];
+    return {
+        width: selected.width,
+        height: selected.height
+    };
+};
+
 const readUiSettings = () => {
     try {
         if (typeof window === 'undefined') return {};
@@ -46,6 +189,7 @@ const readUiSettings = () => {
             stepperDisplay?: 'inside' | 'above';
             combinedCopyEnabled?: boolean;
             showRootInPaths?: boolean;
+            comfyExportEnabled?: boolean;
         };
     } catch (e) {
         console.warn('Failed to load UI settings.', e);
@@ -419,6 +563,16 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         const settings = readUiSettings();
         return settings.showRootInPaths ?? false;
     });
+    const [comfyExportEnabled, setComfyExportEnabled] = useState<boolean>(() => {
+        const settings = readUiSettings();
+        return settings.comfyExportEnabled ?? true;
+    });
+    const [isComfyExportOpen, setIsComfyExportOpen] = useState(false);
+    const [comfyQualityPreset, setComfyQualityPreset] = useState<ComfyQualityPreset>('standard');
+    const [comfyImageCount, setComfyImageCount] = useState(4);
+    const [comfyJobName, setComfyJobName] = useState('');
+    const [comfyCustomWidth, setComfyCustomWidth] = useState(1524);
+    const [comfyCustomHeight, setComfyCustomHeight] = useState(1524);
     const [hoveredStrength, setHoveredStrength] = useState<{ id: string; type: 'positive' | 'negative'; rect: DOMRect } | null>(null);
     const hoverTimeoutRef = useRef<number | null>(null);
     const restoreToastTimerRef = useRef<number | null>(null);
@@ -435,6 +589,9 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         const source = cardEditorTarget.type === 'positive' ? selectedPositive : selectedNegative;
         return source.find(word => word.id === cardEditorTarget.id) ?? null;
     }, [cardEditorTarget, selectedPositive, selectedNegative]);
+    const comfyResolvedSize = useMemo(() => {
+        return resolveComfySize(comfyQualityPreset, comfyCustomWidth, comfyCustomHeight);
+    }, [comfyQualityPreset, comfyCustomWidth, comfyCustomHeight]);
 
     const renderPromptTokens = (words: SelectedWord[], highlightId?: string) => {
         const expanded = expandRepeatedWords(words);
@@ -470,11 +627,12 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
 
     useEffect(() => {
         const handleUiUpdate = (event: Event) => {
-            const detail = (event as CustomEvent).detail as { stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean; showRootInPaths?: boolean } | undefined;
+            const detail = (event as CustomEvent).detail as { stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean; showRootInPaths?: boolean; comfyExportEnabled?: boolean } | undefined;
             const next = detail ?? readUiSettings();
             setStepperDisplay(next.stepperDisplay ?? 'above');
             setCombinedCopyEnabled(!!next.combinedCopyEnabled);
             setShowRootInPaths(next.showRootInPaths ?? false);
+            setComfyExportEnabled(next.comfyExportEnabled ?? true);
         };
         const handleStorage = (event: StorageEvent) => {
             if (event.key !== UI_STORAGE_KEY) return;
@@ -482,6 +640,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             setStepperDisplay(next.stepperDisplay ?? 'above');
             setCombinedCopyEnabled(!!next.combinedCopyEnabled);
             setShowRootInPaths(next.showRootInPaths ?? false);
+            setComfyExportEnabled(next.comfyExportEnabled ?? true);
         };
         window.addEventListener('promptgen:ui-update', handleUiUpdate);
         window.addEventListener('storage', handleStorage);
@@ -496,6 +655,12 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             setHoveredStrength(null);
         }
     }, [stepperDisplay]);
+
+    useEffect(() => {
+        if (!comfyExportEnabled && isComfyExportOpen) {
+            setIsComfyExportOpen(false);
+        }
+    }, [comfyExportEnabled, isComfyExportOpen]);
 
     useEffect(() => {
         return () => {
@@ -632,6 +797,96 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         const pos = buildCopyText('positive', posString);
         const neg = buildCopyText('negative', negString);
         return `Positive prompt: ${pos}\nNegative prompt: ${neg}`;
+    };
+
+    const handleExportComfyInstruction = () => {
+        const positivePrompt = buildCopyText('positive', posString).trim();
+        const negativePrompt = buildCopyText('negative', negString).trim();
+        if (!positivePrompt && !negativePrompt) {
+            alert('\u30d7\u30ed\u30f3\u30d7\u30c8\u304c\u7a7a\u3067\u3059\u3002\u5148\u306b\u8a9e\u53e5\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044\u3002');
+            return;
+        }
+
+        const count = clampImageCount(comfyImageCount);
+        if (count !== comfyImageCount) {
+            setComfyImageCount(count);
+        }
+
+        const preset = COMFY_PRESET_CONFIG[comfyQualityPreset];
+        const exportSize = resolveComfySize(comfyQualityPreset, comfyCustomWidth, comfyCustomHeight);
+        if (comfyQualityPreset === 'custom') {
+            if (exportSize.width !== comfyCustomWidth) setComfyCustomWidth(exportSize.width);
+            if (exportSize.height !== comfyCustomHeight) setComfyCustomHeight(exportSize.height);
+        }
+
+        const timestamp = new Date();
+        const jobBaseName = sanitizeFilenameBase(comfyJobName || `prompt-job-${formatFileTimestamp(timestamp)}`);
+        const filename = `${jobBaseName}.json`;
+
+        const payload = {
+            schema: 'promptgen.comfy.job/v1',
+            createdAt: timestamp.toISOString(),
+            source: {
+                app: 'PromptGenerator'
+            },
+            job: {
+                name: comfyJobName.trim() || `prompt-job-${formatFileTimestamp(timestamp)}`,
+                qualityPreset: comfyQualityPreset,
+                count
+            },
+            prompt: {
+                positive: positivePrompt,
+                negative: negativePrompt
+            },
+            generation: {
+                width: exportSize.width,
+                height: exportSize.height,
+                steps: preset.steps,
+                cfgScale: preset.cfgScale,
+                sampler: preset.sampler,
+                scheduler: preset.scheduler,
+                seed: -1
+            },
+            meta: {
+                qualityTemplate: {
+                    positive: getQualityName('positive') || null,
+                    negative: getQualityName('negative') || null
+                },
+                tokenCount: {
+                    positive: selectedPositive.length,
+                    negative: selectedNegative.length
+                },
+                selectedTokens: {
+                    positive: selectedPositive.map(word => ({
+                        id: word.id,
+                        label: word.label_jp || word.value_en,
+                        value: word.value_en,
+                        strength: word.strength,
+                        repeat: word.repeat ?? 1,
+                        isDeck: Boolean(word.cardId)
+                    })),
+                    negative: selectedNegative.map(word => ({
+                        id: word.id,
+                        label: word.label_jp || word.value_en,
+                        value: word.value_en,
+                        strength: word.strength,
+                        repeat: word.repeat ?? 1,
+                        isDeck: Boolean(word.cardId)
+                    }))
+                }
+            }
+        };
+
+        downloadJson(payload, filename);
+        trackEvent('comfy_instruction_export', {
+            quality_preset: comfyQualityPreset,
+            image_count: count,
+            width: exportSize.width,
+            height: exportSize.height,
+            has_positive: positivePrompt.length > 0,
+            has_negative: negativePrompt.length > 0
+        });
+        setIsComfyExportOpen(false);
     };
 
     const inferFavoriteNsfw = (source: SelectedWord[]) => {
@@ -908,31 +1163,43 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                     />
                 </div>
             )}
-            {combinedCopyEnabled && (
-                <div className="flex justify-end -mb-1 gap-2">
+            <div className="flex justify-end -mb-1 gap-2">
+                {combinedCopyEnabled && (
+                    <>
+                        <button
+                            type="button"
+                            onClick={() => setHistoryType('both')}
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
+                            title={'\u4e21\u65b9\u30b3\u30d4\u30fc\u306e\u5c65\u6b74\u3092\u958b\u304f'}
+                        >
+                            <ClockIcon className="w-4 h-4" /> {'\u5c65\u6b74'}
+                            <span className="text-[10px] text-emerald-100/80">{historyCounts.both}</span>
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => handleCopy(buildCombinedCopyText(), 'both')}
+                            className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
+                            title={'\u30dd\u30b8\u30c6\u30a3\u30d6/\u30cd\u30ac\u30c6\u30a3\u30d6\u3092\u307e\u3068\u3081\u3066\u30b3\u30d4\u30fc'}
+                        >
+                            {copyFeedback === 'both' ? <span className="text-green-300">{'\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f'}</span> : (
+                                <>
+                                    <DocumentDuplicateIcon className="w-4 h-4" /> {'\u4e21\u65b9\u30b3\u30d4\u30fc'}
+                                </>
+                            )}
+                        </button>
+                    </>
+                )}
+                {comfyExportEnabled && (
                     <button
                         type="button"
-                        onClick={() => setHistoryType('both')}
-                        className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
-                        title="両方コピーの履歴を開く"
+                        onClick={() => setIsComfyExportOpen(true)}
+                        className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-violet-500/40 bg-violet-500/10 text-violet-200 hover:bg-violet-500/20 transition-colors"
+                        title={'ComfyUI\u5411\u3051\u306e\u6307\u793aJSON\u3092\u51fa\u529b'}
                     >
-                        <ClockIcon className="w-4 h-4" /> 履歴
-                        <span className="text-[10px] text-emerald-100/80">{historyCounts.both}</span>
+                        <ArrowDownTrayIcon className="w-4 h-4" /> {'Comfy\u6307\u793aJSON'}
                     </button>
-                    <button
-                        type="button"
-                        onClick={() => handleCopy(buildCombinedCopyText(), 'both')}
-                        className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20 transition-colors"
-                        title="ポジティブ/ネガティブをまとめてコピー"
-                    >
-                        {copyFeedback === 'both' ? <span className="text-green-300">コピーしました</span> : (
-                            <>
-                                <DocumentDuplicateIcon className="w-4 h-4" /> 両方コピー
-                            </>
-                        )}
-                    </button>
-                </div>
-            )}
+                )}
+            </div>
             <div className="flex flex-1 gap-4">
             {/* Positive Section */}
             <div className="flex-1 flex flex-col gap-2">
@@ -1137,6 +1404,101 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                 </div>
             </div>
             </div>
+
+            {comfyExportEnabled && isComfyExportOpen && renderModal(
+                <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                    <div className="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-xl shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
+                        <h3 className="text-lg font-bold mb-4 text-white">{'ComfyUI \u6307\u793aJSON\u3092\u51fa\u529b'}</h3>
+                        <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar flex flex-col gap-4 pr-1">
+                            <div>
+                                <label className="block text-xs text-slate-400 mb-1">{'\u30b8\u30e7\u30d6\u540d (\u4efb\u610f)'}</label>
+                                <input
+                                    type="text"
+                                    value={comfyJobName}
+                                    onChange={(event) => setComfyJobName(event.target.value)}
+                                    className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
+                                    placeholder={'\u672a\u5165\u529b\u6642\u306f\u65e5\u6642\u30d9\u30fc\u30b9\u3067\u81ea\u52d5\u547d\u540d'}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-xs text-slate-400 mb-1">{'\u753b\u8cea\u30fb\u30b5\u30a4\u30ba\u30d7\u30ea\u30bb\u30c3\u30c8'}</label>
+                                <select
+                                    value={comfyQualityPreset}
+                                    onChange={(event) => setComfyQualityPreset(event.target.value as ComfyQualityPreset)}
+                                    className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
+                                >
+                                    {(Object.entries(COMFY_PRESET_CONFIG) as [ComfyQualityPreset, ComfyPresetConfig][]).map(([key, preset]) => (
+                                        <option key={key} value={key}>{preset.label} - {preset.description}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            {comfyQualityPreset === 'custom' && (
+                                <div>
+                                    <label className="block text-xs text-slate-400 mb-1">{'\u4efb\u610f\u30b5\u30a4\u30ba (\u5e45 x \u9ad8\u3055)'}</label>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <input
+                                            type="number"
+                                            min={64}
+                                            max={4096}
+                                            value={comfyCustomWidth}
+                                            onChange={(event) => setComfyCustomWidth(Number(event.target.value))}
+                                            onBlur={() => setComfyCustomWidth(prev => clampResolution(prev))}
+                                            className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
+                                            placeholder={'\u5e45'}
+                                        />
+                                        <input
+                                            type="number"
+                                            min={64}
+                                            max={4096}
+                                            value={comfyCustomHeight}
+                                            onChange={(event) => setComfyCustomHeight(Number(event.target.value))}
+                                            onBlur={() => setComfyCustomHeight(prev => clampResolution(prev))}
+                                            className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
+                                            placeholder={'\u9ad8\u3055'}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                            <div>
+                                <label className="block text-xs text-slate-400 mb-1">{'\u751f\u6210\u679a\u6570'}</label>
+                                <input
+                                    type="number"
+                                    min={1}
+                                    max={256}
+                                    value={comfyImageCount}
+                                    onChange={(event) => setComfyImageCount(Number(event.target.value))}
+                                    onBlur={() => setComfyImageCount(prev => clampImageCount(prev))}
+                                    className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-white focus:border-violet-500 focus:outline-none"
+                                />
+                            </div>
+                            <div className="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-xs text-slate-300 space-y-1">
+                                <div className="text-slate-100 font-semibold mb-1">{'\u51fa\u529b\u5185\u5bb9\u30d7\u30ec\u30d3\u30e5\u30fc'}</div>
+                                <div>positive: {buildCopyText('positive', posString) || '(\u7a7a)'}</div>
+                                <div>negative: {buildCopyText('negative', negString) || '(\u7a7a)'}</div>
+                                <div>size: {comfyResolvedSize.width} x {comfyResolvedSize.height}</div>
+                                <div>steps/cfg: {COMFY_PRESET_CONFIG[comfyQualityPreset].steps} / {COMFY_PRESET_CONFIG[comfyQualityPreset].cfgScale}</div>
+                                <div>sampler: {COMFY_PRESET_CONFIG[comfyQualityPreset].sampler} ({COMFY_PRESET_CONFIG[comfyQualityPreset].scheduler})</div>
+                            </div>
+                        </div>
+                        <div className="flex gap-2 pt-4">
+                            <button
+                                type="button"
+                                onClick={() => setIsComfyExportOpen(false)}
+                                className="flex-1 px-4 py-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700"
+                            >
+                                {'\u9589\u3058\u308b'}
+                            </button>
+                            <button
+                                type="button"
+                                onClick={handleExportComfyInstruction}
+                                className="flex-1 px-4 py-2 rounded-lg bg-violet-600 text-white hover:bg-violet-500 font-bold"
+                            >
+                                {'JSON\u3092\u51fa\u529b'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {historyType && renderModal(
                 <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">

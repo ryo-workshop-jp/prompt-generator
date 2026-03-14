@@ -16,6 +16,7 @@ type UiSettings = {
     combinedCopyEnabled?: boolean;
     showRootInPaths?: boolean;
     showItemFolderPath?: boolean;
+    comfyExportEnabled?: boolean;
 };
 
 const readUiSettings = (): UiSettings => {
@@ -42,6 +43,7 @@ const writeUiSettings = (updates: {
     combinedCopyEnabled?: boolean;
     showRootInPaths?: boolean;
     showItemFolderPath?: boolean;
+    comfyExportEnabled?: boolean;
 }) => {
     try {
         if (typeof window === 'undefined') return;
@@ -423,6 +425,10 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     const [showItemFolderPath, setShowItemFolderPath] = useState<boolean>(() => {
         const settings = readUiSettings();
         return settings.showItemFolderPath ?? false;
+    });
+    const [comfyExportEnabled, setComfyExportEnabled] = useState<boolean>(() => {
+        const settings = readUiSettings();
+        return settings.comfyExportEnabled ?? true;
     });
     const [activeTab, setActiveTab] = useState<'general' | 'io' | 'templates'>('general');
     const [importMode, setImportMode] = useState<'all' | 'words' | 'cards' | 'favorites' | 'quality' | 'templates' | null>(null);
@@ -1102,6 +1108,13 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             return next;
         });
     };
+    const handleComfyExportToggle = () => {
+        setComfyExportEnabled(prev => {
+            const next = !prev;
+            writeUiSettings({ comfyExportEnabled: next });
+            return next;
+        });
+    };
 
     const openResetModal = (action: 'resetWords' | 'clearWords' | 'clearExtras') => {
         setResetAction(action);
@@ -1298,6 +1311,21 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                             <span
                                                 className={`${showItemFolderPath ? 'translate-x-6' : 'translate-x-1'
                                                     } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
+                                            />
+                                        </button>
+                                    </div>
+                                    <div className="flex items-center justify-between mt-4">
+                                        <div className="flex flex-col">
+                                            <span className="text-sm font-bold text-slate-200">{'ComfyUI\u6307\u793aJSON\u51fa\u529b\u3092\u8868\u793a'}</span>
+                                            <span className="text-xs text-slate-500">{'PromptOutput\u306eComfy\u6307\u793aJSON\u30dc\u30bf\u30f3\u3068\u30e2\u30fc\u30c0\u30eb\u306e\u8868\u793a/\u975e\u8868\u793a\u3092\u5207\u308a\u66ff\u3048\u307e\u3059\u3002'}</span>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            onClick={handleComfyExportToggle}
+                                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 ${comfyExportEnabled ? 'bg-cyan-500' : 'bg-slate-600'}`}
+                                        >
+                                            <span
+                                                className={`${comfyExportEnabled ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
                                             />
                                         </button>
                                     </div>
