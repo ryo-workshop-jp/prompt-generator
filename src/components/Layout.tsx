@@ -7,7 +7,8 @@ import CategoryNav from './CategoryNav';
 import WordGrid, { WordCard } from './WordGrid';
 import PromptOutput from './PromptOutput';
 import SettingsModal from './SettingsModal';
-import NoticeModal, { readNoticeDismissed, writeNoticeDismissed } from './NoticeModal';
+import NoticeModal from './NoticeModal';
+import { readNoticeDismissed, writeNoticeDismissed } from '../constants/noticeStorage';
 import HelpModal from './HelpModal';
 import TemplateFolderSelector from './TemplateFolderSelector';
 import { Cog6ToothIcon, PlusIcon, XMarkIcon, TrashIcon, Bars3Icon, ArrowRightIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
@@ -172,22 +173,13 @@ const EditFolderModal: React.FC<{
 };
 
 const BulkWordSettingsModal: React.FC<{
-    isOpen: boolean;
     templates: TemplateItem[];
     hasDecorations: boolean;
     onClose: () => void;
     onApply: (nsfw: boolean, templateIds: string[]) => void;
-}> = ({ isOpen, templates, hasDecorations, onClose, onApply }) => {
+}> = ({ templates, hasDecorations, onClose, onApply }) => {
     const [nsfw, setNsfw] = useState(false);
     const [templateIds, setTemplateIds] = useState<string[]>([]);
-
-    useEffect(() => {
-        if (!isOpen) return;
-        setNsfw(false);
-        setTemplateIds([]);
-    }, [isOpen]);
-
-    if (!isOpen) return null;
 
     return (
         <div className="fixed inset-0 z-[110] pointer-events-auto flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
@@ -399,7 +391,7 @@ const Layout: React.FC = () => {
     const [editingFolder, setEditingFolder] = useState<FolderItem | null>(null);
     const [isBulkEditOpen, setIsBulkEditOpen] = useState(false);
     const [isHelpOpen, setIsHelpOpen] = useState(false);
-    const [isNoticeOpen, setIsNoticeOpen] = useState(false);
+    const [isNoticeOpen, setIsNoticeOpen] = useState(() => !readNoticeDismissed());
     const [movingFolder, setMovingFolder] = useState<FolderItem | null>(null);
     const [movingWord, setMovingWord] = useState<WordItem | null>(null);
     const [movingCard, setMovingCard] = useState<CardItem | null>(null);
@@ -420,30 +412,6 @@ const Layout: React.FC = () => {
             coordinateGetter: sortableKeyboardCoordinates,
         })
     );
-
-    useEffect(() => {
-        if (movingFolder) {
-            setMoveTargetId(movingFolder.parentId ?? 'root');
-        }
-    }, [movingFolder]);
-
-    useEffect(() => {
-        if (movingWord) {
-            setMoveTargetId(movingWord.folderId ?? 'root');
-        }
-    }, [movingWord]);
-
-    useEffect(() => {
-        if (movingCard) {
-            setMoveTargetId(movingCard.folderId ?? 'root');
-        }
-    }, [movingCard]);
-
-    useEffect(() => {
-        if (!readNoticeDismissed()) {
-            setIsNoticeOpen(true);
-        }
-    }, []);
 
     useEffect(() => {
         const handleUiUpdate = (event: Event) => {
@@ -579,7 +547,7 @@ const Layout: React.FC = () => {
         );
     };
 
-    const collectDescendantFolderIds = (startId: string) => {
+    const collectDescendantFolderIds = React.useCallback((startId: string) => {
         const visited = new Set<string>();
         const queue = [startId];
         while (queue.length > 0) {
@@ -590,7 +558,7 @@ const Layout: React.FC = () => {
             for (const child of children) queue.push(child.id);
         }
         return visited;
-    };
+    }, [folders]);
 
     const handleDeleteFolder = (id: string) => {
         if (!confirm('このフォルダと中身を削除します。よろしいですか？')) return;
@@ -741,7 +709,7 @@ const Layout: React.FC = () => {
         return path.join(' / ');
     }, [activeFolderId, folderById, showRootInPaths]);
 
-    const getFolderPath = (folderId: string | null) => {
+    const getFolderPath = React.useCallback((folderId: string | null) => {
         if (!folderId) return 'root';
         const path: string[] = [];
         let cursor: string | null = folderId;
@@ -758,7 +726,7 @@ const Layout: React.FC = () => {
         }
         if (path[0] === 'root') return path.join(' / ');
         return `root / ${path.join(' / ')}`;
-    };
+    }, [folderById, showRootInPaths]);
 
     const folderOptions = useMemo(() => {
         const options = folders.map(folder => ({
@@ -767,12 +735,12 @@ const Layout: React.FC = () => {
         }));
         options.sort((a, b) => a.label.localeCompare(b.label));
         return [{ id: 'root', label: 'root' }, ...options];
-    }, [folders, folderById, getFolderPath]);
+    }, [folders, getFolderPath]);
 
     const blockedMoveFolderIds = useMemo(() => {
         if (!movingFolder) return new Set<string>();
         return collectDescendantFolderIds(movingFolder.id);
-    }, [movingFolder, folders]);
+    }, [movingFolder, collectDescendantFolderIds]);
 
     const folderMoveOptions = useMemo(() => {
         if (!movingFolder) return folderOptions;
@@ -995,7 +963,7 @@ const Layout: React.FC = () => {
                 </div>
 
                 <div className="p-3 border-t border-slate-800 text-[10px] text-slate-600 text-center font-mono">
-                    v1.0.0 • ローカル保存モード
+                    v1.1.0 • ローカル保存モード
                 </div>
             </aside>
 
@@ -1085,6 +1053,7 @@ const Layout: React.FC = () => {
                                             onMove={() => {
                                                 setMovingWord(null);
                                                 setMovingCard(null);
+                                                setMoveTargetId(folder.parentId ?? 'root');
                                                 setMovingFolder(folder);
                                             }}
                                             onEdit={() => setEditingFolder(folder)}
@@ -1152,6 +1121,7 @@ const Layout: React.FC = () => {
                                                     onMove: () => {
                                                         setMovingWord(null);
                                                         setMovingCard(null);
+                                                        setMoveTargetId(folder.parentId ?? 'root');
                                                         setMovingFolder(folder);
                                                     }
                                                 };
@@ -1184,6 +1154,7 @@ const Layout: React.FC = () => {
                                         onMoveCard={(card) => {
                                             setMovingFolder(null);
                                             setMovingWord(null);
+                                            setMoveTargetId(card.folderId ?? 'root');
                                             setMovingCard(card);
                                         }}
                                         onReorderCards={handleReorderCards}
@@ -1225,6 +1196,7 @@ const Layout: React.FC = () => {
                                     onMoveWord={(word) => {
                                         setMovingFolder(null);
                                         setMovingCard(null);
+                                        setMoveTargetId(word.folderId ?? 'root');
                                         setMovingWord(word);
                                     }}
                                     onReorderWords={handleReorderWords}
@@ -1257,13 +1229,14 @@ const Layout: React.FC = () => {
                     handleUpdateFolder(editingFolder.id, updates);
                 }}
             />
-            <BulkWordSettingsModal
-                isOpen={isBulkEditOpen}
-                templates={templates}
-                hasDecorations={hasDecorationsInFolder}
-                onClose={() => setIsBulkEditOpen(false)}
-                onApply={handleApplyBulkSettings}
-            />
+            {isBulkEditOpen && (
+                <BulkWordSettingsModal
+                    templates={templates}
+                    hasDecorations={hasDecorationsInFolder}
+                    onClose={() => setIsBulkEditOpen(false)}
+                    onApply={handleApplyBulkSettings}
+                />
+            )}
             <MoveItemModal
                 isOpen={!!movingFolder}
                 title="フォルダを移動"

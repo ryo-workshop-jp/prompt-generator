@@ -1,86 +1,52 @@
-# React + TypeScript + Vite
+# Prompt Generator
 
-Published URL: https://ryo-workshop-jp.github.io/prompt-generator/
+Stable DiffusionやComfyUIなどの画像生成AI向けに、カードを組み合わせてプロンプトを作成するブラウザーツールです。
 
-## Google Analytics (GA4)
+公開版: https://ryo-workshop-jp.github.io/prompt-generator/
 
-Set the measurement ID in `.env`:
+## 主な機能
 
-```bash
-VITE_GA_ID=G-XJG8B4JRV7
-# Optional: enable tracking in local dev
+- フォルダーとカードによるプロンプト整理
+- ポジティブ／ネガティブプロンプトの組み立てとコピー
+- お気に入り、品質テンプレート、装飾テンプレート、コピー履歴
+- ComfyUI向け指示JSONの作成
+- 複数ジョブ、画像枚数、サイズ、steps、cfg、sampler、schedulerの設定
+- ブラウザー内データのExport／Import
+
+データはブラウザーのローカルストレージに保存されます。別のPCやブラウザーへ移す場合は、設定画面の「全データ」からExport／Importしてください。
+
+## ローカル起動
+
+Node.jsとnpmを用意し、次のコマンドを実行します。
+
+```powershell
+npm install
+npm run dev
+```
+
+Windowsでは `launch_app.bat` からも起動できます。
+
+## 確認とビルド
+
+```powershell
+npm run lint
+npm run build
+npm run preview
+```
+
+本番ビルドは `dist/` に生成されます。GitHub Pagesは `main` ブランチの `docs/` を公開するため、公開時はビルド結果を `docs/` に反映します。
+
+## Google Analytics（GA4）
+
+計測IDは `.env` に設定します。
+
+```dotenv
+VITE_GA_ID=G-XXXXXXXXXX
 VITE_GA_ENABLE_DEV=false
 ```
 
-`VITE_GA_ENABLE_DEV` is `false` by default, so analytics events are sent in production builds.
+`VITE_GA_ENABLE_DEV` は既定で `false` のため、ローカル開発中は計測を送信しません。公開リポジトリへ秘密情報を保存しないでください。
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 更新履歴
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+[CHANGELOG.md](CHANGELOG.md) を参照してください。

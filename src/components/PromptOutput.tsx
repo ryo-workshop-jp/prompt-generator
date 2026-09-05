@@ -59,9 +59,11 @@ const formatFileTimestamp = (date: Date) => {
 };
 
 const sanitizeFilenameBase = (name: string) => {
-    const cleaned = name
-        .trim()
-        .replace(/[<>:"/\\|?*\u0000-\u001F]/g, '-')
+    const withoutControlCharacters = Array.from(name.trim(), character => (
+        character.charCodeAt(0) <= 0x1f ? '-' : character
+    )).join('');
+    const cleaned = withoutControlCharacters
+        .replace(/[<>:"/\\|?*]/g, '-')
         .replace(/\s+/g, '_')
         .replace(/_+/g, '_')
         .slice(0, 96);
@@ -515,7 +517,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
     });
     const [isComfyExportOpen, setIsComfyExportOpen] = useState(false);
     const [comfyPresetConfig, setComfyPresetConfig] = useState<Record<ComfyQualityPreset, ComfyPresetConfig>>(() => readComfyPresetConfig());
-    const [comfyQualityPreset, setComfyQualityPreset] = useState<ComfyQualityPreset>('standard');
+    const [comfyQualityPreset, setComfyQualityPreset] = useState<ComfyQualityPreset>(() => {
+        const presets = readComfyPresetConfig();
+        return presets.standard ? 'standard' : (Object.keys(presets)[0] ?? 'standard');
+    });
     const [comfyImageCount, setComfyImageCount] = useState(4);
     const [comfyJobName, setComfyJobName] = useState('');
     const [comfyBatchJobs, setComfyBatchJobs] = useState<ComfyBatchJobDraft[]>([]);
@@ -578,35 +583,25 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
     };
 
     useEffect(() => {
-        if (!hoveredStrength) return;
-        if (!hoveredWord) {
-            setHoveredStrength(null);
-        }
-    }, [hoveredStrength, hoveredWord]);
-
-    useEffect(() => {
-        if (!cardEditorTarget) return;
-        if (!editingCardWord) {
-            setCardEditorTarget(null);
-        }
-    }, [cardEditorTarget, editingCardWord]);
-
-    useEffect(() => {
         const handleUiUpdate = (event: Event) => {
             const detail = (event as CustomEvent).detail as { stepperDisplay?: 'inside' | 'above'; combinedCopyEnabled?: boolean; showRootInPaths?: boolean; comfyExportEnabled?: boolean } | undefined;
             const next = detail ?? readUiSettings();
             setStepperDisplay(next.stepperDisplay ?? 'above');
+            if ((next.stepperDisplay ?? 'above') === 'inside') setHoveredStrength(null);
             setCombinedCopyEnabled(!!next.combinedCopyEnabled);
             setShowRootInPaths(next.showRootInPaths ?? false);
             setComfyExportEnabled(next.comfyExportEnabled ?? true);
+            if (!(next.comfyExportEnabled ?? true)) setIsComfyExportOpen(false);
         };
         const handleStorage = (event: StorageEvent) => {
             if (event.key !== UI_STORAGE_KEY) return;
             const next = readUiSettings();
             setStepperDisplay(next.stepperDisplay ?? 'above');
+            if ((next.stepperDisplay ?? 'above') === 'inside') setHoveredStrength(null);
             setCombinedCopyEnabled(!!next.combinedCopyEnabled);
             setShowRootInPaths(next.showRootInPaths ?? false);
             setComfyExportEnabled(next.comfyExportEnabled ?? true);
+            if (!(next.comfyExportEnabled ?? true)) setIsComfyExportOpen(false);
         };
         window.addEventListener('promptgen:ui-update', handleUiUpdate);
         window.addEventListener('storage', handleStorage);
@@ -616,14 +611,33 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         };
     }, []);
     useEffect(() => {
+        const applyPresetUpdate = (next: Record<ComfyQualityPreset, ComfyPresetConfig>) => {
+            const previousActivePreset = comfyPresetConfig[comfyQualityPreset];
+            const nextActiveKey = next[comfyQualityPreset]
+                ? comfyQualityPreset
+                : (Object.keys(next)[0] ?? 'standard');
+            const nextActivePreset = next[nextActiveKey];
+
+            setComfyPresetConfig(next);
+            if (!nextActivePreset) return;
+            if (nextActiveKey !== comfyQualityPreset) {
+                setComfyQualityPreset(nextActiveKey);
+            }
+            if (!previousActivePreset || previousActivePreset.steps !== nextActivePreset.steps) {
+                setComfySteps(nextActivePreset.steps);
+            }
+            if (!previousActivePreset || previousActivePreset.cfgScale !== nextActivePreset.cfgScale) {
+                setComfyCfgScale(nextActivePreset.cfgScale);
+            }
+        };
         const handlePresetUpdate = (event: Event) => {
             const detail = (event as CustomEvent).detail as Record<ComfyQualityPreset, ComfyPresetConfig> | undefined;
             const next = detail ?? readComfyPresetConfig();
-            setComfyPresetConfig(next);
+            applyPresetUpdate(next);
         };
         const handleStorage = (event: StorageEvent) => {
             if (event.key !== COMFY_PRESET_STORAGE_KEY) return;
-            setComfyPresetConfig(readComfyPresetConfig());
+            applyPresetUpdate(readComfyPresetConfig());
         };
         window.addEventListener(COMFY_PRESET_UPDATE_EVENT, handlePresetUpdate);
         window.addEventListener('storage', handleStorage);
@@ -631,28 +645,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             window.removeEventListener(COMFY_PRESET_UPDATE_EVENT, handlePresetUpdate);
             window.removeEventListener('storage', handleStorage);
         };
-    }, []);
-
-    useEffect(() => {
-        if (comfyPresetConfig[comfyQualityPreset]) return;
-        const fallback = comfyPresetEntries[0];
-        if (!fallback) return;
-        setComfyQualityPreset(fallback[0]);
-        setComfySteps(fallback[1].steps);
-        setComfyCfgScale(fallback[1].cfgScale);
-    }, [comfyPresetConfig, comfyQualityPreset, comfyPresetEntries]);
-
-    useEffect(() => {
-        if (stepperDisplay === 'inside') {
-            setHoveredStrength(null);
-        }
-    }, [stepperDisplay]);
-
-    useEffect(() => {
-        if (!comfyExportEnabled && isComfyExportOpen) {
-            setIsComfyExportOpen(false);
-        }
-    }, [comfyExportEnabled, isComfyExportOpen]);
+    }, [comfyPresetConfig, comfyQualityPreset]);
 
     useEffect(() => {
         return () => {
@@ -662,15 +655,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         };
     }, []);
 
-    useEffect(() => {
-        if (!qualityType) {
-            cancelEditQualityName();
-            return;
-        }
-        if (!editingQualityId) return;
-        const exists = qualityTemplates.some(template => template.id === editingQualityId);
-        if (!exists) cancelEditQualityName();
-    }, [editingQualityId, qualityTemplates, qualityType]);
+    const cancelEditQualityName = () => {
+        setEditingQualityId(null);
+        setEditingQualityName('');
+    };
 
     const filteredFavorites = useMemo(() => {
         return favorites.filter(fav => (nsfwEnabled ? true : !fav.nsfw));
@@ -684,7 +672,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         return new Map(folders.map(folder => [folder.id, folder]));
     }, [folders]);
 
-    const getFolderPath = (folderId: string) => {
+    const getFolderPath = React.useCallback((folderId: string) => {
         if (!folderId) return 'root';
         const path: string[] = [];
         let cursor: string | null = folderId;
@@ -701,7 +689,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         }
         if (path[0] === 'root') return path.join(' / ');
         return `root / ${path.join(' / ')}`;
-    };
+    }, [folderById, showRootInPaths]);
 
     const folderTreeOptions = useMemo(() => {
         const childrenMap = new Map<string, { id: string; name: string; nsfw?: boolean }[]>();
@@ -726,7 +714,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         options.push({ id: 'root', name: 'root', depth: 0, path: 'root', hasChildren: rootChildren.length > 0, parentId: null });
         walk('root', 1);
         return options;
-    }, [folders, folderById, nsfwEnabled, getFolderPath]);
+    }, [folders, nsfwEnabled, getFolderPath]);
 
     const filteredFolderOptions = useMemo(() => {
         const query = folderSearch.trim().toLowerCase();
@@ -1169,10 +1157,6 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         setEditingQualityId(template.id);
         setEditingQualityName(template.name);
     };
-    const cancelEditQualityName = () => {
-        setEditingQualityId(null);
-        setEditingQualityName('');
-    };
     const submitEditQualityName = () => {
         if (!editingQualityId) return;
         updateQualityTemplateName(editingQualityId, editingQualityName);
@@ -1311,7 +1295,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             <BookmarkIcon className="w-4 h-4" /> 保存
                         </button>
                         <button
-                            onClick={() => setQualityType('positive')}
+                            onClick={() => {
+                                cancelEditQualityName();
+                                setQualityType('positive');
+                            }}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                         >
                             <Bars3Icon className="w-4 h-4" /> 品質
@@ -1413,7 +1400,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             <BookmarkIcon className="w-4 h-4" /> 保存
                         </button>
                         <button
-                            onClick={() => setQualityType('negative')}
+                            onClick={() => {
+                                cancelEditQualityName();
+                                setQualityType('negative');
+                            }}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
                         >
                             <Bars3Icon className="w-4 h-4" /> 品質
@@ -2098,6 +2088,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                         <button
                                             onClick={() => {
                                                 selectQualityTemplate(qualityType, template.id);
+                                                cancelEditQualityName();
                                                 setQualityType(null);
                                             }}
                                             className="text-left flex-1"
@@ -2192,6 +2183,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                 onClick={() => {
                                     if (!qualityType) return;
                                     selectQualityTemplate(qualityType, null);
+                                    cancelEditQualityName();
                                     setQualityType(null);
                                 }}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
@@ -2200,7 +2192,10 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                             </button>
                             <button
                                 type="button"
-                                onClick={() => setQualityType(null)}
+                                onClick={() => {
+                                    cancelEditQualityName();
+                                    setQualityType(null);
+                                }}
                                 className="px-4 py-2 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700"
                             >
                                 閉じる

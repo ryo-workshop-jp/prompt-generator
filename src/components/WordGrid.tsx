@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from 'react';
+﻿import React, { useMemo, useState } from 'react';
 import type { WordItem, TemplateItem, CardItem } from '../types';
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, rectSortingStrategy, useSortable } from '@dnd-kit/sortable';
@@ -90,14 +90,6 @@ const TemplateSelectModal: React.FC<{
         return afterValue ? `${withBefore}${afterSpacer}${afterValue}` : withBefore;
     }, [selectedOptions, word.value_en]);
 
-    useEffect(() => {
-        if (!isOpen) return;
-        setCustomOptions({});
-        setSelectedOptions([]);
-        setFreeValues({});
-        setSelectedTemplateId(templates[0]?.id ?? '');
-    }, [isOpen, templates]);
-
     const toggleOption = (option: DecorOption) => {
         setSelectedOptions(prev => {
             const exists = prev.some(item => item.id === option.id && item.templateId === option.templateId);
@@ -111,7 +103,7 @@ const TemplateSelectModal: React.FC<{
         const trimmed = raw.trim();
         if (!trimmed) return;
         const option: DecorOption = {
-            id: `free_${template.id}_${Date.now()}`,
+            id: `free_${template.id}_${customOptions[template.id]?.length ?? 0}`,
             label: trimmed,
             value: trimmed,
             templateId: template.id,

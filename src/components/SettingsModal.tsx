@@ -146,13 +146,12 @@ const SortableOptionRow: React.FC<{
 };
 
 const TemplateModal: React.FC<{
-    isOpen: boolean;
     template: TemplateItem | null;
     availableFolders: string[];
     defaultFolder?: string;
     onClose: () => void;
     onSave: (template: TemplateItem) => void;
-}> = ({ isOpen, template, availableFolders, defaultFolder, onClose, onSave }) => {
+}> = ({ template, availableFolders, defaultFolder, onClose, onSave }) => {
     const [name, setName] = useState(template?.name ?? '');
     const [folderId, setFolderId] = useState(template?.folderId ?? defaultFolder ?? '');
     const [options, setOptions] = useState<TemplateOption[]>(template?.options ?? []);
@@ -169,20 +168,6 @@ const TemplateModal: React.FC<{
             coordinateGetter: sortableKeyboardCoordinates,
         })
     );
-
-    useEffect(() => {
-        if (!isOpen) return;
-        setName(template?.name ?? '');
-        setFolderId(template?.folderId ?? defaultFolder ?? '');
-        setOptions(template?.options ?? []);
-        setAllowFree(!!template?.allowFree);
-        setSpaceEnabled(template?.spaceEnabled ?? true);
-        setPosition(template?.position ?? 'before');
-        setNewLabel('');
-        setNewValue('');
-    }, [isOpen, template, defaultFolder]);
-
-    if (!isOpen) return null;
 
     const handleAddOption = () => {
         const label = newLabel.trim();
@@ -571,7 +556,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         });
     };
 
-    const collectDescendantFolderIds = (startIds: string[]) => {
+    const collectDescendantFolderIds = useCallback((startIds: string[]) => {
         const visited = new Set<string>();
         const queue = [...startIds];
         while (queue.length > 0) {
@@ -582,9 +567,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             for (const child of children) queue.push(child.id);
         }
         return visited;
-    };
+    }, [folders]);
 
-    const collectAncestorFolderIds = (startIds: Set<string>) => {
+    const collectAncestorFolderIds = useCallback((startIds: Set<string>) => {
         const visited = new Set<string>();
         for (const startId of startIds) {
             let cursor: string | null = startId;
@@ -598,7 +583,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             }
         }
         return visited;
-    };
+    }, [folderById]);
 
     const selectedFolderIdSet = useMemo(() => new Set(selectedFolderExportIds), [selectedFolderExportIds]);
     const isRootSelectedForExport = selectedFolderIdSet.has('root');
@@ -607,7 +592,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             return new Set(folders.map(folder => folder.id));
         }
         return collectDescendantFolderIds(selectedFolderExportIds.filter(id => id !== 'root'));
-    }, [folders, isRootSelectedForExport, selectedFolderExportIds]);
+    }, [collectDescendantFolderIds, folders, isRootSelectedForExport, selectedFolderExportIds]);
     const selectedWordIdSet = useMemo(() => new Set(selectedWordExportIds), [selectedWordExportIds]);
     const totalSelectedWordCount = useMemo(() => {
         if (isRootSelectedForExport) return words.length;
@@ -640,7 +625,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             return new Set(folders.map(folder => folder.id));
         }
         return collectDescendantFolderIds(selectedCardFolderExportIds.filter(id => id !== 'root'));
-    }, [folders, isRootSelectedForCardExport, selectedCardFolderExportIds]);
+    }, [collectDescendantFolderIds, folders, isRootSelectedForCardExport, selectedCardFolderExportIds]);
     const selectedCardIdSet = useMemo(() => new Set(selectedCardExportIds), [selectedCardExportIds]);
     const totalSelectedCardCount = useMemo(() => {
         if (isRootSelectedForCardExport) return cards.length;
@@ -737,7 +722,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     };
 
     const handleExportAll = () => {
-        downloadJson({ folders, words, cards, templates, favorites, qualityTemplates }, 'promptgen-all.json');
+        downloadJson({ folders, words, cards, templates, favorites, qualityTemplates, comfyPresets: comfyPresetConfig }, 'promptgen-all.json');
     };
 
     const handleExportWords = () => {
@@ -974,28 +959,35 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         if (!file || !importMode) return;
         try {
             const text = await file.text();
-            const parsed = JSON.parse(text) as any;
+            const parsed = JSON.parse(text) as unknown;
+            const parsedRecord = parsed && typeof parsed === 'object' && !Array.isArray(parsed)
+                ? parsed as Record<string, unknown>
+                : {};
             const asArray = (value: unknown): unknown[] | null => Array.isArray(value) ? value : null;
             if (importMode === 'all') {
-                const nextFolders = asArray(parsed?.folders) as FolderItem[] | null;
-                const nextWords = asArray(parsed?.words) as WordItem[] | null;
+                const nextFolders = asArray(parsedRecord.folders) as FolderItem[] | null;
+                const nextWords = asArray(parsedRecord.words) as WordItem[] | null;
                 if (!nextFolders || !nextWords) {
                     alert('JSON形式が正しくありません。{ folders: [], words: [] } が必要です。');
                     return;
                 }
-                const nextTemplates = (asArray(parsed?.templates) ?? []) as TemplateItem[];
-                const nextFavorites = (asArray(parsed?.favorites) ?? []) as PromptFavorite[];
-                const nextQuality = (asArray(parsed?.qualityTemplates) ?? []) as PromptFavorite[];
+                const nextTemplates = (asArray(parsedRecord.templates) ?? []) as TemplateItem[];
+                const nextFavorites = (asArray(parsedRecord.favorites) ?? []) as PromptFavorite[];
+                const nextQuality = (asArray(parsedRecord.qualityTemplates) ?? []) as PromptFavorite[];
                 if (!confirm('Importすると現在のデータが上書きされます。続行しますか？')) return;
-                setData({ folders: nextFolders, words: nextWords, templates: nextTemplates, cards: Array.isArray(parsed?.cards) ? parsed?.cards : [] });
+                setData({ folders: nextFolders, words: nextWords, templates: nextTemplates, cards: Array.isArray(parsedRecord.cards) ? parsedRecord.cards as CardItem[] : [] });
                 setFavoritesData(nextFavorites);
                 setQualityTemplatesData(nextQuality);
+                if (parsedRecord.comfyPresets && typeof parsedRecord.comfyPresets === 'object' && !Array.isArray(parsedRecord.comfyPresets)) {
+                    writeComfyPresetConfig(parsedRecord.comfyPresets as Record<ComfyQualityPreset, ComfyPresetConfig>);
+                    setComfyPresetConfig(readComfyPresetConfig());
+                }
                 alert('Importが完了しました。');
                 return;
             }
             if (importMode === 'words') {
-                const nextFolders = asArray(parsed?.folders) as FolderItem[] | null;
-                const nextWords = asArray(parsed?.words) as WordItem[] | null;
+                const nextFolders = asArray(parsedRecord.folders) as FolderItem[] | null;
+                const nextWords = asArray(parsedRecord.words) as WordItem[] | null;
                 if (!nextFolders || !nextWords) {
                     alert('JSON形式が正しくありません。{ folders: [], words: [] } が必要です。');
                     return;
@@ -1004,7 +996,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 return;
             }
             if (importMode === 'cards') {
-                const nextCards = (asArray(parsed?.cards) ?? asArray(parsed)) as CardItem[] | null;
+                const nextCards = (asArray(parsedRecord.cards) ?? asArray(parsed)) as CardItem[] | null;
                 if (!nextCards) {
                     alert('JSON形式が正しくありません。{ cards: [] } が必要です。');
                     return;
@@ -1015,7 +1007,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 return;
             }
             if (importMode === 'favorites') {
-                const nextFavorites = (asArray(parsed?.favorites) ?? asArray(parsed)) as PromptFavorite[] | null;
+                const nextFavorites = (asArray(parsedRecord.favorites) ?? asArray(parsed)) as PromptFavorite[] | null;
                 if (!nextFavorites) {
                     alert('JSON形式が正しくありません。{ favorites: [] } が必要です。');
                     return;
@@ -1026,7 +1018,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 return;
             }
             if (importMode === 'quality') {
-                const nextQuality = (asArray(parsed?.qualityTemplates) ?? asArray(parsed)) as PromptFavorite[] | null;
+                const nextQuality = (asArray(parsedRecord.qualityTemplates) ?? asArray(parsed)) as PromptFavorite[] | null;
                 if (!nextQuality) {
                     alert('JSON形式が正しくありません。{ qualityTemplates: [] } が必要です。');
                     return;
@@ -1037,7 +1029,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                 return;
             }
             if (importMode === 'templates') {
-                const nextTemplates = (asArray(parsed?.templates) ?? asArray(parsed)) as TemplateItem[] | null;
+                const nextTemplates = (asArray(parsedRecord.templates) ?? asArray(parsed)) as TemplateItem[] | null;
                 if (!nextTemplates) {
                     alert('JSON形式が正しくありません。{ templates: [] } が必要です。');
                     return;
@@ -1477,7 +1469,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                     <div className="flex items-center justify-between gap-4">
                                         <div>
                                             <div className="text-sm font-bold text-slate-200">全データ</div>
-                                            <div className="text-xs text-slate-500">カード・お気に入り・品質テンプレート・装飾の全データ</div>
+                                            <div className="text-xs text-slate-500">カード・お気に入り・品質テンプレート・装飾・Comfyプリセットの全データ</div>
                                         </div>
                                         <div className="flex gap-2">
                                             <button
@@ -2617,14 +2609,14 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     </div>
                 </div>
             )}
-            <TemplateModal
-                key={editingTemplate?.id ?? 'new'}
-                isOpen={isTemplateModalOpen}
-                template={editingTemplate}
-                availableFolders={templateFolderOptions}
-                defaultFolder={templateFolderFilter !== 'all' && templateFolderFilter !== '__none__' ? templateFolderFilter : undefined}
-                onClose={() => setIsTemplateModalOpen(false)}
-                onSave={(payload) => {
+            {isTemplateModalOpen && (
+                <TemplateModal
+                    key={editingTemplate?.id ?? 'new'}
+                    template={editingTemplate}
+                    availableFolders={templateFolderOptions}
+                    defaultFolder={templateFolderFilter !== 'all' && templateFolderFilter !== '__none__' ? templateFolderFilter : undefined}
+                    onClose={() => setIsTemplateModalOpen(false)}
+                    onSave={(payload) => {
                     if (payload.folderId && !templateFolderOptions.some(folder => folder.toLowerCase() === payload.folderId?.toLowerCase())) {
                         const nextFolders = [...templateFolders, payload.folderId];
                         setTemplateFolders(nextFolders);
@@ -2635,8 +2627,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                         return;
                     }
                     addTemplate(payload);
-                }}
-            />
+                    }}
+                />
+            )}
         </div>
     );
 };
