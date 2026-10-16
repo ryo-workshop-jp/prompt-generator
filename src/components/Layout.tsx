@@ -303,8 +303,18 @@ const FolderCard: React.FC<{
     dragHandleProps?: React.HTMLAttributes<HTMLButtonElement>;
 }> = ({ folder, onOpen, editMode = false, onEdit, onDelete, onMove, dragHandleProps }) => {
     return (
-        <button
+        <div
+            role="button"
+            tabIndex={0}
+            aria-label={`フォルダ ${folder.name}`}
             onClick={onOpen}
+            onKeyDown={(event) => {
+                if (event.target !== event.currentTarget) return;
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    onOpen();
+                }
+            }}
             className="relative flex h-full w-full flex-col items-start p-3 rounded-xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/40 hover:bg-slate-900 transition-all text-left"
         >
             <span className="text-xs text-slate-500 font-mono mb-1">フォルダ</span>
@@ -355,7 +365,7 @@ const FolderCard: React.FC<{
                     </button>
                 </div>
             )}
-        </button>
+        </div>
     );
 };
 
@@ -386,6 +396,9 @@ const Layout: React.FC = () => {
     const [activeFolderId, setActiveFolderId] = useState<string>('root');
     const [searchQuery, setSearchQuery] = useState('');
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const sidebarRef = useRef<HTMLElement>(null);
+    const sidebarToggleRef = useRef<HTMLButtonElement>(null);
     const [showAddFolder, setShowAddFolder] = useState(false);
     const [editMode, setEditMode] = useState(false);
     const [editingFolder, setEditingFolder] = useState<FolderItem | null>(null);
@@ -412,6 +425,38 @@ const Layout: React.FC = () => {
             coordinateGetter: sortableKeyboardCoordinates,
         })
     );
+
+    useEffect(() => {
+        if (!isSidebarOpen) return;
+        const panel = sidebarRef.current;
+        const focusable = () => Array.from(panel?.querySelectorAll<HTMLElement>('button:not([disabled]), input, [tabindex="0"]') ?? [])
+            .filter(element => element.getClientRects().length > 0);
+        focusable()[0]?.focus();
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') setIsSidebarOpen(false);
+            if (event.key !== 'Tab') return;
+            const elements = focusable();
+            const first = elements[0];
+            const last = elements.at(-1);
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last?.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first?.focus();
+            }
+        };
+        const desktop = window.matchMedia('(min-width: 1024px)');
+        const handleDesktop = () => { if (desktop.matches) setIsSidebarOpen(false); };
+        document.addEventListener('keydown', handleKeyDown);
+        desktop.addEventListener('change', handleDesktop);
+        const toggle = sidebarToggleRef.current;
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            desktop.removeEventListener('change', handleDesktop);
+            toggle?.focus();
+        };
+    }, [isSidebarOpen]);
 
     useEffect(() => {
         const handleUiUpdate = (event: Event) => {
@@ -517,6 +562,7 @@ const Layout: React.FC = () => {
 
     const handleSelectFolder = (id: string) => {
         setActiveFolderId(id);
+        setIsSidebarOpen(false);
     };
 
     const handleNavigateUp = React.useCallback(() => {
@@ -929,16 +975,22 @@ const Layout: React.FC = () => {
     };
 
     return (
-        <div className="flex h-screen bg-slate-950 text-slate-200 font-sans overflow-hidden">
+        <div className="app-shell flex h-dvh bg-slate-950 text-slate-200 font-sans overflow-hidden">
+            {isSidebarOpen && (
+                <button className="fixed inset-0 z-30 bg-black/60 lg:hidden" aria-label="フォルダー一覧の背景を閉じる" onClick={() => setIsSidebarOpen(false)} tabIndex={-1} />
+            )}
             {/* Sidebar */}
-            <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0 z-20 shadow-xl">
+            <aside ref={sidebarRef} id="folder-sidebar" aria-label="フォルダー一覧" role={isSidebarOpen ? 'dialog' : undefined} aria-modal={isSidebarOpen || undefined} className={`fixed inset-y-0 left-0 w-64 max-w-[calc(100vw-3rem)] bg-slate-900 border-r border-slate-800 flex-col shrink-0 z-40 shadow-xl lg:static lg:z-20 ${isSidebarOpen ? 'flex' : 'hidden lg:flex'}`}>
                 <div className="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/50 backdrop-blur-sm">
                     <h1 className="text-xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent tracking-tighter">
                         PROMPT<span className="text-slate-500 font-light">GEN</span>
                     </h1>
                     <div className="flex items-center gap-1">
+                        <button onClick={() => setIsSidebarOpen(false)} className="p-1 text-slate-400 lg:hidden" aria-label="フォルダー一覧を閉じる">
+                            <XMarkIcon className="w-5 h-5" />
+                        </button>
                         <button
-                            onClick={() => setIsHelpOpen(true)}
+                            onClick={() => { setIsSidebarOpen(false); setIsHelpOpen(true); }}
                             className="text-slate-500 hover:text-cyan-400 transition-colors p-1 rounded-full hover:bg-slate-800"
                             title="使い方"
                             aria-label="使い方"
@@ -946,7 +998,7 @@ const Layout: React.FC = () => {
                             <QuestionMarkCircleIcon className="w-5 h-5" />
                         </button>
                         <button
-                            onClick={() => setIsSettingsOpen(true)}
+                            onClick={() => { setIsSidebarOpen(false); setIsSettingsOpen(true); }}
                             className="text-slate-500 hover:text-cyan-400 transition-colors p-1 rounded-full hover:bg-slate-800"
                             title="データ管理"
                         >
@@ -963,17 +1015,20 @@ const Layout: React.FC = () => {
                 </div>
 
                 <div className="p-3 border-t border-slate-800 text-[10px] text-slate-600 text-center font-mono">
-                    v1.1.0 • ローカル保存モード
+                    v1.0.0 • ローカル保存モード
                 </div>
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 flex flex-col relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950">
-                <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+            <main inert={isSidebarOpen} className="workspace min-w-0 flex-1 flex flex-col relative overflow-y-auto lg:overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950">
+                <div className="pointer-events-none absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
                 {/* Header Area */}
-                <header className="h-16 border-b border-slate-800/50 flex items-center px-6 justify-between backdrop-blur-sm z-10">
-                    <div className="text-sm font-medium text-slate-400 flex items-center gap-2">
+                <header className="min-h-16 shrink-0 border-b border-slate-800/50 flex flex-wrap gap-3 items-center px-3 py-3 sm:px-6 justify-between backdrop-blur-sm z-10">
+                    <div className="text-sm font-medium text-slate-400 flex min-w-0 items-center gap-2">
+                        <button ref={sidebarToggleRef} onClick={() => setIsSidebarOpen(true)} className="p-2 -ml-2 rounded hover:bg-slate-800 lg:hidden" aria-label="フォルダー一覧を開く" aria-expanded={isSidebarOpen} aria-controls="folder-sidebar">
+                            <Bars3Icon className="w-5 h-5" />
+                        </button>
                         {activeFolderId !== 'root' ? (
                             <>
                                 <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
@@ -983,13 +1038,13 @@ const Layout: React.FC = () => {
                             <span>フォルダを閲覧または検索</span>
                         )}
                     </div>
-                    <div className="flex items-center gap-2">
-                        <div className="relative hidden md:block">
+                    <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
+                        <div className="relative order-last w-full sm:order-none sm:w-auto">
                             <input
                                 type="search"
                                 value={searchQuery}
                                 onChange={(event) => setSearchQuery(event.target.value)}
-                                className="bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 w-56 pr-8"
+                                className="bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 w-full sm:w-56 pr-8"
                                 placeholder="フォルダまたはカードを検索..."
                             />
                             {searchQuery && (
@@ -1035,7 +1090,7 @@ const Layout: React.FC = () => {
                     </div>
                 </header>
 
-                <div className="flex-1 overflow-y-auto p-6 relative custom-scrollbar">
+                <div className="workspace-content h-[44dvh] min-h-48 shrink-0 lg:h-auto lg:min-h-0 lg:flex-1 lg:shrink overflow-y-auto p-3 sm:p-6 relative custom-scrollbar">
                     {searchResults ? (
                         <div className="flex flex-col gap-8">
                             <div>
@@ -1206,7 +1261,7 @@ const Layout: React.FC = () => {
                     )}
                 </div>
 
-                <div className="shrink-0 z-20">
+                <div className="prompt-output-panel min-w-0 shrink-0 z-20 border-t border-slate-800 lg:max-h-[52dvh] lg:overflow-y-auto custom-scrollbar">
                     <PromptOutput activeFolderId={activeFolderId} />
                 </div>
             </main>

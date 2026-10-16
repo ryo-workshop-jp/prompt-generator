@@ -368,18 +368,18 @@ const Chip: React.FC<{
             onMouseLeave={stepperDisplay === 'above' ? onHoverEnd : undefined}
             onPointerEnter={() => onHighlightStart?.(word.id, type)}
             onPointerLeave={onHighlightEnd}
-            className={`relative inline-flex items-center gap-2 pl-3 pr-1 py-1 rounded-full text-xs font-medium border group transition-all animate-fadeIn ${hasCardOff
+            className={`relative inline-flex min-w-0 max-w-full items-center gap-2 pl-3 pr-1 py-1 rounded-full text-xs font-medium border group transition-all animate-fadeIn ${hasCardOff
                 ? 'bg-amber-950/40 border-amber-600/70 text-amber-200'
                 : type === 'positive'
                     ? 'bg-cyan-950/40 border-cyan-800 text-cyan-300'
                     : 'bg-rose-950/40 border-rose-800 text-rose-300'
                 }`}>
-            <span>{word.label_jp}</span>
+            <span className="min-w-0 [overflow-wrap:anywhere]">{word.label_jp}</span>
             {isCardToken && (
                 <button
                     type="button"
                     onClick={() => onCardEdit?.(word, type)}
-                    className={`text-[10px] uppercase px-1 rounded border ${hasCardOff
+                    className={`shrink-0 text-[10px] uppercase px-1 rounded border ${hasCardOff
                         ? 'text-amber-200 border-amber-300/70 bg-amber-900/40'
                         : 'text-amber-300/80 border-amber-400/30 hover:text-amber-200 hover:border-amber-300/50'
                         }`}
@@ -389,7 +389,7 @@ const Chip: React.FC<{
                 </button>
             )}
             {stepperDisplay === 'inside' && !isCardToken && (
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
+                <div className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
                     <StrengthSelector
                         strength={word.strength}
                         onChange={(s) => updateWordStrength(word.id, type, s)}
@@ -398,7 +398,7 @@ const Chip: React.FC<{
             )}
             <button
                 onClick={() => removeWord(word.id, type)}
-                className="p-1 hover:bg-black/20 rounded-full ml-1"
+                className="shrink-0 p-1 hover:bg-black/20 rounded-full ml-1"
             >
                 <XMarkIcon className="w-3 h-3" />
             </button>
@@ -1093,8 +1093,16 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
         clearRestoreToast();
     };
 
-    const handleCopy = (text: string, type: CopyHistoryType) => {
-        navigator.clipboard.writeText(text);
+    const handleCopy = async (text: string, type: CopyHistoryType) => {
+        setCopyFeedback(null);
+        try {
+            await navigator.clipboard.writeText(text);
+        } catch (error) {
+            console.warn('Failed to copy prompt.', error);
+            alert('コピーできませんでした。ブラウザーのクリップボード権限を確認するか、出力欄の文章を選択してコピーしてください。');
+            return;
+        }
+        // クリップボードへの書き込みが成功した場合だけ、履歴と完了表示を更新する。
         addHistoryEntry(text, type);
         trackEvent('prompt_copy', {
             copy_scope: type,
@@ -1225,7 +1233,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
     };
 
     return (
-        <div className="h-full flex flex-col p-4 gap-3">
+        <div className="prompt-output min-w-0 flex flex-col p-3 sm:p-4 gap-3">
             {stepperDisplay === 'above' && hoveredWord && hoveredStrength && renderModal(
                 <div
                     className="fixed z-[200] bg-slate-900/95 border border-slate-700 rounded-lg px-2 py-1 shadow-xl"
@@ -1243,7 +1251,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                     />
                 </div>
             )}
-            <div className="flex justify-end -mb-1 gap-2">
+            <div className="flex flex-wrap justify-end -mb-1 gap-2">
                 {combinedCopyEnabled && (
                     <>
                         <button
@@ -1280,14 +1288,14 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                     </button>
                 )}
             </div>
-            <div className="flex flex-1 gap-4">
+            <div className="prompt-columns grid grid-cols-1 xl:grid-cols-2 gap-4 min-w-0">
             {/* Positive Section */}
-            <div className="flex-1 flex flex-col gap-2">
-                <div className="flex items-center justify-between">
+            <div className="prompt-section min-w-0 flex flex-col gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
-                        <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-wider">ポジティブプロンプト</h3>
+                        <h3 className="shrink-0 whitespace-nowrap text-sm font-bold text-cyan-400 uppercase tracking-wider">ポジティブプロンプト</h3>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="prompt-actions flex min-w-0 flex-wrap items-center gap-2">
                         <button
                             onClick={() => openSaveModal('positive')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
@@ -1303,7 +1311,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         >
                             <Bars3Icon className="w-4 h-4" /> 品質
                             {getQualityName('positive') && (
-                                <span className="text-[10px] text-cyan-200">{getQualityName('positive')}</span>
+                                <span className="max-w-24 truncate text-[10px] text-cyan-200">{getQualityName('positive')}</span>
                             )}
                         </button>
                         <button
@@ -1386,13 +1394,13 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
             </div>
 
             {/* Negative Section */}
-            <div className="flex-1 flex flex-col gap-2 border-l border-slate-800 pl-4">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1">
+            <div className="prompt-section min-w-0 flex flex-col gap-2 border-t pt-4 xl:border-t-0 xl:pt-0 xl:border-l border-slate-800 xl:pl-4">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex min-w-0 flex-wrap items-center gap-1">
                         <h3 className="text-sm font-bold text-rose-400 uppercase tracking-wider whitespace-nowrap">ネガティブプロンプト</h3>
-                        <span className="text-[10px] text-slate-500 whitespace-nowrap">(右クリック / Shift+クリックで登録)</span>
+                        <span className="text-[10px] text-slate-500">(右クリック / Shift+クリックで登録)</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="prompt-actions flex min-w-0 flex-wrap items-center gap-2">
                         <button
                             onClick={() => openSaveModal('negative')}
                             className="h-9 shrink-0 whitespace-nowrap flex items-center gap-1 text-xs px-2 rounded-md border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-rose-300 hover:border-rose-500/40 transition-colors"
@@ -1408,7 +1416,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                         >
                             <Bars3Icon className="w-4 h-4" /> 品質
                             {getQualityName('negative') && (
-                                <span className="text-[10px] text-rose-200">{getQualityName('negative')}</span>
+                                <span className="max-w-24 truncate text-[10px] text-rose-200">{getQualityName('negative')}</span>
                             )}
                         </button>
                         <button
@@ -1627,7 +1635,7 @@ const PromptOutput: React.FC<{ activeFolderId: string }> = ({ activeFolderId }) 
                                                 {'削除'}
                                             </button>
                                         </div>
-                                        <div className="grid grid-cols-1 md:grid-cols-[1fr,110px] gap-2">
+                                        <div className="grid grid-cols-1 md:grid-cols-[1fr_110px] gap-2">
                                             <input
                                                 type="text"
                                                 value={job.name}

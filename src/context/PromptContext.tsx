@@ -161,7 +161,8 @@ export const PromptProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             if (stored) {
                 const parsed = JSON.parse(stored) as Partial<DataStore>;
                 const normalized = normalizeDataStore(parsed);
-                if (normalized.folders.length > 0 || normalized.words.length > 0 || normalized.templates.length > 0 || (normalized.cards?.length ?? 0) > 0) {
+                // 空配列も利用者が保存した有効な状態。初期データへ勝手に戻さない。
+                if (Array.isArray(parsed.folders) || Array.isArray(parsed.words) || Array.isArray(parsed.templates) || Array.isArray(parsed.cards)) {
                     const unique = ensureUniqueFolderIds(normalized);
                     return { ...unique, cards: normalizeCards(unique.cards, unique.words) };
                 }

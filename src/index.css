@@ -11,6 +11,25 @@ body {
     /* slate-100 */
 }
 
+/* 狭い画面で長いカード名やプロンプトが親の幅を押し広げないようにする。 */
+.prompt-section,
+.workspace-content {
+    overflow-wrap: anywhere;
+}
+
+.settings-panel .flex.items-center.justify-between {
+    gap: 0.75rem;
+}
+
+.settings-panel .flex.items-center.justify-between > :first-child {
+    min-width: 0;
+}
+
+.settings-panel button,
+.settings-panel input[type="checkbox"] {
+    flex-shrink: 0;
+}
+
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;

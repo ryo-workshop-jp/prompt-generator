@@ -1,6 +1,10 @@
 # Prompt Generator
 
+正式版 v1.0.0（2026-10-16）。今回の公開をバージョン1の起点とします。
+
 Stable DiffusionやComfyUIなどの画像生成AI向けに、カードを組み合わせてプロンプトを作成するブラウザーツールです。
+
+主な対象はPCでのComfyUI向け作業です。スマートフォン対応は今後検討し、当面はPCでの表示・データ保存・生成指示JSONの信頼性を優先します。
 
 公開版: https://ryo-workshop-jp.github.io/prompt-generator/
 
@@ -33,6 +37,7 @@ Windowsでは `launch_app.bat` からも起動できます。
 ```powershell
 npm run lint
 npm run test:security
+npm run test:functional
 npm run build
 npm run preview
 ```
@@ -40,6 +45,42 @@ npm run preview
 本番ビルドは `dist/` に生成されます。GitHub Pagesは `main` ブランチの `docs/` を公開するため、公開時はビルド結果を `docs/` に反映します。
 
 セキュリティテストはNode.js 22.6以降で実行できます。依存関係の確認には `npm audit` を使います。今回の点検内容と確認範囲は [セキュリティ点検結果](セキュリティ点検結果_20261016.md) を参照してください。
+
+## 画面サイズの検証
+
+PCではフォルダー欄を常時表示し、幅1024px未満ではメニューボタンから開閉します。幅1280px未満ではポジティブ／ネガティブを縦に並べます。高さが小さい画面でもスクロールして各操作に到達できます。
+
+実ブラウザーで13種類の画面寸法と主要モーダルを確認する手順です。まず別のターミナルでテスト用サーバーを起動します。
+
+```powershell
+npm run dev -- --host 127.0.0.1 --port 5186 --strictPort
+```
+
+普段のブラウザーと分離したテスト専用セッションで実行します。CLIは `npx` から利用するため、プロジェクトへの依存追加は不要です。
+
+```powershell
+npx --yes --package @playwright/cli playwright-cli -s=layout-check open http://127.0.0.1:5186/prompt-generator/ --browser msedge
+npx --yes --package @playwright/cli playwright-cli -s=layout-check run-code --filename scripts/画面サイズ検証.js --raw
+```
+
+結果の `failures` と `pageErrors` が空であることを確認します。Chromeでは別セッション名と `--browser chrome` を指定します。長文の確認用に `scripts/長文表示検証.js`、スマートフォン相当のセッション用に `scripts/タッチ操作検証.js` も用意しています。長文検証はテストセッション内の保存データを置換するため、必ず専用セッションで実行してください。
+
+確認した不具合、検証条件、未確認の環境は [画面サイズの検証結果](画面サイズ検証結果_20261016.md) に記載しています。
+
+## PC向け機能の検証
+
+保存・編集・取り消し、コピー履歴、お気に入り、装飾、Import／Export、ComfyUI向けJSONを実操作で検証できます。
+
+```powershell
+npx --yes --package @playwright/cli playwright-cli -s=pc-functional open http://127.0.0.1:5186/prompt-generator/ --browser msedge
+npx --yes --package @playwright/cli playwright-cli -s=pc-functional run-code --filename scripts/PC機能検証.js --raw
+```
+
+前述のテスト用サーバーを起動し、必ず専用セッションで実行してください。このスクリプトはセッション内の保存データを検証用データへ置換します。クリップボードはテスト用実装へ差し替えるため、OSのクリップボードを変更しません。
+
+通常のデッキExportには保存先フォルダーとその親を含めます。古いデッキ単体JSONで保存先が見つからない場合は、確認画面で説明したうえでrootへ配置します。コピー失敗時は完了表示・履歴登録をせず、理由を案内します。
+
+修正内容と確認範囲は [PC機能の点検結果](PC機能点検結果_20261016.md) を参照してください。
 
 ## Google Analytics（GA4）
 

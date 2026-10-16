@@ -162,4 +162,7 @@ export const validateImport = (input: unknown, mode: ImportMode, existingFolders
         const presets = record(data.comfyPresets, 'comfyPresets');
         for (const [key, value] of Object.entries(presets)) record(value, `comfyPresets.${key}`);
     }
+    if (mode === 'cards' && data.folders !== undefined) {
+        validateImport({ folders: data.folders, words: [] }, 'words', existingFolders);
+    }
 };

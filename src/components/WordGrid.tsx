@@ -296,7 +296,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
     const increaseStrength = (value: number) => roundStrength(Math.min(maxClickStrength, value + clickStep));
     const decreaseStrength = (value: number) => roundStrength(value - clickStep);
 
-    const handleLeftClick = (event?: React.MouseEvent) => {
+    const handleLeftClick = (event?: { shiftKey: boolean }) => {
         if (editMode) return;
         const isShift = !!event?.shiftKey;
         // Left Click Logic (Positive Only):
@@ -394,9 +394,19 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
 
     return (
         <>
-        <button
+        <div
+            role="button"
+            tabIndex={0}
+            aria-label={word.label_jp}
             onClick={(event) => handleLeftClick(event)}
             onContextMenu={handleContextMenu}
+            onKeyDown={(event) => {
+                if (event.target !== event.currentTarget) return;
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    handleLeftClick(event);
+                }
+            }}
             className={`relative group flex flex-col items-start ${compact ? 'pt-2.5 px-2.5 pb-2 min-h-[56px]' : showFolderPath ? 'p-3 min-h-[80px]' : 'pt-3 px-3 pb-2 min-h-[68px]'} rounded-xl border transition-all duration-200 text-left w-full ${stateClass}`}
         >
             <div className="flex justify-between w-full">
@@ -487,8 +497,8 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
                             装飾
                         </button>
                     )}
-                    <span
-                        role="button"
+                    <button
+                        type="button"
                         onClick={(event) => {
                             event.stopPropagation();
                             toggleFavorite(word.id);
@@ -501,7 +511,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
                         title={isFavorite ? 'お気に入り解除' : 'お気に入り追加'}
                     >
                         {isFavorite ? <StarSolidIcon className="w-4 h-4" /> : <StarIcon className="w-4 h-4" />}
-                    </span>
+                    </button>
                     </>
                 )}
             </div>
@@ -521,7 +531,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word, folderPath, compact = 
                     </div>
                 </div>
             )}
-        </button>
+        </div>
         <TemplateSelectModal
             key={`${word.id}-${isTemplateOpen ? 'open' : 'closed'}`}
             word={word}
@@ -628,6 +638,7 @@ const CardCard: React.FC<CardCardProps> = ({ card, folderPath, compact = false, 
                 tabIndex={0}
                 onClick={handleClick}
                 onKeyDown={(event) => {
+                    if (event.target !== event.currentTarget) return;
                     if (event.key === 'Enter' || event.key === ' ') {
                         event.preventDefault();
                         handleClick();

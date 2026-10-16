@@ -7,6 +7,7 @@ import { usePrompt } from '../context/usePrompt';
 import type { FolderItem, WordItem, TemplateItem, TemplateOption, PromptFavorite, CardItem } from '../types';
 import { initialData } from '../data/initialData';
 import { MAX_IMPORT_BYTES, validateImport } from '../utils/インポート検証';
+import { prepareDeckImport } from '../utils/デッキ読込';
 import { COMFY_PRESET_STORAGE_KEY, COMFY_PRESET_UPDATE_EVENT, DEFAULT_COMFY_PRESET_CONFIG, readComfyPresetConfig, writeComfyPresetConfig, type ComfyPresetConfig, type ComfyQualityPreset } from '../constants/comfyPresets';
 
 
@@ -731,7 +732,8 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     };
 
     const handleExportCards = () => {
-        downloadJson({ cards }, 'promptgen-cards.json');
+        const folderIds = collectAncestorFolderIds(new Set(cards.map(card => card.folderId)));
+        downloadJson({ folders: folders.filter(folder => folderIds.has(folder.id)), cards }, 'promptgen-cards.json');
     };
 
     const handleExportSelectedCards = () => {
@@ -1007,8 +1009,11 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                     alert('JSON形式が正しくありません。{ cards: [] } が必要です。');
                     return;
                 }
-                if (!confirm('Importすると現在のデッキが上書きされます。続行しますか？')) return;
-                setData({ folders, words, templates, cards: nextCards });
+                const prepared = prepareDeckImport(folders, (asArray(parsedRecord.folders) ?? []) as FolderItem[], nextCards);
+                const relocationNotice = prepared.movedToRoot > 0 ? `\n保存先がないデッキ${prepared.movedToRoot}件はrootへ配置します。` : '';
+                const folderNotice = prepared.reparentedFolders > 0 ? `\n親がないフォルダー${prepared.reparentedFolders}件はrootの直下へ配置します。` : '';
+                if (!confirm(`Importすると現在のデッキが上書きされます。${relocationNotice}${folderNotice}\n続行しますか？`)) return;
+                setData({ folders: prepared.folders, words, templates, cards: prepared.cards });
                 alert('Importが完了しました。');
                 return;
             }
@@ -1240,15 +1245,15 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
 
     return (
         <div className="fixed inset-0 z-[100] pointer-events-auto flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div className="bg-slate-900 border border-slate-700 w-full max-w-2xl h-[80vh] rounded-2xl shadow-2xl flex flex-col">
+            <div className="settings-panel min-w-0 bg-slate-900 border border-slate-700 w-full max-w-2xl h-[80dvh] rounded-2xl shadow-2xl flex flex-col">
                 <div className="p-4 border-b border-slate-700 flex justify-between items-center bg-slate-950 rounded-t-2xl">
                     <h2 className="text-xl font-bold text-white">設定</h2>
-                    <button onClick={onClose} className="text-slate-400 hover:text-white text-xl">&times;</button>
+                    <button onClick={onClose} aria-label="設定を閉じる" className="text-slate-400 hover:text-white text-xl">&times;</button>
                 </div>
 
                 <div className="flex-1 flex flex-col min-h-0">
                     <div className="px-4 pt-4">
-                        <div className="flex gap-2 border-b border-slate-700 text-xs font-bold uppercase tracking-wider">
+                        <div className="grid grid-cols-2 sm:flex gap-2 border-b border-slate-700 text-xs font-bold uppercase tracking-wider">
                             <button
                                 type="button"
                                 onClick={() => setActiveTab('general')}
@@ -1811,7 +1816,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                         追加
                                     </button>
                                 </div>
-                                <div className="mb-3 grid grid-cols-1 md:grid-cols-[1fr,220px] gap-2">
+                                <div className="mb-3 grid grid-cols-1 md:grid-cols-[1fr_220px] gap-2">
                                     <div className="flex items-center gap-2">
                                         <input
                                             type="text"
@@ -2028,7 +2033,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                 </button>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-[240px,1fr] gap-4 min-h-0 flex-1">
+                        <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 min-h-0 flex-1">
                             <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar">
                                 {(() => {
                                     const rootFolders = folderChildrenByParent.get('root') ?? folderChildrenByParent.get(null) ?? [];
@@ -2419,7 +2424,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
                                 </button>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-[240px,1fr] gap-4 min-h-0 flex-1">
+                        <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-4 min-h-0 flex-1">
                             <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 overflow-y-auto custom-scrollbar">
                                 {(() => {
                                     const rootFolders = (folderChildrenByParent.get('root') ?? folderChildrenByParent.get(null) ?? [])
