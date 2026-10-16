@@ -1,0 +1,780 @@
+{
+  "folders": [
+    {
+      "id": "light-guide-2026",
+      "name": "光の演出",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-natural",
+      "name": "自然光",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-interior",
+      "name": "室内照明",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-environment",
+      "name": "屋外・携帯光源",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-direction",
+      "name": "光の向き",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-rays",
+      "name": "差し込む光",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-face",
+      "name": "顔・肌の光",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-eyes",
+      "name": "瞳の光",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-contrast",
+      "name": "陰影・コントラスト",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-effects",
+      "name": "光のエフェクト",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-color",
+      "name": "光の色・明るさ",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    },
+    {
+      "id": "light-guide-2026-optics",
+      "name": "反射・透過",
+      "parentId": "light-guide-2026",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "light-guide-2026-word-001",
+      "folderId": "light-guide-2026-natural",
+      "label_jp": "太陽光",
+      "value_en": "sunlight",
+      "nsfw": false,
+      "note": "昼の明るさを加える",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-002",
+      "folderId": "light-guide-2026-natural",
+      "label_jp": "月明かり",
+      "value_en": "moonlight",
+      "nsfw": false,
+      "note": "夜の淡い光を加える",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-003",
+      "folderId": "light-guide-2026-natural",
+      "label_jp": "太陽",
+      "value_en": "sun",
+      "nsfw": false,
+      "note": "画面に太陽を描く",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-004",
+      "folderId": "light-guide-2026-natural",
+      "label_jp": "月",
+      "value_en": "moon",
+      "nsfw": false,
+      "note": "画面に月を描く",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-005",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "スポットライト",
+      "value_en": "spotlight",
+      "nsfw": false,
+      "note": "特定の場所を強調",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-006",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "ステージライト",
+      "value_en": "stage lights",
+      "nsfw": false,
+      "note": "舞台の照明",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-007",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "デスクランプ",
+      "value_en": "desk lamp",
+      "nsfw": false,
+      "note": "机上の照明",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-008",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "壁付けランプ",
+      "value_en": "wall lamp",
+      "nsfw": false,
+      "note": "壁に設置した照明",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-009",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "紙ランタン",
+      "value_en": "paper lantern",
+      "nsfw": false,
+      "note": "紙を通した柔らかい光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-010",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "オイルランプ",
+      "value_en": "oil lamp",
+      "nsfw": false,
+      "note": "炎を使う小型の照明",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-011",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "天井灯",
+      "value_en": "ceiling light",
+      "nsfw": false,
+      "note": "室内の天井から照らす",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-012",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "シャンデリア",
+      "value_en": "chandelier",
+      "nsfw": false,
+      "note": "装飾的な天井照明",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-013",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "蛍光灯",
+      "value_en": "fluorescent lamp",
+      "nsfw": false,
+      "note": "室内の白い照明",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-014",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "ラバランプ",
+      "value_en": "lava lamp",
+      "nsfw": false,
+      "note": "色付きの装飾灯",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-015",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "ろうそくの光",
+      "value_en": "candlelight",
+      "nsfw": false,
+      "note": "暖かい炎の光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-016",
+      "folderId": "light-guide-2026-interior",
+      "label_jp": "画面からの光",
+      "value_en": "screen light",
+      "nsfw": false,
+      "note": "モニターなどの光が当たる",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-017",
+      "folderId": "light-guide-2026-environment",
+      "label_jp": "サイリウム",
+      "value_en": "glowstick",
+      "nsfw": false,
+      "note": "手に持つ発光スティック",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-018",
+      "folderId": "light-guide-2026-environment",
+      "label_jp": "街路灯",
+      "value_en": "lamppost",
+      "nsfw": false,
+      "note": "街中の固定照明",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-019",
+      "folderId": "light-guide-2026-environment",
+      "label_jp": "たいまつ",
+      "value_en": "torch",
+      "nsfw": false,
+      "note": "手に持つ炎の光源",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-020",
+      "folderId": "light-guide-2026-environment",
+      "label_jp": "炎",
+      "value_en": "fire",
+      "nsfw": false,
+      "note": "炎そのものを描く",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-021",
+      "folderId": "light-guide-2026-environment",
+      "label_jp": "懐中電灯を持つ",
+      "value_en": "holding flashlight",
+      "nsfw": false,
+      "note": "手持ちのライトを描く",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-022",
+      "folderId": "light-guide-2026-environment",
+      "label_jp": "ランタン",
+      "value_en": "lantern",
+      "nsfw": false,
+      "note": "持ち運べる照明",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-023",
+      "folderId": "light-guide-2026-environment",
+      "label_jp": "ヘルメットのヘッドランプ",
+      "value_en": "headlamp on helmet",
+      "nsfw": false,
+      "note": "頭部に固定したライト",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-024",
+      "folderId": "light-guide-2026-environment",
+      "label_jp": "投光器",
+      "value_en": "floodlights",
+      "nsfw": false,
+      "note": "広い範囲を強く照らす",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-025",
+      "folderId": "light-guide-2026-direction",
+      "label_jp": "逆光",
+      "value_en": "backlighting",
+      "nsfw": false,
+      "note": "被写体の後方から照らす",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-026",
+      "folderId": "light-guide-2026-direction",
+      "label_jp": "上からの光",
+      "value_en": "overlighting",
+      "nsfw": false,
+      "note": "被写体の上方から照らす",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-027",
+      "folderId": "light-guide-2026-direction",
+      "label_jp": "横からの光",
+      "value_en": "sidelighting",
+      "nsfw": false,
+      "note": "被写体の側面から照らす",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-028",
+      "folderId": "light-guide-2026-direction",
+      "label_jp": "下からの光",
+      "value_en": "underlighting",
+      "nsfw": false,
+      "note": "被写体の下方から照らす",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-029",
+      "folderId": "light-guide-2026-direction",
+      "label_jp": "ヘッドライトの光線",
+      "value_en": "headlight beam",
+      "nsfw": false,
+      "note": "前方に伸びるライトの光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-030",
+      "folderId": "light-guide-2026-direction",
+      "label_jp": "正面からの光",
+      "value_en": "lighting forward",
+      "nsfw": false,
+      "note": "被写体の正面側から照らす",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-031",
+      "folderId": "light-guide-2026-rays",
+      "label_jp": "光の筋",
+      "value_en": "light rays",
+      "nsfw": false,
+      "note": "空間を通る光線を見せる",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-032",
+      "folderId": "light-guide-2026-rays",
+      "label_jp": "太陽光の筋",
+      "value_en": "sunbeam",
+      "nsfw": false,
+      "note": "太陽光の一筋",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-033",
+      "folderId": "light-guide-2026-rays",
+      "label_jp": "月光の筋",
+      "value_en": "moonbeam",
+      "nsfw": false,
+      "note": "月光の一筋",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-034",
+      "folderId": "light-guide-2026-rays",
+      "label_jp": "木漏れ日",
+      "value_en": "dappled sunlight",
+      "nsfw": false,
+      "note": "葉を通したまだらな日差し",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-035",
+      "folderId": "light-guide-2026-rays",
+      "label_jp": "まだらな月光",
+      "value_en": "dappled moonlight",
+      "nsfw": false,
+      "note": "障害物を通した月光の模様",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-036",
+      "folderId": "light-guide-2026-rays",
+      "label_jp": "隙間から漏れる光",
+      "value_en": "crack of light",
+      "nsfw": false,
+      "note": "小さな隙間を通る光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-037",
+      "folderId": "light-guide-2026-rays",
+      "label_jp": "窓枠の影",
+      "value_en": "window shadow",
+      "nsfw": false,
+      "note": "窓が落とす影の模様",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-038",
+      "folderId": "light-guide-2026-rays",
+      "label_jp": "水中の光線",
+      "value_en": "underwater light rays",
+      "nsfw": false,
+      "note": "水中に差す光を見せる",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-039",
+      "folderId": "light-guide-2026-rays",
+      "label_jp": "薄明光線",
+      "value_en": "crepuscular rays",
+      "nsfw": false,
+      "note": "雲間などから広がる光線",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-040",
+      "folderId": "light-guide-2026-face",
+      "label_jp": "表面下散乱",
+      "value_en": "subsurface scattering",
+      "nsfw": false,
+      "note": "肌の薄い部分などに透過感を出す",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-041",
+      "folderId": "light-guide-2026-eyes",
+      "label_jp": "瞳のキャッチライト",
+      "value_en": "catchlight in eyes",
+      "nsfw": false,
+      "note": "瞳に小さな反射を入れる",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-042",
+      "folderId": "light-guide-2026-eyes",
+      "label_jp": "瞳の明るいハイライト",
+      "value_en": "bright highlights in eyes",
+      "nsfw": false,
+      "note": "瞳の反射を明るくする",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-043",
+      "folderId": "light-guide-2026-eyes",
+      "label_jp": "瞳の白いハイライト",
+      "value_en": "white highlights in eyes",
+      "nsfw": false,
+      "note": "白い点状の反射を入れる",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-044",
+      "folderId": "light-guide-2026-eyes",
+      "label_jp": "きらめく瞳",
+      "value_en": "sparkling eyes",
+      "nsfw": false,
+      "note": "瞳の輝きを強める",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-045",
+      "folderId": "light-guide-2026-eyes",
+      "label_jp": "発光する瞳",
+      "value_en": "glowing eyes",
+      "nsfw": false,
+      "note": "瞳そのものが光る表現",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-046",
+      "folderId": "light-guide-2026-eyes",
+      "label_jp": "目からの光線",
+      "value_en": "eye beam",
+      "nsfw": false,
+      "note": "目から光線を放つ演出",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-047",
+      "folderId": "light-guide-2026-contrast",
+      "label_jp": "強い明暗",
+      "value_en": "chiaroscuro",
+      "nsfw": false,
+      "note": "明部と暗部を大きく分ける",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-048",
+      "folderId": "light-guide-2026-contrast",
+      "label_jp": "暗部を強調した明暗",
+      "value_en": "tenebrism",
+      "nsfw": false,
+      "note": "暗い背景と局所的な光を対比",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-049",
+      "folderId": "light-guide-2026-contrast",
+      "label_jp": "薄暗い照明",
+      "value_en": "dim lighting",
+      "nsfw": false,
+      "note": "室内の明るさを抑える",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-050",
+      "folderId": "light-guide-2026-contrast",
+      "label_jp": "低照度",
+      "value_en": "low light",
+      "nsfw": false,
+      "note": "全体の光量を少なくする",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-051",
+      "folderId": "light-guide-2026-contrast",
+      "label_jp": "拡散した柔らかい光",
+      "value_en": "diffused light",
+      "nsfw": false,
+      "note": "影の境界を柔らかくする",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-052",
+      "folderId": "light-guide-2026-contrast",
+      "label_jp": "高コントラスト",
+      "value_en": "high contrast",
+      "nsfw": false,
+      "note": "明暗の差を強める",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-053",
+      "folderId": "light-guide-2026-contrast",
+      "label_jp": "劇的なライティング",
+      "value_en": "dramatic lighting",
+      "nsfw": false,
+      "note": "光の演出を目立たせる",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-054",
+      "folderId": "light-guide-2026-contrast",
+      "label_jp": "リムライト",
+      "value_en": "rim lighting",
+      "nsfw": false,
+      "note": "輪郭の縁を明るくする",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-055",
+      "folderId": "light-guide-2026-contrast",
+      "label_jp": "周辺減光",
+      "value_en": "vignetting",
+      "nsfw": false,
+      "note": "画面の四隅を暗くする",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-056",
+      "folderId": "light-guide-2026-effects",
+      "label_jp": "ブルーム",
+      "value_en": "bloom",
+      "nsfw": false,
+      "note": "明部のにじみを加える",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-057",
+      "folderId": "light-guide-2026-effects",
+      "label_jp": "レンズフレア",
+      "value_en": "lens flare",
+      "nsfw": false,
+      "note": "レンズ内の光の散乱を表現",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-058",
+      "folderId": "light-guide-2026-effects",
+      "label_jp": "光の粒子",
+      "value_en": "light particles",
+      "nsfw": false,
+      "note": "空気中の発光粒子を加える",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-059",
+      "folderId": "light-guide-2026-effects",
+      "label_jp": "光輪",
+      "value_en": "halo",
+      "nsfw": false,
+      "note": "頭上などに光の輪を描く",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-060",
+      "folderId": "light-guide-2026-effects",
+      "label_jp": "銃口の閃光",
+      "value_en": "muzzle flash",
+      "nsfw": false,
+      "note": "発射時の短い発光を描く",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-061",
+      "folderId": "light-guide-2026-effects",
+      "label_jp": "舞う火の粉",
+      "value_en": "embers",
+      "nsfw": false,
+      "note": "小さな残り火を散らす",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-062",
+      "folderId": "light-guide-2026-effects",
+      "label_jp": "花火",
+      "value_en": "fireworks",
+      "nsfw": false,
+      "note": "空に広がる発光を描く",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-063",
+      "folderId": "light-guide-2026-effects",
+      "label_jp": "蛍",
+      "value_en": "firefly",
+      "nsfw": false,
+      "note": "小さな生物の光を描く",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-064",
+      "folderId": "light-guide-2026-effects",
+      "label_jp": "光の柱",
+      "value_en": "pillar of light",
+      "nsfw": false,
+      "note": "縦に伸びる強い光を描く",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-065",
+      "folderId": "light-guide-2026-color",
+      "label_jp": "暖色の照明",
+      "value_en": "warm lighting",
+      "nsfw": false,
+      "note": "オレンジ寄りの光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-066",
+      "folderId": "light-guide-2026-color",
+      "label_jp": "寒色の照明",
+      "value_en": "cool lighting",
+      "nsfw": false,
+      "note": "青寄りの光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-067",
+      "folderId": "light-guide-2026-color",
+      "label_jp": "まぶしい光",
+      "value_en": "blinding light",
+      "nsfw": false,
+      "note": "非常に強い発光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-068",
+      "folderId": "light-guide-2026-color",
+      "label_jp": "明るい照明",
+      "value_en": "bright lighting",
+      "nsfw": false,
+      "note": "全体を明るく照らす",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-069",
+      "folderId": "light-guide-2026-color",
+      "label_jp": "赤い照明",
+      "value_en": "red lighting",
+      "nsfw": false,
+      "note": "赤い色の光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-070",
+      "folderId": "light-guide-2026-color",
+      "label_jp": "黄色い照明",
+      "value_en": "yellow lighting",
+      "nsfw": false,
+      "note": "黄色い色の光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-071",
+      "folderId": "light-guide-2026-color",
+      "label_jp": "緑の照明",
+      "value_en": "green lighting",
+      "nsfw": false,
+      "note": "緑色の光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-072",
+      "folderId": "light-guide-2026-color",
+      "label_jp": "ピンクの照明",
+      "value_en": "pink lighting",
+      "nsfw": false,
+      "note": "ピンク色の光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-073",
+      "folderId": "light-guide-2026-color",
+      "label_jp": "青い照明",
+      "value_en": "blue lighting",
+      "nsfw": false,
+      "note": "青い色の光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-074",
+      "folderId": "light-guide-2026-optics",
+      "label_jp": "コースティクス",
+      "value_en": "caustics",
+      "nsfw": false,
+      "note": "水やガラスを通った光の模様",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-075",
+      "folderId": "light-guide-2026-optics",
+      "label_jp": "光の分散",
+      "value_en": "dispersion (optics)",
+      "nsfw": false,
+      "note": "虹色に分かれる光",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-076",
+      "folderId": "light-guide-2026-optics",
+      "label_jp": "光の屈折",
+      "value_en": "refraction",
+      "nsfw": false,
+      "note": "透明素材を通る光の曲がり",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-077",
+      "folderId": "light-guide-2026-optics",
+      "label_jp": "紫外線照明",
+      "value_en": "ultraviolet light",
+      "nsfw": false,
+      "note": "ブラックライト風の演出",
+      "favorite": false
+    },
+    {
+      "id": "light-guide-2026-word-078",
+      "folderId": "light-guide-2026-optics",
+      "label_jp": "反射",
+      "value_en": "reflection",
+      "nsfw": false,
+      "note": "床や鏡面への映り込み",
+      "favorite": false
+    }
+  ]
+}

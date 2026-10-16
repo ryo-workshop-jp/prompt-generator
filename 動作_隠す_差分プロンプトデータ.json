@@ -1,0 +1,366 @@
+{
+  "folders": [
+    {
+      "id": "動作_隠す_顔・頭",
+      "name": "顔・頭を隠す",
+      "parentId": "動作_隠す",
+      "nsfw": false
+    },
+    {
+      "id": "動作_隠す_体",
+      "name": "体を隠す",
+      "parentId": "動作_隠す",
+      "nsfw": false
+    },
+    {
+      "id": "動作_隠す_露出部位",
+      "name": "胸・下半身を隠す",
+      "parentId": "動作_隠す",
+      "nsfw": true
+    },
+    {
+      "id": "動作_隠す_感情",
+      "name": "感情を添えて隠す",
+      "parentId": "動作_隠す",
+      "nsfw": false
+    },
+    {
+      "id": "動作_隠す_布",
+      "name": "布・寝具で覆う",
+      "parentId": "動作_隠す",
+      "nsfw": false
+    },
+    {
+      "id": "動作_隠す_露出布",
+      "name": "露出を伴う布のポーズ",
+      "parentId": "動作_隠す",
+      "nsfw": true
+    },
+    {
+      "id": "動作_隠す_物陰",
+      "name": "物陰・遮蔽物に隠れる",
+      "parentId": "動作_隠す",
+      "nsfw": false
+    },
+    {
+      "id": "動作_隠す_狭所",
+      "name": "狭い場所に隠れる",
+      "parentId": "動作_隠す",
+      "nsfw": false
+    },
+    {
+      "id": "動作_隠す_他者",
+      "name": "人の後ろに隠れる",
+      "parentId": "動作_隠す",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "1790400163422",
+      "folderId": "動作_隠す_顔・頭",
+      "label_jp": "顔を隠す",
+      "value_en": "covering face",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1790400176635",
+      "folderId": "動作_隠す_顔・頭",
+      "label_jp": "自分の目を隠す",
+      "value_en": "covering own eyes",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1790400187076",
+      "folderId": "動作_隠す_顔・頭",
+      "label_jp": "片目を隠す",
+      "value_en": "covering one eye",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1790400201093",
+      "folderId": "動作_隠す_顔・頭",
+      "label_jp": "目を隠しつつ覗き見る",
+      "value_en": "covering own eyes, peeking through fingers",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1790400245711",
+      "folderId": "動作_隠す_顔・頭",
+      "label_jp": "自分の口を隠す",
+      "value_en": "covering own mouth",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "1790400259841",
+      "folderId": "動作_隠す_顔・頭",
+      "label_jp": "自分の耳を隠す",
+      "value_en": "covering own ears",
+      "nsfw": false,
+      "note": "",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-001",
+      "folderId": "動作_隠す_顔・頭",
+      "label_jp": "額を隠す",
+      "value_en": "covering forehead",
+      "nsfw": false,
+      "note": "手などで額を覆う指定。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-002",
+      "folderId": "動作_隠す_体",
+      "label_jp": "体を隠す",
+      "value_en": "covering body",
+      "nsfw": false,
+      "note": "手・腕・物などで体を覆う基本指定。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-003",
+      "folderId": "動作_隠す_体",
+      "label_jp": "お腹を隠す",
+      "value_en": "covering stomach",
+      "nsfw": false,
+      "note": "お腹を手などで覆う。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-004",
+      "folderId": "動作_隠す_体",
+      "label_jp": "胸に手を置く",
+      "value_en": "hands on own chest",
+      "nsfw": false,
+      "note": "胸元に手を置く仕草。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-005",
+      "folderId": "動作_隠す_体",
+      "label_jp": "腕を胸に回す",
+      "value_en": "arm across chest",
+      "nsfw": false,
+      "note": "腕を胸の前に回すポーズ。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-006",
+      "folderId": "動作_隠す_露出部位",
+      "label_jp": "胸を隠す",
+      "value_en": "covering breasts",
+      "nsfw": true,
+      "note": "胸を手や腕で覆う指定。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-007",
+      "folderId": "動作_隠す_露出部位",
+      "label_jp": "片方の胸を隠す",
+      "value_en": "covering one breast",
+      "nsfw": true,
+      "note": "片側だけを覆う指定。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-008",
+      "folderId": "動作_隠す_露出部位",
+      "label_jp": "お尻を隠す",
+      "value_en": "covering butt",
+      "nsfw": true,
+      "note": "お尻を手や物で覆う指定。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-009",
+      "folderId": "動作_隠す_露出部位",
+      "label_jp": "両手で下半身を隠す",
+      "value_en": "hands on own crotch",
+      "nsfw": true,
+      "note": "両手で下半身を覆う。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-010",
+      "folderId": "動作_隠す_感情",
+      "label_jp": "恥ずかしがって体を隠す",
+      "value_en": "embarrassed, covering body",
+      "nsfw": false,
+      "note": "恥ずかしさを伴う体を隠す仕草。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-011",
+      "folderId": "動作_隠す_感情",
+      "label_jp": "怖がって体を隠す",
+      "value_en": "scared, covering body",
+      "nsfw": false,
+      "note": "恐怖や警戒から身を守る仕草。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-012",
+      "folderId": "動作_隠す_感情",
+      "label_jp": "内気に体を隠す",
+      "value_en": "shy, covering body",
+      "nsfw": false,
+      "note": "内気さを伴う体を隠す仕草。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-013",
+      "folderId": "動作_隠す_布",
+      "label_jp": "ブランケットに包まる",
+      "value_en": "wrapped in blanket",
+      "nsfw": false,
+      "note": "ブランケットに身を包む。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-014",
+      "folderId": "動作_隠す_布",
+      "label_jp": "布団の下に隠れる",
+      "value_en": "under covers",
+      "nsfw": false,
+      "note": "シーツや布団の下に隠れる。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-015",
+      "folderId": "動作_隠す_露出布",
+      "label_jp": "タオルなどで体を覆う",
+      "value_en": "nude cover",
+      "nsfw": true,
+      "note": "タオルなどで体の前側を覆う。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-016",
+      "folderId": "動作_隠す_露出布",
+      "label_jp": "タオルを体に巻く",
+      "value_en": "naked towel",
+      "nsfw": true,
+      "note": "バスタオルを体に巻いた状態。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-017",
+      "folderId": "動作_隠す_露出布",
+      "label_jp": "シーツで体を隠す",
+      "value_en": "naked sheet",
+      "nsfw": true,
+      "note": "シーツで体を覆う指定。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-018",
+      "folderId": "動作_隠す_露出布",
+      "label_jp": "体にぴったり巻いたタオル",
+      "value_en": "impossible towel",
+      "nsfw": true,
+      "note": "体にぴったり沿うタオルの演出。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-019",
+      "folderId": "動作_隠す_物陰",
+      "label_jp": "こたつの下に隠れる",
+      "value_en": "under kotatsu",
+      "nsfw": false,
+      "note": "こたつの下に潜って隠れる。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-020",
+      "folderId": "動作_隠す_物陰",
+      "label_jp": "木の陰から覗く",
+      "value_en": "behind tree, peeking out, hiding",
+      "nsfw": false,
+      "note": "木の後ろに隠れて覗き見る。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-021",
+      "folderId": "動作_隠す_物陰",
+      "label_jp": "ドアの陰から覗く",
+      "value_en": "behind door, peeking out, hiding",
+      "nsfw": false,
+      "note": "ドアの後ろに隠れて覗き見る。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-022",
+      "folderId": "動作_隠す_物陰",
+      "label_jp": "電柱の陰から覗く",
+      "value_en": "behind utility pole, peeking out, hiding, vanishing point",
+      "nsfw": false,
+      "note": "電柱の後ろに隠れて覗き見る。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-023",
+      "folderId": "動作_隠す_物陰",
+      "label_jp": "壁の陰から覗く",
+      "value_en": "behind wall, peeking out, hiding",
+      "nsfw": false,
+      "note": "壁の後ろに隠れて覗き見る。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-024",
+      "folderId": "動作_隠す_狭所",
+      "label_jp": "狭い場所",
+      "value_en": "cramped",
+      "nsfw": false,
+      "note": "窮屈な場所にいる状態。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-025",
+      "folderId": "動作_隠す_狭所",
+      "label_jp": "ロッカーの中",
+      "value_en": "in locker",
+      "nsfw": false,
+      "note": "ロッカーの中にいる指定。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-026",
+      "folderId": "動作_隠す_狭所",
+      "label_jp": "ロッカーに隠れて体育座り",
+      "value_en": "cramped, in locker, hugging own legs, from side, profile",
+      "nsfw": false,
+      "note": "狭いロッカーに脚を抱えて横向きに隠れる構図。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-027",
+      "folderId": "動作_隠す_他者",
+      "label_jp": "他の人の後ろに隠れる",
+      "value_en": "hiding behind another",
+      "nsfw": false,
+      "note": "別の人物の後ろに隠れる。",
+      "favorite": false
+    },
+    {
+      "id": "cover-guide-20260926-028",
+      "folderId": "動作_隠す_他者",
+      "label_jp": "隠れた場所から覗き出す",
+      "value_en": "peeking out",
+      "nsfw": false,
+      "note": "物陰や人の後ろから顔を覗かせる。",
+      "favorite": false
+    }
+  ]
+}

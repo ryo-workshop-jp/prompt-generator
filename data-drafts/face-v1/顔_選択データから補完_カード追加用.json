@@ -1,0 +1,270 @@
+{
+  "folders": [
+    {
+      "id": "eg26_face_v1",
+      "name": "顔の特徴",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eyes",
+      "name": "目の形",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eye_states",
+      "name": "目・まぶたの状態",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eye_details",
+      "name": "瞳・まつげ",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eyebrows",
+      "name": "眉の形",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_mouth",
+      "name": "口の状態",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_smile",
+      "name": "笑顔",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_emotions",
+      "name": "感情・表情",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_gaze",
+      "name": "視線",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_changes",
+      "name": "赤面・涙・顔の変化",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_comic",
+      "name": "漫画的な表情",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_expressions",
+      "name": "表情・視線",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eyebrow_states",
+      "name": "眉の動き",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eye_expressions",
+      "name": "目の表情・漫画表現",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_ears",
+      "name": "耳",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_fantasy_ears",
+      "name": "人外・動物の耳",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_mouth_shape",
+      "name": "口の形",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_lips",
+      "name": "唇",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_nose",
+      "name": "鼻",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_face_shape",
+      "name": "輪郭・頬・あご",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_marks",
+      "name": "ほくろ・そばかす・傷",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_teeth",
+      "name": "歯",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_lip_makeup",
+      "name": "唇のメイク・仕上がり",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_lip_states",
+      "name": "唇の状態",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "eg26_face_v1_w_selected_iris",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "層のある虹彩",
+      "value_en": "multi-layered irises",
+      "note": "虹彩に複数の輪や層が重なる表現。反射や涙は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_curled_lashes",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "カールしたまつげ",
+      "value_en": "curled eyelashes",
+      "note": "毛先が上向きに曲がったまつげ。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_dark_lashes",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "色の濃いまつげ",
+      "value_en": "dark eyelashes",
+      "note": "まつげの色が濃く、輪郭がはっきり見える特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_clumped_lashes",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "束感のあるまつげ",
+      "value_en": "clumped eyelashes",
+      "note": "数本ずつまとまり、束として見えるまつげ。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_worried_brows",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "困り眉",
+      "value_en": "worried eyebrows",
+      "note": "眉尻が下がり、困ったように見える眉の表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_drooped_brows",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "眉を下げる",
+      "value_en": "drooped eyebrows",
+      "note": "眉が下がった状態。感情や性格は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_brow_twitch",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "眉をぴくりと動かす",
+      "value_en": "eyebrow twitch",
+      "note": "眉がわずかに跳ねるように動く表情。一枚絵では変化が表れにくい場合がある。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_empty_eyes",
+      "folderId": "eg26_face_v1_f_eye_expressions",
+      "label_jp": "虚ろな目",
+      "value_en": "empty eyes",
+      "note": "焦点や生気を感じさせない目の表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_heart_lips",
+      "folderId": "eg26_face_v1_f_lips",
+      "label_jp": "ハート形の唇",
+      "value_en": "heart-shaped lips",
+      "note": "上唇の中央の山と下唇の丸みでハート形に見える輪郭。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_gloss",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "リップグロス",
+      "value_en": "lip gloss",
+      "note": "唇の表面にツヤを加える化粧。色は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_matte",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "マットな唇",
+      "value_en": "matte lips",
+      "note": "光沢を抑えた、さらりとした唇の仕上がり。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_chapped",
+      "folderId": "eg26_face_v1_f_lip_states",
+      "label_jp": "荒れた唇",
+      "value_en": "chapped lips",
+      "note": "乾燥して表面が荒れ、ひび割れた唇の状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_overlined",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "輪郭を外側に描いた唇",
+      "value_en": "overlined lips",
+      "note": "本来の唇より外側に輪郭を描き、唇を大きく見せる化粧。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_ombre",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "グラデーションリップ",
+      "value_en": "ombre lips",
+      "note": "中央と縁などで色の濃さが段階的に変わる唇の化粧。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_liner",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "リップライナー",
+      "value_en": "lip liner",
+      "note": "唇の縁を線でなぞり、輪郭を整える化粧。",
+      "nsfw": false
+    }
+  ]
+}

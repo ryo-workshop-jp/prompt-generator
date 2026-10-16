@@ -1,0 +1,38 @@
+[
+  {
+    "name": "人物・肌・種族",
+    "words": 99,
+    "templates": 5,
+    "options": 25
+  },
+  {
+    "name": "家具",
+    "words": 96,
+    "templates": 7,
+    "options": 29
+  },
+  {
+    "name": "道具・小物",
+    "words": 116,
+    "templates": 4,
+    "options": 18
+  },
+  {
+    "name": "食べ物・飲み物",
+    "words": 83,
+    "templates": 5,
+    "options": 18
+  },
+  {
+    "name": "動物・植物",
+    "words": 92,
+    "templates": 7,
+    "options": 29
+  },
+  {
+    "name": "乗り物",
+    "words": 47,
+    "templates": 4,
+    "options": 15
+  }
+]

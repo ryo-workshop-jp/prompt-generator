@@ -1,0 +1,56 @@
+{
+  "folders": [
+    {
+      "id": "cg26_clothing_v1",
+      "name": "衣装（初期データ第1案）",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_underwear_root",
+      "name": "下着",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_underwear_nsfw_preview",
+      "name": "NSFW向け（着崩しの見本）",
+      "parentId": "cg26_clothing_v1_f_underwear_root",
+      "nsfw": true
+    }
+  ],
+  "words": [
+    {
+      "id": "cg26_clothing_v1_w_nsfw_preview_camisole_strap",
+      "folderId": "cg26_clothing_v1_f_underwear_nsfw_preview",
+      "label_jp": "キャミソール・片側の肩ひもが落ちた状態",
+      "value_en": "adult woman, opaque camisole, one camisole strap slipped off shoulder, covered breasts, panties",
+      "nsfw": true,
+      "note": "成人向けの着崩しの見本。片側の肩ひもが肩から外れているが、キャミソールの胸元は覆った状態。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_nsfw_preview_slip_strap",
+      "folderId": "cg26_clothing_v1_f_underwear_nsfw_preview",
+      "label_jp": "スリップ・片側の肩ひもが落ちた状態",
+      "value_en": "adult woman, opaque lingerie slip, one slip strap slipped off shoulder, covered breasts, covered crotch",
+      "nsfw": true,
+      "note": "成人向けの着崩しの見本。スリップの肩ひもを片側だけ落とし、胸と股を覆う身頃は残した状態。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_nsfw_preview_shirt_underwear",
+      "folderId": "cg26_clothing_v1_f_underwear_nsfw_preview",
+      "label_jp": "前を開けたシャツ＋下着",
+      "value_en": "adult woman, open shirt, opaque bra, opaque panties",
+      "nsfw": true,
+      "note": "成人向けの重ね着の見本。シャツの前を開け、内側のブラとショーツが見える状態。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_nsfw_preview_robe_underwear",
+      "folderId": "cg26_clothing_v1_f_underwear_nsfw_preview",
+      "label_jp": "前を開けたガウン＋下着",
+      "value_en": "adult woman, open bathrobe, opaque bra, opaque panties",
+      "nsfw": true,
+      "note": "成人向けの重ね着の見本。ガウンの前を開け、内側のブラとショーツを見せる状態。"
+    }
+  ]
+}

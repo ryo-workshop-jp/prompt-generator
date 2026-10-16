@@ -1,0 +1,295 @@
+{
+  "files": [
+    {
+      "file": "data-drafts/clothing-v1/衣装_カードと装飾_確認用.json",
+      "words": 247,
+      "templates": 53
+    },
+    {
+      "file": "data-drafts/hair-v1/髪_カードと装飾_確認用.json",
+      "words": 163,
+      "templates": 17
+    },
+    {
+      "file": "data-drafts/face-v1/完成版/顔の特徴.json",
+      "words": 87,
+      "templates": 5
+    },
+    {
+      "file": "data-drafts/face-v1/完成版/表情・視線.json",
+      "words": 151,
+      "templates": 3
+    },
+    {
+      "file": "data-drafts/body-accessory-quality-v1/完成版/体型.json",
+      "words": 86,
+      "templates": 5
+    },
+    {
+      "file": "data-drafts/body-accessory-quality-v1/完成版/装飾品.json",
+      "words": 260,
+      "templates": 11
+    },
+    {
+      "file": "data-drafts/body-accessory-quality-v1/完成版/品質.json",
+      "words": 125,
+      "templates": 0
+    },
+    {
+      "file": "data-drafts/background-pose-action-v1/完成版/背景.json",
+      "words": 197,
+      "templates": 10
+    },
+    {
+      "file": "data-drafts/background-pose-action-v1/完成版/ポーズ.json",
+      "words": 216,
+      "templates": 7
+    },
+    {
+      "file": "data-drafts/background-pose-action-v1/完成版/動作.json",
+      "words": 202,
+      "templates": 4
+    },
+    {
+      "file": "data-drafts/composition-v1/完成版/構図・画角・視点.json",
+      "words": 111,
+      "templates": 7
+    },
+    {
+      "file": "data-drafts/光・天候・季節・雰囲気/完成版/光の演出.json",
+      "words": 89,
+      "templates": 4
+    },
+    {
+      "file": "data-drafts/光・天候・季節・雰囲気/完成版/季節・時間・天候.json",
+      "words": 90,
+      "templates": 8
+    },
+    {
+      "file": "data-drafts/光・天候・季節・雰囲気/完成版/雰囲気.json",
+      "words": 40,
+      "templates": 2
+    },
+    {
+      "file": "data-drafts/シチュエーション・行事/完成版/シチュエーション・行事.json",
+      "words": 117,
+      "templates": 6
+    },
+    {
+      "file": "data-drafts/人物・家具・小物と身近な物/完成版/人物・肌・種族.json",
+      "words": 99,
+      "templates": 5
+    },
+    {
+      "file": "data-drafts/人物・家具・小物と身近な物/完成版/家具.json",
+      "words": 96,
+      "templates": 7
+    },
+    {
+      "file": "data-drafts/人物・家具・小物と身近な物/完成版/道具・小物.json",
+      "words": 116,
+      "templates": 4
+    },
+    {
+      "file": "data-drafts/人物・家具・小物と身近な物/完成版/食べ物・飲み物.json",
+      "words": 83,
+      "templates": 5
+    },
+    {
+      "file": "data-drafts/人物・家具・小物と身近な物/完成版/動物・植物.json",
+      "words": 92,
+      "templates": 7
+    },
+    {
+      "file": "data-drafts/人物・家具・小物と身近な物/完成版/乗り物.json",
+      "words": 47,
+      "templates": 4
+    },
+    {
+      "file": "靴_差分プロンプトデータ.json",
+      "words": 54,
+      "added": 39
+    },
+    {
+      "file": "動作_隠す_差分プロンプトデータ.json",
+      "words": 34,
+      "added": 19,
+      "reclassified": 15
+    }
+  ],
+  "totals": {
+    "folders": 286,
+    "words": 2770,
+    "templates": 171,
+    "decorationOptions": 967,
+    "cards": 0
+  },
+  "decisions": {
+    "reusedPersonTestCards": 2,
+    "shoeWordsAdded": 39,
+    "hidingWordsAdded": 19,
+    "hidingWordsReclassified": 15
+  },
+  "duplicates": [
+    {
+      "source": "人物・家具・小物と身近な物/完成版/人物・肌・種族.json",
+      "prompt": "1girl",
+      "retainedId": "hg26_hair_v1_w_test_girl"
+    },
+    {
+      "source": "人物・家具・小物と身近な物/完成版/人物・肌・種族.json",
+      "prompt": "1boy",
+      "retainedId": "hg26_hair_v1_w_test_boy"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "sneakers",
+      "retainedId": "cg26_clothing_v1_w_flatshoe_001"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "high-top sneakers",
+      "retainedId": "cg26_clothing_v1_w_flatshoe_002"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "slip-on shoes",
+      "retainedId": "cg26_clothing_v1_w_flatshoe_007"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "ballet flats",
+      "retainedId": "cg26_clothing_v1_w_flatshoe_006"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "mary jane shoes",
+      "retainedId": "cg26_clothing_v1_w_heelshoe_002"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "loafers",
+      "retainedId": "cg26_clothing_v1_w_flatshoe_003"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "oxford shoes",
+      "retainedId": "cg26_clothing_v1_w_flatshoe_004"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "pumps",
+      "retainedId": "cg26_clothing_v1_w_heelshoe_001"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "boots",
+      "retainedId": "cg26_clothing_v1_w_boots_001"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "lace-up boots",
+      "retainedId": "cg26_clothing_v1_w_boots_002"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "cowboy boots",
+      "retainedId": "cg26_clothing_v1_w_boots_003"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "rain boots",
+      "retainedId": "cg26_clothing_v1_w_fixedboots_003"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "sandals",
+      "retainedId": "cg26_clothing_v1_w_sandals_001"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "flip-flops",
+      "retainedId": "cg26_clothing_v1_w_sandals_003"
+    },
+    {
+      "source": "靴_差分プロンプトデータ.json",
+      "prompt": "sport sandals",
+      "retainedId": "cg26_clothing_v1_w_sandals_002"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "covering face",
+      "retainedId": "pg26_pose_v1_w_hands_109"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "covering forehead",
+      "retainedId": "mg26_action_v1_w_hide_179"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "covering body",
+      "retainedId": "mg26_action_v1_w_hide_180"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "covering stomach",
+      "retainedId": "mg26_action_v1_w_hide_181"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "hands on own chest",
+      "retainedId": "pg26_pose_v1_w_hands_096"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "arm across chest",
+      "retainedId": "mg26_action_v1_w_hide_182"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "covering breasts",
+      "retainedId": "mg26_action_v1_w_extra_199"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "covering one breast",
+      "retainedId": "mg26_action_v1_w_extra_200"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "covering butt",
+      "retainedId": "mg26_action_v1_w_extra_201"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "wrapped in blanket",
+      "retainedId": "mg26_action_v1_w_hide_183"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "under covers",
+      "retainedId": "mg26_action_v1_w_hide_184"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "under kotatsu",
+      "retainedId": "mg26_action_v1_w_hide_187"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "in locker",
+      "retainedId": "mg26_action_v1_w_hide_193"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "hiding behind another",
+      "retainedId": "mg26_action_v1_w_hide_194"
+    },
+    {
+      "source": "動作_隠す_差分プロンプトデータ.json",
+      "prompt": "peeking out",
+      "retainedId": "mg26_action_v1_w_hide_195"
+    }
+  ]
+}

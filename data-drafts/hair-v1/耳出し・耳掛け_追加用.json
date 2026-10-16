@@ -1,0 +1,34 @@
+{
+  "folders": [
+    {
+      "id": "hg26_hair_v1",
+      "name": "髪",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "hg26_hair_v1_f_sidelocks",
+      "name": "横髪・顔まわり",
+      "parentId": "hg26_hair_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "hg26_hair_v1_w_supp_exposed_ears",
+      "folderId": "hg26_hair_v1_f_sidelocks",
+      "label_jp": "耳出しヘア",
+      "value_en": "exposed ears",
+      "note": "耳が髪で隠れず見えている状態。左右両方を明示する指定とは分けて使う。",
+      "nsfw": false
+    },
+    {
+      "id": "hg26_hair_v1_w_supp_hair_behind_ear",
+      "folderId": "hg26_hair_v1_f_sidelocks",
+      "label_jp": "耳掛けヘア",
+      "value_en": "hair behind ear",
+      "note": "顔の横の髪を耳の後ろへ流した状態。耳まわりをすっきり見せる。",
+      "nsfw": false
+    }
+  ]
+}

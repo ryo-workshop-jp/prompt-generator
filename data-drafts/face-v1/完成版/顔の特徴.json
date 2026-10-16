@@ -1,0 +1,1067 @@
+{
+  "folders": [
+    {
+      "id": "eg26_face_v1",
+      "name": "顔の特徴",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eyes",
+      "name": "目の形",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eye_details",
+      "name": "瞳・まつげ",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eyebrows",
+      "name": "眉の形",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_ears",
+      "name": "耳",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_fantasy_ears",
+      "name": "人外・動物の耳",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_mouth_shape",
+      "name": "口の形",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_lips",
+      "name": "唇",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_nose",
+      "name": "鼻",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_face_shape",
+      "name": "輪郭・頬・あご",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_marks",
+      "name": "ほくろ・そばかす・傷",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_teeth",
+      "name": "歯",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_lip_makeup",
+      "name": "唇のメイク・仕上がり",
+      "parentId": "eg26_face_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "eg26_face_v1_w_eyes_001",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "目（装飾用の基本）",
+      "value_en": "eyes",
+      "note": "瞳の色や瞳孔、ハイライトを組み合わせる基本カード。目の形は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_002",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "大きな目",
+      "value_en": "large eyes",
+      "note": "顔に対して大きく描く目。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_003",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "小さな目",
+      "value_en": "small eyes",
+      "note": "顔に対して小さく描く目。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_004",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "丸い目",
+      "value_en": "round eyes",
+      "note": "縦幅があり、丸い輪郭の目。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_005",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "アーモンド形の目",
+      "value_en": "almond-shaped eyes",
+      "note": "両端が細く、中央がふくらむ横長の目。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_006",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "切れ長の目",
+      "value_en": "narrow eyes",
+      "note": "縦幅が小さく、細長い輪郭の目。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_007",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "つり目",
+      "value_en": "tsurime",
+      "note": "目尻が上がった形。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_008",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "たれ目",
+      "value_en": "tareme",
+      "note": "目尻が下がった形。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_009",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "三白眼",
+      "value_en": "sanpaku",
+      "note": "虹彩の上下どちらかに白目が見える形。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_001",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "オッドアイ",
+      "value_en": "heterochromia",
+      "note": "左右の瞳の色が異なる状態。色の組み合わせは固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_004",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "長いまつげ",
+      "value_en": "long eyelashes",
+      "note": "まつげを長く描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_005",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "濃いまつげ",
+      "value_en": "thick eyelashes",
+      "note": "まつげの密度や太さを強める指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_006",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "下まつげ",
+      "value_en": "lower eyelashes",
+      "note": "下まぶた側のまつげを描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_007",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "光る目",
+      "value_en": "glowing eyes",
+      "note": "目そのものが発光する表現。通常のハイライトとは別。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eyebrows_001",
+      "folderId": "eg26_face_v1_f_eyebrows",
+      "label_jp": "太い眉",
+      "value_en": "thick eyebrows",
+      "note": "幅や密度のある眉。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eyebrows_002",
+      "folderId": "eg26_face_v1_f_eyebrows",
+      "label_jp": "細い眉",
+      "value_en": "thin eyebrows",
+      "note": "細い線状の眉。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eyebrows_003",
+      "folderId": "eg26_face_v1_f_eyebrows",
+      "label_jp": "まっすぐな眉",
+      "value_en": "straight eyebrows",
+      "note": "大きく曲げない直線的な眉。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eyebrows_004",
+      "folderId": "eg26_face_v1_f_eyebrows",
+      "label_jp": "弓形の眉",
+      "value_en": "arched eyebrows",
+      "note": "弧を描く眉。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eyebrows_005",
+      "folderId": "eg26_face_v1_f_eyebrows",
+      "label_jp": "短い眉",
+      "value_en": "short eyebrows",
+      "note": "横幅の短い眉。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_012",
+      "folderId": "eg26_face_v1_f_teeth",
+      "label_jp": "片方の八重歯",
+      "value_en": "single fang",
+      "note": "口元に一本の尖った歯を見せる表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_ears_001",
+      "folderId": "eg26_face_v1_f_ears",
+      "label_jp": "耳（装飾用の基本）",
+      "value_en": "ears",
+      "note": "耳の大きさなどを組み合わせる基本カード。人外の耳や耳の露出は別に指定する。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_ear_size"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_feature_ears_002",
+      "folderId": "eg26_face_v1_f_ears",
+      "label_jp": "小さな耳",
+      "value_en": "small ears",
+      "note": "顔に対して小さな耳。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_ears_003",
+      "folderId": "eg26_face_v1_f_ears",
+      "label_jp": "大きな耳",
+      "value_en": "large ears",
+      "note": "顔に対して大きな耳。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_ears_004",
+      "folderId": "eg26_face_v1_f_ears",
+      "label_jp": "立ち耳",
+      "value_en": "protruding ears",
+      "note": "頭から外へ張り出した耳。動物の耳を立てる意味ではない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_ears_005",
+      "folderId": "eg26_face_v1_f_ears",
+      "label_jp": "丸い耳",
+      "value_en": "rounded ears",
+      "note": "外側の輪郭が丸い耳。人の耳か動物の耳かで見え方が変わる。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_ears_006",
+      "folderId": "eg26_face_v1_f_ears",
+      "label_jp": "尖った耳",
+      "value_en": "pointy ears",
+      "note": "耳の先端が尖った形。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_ear_size"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_feature_ears_007",
+      "folderId": "eg26_face_v1_f_ears",
+      "label_jp": "長い尖った耳",
+      "value_en": "long pointy ears",
+      "note": "外側へ長く伸び、先端が尖った耳。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_ears_008",
+      "folderId": "eg26_face_v1_f_ears",
+      "label_jp": "小さな耳たぶ",
+      "value_en": "small earlobes",
+      "note": "耳の下側の柔らかい部分が小さい形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_ears_009",
+      "folderId": "eg26_face_v1_f_ears",
+      "label_jp": "大きな耳たぶ",
+      "value_en": "large earlobes",
+      "note": "耳の下側の柔らかい部分が大きい形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_fantasy_ears_001",
+      "folderId": "eg26_face_v1_f_fantasy_ears",
+      "label_jp": "エルフの耳",
+      "value_en": "elf ears",
+      "note": "人の耳より尖った、エルフをイメージした耳。長さは形によって異なる。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_fantasy_ears_002",
+      "folderId": "eg26_face_v1_f_fantasy_ears",
+      "label_jp": "猫の耳",
+      "value_en": "cat ears",
+      "note": "猫のような三角形の耳。人物の種族や髪色は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_fantasy_ears_003",
+      "folderId": "eg26_face_v1_f_fantasy_ears",
+      "label_jp": "犬の耳",
+      "value_en": "dog ears",
+      "note": "犬をイメージした耳。立ち耳や垂れ耳などの形は別に調整する。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_fantasy_ears_004",
+      "folderId": "eg26_face_v1_f_fantasy_ears",
+      "label_jp": "狐の耳",
+      "value_en": "fox ears",
+      "note": "狐のような先の尖った耳。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_fantasy_ears_005",
+      "folderId": "eg26_face_v1_f_fantasy_ears",
+      "label_jp": "兎の耳",
+      "value_en": "rabbit ears",
+      "note": "兎のように細長い耳。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_fantasy_ears_006",
+      "folderId": "eg26_face_v1_f_fantasy_ears",
+      "label_jp": "狼の耳",
+      "value_en": "wolf ears",
+      "note": "狼をイメージした尖った耳。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_fantasy_ears_007",
+      "folderId": "eg26_face_v1_f_fantasy_ears",
+      "label_jp": "獣耳を垂らす形",
+      "value_en": "floppy animal ears",
+      "note": "動物の耳の先が下がる形。感情による耳の動きとは別の形状指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_fantasy_ears_008",
+      "folderId": "eg26_face_v1_f_fantasy_ears",
+      "label_jp": "獣耳が立つ形",
+      "value_en": "upright animal ears",
+      "note": "動物の耳が立つ形。種類は別に指定する。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_mouth_shape_001",
+      "folderId": "eg26_face_v1_f_mouth_shape",
+      "label_jp": "小さな口",
+      "value_en": "small mouth",
+      "note": "顔に対して横幅の小さな口。口を開けるか閉じるかは別に指定する。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_mouth_shape_002",
+      "folderId": "eg26_face_v1_f_mouth_shape",
+      "label_jp": "幅の広い口",
+      "value_en": "wide mouth",
+      "note": "横幅のある口。口の開き具合とは別の形の指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_mouth_shape_003",
+      "folderId": "eg26_face_v1_f_mouth_shape",
+      "label_jp": "控えめな口元",
+      "value_en": "subtle mouth",
+      "note": "口の線や輪郭を目立たせない指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_mouth_shape_004",
+      "folderId": "eg26_face_v1_f_mouth_shape",
+      "label_jp": "はっきりした口の輪郭",
+      "value_en": "defined mouth",
+      "note": "口元の輪郭をはっきり描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_lips_001",
+      "folderId": "eg26_face_v1_f_lips",
+      "label_jp": "唇（装飾用の基本）",
+      "value_en": "lips",
+      "note": "唇を描くための基本カード。厚さや口の状態は必要に応じて組み合わせる。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_lip_thickness"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_feature_lips_002",
+      "folderId": "eg26_face_v1_f_lips",
+      "label_jp": "薄い唇",
+      "value_en": "thin lips",
+      "note": "上下の唇が薄い形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_lips_003",
+      "folderId": "eg26_face_v1_f_lips",
+      "label_jp": "ふっくらした唇",
+      "value_en": "full lips",
+      "note": "厚みのある、丸みを持った唇。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_lips_004",
+      "folderId": "eg26_face_v1_f_lips",
+      "label_jp": "厚い下唇",
+      "value_en": "full lower lip",
+      "note": "下側の唇に厚みがある形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_lips_005",
+      "folderId": "eg26_face_v1_f_lips",
+      "label_jp": "厚い上唇",
+      "value_en": "full upper lip",
+      "note": "上側の唇に厚みがある形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_lips_006",
+      "folderId": "eg26_face_v1_f_lips",
+      "label_jp": "山形の上唇",
+      "value_en": "defined cupid's bow",
+      "note": "上唇の中央に二つの山がはっきりある形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_lips_007",
+      "folderId": "eg26_face_v1_f_lips",
+      "label_jp": "輪郭のはっきりした唇",
+      "value_en": "defined lips",
+      "note": "唇の境界や形をはっきり描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_nose_001",
+      "folderId": "eg26_face_v1_f_nose",
+      "label_jp": "小さな鼻",
+      "value_en": "small nose",
+      "note": "顔に対して小さな鼻。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_nose_002",
+      "folderId": "eg26_face_v1_f_nose",
+      "label_jp": "目立つ鼻",
+      "value_en": "prominent nose",
+      "note": "顔の中で鼻の形や高さが目立つ指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_nose_003",
+      "folderId": "eg26_face_v1_f_nose",
+      "label_jp": "通った鼻筋",
+      "value_en": "straight nose bridge",
+      "note": "鼻筋がまっすぐに見える形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_nose_004",
+      "folderId": "eg26_face_v1_f_nose",
+      "label_jp": "低い鼻筋",
+      "value_en": "low nose bridge",
+      "note": "鼻の付け根から鼻筋にかけて高さが控えめな形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_nose_005",
+      "folderId": "eg26_face_v1_f_nose",
+      "label_jp": "高い鼻筋",
+      "value_en": "high nose bridge",
+      "note": "鼻の付け根から鼻筋にかけて高さがある形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_nose_006",
+      "folderId": "eg26_face_v1_f_nose",
+      "label_jp": "上向きの鼻先",
+      "value_en": "upturned nose",
+      "note": "鼻先が少し上へ向く形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_nose_007",
+      "folderId": "eg26_face_v1_f_nose",
+      "label_jp": "丸い鼻先",
+      "value_en": "rounded nose tip",
+      "note": "鼻の先端に丸みがある形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_001",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "丸顔",
+      "value_en": "round face",
+      "note": "顔全体の輪郭が丸い形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_002",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "卵形の顔",
+      "value_en": "oval face",
+      "note": "縦へゆるく伸びた卵形の輪郭。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_003",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "面長の顔",
+      "value_en": "long face",
+      "note": "顔の縦方向が長めの輪郭。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_004",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "四角い輪郭",
+      "value_en": "square face",
+      "note": "あごの角などがはっきりした輪郭。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_005",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "ハート形の輪郭",
+      "value_en": "heart-shaped face",
+      "note": "上側が広く、あごに向かって細くなる輪郭。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_006",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "尖ったあご",
+      "value_en": "pointed chin",
+      "note": "あご先が細く尖った形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_007",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "丸いあご",
+      "value_en": "rounded chin",
+      "note": "あご先が丸い形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_008",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "頬骨が目立つ顔",
+      "value_en": "prominent cheekbones",
+      "note": "頬骨の輪郭がはっきり見える形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_009",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "ふっくらした頬",
+      "value_en": "chubby cheeks",
+      "note": "頬に丸みがある形。頬を膨らませる動作とは別。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_face_shape_010",
+      "folderId": "eg26_face_v1_f_face_shape",
+      "label_jp": "えくぼ",
+      "value_en": "dimples",
+      "note": "頬に小さなくぼみがある特徴。表情によって見え方が変わる。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_marks_001",
+      "folderId": "eg26_face_v1_f_marks",
+      "label_jp": "ほくろ",
+      "value_en": "beauty mark",
+      "note": "顔などにある小さなほくろ。位置は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_marks_002",
+      "folderId": "eg26_face_v1_f_marks",
+      "label_jp": "目の下のほくろ",
+      "value_en": "beauty mark under eye",
+      "note": "目の下にほくろを置く指定。左右は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_marks_003",
+      "folderId": "eg26_face_v1_f_marks",
+      "label_jp": "口元のほくろ",
+      "value_en": "beauty mark near mouth",
+      "note": "口の近くにほくろを置く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_marks_004",
+      "folderId": "eg26_face_v1_f_marks",
+      "label_jp": "そばかす",
+      "value_en": "freckles",
+      "note": "頬や鼻の周囲などに細かな斑点を描く特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_marks_005",
+      "folderId": "eg26_face_v1_f_marks",
+      "label_jp": "顔の傷跡",
+      "value_en": "facial scar",
+      "note": "顔に残った傷跡。新しい傷や出血は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_marks_006",
+      "folderId": "eg26_face_v1_f_marks",
+      "label_jp": "頬の傷跡",
+      "value_en": "scar on cheek",
+      "note": "頬に残った傷跡。左右は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_teeth_001",
+      "folderId": "eg26_face_v1_f_teeth",
+      "label_jp": "尖った歯",
+      "value_en": "sharp teeth",
+      "note": "歯の先端が尖った形。口の開閉は別に指定する。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_teeth_002",
+      "folderId": "eg26_face_v1_f_teeth",
+      "label_jp": "左右の牙",
+      "value_en": "fangs",
+      "note": "左右などに尖った歯を見せる特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_teeth_003",
+      "folderId": "eg26_face_v1_f_teeth",
+      "label_jp": "すきっ歯",
+      "value_en": "tooth gap",
+      "note": "歯と歯の間に隙間がある特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_teeth_004",
+      "folderId": "eg26_face_v1_f_teeth",
+      "label_jp": "前歯が目立つ口元",
+      "value_en": "prominent front teeth",
+      "note": "前歯が目立つ口元の特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_feature_doublelid",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "二重まぶた",
+      "value_en": "double eyelids",
+      "note": "上まぶたに折り目がある形。開閉状態とは別の特徴。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_feature_monolid",
+      "folderId": "eg26_face_v1_f_eyes",
+      "label_jp": "一重まぶた",
+      "value_en": "monolids",
+      "note": "上まぶたの折り目が目立たない形。開閉状態とは別の特徴。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_selected_iris",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "層のある虹彩",
+      "value_en": "multi-layered irises",
+      "note": "虹彩に複数の輪や層が重なる表現。反射や涙は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_curled_lashes",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "カールしたまつげ",
+      "value_en": "curled eyelashes",
+      "note": "毛先が上向きに曲がったまつげ。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_dark_lashes",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "色の濃いまつげ",
+      "value_en": "dark eyelashes",
+      "note": "まつげの色が濃く、輪郭がはっきり見える特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_clumped_lashes",
+      "folderId": "eg26_face_v1_f_eye_details",
+      "label_jp": "束感のあるまつげ",
+      "value_en": "clumped eyelashes",
+      "note": "数本ずつまとまり、束として見えるまつげ。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_heart_lips",
+      "folderId": "eg26_face_v1_f_lips",
+      "label_jp": "ハート形の唇",
+      "value_en": "heart-shaped lips",
+      "note": "上唇の中央の山と下唇の丸みでハート形に見える輪郭。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_gloss",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "リップグロス",
+      "value_en": "lip gloss",
+      "note": "唇の表面にツヤを加える化粧。色は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_matte",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "マットな唇",
+      "value_en": "matte lips",
+      "note": "光沢を抑えた、さらりとした唇の仕上がり。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_overlined",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "輪郭を外側に描いた唇",
+      "value_en": "overlined lips",
+      "note": "本来の唇より外側に輪郭を描き、唇を大きく見せる化粧。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_ombre",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "グラデーションリップ",
+      "value_en": "ombre lips",
+      "note": "中央と縁などで色の濃さが段階的に変わる唇の化粧。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_liner",
+      "folderId": "eg26_face_v1_f_lip_makeup",
+      "label_jp": "リップライナー",
+      "value_en": "lip liner",
+      "note": "唇の縁を線でなぞり、輪郭を整える化粧。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "eg26_face_v1_t_eye_color",
+      "name": "瞳の色",
+      "folderId": "目・表情 / 瞳の色",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "eg26_face_v1_t_eye_color_o_0",
+          "label": "黒",
+          "value": ", black eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_1",
+          "label": "濃い茶",
+          "value": ", dark brown eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_2",
+          "label": "茶",
+          "value": ", brown eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_3",
+          "label": "琥珀",
+          "value": ", amber eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_4",
+          "label": "ヘーゼル",
+          "value": ", hazel eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_5",
+          "label": "金",
+          "value": ", golden eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_6",
+          "label": "黄",
+          "value": ", yellow eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_7",
+          "label": "緑",
+          "value": ", green eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_8",
+          "label": "青緑",
+          "value": ", teal eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_9",
+          "label": "青",
+          "value": ", blue eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_10",
+          "label": "水色",
+          "value": ", light blue eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_11",
+          "label": "紫",
+          "value": ", purple eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_12",
+          "label": "ラベンダー",
+          "value": ", lavender eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_13",
+          "label": "赤",
+          "value": ", red eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_14",
+          "label": "ピンク",
+          "value": ", pink eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_15",
+          "label": "灰",
+          "value": ", gray eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_16",
+          "label": "銀",
+          "value": ", silver eyes"
+        }
+      ]
+    },
+    {
+      "id": "eg26_face_v1_t_pupil",
+      "name": "瞳孔の形",
+      "folderId": "目・表情 / 瞳孔の形",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "eg26_face_v1_t_pupil_o_0",
+          "label": "丸い",
+          "value": ", round pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_1",
+          "label": "縦長",
+          "value": ", slit pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_2",
+          "label": "横長",
+          "value": ", horizontal pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_3",
+          "label": "星形",
+          "value": ", star-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_4",
+          "label": "ハート形",
+          "value": ", heart-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_selected_cross",
+          "label": "十字形",
+          "value": ", cross-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_selected_diamond",
+          "label": "ひし形",
+          "value": ", diamond-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_selected_ring",
+          "label": "リング形",
+          "value": ", ring-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_selected_multi",
+          "label": "複数の瞳孔",
+          "value": ", multi-pupil eyes"
+        }
+      ]
+    },
+    {
+      "id": "eg26_face_v1_t_highlight",
+      "name": "目のハイライト",
+      "folderId": "目・表情 / 目のハイライト",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "eg26_face_v1_t_highlight_o_0",
+          "label": "小さな光",
+          "value": ", small eye highlights"
+        },
+        {
+          "id": "eg26_face_v1_t_highlight_o_1",
+          "label": "複数の光",
+          "value": ", multiple eye highlights"
+        },
+        {
+          "id": "eg26_face_v1_t_highlight_o_2",
+          "label": "星形の光",
+          "value": ", star-shaped eye highlights"
+        },
+        {
+          "id": "eg26_face_v1_t_highlight_o_3",
+          "label": "ハイライトなし",
+          "value": ", no eye highlights"
+        }
+      ]
+    },
+    {
+      "id": "eg26_face_v1_t_ear_size",
+      "name": "耳の大きさ",
+      "folderId": "顔の特徴 / 耳の大きさ",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "eg26_face_v1_t_ear_size_o_0",
+          "label": "小さい",
+          "value": ", small ears"
+        },
+        {
+          "id": "eg26_face_v1_t_ear_size_o_1",
+          "label": "大きい",
+          "value": ", large ears"
+        }
+      ]
+    },
+    {
+      "id": "eg26_face_v1_t_lip_thickness",
+      "name": "唇の厚さ",
+      "folderId": "顔の特徴 / 唇の厚さ",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "eg26_face_v1_t_lip_thickness_o_0",
+          "label": "薄い",
+          "value": ", thin lips"
+        },
+        {
+          "id": "eg26_face_v1_t_lip_thickness_o_1",
+          "label": "ふっくら",
+          "value": ", full lips"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

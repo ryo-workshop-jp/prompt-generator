@@ -1,0 +1,762 @@
+[
+  {
+    "label_jp": "女の子",
+    "value_en": "girl",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "1人の女の子",
+    "value_en": "1girl",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "2人の女の子",
+    "value_en": "2girl",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性",
+    "value_en": "woman",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "一人の女性",
+    "value_en": "1woman",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性の赤ちゃん",
+    "value_en": "baby girl",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性の幼児",
+    "value_en": "toddler girl",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性の未就学児（園児）",
+    "value_en": "young girl",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性の児童（小学生）",
+    "value_en": "preteen girl",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性のティーン（中高生）",
+    "value_en": "teenage girl",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性の若年成人",
+    "value_en": "young adult woman",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性の成人",
+    "value_en": "adult woman",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性の中年世代",
+    "value_en": "middle-aged woman",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "女性のシニア世代",
+    "value_en": "elderly woman",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "男の子",
+    "value_en": "boy",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "1人の男の子",
+    "value_en": "1boy",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性",
+    "value_en": "man",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "1人の男性",
+    "value_en": "man",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性の赤ちゃん",
+    "value_en": "baby boy",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性の幼児",
+    "value_en": "toddler boy",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性の未就学児（園児）",
+    "value_en": "young boy",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性の児童（小学生）",
+    "value_en": "preteen boy",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性のティーン（中高生）",
+    "value_en": "teenage boy",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性の若年成人",
+    "value_en": "young adult man",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性の成人",
+    "value_en": "adult man",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性の中年世代",
+    "value_en": "middle-aged man",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性のシニア世代",
+    "value_en": "elderly man",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "男性の高齢",
+    "value_en": "old man",
+    "folderId": "人物のプロンプト_男性"
+  },
+  {
+    "label_jp": "赤ちゃん",
+    "value_en": "baby",
+    "folderId": "人物のプロンプト_世代"
+  },
+  {
+    "label_jp": "幼児",
+    "value_en": "toddler",
+    "folderId": "人物のプロンプト_世代"
+  },
+  {
+    "label_jp": "未就学児（園児）",
+    "value_en": "young child",
+    "folderId": "人物のプロンプト_世代"
+  },
+  {
+    "label_jp": "児童（小学生）",
+    "value_en": "older child",
+    "folderId": "人物のプロンプト_世代"
+  },
+  {
+    "label_jp": "ティーン（中高生）",
+    "value_en": "teenager",
+    "folderId": "人物のプロンプト_世代"
+  },
+  {
+    "label_jp": "若年成人",
+    "value_en": "young adult",
+    "folderId": "人物のプロンプト_世代"
+  },
+  {
+    "label_jp": "成人",
+    "value_en": "adult",
+    "folderId": "人物のプロンプト_世代"
+  },
+  {
+    "label_jp": "中年世代",
+    "value_en": "middle-aged",
+    "folderId": "人物のプロンプト_世代"
+  },
+  {
+    "label_jp": "シニア世代",
+    "value_en": "old",
+    "folderId": "人物のプロンプト_世代"
+  },
+  {
+    "label_jp": "肌",
+    "value_en": "skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の色"
+  },
+  {
+    "label_jp": "非常に明るい肌",
+    "value_en": "fair skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の色"
+  },
+  {
+    "label_jp": "明るい肌",
+    "value_en": "light skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の色"
+  },
+  {
+    "label_jp": "日に焼けた肌",
+    "value_en": "sun-kissed skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の色"
+  },
+  {
+    "label_jp": "明るめのブラウン肌",
+    "value_en": "light brown skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の色"
+  },
+  {
+    "label_jp": "中間〜濃いブラウン肌",
+    "value_en": "brown skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の色"
+  },
+  {
+    "label_jp": "非常に深いブラウン肌",
+    "value_en": "dark brown skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の色"
+  },
+  {
+    "label_jp": "滑らかな肌",
+    "value_en": "smooth skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の質感"
+  },
+  {
+    "label_jp": "きめ細かい肌",
+    "value_en": "fine-grained skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の質感"
+  },
+  {
+    "label_jp": "マットな肌",
+    "value_en": "matte skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の質感"
+  },
+  {
+    "label_jp": "陶器のような肌",
+    "value_en": "porcelain skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の質感"
+  },
+  {
+    "label_jp": "透明感のある肌",
+    "value_en": "translucent skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の質感"
+  },
+  {
+    "label_jp": "赤ちゃんのような肌",
+    "value_en": "baby skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の質感"
+  },
+  {
+    "label_jp": "健康的な肌",
+    "value_en": "healthy skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の質感"
+  },
+  {
+    "label_jp": "つやのある肌",
+    "value_en": "glossy skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_潤いやツヤ感のある肌"
+  },
+  {
+    "label_jp": "きらめく肌",
+    "value_en": "glistening skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_潤いやツヤ感のある肌"
+  },
+  {
+    "label_jp": "濡れた肌",
+    "value_en": "wet skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_潤いやツヤ感のある肌"
+  },
+  {
+    "label_jp": "オイリー肌",
+    "value_en": "oiled skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_潤いやツヤ感のある肌"
+  },
+  {
+    "label_jp": "汗ばむ肌",
+    "value_en": "sweaty skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_潤いやツヤ感のある肌"
+  },
+  {
+    "label_jp": "乾燥した肌",
+    "value_en": "dry skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の状態や個性"
+  },
+  {
+    "label_jp": "ざらついた肌",
+    "value_en": "rough skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の状態や個性"
+  },
+  {
+    "label_jp": "ニキビ肌",
+    "value_en": "acne-prone skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の状態や個性"
+  },
+  {
+    "label_jp": "シミのある肌",
+    "value_en": "blemished skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の状態や個性"
+  },
+  {
+    "label_jp": "しわ肌",
+    "value_en": "wrinkled skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の状態や個性"
+  },
+  {
+    "label_jp": "そばかすのある肌",
+    "value_en": "freckled skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の状態や個性"
+  },
+  {
+    "label_jp": "ほくろのある肌",
+    "value_en": "mole on skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_肌の状態や個性"
+  },
+  {
+    "label_jp": "日本人",
+    "value_en": "japanese",
+    "folderId": "人物のプロンプト_人種"
+  },
+  {
+    "label_jp": "アジア人",
+    "value_en": "asian",
+    "folderId": "人物のプロンプト_人種"
+  },
+  {
+    "label_jp": "ヨーロッパ人",
+    "value_en": "european",
+    "folderId": "人物のプロンプト_人種"
+  },
+  {
+    "label_jp": "アメリカ人",
+    "value_en": "american",
+    "folderId": "人物のプロンプト_人種"
+  },
+  {
+    "label_jp": " インド人",
+    "value_en": "indian",
+    "folderId": "人物のプロンプト_人種"
+  },
+  {
+    "label_jp": "エルフ",
+    "value_en": "elf",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "ダークエルフ",
+    "value_en": "dark elf",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "獣人",
+    "value_en": "beastman",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "獣人（猫）",
+    "value_en": "cat person",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "獣人（犬・狼）",
+    "value_en": "wolf person",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "オーク",
+    "value_en": "orc",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "ゴブリン",
+    "value_en": "goblin",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "ゾンビ",
+    "value_en": "zombie",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "吸血鬼",
+    "value_en": "vampire",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "悪魔",
+    "value_en": "demon",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "天使",
+    "value_en": "angel",
+    "folderId": "人物のプロンプト_ファンタジーの人物"
+  },
+  {
+    "label_jp": "女性の高齢",
+    "value_en": "old woman",
+    "folderId": "人物のプロンプト_女性"
+  },
+  {
+    "label_jp": "日焼け",
+    "value_en": "tanned skin",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "軽い日焼け",
+    "value_en": "light tan",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "健康的な日焼け肌",
+    "value_en": "healthy tan",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "日焼け跡",
+    "value_en": "tan lines",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "くっきりした日焼け跡",
+    "value_en": "clear tan lines",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "強い日焼け跡",
+    "value_en": "strong tan lines",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "ビキニ日焼け跡",
+    "value_en": "bikini tan lines",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "スクール水着跡",
+    "value_en": "school swimsuit tan lines",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "タンクトップ日焼け跡",
+    "value_en": "tank top tan lines",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "チューブトップ日焼け跡",
+    "value_en": "tube top tan lines",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "短パン日焼け跡",
+    "value_en": "shorts tan lines",
+    "folderId": "人物のプロンプト_肌に関するプロンプト_日焼け"
+  },
+  {
+    "label_jp": "人物",
+    "value_en": "People",
+    "folderId": "人物のプロンプト"
+  },
+  {
+    "label_jp": "人の居ない",
+    "value_en": "no People",
+    "folderId": "人物のプロンプト"
+  },
+  {
+    "label_jp": "オフィスチェア",
+    "value_en": "modern swivel office chair, charcoal-gray fabric seat, polished aluminium base",
+    "folderId": "家具・モノ_椅子_デスク・オフィス系"
+  },
+  {
+    "label_jp": "エルゴノミクスチェア",
+    "value_en": "ergonomic mesh task chair, breathable black backrest with lumbar curve",
+    "folderId": "家具・モノ_椅子_デスク・オフィス系"
+  },
+  {
+    "label_jp": "タスクチェア",
+    "value_en": "compact low-back task chair, light-grey fabric, plastic star-base",
+    "folderId": "家具・モノ_椅子_デスク・オフィス系"
+  },
+  {
+    "label_jp": "エグゼクティブチェア",
+    "value_en": "luxury high-back executive leather chair, deep-brown leather, chrome accents",
+    "folderId": "家具・モノ_椅子_デスク・オフィス系"
+  },
+  {
+    "label_jp": "回転椅子",
+    "value_en": "classic swivel office chair with mesh seat and five-star base",
+    "folderId": "家具・モノ_椅子_デスク・オフィス系"
+  },
+  {
+    "label_jp": "ゲーミングチェア",
+    "value_en": "ergonomic high-back gaming chair with adjustable headrest and lumbar support",
+    "folderId": "家具・モノ_椅子_デスク・オフィス系"
+  },
+  {
+    "label_jp": "アーロンチェア",
+    "value_en": "Aeron-style mesh office chair with fluid-contour seat and ergonomic tilt mechanism",
+    "folderId": "家具・モノ_椅子_デスク・オフィス系"
+  },
+  {
+    "label_jp": "ダイニングチェア",
+    "value_en": "natural-oak dining chair, straight spindle back, linen seat-pad",
+    "folderId": "家具・モノ_椅子_食卓・家庭系"
+  },
+  {
+    "label_jp": "アームチェア (食卓用)",
+    "value_en": "upholstered dining armchair, cream fabric, softly curved arms",
+    "folderId": "家具・モノ_椅子_食卓・家庭系"
+  },
+  {
+    "label_jp": "サイドチェア",
+    "value_en": "sleek armless side chair, matt-black steel legs, polypropylene seat",
+    "folderId": "家具・モノ_椅子_食卓・家庭系"
+  },
+  {
+    "label_jp": "ラウンジチェア",
+    "value_en": "mid-century lounge chair and ottoman, walnut shell, leather",
+    "folderId": "家具・モノ_椅子_食卓・家庭系"
+  },
+  {
+    "label_jp": "パーソナルチェア",
+    "value_en": "oversized cushioned personal chair, pastel-blue linen, soft pillows",
+    "folderId": "家具・モノ_椅子_食卓・家庭系"
+  },
+  {
+    "label_jp": "イージーチェア",
+    "value_en": "laid-back easy chair with wide linen seat and angled back",
+    "folderId": "家具・モノ_椅子_食卓・家庭系"
+  },
+  {
+    "label_jp": "木製ダイニングチェア",
+    "value_en": "classic ladder-back wooden dining chair with honey-oak finish",
+    "folderId": "家具・モノ_椅子_食卓・家庭系"
+  },
+  {
+    "label_jp": "ミッドセンチュリーチェア",
+    "value_en": "classic mid-century modern chair with tapered wooden legs and curved plywood shell",
+    "folderId": "家具・モノ_椅子_食卓・家庭系"
+  },
+  {
+    "label_jp": "ウィンザーチェア",
+    "value_en": "traditional Windsor chair with bowed spindle back and maple finish",
+    "folderId": "家具・モノ_椅子_有名デザイン・名作チェア"
+  },
+  {
+    "label_jp": "セブンチェア",
+    "value_en": "iconic Series 7 chair with moulded plywood and chrome legs",
+    "folderId": "家具・モノ_椅子_有名デザイン・名作チェア"
+  },
+  {
+    "label_jp": "パントンチェア",
+    "value_en": "single-piece Panton chair with glossy ABS form",
+    "folderId": "家具・モノ_椅子_有名デザイン・名作チェア"
+  },
+  {
+    "label_jp": "イームズチェア",
+    "value_en": "molded fiberglass Eames lounge chair shell with visible plywood edge",
+    "folderId": "家具・モノ_椅子_有名デザイン・名作チェア"
+  },
+  {
+    "label_jp": "バタフライチェア",
+    "value_en": "butterfly chair with folded leather sling and tubular steel frame",
+    "folderId": "家具・モノ_椅子_有名デザイン・名作チェア"
+  },
+  {
+    "label_jp": "エッグチェア",
+    "value_en": "egg chair with enveloping shell and integrated swivel base",
+    "folderId": "家具・モノ_椅子_有名デザイン・名作チェア"
+  },
+  {
+    "label_jp": "リクライニングチェア",
+    "value_en": "modern reclining lounge chair with foot-rest, tan leather, steel frame",
+    "folderId": "家具・モノ_椅子_リビング・くつろぎ"
+  },
+  {
+    "label_jp": "ロッキングチェア",
+    "value_en": "classic wooden rocking chair with curved runners",
+    "folderId": "家具・モノ_椅子_リビング・くつろぎ"
+  },
+  {
+    "label_jp": "古びた木製チェア",
+    "value_en": "weathered antique wooden chair with chipped paint",
+    "folderId": "家具・モノ_椅子_リビング・くつろぎ"
+  },
+  {
+    "label_jp": "玉座（スローンチェア）",
+    "value_en": "ornate gilded throne chair with velvet upholstery",
+    "folderId": "家具・モノ_椅子_リビング・くつろぎ"
+  },
+  {
+    "label_jp": "アンティーク椅子",
+    "value_en": "Victorian antique armchair with mahogany legs and brocade upholstery",
+    "folderId": "家具・モノ_椅子_リビング・くつろぎ"
+  },
+  {
+    "label_jp": "ソファチェア",
+    "value_en": "plush upholstered sofa chair with deep seat and low curved arms",
+    "folderId": "家具・モノ_椅子_リビング・くつろぎ"
+  },
+  {
+    "label_jp": "ガーデンチェア",
+    "value_en": "white wrought-iron garden chair with scrollwork",
+    "folderId": "家具・モノ_椅子_屋外や携帯用途"
+  },
+  {
+    "label_jp": "キャンプチェア",
+    "value_en": "foldable canvas camp chair with aluminium frame",
+    "folderId": "家具・モノ_椅子_屋外や携帯用途"
+  },
+  {
+    "label_jp": "ビーチチェア",
+    "value_en": "striped fabric beach deck chair with reclining wood frame",
+    "folderId": "家具・モノ_椅子_屋外や携帯用途"
+  },
+  {
+    "label_jp": "ローチェア",
+    "value_en": "ultra-low wood-frame floor chair with denim cushion",
+    "folderId": "家具・モノ_椅子_屋外や携帯用途"
+  },
+  {
+    "label_jp": "折りたたみ椅子",
+    "value_en": "folding event chair with tubular steel frame and vinyl seat",
+    "folderId": "家具・モノ_椅子_屋外や携帯用途"
+  },
+  {
+    "label_jp": "折りたたみ椅子（パイプ椅子）",
+    "value_en": "metal folding pipe chair with steel frame and vinyl seat",
+    "folderId": "家具・モノ_椅子_屋外や携帯用途"
+  },
+  {
+    "label_jp": "背の高いスツール",
+    "value_en": "slim high bar stool with walnut seat",
+    "folderId": "家具・モノ_椅子_屋外や携帯用途"
+  },
+  {
+    "label_jp": "ローキャンプチェア",
+    "value_en": "canvas-seat low camping chair with metal frame",
+    "folderId": "家具・モノ_椅子_屋外や携帯用途"
+  },
+  {
+    "label_jp": "学校の木製椅子（スチール脚）",
+    "value_en": "vintage school chair with wood seat and grey steel legs",
+    "folderId": "家具・モノ_椅子_学校・教室・勉強"
+  },
+  {
+    "label_jp": "机付きチェア（講義椅子）",
+    "value_en": "integrated-desk lecture chair with tablet arm and plastic back",
+    "folderId": "家具・モノ_椅子_学校・教室・勉強"
+  },
+  {
+    "label_jp": "回転式デスクチェア",
+    "value_en": "teen’s mesh-back swivel desk chair with adjustable height",
+    "folderId": "家具・モノ_椅子_学校・教室・勉強"
+  },
+  {
+    "label_jp": "学習用椅子＋机組み合わせ",
+    "value_en": "two-piece study chair and desk set in light-beech wood",
+    "folderId": "家具・モノ_椅子_学校・教室・勉強"
+  },
+  {
+    "label_jp": "ハイチェア（子ども用）",
+    "value_en": "wooden child’s high chair with safety harness and footrest",
+    "folderId": "家具・モノ_椅子_学校・教室・勉強"
+  },
+  {
+    "label_jp": "お風呂の椅子",
+    "value_en": "compact bath stool with rounded corners and smooth contoured seat",
+    "folderId": "家具・モノ_椅子_医療・美容・福祉"
+  },
+  {
+    "label_jp": "車椅子",
+    "value_en": "manual wheelchair with foldable frame and spoked rear wheels",
+    "folderId": "家具・モノ_椅子_医療・美容・福祉"
+  },
+  {
+    "label_jp": "歯医者のチェア",
+    "value_en": "reclining dentist’s chair with integrated headrest and adjustable leg support",
+    "folderId": "家具・モノ_椅子_医療・美容・福祉"
+  },
+  {
+    "label_jp": "診察台チェア（処置用チェア）",
+    "value_en": "medical examination chair with height-adjustable swivel base and contoured vinyl seat",
+    "folderId": "家具・モノ_椅子_医療・美容・福祉"
+  },
+  {
+    "label_jp": "授乳チェア（ナーシングチェア）",
+    "value_en": "cushioned nursing chair with high arms and gentle rocking motion",
+    "folderId": "家具・モノ_椅子_医療・美容・福祉"
+  },
+  {
+    "label_jp": "美容院チェア",
+    "value_en": "hydraulic salon chair with circular steel base and adjustable reclining back",
+    "folderId": "家具・モノ_椅子_医療・美容・福祉"
+  },
+  {
+    "label_jp": "映画館の椅子（シアターチェア）",
+    "value_en": "plush theater seat with fold-up cushioned pad and slim armrests",
+    "folderId": "家具・モノ_椅子_映画館・イベント観覧用"
+  },
+  {
+    "label_jp": "観覧席の椅子（スタジアムシート）",
+    "value_en": "molded plastic stadium seat with curved back and integrated cup holder",
+    "folderId": "家具・モノ_椅子_映画館・イベント観覧用"
+  },
+  {
+    "label_jp": "スツール",
+    "value_en": "round wooden stool with three tapered legs",
+    "folderId": "家具・モノ_椅子_その他の用途別・分類外"
+  },
+  {
+    "label_jp": "ベンチ",
+    "value_en": "long slatted-oak bench with steel legs",
+    "folderId": "家具・モノ_椅子_その他の用途別・分類外"
+  },
+  {
+    "label_jp": "ハイチェア",
+    "value_en": "tall bar-height stool chair with walnut seat and slender legs",
+    "folderId": "家具・モノ_椅子_その他の用途別・分類外"
+  },
+  {
+    "label_jp": "パイプ椅子",
+    "value_en": "simple metal folding chair with surface scratches",
+    "folderId": "家具・モノ_椅子_その他の用途別・分類外"
+  },
+  {
+    "label_jp": "電気椅子",
+    "value_en": "vintage electric chair with sturdy wooden frame and leather straps",
+    "folderId": "家具・モノ_椅子_その他の用途別・分類外"
+  },
+  {
+    "label_jp": "バランスチェア",
+    "value_en": "active balance chair with curved rocking base and minimalist saddle seat",
+    "folderId": "家具・モノ_椅子_その他の用途別・分類外"
+  },
+  {
+    "label_jp": "カウンターチェア",
+    "value_en": "slim counter-height stool with footrail and padded backrest",
+    "folderId": "家具・モノ_椅子_その他の用途別・分類外"
+  },
+  {
+    "label_jp": "スマートフォン",
+    "value_en": "smartphone",
+    "folderId": "道具"
+  },
+  {
+    "label_jp": "スマートフォンを持っている\t",
+    "value_en": "holding smartphone",
+    "folderId": "道具"
+  },
+  {
+    "label_jp": "スマホを見る",
+    "value_en": "look at phone",
+    "folderId": "道具"
+  },
+  {
+    "label_jp": "スマホで撮影",
+    "value_en": "person holding a smartphone screen",
+    "folderId": "道具"
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "status": "検証済み（画像生成・実ブラウザ操作は未検証）",
+  "date": "2026-09-26",
+  "categories": [
+    {
+      "file": "体型.json",
+      "words": 86,
+      "folders": 9,
+      "templates": 5,
+      "options": 16,
+      "referenceCards": 71
+    },
+    {
+      "file": "装飾品.json",
+      "words": 260,
+      "folders": 33,
+      "templates": 11,
+      "options": 68,
+      "referenceCards": 162
+    },
+    {
+      "file": "品質.json",
+      "words": 125,
+      "folders": 23,
+      "templates": 0,
+      "options": 0,
+      "referenceCards": 128
+    }
+  ],
+  "totals": {
+    "newWords": 471,
+    "newTemplates": 16,
+    "newOptions": 84
+  },
+  "validation": {
+    "folderVisibility": true,
+    "independentReferences": true,
+    "uniqueIDs": true,
+    "uniqueEnglish": true,
+    "htmlSyntaxAndPayload": true,
+    "currentDatasetsMerge": {
+      "previousWords": 648,
+      "mergedWords": 1119
+    },
+    "keepExistingWordsAndNotes": true,
+    "keepDecksFavoritesQualityPresetsComfySettings": true,
+    "reimportAddsNothing": true,
+    "categoryCheckboxes": true,
+    "normalizedEnglishDuplicateSkipped": true
+  },
+  "decksCreated": false,
+  "qualityPresetsCreated": false,
+  "reviewCounts": {
+    "体型": {
+      "adopted": 61,
+      "omitted": 10,
+      "existing": 0
+    },
+    "装飾品": {
+      "adopted": 155,
+      "omitted": 6,
+      "existing": 1
+    },
+    "品質": {
+      "adopted": 110,
+      "omitted": 18,
+      "existing": 0
+    }
+  }
+}

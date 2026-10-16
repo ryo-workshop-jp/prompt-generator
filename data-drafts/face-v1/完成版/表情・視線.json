@@ -1,0 +1,1484 @@
+{
+  "folders": [
+    {
+      "id": "eg26_face_v1_f_eye_states",
+      "name": "目・まぶたの状態",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_mouth",
+      "name": "口の状態",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_smile",
+      "name": "笑顔",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_emotions",
+      "name": "感情・表情",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_gaze",
+      "name": "視線",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_changes",
+      "name": "赤面・涙・顔の変化",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_comic",
+      "name": "漫画的な表情",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_expressions",
+      "name": "表情・視線",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eyebrow_states",
+      "name": "眉の動き",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_eye_expressions",
+      "name": "目の表情・漫画表現",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_lip_states",
+      "name": "唇の状態",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_f_expressive_actions",
+      "name": "顔まわりの動作",
+      "parentId": "eg26_face_v1_expressions",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "eg26_face_v1_w_eyes_010",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "半目",
+      "value_en": "half-closed eyes",
+      "note": "まぶたを半分ほど下ろした状態。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_011",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "大きく見開いた目",
+      "value_en": "wide-eyed",
+      "note": "まぶたを開き、目を大きく見せる状態。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eyes_012",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "眠たげな目",
+      "value_en": "sleepy eyes",
+      "note": "まぶたが下がり、眠たく見える目。",
+      "nsfw": false,
+      "templateIds": [
+        "eg26_face_v1_t_eye_color",
+        "eg26_face_v1_t_pupil",
+        "eg26_face_v1_t_highlight"
+      ]
+    },
+    {
+      "id": "eg26_face_v1_w_eye_states_001",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "両目を閉じる",
+      "value_en": "closed eyes",
+      "note": "左右の目を閉じた状態。瞳の色の指定は基本的に不要。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_states_002",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "片目を閉じる",
+      "value_en": "one eye closed",
+      "note": "片方の目だけを閉じた状態。左右は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_states_003",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "ウインク",
+      "value_en": "winking",
+      "note": "片目を閉じて合図する表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_states_004",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "片目を開ける",
+      "value_en": "one eye open",
+      "note": "片方の目だけが開いた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_states_005",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "目を細める",
+      "value_en": "squinting",
+      "note": "まぶたを狭める状態。まぶしさなどの理由は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_states_006",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "目を強く閉じる",
+      "value_en": "eyes shut tight",
+      "note": "左右の目をぎゅっと閉じた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_002",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "大きな瞳孔",
+      "value_en": "dilated pupils",
+      "note": "瞳孔が大きく開いた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_003",
+      "folderId": "eg26_face_v1_f_eye_states",
+      "label_jp": "小さな瞳孔",
+      "value_en": "constricted pupils",
+      "note": "瞳孔が小さく縮んだ状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_008",
+      "folderId": "eg26_face_v1_f_eye_expressions",
+      "label_jp": "渦巻きの目",
+      "value_en": "spiral eyes",
+      "note": "目に渦巻き模様を描く、漫画的な表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_009",
+      "folderId": "eg26_face_v1_f_eye_expressions",
+      "label_jp": "点のような目",
+      "value_en": "dot eyes",
+      "note": "小さな点で目を表す、簡略化した表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_010",
+      "folderId": "eg26_face_v1_f_eye_expressions",
+      "label_jp": "白い目の表現",
+      "value_en": "blank eyes",
+      "note": "虹彩などを省いた、漫画的な目の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_011",
+      "folderId": "eg26_face_v1_f_eye_expressions",
+      "label_jp": "バツの目",
+      "value_en": "x-shaped eyes",
+      "note": "目をバツ印にする漫画的な表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eye_details_012",
+      "folderId": "eg26_face_v1_f_eye_expressions",
+      "label_jp": "ジト目",
+      "value_en": "jitome",
+      "note": "半目でじっと見つめるような表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eyebrows_006",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "眉を上げる",
+      "value_en": "raised eyebrows",
+      "note": "眉を持ち上げた状態。感情は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eyebrows_007",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "眉を寄せる",
+      "value_en": "furrowed brows",
+      "note": "眉間へ眉を寄せた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_eyebrows_008",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "片眉を上げる",
+      "value_en": "one eyebrow raised",
+      "note": "片方の眉だけを上げる表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_001",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "口を閉じる",
+      "value_en": "closed mouth",
+      "note": "唇を閉じた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_002",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "口を開ける",
+      "value_en": "open mouth",
+      "note": "口が開いた状態。笑顔などの感情は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_003",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "唇を少し開く",
+      "value_en": "parted lips",
+      "note": "唇をわずかに離した状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_004",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "口を丸く開ける",
+      "value_en": "o-shaped mouth",
+      "note": "口を丸い形に開く表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_005",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "口をへの字にする",
+      "value_en": "downturned mouth",
+      "note": "口角が下がった形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_006",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "口を尖らせる",
+      "value_en": "puckered lips",
+      "note": "唇を前へ突き出す形。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_007",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "頬を膨らませる",
+      "value_en": "puffed cheeks",
+      "note": "口の中へ空気を入れ、頬を膨らませた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_008",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "上の歯が見える",
+      "value_en": "upper teeth",
+      "note": "上側の歯を見せる指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_009",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "歯を食いしばる",
+      "value_en": "clenched teeth",
+      "note": "上下の歯を強く合わせた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_010",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "舌を出す",
+      "value_en": "tongue out",
+      "note": "口から舌を出した状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_mouth_011",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "舌を少し出す",
+      "value_en": "tongue slightly out",
+      "note": "舌先を少しだけ口から出す状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_smile_001",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "笑顔",
+      "value_en": "smile",
+      "note": "口角を上げた表情。強さや口の開閉は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_smile_002",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "控えめな笑顔",
+      "value_en": "light smile",
+      "note": "口角を少し上げた、穏やかな笑顔。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_smile_003",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "大きな笑顔",
+      "value_en": "wide smile",
+      "note": "口元を大きく動かした笑顔。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_smile_004",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "歯を見せた笑顔",
+      "value_en": "toothy smile",
+      "note": "歯が見える笑顔。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_smile_005",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "にやりと笑う",
+      "value_en": "smirk",
+      "note": "片側の口角などを上げた笑い方。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_smile_006",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "にこっと目を閉じる",
+      "value_en": "smiling with eyes closed",
+      "note": "笑顔に、両目を閉じた状態を組み合わせた表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_smile_007",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "笑う",
+      "value_en": "laughing",
+      "note": "声を出して笑っているような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_smile_008",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "困ったような笑顔",
+      "value_en": "nervous smile",
+      "note": "緊張や戸惑いを感じる笑顔。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_smile_009",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "作り笑い",
+      "value_en": "forced smile",
+      "note": "自然な喜びより、意識して笑っているような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_001",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "無表情",
+      "value_en": "expressionless",
+      "note": "目や口の動きを抑えた表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_002",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "真剣な表情",
+      "value_en": "serious expression",
+      "note": "集中しているような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_003",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "嬉しい表情",
+      "value_en": "happy expression",
+      "note": "喜びを感じる表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_004",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "悲しい表情",
+      "value_en": "sad expression",
+      "note": "悲しさを感じる表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_005",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "怒った表情",
+      "value_en": "angry expression",
+      "note": "怒りを感じる表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_006",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "驚いた表情",
+      "value_en": "surprised expression",
+      "note": "予想外のことに反応したような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_007",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "怯えた表情",
+      "value_en": "scared expression",
+      "note": "恐怖を感じる表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_008",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "困惑した表情",
+      "value_en": "confused expression",
+      "note": "理解できず戸惑っているような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_009",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "心配した表情",
+      "value_en": "worried expression",
+      "note": "不安や気がかりを感じる表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_010",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "恥ずかしそうな表情",
+      "value_en": "embarrassed expression",
+      "note": "照れや気恥ずかしさを感じる表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_011",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "退屈そうな表情",
+      "value_en": "bored expression",
+      "note": "関心が薄く、退屈しているような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_012",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "疑うような表情",
+      "value_en": "skeptical expression",
+      "note": "納得できず疑っているような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_013",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "不満そうな表情",
+      "value_en": "displeased expression",
+      "note": "満足していないような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_014",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "疲れた表情",
+      "value_en": "tired expression",
+      "note": "疲労を感じる表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_015",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "決意した表情",
+      "value_en": "determined expression",
+      "note": "意志を固めたような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_016",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "考え込む表情",
+      "value_en": "thoughtful expression",
+      "note": "何かを考えているような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_017",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "安心した表情",
+      "value_en": "relieved expression",
+      "note": "緊張が解けたような表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_emotions_018",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "得意げな表情",
+      "value_en": "smug expression",
+      "note": "自信や満足を見せる表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_001",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "こちらを見る",
+      "value_en": "looking at viewer",
+      "note": "視線を画面の手前へ向ける。顔の向きは別の指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_002",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "視線を外す",
+      "value_en": "looking away",
+      "note": "視線を画面の手前から外す。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_003",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "上を見る",
+      "value_en": "looking up",
+      "note": "視線を上へ向ける。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_004",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "下を見る",
+      "value_en": "looking down",
+      "note": "視線を下へ向ける。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_005",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "横を見る",
+      "value_en": "looking to the side",
+      "note": "視線を左右どちらかへ向ける。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_006",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "後ろを見る",
+      "value_en": "looking back",
+      "note": "後方へ視線を向ける。身体や顔の向きにも影響する場合がある。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_007",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "相手を見る",
+      "value_en": "looking at another person",
+      "note": "場面にいる別の人物へ視線を向ける。人数は別に指定する。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_008",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "互いを見る",
+      "value_en": "looking at each other",
+      "note": "複数の人物が互いへ視線を向ける。人物が複数いる場面で使う。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_009",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "手元を見る",
+      "value_en": "looking at own hands",
+      "note": "自分の手へ視線を向ける。手の動作は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_gaze_010",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "遠くを見る",
+      "value_en": "looking into the distance",
+      "note": "離れた場所へ視線を向ける。背景は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_001",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "赤面",
+      "value_en": "blush",
+      "note": "頬などに赤みを加える。感情は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_002",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "薄い赤面",
+      "value_en": "light blush",
+      "note": "控えめな頬の赤み。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_003",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "強い赤面",
+      "value_en": "heavy blush",
+      "note": "はっきりした頬の赤み。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_004",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "顔全体の赤み",
+      "value_en": "full-face blush",
+      "note": "頬だけでなく顔全体に赤みを加える。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_005",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "涙目",
+      "value_en": "teary eyes",
+      "note": "目に涙がたまった状態。頬へ流れる涙とは分ける。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_006",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "涙",
+      "value_en": "tears",
+      "note": "涙を描く基本指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_007",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "涙が頬を流れる",
+      "value_en": "tears streaming down cheeks",
+      "note": "目から頬へ涙が流れた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_008",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "泣く",
+      "value_en": "crying",
+      "note": "泣いている表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_009",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "汗",
+      "value_en": "sweat",
+      "note": "顔や身体に汗を描く指定。顔だけに限定されない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_010",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "漫画的な汗のしずく",
+      "value_en": "sweatdrop",
+      "note": "顔の横などに大きな汗の記号を描く表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_011",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "目の下のくま",
+      "value_en": "bags under eyes",
+      "note": "目の下に疲れを感じる陰やふくらみを加える。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_changes_012",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "鼻の赤み",
+      "value_en": "red nose",
+      "note": "鼻に赤みを加える指定。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_comic_001",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "猫のような口",
+      "value_en": "cat mouth",
+      "note": "猫を連想する曲線で口を描く、漫画的な表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_comic_002",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "三角形の口",
+      "value_en": "triangle mouth",
+      "note": "口を三角形にする簡略化した表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_comic_003",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "波線の口",
+      "value_en": "wavy mouth",
+      "note": "口を波打つ線にする漫画的な表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_comic_004",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "震える口",
+      "value_en": "trembling mouth",
+      "note": "口元が震えるような表現。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_comic_005",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "顔に陰が落ちる",
+      "value_en": "shaded face",
+      "note": "顔を陰で覆う演出。通常の照明とは別の漫画的な使い方もある。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_worried_brows",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "困り眉",
+      "value_en": "worried eyebrows",
+      "note": "眉尻が下がり、困ったように見える眉の表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_drooped_brows",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "眉を下げる",
+      "value_en": "drooped eyebrows",
+      "note": "眉が下がった状態。感情や性格は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_brow_twitch",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "眉をぴくりと動かす",
+      "value_en": "eyebrow twitch",
+      "note": "眉がわずかに跳ねるように動く表情。一枚絵では変化が表れにくい場合がある。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_empty_eyes",
+      "folderId": "eg26_face_v1_f_eye_expressions",
+      "label_jp": "虚ろな目",
+      "value_en": "empty eyes",
+      "note": "焦点や生気を感じさせない目の表情。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_selected_chapped",
+      "folderId": "eg26_face_v1_f_lip_states",
+      "label_jp": "荒れた唇",
+      "value_en": "chapped lips",
+      "note": "乾燥して表面が荒れ、ひび割れた唇の状態。",
+      "nsfw": false
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_001",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "くすくす笑う",
+      "value_en": "giggling",
+      "nsfw": false,
+      "note": "小さな声で笑うような表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_002",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "ほっとした笑顔",
+      "value_en": "relieved smile",
+      "nsfw": false,
+      "note": "安心した様子で口元がゆるむ笑顔。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_003",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "ふくれっ面",
+      "value_en": "pout",
+      "nsfw": false,
+      "note": "不満げに唇を突き出した口元。頬の膨らみは固定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_004",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "睨む",
+      "value_en": "glaring",
+      "nsfw": false,
+      "note": "鋭い目つきで対象を見る。視線の相手は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_005",
+      "folderId": "eg26_face_v1_f_expressive_actions",
+      "label_jp": "大声を出す",
+      "value_en": "shouting",
+      "nsfw": false,
+      "note": "口を開けて声を張り上げる様子。怒りなどの理由は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_006",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "もどかしい表情",
+      "value_en": "frustrated",
+      "nsfw": false,
+      "note": "思い通りにならず、いら立ちがにじむ表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_007",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "怒りマーク",
+      "value_en": "anger vein",
+      "nsfw": false,
+      "note": "額などに浮く血管を記号化した、漫画的な怒りの印。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_008",
+      "folderId": "eg26_face_v1_f_eyebrow_states",
+      "label_jp": "V字の眉",
+      "value_en": "v-shaped eyebrows",
+      "nsfw": false,
+      "note": "左右の眉が中央に向かって下がり、V字状に見える形。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_009",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "激怒した表情",
+      "value_en": "furious",
+      "nsfw": false,
+      "note": "強い怒りを示す表情。怒鳴る動作は含めない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_010",
+      "folderId": "eg26_face_v1_f_expressive_actions",
+      "label_jp": "すすり泣く",
+      "value_en": "sobbing",
+      "nsfw": false,
+      "note": "息を詰まらせるように泣く様子。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_011",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "しょんぼりした表情",
+      "value_en": "dejected",
+      "nsfw": false,
+      "note": "落ち込んで元気を失ったような表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_012",
+      "folderId": "eg26_face_v1_f_expressive_actions",
+      "label_jp": "涙をぬぐう",
+      "value_en": "wiping tears",
+      "nsfw": false,
+      "note": "手などで涙を拭く動作。拭く道具は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_013",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "少し驚いた表情",
+      "value_en": "slightly surprised",
+      "nsfw": false,
+      "note": "小さな驚きが顔に出ている表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_014",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "仰天した表情",
+      "value_en": "astonished",
+      "nsfw": false,
+      "note": "予想外のことに強く驚いた表情。嬉しさは指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_015",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "呆然とした表情",
+      "value_en": "stunned",
+      "nsfw": false,
+      "note": "衝撃や驚きで反応が止まったような表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_016",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "強く怯えた表情",
+      "value_en": "terrified",
+      "nsfw": false,
+      "note": "強い恐怖を示す表情。恐怖の対象は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_017",
+      "folderId": "eg26_face_v1_f_expressive_actions",
+      "label_jp": "震える",
+      "value_en": "trembling",
+      "nsfw": false,
+      "note": "小刻みに震える様子。顔だけでなく体の動きにも影響する指定。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_018",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "緊張した表情",
+      "value_en": "nervous",
+      "nsfw": false,
+      "note": "落ち着かず、緊張しているような表情。発汗は含めない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_019",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "パニックの表情",
+      "value_en": "panicked",
+      "nsfw": false,
+      "note": "強い動揺で落ち着きを失ったような表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_020",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "嫌悪した表情",
+      "value_en": "disgusted",
+      "nsfw": false,
+      "note": "嫌なものに接して顔をそむけたくなるような表情。視線の方向は固定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_021",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "顔をしかめる",
+      "value_en": "grimacing",
+      "nsfw": false,
+      "note": "口元や頬をこわばらせ、顔をしかめた表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_022",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "うんざりした表情",
+      "value_en": "annoyed",
+      "nsfw": false,
+      "note": "わずらわしさや、うんざりした気持ちが顔に出た表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_023",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "軽蔑した表情",
+      "value_en": "contemptuous",
+      "nsfw": false,
+      "note": "相手を軽く見ているような冷たい表情。視線の対象は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_024",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "冷笑",
+      "value_en": "sneer",
+      "nsfw": false,
+      "note": "口元をゆがめ、相手をあざ笑うような笑み。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_025",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "嘲笑する笑顔",
+      "value_en": "derisive smile",
+      "nsfw": false,
+      "note": "相手をからかったり、あざけったりするような笑顔。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_026",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "無関心な表情",
+      "value_en": "indifferent",
+      "nsfw": false,
+      "note": "興味や関心が薄いように見える表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_027",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "落ち着いた表情",
+      "value_en": "calm expression",
+      "nsfw": false,
+      "note": "力みが少なく、穏やかに落ち着いた表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_028",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "注意深く見つめる",
+      "value_en": "scrutinizing",
+      "nsfw": false,
+      "note": "細部を確かめるように注意深く見る様子。対象は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_029",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "呆れた表情",
+      "value_en": "exasperated",
+      "nsfw": false,
+      "note": "困り果て、呆れやいら立ちがにじむ表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_030",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "困り果てた表情",
+      "value_en": "troubled",
+      "nsfw": false,
+      "note": "悩みや困難を抱え、困り果てたような表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_031",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "興味津々の表情",
+      "value_en": "curious expression",
+      "nsfw": false,
+      "note": "何かに関心を持ち、確かめたそうな表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_032",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "横目で見る",
+      "value_en": "side-eyed",
+      "nsfw": false,
+      "note": "顔を大きく向けず、目だけを横に寄せて見る様子。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_033",
+      "folderId": "eg26_face_v1_f_expressive_actions",
+      "label_jp": "首をかしげる",
+      "value_en": "head tilt",
+      "nsfw": false,
+      "note": "頭を左右どちらかへ傾ける動作。傾ける理由は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_034",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "動揺した表情",
+      "value_en": "upset",
+      "nsfw": false,
+      "note": "心が乱れ、落ち着かないような表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_035",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "はにかんだ表情",
+      "value_en": "bashful",
+      "nsfw": false,
+      "note": "気恥ずかしそうに、控えめな表情を見せる様子。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_036",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "てへぺろ",
+      "value_en": "tehepero",
+      "nsfw": false,
+      "note": "失敗を照れてごまかすような、舌を少し出した漫画的な表情。ウインクは別指定。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_037",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "嬉し泣き",
+      "value_en": "happy tears",
+      "nsfw": false,
+      "note": "嬉しさで涙が出た表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_038",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "邪悪な笑み",
+      "value_en": "evil grin",
+      "nsfw": false,
+      "note": "悪だくみを思わせる、歯を見せるような笑み。行為や対象は含めない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_039",
+      "folderId": "eg26_face_v1_f_changes",
+      "label_jp": "緊張による汗",
+      "value_en": "nervous sweating",
+      "nsfw": false,
+      "note": "緊張した様子で汗が出ている表現。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_040",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "唇をきゅっとすぼめる",
+      "value_en": "pursed lips",
+      "nsfw": false,
+      "note": "唇を締め、小さくすぼめた口元。キスなどの行為は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_041",
+      "folderId": "eg26_face_v1_f_mouth",
+      "label_jp": "自分の唇をかむ",
+      "value_en": "biting own lip",
+      "nsfw": false,
+      "note": "自分の唇を歯で軽くかむ動作。感情や理由は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_042",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "絶望した表情",
+      "value_en": "despair",
+      "nsfw": false,
+      "note": "希望を失ったような、強く沈んだ表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_043",
+      "folderId": "eg26_face_v1_f_smile",
+      "label_jp": "狂気を帯びた笑み",
+      "value_en": "crazy grin",
+      "nsfw": false,
+      "note": "異様に大きくゆがんだような笑み。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_044",
+      "folderId": "eg26_face_v1_f_expressive_actions",
+      "label_jp": "狂気を帯びて笑う",
+      "value_en": "crazy laugh",
+      "nsfw": false,
+      "note": "歯止めがきかないような、異様な笑い方。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_045",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "わくわくした表情",
+      "value_en": "excited",
+      "nsfw": false,
+      "note": "期待や楽しみで気持ちが高まった表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_046",
+      "folderId": "eg26_face_v1_f_expressive_actions",
+      "label_jp": "あくびをする",
+      "value_en": "yawning",
+      "nsfw": false,
+      "note": "口を大きく開けてあくびをする動作。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_047",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "疲れ切った表情",
+      "value_en": "exhausted",
+      "nsfw": false,
+      "note": "強い疲れで、力が抜けたような表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_048",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "具合が悪そう",
+      "value_en": "sick",
+      "nsfw": false,
+      "note": "体調が悪そうな様子。顔以外にも影響しうる指定で、風邪という病名は固定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_049",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "気まずそうな表情",
+      "value_en": "awkward",
+      "nsfw": false,
+      "note": "居心地が悪く、表情がぎこちなくなった様子。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_050",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "必死な表情",
+      "value_en": "desperate",
+      "nsfw": false,
+      "note": "切羽詰まって必死になっている表情。屈辱は含めない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_051",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "屈辱を感じた表情",
+      "value_en": "humiliated",
+      "nsfw": false,
+      "note": "恥をかかされ、傷ついたような表情。原因や出来事は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_052",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "満足した表情",
+      "value_en": "satisfied",
+      "nsfw": false,
+      "note": "望みが満たされ、満ち足りた表情。得意げな態度は含めない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_053",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "ぼんやり見つめる",
+      "value_en": "blank stare",
+      "nsfw": false,
+      "note": "視線を固定したまま、ぼんやりと見ている様子。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_054",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "顔文字調の表情（>o<）",
+      "value_en": ">o<",
+      "nsfw": false,
+      "note": "目をぎゅっと閉じ、口を丸く開けた顔文字調の指定。再現はモデルに依存する。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_055",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "顔文字調の表情（=_=）",
+      "value_en": "=_=",
+      "nsfw": false,
+      "note": "横線のような目を持つ顔文字調の指定。再現はモデルに依存する。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_056",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "顔文字調の表情（|_|）",
+      "value_en": "|_|",
+      "nsfw": false,
+      "note": "縦線のような目を持つ顔文字調の指定。再現はモデルに依存する。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_057",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "顔文字調の表情（=v=）",
+      "value_en": "=v=",
+      "nsfw": false,
+      "note": "横線の目と小さなV字の口を持つ顔文字調の指定。再現はモデルに依存する。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_058",
+      "folderId": "eg26_face_v1_f_expressive_actions",
+      "label_jp": "目をこする",
+      "value_en": "rubbing eyes",
+      "nsfw": false,
+      "note": "手で目の周辺をこする動作。眠気などの理由は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_059",
+      "folderId": "eg26_face_v1_f_emotions",
+      "label_jp": "慌てた表情",
+      "value_en": "flustered",
+      "nsfw": false,
+      "note": "急に動揺して、落ち着きを失ったような表情。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_060",
+      "folderId": "eg26_face_v1_f_eye_expressions",
+      "label_jp": "同心円の目",
+      "value_en": "ringed eyes",
+      "nsfw": false,
+      "note": "虹彩などに同心円の輪が見える漫画的な目。めまいの理由は指定しない。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_061",
+      "folderId": "eg26_face_v1_f_gaze",
+      "label_jp": "目をくるりと上に向ける",
+      "value_en": "rolling eyes",
+      "nsfw": false,
+      "note": "眼球を上へ回すしぐさ。白目だけにする指定とは分けて扱う。"
+    },
+    {
+      "id": "eg26_face_v1_w_expression_selected_062",
+      "folderId": "eg26_face_v1_f_comic",
+      "label_jp": "顔文字調の表情（>:)）",
+      "value_en": ">:)",
+      "nsfw": false,
+      "note": "眉を寄せた笑顔を表す顔文字調の指定。再現はモデルに依存する。"
+    }
+  ],
+  "templates": [
+    {
+      "id": "eg26_face_v1_t_eye_color",
+      "name": "瞳の色",
+      "folderId": "目・表情 / 瞳の色",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "eg26_face_v1_t_eye_color_o_0",
+          "label": "黒",
+          "value": ", black eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_1",
+          "label": "濃い茶",
+          "value": ", dark brown eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_2",
+          "label": "茶",
+          "value": ", brown eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_3",
+          "label": "琥珀",
+          "value": ", amber eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_4",
+          "label": "ヘーゼル",
+          "value": ", hazel eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_5",
+          "label": "金",
+          "value": ", golden eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_6",
+          "label": "黄",
+          "value": ", yellow eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_7",
+          "label": "緑",
+          "value": ", green eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_8",
+          "label": "青緑",
+          "value": ", teal eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_9",
+          "label": "青",
+          "value": ", blue eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_10",
+          "label": "水色",
+          "value": ", light blue eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_11",
+          "label": "紫",
+          "value": ", purple eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_12",
+          "label": "ラベンダー",
+          "value": ", lavender eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_13",
+          "label": "赤",
+          "value": ", red eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_14",
+          "label": "ピンク",
+          "value": ", pink eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_15",
+          "label": "灰",
+          "value": ", gray eyes"
+        },
+        {
+          "id": "eg26_face_v1_t_eye_color_o_16",
+          "label": "銀",
+          "value": ", silver eyes"
+        }
+      ]
+    },
+    {
+      "id": "eg26_face_v1_t_pupil",
+      "name": "瞳孔の形",
+      "folderId": "目・表情 / 瞳孔の形",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "eg26_face_v1_t_pupil_o_0",
+          "label": "丸い",
+          "value": ", round pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_1",
+          "label": "縦長",
+          "value": ", slit pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_2",
+          "label": "横長",
+          "value": ", horizontal pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_3",
+          "label": "星形",
+          "value": ", star-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_4",
+          "label": "ハート形",
+          "value": ", heart-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_selected_cross",
+          "label": "十字形",
+          "value": ", cross-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_selected_diamond",
+          "label": "ひし形",
+          "value": ", diamond-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_selected_ring",
+          "label": "リング形",
+          "value": ", ring-shaped pupils"
+        },
+        {
+          "id": "eg26_face_v1_t_pupil_o_selected_multi",
+          "label": "複数の瞳孔",
+          "value": ", multi-pupil eyes"
+        }
+      ]
+    },
+    {
+      "id": "eg26_face_v1_t_highlight",
+      "name": "目のハイライト",
+      "folderId": "目・表情 / 目のハイライト",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "eg26_face_v1_t_highlight_o_0",
+          "label": "小さな光",
+          "value": ", small eye highlights"
+        },
+        {
+          "id": "eg26_face_v1_t_highlight_o_1",
+          "label": "複数の光",
+          "value": ", multiple eye highlights"
+        },
+        {
+          "id": "eg26_face_v1_t_highlight_o_2",
+          "label": "星形の光",
+          "value": ", star-shaped eye highlights"
+        },
+        {
+          "id": "eg26_face_v1_t_highlight_o_3",
+          "label": "ハイライトなし",
+          "value": ", no eye highlights"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

@@ -1,0 +1,1879 @@
+{
+  "folders": [
+    {
+      "id": "mg26_action_v1",
+      "name": "動作",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_move",
+      "name": "移動・運動",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_daily",
+      "name": "日常動作",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_manipulate",
+      "name": "物を扱う",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_self",
+      "name": "自分・服・髪を扱う",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_greeting",
+      "name": "挨拶・身振り",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_combat",
+      "name": "武器・魔法の動作",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_touch",
+      "name": "相手へ手を添える",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_embrace",
+      "name": "抱く・支える",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_close",
+      "name": "人物同士の位置・近づく動作",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_kiss",
+      "name": "穏やかなキスの表現",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_f_hide",
+      "name": "覆う・包まる・隠れる",
+      "parentId": "mg26_action_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "mg26_action_v1_w_move_001",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "歩く",
+      "value_en": "walking",
+      "note": "足を交互に動かして移動する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_002",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "走る",
+      "value_en": "running",
+      "note": "歩くより速く足を動かして移動する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_003",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "跳ぶ",
+      "value_en": "jumping",
+      "note": "地面などから体を空中へ上げる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_004",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "跳ねる",
+      "value_en": "hopping",
+      "note": "片足や両足で小さく跳ねる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_005",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "登る",
+      "value_en": "climbing",
+      "note": "体を上方へ移動させる動作。登る対象は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_006",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "階段を上る",
+      "value_en": "walking up stairs",
+      "note": "階段を上へ移動する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_007",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "階段を下りる",
+      "value_en": "walking down stairs",
+      "note": "階段を下へ移動する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_008",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "泳ぐ",
+      "value_en": "swimming",
+      "note": "水中で手足を動かして移動する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_009",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "潜る",
+      "value_en": "diving",
+      "note": "水の中へ体を入れる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_010",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "這う",
+      "value_en": "crawling",
+      "note": "手足で支えながら低い位置を移動する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_011",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "踊る",
+      "value_en": "dancing",
+      "note": "体をリズムに合わせて動かす動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_012",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "ストレッチする",
+      "value_en": "stretching",
+      "note": "手足や体を伸ばす動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_013",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "パンチする",
+      "value_en": "punching",
+      "note": "拳を前へ打ち出す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_014",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "蹴る",
+      "value_en": "kicking",
+      "note": "足を打ち出す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_015",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "ハイキック",
+      "value_en": "high kick",
+      "note": "足を高く上げて蹴る動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_016",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "ヒップアタック",
+      "value_en": "hip attack",
+      "note": "腰や臀部を前へ出してぶつかるような動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_017",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "倒れる",
+      "value_en": "falling down",
+      "note": "体の支えを失って下方へ倒れる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_018",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "転ぶ",
+      "value_en": "tripping",
+      "note": "足が引っかかるなどして転ぶ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_019",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "転がる",
+      "value_en": "rolling",
+      "note": "体を回転させながら地面などを移動する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_020",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "キックフリップ",
+      "value_en": "kickflip",
+      "note": "スケートボードを足で回転させる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_021",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "自転車に乗る",
+      "value_en": "riding bicycle",
+      "note": "自転車に乗って進む動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_move_022",
+      "folderId": "mg26_action_v1_f_move",
+      "label_jp": "車を運転する",
+      "value_en": "driving",
+      "note": "乗り物を運転する動作。車種は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_023",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "眠る",
+      "value_en": "sleeping",
+      "note": "眠っている状態。寝姿勢はポーズで別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_024",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "起きる",
+      "value_en": "waking up",
+      "note": "眠りから目を覚ます動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_025",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "食べる",
+      "value_en": "eating",
+      "note": "食べ物を口に運ぶなどの動作。食べ物は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_026",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "飲む",
+      "value_en": "drinking",
+      "note": "飲み物を口に運ぶ動作。飲み物は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_027",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "料理する",
+      "value_en": "cooking",
+      "note": "食材や調理器具を使って料理する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_028",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "皿を洗う",
+      "value_en": "washing dishes",
+      "note": "食器を洗う動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_029",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "掃除する",
+      "value_en": "cleaning",
+      "note": "道具などを使って周囲をきれいにする動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_030",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "掃く",
+      "value_en": "sweeping",
+      "note": "ほうきなどで床を掃く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_031",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "拭く",
+      "value_en": "wiping",
+      "note": "布などで表面を拭く動作。対象は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_032",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "読書する",
+      "value_en": "reading",
+      "note": "本などの文字や絵を読む動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_033",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "文字を書く",
+      "value_en": "writing",
+      "note": "筆記具などで文字を書く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_034",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "絵を描く",
+      "value_en": "drawing",
+      "note": "道具などを使って絵を描く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_035",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "勉強する",
+      "value_en": "studying",
+      "note": "教材などを使って学ぶ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_036",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "キーボードを打つ",
+      "value_en": "typing",
+      "note": "指でキーを押して文字などを入力する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_037",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "ゲームをする",
+      "value_en": "playing video game",
+      "note": "ゲーム機などを操作する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_038",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "スマートフォンを使う",
+      "value_en": "using smartphone",
+      "note": "スマートフォンを操作する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_039",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "電話をする",
+      "value_en": "talking on phone",
+      "note": "電話機などで会話する動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_040",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "写真を撮る",
+      "value_en": "taking photo",
+      "note": "カメラなどで写真を撮る動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_041",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "自撮りする",
+      "value_en": "taking selfie",
+      "note": "自分を撮影する動作。人物の性別は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_042",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "配信する",
+      "value_en": "live streaming",
+      "note": "画面や機器を使って配信する様子。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_043",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "歌う",
+      "value_en": "singing",
+      "note": "口を使って歌う動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_044",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "ハミングする",
+      "value_en": "humming",
+      "note": "口を閉じるなどして小さく歌う動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_045",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "楽器を演奏する",
+      "value_en": "playing instrument",
+      "note": "楽器を使って演奏する動作。楽器は別指定。",
+      "nsfw": false,
+      "templateIds": [
+        "mg26_action_v1_t_instrument"
+      ]
+    },
+    {
+      "id": "mg26_action_v1_w_daily_046",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "園芸をする",
+      "value_en": "gardening",
+      "note": "植物や土を扱う動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_047",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "水をやる",
+      "value_en": "watering plants",
+      "note": "植物へ水を注ぐ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_048",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "洗濯物を干す",
+      "value_en": "hanging laundry",
+      "note": "衣類などを広げて干す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_049",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "髪をとかす",
+      "value_en": "brushing hair",
+      "note": "ブラシなどで髪を整える動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_050",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "歯を磨く",
+      "value_en": "brushing teeth",
+      "note": "歯ブラシなどで歯を磨く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_051",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "手を洗う",
+      "value_en": "washing hands",
+      "note": "水などで手を洗う動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_daily_052",
+      "folderId": "mg26_action_v1_f_daily",
+      "label_jp": "顔を洗う",
+      "value_en": "washing face",
+      "note": "水などで顔を洗う動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_053",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "物を持つ（装飾用の基本）",
+      "value_en": "holding object",
+      "note": "物を手で持つ基本カード。対象を装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "mg26_action_v1_t_holdwhat"
+      ]
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_054",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "ハンドルを握る",
+      "value_en": "holding steering wheel",
+      "note": "乗り物のハンドルを手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_055",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "本を持つ",
+      "value_en": "holding book",
+      "note": "本を手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_056",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "カップを持つ",
+      "value_en": "holding cup",
+      "note": "カップを手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_057",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "傘を持つ",
+      "value_en": "holding umbrella",
+      "note": "傘を手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_058",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "花を持つ",
+      "value_en": "holding flower",
+      "note": "花を手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_059",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "電話機を持つ",
+      "value_en": "holding phone",
+      "note": "電話機を手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_060",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "カメラを持つ",
+      "value_en": "holding camera",
+      "note": "カメラを手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_061",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "動物を抱える",
+      "value_en": "holding animal",
+      "note": "動物を手や腕で支える動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_062",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "荷物を運ぶ",
+      "value_en": "carrying box",
+      "note": "箱状の荷物を持って運ぶ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_063",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "物を渡す",
+      "value_en": "handing over object",
+      "note": "手に持った物を相手側へ渡す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_064",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "物を受け取る",
+      "value_en": "receiving object",
+      "note": "相手などから物を受け取る動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_065",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "物を拾う",
+      "value_en": "picking up object",
+      "note": "低い位置にある物を取り上げる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_066",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "手を伸ばす",
+      "value_en": "reaching",
+      "note": "手や腕を対象へ伸ばす動作。対象は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_067",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "物を押す",
+      "value_en": "pushing",
+      "note": "手などで対象を押す動作。対象は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_068",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "物を引く",
+      "value_en": "pulling",
+      "note": "手などで対象を引く動作。対象は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_069",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "物を投げる",
+      "value_en": "throwing",
+      "note": "手などから物を放つ動作。対象は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_070",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "物をつかむ",
+      "value_en": "grabbing object",
+      "note": "手で物をつかむ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_071",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "画面をタップする",
+      "value_en": "tapping screen",
+      "note": "指で画面に触れる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_072",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "ボタンを押す",
+      "value_en": "pressing button",
+      "note": "指などでボタンを押す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_073",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "指を鳴らす",
+      "value_en": "snapping fingers",
+      "note": "指を弾くようにして鳴らす動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_074",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "手ですくう",
+      "value_en": "cupping water in hands",
+      "note": "両手などを丸めて水を受ける動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_075",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "手であおぐ",
+      "value_en": "fanning with hand",
+      "note": "手を動かして風を送る動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_manipulate_076",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "手に息を吹きかける",
+      "value_en": "breathing on hands",
+      "note": "手の方向へ息を吹きかける動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_077",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "鼻をつまむ",
+      "value_en": "pinching nose",
+      "note": "自分の鼻を指でつまむ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_078",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "服を引っ張る",
+      "value_en": "pulling own clothes",
+      "note": "自分の服の布を引く動作。露出は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_079",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "服をつかむ",
+      "value_en": "grabbing own clothes",
+      "note": "自分の服の布をつかむ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_080",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "髪をつかむ",
+      "value_en": "grabbing own hair",
+      "note": "自分の髪を手でつかむ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_081",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "スカートの端を持つ",
+      "value_en": "skirt hold",
+      "note": "スカートの端を手で持つ動作。めくり上げることは固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_082",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "リボンを持つ",
+      "value_en": "holding ribbon",
+      "note": "リボンを手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_083",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "ネクタイを持つ",
+      "value_en": "holding necktie",
+      "note": "ネクタイを手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_084",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "自分の襟をつかむ",
+      "value_en": "grabbing own collar",
+      "note": "自分の服の襟を手でつかむ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_085",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "自分の腕をつかむ",
+      "value_en": "grabbing own arm",
+      "note": "自分の腕を反対側の手でつかむ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_086",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "髪を束ねる",
+      "value_en": "bunching hair",
+      "note": "髪を手でまとめる動作。髪型は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_087",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "髪に手を入れる",
+      "value_en": "hand in own hair",
+      "note": "自分の髪の中に手を入れる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_088",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "自分の尾を持つ",
+      "value_en": "holding own tail",
+      "note": "自分の尾を手で持つ動作。種族は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_089",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "腕を振る",
+      "value_en": "swinging arm",
+      "note": "腕を大きく振る動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_090",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "身じろぎする",
+      "value_en": "fidgeting",
+      "note": "体や手足を小さく落ち着きなく動かす様子。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_091",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "肩をすくめる",
+      "value_en": "shrugging",
+      "note": "肩を上げる動作。失望などの感情は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_092",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "体を小さくする",
+      "value_en": "cowering",
+      "note": "上体を縮め、身を守るような動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_093",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "手が震える",
+      "value_en": "trembling hands",
+      "note": "手が小刻みに震える動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_self_094",
+      "folderId": "mg26_action_v1_f_self",
+      "label_jp": "拳を突き上げる",
+      "value_en": "fist pump",
+      "note": "拳を上へ勢いよく出す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_095",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "手を振る",
+      "value_en": "waving",
+      "note": "手を左右などへ振る挨拶の動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_096",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "手招きする",
+      "value_en": "beckoning",
+      "note": "手や指を内側へ動かして呼ぶ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_097",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "手を差し出す",
+      "value_en": "offering hand",
+      "note": "相手側へ手を差し伸べる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_098",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "拍手する",
+      "value_en": "clapping",
+      "note": "左右の手を打ち合わせる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_099",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "お辞儀する",
+      "value_en": "bowing",
+      "note": "上体や頭を前へ下げる挨拶。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_100",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "カーテシー",
+      "value_en": "curtsey",
+      "note": "膝を曲げて体を下げる挨拶の動作。性別は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_101",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "祈る",
+      "value_en": "praying",
+      "note": "手を合わせるなどして祈る様子。宗教は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_102",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "お願いする",
+      "value_en": "pleading",
+      "note": "手を合わせるなどして願う様子。要求の内容は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_103",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "応援する",
+      "value_en": "cheering",
+      "note": "手や腕を動かして応援する動作。小物は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_104",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "身構えて驚く",
+      "value_en": "startled pose",
+      "note": "突然のことに体をこわばらせるような反応。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_greeting_105",
+      "folderId": "mg26_action_v1_f_greeting",
+      "label_jp": "変身する演技",
+      "value_en": "pretending to transform",
+      "note": "変身を模す演技。特定の作品は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_combat_106",
+      "folderId": "mg26_action_v1_f_combat",
+      "label_jp": "武器を持つ",
+      "value_en": "holding weapon",
+      "note": "武器を手で持つ動作。種類は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_combat_107",
+      "folderId": "mg26_action_v1_f_combat",
+      "label_jp": "剣を持つ",
+      "value_en": "holding sword",
+      "note": "剣を手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_combat_108",
+      "folderId": "mg26_action_v1_f_combat",
+      "label_jp": "弓を引く",
+      "value_en": "drawing bow",
+      "note": "弓の弦を引く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_combat_109",
+      "folderId": "mg26_action_v1_f_combat",
+      "label_jp": "狙いを定める",
+      "value_en": "aiming",
+      "note": "対象へ狙いを向ける動作。武器の種類は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_combat_110",
+      "folderId": "mg26_action_v1_f_combat",
+      "label_jp": "防ぐ",
+      "value_en": "blocking",
+      "note": "手や装備などで対象を防ぐ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_combat_111",
+      "folderId": "mg26_action_v1_f_combat",
+      "label_jp": "魔法を唱える",
+      "value_en": "casting spell",
+      "note": "魔法を使う演技の動作。光や効果は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_combat_112",
+      "folderId": "mg26_action_v1_f_combat",
+      "label_jp": "杖を持つ",
+      "value_en": "holding staff",
+      "note": "杖を手で持つ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_combat_113",
+      "folderId": "mg26_action_v1_f_combat",
+      "label_jp": "剣を振る",
+      "value_en": "swinging sword",
+      "note": "剣を振る動作。相手や結果は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_114",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の頭に手を添える",
+      "value_en": "hand on another's head",
+      "note": "相手の頭へ手を置く動作。人物の属性は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_115",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の耳に手を添える",
+      "value_en": "hand on another's ear",
+      "note": "相手の耳付近へ手を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_116",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の顔に手を添える",
+      "value_en": "hand on another's face",
+      "note": "相手の顔へ手を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_117",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の頬に手を添える",
+      "value_en": "hand on another's cheek",
+      "note": "相手の頬へ手を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_118",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の顎に手を添える",
+      "value_en": "hand on another's chin",
+      "note": "相手の顎へ手を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_119",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の首に手を添える",
+      "value_en": "hand on another's neck",
+      "note": "相手の首付近へ手を置く動作。力をかけることは指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_120",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の胸元に手を添える",
+      "value_en": "hand on another's chest",
+      "note": "相手の胸元へ手を置く動作。衣服・露出・行為は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_121",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の肩に手を添える",
+      "value_en": "hand on another's shoulder",
+      "note": "相手の肩へ手を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_122",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の腰に手を添える",
+      "value_en": "hand on another's waist",
+      "note": "相手の腰へ手を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_123",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手のお腹に手を添える",
+      "value_en": "hand on another's stomach",
+      "note": "相手の腹部へ手を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_124",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の腕に手を添える",
+      "value_en": "hand on another's arm",
+      "note": "相手の腕へ手を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_125",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "相手の髪を整える",
+      "value_en": "adjusting another's hair",
+      "note": "相手の髪を手で整える動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_126",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "頭をなでる",
+      "value_en": "patting head",
+      "note": "相手などの頭を手でなでる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_127",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "握手する",
+      "value_en": "handshake",
+      "note": "相手と手を握り合う動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_128",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "手をつなぐ",
+      "value_en": "holding hands",
+      "note": "相手と手をつないだ状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_129",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "頬をつつく",
+      "value_en": "poking cheek",
+      "note": "相手などの頬を指で軽くつつく動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_touch_130",
+      "folderId": "mg26_action_v1_f_touch",
+      "label_jp": "肩をたたく",
+      "value_en": "patting shoulder",
+      "note": "相手の肩を手で軽くたたく動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_131",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "抱きしめる",
+      "value_en": "hugging",
+      "note": "腕で相手や対象を囲む動作。人物の属性は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "mg26_action_v1_t_hugtype"
+      ]
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_132",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "互いに抱き合う",
+      "value_en": "mutual hug",
+      "note": "互いに腕を回して抱く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_133",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "背後から抱きしめる",
+      "value_en": "hug from behind",
+      "note": "相手の背後から腕を回す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_134",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "腰に腕を回して抱く",
+      "value_en": "waist hug",
+      "note": "相手の腰付近を腕で囲む動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_135",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "横から肩を抱く",
+      "value_en": "arm around another's shoulders",
+      "note": "相手の肩へ腕を回す動作。腕を抱えることとは区別。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_136",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "頭を寄せ合う",
+      "value_en": "heads together",
+      "note": "互いの頭を近づけた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_137",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "おんぶする",
+      "value_en": "piggyback",
+      "note": "相手を背中側で支えて運ぶ動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_138",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "横抱きにする",
+      "value_en": "princess carry",
+      "note": "相手の背や脚を腕で支える横抱き。人物の属性は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_139",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "赤ちゃんを抱える",
+      "value_en": "holding baby",
+      "note": "赤ちゃんを腕で支える動作。抱く人物の属性は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_140",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "ぬいぐるみを抱く",
+      "value_en": "hugging stuffed toy",
+      "note": "ぬいぐるみを腕で抱える動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_141",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "クッションを抱く",
+      "value_en": "hugging cushion",
+      "note": "クッションを腕で抱える動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_142",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "テディベアを抱く",
+      "value_en": "hugging teddy bear",
+      "note": "熊形のぬいぐるみを腕で抱える動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_143",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "強く抱きしめる",
+      "value_en": "tight hug",
+      "note": "腕で相手や対象をしっかり囲む動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_144",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "片腕で抱く",
+      "value_en": "one-arm hug",
+      "note": "片方の腕で相手を囲む動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_145",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "相手の胸元に頭を預ける",
+      "value_en": "head resting on another's chest",
+      "note": "相手の胸元へ頭を寄せる動作。衣服・露出は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_146",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "相手の背へ顔を寄せる",
+      "value_en": "face against another's back",
+      "note": "相手の背中側へ顔を近づけた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_147",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "相手の肩に頭を預ける",
+      "value_en": "head on another's shoulder",
+      "note": "相手の肩へ頭を寄せた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_148",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "相手の膝に座る",
+      "value_en": "sitting on another's lap",
+      "note": "相手の膝の上へ座る姿勢。行為や衣服は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_149",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "膝枕",
+      "value_en": "lap pillow",
+      "note": "相手の膝の上へ頭を預ける状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_150",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "抱き上げる",
+      "value_en": "lifting another person",
+      "note": "相手の体を腕などで支えて持ち上げる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_embrace_151",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "一緒にゆっくり踊る",
+      "value_en": "slow dancing together",
+      "note": "相手と近い位置でゆっくり踊る動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_152",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "向かい合う",
+      "value_en": "face-to-face",
+      "note": "互いの顔や体を正面へ向けた位置関係。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_153",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "背中合わせ",
+      "value_en": "back-to-back",
+      "note": "互いの背中を近づけた位置関係。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_154",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "前後に並ぶ",
+      "value_en": "front-to-back",
+      "note": "一方の前にもう一方が位置する関係。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_155",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "頬を寄せ合う",
+      "value_en": "cheek-to-cheek",
+      "note": "互いの頬を近づけた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_156",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "額を寄せ合う",
+      "value_en": "foreheads together",
+      "note": "互いの額を近づけた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_157",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "頬をすり寄せる",
+      "value_en": "nuzzling",
+      "note": "顔や頬を相手や対象へ軽くすり寄せる動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_158",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "相手の首に腕を回す",
+      "value_en": "arms around another's neck",
+      "note": "相手の首付近に腕を回す動作。締め付けることは指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_159",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "相手の背に腕を回す",
+      "value_en": "arms around another's back",
+      "note": "相手の背中側へ腕を回す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_160",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "相手の腰に腕を回す",
+      "value_en": "arms around another's waist",
+      "note": "相手の腰付近へ腕を回す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_161",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "相手に寄りかかる",
+      "value_en": "leaning on person",
+      "note": "相手へ体を預ける動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_162",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "体を寄せる",
+      "value_en": "pressing against another person",
+      "note": "相手へ体を近づける動作。行為や衣服は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_close_163",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "人に囲まれる",
+      "value_en": "surrounded by people",
+      "note": "周囲に人々がいる状況。性別・年齢・人数は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_164",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "キス",
+      "value_en": "kissing",
+      "note": "相手へ口元を近づけてキスする動作。人物の属性は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_165",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "キス寸前",
+      "value_en": "imminent kiss",
+      "note": "キスをする直前の距離感。まだ接触していない状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_166",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "キスを示唆する",
+      "value_en": "implied kiss",
+      "note": "直接見せず、キスを連想する場面の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_167",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "見る側へ近づくキス",
+      "value_en": "incoming kiss",
+      "note": "見る側に向かって顔を近づけるキスの表現。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_168",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "キスを待つ",
+      "value_en": "waiting for kiss",
+      "note": "相手からのキスを待つ仕草。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_169",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "投げキス",
+      "value_en": "blowing kiss",
+      "note": "手や口元でキスを送る仕草。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_170",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "キスの直後",
+      "value_en": "after kiss",
+      "note": "キスを終えた直後の場面。表情は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_171",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "マスク越しのキス",
+      "value_en": "kissing through mask",
+      "note": "口元のマスクを挟んだキスの動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_172",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "つま先立ちでキス",
+      "value_en": "tiptoe kiss",
+      "note": "つま先立ちをしてキスする動作。身長差の数値は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_173",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "頬へのキス",
+      "value_en": "kissing cheek",
+      "note": "相手の頬へキスする動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_174",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "両頬へのキス",
+      "value_en": "double cheek kiss",
+      "note": "相手の左右の頬へキスする仕草。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_175",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "額へのキス",
+      "value_en": "kissing forehead",
+      "note": "相手の額へキスする動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_176",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "手へのキス",
+      "value_en": "kissing another's hand",
+      "note": "相手の手へキスする動作。指と手の甲は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_177",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "鼻へのキス",
+      "value_en": "kissing nose",
+      "note": "相手の鼻付近へキスする動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_kiss_178",
+      "folderId": "mg26_action_v1_f_kiss",
+      "label_jp": "髪へのキス",
+      "value_en": "kissing hair",
+      "note": "相手の髪へキスする動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_179",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "額を覆う",
+      "value_en": "covering forehead",
+      "note": "手などで額を覆う動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_180",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "体を覆う",
+      "value_en": "covering body",
+      "note": "手や布などで体を覆う動作。露出は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_181",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "お腹を覆う",
+      "value_en": "covering stomach",
+      "note": "手や布などで腹部を覆う動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_182",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "腕を胸の前へ回す",
+      "value_en": "arm across chest",
+      "note": "腕を胸元の前へ回す動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_183",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "ブランケットに包まる",
+      "value_en": "wrapped in blanket",
+      "note": "ブランケットを体の周りへ巻く状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_184",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "布団の下へ入る",
+      "value_en": "under covers",
+      "note": "布団やシーツの下へ入った状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_185",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "タオルを体に巻く",
+      "value_en": "wrapped in towel",
+      "note": "タオルを体の周りへ巻く状態。裸の指定は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_186",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "シーツで体を覆う",
+      "value_en": "covered with sheet",
+      "note": "シーツを体に掛ける状態。裸の指定は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_187",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "こたつの下へ入る",
+      "value_en": "under kotatsu",
+      "note": "こたつの布団の下などへ入った状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_188",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "木の陰に隠れる",
+      "value_en": "hiding behind tree",
+      "note": "木の後ろに身を置く動作。覗くかどうかは別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_189",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "ドアの陰に隠れる",
+      "value_en": "hiding behind door",
+      "note": "ドアの後ろに身を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_190",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "電柱の陰に隠れる",
+      "value_en": "hiding behind utility pole",
+      "note": "電柱の後ろに身を置く動作。遠近法は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_191",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "壁の陰に隠れる",
+      "value_en": "hiding behind wall",
+      "note": "壁の後ろに身を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_192",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "狭い場所にいる",
+      "value_en": "in cramped space",
+      "note": "窮屈な場所に収まっている状態。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_193",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "ロッカーの中へ入る",
+      "value_en": "in locker",
+      "note": "ロッカーの中にいる状態。姿勢や視点は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_194",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "相手の後ろに隠れる",
+      "value_en": "hiding behind another",
+      "note": "別の人物の後ろに身を置く動作。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_hide_195",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "隠れた場所から覗く",
+      "value_en": "peeking out",
+      "note": "物陰などから顔や体の一部を出して見る動作。",
+      "nsfw": false,
+      "templateIds": [
+        "mg26_action_v1_t_hidingwhere"
+      ]
+    },
+    {
+      "id": "mg26_action_v1_w_extra_195",
+      "folderId": "mg26_action_v1_f_manipulate",
+      "label_jp": "平手でたたく",
+      "value_en": "slapping",
+      "note": "手のひらで対象をたたく動作。対象や結果は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_extra_196",
+      "folderId": "mg26_action_v1_f_embrace",
+      "label_jp": "相手の腕に飛び込む",
+      "value_en": "jumping into another's arms",
+      "note": "相手へ体を跳ばし、相手の腕で受け止められる動作。脚を絡めることは固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_extra_197",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "胸元を寄せて向かい合う",
+      "value_en": "chest-to-chest",
+      "note": "互いに体の前面を近づけた位置関係。衣服・露出・行為は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_extra_198",
+      "folderId": "mg26_action_v1_f_close",
+      "label_jp": "互いの脚を交差させる",
+      "value_en": "intertwined legs",
+      "note": "互いの脚が交差した状態。行為や衣服は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_extra_199",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "胸を覆う",
+      "value_en": "covering breasts",
+      "note": "手・腕・布などで胸を覆う状態。裸は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_extra_200",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "片側の胸を覆う",
+      "value_en": "covering one breast",
+      "note": "手・腕・布などで片側の胸を覆う状態。反対側の状態は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "mg26_action_v1_w_extra_201",
+      "folderId": "mg26_action_v1_f_hide",
+      "label_jp": "臀部を覆う",
+      "value_en": "covering butt",
+      "note": "手や布などで臀部を覆う状態。衣服の有無は指定しない。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "mg26_action_v1_t_holdwhat",
+      "name": "持つ物",
+      "folderId": "動作 / 持つ物",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_0",
+          "label": "本",
+          "value": ", holding book"
+        },
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_1",
+          "label": "カップ",
+          "value": ", holding cup"
+        },
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_2",
+          "label": "傘",
+          "value": ", holding umbrella"
+        },
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_3",
+          "label": "花",
+          "value": ", holding flower"
+        },
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_4",
+          "label": "電話機",
+          "value": ", holding phone"
+        },
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_5",
+          "label": "カメラ",
+          "value": ", holding camera"
+        },
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_6",
+          "label": "箱",
+          "value": ", holding box"
+        },
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_7",
+          "label": "ペン",
+          "value": ", holding pen"
+        },
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_8",
+          "label": "かばん",
+          "value": ", holding bag"
+        },
+        {
+          "id": "mg26_action_v1_t_holdwhat_o_9",
+          "label": "帽子",
+          "value": ", holding hat"
+        }
+      ]
+    },
+    {
+      "id": "mg26_action_v1_t_instrument",
+      "name": "楽器の種類",
+      "folderId": "動作 / 楽器の種類",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "mg26_action_v1_t_instrument_o_0",
+          "label": "ピアノ",
+          "value": ", playing piano"
+        },
+        {
+          "id": "mg26_action_v1_t_instrument_o_1",
+          "label": "ギター",
+          "value": ", playing guitar"
+        },
+        {
+          "id": "mg26_action_v1_t_instrument_o_2",
+          "label": "バイオリン",
+          "value": ", playing violin"
+        },
+        {
+          "id": "mg26_action_v1_t_instrument_o_3",
+          "label": "フルート",
+          "value": ", playing flute"
+        },
+        {
+          "id": "mg26_action_v1_t_instrument_o_4",
+          "label": "ドラム",
+          "value": ", playing drums"
+        },
+        {
+          "id": "mg26_action_v1_t_instrument_o_5",
+          "label": "トランペット",
+          "value": ", playing trumpet"
+        }
+      ]
+    },
+    {
+      "id": "mg26_action_v1_t_hugtype",
+      "name": "抱きしめ方",
+      "folderId": "動作 / 抱きしめ方",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "mg26_action_v1_t_hugtype_o_0",
+          "label": "互いに",
+          "value": ", mutual hug"
+        },
+        {
+          "id": "mg26_action_v1_t_hugtype_o_1",
+          "label": "背後から",
+          "value": ", hug from behind"
+        },
+        {
+          "id": "mg26_action_v1_t_hugtype_o_2",
+          "label": "腰に腕を回す",
+          "value": ", waist hug"
+        },
+        {
+          "id": "mg26_action_v1_t_hugtype_o_3",
+          "label": "片腕で",
+          "value": ", one-arm hug"
+        },
+        {
+          "id": "mg26_action_v1_t_hugtype_o_4",
+          "label": "強く",
+          "value": ", tight hug"
+        }
+      ]
+    },
+    {
+      "id": "mg26_action_v1_t_hidingwhere",
+      "name": "隠れる対象",
+      "folderId": "動作 / 隠れる対象",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "mg26_action_v1_t_hidingwhere_o_0",
+          "label": "木",
+          "value": ", hiding behind tree"
+        },
+        {
+          "id": "mg26_action_v1_t_hidingwhere_o_1",
+          "label": "ドア",
+          "value": ", hiding behind door"
+        },
+        {
+          "id": "mg26_action_v1_t_hidingwhere_o_2",
+          "label": "壁",
+          "value": ", hiding behind wall"
+        },
+        {
+          "id": "mg26_action_v1_t_hidingwhere_o_3",
+          "label": "電柱",
+          "value": ", hiding behind utility pole"
+        },
+        {
+          "id": "mg26_action_v1_t_hidingwhere_o_4",
+          "label": "他の人",
+          "value": ", hiding behind another"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

@@ -1,0 +1,577 @@
+{
+  "folders": [
+    {
+      "id": "le26_mood_v1",
+      "name": "雰囲気",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "le26_mood_v1_f_basic",
+      "name": "雰囲気の基本",
+      "parentId": "le26_mood_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_mood_v1_f_gentle",
+      "name": "穏やか・温かい",
+      "parentId": "le26_mood_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_mood_v1_f_active",
+      "name": "明るい・にぎやか",
+      "parentId": "le26_mood_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_mood_v1_f_dream",
+      "name": "幻想・非日常",
+      "parentId": "le26_mood_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_mood_v1_f_dark",
+      "name": "緊張・物悲しさ",
+      "parentId": "le26_mood_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_mood_v1_f_world",
+      "name": "場面・世界観の印象",
+      "parentId": "le26_mood_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "le26_mood_v1_w_basic_001",
+      "folderId": "le26_mood_v1_f_basic",
+      "label_jp": "雰囲気（装飾用の基本）",
+      "value_en": "atmosphere",
+      "note": "場面全体の印象を装飾で選ぶ基本カード。人物の表情や服装は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_mood",
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_gentle_002",
+      "folderId": "le26_mood_v1_f_gentle",
+      "label_jp": "穏やかな雰囲気",
+      "value_en": "calm atmosphere",
+      "note": "落ち着いた場面全体の印象。人物が無表情になる指定ではない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_gentle_003",
+      "folderId": "le26_mood_v1_f_gentle",
+      "label_jp": "静かな雰囲気",
+      "value_en": "quiet atmosphere",
+      "note": "音や動きが少なそうに感じる場面。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_gentle_004",
+      "folderId": "le26_mood_v1_f_gentle",
+      "label_jp": "安らかな雰囲気",
+      "value_en": "peaceful atmosphere",
+      "note": "安心して過ごせそうな場面の印象。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_gentle_005",
+      "folderId": "le26_mood_v1_f_gentle",
+      "label_jp": "居心地のよい雰囲気",
+      "value_en": "cozy atmosphere",
+      "note": "温かくくつろげそうな場面。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_gentle_006",
+      "folderId": "le26_mood_v1_f_gentle",
+      "label_jp": "優しい雰囲気",
+      "value_en": "gentle atmosphere",
+      "note": "柔らかく刺激の少ない場面の印象。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_gentle_007",
+      "folderId": "le26_mood_v1_f_gentle",
+      "label_jp": "ロマンチックな雰囲気",
+      "value_en": "romantic atmosphere",
+      "note": "情緒的で親しみを感じる場面。行為や関係性は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_gentle_008",
+      "folderId": "le26_mood_v1_f_gentle",
+      "label_jp": "懐かしい雰囲気",
+      "value_en": "nostalgic atmosphere",
+      "note": "過去を思い出すような場面の印象。時代や衣装は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_gentle_009",
+      "folderId": "le26_mood_v1_f_gentle",
+      "label_jp": "希望のある雰囲気",
+      "value_en": "hopeful atmosphere",
+      "note": "先に明るさを感じるような場面の印象。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_active_010",
+      "folderId": "le26_mood_v1_f_active",
+      "label_jp": "明るい気分の雰囲気",
+      "value_en": "cheerful atmosphere",
+      "note": "楽しさや前向きさを感じる場面。照明の明るさとは別。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_active_011",
+      "folderId": "le26_mood_v1_f_active",
+      "label_jp": "にぎやかな雰囲気",
+      "value_en": "lively atmosphere",
+      "note": "活気が感じられる場面。人物数は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_active_012",
+      "folderId": "le26_mood_v1_f_active",
+      "label_jp": "祝いの雰囲気",
+      "value_en": "festive atmosphere",
+      "note": "お祝いらしい場面の印象。行事名は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_active_013",
+      "folderId": "le26_mood_v1_f_active",
+      "label_jp": "遊び心のある雰囲気",
+      "value_en": "playful atmosphere",
+      "note": "軽快で楽しげな場面の印象。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_active_014",
+      "folderId": "le26_mood_v1_f_active",
+      "label_jp": "活力のある雰囲気",
+      "value_en": "energetic atmosphere",
+      "note": "勢いや元気さを感じる場面。ポーズは固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_active_015",
+      "folderId": "le26_mood_v1_f_active",
+      "label_jp": "冒険らしい雰囲気",
+      "value_en": "adventurous atmosphere",
+      "note": "未知へ向かうような場面の印象。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_active_016",
+      "folderId": "le26_mood_v1_f_active",
+      "label_jp": "壮大な雰囲気",
+      "value_en": "epic atmosphere",
+      "note": "規模や迫力を感じさせる場面。人数や建物は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dream_017",
+      "folderId": "le26_mood_v1_f_dream",
+      "label_jp": "夢のような雰囲気",
+      "value_en": "dreamy atmosphere",
+      "note": "現実から少し離れた柔らかな場面の印象。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dream_018",
+      "folderId": "le26_mood_v1_f_dream",
+      "label_jp": "不思議な雰囲気",
+      "value_en": "mysterious atmosphere",
+      "note": "理由や正体がはっきりしない場面の印象。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dream_019",
+      "folderId": "le26_mood_v1_f_dream",
+      "label_jp": "魔法らしい雰囲気",
+      "value_en": "magical atmosphere",
+      "note": "魔法がありそうに感じる場面。術や発光は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dream_020",
+      "folderId": "le26_mood_v1_f_dream",
+      "label_jp": "神秘的な雰囲気",
+      "value_en": "mystical atmosphere",
+      "note": "静かな不思議さや奥深さを感じる場面。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dream_021",
+      "folderId": "le26_mood_v1_f_dream",
+      "label_jp": "非現実的な雰囲気",
+      "value_en": "surreal atmosphere",
+      "note": "日常の法則から外れたような場面。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dream_022",
+      "folderId": "le26_mood_v1_f_dream",
+      "label_jp": "おとぎ話の雰囲気",
+      "value_en": "fairy-tale atmosphere",
+      "note": "物語やおとぎ話を思わせる場面。人物や衣装は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dream_023",
+      "folderId": "le26_mood_v1_f_dream",
+      "label_jp": "幽玄な雰囲気",
+      "value_en": "ethereal atmosphere",
+      "note": "淡く実体感の薄い場面の印象。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dark_024",
+      "folderId": "le26_mood_v1_f_dark",
+      "label_jp": "緊張感のある雰囲気",
+      "value_en": "tense atmosphere",
+      "note": "張りつめた場面の印象。暴力や行為は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dark_025",
+      "folderId": "le26_mood_v1_f_dark",
+      "label_jp": "不気味な雰囲気",
+      "value_en": "eerie atmosphere",
+      "note": "何かが起こりそうな不安を感じる場面。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dark_026",
+      "folderId": "le26_mood_v1_f_dark",
+      "label_jp": "不穏な雰囲気",
+      "value_en": "ominous atmosphere",
+      "note": "先に悪い出来事がありそうに感じる場面。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dark_027",
+      "folderId": "le26_mood_v1_f_dark",
+      "label_jp": "寂しい雰囲気",
+      "value_en": "lonely atmosphere",
+      "note": "孤独や空白を感じる場面。人数は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dark_028",
+      "folderId": "le26_mood_v1_f_dark",
+      "label_jp": "物悲しい雰囲気",
+      "value_en": "melancholic atmosphere",
+      "note": "静かな悲しさを感じる場面。泣く表情は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dark_029",
+      "folderId": "le26_mood_v1_f_dark",
+      "label_jp": "ほろ苦い雰囲気",
+      "value_en": "bittersweet atmosphere",
+      "note": "嬉しさと寂しさが混ざるような場面。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dark_030",
+      "folderId": "le26_mood_v1_f_dark",
+      "label_jp": "重々しい雰囲気",
+      "value_en": "somber atmosphere",
+      "note": "静かで重い印象の場面。暗い照明とは別。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_dark_031",
+      "folderId": "le26_mood_v1_f_dark",
+      "label_jp": "荘厳な雰囲気",
+      "value_en": "solemn atmosphere",
+      "note": "厳かで改まった場面の印象。建物や儀式は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_world_extra_0",
+      "folderId": "le26_mood_v1_f_world",
+      "label_jp": "田園的な雰囲気",
+      "value_en": "pastoral atmosphere",
+      "note": "自然や田園を思わせる穏やかな場面の印象。場所を厳密には固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_world_extra_1",
+      "folderId": "le26_mood_v1_f_world",
+      "label_jp": "上品な雰囲気",
+      "value_en": "elegant atmosphere",
+      "note": "整って洗練された場面の印象。服装や身分は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_world_extra_2",
+      "folderId": "le26_mood_v1_f_world",
+      "label_jp": "格式ある雰囲気",
+      "value_en": "formal atmosphere",
+      "note": "改まった場面の印象。行事や衣装は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_world_extra_3",
+      "folderId": "le26_mood_v1_f_world",
+      "label_jp": "レトロな雰囲気",
+      "value_en": "retro atmosphere",
+      "note": "過去の時代を思わせる場面の印象。具体的な年代は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_world_extra_4",
+      "folderId": "le26_mood_v1_f_world",
+      "label_jp": "未来的な雰囲気",
+      "value_en": "futuristic atmosphere",
+      "note": "未来の世界を思わせる場面の印象。機械や衣装は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_world_extra_5",
+      "folderId": "le26_mood_v1_f_world",
+      "label_jp": "サイバーパンクの雰囲気",
+      "value_en": "cyberpunk atmosphere",
+      "note": "電子的な光や都市的な混在を思わせる場面。場所や服装は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_world_extra_6",
+      "folderId": "le26_mood_v1_f_world",
+      "label_jp": "荒涼とした雰囲気",
+      "value_en": "desolate atmosphere",
+      "note": "空白や荒れを感じる場面の印象。人物数や建物を厳密に固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_world_extra_7",
+      "folderId": "le26_mood_v1_f_world",
+      "label_jp": "劇的な雰囲気",
+      "value_en": "dramatic atmosphere",
+      "note": "出来事の重みや盛り上がりを感じる場面。行為は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    },
+    {
+      "id": "le26_mood_v1_w_world_extra_8",
+      "folderId": "le26_mood_v1_f_world",
+      "label_jp": "儚い雰囲気",
+      "value_en": "fragile atmosphere",
+      "note": "壊れやすさや消えそうな印象を感じる場面。物の破壊は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_mood_v1_t_light"
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "id": "le26_mood_v1_t_mood",
+      "name": "場面の印象",
+      "folderId": "雰囲気 / 場面の印象",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_mood_v1_t_mood_o_0",
+          "label": "穏やか",
+          "value": "calm"
+        },
+        {
+          "id": "le26_mood_v1_t_mood_o_1",
+          "label": "居心地よい",
+          "value": "cozy"
+        },
+        {
+          "id": "le26_mood_v1_t_mood_o_2",
+          "label": "懐かしい",
+          "value": "nostalgic"
+        },
+        {
+          "id": "le26_mood_v1_t_mood_o_3",
+          "label": "ロマンチック",
+          "value": "romantic"
+        },
+        {
+          "id": "le26_mood_v1_t_mood_o_4",
+          "label": "夢のよう",
+          "value": "dreamy"
+        },
+        {
+          "id": "le26_mood_v1_t_mood_o_5",
+          "label": "不気味",
+          "value": "eerie"
+        },
+        {
+          "id": "le26_mood_v1_t_mood_o_6",
+          "label": "にぎやか",
+          "value": "lively"
+        },
+        {
+          "id": "le26_mood_v1_t_mood_o_7",
+          "label": "物悲しい",
+          "value": "melancholic"
+        }
+      ]
+    },
+    {
+      "id": "le26_mood_v1_t_light",
+      "name": "光の演出",
+      "folderId": "雰囲気 / 光の演出",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_mood_v1_t_light_o_0",
+          "label": "柔らかい光",
+          "value": ", soft lighting"
+        },
+        {
+          "id": "le26_mood_v1_t_light_o_1",
+          "label": "薄暗い光",
+          "value": ", dim lighting"
+        },
+        {
+          "id": "le26_mood_v1_t_light_o_2",
+          "label": "暖色の光",
+          "value": ", warm lighting"
+        },
+        {
+          "id": "le26_mood_v1_t_light_o_3",
+          "label": "寒色の光",
+          "value": ", cool lighting"
+        },
+        {
+          "id": "le26_mood_v1_t_light_o_4",
+          "label": "逆光",
+          "value": ", backlighting"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

@@ -1,0 +1,1054 @@
+{
+  "folders": [
+    {
+      "id": "le26_light_v1",
+      "name": "光の演出",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_f_natural",
+      "name": "自然光",
+      "parentId": "le26_light_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_f_lamps",
+      "name": "照明器具・光源",
+      "parentId": "le26_light_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_f_illumination",
+      "name": "照明の基本",
+      "parentId": "le26_light_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_f_direction",
+      "name": "光の向き・当たり方",
+      "parentId": "le26_light_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_f_rays",
+      "name": "差し込む光・影",
+      "parentId": "le26_light_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_f_contrast",
+      "name": "光の質・明るさ",
+      "parentId": "le26_light_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_f_effects",
+      "name": "光の効果・反射",
+      "parentId": "le26_light_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "le26_light_v1_w_natural_001",
+      "folderId": "le26_light_v1_f_natural",
+      "label_jp": "太陽光",
+      "value_en": "sunlight",
+      "note": "太陽から差す光。太陽そのものを描く指定とは別。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality",
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_natural_002",
+      "folderId": "le26_light_v1_f_natural",
+      "label_jp": "月明かり",
+      "value_en": "moonlight",
+      "note": "月から届く淡い光。月の物体を指定する語とは別。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_natural_003",
+      "folderId": "le26_light_v1_f_natural",
+      "label_jp": "星明かり",
+      "value_en": "starlight",
+      "note": "星を光源としたほのかな明かり。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_natural_004",
+      "folderId": "le26_light_v1_f_natural",
+      "label_jp": "自然光",
+      "value_en": "natural light",
+      "note": "自然由来の明かり。時刻や方向は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality",
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_natural_005",
+      "folderId": "le26_light_v1_f_natural",
+      "label_jp": "朝の光",
+      "value_en": "morning light",
+      "note": "朝を感じさせる光。背景の場所は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_natural_006",
+      "folderId": "le26_light_v1_f_natural",
+      "label_jp": "午後の光",
+      "value_en": "afternoon light",
+      "note": "午後の日差しを思わせる光。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_natural_007",
+      "folderId": "le26_light_v1_f_natural",
+      "label_jp": "夕日の光",
+      "value_en": "sunset light",
+      "note": "夕日の暖かい光。夕方の空そのものとは別。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_natural_008",
+      "folderId": "le26_light_v1_f_natural",
+      "label_jp": "窓からの光",
+      "value_en": "window light",
+      "note": "窓から届く光。部屋の種類は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_009",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "ランプ",
+      "value_en": "lamp",
+      "note": "照明器具の基本カード。点灯状態や色は装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_010",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "デスクランプ",
+      "value_en": "desk lamp",
+      "note": "机上に置く小型の照明器具。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_011",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "壁付けランプ",
+      "value_en": "wall lamp",
+      "note": "壁に取り付けた照明器具。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_012",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "天井灯",
+      "value_en": "ceiling light",
+      "note": "天井に設けた照明器具。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_013",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "シャンデリア",
+      "value_en": "chandelier",
+      "note": "複数の灯りや飾りを吊るす照明器具。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_014",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "紙ランタン",
+      "value_en": "paper lantern",
+      "note": "紙を用いた柔らかな外観の灯り。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_015",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "オイルランプ",
+      "value_en": "oil lamp",
+      "note": "油を燃料にする灯り。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_016",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "ランタン",
+      "value_en": "lantern",
+      "note": "持ち運びや吊り下げができる灯り。持つ動作は含まない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_017",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "蛍光灯の器具",
+      "value_en": "fluorescent lamp",
+      "note": "細長い管などを備えた照明器具。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_018",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "ラバランプ",
+      "value_en": "lava lamp",
+      "note": "液体内の塊が動く装飾用の照明。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_019",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "トルコランプ",
+      "value_en": "turkish lamp",
+      "note": "色ガラスの模様などを持つ装飾的な灯り。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_020",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "街路灯",
+      "value_en": "lamppost",
+      "note": "道沿いに立つ照明器具。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_021",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "懐中電灯",
+      "value_en": "flashlight",
+      "note": "携帯用の照明器具。持つ・置くなどの扱いは別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_022",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "ヘッドランプ",
+      "value_en": "headlamp",
+      "note": "頭部などに固定する小型照明。ヘルメットは含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_023",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "投光器",
+      "value_en": "floodlights",
+      "note": "広い範囲を照らす強い照明器具。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_024",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "たいまつ",
+      "value_en": "torch",
+      "note": "先端の炎で照らす携帯用の灯り。持つ動作は含まない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_025",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "ろうそく",
+      "value_en": "candle",
+      "note": "芯に火を灯す道具。炎や点灯状態は別に選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_026",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "ネオンサイン",
+      "value_en": "neon sign",
+      "note": "発光する線状の看板。文字内容は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_027",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "電飾",
+      "value_en": "string lights",
+      "note": "小さな灯りを連ねた飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_state"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_lamps_028",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "焚き火",
+      "value_en": "campfire",
+      "note": "屋外などで組んだ燃料の火。人物の行動は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_lamps_029",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "炎",
+      "value_en": "fire",
+      "note": "燃えている火。場所や原因は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_illumination_030",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "照明（装飾用の基本）",
+      "value_en": "lighting",
+      "note": "光の色・質・方向を装飾で選ぶ基本カード。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality",
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_illumination_031",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "スポットライト",
+      "value_en": "spotlight",
+      "note": "特定の範囲に集中して当たる光。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality",
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_illumination_032",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "ステージライト",
+      "value_en": "stage lights",
+      "note": "舞台を照らす複数の光。出演者や会場は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality",
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_illumination_033",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "ろうそくの光",
+      "value_en": "candlelight",
+      "note": "ろうそくを光源とした暖かい明かり。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_illumination_034",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "画面からの光",
+      "value_en": "screen light",
+      "note": "ディスプレイなどから届く光。機器は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality",
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_illumination_035",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "ネオンの光",
+      "value_en": "neon lighting",
+      "note": "ネオン由来の色のある明かり。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality",
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_illumination_036",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "間接照明",
+      "value_en": "indirect lighting",
+      "note": "壁や天井への反射などを利用した光。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_illumination_037",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "蛍光灯の光",
+      "value_en": "fluorescent lighting",
+      "note": "蛍光灯を光源とした明かり。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality",
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_illumination_038",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "環境光",
+      "value_en": "ambient light",
+      "note": "周囲から全体に届く光。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality",
+        "le26_light_v1_t_direction"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_illumination_039",
+      "folderId": "le26_light_v1_f_illumination",
+      "label_jp": "紫外線照明",
+      "value_en": "ultraviolet light",
+      "note": "紫外線の灯りを思わせる演出。紫外線そのものの可視化を保証しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_direction_040",
+      "folderId": "le26_light_v1_f_direction",
+      "label_jp": "逆光",
+      "value_en": "backlighting",
+      "note": "対象の背後から来る光。視点や姿勢は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_direction_041",
+      "folderId": "le26_light_v1_f_direction",
+      "label_jp": "横からの光",
+      "value_en": "sidelighting",
+      "note": "対象の側面から来る光。左右は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_direction_042",
+      "folderId": "le26_light_v1_f_direction",
+      "label_jp": "上からの光",
+      "value_en": "overlighting",
+      "note": "対象の上から来る光。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_direction_043",
+      "folderId": "le26_light_v1_f_direction",
+      "label_jp": "下からの光",
+      "value_en": "underlighting",
+      "note": "対象の下から来る光。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_direction_044",
+      "folderId": "le26_light_v1_f_direction",
+      "label_jp": "輪郭を照らす光",
+      "value_en": "rim lighting",
+      "note": "対象の輪郭付近に光の縁を作る照明。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_direction_045",
+      "folderId": "le26_light_v1_f_direction",
+      "label_jp": "レンブラント光",
+      "value_en": "Rembrandt lighting",
+      "note": "頬の片側に小さな明るい三角形ができるような肖像の照明。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_direction_046",
+      "folderId": "le26_light_v1_f_direction",
+      "label_jp": "バタフライ光",
+      "value_en": "butterfly lighting",
+      "note": "顔の上方正面から照らし、鼻の下に小さな影を作るような照明。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_direction_047",
+      "folderId": "le26_light_v1_f_direction",
+      "label_jp": "ヘッドライトの光線",
+      "value_en": "headlight beam",
+      "note": "乗り物の灯りなどから伸びる光の束。乗り物自体は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_rays_048",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "光の筋",
+      "value_en": "light rays",
+      "note": "空気や空間に筋として見える光。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_rays_049",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "太陽光の筋",
+      "value_en": "sunbeam",
+      "note": "太陽光が一本または複数の筋として差す描写。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_rays_050",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "月光の筋",
+      "value_en": "moonbeam",
+      "note": "月明かりが筋として差す描写。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_rays_051",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "木漏れ日",
+      "value_en": "dappled sunlight",
+      "note": "葉などの隙間から届く、まだらな日差し。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_rays_052",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "まだらな月光",
+      "value_en": "dappled moonlight",
+      "note": "葉などの隙間を通る、まだらな月明かり。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_rays_053",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "隙間から漏れる光",
+      "value_en": "crack of light",
+      "note": "狭い隙間から差す光。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_rays_054",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "窓枠の影",
+      "value_en": "window shadow",
+      "note": "窓枠の形が面に落ちる影。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_rays_055",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "水中の光線",
+      "value_en": "underwater light rays",
+      "note": "水中を筋状に進むように見える光。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_rays_056",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "薄明光線",
+      "value_en": "crepuscular rays",
+      "note": "雲などの隙間から放射状に伸びる光の筋。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_light_v1_t_color",
+        "le26_light_v1_t_quality"
+      ]
+    },
+    {
+      "id": "le26_light_v1_w_rays_057",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "長い影",
+      "value_en": "long shadows",
+      "note": "地面や壁に長く伸びた影。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_rays_058",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "柔らかい影",
+      "value_en": "soft shadows",
+      "note": "輪郭の境界がぼけた影。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_rays_059",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "硬い影",
+      "value_en": "hard shadows",
+      "note": "輪郭の境界がはっきりした影。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_rays_060",
+      "folderId": "le26_light_v1_f_rays",
+      "label_jp": "濃い影",
+      "value_en": "deep shadows",
+      "note": "暗さの強い影。場所や光源は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_061",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "薄暗い照明",
+      "value_en": "dim lighting",
+      "note": "弱い灯りで照らす指定。全体の暗さはモデルによって変わる。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_062",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "低照度",
+      "value_en": "low light",
+      "note": "光量の少ない描写候補。これだけで暗い画面になるとは限らない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_063",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "明るい照明",
+      "value_en": "bright lighting",
+      "note": "強い明かりで照らす指定。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_064",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "暖色の照明",
+      "value_en": "warm lighting",
+      "note": "赤・橙・黄寄りの明かり。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_065",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "寒色の照明",
+      "value_en": "cool lighting",
+      "note": "青などの冷たく感じる明かり。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_066",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "拡散した光",
+      "value_en": "diffused light",
+      "note": "広く散り、境界の柔らかい光。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_067",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "柔らかい光",
+      "value_en": "soft lighting",
+      "note": "明暗の変化が滑らかな光。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_068",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "硬い光",
+      "value_en": "hard lighting",
+      "note": "光と影の境界がはっきりした光。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_069",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "劇的な照明",
+      "value_en": "dramatic lighting",
+      "note": "明暗や方向の差を強調した光。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_070",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "まぶしい光",
+      "value_en": "blinding light",
+      "note": "強いまぶしさを思わせる光。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_071",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "明るさ主体の画面",
+      "value_en": "high-key lighting",
+      "note": "明るい面を多く使う照明表現。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_072",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "暗さ主体の画面",
+      "value_en": "low-key lighting",
+      "note": "暗い面を多く使い、一部の光を際立たせる照明表現。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_073",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "強い明暗",
+      "value_en": "chiaroscuro",
+      "note": "明るい面と暗い面の対比を強調した描写。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_contrast_074",
+      "folderId": "le26_light_v1_f_contrast",
+      "label_jp": "暗部を強調した明暗",
+      "value_en": "tenebrism",
+      "note": "大きな暗部の中に明るい部分を際立たせる描写。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_075",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "周辺減光",
+      "value_en": "vignetting",
+      "note": "画面の周囲が中央より暗くなる表現。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_076",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "ブルーム",
+      "value_en": "bloom",
+      "note": "明るい部分から周囲へ光がにじむ表現。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_077",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "レンズフレア",
+      "value_en": "lens flare",
+      "note": "強い光による輪や筋などを思わせる表現。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_078",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "光漏れ",
+      "value_en": "light leak",
+      "note": "画面の一部に光が漏れ込むような色や明るさ。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_079",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "光の粒子",
+      "value_en": "light particles",
+      "note": "光る細かな粒を空間に散らす描写。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_080",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "光の柱",
+      "value_en": "pillar of light",
+      "note": "柱の形に伸びる光。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_081",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "火の粉",
+      "value_en": "embers",
+      "note": "燃えた小さな粒が光る描写。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_082",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "花火",
+      "value_en": "fireworks",
+      "note": "空間で開く火花などの描写。行事や人数は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_083",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "蛍",
+      "value_en": "firefly",
+      "note": "小さく光る蛍。場所や季節は別に選べる。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_084",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "光の集中模様",
+      "value_en": "caustics",
+      "note": "水や透明物の屈折・反射でできる明るい模様。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_085",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "光の分散",
+      "value_en": "dispersion (optics)",
+      "note": "光が色ごとに分かれて見える表現。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_086",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "屈折",
+      "value_en": "refraction",
+      "note": "透明な物を通った像や光が曲がって見える表現。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_087",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "反射",
+      "value_en": "reflection",
+      "note": "面に対象や光が映る描写。鏡・水面などは別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_effects_088",
+      "folderId": "le26_light_v1_f_effects",
+      "label_jp": "表面下散乱",
+      "value_en": "subsurface scattering",
+      "note": "半透明の物の内部に光が入り、表面から柔らかく出るような描写。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_light_v1_w_lamps_extra_01",
+      "folderId": "le26_light_v1_f_lamps",
+      "label_jp": "サイリウム",
+      "value_en": "glowstick",
+      "note": "化学発光などで光る棒。持つ動作や会場は固定しない。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "le26_light_v1_t_color",
+      "name": "光の色",
+      "folderId": "光の演出 / 光の色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_light_v1_t_color_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "le26_light_v1_t_color_o_1",
+          "label": "金",
+          "value": "golden"
+        },
+        {
+          "id": "le26_light_v1_t_color_o_2",
+          "label": "赤",
+          "value": "red"
+        },
+        {
+          "id": "le26_light_v1_t_color_o_3",
+          "label": "橙",
+          "value": "orange"
+        },
+        {
+          "id": "le26_light_v1_t_color_o_4",
+          "label": "黄",
+          "value": "yellow"
+        },
+        {
+          "id": "le26_light_v1_t_color_o_5",
+          "label": "緑",
+          "value": "green"
+        },
+        {
+          "id": "le26_light_v1_t_color_o_6",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "le26_light_v1_t_color_o_7",
+          "label": "紫",
+          "value": "purple"
+        },
+        {
+          "id": "le26_light_v1_t_color_o_8",
+          "label": "ピンク",
+          "value": "pink"
+        }
+      ]
+    },
+    {
+      "id": "le26_light_v1_t_quality",
+      "name": "光の質",
+      "folderId": "光の演出 / 光の質",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_light_v1_t_quality_o_0",
+          "label": "柔らかい",
+          "value": "soft"
+        },
+        {
+          "id": "le26_light_v1_t_quality_o_1",
+          "label": "強い",
+          "value": "intense"
+        },
+        {
+          "id": "le26_light_v1_t_quality_o_2",
+          "label": "拡散した",
+          "value": "diffused"
+        }
+      ]
+    },
+    {
+      "id": "le26_light_v1_t_direction",
+      "name": "光の方向",
+      "folderId": "光の演出 / 光の方向",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_light_v1_t_direction_o_0",
+          "label": "正面",
+          "value": ", front lighting"
+        },
+        {
+          "id": "le26_light_v1_t_direction_o_1",
+          "label": "横",
+          "value": ", sidelighting"
+        },
+        {
+          "id": "le26_light_v1_t_direction_o_2",
+          "label": "上",
+          "value": ", overlighting"
+        },
+        {
+          "id": "le26_light_v1_t_direction_o_3",
+          "label": "下",
+          "value": ", underlighting"
+        },
+        {
+          "id": "le26_light_v1_t_direction_o_4",
+          "label": "背後",
+          "value": ", backlighting"
+        }
+      ]
+    },
+    {
+      "id": "le26_light_v1_t_state",
+      "name": "灯りの状態",
+      "folderId": "光の演出 / 灯りの状態",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_light_v1_t_state_o_0",
+          "label": "点灯",
+          "value": ", lit"
+        },
+        {
+          "id": "le26_light_v1_t_state_o_1",
+          "label": "消灯",
+          "value": ", unlit"
+        },
+        {
+          "id": "le26_light_v1_t_state_o_2",
+          "label": "ちらつく",
+          "value": ", flickering light"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

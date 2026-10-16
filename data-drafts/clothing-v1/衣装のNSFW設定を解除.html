@@ -1,0 +1,19 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><title>衣装のNSFW表示制限を解除</title><style>body{font-family:system-ui;max-width:760px;margin:40px auto;padding:20px;line-height:1.8}button{padding:12px}#status{white-space:pre-wrap}</style>
+<h1>衣装のNSFW表示制限を解除</h1><p>現在のPromptGeneratorの「全データ」をExportし、ここで選んでください。「衣装（初期データ第1案）」とその配下のフォルダ・カードのNSFW設定だけをOFFにします。ほかの分類、英語、注釈、装飾、デッキ、お気に入りは保持します。外部へ送信しません。</p>
+<input id="file" type="file" accept=".json"><button id="save" disabled>解除済み全データを保存</button><p id="status">ファイルを選んでください。</p>
+<ol><li>現在の全データをExport。</li><li>そのファイルをここで選び、解除済みファイルを保存。</li><li>元のExportをバックアップとして残し、解除済みJSONを「全データ」Import。</li></ol>
+<p>全データImportは現在のデータを置き換えます。Export後に編集した場合は、再度Exportからやり直してください。以前の分類更新ページはNSFWをONにするものがあるため、今後は使用しないでください。</p>
+<script>
+function clearClothingFlags(d){
+if(!d||!Array.isArray(d.folders)||!Array.isArray(d.words))throw Error('PromptGeneratorの全データJSONを選んでください。');
+const root='cg26_clothing_v1';if(d.folders.filter(f=>f.id===root).length!==1)throw Error('衣装第1案のフォルダが見つからないか、重複しています。');
+const ids=new Set([root]);let changed=true;
+while(changed){changed=false;for(const f of d.folders)if(ids.has(f.parentId)&&!ids.has(f.id)){ids.add(f.id);changed=true;}}
+let fc=0,wc=0;for(const f of d.folders)if(ids.has(f.id)){if(f.nsfw)fc++;f.nsfw=false;}
+for(const w of d.words)if(ids.has(w.folderId)){if(w.nsfw)wc++;w.nsfw=false;}
+return {d,fc,wc};
+}
+let result;const f=document.getElementById('file'),b=document.getElementById('save'),s=document.getElementById('status');
+f.onchange=async()=>{b.disabled=true;result=null;try{const file=f.files[0];if(!file)return;const r=clearClothingFlags(JSON.parse(await file.text()));result=r.d;b.disabled=false;s.textContent='衣装フォルダ '+r.fc+'件、カード '+r.wc+'枚のNSFW設定を解除しました。ほかのデータは保持します。';}catch(e){s.textContent=e.message;}};
+b.onclick=()=>{if(!result)return;const u=URL.createObjectURL(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download='promptgen-all-衣装NSFW解除済み.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),10000);};
+</script></html>

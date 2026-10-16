@@ -1,0 +1,1747 @@
+{
+  "folders": [
+    {
+      "id": "cg26_composition_v1",
+      "name": "構図・画角・視点",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_framing",
+      "name": "写す範囲",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_view",
+      "name": "見る方向",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_height",
+      "name": "高さ・傾き",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_layout",
+      "name": "画面内の配置",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_depth",
+      "name": "遠近感・奥行き",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_optics",
+      "name": "画角・ピントの表現",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_pov",
+      "name": "一人称・肩越し",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_frame",
+      "name": "枠越し・反射",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_detail",
+      "name": "部分のアップ",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_crop",
+      "name": "見切れを使う構図",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_multiple",
+      "name": "複数人物の配置",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_f_panels",
+      "name": "複数画面・設定画",
+      "parentId": "cg26_composition_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "cg26_composition_v1_w_framing_001",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "全身",
+      "value_en": "full body",
+      "note": "頭から足先までを画面に収める範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_002",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "上半身",
+      "value_en": "upper body",
+      "note": "腰付近より上を主体にする範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_003",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "下半身",
+      "value_en": "lower body",
+      "note": "腰付近より下を主体にする範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_004",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "バストアップ",
+      "value_en": "bust shot",
+      "note": "胸付近から頭までを写す範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_005",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "腰から上",
+      "value_en": "waist up",
+      "note": "腰付近から頭までを写す範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_006",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "膝上（カウボーイショット）",
+      "value_en": "cowboy shot",
+      "note": "太もも付近から上を写す、一般に膝上構図と呼ばれる指定。境界は生成結果により変わる。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_007",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "肩から上",
+      "value_en": "head and shoulders",
+      "note": "頭と肩を中心に写す範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_008",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "肖像構図",
+      "value_en": "portrait",
+      "note": "人物を中心に見せる構図。縦長画像や顔だけのアップを保証する指定ではない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_009",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "クローズアップ",
+      "value_en": "close-up",
+      "note": "対象に近づいて大きく写す構図。対象部位は装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth",
+        "cg26_composition_v1_t_part"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_010",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "極端なクローズアップ",
+      "value_en": "extreme close-up",
+      "note": "対象の一部分を画面いっぱいに見せる構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth",
+        "cg26_composition_v1_t_part"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_011",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "中距離のショット",
+      "value_en": "medium shot",
+      "note": "人物と周囲の一部がわかる中距離の構図。写る境界は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_012",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "引きのショット",
+      "value_en": "wide shot",
+      "note": "人物の周囲も広く画面に収める構図。広角レンズの指定とは別。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_013",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "遠景のショット",
+      "value_en": "long shot",
+      "note": "人物を小さめに写し、場所全体も見せる構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_014",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "極端な遠景",
+      "value_en": "extreme long shot",
+      "note": "人物より広い景観を主体にする遠い構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_framing_015",
+      "folderId": "cg26_composition_v1_f_framing",
+      "label_jp": "パノラマ構図",
+      "value_en": "panoramic composition",
+      "note": "横方向に広がる景観を見せる構図。画像サイズは別途設定する。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_view_016",
+      "folderId": "cg26_composition_v1_f_view",
+      "label_jp": "正面から",
+      "value_en": "from front",
+      "note": "対象の正面側から見る方向。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_view_017",
+      "folderId": "cg26_composition_v1_f_view",
+      "label_jp": "真正面",
+      "value_en": "straight-on",
+      "note": "対象に正対する方向。カメラの高さは別に選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_view_018",
+      "folderId": "cg26_composition_v1_f_view",
+      "label_jp": "横から",
+      "value_en": "from side",
+      "note": "対象の横側から見る方向。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_view_019",
+      "folderId": "cg26_composition_v1_f_view",
+      "label_jp": "横顔の視点",
+      "value_en": "profile view",
+      "note": "顔の輪郭を横から見せる視点。視線は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_view_020",
+      "folderId": "cg26_composition_v1_f_view",
+      "label_jp": "斜め前から",
+      "value_en": "three-quarter view",
+      "note": "正面と横の間から見る方向。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_view_021",
+      "folderId": "cg26_composition_v1_f_view",
+      "label_jp": "後ろから",
+      "value_en": "from behind",
+      "note": "背中側から見る方向。人物が振り返るかは別に指定する。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_view_022",
+      "folderId": "cg26_composition_v1_f_view",
+      "label_jp": "右側から",
+      "value_en": "from the right",
+      "note": "対象の右側から見る指定。左右の解釈はモデルによって異なる。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_view_023",
+      "folderId": "cg26_composition_v1_f_view",
+      "label_jp": "左側から",
+      "value_en": "from the left",
+      "note": "対象の左側から見る指定。左右の解釈はモデルによって異なる。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_view_024",
+      "folderId": "cg26_composition_v1_f_view",
+      "label_jp": "斜め後ろから",
+      "value_en": "rear three-quarter view",
+      "note": "真後ろと横の間から見る方向。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_025",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "上から",
+      "value_en": "from above",
+      "note": "対象より高い位置から見下ろす視点。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_026",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "下から",
+      "value_en": "from below",
+      "note": "対象より低い位置から見上げる視点。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_027",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "目の高さ",
+      "value_en": "eye-level shot",
+      "note": "対象の目線と同じくらいの高さから見る視点。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_028",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "高所から見渡す",
+      "value_en": "bird's-eye view",
+      "note": "高い位置から地上を見渡す視点。真上とは限らない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_029",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "真上から",
+      "value_en": "top-down view",
+      "note": "対象をほぼ真上から見下ろす視点。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_030",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "地面すれすれから",
+      "value_en": "worm's-eye view",
+      "note": "地面に近い低い位置から強く見上げる視点。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_031",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "地面の高さ",
+      "value_en": "ground-level shot",
+      "note": "地面に近い高さから見る視点。見上げる角度は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_032",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "傾いた画面",
+      "value_en": "dutch angle",
+      "note": "画面の水平を傾ける構図。人物自身の首や体の傾きとは別。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_033",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "水平な画面",
+      "value_en": "level angle, horizon straight",
+      "note": "地平線などを水平にする構図。視点の高さは固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_034",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "上下逆の視点",
+      "value_en": "upside-down perspective",
+      "note": "対象が画面内で上下逆に見える構図。姿勢や場所は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_height_035",
+      "folderId": "cg26_composition_v1_f_height",
+      "label_jp": "頭側からの視点",
+      "value_en": "headboard angle",
+      "note": "頭側から体の方向を見る視点の候補。横になるポーズと組み合わせて使える。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_place",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_036",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "人物を左に置く",
+      "value_en": "character on the left side of the image",
+      "note": "画面の左側に人物を寄せる配置。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_037",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "人物を中央に置く",
+      "value_en": "character in the center of the image",
+      "note": "画面の中央に人物を置く配置。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_038",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "人物を右に置く",
+      "value_en": "character on the right side of the image",
+      "note": "画面の右側に人物を寄せる配置。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_039",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "人物を上寄りに置く",
+      "value_en": "character in the upper part of the image",
+      "note": "人物を画面上側に寄せる配置。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_040",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "人物を下寄りに置く",
+      "value_en": "character in the lower part of the image",
+      "note": "人物を画面下側に寄せる配置。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_041",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "三分割を意識した配置",
+      "value_en": "rule of thirds",
+      "note": "縦横を三分割した線や交点付近に対象を置く構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_042",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "左右対称の構図",
+      "value_en": "symmetrical composition",
+      "note": "左右の形や配置を対応させた構図。人物数は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_043",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "非対称の構図",
+      "value_en": "asymmetrical composition",
+      "note": "左右の形や重みをあえて揃えない構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_044",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "余白を大きく取る",
+      "value_en": "negative space",
+      "note": "対象の周りに広い余白を残す構図。文字は自動では加えない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_045",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "人物を手前に置く",
+      "value_en": "character in foreground",
+      "note": "人物を背景より手前の位置で見せる構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_046",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "人物を奥に置く",
+      "value_en": "character in background",
+      "note": "人物を景観の奥側に置く構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_047",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "対角線の構図",
+      "value_en": "diagonal composition",
+      "note": "対象や主要な線を斜め方向に配置する構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_048",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "三角形の構図",
+      "value_en": "triangular composition",
+      "note": "主な要素を三角形の関係に配置する構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_layout_049",
+      "folderId": "cg26_composition_v1_f_layout",
+      "label_jp": "奥へ導く線",
+      "value_en": "leading lines",
+      "note": "道や柵などの線で奥や対象へ視線を導く構図。対象物は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_050",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "遠近感",
+      "value_en": "perspective",
+      "note": "奥行きが感じられる描写の基本指定。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_051",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "強い短縮遠近法",
+      "value_en": "foreshortening",
+      "note": "手前の部位を大きく、奥の部位を短く見せる遠近表現。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_052",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "劇的な遠近感",
+      "value_en": "dramatic perspective",
+      "note": "距離や角度の差を強く感じさせる遠近表現。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_053",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "一点透視",
+      "value_en": "one-point perspective",
+      "note": "奥へ向かう線が主に一つの消失点に集まる描写。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_054",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "二点透視",
+      "value_en": "two-point perspective",
+      "note": "建物の角などから左右二方向に線が収束する描写。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_055",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "三点透視",
+      "value_en": "three-point perspective",
+      "note": "左右と高さ方向の三つの消失点を意識する描写。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_056",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "消失点",
+      "value_en": "vanishing point",
+      "note": "奥へ向かう線が集まる点を意識した描写。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_057",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "空気遠近法",
+      "value_en": "atmospheric perspective",
+      "note": "遠くほど色や輪郭を淡くして奥行きを見せる描写。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_058",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "手前・中間・奥の層",
+      "value_en": "layered composition",
+      "note": "画面を複数の奥行きの層に分ける構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_depth_059",
+      "folderId": "cg26_composition_v1_f_depth",
+      "label_jp": "奥行きのある構図",
+      "value_en": "deep composition",
+      "note": "近い要素から遠い要素までを使う構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_optics_060",
+      "folderId": "cg26_composition_v1_f_optics",
+      "label_jp": "広角の見え方",
+      "value_en": "wide-angle view",
+      "note": "広い範囲を取り込み、近いものを大きく見せる描写。実際のレンズを設定する機能ではない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_optics_061",
+      "folderId": "cg26_composition_v1_f_optics",
+      "label_jp": "魚眼の見え方",
+      "value_en": "fisheye",
+      "note": "広い視野と曲がった輪郭を持つ描写。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_optics_062",
+      "folderId": "cg26_composition_v1_f_optics",
+      "label_jp": "望遠の見え方",
+      "value_en": "telephoto view",
+      "note": "離れた対象同士の距離が縮まって見えるような描写。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height",
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_depth"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_optics_063",
+      "folderId": "cg26_composition_v1_f_optics",
+      "label_jp": "浅い被写界深度",
+      "value_en": "shallow depth of field",
+      "note": "ピントが合う距離の範囲を狭くし、前後をぼかす描写。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_w_optics_064",
+      "folderId": "cg26_composition_v1_f_optics",
+      "label_jp": "深い被写界深度",
+      "value_en": "deep depth of field",
+      "note": "手前から奥まで広くピントが合うような描写。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_w_optics_065",
+      "folderId": "cg26_composition_v1_f_optics",
+      "label_jp": "玉ぼけ",
+      "value_en": "bokeh",
+      "note": "ピント外の光などを柔らかい粒状のぼけで見せる描写。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_w_optics_066",
+      "folderId": "cg26_composition_v1_f_optics",
+      "label_jp": "前ぼけ",
+      "value_en": "blurry foreground",
+      "note": "対象より手前のものをぼかす描写。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_w_optics_067",
+      "folderId": "cg26_composition_v1_f_optics",
+      "label_jp": "柔らかいピント",
+      "value_en": "soft focus",
+      "note": "輪郭を柔らかく見せる焦点表現。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_w_pov_068",
+      "folderId": "cg26_composition_v1_f_pov",
+      "label_jp": "一人称視点",
+      "value_en": "pov",
+      "note": "見る側の目から眺めるような構図。手や動作は自動では加えない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_pov_069",
+      "folderId": "cg26_composition_v1_f_pov",
+      "label_jp": "肩越しの視点",
+      "value_en": "over-the-shoulder shot",
+      "note": "手前の人物の肩越しに相手や景色を見る構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_pov_070",
+      "folderId": "cg26_composition_v1_f_pov",
+      "label_jp": "一人称の手を手前に",
+      "value_en": "first-person view, hands in foreground",
+      "note": "見る側の手が画面手前に見える構図。性別・動作・持ち物は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_pov_071",
+      "folderId": "cg26_composition_v1_f_pov",
+      "label_jp": "一人称の足を手前に",
+      "value_en": "first-person view, feet in foreground",
+      "note": "見る側の足が画面手前に見える構図。場所や靴は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_pov_072",
+      "folderId": "cg26_composition_v1_f_pov",
+      "label_jp": "対象に近い視点",
+      "value_en": "close perspective",
+      "note": "対象の近くから見るような構図。近づく動作とは別。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_frame_073",
+      "folderId": "cg26_composition_v1_f_frame",
+      "label_jp": "戸口越し",
+      "value_en": "view through doorway",
+      "note": "戸口を手前の枠として、その先を見る構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_frame_074",
+      "folderId": "cg26_composition_v1_f_frame",
+      "label_jp": "窓越し",
+      "value_en": "view through window",
+      "note": "窓を通して対象を見る構図。内外の向きは固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_frame_075",
+      "folderId": "cg26_composition_v1_f_frame",
+      "label_jp": "枝葉越し",
+      "value_en": "view through foliage",
+      "note": "手前の葉や枝の間から対象を見る構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_frame_076",
+      "folderId": "cg26_composition_v1_f_frame",
+      "label_jp": "対象を囲む枠",
+      "value_en": "frame within a frame",
+      "note": "窓やアーチなどの形で、画面内にもう一つの枠を作る構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_frame_077",
+      "folderId": "cg26_composition_v1_f_frame",
+      "label_jp": "鏡に映った姿",
+      "value_en": "mirror reflection",
+      "note": "鏡に映る対象を見せる構図。自撮り動作は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_frame_078",
+      "folderId": "cg26_composition_v1_f_frame",
+      "label_jp": "水面の反射",
+      "value_en": "water reflection",
+      "note": "水面に映る対象を見せる描写。水の場所は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_frame_079",
+      "folderId": "cg26_composition_v1_f_frame",
+      "label_jp": "ガラスの反射",
+      "value_en": "glass reflection",
+      "note": "ガラス面に映る対象を見せる描写。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_frame_080",
+      "folderId": "cg26_composition_v1_f_frame",
+      "label_jp": "逆さまの反射",
+      "value_en": "inverted reflection",
+      "note": "反射像が上下逆に見える構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_081",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "顔のアップ",
+      "value_en": "face close-up",
+      "note": "顔を大きく写す範囲。表情は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_082",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "目のアップ",
+      "value_en": "eyes close-up",
+      "note": "目の周辺を大きく写す範囲。瞳の色や目の状態は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_083",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "口元のアップ",
+      "value_en": "mouth close-up",
+      "note": "口とその周辺を大きく写す範囲。口の状態は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_084",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "唇のアップ",
+      "value_en": "lips close-up",
+      "note": "唇を主体に大きく写す範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_085",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "耳のアップ",
+      "value_en": "ear close-up",
+      "note": "耳を主体に大きく写す範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_086",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "手のアップ",
+      "value_en": "hands close-up",
+      "note": "手を主体に大きく写す範囲。持ち物や仕草は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_087",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "足元のアップ",
+      "value_en": "feet close-up",
+      "note": "足元を主体に大きく写す範囲。靴や足の状態は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_088",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "肩のアップ",
+      "value_en": "shoulders close-up",
+      "note": "肩周辺を主体に大きく写す範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_089",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "腰周辺のアップ",
+      "value_en": "waist close-up",
+      "note": "腰周辺を主体に大きく写す範囲。衣装の有無は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_detail_090",
+      "folderId": "cg26_composition_v1_f_detail",
+      "label_jp": "膝のアップ",
+      "value_en": "knees close-up",
+      "note": "膝周辺を主体に大きく写す範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_crop_091",
+      "folderId": "cg26_composition_v1_f_crop",
+      "label_jp": "頭を画面外に",
+      "value_en": "head out of frame",
+      "note": "頭が画面外になる範囲。顔の指定とは併用しにくい。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_crop_092",
+      "folderId": "cg26_composition_v1_f_crop",
+      "label_jp": "足先を画面外に",
+      "value_en": "feet out of frame",
+      "note": "足先が画面外になる範囲。全身指定とは併用しにくい。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_crop_093",
+      "folderId": "cg26_composition_v1_f_crop",
+      "label_jp": "手を画面外に",
+      "value_en": "hands out of frame",
+      "note": "手が画面外になる範囲。手の動作を見せる指定とは併用しにくい。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_crop_094",
+      "folderId": "cg26_composition_v1_f_crop",
+      "label_jp": "目より下を写す",
+      "value_en": "eyes out of frame",
+      "note": "目が画面に入らず、その下の部分を主体にする範囲。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_crop_095",
+      "folderId": "cg26_composition_v1_f_crop",
+      "label_jp": "画面端から一部が入る",
+      "value_en": "partially out of frame",
+      "note": "対象の一部を画面外に置いて、画面端から入るように見せる構図。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_multiple_096",
+      "folderId": "cg26_composition_v1_f_multiple",
+      "label_jp": "二人を写す構図",
+      "value_en": "two-shot",
+      "note": "二人を同じ画面に写す構図。人物の属性や距離は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_multiple_097",
+      "folderId": "cg26_composition_v1_f_multiple",
+      "label_jp": "集団の肖像",
+      "value_en": "group portrait",
+      "note": "複数人物を肖像としてまとめて見せる構図。人数や属性は別に指定する。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_multiple_098",
+      "folderId": "cg26_composition_v1_f_multiple",
+      "label_jp": "横に並ぶ配置",
+      "value_en": "side-by-side composition",
+      "note": "対象を画面内で横に並べる配置。姿勢や接触は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_multiple_099",
+      "folderId": "cg26_composition_v1_f_multiple",
+      "label_jp": "手前と奥に一人ずつ",
+      "value_en": "one person in foreground, another person in background",
+      "note": "二人を異なる奥行きに置く配置。人物の役割や外見は別に指定する。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_multiple_100",
+      "folderId": "cg26_composition_v1_f_multiple",
+      "label_jp": "左と右に一人ずつ",
+      "value_en": "one person on the left, another person on the right",
+      "note": "二人を画面の左右に分ける配置。左右の保持はモデル次第。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_multiple_101",
+      "folderId": "cg26_composition_v1_f_multiple",
+      "label_jp": "距離を空けた配置",
+      "value_en": "characters spaced apart",
+      "note": "人物同士の間に空間を残す配置。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_multiple_102",
+      "folderId": "cg26_composition_v1_f_multiple",
+      "label_jp": "人物が重なる配置",
+      "value_en": "overlapping characters",
+      "note": "手前と奥の人物が画面内で部分的に重なる配置。接触動作は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range",
+        "cg26_composition_v1_t_view",
+        "cg26_composition_v1_t_height"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_panels_103",
+      "folderId": "cg26_composition_v1_f_panels",
+      "label_jp": "キャラクター設定画",
+      "value_en": "character sheet",
+      "note": "同じ人物の外見を複数の図でまとめる構成。外見の統一は別途確認が必要。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_panels_104",
+      "folderId": "cg26_composition_v1_f_panels",
+      "label_jp": "正面・横・後ろの設定画",
+      "value_en": "character turnaround",
+      "note": "人物を複数方向から並べて見せる構成。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_panels_105",
+      "folderId": "cg26_composition_v1_f_panels",
+      "label_jp": "複数のポーズを並べる",
+      "value_en": "multiple poses",
+      "note": "同じ画面に複数の姿勢を並べる構成。ポーズの種類は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_range"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_panels_106",
+      "folderId": "cg26_composition_v1_f_panels",
+      "label_jp": "二分割の画面",
+      "value_en": "split screen",
+      "note": "画面を二つの領域に分ける構成。人物数は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_w_panels_107",
+      "folderId": "cg26_composition_v1_f_panels",
+      "label_jp": "三枚組の画面",
+      "value_en": "triptych",
+      "note": "画面を三つの領域として並べる構成。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_w_panels_108",
+      "folderId": "cg26_composition_v1_f_panels",
+      "label_jp": "漫画のコマ割り",
+      "value_en": "comic panels",
+      "note": "複数のコマに場面を分ける構成。文字や台詞は加えない。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_composition_v1_w_panels_109",
+      "folderId": "cg26_composition_v1_f_panels",
+      "label_jp": "小窓の拡大図",
+      "value_en": "inset panel",
+      "note": "メイン画面に小さな別枠を入れる構成。拡大内容は装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_inset"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_panels_110",
+      "folderId": "cg26_composition_v1_f_panels",
+      "label_jp": "拡大像を重ねる",
+      "value_en": "zoom layer",
+      "note": "対象の拡大像を別の層として重ねる構成。モデルによって認識が異なる。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_inset"
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_w_panels_111",
+      "folderId": "cg26_composition_v1_f_panels",
+      "label_jp": "網点の拡大像",
+      "value_en": "zoom layer with halftone dots",
+      "note": "網点表現の拡大像を重ねる構成。",
+      "nsfw": false,
+      "templateIds": [
+        "cg26_composition_v1_t_inset"
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "id": "cg26_composition_v1_t_view",
+      "name": "見る方向",
+      "folderId": "構図 / 見る方向",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "cg26_composition_v1_t_view_o_0",
+          "label": "正面",
+          "value": ", from front"
+        },
+        {
+          "id": "cg26_composition_v1_t_view_o_1",
+          "label": "横",
+          "value": ", from side"
+        },
+        {
+          "id": "cg26_composition_v1_t_view_o_2",
+          "label": "斜め前",
+          "value": ", three-quarter view"
+        },
+        {
+          "id": "cg26_composition_v1_t_view_o_3",
+          "label": "後ろ",
+          "value": ", from behind"
+        },
+        {
+          "id": "cg26_composition_v1_t_view_o_4",
+          "label": "斜め後ろ",
+          "value": ", rear three-quarter view"
+        }
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_t_height",
+      "name": "視点の高さ",
+      "folderId": "構図 / 視点の高さ",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "cg26_composition_v1_t_height_o_0",
+          "label": "目の高さ",
+          "value": ", eye-level shot"
+        },
+        {
+          "id": "cg26_composition_v1_t_height_o_1",
+          "label": "上から",
+          "value": ", from above"
+        },
+        {
+          "id": "cg26_composition_v1_t_height_o_2",
+          "label": "下から",
+          "value": ", from below"
+        },
+        {
+          "id": "cg26_composition_v1_t_height_o_3",
+          "label": "真上",
+          "value": ", top-down view"
+        }
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_t_range",
+      "name": "写す範囲",
+      "folderId": "構図 / 写す範囲",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "cg26_composition_v1_t_range_o_0",
+          "label": "全身",
+          "value": ", full body"
+        },
+        {
+          "id": "cg26_composition_v1_t_range_o_1",
+          "label": "上半身",
+          "value": ", upper body"
+        },
+        {
+          "id": "cg26_composition_v1_t_range_o_2",
+          "label": "腰から上",
+          "value": ", waist up"
+        },
+        {
+          "id": "cg26_composition_v1_t_range_o_3",
+          "label": "膝上（カウボーイショット）",
+          "value": ", cowboy shot"
+        },
+        {
+          "id": "cg26_composition_v1_t_range_o_4",
+          "label": "肩から上",
+          "value": ", head and shoulders"
+        },
+        {
+          "id": "cg26_composition_v1_t_range_o_5",
+          "label": "アップ",
+          "value": ", close-up"
+        },
+        {
+          "id": "cg26_composition_v1_t_range_o_6",
+          "label": "引き",
+          "value": ", wide shot"
+        }
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_t_place",
+      "name": "人物の配置",
+      "folderId": "構図 / 人物の配置",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "cg26_composition_v1_t_place_o_0",
+          "label": "左",
+          "value": ", character on the left side of the image"
+        },
+        {
+          "id": "cg26_composition_v1_t_place_o_1",
+          "label": "中央",
+          "value": ", character in the center of the image"
+        },
+        {
+          "id": "cg26_composition_v1_t_place_o_2",
+          "label": "右",
+          "value": ", character on the right side of the image"
+        },
+        {
+          "id": "cg26_composition_v1_t_place_o_3",
+          "label": "手前",
+          "value": ", character in foreground"
+        },
+        {
+          "id": "cg26_composition_v1_t_place_o_4",
+          "label": "奥",
+          "value": ", character in background"
+        }
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_t_part",
+      "name": "アップにする部位",
+      "folderId": "構図 / アップにする部位",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "cg26_composition_v1_t_part_o_0",
+          "label": "顔",
+          "value": "face"
+        },
+        {
+          "id": "cg26_composition_v1_t_part_o_1",
+          "label": "目",
+          "value": "eyes"
+        },
+        {
+          "id": "cg26_composition_v1_t_part_o_2",
+          "label": "口",
+          "value": "mouth"
+        },
+        {
+          "id": "cg26_composition_v1_t_part_o_3",
+          "label": "唇",
+          "value": "lips"
+        },
+        {
+          "id": "cg26_composition_v1_t_part_o_4",
+          "label": "耳",
+          "value": "ear"
+        },
+        {
+          "id": "cg26_composition_v1_t_part_o_5",
+          "label": "手",
+          "value": "hands"
+        },
+        {
+          "id": "cg26_composition_v1_t_part_o_6",
+          "label": "足元",
+          "value": "feet"
+        },
+        {
+          "id": "cg26_composition_v1_t_part_o_7",
+          "label": "肩",
+          "value": "shoulders"
+        },
+        {
+          "id": "cg26_composition_v1_t_part_o_8",
+          "label": "腰周辺",
+          "value": "waist"
+        },
+        {
+          "id": "cg26_composition_v1_t_part_o_9",
+          "label": "膝",
+          "value": "knees"
+        }
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_t_depth",
+      "name": "ピントの範囲",
+      "folderId": "構図 / ピントの範囲",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "cg26_composition_v1_t_depth_o_0",
+          "label": "浅い",
+          "value": ", shallow depth of field"
+        },
+        {
+          "id": "cg26_composition_v1_t_depth_o_1",
+          "label": "深い",
+          "value": ", deep depth of field"
+        },
+        {
+          "id": "cg26_composition_v1_t_depth_o_2",
+          "label": "前ぼけ",
+          "value": ", blurry foreground"
+        }
+      ]
+    },
+    {
+      "id": "cg26_composition_v1_t_inset",
+      "name": "拡大図の内容",
+      "folderId": "構図 / 拡大図の内容",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "cg26_composition_v1_t_inset_o_0",
+          "label": "顔",
+          "value": ", face close-up"
+        },
+        {
+          "id": "cg26_composition_v1_t_inset_o_1",
+          "label": "上半身",
+          "value": ", upper body close-up"
+        },
+        {
+          "id": "cg26_composition_v1_t_inset_o_2",
+          "label": "下半身",
+          "value": ", lower body close-up"
+        },
+        {
+          "id": "cg26_composition_v1_t_inset_o_3",
+          "label": "手",
+          "value": ", hands close-up"
+        },
+        {
+          "id": "cg26_composition_v1_t_inset_o_4",
+          "label": "脚と足元",
+          "value": ", legs and feet close-up"
+        },
+        {
+          "id": "cg26_composition_v1_t_inset_o_5",
+          "label": "後ろ姿",
+          "value": ", back view"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

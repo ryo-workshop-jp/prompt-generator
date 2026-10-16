@@ -1,0 +1,1127 @@
+{
+  "folders": [
+    {
+      "id": "po26_people_v1",
+      "name": "人物・肌・種族",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_f_basic",
+      "name": "人物の基本",
+      "parentId": "po26_people_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_f_age",
+      "name": "年齢・世代",
+      "parentId": "po26_people_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_f_skin",
+      "name": "肌の色・質感",
+      "parentId": "po26_people_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_f_tan",
+      "name": "日焼け・日焼け跡",
+      "parentId": "po26_people_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_f_origin",
+      "name": "出身地域の候補",
+      "parentId": "po26_people_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_f_race",
+      "name": "幻想的な種族",
+      "parentId": "po26_people_v1",
+      "nsfw": false
+    },
+    {
+      "id": "hg26_hair_v1_test",
+      "name": "人物・人数",
+      "parentId": "po26_people_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "po26_people_v1_w_basic_001",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "人物",
+      "value_en": "person",
+      "note": "人物を指定する基本語。年齢や性別は別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_002",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "女性の人物",
+      "value_en": "girl",
+      "note": "女性キャラクターのタグ候補。年齢を厳密に決める語ではない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_003",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "男性の人物",
+      "value_en": "boy",
+      "note": "男性キャラクターのタグ候補。年齢を厳密に決める語ではない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_004",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "成人女性",
+      "value_en": "woman",
+      "note": "成人女性を示す語。人数や服装は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_005",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "成人男性",
+      "value_en": "man",
+      "note": "成人男性を示す語。人数や服装は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_006",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "女性2人",
+      "value_en": "2girls",
+      "note": "女性の人物を2人指定するタグ。年齢や関係は別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_007",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "男性2人",
+      "value_en": "2boys",
+      "note": "男性の人物を2人指定するタグ。年齢や関係は別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_008",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "女性3人",
+      "value_en": "3girls",
+      "note": "女性の人物を3人指定するタグ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_009",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "男性3人",
+      "value_en": "3boys",
+      "note": "男性の人物を3人指定するタグ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_010",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "女性が複数",
+      "value_en": "multiple girls",
+      "note": "複数の女性人物。具体的な人数は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_011",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "男性が複数",
+      "value_en": "multiple boys",
+      "note": "複数の男性人物。具体的な人数は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_012",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "一人だけ",
+      "value_en": "solo",
+      "note": "主な人物を一人にする指定。性別や年齢は別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_basic_013",
+      "folderId": "po26_people_v1_f_basic",
+      "label_jp": "人物なし",
+      "value_en": "no humans",
+      "note": "人間のいない描写を求める指定。動物や物体は別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_014",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "赤ちゃん",
+      "value_en": "baby",
+      "note": "乳児の世代を示す語。性別は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_015",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "幼児",
+      "value_en": "toddler",
+      "note": "歩き始めた頃などの幼い世代。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_016",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "子供",
+      "value_en": "child",
+      "note": "子供の世代。学年や正確な年齢は決めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_017",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "十代",
+      "value_en": "teenager",
+      "note": "十代の世代。学校や服装は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_018",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "若年成人",
+      "value_en": "young adult",
+      "note": "成人の若い世代。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_019",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "成人",
+      "value_en": "adult",
+      "note": "成人であることを示す語。性別や人数は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_020",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "中年",
+      "value_en": "middle-aged person",
+      "note": "中年の世代を示す人物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_021",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "高齢者",
+      "value_en": "elderly person",
+      "note": "高齢の世代を示す人物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_022",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "若年成人女性",
+      "value_en": "young adult woman",
+      "note": "若い成人女性。人数や衣装は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_023",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "若年成人男性",
+      "value_en": "young adult man",
+      "note": "若い成人男性。人数や衣装は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_024",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "中年女性",
+      "value_en": "middle-aged woman",
+      "note": "中年の女性。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_025",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "中年男性",
+      "value_en": "middle-aged man",
+      "note": "中年の男性。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_026",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "高齢女性",
+      "value_en": "elderly woman",
+      "note": "高齢の女性。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_age_027",
+      "folderId": "po26_people_v1_f_age",
+      "label_jp": "高齢男性",
+      "value_en": "elderly man",
+      "note": "高齢の男性。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_028",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "肌（装飾用の基本）",
+      "value_en": "skin",
+      "note": "色と質感を装飾で選ぶ肌の基本カード。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_skincolor",
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_029",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "明るい肌",
+      "value_en": "light skin",
+      "note": "明るめの肌色。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_030",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "非常に明るい肌",
+      "value_en": "fair skin",
+      "note": "ごく明るい肌色。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_031",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "褐色の肌",
+      "value_en": "brown skin",
+      "note": "茶系の肌色。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_032",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "明るい褐色肌",
+      "value_en": "light brown skin",
+      "note": "比較的明るい茶系の肌色。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_033",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "濃い褐色肌",
+      "value_en": "dark brown skin",
+      "note": "深い茶系の肌色。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_034",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "青白い肌",
+      "value_en": "pale skin",
+      "note": "血色が薄く見える明るい肌。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_035",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "オリーブ色の肌",
+      "value_en": "olive skin",
+      "note": "黄緑寄りの色味を感じる肌色候補。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_036",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "灰色の肌",
+      "value_en": "gray skin",
+      "note": "灰色の幻想的な肌。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_037",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "青い肌",
+      "value_en": "blue skin",
+      "note": "青い幻想的な肌。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_038",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "緑の肌",
+      "value_en": "green skin",
+      "note": "緑の幻想的な肌。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_039",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "赤い肌",
+      "value_en": "red skin",
+      "note": "赤い幻想的な肌。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_040",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "紫の肌",
+      "value_en": "purple skin",
+      "note": "紫の幻想的な肌。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_texture"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_skin_041",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "滑らかな肌",
+      "value_en": "smooth skin",
+      "note": "表面の凹凸を抑えた肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_042",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "きめ細かい肌",
+      "value_en": "fine-grained skin",
+      "note": "細かな表面の肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_043",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "マットな肌",
+      "value_en": "matte skin",
+      "note": "つやを抑えた肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_044",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "陶器のような肌",
+      "value_en": "porcelain skin",
+      "note": "均一で滑らかな明るい肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_045",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "透明感のある肌",
+      "value_en": "translucent skin",
+      "note": "淡く光を通すように見える肌の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_046",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "つやのある肌",
+      "value_en": "glossy skin",
+      "note": "光を反射するつやのある肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_047",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "きらめく肌",
+      "value_en": "glistening skin",
+      "note": "細かな反射で輝く肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_048",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "濡れた肌",
+      "value_en": "wet skin",
+      "note": "水などで濡れた肌。原因や衣装は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_049",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "オイルを塗った肌",
+      "value_en": "oiled skin",
+      "note": "オイルによるつやのある肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_050",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "汗ばむ肌",
+      "value_en": "sweaty skin",
+      "note": "汗が付いた肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_051",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "乾燥した肌",
+      "value_en": "dry skin",
+      "note": "水分が少なく見える肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_052",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "ざらついた肌",
+      "value_en": "rough skin",
+      "note": "細かな凹凸がある肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_053",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "しわのある肌",
+      "value_en": "wrinkled skin",
+      "note": "表面にしわがある肌。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_054",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "肌の斑点",
+      "value_en": "skin blemishes",
+      "note": "肌に部分的な斑点や色むらがある描写。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_055",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "肌のにきび",
+      "value_en": "acne",
+      "note": "肌に小さなにきびがある描写。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_056",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "身体の傷跡",
+      "value_en": "body scars",
+      "note": "身体の肌に残る傷跡。新しい負傷や血は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_057",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "あざの模様",
+      "value_en": "birthmark",
+      "note": "生まれつきの肌の色の違いを示す模様。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_058",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "肌の色が部分的に異なる",
+      "value_en": "vitiligo",
+      "note": "肌の一部の色が薄い模様の描写候補。医学的な診断をする指定ではない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_059",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "体毛",
+      "value_en": "body hair",
+      "note": "体に毛がある描写。部位や量は別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_skin_060",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "刺青",
+      "value_en": "tattoo",
+      "note": "肌に描かれた恒久的な模様。位置や図柄は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_tattoo"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_tan_061",
+      "folderId": "po26_people_v1_f_tan",
+      "label_jp": "日焼け肌",
+      "value_en": "tanned skin",
+      "note": "日焼けした肌の色。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_tan_062",
+      "folderId": "po26_people_v1_f_tan",
+      "label_jp": "日差しを感じる肌",
+      "value_en": "sun-kissed skin",
+      "note": "日差しを受けたような暖かい肌色。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_tan_063",
+      "folderId": "po26_people_v1_f_tan",
+      "label_jp": "軽い日焼け",
+      "value_en": "light tan",
+      "note": "薄い日焼けの色。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_tan_064",
+      "folderId": "po26_people_v1_f_tan",
+      "label_jp": "日焼け跡",
+      "value_en": "tan lines",
+      "note": "覆われていた肌と焼けた肌の境界。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_tan"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_tan_065",
+      "folderId": "po26_people_v1_f_tan",
+      "label_jp": "ビキニの日焼け跡",
+      "value_en": "bikini tan lines",
+      "note": "ビキニの形に沿った日焼け跡。着用そのものは指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_tan"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_tan_066",
+      "folderId": "po26_people_v1_f_tan",
+      "label_jp": "水着の日焼け跡",
+      "value_en": "swimsuit tan lines",
+      "note": "水着に沿った日焼け跡。年齢や学校の属性は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_tan"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_tan_067",
+      "folderId": "po26_people_v1_f_tan",
+      "label_jp": "タンクトップの日焼け跡",
+      "value_en": "tank top tan lines",
+      "note": "タンクトップの境界に沿った日焼け跡。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_tan"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_tan_068",
+      "folderId": "po26_people_v1_f_tan",
+      "label_jp": "短パンの日焼け跡",
+      "value_en": "shorts tan lines",
+      "note": "短パンの境界に沿った日焼け跡。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_tan"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_origin_069",
+      "folderId": "po26_people_v1_f_origin",
+      "label_jp": "日本の人物",
+      "value_en": "Japanese person",
+      "note": "日本という地域の人物指定候補。顔や肌の外見は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_origin_070",
+      "folderId": "po26_people_v1_f_origin",
+      "label_jp": "アジアの人物",
+      "value_en": "Asian person",
+      "note": "アジアという広い地域の人物指定候補。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_origin_071",
+      "folderId": "po26_people_v1_f_origin",
+      "label_jp": "ヨーロッパの人物",
+      "value_en": "European person",
+      "note": "ヨーロッパという広い地域の人物指定候補。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_origin_072",
+      "folderId": "po26_people_v1_f_origin",
+      "label_jp": "アメリカの人物",
+      "value_en": "American person",
+      "note": "アメリカという地域の人物指定候補。民族や肌色は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_origin_073",
+      "folderId": "po26_people_v1_f_origin",
+      "label_jp": "インドの人物",
+      "value_en": "Indian person",
+      "note": "インドという地域の人物指定候補。衣装は別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_race_074",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "人間",
+      "value_en": "human",
+      "note": "人間の種族。性別や年齢は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_075",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "エルフ",
+      "value_en": "elf",
+      "note": "長い耳などを連想する幻想の種族。耳や服装は別に指定できる。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_076",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "ダークエルフ",
+      "value_en": "dark elf",
+      "note": "ダークエルフという幻想の種族。肌色は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_077",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "妖精",
+      "value_en": "fairy",
+      "note": "小さな羽などを連想する幻想の存在。大きさや羽は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_078",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "獣人",
+      "value_en": "anthropomorphic animal",
+      "note": "動物の姿と人の体形を組み合わせた種族候補。性別は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_race_079",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "猫の獣人",
+      "value_en": "cat person",
+      "note": "猫の特徴を持つ人型の存在。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_race_080",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "犬の獣人",
+      "value_en": "dog person",
+      "note": "犬の特徴を持つ人型の存在。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_race_081",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "狼の獣人",
+      "value_en": "wolf person",
+      "note": "狼の特徴を持つ人型の存在。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_race_082",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "狐の獣人",
+      "value_en": "fox person",
+      "note": "狐の特徴を持つ人型の存在。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_race_083",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "兎の獣人",
+      "value_en": "rabbit person",
+      "note": "兎の特徴を持つ人型の存在。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_race_084",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "オーク",
+      "value_en": "orc",
+      "note": "オークという幻想の種族。肌色や武器は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_085",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "ゴブリン",
+      "value_en": "goblin",
+      "note": "小柄な姿などを連想する幻想の種族。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_086",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "吸血鬼",
+      "value_en": "vampire",
+      "note": "吸血鬼の存在。牙や衣装・行為は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_087",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "悪魔",
+      "value_en": "demon",
+      "note": "悪魔の存在。角・翼・肌色は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_088",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "天使",
+      "value_en": "angel",
+      "note": "天使の存在。翼や光輪は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_089",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "人魚",
+      "value_en": "mermaid",
+      "note": "上半身が人型、下半身が魚のような幻想の存在。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_090",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "ケンタウロス",
+      "value_en": "centaur",
+      "note": "上半身が人型、下半身が馬のような幻想の存在。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_091",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "アンドロイド",
+      "value_en": "android",
+      "note": "人の形に近い機械の存在。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_092",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "ロボット",
+      "value_en": "robot",
+      "note": "機械の身体を持つ存在。形や大きさは別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_race_093",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "ゾンビ",
+      "value_en": "zombie",
+      "note": "ゾンビの存在。腐敗・傷・血は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "po26_people_v1_w_race_094",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "幽霊",
+      "value_en": "ghost",
+      "note": "実体の薄い存在を思わせる指定。姿や透明度は別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_race_095",
+      "folderId": "po26_people_v1_f_race",
+      "label_jp": "ドワーフ",
+      "value_en": "fantasy dwarf",
+      "note": "小柄でがっしりした姿などを連想する幻想の種族。年齢や衣装は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_racecolor"
+      ]
+    },
+    {
+      "id": "hg26_hair_v1_w_test_girl",
+      "folderId": "hg26_hair_v1_test",
+      "label_jp": "女性1人",
+      "value_en": "1girl",
+      "nsfw": false,
+      "note": "女性の人物を1人指定するタグ。年齢、外見、衣装、髪型は含めない。成人向けの場面で使う場合の年齢指定は別に扱う。"
+    },
+    {
+      "id": "hg26_hair_v1_w_test_boy",
+      "folderId": "hg26_hair_v1_test",
+      "label_jp": "男性1人",
+      "value_en": "1boy",
+      "nsfw": false,
+      "note": "男性の人物を1人指定するタグ。年齢、外見、衣装、髪型は含めない。成人向けの場面で使う場合の年齢指定は別に扱う。"
+    },
+    {
+      "id": "po26_people_v1_w_skin_extra_healthy_skin",
+      "folderId": "po26_people_v1_f_skin",
+      "label_jp": "健康的に見える肌",
+      "value_en": "healthy skin",
+      "note": "血色や張りを感じる肌の表現候補。健康状態の診断ではない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_people_v1_w_tan_extra_tube_top_tan_lines",
+      "folderId": "po26_people_v1_f_tan",
+      "label_jp": "チューブトップの日焼け跡",
+      "value_en": "tube top tan lines",
+      "note": "肩紐のないトップスの境界に沿った日焼け跡。着用や露出は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_people_v1_t_tan"
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "id": "po26_people_v1_t_skincolor",
+      "name": "肌の色",
+      "folderId": "人物・肌・種族 / 肌の色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_people_v1_t_skincolor_o_0",
+          "label": "明るい",
+          "value": "light"
+        },
+        {
+          "id": "po26_people_v1_t_skincolor_o_1",
+          "label": "ごく明るい",
+          "value": "fair"
+        },
+        {
+          "id": "po26_people_v1_t_skincolor_o_2",
+          "label": "褐色",
+          "value": "brown"
+        },
+        {
+          "id": "po26_people_v1_t_skincolor_o_3",
+          "label": "濃い褐色",
+          "value": "dark brown"
+        },
+        {
+          "id": "po26_people_v1_t_skincolor_o_4",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "po26_people_v1_t_skincolor_o_5",
+          "label": "緑",
+          "value": "green"
+        },
+        {
+          "id": "po26_people_v1_t_skincolor_o_6",
+          "label": "紫",
+          "value": "purple"
+        }
+      ]
+    },
+    {
+      "id": "po26_people_v1_t_texture",
+      "name": "肌の質感",
+      "folderId": "人物・肌・種族 / 肌の質感",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_people_v1_t_texture_o_0",
+          "label": "滑らか",
+          "value": "smooth"
+        },
+        {
+          "id": "po26_people_v1_t_texture_o_1",
+          "label": "マット",
+          "value": "matte"
+        },
+        {
+          "id": "po26_people_v1_t_texture_o_2",
+          "label": "つや",
+          "value": "glossy"
+        },
+        {
+          "id": "po26_people_v1_t_texture_o_3",
+          "label": "濡れた",
+          "value": "wet"
+        },
+        {
+          "id": "po26_people_v1_t_texture_o_4",
+          "label": "乾燥",
+          "value": "dry"
+        }
+      ]
+    },
+    {
+      "id": "po26_people_v1_t_tan",
+      "name": "日焼け跡の強さ",
+      "folderId": "人物・肌・種族 / 日焼け跡の強さ",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_people_v1_t_tan_o_0",
+          "label": "薄い",
+          "value": "faint"
+        },
+        {
+          "id": "po26_people_v1_t_tan_o_1",
+          "label": "くっきり",
+          "value": "clear"
+        },
+        {
+          "id": "po26_people_v1_t_tan_o_2",
+          "label": "強い",
+          "value": "strong"
+        }
+      ]
+    },
+    {
+      "id": "po26_people_v1_t_tattoo",
+      "name": "刺青の位置",
+      "folderId": "人物・肌・種族 / 刺青の位置",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_people_v1_t_tattoo_o_0",
+          "label": "腕",
+          "value": ", on arm"
+        },
+        {
+          "id": "po26_people_v1_t_tattoo_o_1",
+          "label": "背中",
+          "value": ", on back"
+        },
+        {
+          "id": "po26_people_v1_t_tattoo_o_2",
+          "label": "肩",
+          "value": ", on shoulder"
+        },
+        {
+          "id": "po26_people_v1_t_tattoo_o_3",
+          "label": "脚",
+          "value": ", on leg"
+        }
+      ]
+    },
+    {
+      "id": "po26_people_v1_t_racecolor",
+      "name": "種族の肌色",
+      "folderId": "人物・肌・種族 / 種族の肌色",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_people_v1_t_racecolor_o_0",
+          "label": "明るい",
+          "value": ", light skin"
+        },
+        {
+          "id": "po26_people_v1_t_racecolor_o_1",
+          "label": "褐色",
+          "value": ", brown skin"
+        },
+        {
+          "id": "po26_people_v1_t_racecolor_o_2",
+          "label": "青",
+          "value": ", blue skin"
+        },
+        {
+          "id": "po26_people_v1_t_racecolor_o_3",
+          "label": "緑",
+          "value": ", green skin"
+        },
+        {
+          "id": "po26_people_v1_t_racecolor_o_4",
+          "label": "紫",
+          "value": ", purple skin"
+        },
+        {
+          "id": "po26_people_v1_t_racecolor_o_5",
+          "label": "灰",
+          "value": ", gray skin"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

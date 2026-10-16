@@ -1,0 +1,1541 @@
+{
+  "folders": [
+    {
+      "id": "po26_furniture_v1",
+      "name": "家具",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "po26_furniture_v1_f_chairs",
+      "name": "椅子・座る家具",
+      "parentId": "po26_furniture_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_furniture_v1_f_tables",
+      "name": "机・台",
+      "parentId": "po26_furniture_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_furniture_v1_f_sleep",
+      "name": "ベッド・寝具",
+      "parentId": "po26_furniture_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_furniture_v1_f_storage",
+      "name": "収納",
+      "parentId": "po26_furniture_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_furniture_v1_f_room",
+      "name": "室内設備・布",
+      "parentId": "po26_furniture_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "po26_furniture_v1_w_chairs_001",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "椅子",
+      "value_en": "chair",
+      "note": "座面と背もたれを持つ家具の基本。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_002",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "オフィスチェア",
+      "value_en": "office chair",
+      "note": "机での作業用の椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_003",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "メッシュチェア",
+      "value_en": "mesh chair",
+      "note": "網状の背面や座面を持つ椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_004",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "回転椅子",
+      "value_en": "swivel chair",
+      "note": "座面が回転する椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_005",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ゲーミングチェア",
+      "value_en": "gaming chair",
+      "note": "高い背もたれなどを持つゲーム用の椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_006",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "エグゼクティブチェア",
+      "value_en": "executive chair",
+      "note": "高い背もたれや大きな座面を持つ仕事用の椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_007",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ダイニングチェア",
+      "value_en": "dining chair",
+      "note": "食卓用の椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_008",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "肘掛け椅子",
+      "value_en": "armchair",
+      "note": "左右に肘掛けを備えた椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_009",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "肘掛けのない椅子",
+      "value_en": "armless chair",
+      "note": "肘掛けを持たない椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_010",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ラウンジチェア",
+      "value_en": "lounge chair",
+      "note": "くつろぐための低めの椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_011",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "イージーチェア",
+      "value_en": "easy chair",
+      "note": "広い座面などでくつろぐ椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_012",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ロッキングチェア",
+      "value_en": "rocking chair",
+      "note": "脚の形などで前後に揺れる椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_013",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "リクライニングチェア",
+      "value_en": "reclining chair",
+      "note": "背もたれを倒せる椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_014",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "折りたたみ椅子",
+      "value_en": "folding chair",
+      "note": "折りたためる椅子。畳む状態は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_015",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "パイプ椅子",
+      "value_en": "metal folding chair",
+      "note": "金属の管状フレームを持つ折りたたみ椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_016",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "キャンプチェア",
+      "value_en": "camping chair",
+      "note": "持ち運び用の屋外の椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_017",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ビーチチェア",
+      "value_en": "beach chair",
+      "note": "浜辺などで使う、背を倒せる椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_018",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ガーデンチェア",
+      "value_en": "garden chair",
+      "note": "庭や屋外で使う椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_019",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "座椅子",
+      "value_en": "floor chair",
+      "note": "床に近い座面と背もたれを持つ椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_020",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "スツール",
+      "value_en": "stool",
+      "note": "主に背もたれのない小さな椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_021",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "バースツール",
+      "value_en": "bar stool",
+      "note": "カウンターに合わせた高い椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_022",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ベンチ",
+      "value_en": "bench",
+      "note": "横に長く複数人が座れる家具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_023",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "学校の椅子",
+      "value_en": "school chair",
+      "note": "学校の机に合わせた椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_024",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "机付き椅子",
+      "value_en": "chair with writing tablet",
+      "note": "小さな筆記台を備えた椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_025",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ハイチェア",
+      "value_en": "high chair",
+      "note": "高い座面と足置きなどを備えた椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_026",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "浴室の椅子",
+      "value_en": "bath stool",
+      "note": "浴室で使う低い椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_027",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "車椅子",
+      "value_en": "wheelchair",
+      "note": "車輪を備え、座って移動するための椅子。利用者は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_028",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "歯科用チェア",
+      "value_en": "dental chair",
+      "note": "歯科で使う、背を倒せる処置用の椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_029",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "診察用チェア",
+      "value_en": "examination chair",
+      "note": "診察や処置で使う調整可能な椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_030",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "美容院の椅子",
+      "value_en": "salon chair",
+      "note": "美容院で使う高さなどを調整できる椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_031",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "劇場の座席",
+      "value_en": "theater seat",
+      "note": "劇場などに並べる座席。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_032",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "スタジアムの座席",
+      "value_en": "stadium seat",
+      "note": "観覧席などに備えた座席。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_033",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "バランスチェア",
+      "value_en": "balance chair",
+      "note": "姿勢の調整や揺れを利用する椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_034",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "玉座",
+      "value_en": "throne",
+      "note": "格式ある装飾などを持つ大きな椅子。人物は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_035",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "オットマン",
+      "value_en": "ottoman",
+      "note": "椅子の前などに置く足置きの家具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_036",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ソファ",
+      "value_en": "sofa",
+      "note": "柔らかい座面を持つくつろぎ用の家具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_037",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "二人掛けソファ",
+      "value_en": "loveseat",
+      "note": "二人ほどが座れる小さめのソファ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_038",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ソファベッド",
+      "value_en": "sofa bed",
+      "note": "座る家具と寝る家具を兼ねるもの。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_039",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "机",
+      "value_en": "desk",
+      "note": "作業などに使う台。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_040",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "食卓",
+      "value_en": "dining table",
+      "note": "食事に使う机。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_041",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "ローテーブル",
+      "value_en": "low table",
+      "note": "床に近い低い机。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_042",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "コーヒーテーブル",
+      "value_en": "coffee table",
+      "note": "ソファの前などに置く低めの机。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_043",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "丸テーブル",
+      "value_en": "round table",
+      "note": "丸い天板の机。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_044",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "カウンター",
+      "value_en": "counter",
+      "note": "作業や受け渡しに使う横長の台。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_045",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "学校の机",
+      "value_en": "school desk",
+      "note": "学校で使う筆記用の机。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_046",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "作業台",
+      "value_en": "workbench",
+      "note": "工具や作業に使う丈夫な台。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_047",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "ベッドサイドテーブル",
+      "value_en": "bedside table",
+      "note": "ベッドの横に置く小さな台。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_048",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "ドレッサー",
+      "value_en": "vanity table",
+      "note": "鏡などを備えた身支度用の机。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_049",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "こたつ",
+      "value_en": "kotatsu",
+      "note": "布団を掛ける暖房付きの低い机。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_tables_050",
+      "folderId": "po26_furniture_v1_f_tables",
+      "label_jp": "ちゃぶ台",
+      "value_en": "chabudai",
+      "note": "日本の住居などで使う低い食卓。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_051",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "ベッド",
+      "value_en": "bed",
+      "note": "寝るための家具。人物や姿勢は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_052",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "シングルベッド",
+      "value_en": "single bed",
+      "note": "一人用の幅のベッド。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_053",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "ダブルベッド",
+      "value_en": "double bed",
+      "note": "広めの幅を持つベッド。人物数は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_054",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "二段ベッド",
+      "value_en": "bunk bed",
+      "note": "上下に寝台を重ねたベッド。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_055",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "天蓋付きベッド",
+      "value_en": "canopy bed",
+      "note": "上部に枠や布を備えたベッド。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_056",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "布団",
+      "value_en": "futon",
+      "note": "床などに敷く日本の寝具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_057",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "マットレス",
+      "value_en": "mattress",
+      "note": "ベッドなどの弾力のある寝床。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_058",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "枕",
+      "value_en": "pillow",
+      "note": "頭を載せる柔らかい寝具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_textile"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_059",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "クッション",
+      "value_en": "cushion",
+      "note": "座面などに置く柔らかい小物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_textile"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_060",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "毛布",
+      "value_en": "blanket",
+      "note": "体や寝床を覆う柔らかい布。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_textile"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_061",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "掛け布団",
+      "value_en": "duvet",
+      "note": "中綿などを含む寝具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_textile"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_062",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "シーツ",
+      "value_en": "bed sheet",
+      "note": "寝床などを覆う薄い布。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_textile"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_063",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "寝袋",
+      "value_en": "sleeping bag",
+      "note": "体を入れる袋状の寝具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_sleep_064",
+      "folderId": "po26_furniture_v1_f_sleep",
+      "label_jp": "ハンモック",
+      "value_en": "hammock",
+      "note": "吊って使う布や網の寝床。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_065",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "本棚",
+      "value_en": "bookshelf",
+      "note": "本を並べる棚。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_066",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "棚",
+      "value_en": "shelf",
+      "note": "物を載せる横板などの収納。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_067",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "戸棚",
+      "value_en": "cabinet",
+      "note": "扉などを備えた収納家具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition",
+        "po26_furniture_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_068",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "衣装箪笥",
+      "value_en": "wardrobe",
+      "note": "衣服を収納する大きな家具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition",
+        "po26_furniture_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_069",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "箪笥",
+      "value_en": "chest of drawers",
+      "note": "引き出しを重ねた収納家具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_070",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "靴箱",
+      "value_en": "shoe cabinet",
+      "note": "靴を収納する家具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition",
+        "po26_furniture_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_071",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "ロッカー",
+      "value_en": "locker",
+      "note": "区分けされた鍵付きなどの収納。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition",
+        "po26_furniture_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_072",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "収納箱",
+      "value_en": "storage box",
+      "note": "物をまとめて入れる箱。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition",
+        "po26_furniture_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_073",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "ハンガーラック",
+      "value_en": "clothes rack",
+      "note": "衣服を吊るすフレーム。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_storage_074",
+      "folderId": "po26_furniture_v1_f_storage",
+      "label_jp": "引き出し",
+      "value_en": "drawer",
+      "note": "前に引き出して使う収納部分。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition",
+        "po26_furniture_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_075",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "カーテン",
+      "value_en": "curtains",
+      "note": "窓などに掛ける布。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_textile",
+        "po26_furniture_v1_t_curtain"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_076",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "ブラインド",
+      "value_en": "window blinds",
+      "note": "細長い板などで開閉する窓の覆い。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_077",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "ラグ",
+      "value_en": "rug",
+      "note": "床に置く敷物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_textile"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_078",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "カーペット",
+      "value_en": "carpet",
+      "note": "床を覆う敷物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_textile"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_079",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "鏡",
+      "value_en": "mirror",
+      "note": "像を反射する面を持つ物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_080",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "姿見",
+      "value_en": "full-length mirror",
+      "note": "全身を映せる縦長の鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_081",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "時計",
+      "value_en": "wall clock",
+      "note": "壁に掛ける時計。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_082",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "衝立",
+      "value_en": "room divider",
+      "note": "室内を分ける自立した仕切り。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_083",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "障子",
+      "value_en": "shoji",
+      "note": "紙などを張った日本の引き戸。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_084",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "襖",
+      "value_en": "fusuma",
+      "note": "紙や布を張った日本の室内の戸。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_085",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "畳",
+      "value_en": "tatami mat",
+      "note": "い草などを表に使う日本の床材。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_086",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "暖炉",
+      "value_en": "fireplace",
+      "note": "室内で火を用いる設備。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_087",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "冷蔵庫",
+      "value_en": "refrigerator",
+      "note": "食べ物などを冷やす機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_088",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "洗濯機",
+      "value_en": "washing machine",
+      "note": "衣服などを洗う機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_089",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "テレビ",
+      "value_en": "television",
+      "note": "映像を表示する機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_090",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "扇風機",
+      "value_en": "electric fan",
+      "note": "羽などで風を送る機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_room_091",
+      "folderId": "po26_furniture_v1_f_room",
+      "label_jp": "エアコン",
+      "value_en": "air conditioner",
+      "note": "室温などを調整する機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_extra_Windsor_chair",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ウィンザーチェア",
+      "value_en": "Windsor chair",
+      "note": "細い棒状の背もたれなどを持つ椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_extra_butterfly_chair",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "バタフライチェア",
+      "value_en": "butterfly chair",
+      "note": "吊った布や革などを座面にする椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_extra_egg_chair",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "エッグチェア",
+      "value_en": "egg chair",
+      "note": "丸く包み込む形の背などを持つ椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_extra_mid_century_chair",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ミッドセンチュリーチェア",
+      "value_en": "mid-century chair",
+      "note": "細い脚や滑らかな形などの椅子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_w_chairs_extra_nursing_chair",
+      "folderId": "po26_furniture_v1_f_chairs",
+      "label_jp": "ナーシングチェア",
+      "value_en": "nursing chair",
+      "note": "肘掛けや揺れる脚などを持つ育児用の椅子。人物や行為は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_furniture_v1_t_color",
+        "po26_furniture_v1_t_material",
+        "po26_furniture_v1_t_style",
+        "po26_furniture_v1_t_condition"
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "id": "po26_furniture_v1_t_color",
+      "name": "家具・布の色",
+      "folderId": "家具 / 家具・布の色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_furniture_v1_t_color_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "po26_furniture_v1_t_color_o_1",
+          "label": "黒",
+          "value": "black"
+        },
+        {
+          "id": "po26_furniture_v1_t_color_o_2",
+          "label": "灰",
+          "value": "gray"
+        },
+        {
+          "id": "po26_furniture_v1_t_color_o_3",
+          "label": "赤",
+          "value": "red"
+        },
+        {
+          "id": "po26_furniture_v1_t_color_o_4",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "po26_furniture_v1_t_color_o_5",
+          "label": "緑",
+          "value": "green"
+        },
+        {
+          "id": "po26_furniture_v1_t_color_o_6",
+          "label": "黄",
+          "value": "yellow"
+        },
+        {
+          "id": "po26_furniture_v1_t_color_o_7",
+          "label": "ピンク",
+          "value": "pink"
+        },
+        {
+          "id": "po26_furniture_v1_t_color_o_8",
+          "label": "茶",
+          "value": "brown"
+        }
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_t_material",
+      "name": "家具の素材",
+      "folderId": "家具 / 家具の素材",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_furniture_v1_t_material_o_0",
+          "label": "木",
+          "value": "wooden"
+        },
+        {
+          "id": "po26_furniture_v1_t_material_o_1",
+          "label": "金属",
+          "value": "metal"
+        },
+        {
+          "id": "po26_furniture_v1_t_material_o_2",
+          "label": "樹脂",
+          "value": "plastic"
+        },
+        {
+          "id": "po26_furniture_v1_t_material_o_3",
+          "label": "籐",
+          "value": "wicker"
+        }
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_t_textile",
+      "name": "布の素材",
+      "folderId": "家具 / 布の素材",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_furniture_v1_t_textile_o_0",
+          "label": "綿",
+          "value": "cotton"
+        },
+        {
+          "id": "po26_furniture_v1_t_textile_o_1",
+          "label": "麻",
+          "value": "linen"
+        },
+        {
+          "id": "po26_furniture_v1_t_textile_o_2",
+          "label": "絹",
+          "value": "silk"
+        },
+        {
+          "id": "po26_furniture_v1_t_textile_o_3",
+          "label": "ウール",
+          "value": "wool"
+        },
+        {
+          "id": "po26_furniture_v1_t_textile_o_4",
+          "label": "ベルベット",
+          "value": "velvet"
+        }
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_t_style",
+      "name": "家具の様式",
+      "folderId": "家具 / 家具の様式",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_furniture_v1_t_style_o_0",
+          "label": "モダン",
+          "value": "modern"
+        },
+        {
+          "id": "po26_furniture_v1_t_style_o_1",
+          "label": "アンティーク",
+          "value": "antique"
+        },
+        {
+          "id": "po26_furniture_v1_t_style_o_2",
+          "label": "ミニマル",
+          "value": "minimalist"
+        },
+        {
+          "id": "po26_furniture_v1_t_style_o_3",
+          "label": "素朴",
+          "value": "rustic"
+        }
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_t_condition",
+      "name": "家具の状態",
+      "folderId": "家具 / 家具の状態",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_furniture_v1_t_condition_o_0",
+          "label": "新品",
+          "value": ", brand new"
+        },
+        {
+          "id": "po26_furniture_v1_t_condition_o_1",
+          "label": "使い込まれた",
+          "value": ", worn"
+        },
+        {
+          "id": "po26_furniture_v1_t_condition_o_2",
+          "label": "古びた",
+          "value": ", weathered"
+        }
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_t_open",
+      "name": "収納の開閉",
+      "folderId": "家具 / 収納の開閉",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_furniture_v1_t_open_o_0",
+          "label": "開いた",
+          "value": "open"
+        },
+        {
+          "id": "po26_furniture_v1_t_open_o_1",
+          "label": "閉じた",
+          "value": "closed"
+        }
+      ]
+    },
+    {
+      "id": "po26_furniture_v1_t_curtain",
+      "name": "カーテンの開閉",
+      "folderId": "家具 / カーテンの開閉",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_furniture_v1_t_curtain_o_0",
+          "label": "開いている",
+          "value": ", drawn open"
+        },
+        {
+          "id": "po26_furniture_v1_t_curtain_o_1",
+          "label": "閉じている",
+          "value": ", drawn closed"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

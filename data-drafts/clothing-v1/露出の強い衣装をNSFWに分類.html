@@ -1,0 +1,14 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><title>露出の強い衣装をNSFWに分類</title>
+<style>body{font-family:system-ui;max-width:760px;margin:40px auto;padding:20px;line-height:1.8}button{padding:12px}</style>
+<h1>露出の強い水着・下着をNSFWに分類</h1><p>現在のPromptGeneratorの全データExportを選ぶと、「露出の強い水着」「露出の強い下着」のフォルダと、その中のカードをNSFWに設定します。英語、注釈、装飾、ほかの分類は変更しません。ファイルを外部へ送信しません。</p>
+<input id="file" type="file" accept=".json"><button id="save" disabled>分類済み全データを保存</button><p id="status">ファイルを選んでください。</p>
+<p>元のExportをバックアップとして保存し、作成したJSONを「全データ」Importしてください。Export後に編集した場合は、再度Exportからやり直してください。NSFW表示をONにすると対象が表示されます。</p>
+<script>
+function classify(d){if(!d||!Array.isArray(d.folders)||!Array.isArray(d.words))throw Error('全データJSONを選んでください。');
+const ids=new Set(['cg26_clothing_v1_f_swimadult','cg26_clothing_v1_f_underwear_adult']);
+if(!d.folders.some(f=>ids.has(f.id)))throw Error('対象フォルダが見つかりません。');
+let fc=0,wc=0;for(const f of d.folders)if(ids.has(f.id)){if(!f.nsfw)fc++;f.nsfw=true;}for(const w of d.words)if(ids.has(w.folderId)){if(!w.nsfw)wc++;w.nsfw=true;}return {d,fc,wc};}
+let result;const f=document.getElementById('file'),b=document.getElementById('save'),s=document.getElementById('status');
+f.onchange=async()=>{b.disabled=true;result=null;try{const file=f.files[0];if(!file)return;const r=classify(JSON.parse(await file.text()));result=r.d;b.disabled=false;s.textContent='フォルダ '+r.fc+'件、カード '+r.wc+'枚をNSFWに分類しました。';}catch(e){s.textContent=e.message;}};
+b.onclick=()=>{if(!result)return;const u=URL.createObjectURL(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download='promptgen-all-露出の強い衣装NSFW分類.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),10000);};
+</script></html>

@@ -1,0 +1,100 @@
+{
+  "checkedAt": "2026-09-26T13:01:02.915Z",
+  "passed": true,
+  "checks": [
+    "6カテゴリの件数・ID・フォルダ階層・装飾参照",
+    "HTML構文・埋め込みJSONと配布JSONの一致",
+    "2181件から531件追加、合計2712件。入力・既存カード・デッキ・設定を保持",
+    "再追加しても件数と内容が変わらない",
+    "人物を選ばない追加ではテストカードを移動しない",
+    "独自ラベル保持・同義語の重複回避・既存カードへの装飾追加",
+    "アプリの実際の装飾結合関数で組み合わせ確認"
+  ],
+  "categories": [
+    {
+      "name": "人物・肌・種族",
+      "words": 99,
+      "templates": 5,
+      "options": 25
+    },
+    {
+      "name": "家具",
+      "words": 96,
+      "templates": 7,
+      "options": 29
+    },
+    {
+      "name": "道具・小物",
+      "words": 116,
+      "templates": 4,
+      "options": 18
+    },
+    {
+      "name": "食べ物・飲み物",
+      "words": 83,
+      "templates": 5,
+      "options": 18
+    },
+    {
+      "name": "動物・植物",
+      "words": 92,
+      "templates": 7,
+      "options": 29
+    },
+    {
+      "name": "乗り物",
+      "words": 47,
+      "templates": 4,
+      "options": 15
+    }
+  ],
+  "cardsInFiles": 533,
+  "newCards": 531,
+  "existingCards": 2181,
+  "totalCards": 2712,
+  "templates": 32,
+  "options": 134,
+  "referenceRows": 152,
+  "decorationExamples": [
+    {
+      "card": "椅子",
+      "result": "red wooden chair"
+    },
+    {
+      "card": "戸棚",
+      "result": "closed cabinet"
+    },
+    {
+      "card": "ケーキ",
+      "result": "strawberry cake"
+    },
+    {
+      "card": "コーヒー",
+      "result": "iced coffee"
+    },
+    {
+      "card": "猫",
+      "result": "fluffy white cat"
+    },
+    {
+      "card": "車",
+      "result": "blue car"
+    },
+    {
+      "card": "猫",
+      "result": "cat, sleeping"
+    },
+    {
+      "card": "車",
+      "result": "car, moving"
+    },
+    {
+      "card": "ケーキ",
+      "result": "strawberry cake, whipped cream"
+    }
+  ],
+  "limitations": [
+    "画像生成による効き方は未検証",
+    "ブラウザUIでの実読み込みは未検証。HTMLの構文・統合処理・アプリの装飾結合関数を検証済み"
+  ]
+}

@@ -1,0 +1,1211 @@
+{
+  "folders": [
+    {
+      "id": "po26_nature_v1",
+      "name": "動物・植物",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_f_pets",
+      "name": "身近な動物",
+      "parentId": "po26_nature_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_f_wild",
+      "name": "野生の動物",
+      "parentId": "po26_nature_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_f_birds",
+      "name": "鳥・水辺・小さな生き物",
+      "parentId": "po26_nature_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_f_fantasy",
+      "name": "幻想的な生き物",
+      "parentId": "po26_nature_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_f_flowers",
+      "name": "花・草",
+      "parentId": "po26_nature_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_f_plants",
+      "name": "木・葉・観葉植物",
+      "parentId": "po26_nature_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "po26_nature_v1_w_pets_001",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "猫",
+      "value_en": "cat",
+      "note": "猫の動物。人物の猫耳とは別。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color",
+        "po26_nature_v1_t_fur"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_002",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "犬",
+      "value_en": "dog",
+      "note": "犬の動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color",
+        "po26_nature_v1_t_fur"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_003",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "兎",
+      "value_en": "rabbit",
+      "note": "長い耳などを持つ小動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color",
+        "po26_nature_v1_t_fur"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_004",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "ハムスター",
+      "value_en": "hamster",
+      "note": "丸い体などの小動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color",
+        "po26_nature_v1_t_fur"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_005",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "モルモット",
+      "value_en": "guinea pig",
+      "note": "ずんぐりした体などの小動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color",
+        "po26_nature_v1_t_fur"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_006",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "フェレット",
+      "value_en": "ferret",
+      "note": "細長い体を持つ小動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color",
+        "po26_nature_v1_t_fur"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_007",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "馬",
+      "value_en": "horse",
+      "note": "長い脚を持つ動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_008",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "牛",
+      "value_en": "cow",
+      "note": "牛の動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_009",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "羊",
+      "value_en": "sheep",
+      "note": "厚い毛などを持つ動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_010",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "山羊",
+      "value_en": "goat",
+      "note": "角などを持つ動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_pets_011",
+      "folderId": "po26_nature_v1_f_pets",
+      "label_jp": "豚",
+      "value_en": "pig",
+      "note": "丸い体などを持つ動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_012",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "狐",
+      "value_en": "fox",
+      "note": "尖った耳と尾などを持つ動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color",
+        "po26_nature_v1_t_fur"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_013",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "狼",
+      "value_en": "wolf",
+      "note": "犬に似た大型の動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color",
+        "po26_nature_v1_t_fur"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_014",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "鹿",
+      "value_en": "deer",
+      "note": "細い脚などを持つ動物。角は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_015",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "熊",
+      "value_en": "bear",
+      "note": "大きな体を持つ動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_016",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "パンダ",
+      "value_en": "panda",
+      "note": "白黒の毛などを持つ動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_017",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "狸",
+      "value_en": "tanuki",
+      "note": "日本などの身近な野生動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_018",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "アライグマ",
+      "value_en": "raccoon",
+      "note": "顔の模様と尾などを持つ動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_019",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "リス",
+      "value_en": "squirrel",
+      "note": "長い尾などを持つ小動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_020",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "ハリネズミ",
+      "value_en": "hedgehog",
+      "note": "背に針のある小動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_021",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "ライオン",
+      "value_en": "lion",
+      "note": "大きな猫科の動物。たてがみの有無は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_022",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "虎",
+      "value_en": "tiger",
+      "note": "縞の模様を持つ大型の猫科動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_023",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "豹",
+      "value_en": "leopard",
+      "note": "斑点模様などを持つ猫科動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_024",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "象",
+      "value_en": "elephant",
+      "note": "長い鼻と大きな体の動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_025",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "キリン",
+      "value_en": "giraffe",
+      "note": "長い首と脚の動物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_wild_026",
+      "folderId": "po26_nature_v1_f_wild",
+      "label_jp": "猿",
+      "value_en": "monkey",
+      "note": "手足などで移動する霊長類。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_animalstate",
+        "po26_nature_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_027",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "鳥",
+      "value_en": "bird",
+      "note": "鳥の基本指定。種類は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_028",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "雀",
+      "value_en": "sparrow",
+      "note": "小さな茶系の鳥。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_029",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "鳩",
+      "value_en": "pigeon",
+      "note": "街などで見られる鳥。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_030",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "烏",
+      "value_en": "crow",
+      "note": "黒い羽などを持つ鳥。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_031",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "梟",
+      "value_en": "owl",
+      "note": "大きな目と丸い頭などを持つ鳥。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_032",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "鷲",
+      "value_en": "eagle",
+      "note": "大きな翼などを持つ鳥。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_033",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "鶏",
+      "value_en": "chicken",
+      "note": "鶏の鳥。料理は別カテゴリ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_034",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "アヒル",
+      "value_en": "duck",
+      "note": "水辺の鳥。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_035",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "白鳥",
+      "value_en": "swan",
+      "note": "長い首などを持つ水辺の鳥。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_036",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "ペンギン",
+      "value_en": "penguin",
+      "note": "泳ぐための短い翼などを持つ鳥。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_037",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "インコ",
+      "value_en": "parakeet",
+      "note": "色のある羽などを持つ鳥。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_038",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "鶴",
+      "value_en": "crane bird",
+      "note": "長い脚と首を持つ鳥。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_birdstate"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_birds_039",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "魚",
+      "value_en": "fish",
+      "note": "魚の基本指定。料理の魚とは別。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_040",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "金魚",
+      "value_en": "goldfish",
+      "note": "観賞用の小さな魚。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_041",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "鯉",
+      "value_en": "koi",
+      "note": "観賞用の模様などを持つ魚。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_042",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "イルカ",
+      "value_en": "dolphin",
+      "note": "滑らかな体を持つ海の哺乳類。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_043",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "鯨",
+      "value_en": "whale",
+      "note": "大きな海の哺乳類。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_044",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "海亀",
+      "value_en": "sea turtle",
+      "note": "甲羅を持つ海の生き物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_045",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "クラゲ",
+      "value_en": "jellyfish",
+      "note": "透明感のある傘などを持つ水中の生き物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_046",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "蛸",
+      "value_en": "octopus",
+      "note": "複数の腕を持つ海の生き物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_047",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "カエル",
+      "value_en": "frog",
+      "note": "跳ぶ脚などを持つ両生類。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_048",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "蛇",
+      "value_en": "snake",
+      "note": "脚のない細長い爬虫類。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_049",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "トカゲ",
+      "value_en": "lizard",
+      "note": "尾と脚などを持つ爬虫類。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_050",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "蝶",
+      "value_en": "butterfly",
+      "note": "模様のある翼を持つ昆虫。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_051",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "蜻蛉",
+      "value_en": "dragonfly",
+      "note": "細長い体と透明な翼を持つ昆虫。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_birds_052",
+      "folderId": "po26_nature_v1_f_birds",
+      "label_jp": "蜜蜂",
+      "value_en": "bee",
+      "note": "縞模様などの小さな昆虫。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_fantasy_053",
+      "folderId": "po26_nature_v1_f_fantasy",
+      "label_jp": "竜",
+      "value_en": "dragon",
+      "note": "翼や鱗などを連想する幻想の生き物。色や炎は別に選ぶ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_fantasy_054",
+      "folderId": "po26_nature_v1_f_fantasy",
+      "label_jp": "ユニコーン",
+      "value_en": "unicorn",
+      "note": "一本の角を持つ馬のような生き物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_fantasy_055",
+      "folderId": "po26_nature_v1_f_fantasy",
+      "label_jp": "ペガサス",
+      "value_en": "pegasus",
+      "note": "翼を持つ馬のような生き物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_fantasy_056",
+      "folderId": "po26_nature_v1_f_fantasy",
+      "label_jp": "グリフォン",
+      "value_en": "griffin",
+      "note": "鳥と獣を合わせたような幻想の生き物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_fantasy_057",
+      "folderId": "po26_nature_v1_f_fantasy",
+      "label_jp": "フェニックス",
+      "value_en": "phoenix",
+      "note": "火や再生を連想する幻想の鳥。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_fantasy_058",
+      "folderId": "po26_nature_v1_f_fantasy",
+      "label_jp": "スライム",
+      "value_en": "slime creature",
+      "note": "柔らかい塊のような幻想の生き物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_059",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "花",
+      "value_en": "flower",
+      "note": "花の基本指定。種類や色は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom",
+        "po26_nature_v1_t_flowercolor"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_060",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "薔薇",
+      "value_en": "rose",
+      "note": "重なる花びらなどを持つ花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom",
+        "po26_nature_v1_t_flowercolor"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_061",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "チューリップ",
+      "value_en": "tulip",
+      "note": "杯のような形などの花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom",
+        "po26_nature_v1_t_flowercolor"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_062",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "ひまわり",
+      "value_en": "sunflower",
+      "note": "大きな丸い中心などを持つ花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_063",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "桜の花",
+      "value_en": "cherry blossoms",
+      "note": "桜の花のまとまり。花びらだけとは別。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_064",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "梅の花",
+      "value_en": "plum blossoms",
+      "note": "梅の花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_065",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "紫陽花",
+      "value_en": "hydrangea",
+      "note": "小さな花がまとまるような花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom",
+        "po26_nature_v1_t_flowercolor"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_066",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "百合",
+      "value_en": "lily",
+      "note": "大きな花びらなどを持つ花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom",
+        "po26_nature_v1_t_flowercolor"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_067",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "蓮",
+      "value_en": "lotus flower",
+      "note": "水面付近などで咲く花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom",
+        "po26_nature_v1_t_flowercolor"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_068",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "睡蓮",
+      "value_en": "water lily",
+      "note": "水面付近で咲く花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom",
+        "po26_nature_v1_t_flowercolor"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_069",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "ラベンダー",
+      "value_en": "lavender",
+      "note": "紫の小さな花などを穂状に持つ植物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_070",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "コスモス",
+      "value_en": "cosmos flowers",
+      "note": "細い茎と大きな花びらなどの花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom",
+        "po26_nature_v1_t_flowercolor"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_071",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "彼岸花",
+      "value_en": "red spider lily",
+      "note": "細い花びらなどが放射状に伸びる花。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_072",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "タンポポ",
+      "value_en": "dandelion",
+      "note": "黄色い花などの草。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_bloom"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_073",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "綿毛",
+      "value_en": "dandelion seeds",
+      "note": "タンポポなどの軽い綿毛。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_074",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "草",
+      "value_en": "grass",
+      "note": "細い葉などが地面に生える植物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_075",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "葦",
+      "value_en": "reeds",
+      "note": "水辺などに生える背の高い草。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_flowers_076",
+      "folderId": "po26_nature_v1_f_flowers",
+      "label_jp": "苔",
+      "value_en": "moss",
+      "note": "面を覆うような小さな植物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_plants_077",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "木",
+      "value_en": "tree",
+      "note": "幹と枝を持つ植物。種類は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_season"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_plants_078",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "松",
+      "value_en": "pine tree",
+      "note": "針のような葉などを持つ木。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_season"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_plants_079",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "楓",
+      "value_en": "maple tree",
+      "note": "分かれた葉などを持つ木。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_season"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_plants_080",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "樫",
+      "value_en": "oak tree",
+      "note": "大きな幹などを持つ木。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_season"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_plants_081",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "白樺",
+      "value_en": "birch tree",
+      "note": "明るい幹などを持つ木。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_season"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_plants_082",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "柳",
+      "value_en": "willow tree",
+      "note": "細く垂れる枝などを持つ木。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_season"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_plants_083",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "椰子",
+      "value_en": "palm tree",
+      "note": "長い葉などを持つ木。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_nature_v1_t_season"
+      ]
+    },
+    {
+      "id": "po26_nature_v1_w_plants_084",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "竹",
+      "value_en": "bamboo",
+      "note": "節を持つ細長い植物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_plants_085",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "葉",
+      "value_en": "leaves",
+      "note": "植物の葉のまとまり。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_plants_086",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "蔓",
+      "value_en": "vines",
+      "note": "細長く伸びて絡む植物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_plants_087",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "サボテン",
+      "value_en": "cactus",
+      "note": "刺などを持つ多肉植物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_plants_088",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "多肉植物",
+      "value_en": "succulent plant",
+      "note": "厚い葉などを持つ植物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_plants_089",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "盆栽",
+      "value_en": "bonsai",
+      "note": "小さな鉢などで形を整えた木。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_plants_090",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "観葉植物",
+      "value_en": "houseplant",
+      "note": "室内などで葉を楽しむ植物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_plants_091",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "シダ",
+      "value_en": "fern",
+      "note": "細かく分かれた葉などを持つ植物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_nature_v1_w_plants_092",
+      "folderId": "po26_nature_v1_f_plants",
+      "label_jp": "茸",
+      "value_en": "mushroom",
+      "note": "傘と柄などを持つ菌類。植物と一緒に探すためここに分類。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "po26_nature_v1_t_color",
+      "name": "動物の毛色",
+      "folderId": "動物・植物 / 動物の毛色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_nature_v1_t_color_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "po26_nature_v1_t_color_o_1",
+          "label": "黒",
+          "value": "black"
+        },
+        {
+          "id": "po26_nature_v1_t_color_o_2",
+          "label": "茶",
+          "value": "brown"
+        },
+        {
+          "id": "po26_nature_v1_t_color_o_3",
+          "label": "灰",
+          "value": "gray"
+        },
+        {
+          "id": "po26_nature_v1_t_color_o_4",
+          "label": "金",
+          "value": "golden"
+        }
+      ]
+    },
+    {
+      "id": "po26_nature_v1_t_fur",
+      "name": "毛の質感",
+      "folderId": "動物・植物 / 毛の質感",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_nature_v1_t_fur_o_0",
+          "label": "ふわふわ",
+          "value": "fluffy"
+        },
+        {
+          "id": "po26_nature_v1_t_fur_o_1",
+          "label": "短い毛",
+          "value": "short-haired"
+        },
+        {
+          "id": "po26_nature_v1_t_fur_o_2",
+          "label": "長い毛",
+          "value": "long-haired"
+        }
+      ]
+    },
+    {
+      "id": "po26_nature_v1_t_animalstate",
+      "name": "動物の姿勢",
+      "folderId": "動物・植物 / 動物の姿勢",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_nature_v1_t_animalstate_o_0",
+          "label": "座る",
+          "value": ", sitting"
+        },
+        {
+          "id": "po26_nature_v1_t_animalstate_o_1",
+          "label": "立つ",
+          "value": ", standing"
+        },
+        {
+          "id": "po26_nature_v1_t_animalstate_o_2",
+          "label": "横になる",
+          "value": ", lying"
+        },
+        {
+          "id": "po26_nature_v1_t_animalstate_o_3",
+          "label": "眠る",
+          "value": ", sleeping"
+        },
+        {
+          "id": "po26_nature_v1_t_animalstate_o_4",
+          "label": "走る",
+          "value": ", running"
+        }
+      ]
+    },
+    {
+      "id": "po26_nature_v1_t_birdstate",
+      "name": "鳥の状態",
+      "folderId": "動物・植物 / 鳥の状態",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_nature_v1_t_birdstate_o_0",
+          "label": "飛ぶ",
+          "value": ", flying"
+        },
+        {
+          "id": "po26_nature_v1_t_birdstate_o_1",
+          "label": "とまる",
+          "value": ", perching"
+        },
+        {
+          "id": "po26_nature_v1_t_birdstate_o_2",
+          "label": "翼を広げる",
+          "value": ", wings spread"
+        }
+      ]
+    },
+    {
+      "id": "po26_nature_v1_t_flowercolor",
+      "name": "花の色",
+      "folderId": "動物・植物 / 花の色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_nature_v1_t_flowercolor_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "po26_nature_v1_t_flowercolor_o_1",
+          "label": "赤",
+          "value": "red"
+        },
+        {
+          "id": "po26_nature_v1_t_flowercolor_o_2",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "po26_nature_v1_t_flowercolor_o_3",
+          "label": "黄",
+          "value": "yellow"
+        },
+        {
+          "id": "po26_nature_v1_t_flowercolor_o_4",
+          "label": "ピンク",
+          "value": "pink"
+        },
+        {
+          "id": "po26_nature_v1_t_flowercolor_o_5",
+          "label": "紫",
+          "value": "purple"
+        }
+      ]
+    },
+    {
+      "id": "po26_nature_v1_t_bloom",
+      "name": "花の状態",
+      "folderId": "動物・植物 / 花の状態",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_nature_v1_t_bloom_o_0",
+          "label": "咲く",
+          "value": ", in bloom"
+        },
+        {
+          "id": "po26_nature_v1_t_bloom_o_1",
+          "label": "つぼみ",
+          "value": ", flower buds"
+        },
+        {
+          "id": "po26_nature_v1_t_bloom_o_2",
+          "label": "しおれる",
+          "value": ", wilted"
+        }
+      ]
+    },
+    {
+      "id": "po26_nature_v1_t_season",
+      "name": "木の季節感",
+      "folderId": "動物・植物 / 木の季節感",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_nature_v1_t_season_o_0",
+          "label": "春",
+          "value": ", spring"
+        },
+        {
+          "id": "po26_nature_v1_t_season_o_1",
+          "label": "夏",
+          "value": ", summer"
+        },
+        {
+          "id": "po26_nature_v1_t_season_o_2",
+          "label": "秋",
+          "value": ", autumn"
+        },
+        {
+          "id": "po26_nature_v1_t_season_o_3",
+          "label": "冬",
+          "value": ", winter"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

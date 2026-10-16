@@ -1,0 +1,2099 @@
+{
+  "folders": [
+    {
+      "id": "pg26_pose_v1",
+      "name": "ポーズ",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_f_standing",
+      "name": "立つ・体の向き",
+      "parentId": "pg26_pose_v1",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_f_sitting",
+      "name": "座る・しゃがむ",
+      "parentId": "pg26_pose_v1",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_f_lying",
+      "name": "横たわる姿勢",
+      "parentId": "pg26_pose_v1",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_f_arms",
+      "name": "腕の形・位置",
+      "parentId": "pg26_pose_v1",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_f_hands",
+      "name": "手の位置・形",
+      "parentId": "pg26_pose_v1",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_f_signs",
+      "name": "手指のサイン",
+      "parentId": "pg26_pose_v1",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_f_legs",
+      "name": "脚・膝の位置",
+      "parentId": "pg26_pose_v1",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_f_fours",
+      "name": "四つん這い・体を支える姿勢",
+      "parentId": "pg26_pose_v1",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_f_sport",
+      "name": "運動・戦闘の構え",
+      "parentId": "pg26_pose_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "pg26_pose_v1_w_standing_001",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "立つ",
+      "value_en": "standing",
+      "note": "足で体を支えて立つ基本姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_002",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "直立不動",
+      "value_en": "standing at attention",
+      "note": "背筋を伸ばし、体をそろえて立つ姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_003",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "気楽に立つ",
+      "value_en": "relaxed standing",
+      "note": "力を抜いて立つ姿勢。手の位置は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_004",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "仁王立ち",
+      "value_en": "standing with hands on hips",
+      "note": "立って腰に手を置く姿勢。脚の開きは別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_005",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "Tポーズ",
+      "value_en": "t-pose",
+      "note": "両腕を左右水平に広げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_006",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "Aポーズ",
+      "value_en": "a-pose",
+      "note": "腕を斜め下へ広げて立つ姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_007",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "Y字の腕",
+      "value_en": "y-pose",
+      "note": "両腕を斜め上へ広げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_008",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "片足で立つ",
+      "value_en": "standing on one leg",
+      "note": "片方の足で体を支える姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_009",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "つま先立ち",
+      "value_en": "standing on tiptoe",
+      "note": "かかとを上げ、つま先で立つ姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_010",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "壁に寄りかかる",
+      "value_en": "leaning against wall",
+      "note": "体を壁に預ける姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_011",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "前かがみ",
+      "value_en": "bent over",
+      "note": "上体を前へ大きく折る姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_012",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "背中を反らす",
+      "value_en": "arched back",
+      "note": "背中の線を後ろへ反らした姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_013",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "後ろへ寄りかかる",
+      "value_en": "leaning back",
+      "note": "上体を後ろへ傾けた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_014",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "胴をひねる",
+      "value_en": "twisted torso",
+      "note": "胴体を左右どちらかにひねった姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_015",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "猫背",
+      "value_en": "hunched over",
+      "note": "肩や背中を丸めた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_016",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "横に傾く",
+      "value_en": "leaning sideways",
+      "note": "上体を横へ傾けた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_standing_017",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "腰をずらして立つ",
+      "value_en": "contrapposto",
+      "note": "片足に重心を置き、肩と腰の線に傾きのある姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_018",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "座る（装飾用の基本）",
+      "value_en": "sitting",
+      "note": "座る場所を装飾で選べる基本姿勢。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_sitwhere",
+        "pg26_pose_v1_t_sitshape"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_019",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "地面に座る",
+      "value_en": "sitting on the ground",
+      "note": "屋外の地面などに座る姿勢。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_sitshape"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_020",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "椅子に座る",
+      "value_en": "sitting on chair",
+      "note": "椅子に座る姿勢。脚の形は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_sitshape"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_021",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "ソファに座る",
+      "value_en": "sitting on couch",
+      "note": "ソファに座る姿勢。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_sitshape"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_022",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "ベンチに座る",
+      "value_en": "sitting on bench",
+      "note": "長い腰掛けに座る姿勢。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_sitshape"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_023",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "ベッドに座る",
+      "value_en": "sitting on bed",
+      "note": "ベッドの上や端に座る姿勢。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_sitshape"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_024",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "階段に座る",
+      "value_en": "sitting on stairs",
+      "note": "階段の段に座る姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_025",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "玉座に座る",
+      "value_en": "sitting on throne",
+      "note": "玉座に座る姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_026",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "床に座る",
+      "value_en": "sitting on the floor",
+      "note": "室内の床に座る姿勢。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_sitshape"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_027",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "便座に座る",
+      "value_en": "sitting on toilet",
+      "note": "便座に座る姿勢。衣服や行為は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_028",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "電車の座席に座る",
+      "value_en": "sitting on train seat",
+      "note": "列車の座席に座る姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_029",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "正座",
+      "value_en": "seiza",
+      "note": "膝を曲げ、足の上に腰を下ろす座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_030",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "ぺたんこ座り",
+      "value_en": "wariza",
+      "note": "膝を曲げ、左右の足を腰の外側へ出す座り方。性別は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_031",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "横座り",
+      "value_en": "yokozuwari",
+      "note": "両脚を体の片側へ寄せる座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_032",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "あぐら",
+      "value_en": "cross-legged sitting",
+      "note": "脚を前で交差させて座る姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_033",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "蓮華座",
+      "value_en": "lotus position",
+      "note": "左右の足を反対側の太ももに乗せる座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_034",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "膝を抱えて座る",
+      "value_en": "sitting while hugging knees",
+      "note": "両膝を体に近づけて抱える座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_035",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "脚を組んで座る",
+      "value_en": "sitting with crossed legs",
+      "note": "脚を重ねて組む座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_036",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "足首を組んで座る",
+      "value_en": "sitting with crossed ankles",
+      "note": "左右の足首を交差させる座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_037",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "膝をそろえて座る",
+      "value_en": "sitting with knees together",
+      "note": "左右の膝を近づける座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_038",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "足先をそろえて座る",
+      "value_en": "sitting with feet together",
+      "note": "左右の足先を近づける座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_039",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "椅子に後ろ向きに座る",
+      "value_en": "sitting backwards on chair",
+      "note": "背もたれ側を向いて椅子に座る姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_040",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "片膝を立てて座る",
+      "value_en": "sitting with one knee up",
+      "note": "片方の膝を立てる座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_041",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "背もたれに寄りかかる",
+      "value_en": "sitting and reclining",
+      "note": "座って上体を背もたれ側へ預ける姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_042",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "脚を開いて座る",
+      "value_en": "sitting with legs apart",
+      "note": "左右の脚を開く座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_043",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "肘掛けに腕を置いて座る",
+      "value_en": "sitting with arm on armrest",
+      "note": "肘掛けに腕を置く座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_044",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "机に肘をついて座る",
+      "value_en": "sitting with elbow on table",
+      "note": "机に肘を置く座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_045",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "4の字に脚を組む",
+      "value_en": "figure-four sitting",
+      "note": "片足の足首を反対側の膝付近に乗せる座り方。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_046",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "隅に座る",
+      "value_en": "sitting in corner",
+      "note": "壁などの角の近くに座る姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_047",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "しゃがむ",
+      "value_en": "squatting",
+      "note": "膝を深く曲げて腰を下げる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_048",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "かかとを上げてしゃがむ",
+      "value_en": "squatting on tiptoe",
+      "note": "かかとを上げてしゃがむ姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_049",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "両膝をつく",
+      "value_en": "kneeling",
+      "note": "両膝を床などにつく姿勢。腰の高さは別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_050",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "片膝をつく",
+      "value_en": "kneeling on one knee",
+      "note": "片方の膝だけを床などにつく姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sitting_051",
+      "folderId": "pg26_pose_v1_f_sitting",
+      "label_jp": "膝で立つ",
+      "value_en": "upright kneeling",
+      "note": "両膝をついて胴を立てる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_052",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "横たわる（装飾用の基本）",
+      "value_en": "lying",
+      "note": "横たわる基本姿勢。眠っているかどうかは別指定。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_liedirection",
+        "pg26_pose_v1_t_lieplace"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_053",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "仰向け",
+      "value_en": "lying on back",
+      "note": "背中を下にして横たわる姿勢。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_lieplace"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_054",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "うつ伏せ",
+      "value_en": "lying on stomach",
+      "note": "腹部を下にして横たわる姿勢。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_lieplace"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_055",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "横向き",
+      "value_en": "lying on side",
+      "note": "体の左右どちらかを下にして横たわる姿勢。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_lieplace"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_056",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "丸まって横たわる",
+      "value_en": "lying in fetal position",
+      "note": "膝を胸側へ寄せて横たわる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_057",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "大の字で横たわる",
+      "value_en": "lying spread-eagled",
+      "note": "腕や脚を広げて横たわる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_058",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "仰向けで膝を立てる",
+      "value_en": "lying on back with knees bent",
+      "note": "仰向けで膝を曲げる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_059",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "机に突っ伏す",
+      "value_en": "head resting on desk",
+      "note": "机の上に顔や頭を預ける姿勢。睡眠は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_060",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "肘で支えて横たわる",
+      "value_en": "lying propped on elbows",
+      "note": "肘を支えにして上体を起こす姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_lying_061",
+      "folderId": "pg26_pose_v1_f_lying",
+      "label_jp": "横向きで頬杖",
+      "value_en": "lying on side with hand supporting head",
+      "note": "横向きで手を頭の支えにする姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_062",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "両腕を下げる",
+      "value_en": "arms down",
+      "note": "両腕を体の下側へ自然に下ろす姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_063",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "両腕を背中側へ回す",
+      "value_en": "arms behind back",
+      "note": "腕を体の後ろへ回した姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_064",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "背中側で手を組む",
+      "value_en": "hands clasped behind back",
+      "note": "背中側で両手を合わせた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_065",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "片腕を上げる",
+      "value_en": "arm up",
+      "note": "片方の腕を上げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_066",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "両腕を上げる",
+      "value_en": "arms up",
+      "note": "両腕を上げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_067",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "片腕を頭上に伸ばす",
+      "value_en": "arm above head",
+      "note": "片方の腕を頭より上に伸ばす姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_068",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "片腕を頭に置く",
+      "value_en": "arm on own head",
+      "note": "片方の腕を頭の上へ置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_069",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "片腕を頭の後ろへ回す",
+      "value_en": "arm behind head",
+      "note": "片方の腕を後頭部側へ回す姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_070",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "両腕を頭の後ろへ回す",
+      "value_en": "arms behind head",
+      "note": "両腕を後頭部側へ回す姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_071",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "頭の後ろで腕を交差する",
+      "value_en": "crossed arms behind head",
+      "note": "後頭部側で腕を交差させる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_072",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "両腕を広げる",
+      "value_en": "spread arms",
+      "note": "両腕を左右へ広げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_073",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "腕を前へ伸ばす",
+      "value_en": "arms straight forward",
+      "note": "両腕を前方へ伸ばす姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_074",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "腕を後ろへ伸ばす",
+      "value_en": "arms straight backward",
+      "note": "両腕を後方へ伸ばす姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_075",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "腕を半分上げる",
+      "value_en": "half-raised arms",
+      "note": "腕を途中まで上げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_076",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "W字の腕",
+      "value_en": "w arms",
+      "note": "肘を張り、前腕を曲げたW字状の姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_077",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "頭上で腕を交差する",
+      "value_en": "arms crossed overhead",
+      "note": "頭上で腕を交差させた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_078",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "頭上で合掌する",
+      "value_en": "palms together overhead",
+      "note": "頭の上で両手のひらを合わせる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_079",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "拳を腰の横に置く",
+      "value_en": "fists at sides",
+      "note": "握った拳を体の左右へ置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_080",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "腕を組む",
+      "value_en": "arms crossed",
+      "note": "胸の前で左右の腕を交差させる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_081",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "腹の前で腕を組む",
+      "value_en": "arms folded across stomach",
+      "note": "腹部の前に腕を回す姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_082",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "反対側の肩に手を添える",
+      "value_en": "hand on opposite shoulder",
+      "note": "片手を反対側の肩に置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_083",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "自分を抱く",
+      "value_en": "hugging self",
+      "note": "自分の体を腕で囲む姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_084",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "両手を合わせる",
+      "value_en": "hands together",
+      "note": "左右の手を合わせる姿勢。宗教や感情は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_arms_085",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "指を組んで両手を合わせる",
+      "value_en": "hands clasped",
+      "note": "左右の指を組んで手を合わせる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_086",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "自分に手を添える（装飾用の基本）",
+      "value_en": "hand on own body",
+      "note": "自分の体に手を置く基本指定。部位を装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_selfpart"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_087",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "片手を頭に置く",
+      "value_en": "hand on own head",
+      "note": "自分の頭に片手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_088",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "両手を頭に置く",
+      "value_en": "hands on own head",
+      "note": "自分の頭に両手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_089",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "顔に手を添える",
+      "value_en": "hand on own face",
+      "note": "自分の顔に手を添える姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_090",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "額に手を添える",
+      "value_en": "hand on own forehead",
+      "note": "自分の額に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_091",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "頬に手を添える",
+      "value_en": "hand on own cheek",
+      "note": "自分の頬に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_092",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "顎に手を添える",
+      "value_en": "hand on own chin",
+      "note": "自分の顎に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_093",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "耳に手を添える",
+      "value_en": "hand on own ear",
+      "note": "自分の耳に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_094",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "首に手を添える",
+      "value_en": "hand on own neck",
+      "note": "自分の首に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_095",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "胸元に片手を添える",
+      "value_en": "hand on own chest",
+      "note": "自分の胸元に片手を置く姿勢。衣服や露出は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_096",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "胸元に両手を添える",
+      "value_en": "hands on own chest",
+      "note": "自分の胸元に両手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_097",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "肩に手を添える",
+      "value_en": "hand on own shoulder",
+      "note": "自分の肩に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_098",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "腕に手を添える",
+      "value_en": "hand on own arm",
+      "note": "自分の腕に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_099",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "お腹に手を添える",
+      "value_en": "hand on own stomach",
+      "note": "自分のお腹に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_100",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "脚に手を添える",
+      "value_en": "hand on own leg",
+      "note": "自分の脚に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_101",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "片手を腰に置く",
+      "value_en": "hand on hip",
+      "note": "腰に片手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_102",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "両手を腰に置く",
+      "value_en": "hands on hips",
+      "note": "腰に両手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_103",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "手を膝の上に置く",
+      "value_en": "hand on lap",
+      "note": "座った状態などで手を膝の上に置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_104",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "足首に手を添える",
+      "value_en": "hand on ankle",
+      "note": "足首付近に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_105",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "手を顔の近くに置く",
+      "value_en": "hand near face",
+      "note": "顔の近くに手を置く姿勢。触れることは固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_106",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "手を口に添える",
+      "value_en": "hand over mouth",
+      "note": "口元に手をかぶせる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_107",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "唇に手を添える",
+      "value_en": "hand on lips",
+      "note": "唇付近に手を添える姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_108",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "両手を顔に置く",
+      "value_en": "hands on face",
+      "note": "顔に両手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_109",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "手で顔を覆う",
+      "value_en": "covering face",
+      "note": "手などで顔を見えにくくする姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_110",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "手で目を覆う",
+      "value_en": "hand over eyes",
+      "note": "目元に手をかぶせる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_111",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "耳を覆う",
+      "value_en": "covering ears",
+      "note": "手などで耳を覆う姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_112",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "机に手を置く",
+      "value_en": "hands on table",
+      "note": "机の上に手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_113",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "床に両手をつく",
+      "value_en": "hands on ground",
+      "note": "床や地面に両手をつく姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_114",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "壁に片手をつく",
+      "value_en": "hand on wall",
+      "note": "壁に片手を置く姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_115",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "ポケットに片手を入れる",
+      "value_en": "hand in pocket",
+      "note": "片手を服のポケットに入れる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_116",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "ポケットに両手を入れる",
+      "value_en": "hands in pockets",
+      "note": "両手を服のポケットに入れる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_117",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "前ポケットに両手を入れる",
+      "value_en": "hands in front pockets",
+      "note": "服の前側のポケットに両手を入れる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_118",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "反対側の袖に手を入れる",
+      "value_en": "hands in opposite sleeves",
+      "note": "左右の袖へ反対側の手を入れる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_119",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "開いた手",
+      "value_en": "open hands",
+      "note": "手を開いた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_120",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "指をそろえる",
+      "value_en": "fingers together",
+      "note": "手の指を互いに近づけた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_121",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "指を広げる",
+      "value_en": "spread fingers",
+      "note": "手の指を互いに離した状態。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_122",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "拳を握る",
+      "value_en": "clenched fist",
+      "note": "指を折って拳を作った状態。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_123",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "拳を手で包む",
+      "value_en": "fist in hand",
+      "note": "片方の拳を反対側の手で包む姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_hands_124",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "手のひらを前に向ける",
+      "value_en": "palms forward",
+      "note": "手のひらを正面側へ向けた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_125",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "ピース",
+      "value_en": "peace sign",
+      "note": "人差し指と中指を開いてV字にしたサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_126",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "両手でピース",
+      "value_en": "double peace sign",
+      "note": "両手でV字を作るサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_127",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "親指を上げる",
+      "value_en": "thumbs up",
+      "note": "親指を上へ向けるサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_128",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "OKサイン",
+      "value_en": "ok sign",
+      "note": "親指と人差し指で輪を作るサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_129",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "指差し",
+      "value_en": "pointing",
+      "note": "指で方向や対象を示す姿勢。対象は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_130",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "人差し指を上げる",
+      "value_en": "index finger up",
+      "note": "人差し指を上向きに伸ばすサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_131",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "指鉄砲",
+      "value_en": "finger gun",
+      "note": "指で銃の形を模したサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_132",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "指を交差する",
+      "value_en": "fingers crossed",
+      "note": "二本の指を交差させるサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_133",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "両手のハート",
+      "value_en": "heart hands",
+      "note": "左右の手でハート形を作るサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_134",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "手のハートを目に重ねる",
+      "value_en": "heart hands over eye",
+      "note": "両手のハートを目元に近づける姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_135",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "四本指のハート",
+      "value_en": "four-finger heart hands",
+      "note": "左右合わせて四本の指でハート形を作るサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_136",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "指ハート",
+      "value_en": "finger heart",
+      "note": "親指と人差し指などで小さなハートを作るサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_137",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "ILYサイン",
+      "value_en": "ily sign",
+      "note": "親指・人差し指・小指を伸ばすサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_138",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "指のフレーム",
+      "value_en": "finger frame",
+      "note": "指で四角い枠を作るサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_139",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "三角形の手",
+      "value_en": "triangle hands",
+      "note": "両手の指で三角形を作るサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_140",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "キツネの手",
+      "value_en": "fox hand gesture",
+      "note": "指で狐の顔を模すサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_141",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "停止の手",
+      "value_en": "stop gesture",
+      "note": "手のひらを相手側へ見せるサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_142",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "中指を立てる",
+      "value_en": "middle finger",
+      "note": "中指を立てる侮辱的なサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_143",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "合掌",
+      "value_en": "palms together",
+      "note": "左右の手のひらを合わせる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_144",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "三本指の敬礼",
+      "value_en": "three-finger salute",
+      "note": "三本の指を伸ばした敬礼。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_145",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "ロックサイン",
+      "value_en": "devil horns sign",
+      "note": "人差し指と小指を伸ばしたサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_146",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "シャカサイン",
+      "value_en": "shaka sign",
+      "note": "親指と小指を伸ばしたサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_147",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "二本指で横を示す",
+      "value_en": "pointing sideways with two fingers",
+      "note": "二本の指を横へ向けるサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_148",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "指をつまむ形",
+      "value_en": "pinching fingers",
+      "note": "親指とほかの指を近づけた形。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_149",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "猫の手",
+      "value_en": "cat paw pose",
+      "note": "手首や指を曲げて猫の前足を模す姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_150",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "爪を見せる手",
+      "value_en": "claw pose",
+      "note": "指を曲げて爪のように見せる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_151",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "兎耳の手",
+      "value_en": "rabbit ear gesture",
+      "note": "頭付近の手で兎の耳を模す姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_152",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "電話の手",
+      "value_en": "call me gesture",
+      "note": "親指と小指を伸ばして電話を模すサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_153",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "敬礼",
+      "value_en": "salute",
+      "note": "手を額付近へ上げる挨拶の姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_signs_154",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "手話",
+      "value_en": "sign language",
+      "note": "手話による表現を求める候補。特定の言語や正確な意味は別途確認が必要。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_155",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "脚をそろえる",
+      "value_en": "legs together",
+      "note": "左右の脚を近づけた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_156",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "脚を開く",
+      "value_en": "spread legs",
+      "note": "左右の脚を開いた姿勢。衣服・露出・行為は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_157",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "左右に大きく開脚する",
+      "value_en": "side split",
+      "note": "脚を左右へ伸ばした開脚姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_158",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "前後に大きく開脚する",
+      "value_en": "front split",
+      "note": "脚を前後へ伸ばした開脚姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_159",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "脚を組む",
+      "value_en": "crossed legs",
+      "note": "左右の脚を交差させた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_160",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "足首を交差する",
+      "value_en": "crossed ankles",
+      "note": "左右の足首を交差させた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_161",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "内股",
+      "value_en": "pigeon-toed",
+      "note": "つま先を内向きにした姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_162",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "片脚を上げる",
+      "value_en": "leg up",
+      "note": "片方の脚を上げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_163",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "手で片脚を持ち上げる",
+      "value_en": "holding raised leg",
+      "note": "上げた脚を手で支える姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_164",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "両脚を上げる",
+      "value_en": "legs up",
+      "note": "両方の脚を上げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_165",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "両脚を頭上側へ上げる",
+      "value_en": "legs over head",
+      "note": "横たわるなどして脚を頭上側へ寄せる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_166",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "立ったまま開脚する",
+      "value_en": "standing split",
+      "note": "片足で立ち、もう片方の脚を高く上げる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_167",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "片脚を伸ばす",
+      "value_en": "outstretched leg",
+      "note": "片脚を体から離して伸ばした姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_168",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "膝を開いて足先をそろえる",
+      "value_en": "knees apart feet together",
+      "note": "膝を離し、足先を近づけた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_169",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "膝をそろえて足先を開く",
+      "value_en": "knees together feet apart",
+      "note": "膝を近づけ、足先を離した姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_170",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "片膝を上げる",
+      "value_en": "knee up",
+      "note": "片方の膝を持ち上げる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_171",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "両膝を上げる",
+      "value_en": "knees up",
+      "note": "両方の膝を持ち上げる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_172",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "膝を胸に近づける",
+      "value_en": "knees to chest",
+      "note": "膝を胸側へ引き寄せる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_173",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "膝を立てて脚を開く",
+      "value_en": "spread legs, knees up",
+      "note": "左右の脚を開き、膝を上げた姿勢。衣服・露出・行為は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_174",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "膝を曲げる",
+      "value_en": "bent knees",
+      "note": "左右の膝を曲げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_legs_175",
+      "folderId": "pg26_pose_v1_f_legs",
+      "label_jp": "後ろの腕で体を支える",
+      "value_en": "leaning back with arm support",
+      "note": "後方についた腕を支えに上体を後ろへ傾ける姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_176",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這い",
+      "value_en": "all fours",
+      "note": "両手と両膝などで体を支える姿勢。表情や行為は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "pg26_pose_v1_t_fourback",
+        "pg26_pose_v1_t_fourlook"
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_177",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで前を見る",
+      "value_en": "all fours, looking forward",
+      "note": "四つん這いで顔を前に向ける姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_178",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで下を見る",
+      "value_en": "all fours, looking down",
+      "note": "四つん這いで顔を下に向ける姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_179",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで後ろを振り返る",
+      "value_en": "all fours, looking back over shoulder",
+      "note": "四つん這いで肩越しに振り返る姿勢。遠くを見る指定は付けない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_180",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで背中を反らす",
+      "value_en": "all fours, arched back",
+      "note": "四つん這いで背中を反らす姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_181",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで腰を上げる",
+      "value_en": "all fours, hips raised",
+      "note": "四つん這いで腰の位置を高くする姿勢。行為や衣服は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_182",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで背中を丸める",
+      "value_en": "all fours, hunched back",
+      "note": "四つん這いで背中を丸める姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_183",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで片手を前へ伸ばす",
+      "value_en": "all fours, reaching forward",
+      "note": "片手を前方へ伸ばして体を支える姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_184",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで両腕を前へ伸ばす",
+      "value_en": "all fours, arms extended forward",
+      "note": "両腕を前へ伸ばした姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_185",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで顔を低くする",
+      "value_en": "all fours, face close to ground",
+      "note": "四つん這いで顔を地面に近づけた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_186",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "低い四つん這い",
+      "value_en": "all fours, low crouch",
+      "note": "四つん這いで体を低くした姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_187",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで猫の手",
+      "value_en": "all fours, paw pose",
+      "note": "四つん這いで猫の前足を模した手の形を使う姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_188",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "四つん這いで爪の手",
+      "value_en": "all fours, claw pose",
+      "note": "四つん這いで指を爪状に曲げた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_189",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "プランク",
+      "value_en": "plank pose",
+      "note": "腕と足先などで体を支え、体を伸ばす姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_fours_190",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "ブリッジ",
+      "value_en": "body bridge",
+      "note": "手足で体を支え、腹部を上へ反らす姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_191",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "格闘の構え",
+      "value_en": "fighting stance",
+      "note": "相手に備える格闘の姿勢。攻撃の種類は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_192",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "防御の構え",
+      "value_en": "defensive stance",
+      "note": "攻撃を防ぐための構え。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_193",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "武術の構え",
+      "value_en": "martial arts pose",
+      "note": "武術的な手足の配置を求める姿勢。流派は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_194",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "剣の構え",
+      "value_en": "sword stance",
+      "note": "剣を使うための構え。剣の種類は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_195",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "忍者風の構え",
+      "value_en": "ninja stance",
+      "note": "忍者を思わせる低い構えなどの姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_196",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "英雄的な構え",
+      "value_en": "heroic pose",
+      "note": "胸を張るなど、英雄的な印象を求める姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_197",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "力こぶを作る",
+      "value_en": "flexing",
+      "note": "筋肉を見せるように腕などを曲げる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_198",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "両腕で力こぶを作る",
+      "value_en": "double biceps pose",
+      "note": "両腕を上げて肘を曲げる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_199",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "バレエのアラベスク",
+      "value_en": "arabesque pose",
+      "note": "片脚で立ち、反対側の脚を後方へ伸ばす姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_200",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "ダンスの姿勢",
+      "value_en": "dance pose",
+      "note": "踊りの一瞬を切り取った姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_201",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "動きのある姿勢",
+      "value_en": "dynamic pose",
+      "note": "体の傾きや手足に大きな動きを持つ姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_202",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "勝利の姿勢",
+      "value_en": "victory pose",
+      "note": "腕を上げるなど、勝利を思わせる姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_203",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "自信のある姿勢",
+      "value_en": "confident pose",
+      "note": "胸を張るなど、自信のある印象の姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_204",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "かわいらしい姿勢",
+      "value_en": "cute pose",
+      "note": "かわいらしい印象を求める候補。具体的な形はほかの姿勢で補える。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_205",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "ゾンビ風の姿勢",
+      "value_en": "zombie pose",
+      "note": "腕を前へ出すなど、ゾンビを模す姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_206",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "お化け風の姿勢",
+      "value_en": "ghost pose",
+      "note": "手首を垂らすなど、お化けを模す姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_207",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "おどけた姿勢",
+      "value_en": "silly pose",
+      "note": "不釣り合いな手足の配置などのおどけた姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_sport_208",
+      "folderId": "pg26_pose_v1_f_sport",
+      "label_jp": "変身の構え",
+      "value_en": "transformation pose",
+      "note": "変身場面を思わせる演技の姿勢。特定作品は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_extra_208",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "手を脚の間に置く",
+      "value_en": "hand between legs",
+      "note": "両脚の間に手を置く姿勢。衣服・露出・行為は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_extra_209",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "自分のお尻に手を添える",
+      "value_en": "hands on own butt",
+      "note": "自分の臀部へ手を添える姿勢。衣服・露出・行為は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_extra_210",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "自分の肘に手を添える",
+      "value_en": "hand on own elbow",
+      "note": "反対側の手を自分の肘へ添える姿勢。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_extra_211",
+      "folderId": "pg26_pose_v1_f_hands",
+      "label_jp": "手をかざして光を遮る",
+      "value_en": "hand shading eyes",
+      "note": "目元へ手をかざして光を遮る姿勢。防御の動作は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_extra_212",
+      "folderId": "pg26_pose_v1_f_fours",
+      "label_jp": "脚の間から後ろを見る",
+      "value_en": "looking through own legs",
+      "note": "上体を曲げるなどして脚の間から後ろを見る姿勢。視点や四つん這いは別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_extra_213",
+      "folderId": "pg26_pose_v1_f_standing",
+      "label_jp": "頭の後ろに片手を添える",
+      "value_en": "hand behind head",
+      "note": "片手を後頭部側に置く姿勢。感情は別指定。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_extra_214",
+      "folderId": "pg26_pose_v1_f_signs",
+      "label_jp": "口元に人差し指（しーっ）",
+      "value_en": "shushing",
+      "note": "人差し指を口元へ立てる、静かにしてほしいときのサイン。",
+      "nsfw": false
+    },
+    {
+      "id": "pg26_pose_v1_w_extra_215",
+      "folderId": "pg26_pose_v1_f_arms",
+      "label_jp": "腰の前で手を合わせる",
+      "value_en": "hands clasped in front",
+      "note": "体の前側で両手を合わせる姿勢。腕のV字という曖昧な指定から形を整理。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "pg26_pose_v1_t_sitwhere",
+      "name": "座る場所",
+      "folderId": "ポーズ / 座る場所",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "pg26_pose_v1_t_sitwhere_o_0",
+          "label": "床",
+          "value": ", sitting on the floor"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitwhere_o_1",
+          "label": "地面",
+          "value": ", sitting on the ground"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitwhere_o_2",
+          "label": "椅子",
+          "value": ", sitting on chair"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitwhere_o_3",
+          "label": "ソファ",
+          "value": ", sitting on couch"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitwhere_o_4",
+          "label": "ベンチ",
+          "value": ", sitting on bench"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitwhere_o_5",
+          "label": "ベッド",
+          "value": ", sitting on bed"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitwhere_o_6",
+          "label": "階段",
+          "value": ", sitting on stairs"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitwhere_o_7",
+          "label": "玉座",
+          "value": ", sitting on throne"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitwhere_o_8",
+          "label": "電車の座席",
+          "value": ", sitting on train seat"
+        }
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_t_sitshape",
+      "name": "座った脚の形",
+      "folderId": "ポーズ / 座った脚の形",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "pg26_pose_v1_t_sitshape_o_0",
+          "label": "あぐら",
+          "value": ", cross-legged sitting"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitshape_o_1",
+          "label": "脚を組む",
+          "value": ", sitting with crossed legs"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitshape_o_2",
+          "label": "足首を組む",
+          "value": ", sitting with crossed ankles"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitshape_o_3",
+          "label": "膝をそろえる",
+          "value": ", sitting with knees together"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitshape_o_4",
+          "label": "足先をそろえる",
+          "value": ", sitting with feet together"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitshape_o_5",
+          "label": "片膝を立てる",
+          "value": ", sitting with one knee up"
+        },
+        {
+          "id": "pg26_pose_v1_t_sitshape_o_6",
+          "label": "脚を開く",
+          "value": ", sitting with legs apart"
+        }
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_t_liedirection",
+      "name": "横たわる向き",
+      "folderId": "ポーズ / 横たわる向き",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "pg26_pose_v1_t_liedirection_o_0",
+          "label": "仰向け",
+          "value": ", lying on back"
+        },
+        {
+          "id": "pg26_pose_v1_t_liedirection_o_1",
+          "label": "うつ伏せ",
+          "value": ", lying on stomach"
+        },
+        {
+          "id": "pg26_pose_v1_t_liedirection_o_2",
+          "label": "横向き",
+          "value": ", lying on side"
+        }
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_t_lieplace",
+      "name": "横たわる場所",
+      "folderId": "ポーズ / 横たわる場所",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "pg26_pose_v1_t_lieplace_o_0",
+          "label": "ベッド",
+          "value": ", lying on bed"
+        },
+        {
+          "id": "pg26_pose_v1_t_lieplace_o_1",
+          "label": "床",
+          "value": ", lying on floor"
+        },
+        {
+          "id": "pg26_pose_v1_t_lieplace_o_2",
+          "label": "草の上",
+          "value": ", lying on grass"
+        },
+        {
+          "id": "pg26_pose_v1_t_lieplace_o_3",
+          "label": "ソファ",
+          "value": ", lying on couch"
+        }
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_t_selfpart",
+      "name": "自分に添える手の部位",
+      "folderId": "ポーズ / 自分に添える手の部位",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_0",
+          "label": "頭",
+          "value": ", hand on own head"
+        },
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_1",
+          "label": "顔",
+          "value": ", hand on own face"
+        },
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_2",
+          "label": "額",
+          "value": ", hand on own forehead"
+        },
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_3",
+          "label": "頬",
+          "value": ", hand on own cheek"
+        },
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_4",
+          "label": "顎",
+          "value": ", hand on own chin"
+        },
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_5",
+          "label": "肩",
+          "value": ", hand on own shoulder"
+        },
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_6",
+          "label": "腕",
+          "value": ", hand on own arm"
+        },
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_7",
+          "label": "胸元",
+          "value": ", hand on own chest"
+        },
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_8",
+          "label": "お腹",
+          "value": ", hand on own stomach"
+        },
+        {
+          "id": "pg26_pose_v1_t_selfpart_o_9",
+          "label": "脚",
+          "value": ", hand on own leg"
+        }
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_t_fourback",
+      "name": "四つん這いの背中",
+      "folderId": "ポーズ / 四つん這いの背中",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "pg26_pose_v1_t_fourback_o_0",
+          "label": "反らす",
+          "value": ", arched back"
+        },
+        {
+          "id": "pg26_pose_v1_t_fourback_o_1",
+          "label": "丸める",
+          "value": ", hunched back"
+        }
+      ]
+    },
+    {
+      "id": "pg26_pose_v1_t_fourlook",
+      "name": "四つん這いの顔の向き",
+      "folderId": "ポーズ / 四つん這いの顔の向き",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "pg26_pose_v1_t_fourlook_o_0",
+          "label": "前",
+          "value": ", looking forward"
+        },
+        {
+          "id": "pg26_pose_v1_t_fourlook_o_1",
+          "label": "下",
+          "value": ", looking down"
+        },
+        {
+          "id": "pg26_pose_v1_t_fourlook_o_2",
+          "label": "肩越しに後ろ",
+          "value": ", looking back over shoulder"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

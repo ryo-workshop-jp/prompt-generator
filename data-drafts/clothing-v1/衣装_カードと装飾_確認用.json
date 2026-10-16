@@ -1,0 +1,5897 @@
+{
+  "folders": [
+    {
+      "id": "cg26_clothing_v1",
+      "name": "衣装",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_outfit",
+      "name": "衣装一式",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_uniform",
+      "name": "制服",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_work",
+      "name": "仕事着",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_sport",
+      "name": "スポーツ",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_japanese",
+      "name": "和装",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_formal",
+      "name": "ドレス・礼装",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_historical",
+      "name": "歴史・地域の衣装",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_fantasy",
+      "name": "ファンタジー",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_scifi",
+      "name": "SF",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_stage",
+      "name": "ステージ・仮装",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_bunny",
+      "name": "成人向け寄りの仮装",
+      "parentId": "cg26_clothing_v1_f_outfit",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_tops",
+      "name": "トップス",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_shirt",
+      "name": "シャツ",
+      "parentId": "cg26_clothing_v1_f_tops",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_blouse",
+      "name": "ブラウス",
+      "parentId": "cg26_clothing_v1_f_tops",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_tee",
+      "name": "Tシャツ・カットソー",
+      "parentId": "cg26_clothing_v1_f_tops",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_tank",
+      "name": "袖なし・肩出し",
+      "parentId": "cg26_clothing_v1_f_tops",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_sweater",
+      "name": "セーター",
+      "parentId": "cg26_clothing_v1_f_tops",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_cardigan",
+      "name": "カーディガン",
+      "parentId": "cg26_clothing_v1_f_tops",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_sweat",
+      "name": "スウェット・パーカー",
+      "parentId": "cg26_clothing_v1_f_tops",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_ziphoodie",
+      "name": "ジップパーカー",
+      "parentId": "cg26_clothing_v1_f_tops",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_vest",
+      "name": "ベスト・その他",
+      "parentId": "cg26_clothing_v1_f_tops",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_bottoms",
+      "name": "ボトムス",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_skirt",
+      "name": "スカート",
+      "parentId": "cg26_clothing_v1_f_bottoms",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_pants",
+      "name": "パンツ",
+      "parentId": "cg26_clothing_v1_f_bottoms",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_shorts",
+      "name": "ショートパンツ",
+      "parentId": "cg26_clothing_v1_f_bottoms",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_leggings",
+      "name": "レギンス",
+      "parentId": "cg26_clothing_v1_f_bottoms",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_overall",
+      "name": "オーバーオール",
+      "parentId": "cg26_clothing_v1_f_bottoms",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_dress",
+      "name": "ワンピース",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_outer",
+      "name": "上着",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_buttonjacket",
+      "name": "ボタン付きジャケット",
+      "parentId": "cg26_clothing_v1_f_outer",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_zipjacket",
+      "name": "ジッパー付きジャケット",
+      "parentId": "cg26_clothing_v1_f_outer",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_jacket",
+      "name": "その他のジャケット",
+      "parentId": "cg26_clothing_v1_f_outer",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_coat",
+      "name": "ボタン付きコート",
+      "parentId": "cg26_clothing_v1_f_outer",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_othercoat",
+      "name": "その他のコート",
+      "parentId": "cg26_clothing_v1_f_outer",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_cape",
+      "name": "ケープ・マント",
+      "parentId": "cg26_clothing_v1_f_outer",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_jparts",
+      "name": "和装の部品",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_swim",
+      "name": "水着",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_swimbasic",
+      "name": "基本の水着",
+      "parentId": "cg26_clothing_v1_f_swim",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_swimadult",
+      "name": "露出の強い水着",
+      "parentId": "cg26_clothing_v1_f_swim",
+      "nsfw": true
+    },
+    {
+      "id": "cg26_clothing_v1_f_underwear",
+      "name": "基本の下着",
+      "parentId": "cg26_clothing_v1_f_underwear_root",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_sleep",
+      "name": "部屋着・寝間着",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_negligee",
+      "name": "軽い寝間着",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_leg",
+      "name": "靴下・タイツ",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_socks",
+      "name": "靴下",
+      "parentId": "cg26_clothing_v1_f_leg",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_tights",
+      "name": "タイツ・ストッキング",
+      "parentId": "cg26_clothing_v1_f_leg",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_shoes",
+      "name": "靴",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_flatshoe",
+      "name": "普段の靴",
+      "parentId": "cg26_clothing_v1_f_shoes",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_heelshoe",
+      "name": "パンプス・ヒール",
+      "parentId": "cg26_clothing_v1_f_shoes",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_sandals",
+      "name": "サンダル・室内履き",
+      "parentId": "cg26_clothing_v1_f_shoes",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_boots",
+      "name": "ブーツ",
+      "parentId": "cg26_clothing_v1_f_shoes",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_fixedboots",
+      "name": "用途別ブーツ",
+      "parentId": "cg26_clothing_v1_f_shoes",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_underwear_root",
+      "name": "下着",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_f_underwear_adult",
+      "name": "露出の強い下着",
+      "parentId": "cg26_clothing_v1_f_underwear_root",
+      "nsfw": true
+    },
+    {
+      "id": "cg26_clothing_v1_f_clothing_states",
+      "name": "衣装の素材・状態・扱い方",
+      "parentId": "cg26_clothing_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "cg26_clothing_v1_w_uniform_001",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "セーラー服",
+      "value_en": "sailor uniform",
+      "nsfw": false,
+      "note": "大きなセーラー襟と胸元のリボンやスカーフが特徴。トップスとスカートなどを合わせた制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_uniform_002",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "ブレザー制服",
+      "value_en": "school uniform, blazer",
+      "nsfw": false,
+      "note": "襟付きのジャケットを中心に、シャツとスカートやパンツを合わせた制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_uniform_003",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "学ラン",
+      "value_en": "gakuran",
+      "nsfw": false,
+      "note": "首元まで閉じる立ち襟と、前面に縦に並ぶボタンが特徴の学生服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_uniform_004",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "園児服",
+      "value_en": "kindergarten uniform",
+      "nsfw": false,
+      "note": "丸襟のスモックや帽子などを合わせた幼稚園の制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_001",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "ビジネススーツ",
+      "value_en": "business suit",
+      "nsfw": false,
+      "note": "襟付きジャケットと、同じ生地のパンツやスカートを合わせた仕事用の服装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_outfit_jacket_color",
+        "cg26_clothing_v1_t_outfit_pants_color",
+        "cg26_clothing_v1_t_jacket_button"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_002",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "メイド服",
+      "value_en": "maid outfit",
+      "nsfw": false,
+      "note": "エプロン、フリル、襟やカフスを組み合わせた給仕用の衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_maid_color",
+        "cg26_clothing_v1_t_apron_color",
+        "cg26_clothing_v1_t_outfit_skirt_length",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_sleeveshape",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_003",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "看護師服",
+      "value_en": "nurse uniform",
+      "nsfw": false,
+      "note": "医療の仕事用の制服。ワンピース型や上下に分かれた型などがある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sleeve"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_004",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "医療用スクラブ",
+      "value_en": "medical scrubs",
+      "nsfw": false,
+      "note": "Vネックのゆったりしたトップスとパンツを合わせた医療用の服装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_005",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "シェフの制服",
+      "value_en": "chef uniform",
+      "nsfw": false,
+      "note": "二列のボタンが付いた上着と、エプロンや帽子を合わせた調理用の制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_apron_color",
+        "cg26_clothing_v1_t_sleeve"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_006",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "警察官の制服",
+      "value_en": "police uniform",
+      "nsfw": false,
+      "note": "肩章や徽章、ベルトなどを備えた制服。形や配色は地域によって異なる。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_007",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "消防服",
+      "value_en": "firefighter uniform",
+      "nsfw": false,
+      "note": "厚手の防護上着とパンツが中心。反射帯やヘルメットを合わせることが多い。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_008",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "作業着",
+      "value_en": "workwear",
+      "nsfw": false,
+      "note": "動きやすさを重視した丈夫な服。大きなポケットや補強部分が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_009",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "整備士のつなぎ",
+      "value_en": "mechanic coveralls",
+      "nsfw": false,
+      "note": "上着とパンツが一体になった作業用のつなぎ。前開きと実用的なポケットが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_010",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "白衣姿",
+      "value_en": "lab coat",
+      "nsfw": false,
+      "note": "普段の服の上に羽織る長めの白衣。前開きで、腰付近にポケットがある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_coat_length",
+        "cg26_clothing_v1_t_coat_button"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_011",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "客室乗務員の制服",
+      "value_en": "flight attendant uniform",
+      "nsfw": false,
+      "note": "ジャケットやワンピースに、スカーフなどを合わせた航空接客用の制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_work_012",
+      "folderId": "cg26_clothing_v1_f_work",
+      "label_jp": "軍服",
+      "value_en": "military uniform",
+      "nsfw": false,
+      "note": "肩章、徽章、ポケットなどを備えた軍用の制服。礼装と実用服で印象が変わる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_001",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "体操服",
+      "value_en": "gym uniform",
+      "nsfw": false,
+      "note": "運動用のトップスとショートパンツなどを合わせた服装。学校や競技で形が異なる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_002",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "ジャージ",
+      "value_en": "tracksuit",
+      "nsfw": false,
+      "note": "伸縮性のある上着とパンツの上下。袖や脚の側面にラインが入る形もある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_outfit_jacket_color",
+        "cg26_clothing_v1_t_outfit_pants_color",
+        "cg26_clothing_v1_t_outfit_pants_length",
+        "cg26_clothing_v1_t_zip_jacket"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_003",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "陸上ユニフォーム",
+      "value_en": "track and field uniform",
+      "nsfw": false,
+      "note": "軽いタンクトップと短いパンツなどを合わせた、走りやすい競技服。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_004",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "サッカーユニフォーム",
+      "value_en": "soccer uniform",
+      "nsfw": false,
+      "note": "チームの色や番号を入れたシャツとショートパンツ、長い靴下を合わせる競技服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_005",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "野球ユニフォーム",
+      "value_en": "baseball uniform",
+      "nsfw": false,
+      "note": "前開きのシャツ、パンツ、ベルトなどを合わせる競技服。帽子を合わせることも多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_006",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "バスケットボールユニフォーム",
+      "value_en": "basketball uniform",
+      "nsfw": false,
+      "note": "袖なしのゆったりしたトップスと、膝上程度のパンツを合わせる競技服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_007",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "テニスウェア",
+      "value_en": "tennis outfit",
+      "nsfw": false,
+      "note": "ポロシャツやタンクトップに、スカートやショートパンツを合わせた競技服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_outfit_skirt_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_008",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "柔道着",
+      "value_en": "judogi",
+      "nsfw": false,
+      "note": "厚手の合わせ襟の上着とパンツを帯で留める武道着。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_009",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "空手着",
+      "value_en": "karate gi",
+      "nsfw": false,
+      "note": "合わせ襟の上着とパンツを帯で留める武道着。柔道着より軽い生地の形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_010",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "剣道着",
+      "value_en": "kendo uniform",
+      "nsfw": false,
+      "note": "稽古用の上着と袴を合わせた服装。面や胴などの防具は別に指定する。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_011",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "サイクリングウェア",
+      "value_en": "cycling outfit",
+      "nsfw": false,
+      "note": "身体に沿うジャージとパンツを組み合わせた、自転車競技用の服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sport_012",
+      "folderId": "cg26_clothing_v1_f_sport",
+      "label_jp": "スキーウェア",
+      "value_en": "ski suit",
+      "nsfw": false,
+      "note": "防寒用の厚手の上着とパンツ。フードや大きなポケットを備える形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_japanese_001",
+      "folderId": "cg26_clothing_v1_f_japanese",
+      "label_jp": "着物",
+      "value_en": "kimono",
+      "nsfw": false,
+      "note": "前身頃を重ね、腰を帯で留める和服。直線的な形と幅のある袖が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_japanese_002",
+      "folderId": "cg26_clothing_v1_f_japanese",
+      "label_jp": "浴衣",
+      "value_en": "yukata",
+      "nsfw": false,
+      "note": "軽い生地で仕立てた夏向けの和服。帯を締め、涼しげな柄を合わせることが多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_japanese_003",
+      "folderId": "cg26_clothing_v1_f_japanese",
+      "label_jp": "振袖",
+      "value_en": "furisode",
+      "nsfw": false,
+      "note": "袖が長く垂れ下がる華やかな着物。大きな柄や帯結びが目を引く。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_japanese_004",
+      "folderId": "cg26_clothing_v1_f_japanese",
+      "label_jp": "袴姿",
+      "value_en": "hakama outfit",
+      "nsfw": false,
+      "note": "着物や和風の上着に袴を合わせた姿。腰のひだと広がる裾が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_japanese_005",
+      "folderId": "cg26_clothing_v1_f_japanese",
+      "label_jp": "巫女装束",
+      "value_en": "miko outfit",
+      "nsfw": false,
+      "note": "白い上着と赤い袴を組み合わせる、神社の巫女をイメージした装束。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_japanese_006",
+      "folderId": "cg26_clothing_v1_f_japanese",
+      "label_jp": "忍装束",
+      "value_en": "ninja outfit",
+      "nsfw": false,
+      "note": "動きやすい和風の上着とパンツに、手足の巻き布などを合わせた忍者風の衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_formal_001",
+      "folderId": "cg26_clothing_v1_f_formal",
+      "label_jp": "ウェディングドレス",
+      "value_en": "wedding dress",
+      "nsfw": false,
+      "note": "結婚式用の華やかなドレス。長い裾、レース、ベールなどを合わせることが多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_trim",
+        "cg26_clothing_v1_t_dress_train"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_formal_002",
+      "folderId": "cg26_clothing_v1_f_formal",
+      "label_jp": "イブニングドレス",
+      "value_en": "evening gown",
+      "nsfw": false,
+      "note": "夜の正式な場をイメージしたドレス。長い裾と上品な生地感が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_gown_length",
+        "cg26_clothing_v1_t_neckline",
+        "cg26_clothing_v1_t_dress_train"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_formal_003",
+      "folderId": "cg26_clothing_v1_f_formal",
+      "label_jp": "カクテルドレス",
+      "value_en": "cocktail dress",
+      "nsfw": false,
+      "note": "パーティー向けのドレス。イブニングドレスより軽やかな丈や形を選びやすい。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_cocktail_length",
+        "cg26_clothing_v1_t_neckline",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_formal_004",
+      "folderId": "cg26_clothing_v1_f_formal",
+      "label_jp": "タキシード",
+      "value_en": "tuxedo",
+      "nsfw": false,
+      "note": "光沢のある襟などを備えた礼装用スーツ。蝶ネクタイを合わせることが多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_formal_005",
+      "folderId": "cg26_clothing_v1_f_formal",
+      "label_jp": "ボールガウン",
+      "value_en": "ball gown",
+      "nsfw": false,
+      "note": "上半身を整え、腰から裾へ大きく広がるドレス。舞踏会風の華やかな形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_gown_length",
+        "cg26_clothing_v1_t_dress_train",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_historical_001",
+      "folderId": "cg26_clothing_v1_f_historical",
+      "label_jp": "チャイナドレス",
+      "value_en": "cheongsam",
+      "nsfw": false,
+      "note": "立ち襟と身体に沿う形が特徴の中国風ドレス。脇にスリットが入る形もある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_fabric"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_historical_002",
+      "folderId": "cg26_clothing_v1_f_historical",
+      "label_jp": "サリー",
+      "value_en": "sari",
+      "nsfw": false,
+      "note": "長い布を身体に巻き、肩へ流して着る衣装。布の重なりとひだが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_historical_003",
+      "folderId": "cg26_clothing_v1_f_historical",
+      "label_jp": "ディアンドル",
+      "value_en": "dirndl",
+      "nsfw": false,
+      "note": "ブラウス、ウエストを絞ったワンピース、エプロンを合わせた伝統衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_historical_004",
+      "folderId": "cg26_clothing_v1_f_historical",
+      "label_jp": "古代風のローブ",
+      "value_en": "ancient-style robe",
+      "nsfw": false,
+      "note": "身体をゆったり包む長い衣。布のひだや腰の留め具を使う古代風のイメージ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_robe_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_historical_005",
+      "folderId": "cg26_clothing_v1_f_historical",
+      "label_jp": "トーガ",
+      "value_en": "toga",
+      "nsfw": false,
+      "note": "大きな布を身体に巻いて肩へ掛ける古代ローマ風の衣装。布の重なりが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_historical_006",
+      "folderId": "cg26_clothing_v1_f_historical",
+      "label_jp": "漢服",
+      "value_en": "hanfu",
+      "nsfw": false,
+      "note": "中国の伝統的な衣装をイメージした服。重なる襟、帯、広い袖などの形がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_historical_007",
+      "folderId": "cg26_clothing_v1_f_historical",
+      "label_jp": "韓服",
+      "value_en": "hanbok",
+      "nsfw": false,
+      "note": "短い上着に、ふんわり広がるスカートやゆったりしたパンツを合わせた韓国の伝統衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_fantasy_001",
+      "folderId": "cg26_clothing_v1_f_fantasy",
+      "label_jp": "騎士の鎧",
+      "value_en": "knight armor",
+      "nsfw": false,
+      "note": "胸、肩、腕、脚などを金属板で覆う騎士風の鎧。重厚な輪郭が特徴。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_fantasy_002",
+      "folderId": "cg26_clothing_v1_f_fantasy",
+      "label_jp": "魔法使いのローブ",
+      "value_en": "wizard robe",
+      "nsfw": false,
+      "note": "身体をゆったり覆う長いローブ。広い袖やフードを持つ魔法使い風の服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_robe_length",
+        "cg26_clothing_v1_t_sleeveshape",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_fantasy_003",
+      "folderId": "cg26_clothing_v1_f_fantasy",
+      "label_jp": "修道服",
+      "value_en": "nun habit",
+      "nsfw": false,
+      "note": "長い衣と頭を覆う布を組み合わせた修道女風の服装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_fantasy_004",
+      "folderId": "cg26_clothing_v1_f_fantasy",
+      "label_jp": "海賊衣装",
+      "value_en": "pirate outfit",
+      "nsfw": false,
+      "note": "ゆったりしたシャツ、ベスト、ベルト、ブーツなどを組み合わせた海賊風の服装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_outfit_jacket_color",
+        "cg26_clothing_v1_t_outfit_pants_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_fantasy_005",
+      "folderId": "cg26_clothing_v1_f_fantasy",
+      "label_jp": "冒険者の衣装",
+      "value_en": "adventurer outfit",
+      "nsfw": false,
+      "note": "丈夫な服にベルト、革の装備、ポーチなどを加えた旅や探索向けの服装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_outfit_jacket_color",
+        "cg26_clothing_v1_t_outfit_pants_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_fantasy_006",
+      "folderId": "cg26_clothing_v1_f_fantasy",
+      "label_jp": "魔女の衣装",
+      "value_en": "witch outfit",
+      "nsfw": false,
+      "note": "ローブやドレスに、とんがり帽子などを合わせた魔女風の衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_scifi_001",
+      "folderId": "cg26_clothing_v1_f_scifi",
+      "label_jp": "宇宙服",
+      "value_en": "spacesuit",
+      "nsfw": false,
+      "note": "ヘルメットや生命維持装置を備えた、全身を覆う宇宙活動用のスーツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_scifi_002",
+      "folderId": "cg26_clothing_v1_f_scifi",
+      "label_jp": "パイロットスーツ",
+      "value_en": "pilot suit",
+      "nsfw": false,
+      "note": "飛行用のつなぎ型スーツ。ポケット、ハーネス、装備の留め具などが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_scifi_003",
+      "folderId": "cg26_clothing_v1_f_scifi",
+      "label_jp": "ボディスーツ",
+      "value_en": "bodysuit",
+      "nsfw": false,
+      "note": "胴体と股下が一体になった身体に沿う服。袖や脚を覆う範囲は形によって異なる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sleeve"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_scifi_004",
+      "folderId": "cg26_clothing_v1_f_scifi",
+      "label_jp": "パワードスーツ",
+      "value_en": "powered armor",
+      "nsfw": false,
+      "note": "動力付きの外骨格をイメージした装甲服。大きな関節や機械部品が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_scifi_005",
+      "folderId": "cg26_clothing_v1_f_scifi",
+      "label_jp": "サイバースーツ",
+      "value_en": "cybernetic suit",
+      "nsfw": false,
+      "note": "身体に沿う服に機械的なパネル、配線、発光部などを組み込んだ未来風の衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_stage_001",
+      "folderId": "cg26_clothing_v1_f_stage",
+      "label_jp": "アイドル衣装",
+      "value_en": "idol outfit",
+      "nsfw": false,
+      "note": "リボン、フリル、装飾などを使ったステージ向けの華やかな衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_outfit_skirt_color",
+        "cg26_clothing_v1_t_outfit_skirt_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_stage_002",
+      "folderId": "cg26_clothing_v1_f_stage",
+      "label_jp": "バレエ衣装",
+      "value_en": "ballet outfit",
+      "nsfw": false,
+      "note": "レオタードを中心に、チュチュなどを合わせる舞台衣装。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_stage_003",
+      "folderId": "cg26_clothing_v1_f_stage",
+      "label_jp": "サーカス衣装",
+      "value_en": "circus costume",
+      "nsfw": false,
+      "note": "強い配色、装飾、動きのある形を使ったサーカスの舞台衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_stage_004",
+      "folderId": "cg26_clothing_v1_f_stage",
+      "label_jp": "ハロウィン衣装",
+      "value_en": "Halloween costume",
+      "nsfw": false,
+      "note": "かぼちゃ、幽霊、魔女などを題材にした仮装。具体的な形はモチーフで変わる。"
+    },
+    {
+      "id": "cg26_clothing_v1_w_stage_005",
+      "folderId": "cg26_clothing_v1_f_stage",
+      "label_jp": "サンタ衣装",
+      "value_en": "Santa costume",
+      "nsfw": false,
+      "note": "白い縁取りのある赤い服を中心に、帽子やベルトを合わせた衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_outfit_skirt_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_stage_006",
+      "folderId": "cg26_clothing_v1_f_stage",
+      "label_jp": "チアリーダー衣装",
+      "value_en": "cheerleader uniform",
+      "nsfw": false,
+      "note": "チーム名などを入れたトップスと、スカートやショートパンツを合わせた応援用の衣装。",
+      "templateIds": [
+        "cg26_clothing_v1_t_outfit_skirt_color",
+        "cg26_clothing_v1_t_outfit_skirt_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_bunny_001",
+      "folderId": "cg26_clothing_v1_f_bunny",
+      "label_jp": "バニー衣装",
+      "value_en": "bunny suit",
+      "nsfw": false,
+      "note": "成人向けの仮装。身体に沿う胴衣に、うさぎ耳、蝶ネクタイ、カフスなどを合わせる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_shirt_001",
+      "folderId": "cg26_clothing_v1_f_shirt",
+      "label_jp": "シャツ",
+      "value_en": "shirt",
+      "nsfw": false,
+      "note": "襟と前開きがあるトップス。前面のボタンと袖口のカフスが基本的な特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_rolled",
+        "cg26_clothing_v1_t_shirt_button",
+        "cg26_clothing_v1_t_shirt_hem",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_shirt_002",
+      "folderId": "cg26_clothing_v1_f_shirt",
+      "label_jp": "ワイシャツ",
+      "value_en": "dress shirt",
+      "nsfw": false,
+      "note": "整った襟とカフスを持つ、スーツに合わせやすいシャツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_rolled",
+        "cg26_clothing_v1_t_shirt_button",
+        "cg26_clothing_v1_t_shirt_hem",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_shirt_003",
+      "folderId": "cg26_clothing_v1_f_shirt",
+      "label_jp": "フランネルシャツ",
+      "value_en": "flannel shirt",
+      "nsfw": false,
+      "note": "柔らかく起毛した生地のシャツ。温かみのある見た目で、チェック柄もよく使われる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_rolled",
+        "cg26_clothing_v1_t_shirt_button",
+        "cg26_clothing_v1_t_shirt_hem",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_blouse_001",
+      "folderId": "cg26_clothing_v1_f_blouse",
+      "label_jp": "ブラウス",
+      "value_en": "blouse",
+      "nsfw": false,
+      "note": "軽い生地や柔らかな形を使ったトップス。襟や袖のデザインに幅がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_sleeveshape"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_blouse_002",
+      "folderId": "cg26_clothing_v1_f_blouse",
+      "label_jp": "フリルブラウス",
+      "value_en": "frilled blouse",
+      "nsfw": false,
+      "note": "襟、胸元、袖などに、ひだ状のフリルを加えたブラウス。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_sleeveshape"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_blouse_003",
+      "folderId": "cg26_clothing_v1_f_blouse",
+      "label_jp": "ボウタイブラウス",
+      "value_en": "bow blouse",
+      "nsfw": false,
+      "note": "首元の長い布をリボンのように結ぶブラウス。胸元の結び目が目を引く。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_sleeveshape"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_blouse_004",
+      "folderId": "cg26_clothing_v1_f_blouse",
+      "label_jp": "セーラー襟のトップス",
+      "value_en": "sailor-collar top",
+      "nsfw": false,
+      "note": "背中側に四角く広がるセーラー襟のトップス。衣装全体ではなく上側の部品。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_sleeveshape"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tee_001",
+      "folderId": "cg26_clothing_v1_f_tee",
+      "label_jp": "Tシャツ",
+      "value_en": "t-shirt",
+      "nsfw": false,
+      "note": "伸縮性のある生地で作る、前開きのないカジュアルなトップス。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_top_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tee_002",
+      "folderId": "cg26_clothing_v1_f_tee",
+      "label_jp": "ラグランTシャツ",
+      "value_en": "raglan t-shirt",
+      "nsfw": false,
+      "note": "袖の切り替え線が首元から脇へ斜めに伸びるTシャツ。肩の線が柔らかく見える。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_top_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tee_003",
+      "folderId": "cg26_clothing_v1_f_tee",
+      "label_jp": "ポロシャツ",
+      "value_en": "polo shirt",
+      "nsfw": false,
+      "note": "襟付きで、胸元に短いボタン開きがあるカジュアルなシャツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_top_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tee_004",
+      "folderId": "cg26_clothing_v1_f_tee",
+      "label_jp": "カットソー",
+      "value_en": "jersey top",
+      "nsfw": false,
+      "note": "伸縮性のある生地のトップス。Tシャツのような軽い着心地の形が中心。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_top_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tee_005",
+      "folderId": "cg26_clothing_v1_f_tee",
+      "label_jp": "ヘンリーネックシャツ",
+      "value_en": "henley shirt",
+      "nsfw": false,
+      "note": "襟なしで、胸元だけに短いボタン開きがあるシャツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_top_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tank_001",
+      "folderId": "cg26_clothing_v1_f_tank",
+      "label_jp": "タンクトップ",
+      "value_en": "tank top",
+      "nsfw": false,
+      "note": "肩を幅のある布で支える袖なしのトップス。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tank_002",
+      "folderId": "cg26_clothing_v1_f_tank",
+      "label_jp": "キャミソール",
+      "value_en": "camisole",
+      "nsfw": false,
+      "note": "細い肩ひもで支えるトップス。肩と腕が大きく出る形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tank_003",
+      "folderId": "cg26_clothing_v1_f_tank",
+      "label_jp": "チューブトップ",
+      "value_en": "tube top",
+      "nsfw": false,
+      "note": "肩ひものない筒状のトップス。胸元から胴を包む形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tank_004",
+      "folderId": "cg26_clothing_v1_f_tank",
+      "label_jp": "ホルターネックトップス",
+      "value_en": "halter top",
+      "nsfw": false,
+      "note": "首の後ろで留める形のトップス。肩や背中が出るデザインが多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tank_005",
+      "folderId": "cg26_clothing_v1_f_tank",
+      "label_jp": "オフショルダートップス",
+      "value_en": "off-shoulder top",
+      "nsfw": false,
+      "note": "襟ぐりを肩より下へ落とし、肩を見せるトップス。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tank_006",
+      "folderId": "cg26_clothing_v1_f_tank",
+      "label_jp": "クロップトップ",
+      "value_en": "crop top",
+      "nsfw": false,
+      "note": "裾が短く、腰やお腹が見えるトップス。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sweater_001",
+      "folderId": "cg26_clothing_v1_f_sweater",
+      "label_jp": "セーター",
+      "value_en": "sweater",
+      "nsfw": false,
+      "note": "編み地で作られたトップス。柔らかい輪郭と生地の厚みが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_knit",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_knit_sleeve",
+        "cg26_clothing_v1_t_top_length",
+        "cg26_clothing_v1_t_rolled"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sweater_002",
+      "folderId": "cg26_clothing_v1_f_sweater",
+      "label_jp": "タートルネックセーター",
+      "value_en": "turtleneck sweater",
+      "nsfw": false,
+      "note": "首を包む高い襟を持つセーター。襟を折り返す形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_knit",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_knit_sleeve",
+        "cg26_clothing_v1_t_top_length",
+        "cg26_clothing_v1_t_rolled"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sweater_003",
+      "folderId": "cg26_clothing_v1_f_sweater",
+      "label_jp": "Vネックセーター",
+      "value_en": "v-neck sweater",
+      "nsfw": false,
+      "note": "胸元の襟ぐりがV字に開いたセーター。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_knit",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_knit_sleeve",
+        "cg26_clothing_v1_t_top_length",
+        "cg26_clothing_v1_t_rolled"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sweater_004",
+      "folderId": "cg26_clothing_v1_f_sweater",
+      "label_jp": "ニットベスト",
+      "value_en": "sweater vest",
+      "nsfw": false,
+      "note": "袖のないニットの上着。シャツなどの上に重ねやすい。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_knit",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_top_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_cardigan_001",
+      "folderId": "cg26_clothing_v1_f_cardigan",
+      "label_jp": "カーディガン",
+      "value_en": "cardigan",
+      "nsfw": false,
+      "note": "前を開けて羽織れるニットの上着。ボタンで留める形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_knit",
+        "cg26_clothing_v1_t_top_length",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_cardigan_button",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sweat_001",
+      "folderId": "cg26_clothing_v1_f_sweat",
+      "label_jp": "スウェット",
+      "value_en": "sweatshirt",
+      "nsfw": false,
+      "note": "厚みのある柔らかい生地のトップス。袖口と裾に伸縮する帯が付く形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_top_length",
+        "cg26_clothing_v1_t_knit_sleeve",
+        "cg26_clothing_v1_t_rolled"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sweat_002",
+      "folderId": "cg26_clothing_v1_f_sweat",
+      "label_jp": "プルオーバーパーカー",
+      "value_en": "pullover hoodie",
+      "nsfw": false,
+      "note": "フード付きで、頭からかぶるタイプのトップス。前面に大きなポケットがある形も多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_top_length",
+        "cg26_clothing_v1_t_knit_sleeve",
+        "cg26_clothing_v1_t_rolled"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_ziphoodie_001",
+      "folderId": "cg26_clothing_v1_f_ziphoodie",
+      "label_jp": "ジップパーカー",
+      "value_en": "zip-up hoodie",
+      "nsfw": false,
+      "note": "前面のジッパーで開閉するフード付きの上着。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fit",
+        "cg26_clothing_v1_t_zip_hoodie",
+        "cg26_clothing_v1_t_knit_sleeve",
+        "cg26_clothing_v1_t_rolled",
+        "cg26_clothing_v1_t_top_length",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_vest_001",
+      "folderId": "cg26_clothing_v1_f_vest",
+      "label_jp": "ベスト",
+      "value_en": "vest",
+      "nsfw": false,
+      "note": "袖のない上着。シャツの上などに重ね、胴体を中心に覆う。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_vest_002",
+      "folderId": "cg26_clothing_v1_f_vest",
+      "label_jp": "ウエストコート",
+      "value_en": "waistcoat",
+      "nsfw": false,
+      "note": "スーツに合わせる前開きのベスト。襟元が深く開き、前面にボタンが並ぶ形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_vest_003",
+      "folderId": "cg26_clothing_v1_f_vest",
+      "label_jp": "ビスチェ",
+      "value_en": "bustier",
+      "nsfw": false,
+      "note": "胸元から胴を覆う短いトップス。身体に沿う形で、肩ひもなしのデザインもある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_vest_004",
+      "folderId": "cg26_clothing_v1_f_vest",
+      "label_jp": "コルセット",
+      "value_en": "corset",
+      "nsfw": false,
+      "note": "胴を締めてウエストの形を整える衣服。縦の補強線や編み上げが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_001",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "スカート",
+      "value_en": "skirt",
+      "nsfw": false,
+      "note": "腰から下を筒状に覆うボトムス。丈や広がり方で印象を変えられる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_002",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "プリーツスカート",
+      "value_en": "pleated skirt",
+      "nsfw": false,
+      "note": "縦に折り目を並べたスカート。歩くとひだが開き、立体感が出る。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_003",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "フレアスカート",
+      "value_en": "flared skirt",
+      "nsfw": false,
+      "note": "腰から裾へ広がるスカート。裾に柔らかな波や動きが出る。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_004",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "タイトスカート",
+      "value_en": "fitted skirt",
+      "nsfw": false,
+      "note": "腰やヒップに沿う、横への広がりが少ないスカート。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_005",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "ペンシルスカート",
+      "value_en": "pencil skirt",
+      "nsfw": false,
+      "note": "細長い輪郭のタイトスカート。膝付近の丈が典型的。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_006",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "巻きスカート",
+      "value_en": "wrap skirt",
+      "nsfw": false,
+      "note": "一枚の布を腰へ巻くように重ねて留めるスカート。前面の重なりが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_007",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "ティアードスカート",
+      "value_en": "tiered skirt",
+      "nsfw": false,
+      "note": "横方向に段を重ねたスカート。段ごとのギャザーで裾にボリュームが出る。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_008",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "マーメイドスカート",
+      "value_en": "mermaid skirt",
+      "nsfw": false,
+      "note": "腰から膝付近まで身体に沿い、その下で裾が広がるスカート。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_009",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "バルーンスカート",
+      "value_en": "bubble skirt",
+      "nsfw": false,
+      "note": "裾を内側へ折り込み、丸く膨らませたスカート。風船のような輪郭。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_010",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "Aラインスカート",
+      "value_en": "a-line skirt",
+      "nsfw": false,
+      "note": "腰から裾へほどよく広がり、全体がアルファベットのAのように見えるスカート。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_skirt_011",
+      "folderId": "cg26_clothing_v1_f_skirt",
+      "label_jp": "チュチュ",
+      "value_en": "tutu",
+      "nsfw": false,
+      "note": "薄いチュールなどを重ねたバレエ用のスカート。ふんわりした形や横に張る形がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_pants_001",
+      "folderId": "cg26_clothing_v1_f_pants",
+      "label_jp": "パンツ",
+      "value_en": "pants",
+      "nsfw": false,
+      "note": "左右の脚をそれぞれ覆うボトムス。丈や幅を選んで形を調整する。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_wear",
+        "cg26_clothing_v1_t_pants_fit",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fabric"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_pants_002",
+      "folderId": "cg26_clothing_v1_f_pants",
+      "label_jp": "ジーンズ",
+      "value_en": "jeans",
+      "nsfw": false,
+      "note": "丈夫なデニム生地のパンツ。縫い目、金具、ポケットが目立つ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_wear",
+        "cg26_clothing_v1_t_pants_fit",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_pants_003",
+      "folderId": "cg26_clothing_v1_f_pants",
+      "label_jp": "スラックス",
+      "value_en": "slacks",
+      "nsfw": false,
+      "note": "整った印象のパンツ。中央の折り目を付けた形が多く、スーツにも合わせやすい。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_wear",
+        "cg26_clothing_v1_t_pants_fit",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_pants_004",
+      "folderId": "cg26_clothing_v1_f_pants",
+      "label_jp": "カーゴパンツ",
+      "value_en": "cargo pants",
+      "nsfw": false,
+      "note": "太ももの横などに大きなポケットがある、実用的なパンツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_pants_005",
+      "folderId": "cg26_clothing_v1_f_pants",
+      "label_jp": "チノパン",
+      "value_en": "chinos",
+      "nsfw": false,
+      "note": "綿の綾織り生地を使うパンツ。ジーンズよりすっきりした見た目。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_wear",
+        "cg26_clothing_v1_t_pants_fit",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_pants_006",
+      "folderId": "cg26_clothing_v1_f_pants",
+      "label_jp": "ワイドパンツ",
+      "value_en": "wide-leg pants",
+      "nsfw": false,
+      "note": "脚の幅が広く、腰から裾までゆったり落ちるパンツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_pants_007",
+      "folderId": "cg26_clothing_v1_f_pants",
+      "label_jp": "ジョガーパンツ",
+      "value_en": "jogger pants",
+      "nsfw": false,
+      "note": "足首の裾を絞ったパンツ。脚の途中はゆったりした形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_pants_008",
+      "folderId": "cg26_clothing_v1_f_pants",
+      "label_jp": "フレアパンツ",
+      "value_en": "flared pants",
+      "nsfw": false,
+      "note": "膝付近から裾へ広がるパンツ。足元に大きな広がりが出る。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_pants_009",
+      "folderId": "cg26_clothing_v1_f_pants",
+      "label_jp": "トラックパンツ",
+      "value_en": "track pants",
+      "nsfw": false,
+      "note": "スポーツ用のパンツ。側面のラインや伸縮するウエストが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_shorts_001",
+      "folderId": "cg26_clothing_v1_f_shorts",
+      "label_jp": "ショートパンツ",
+      "value_en": "shorts",
+      "nsfw": false,
+      "note": "脚の途中までの短いパンツ。丈や裾幅でスポーティーにも日常着にもなる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_shorts_length",
+        "cg26_clothing_v1_t_fabric"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_shorts_002",
+      "folderId": "cg26_clothing_v1_f_shorts",
+      "label_jp": "デニムショートパンツ",
+      "value_en": "denim shorts",
+      "nsfw": false,
+      "note": "デニム生地の短いパンツ。縫い目やポケットがはっきり見える。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_shorts_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_shorts_003",
+      "folderId": "cg26_clothing_v1_f_shorts",
+      "label_jp": "バミューダショーツ",
+      "value_en": "bermuda shorts",
+      "nsfw": false,
+      "note": "膝上から膝付近までの丈があるショートパンツ。比較的すっきりした輪郭。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_shorts_004",
+      "folderId": "cg26_clothing_v1_f_shorts",
+      "label_jp": "キュロット",
+      "value_en": "culottes",
+      "nsfw": false,
+      "note": "裾幅の広い短めのパンツ。見た目がスカートに近い形もある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_waist",
+        "cg26_clothing_v1_t_fabric"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_shorts_005",
+      "folderId": "cg26_clothing_v1_f_shorts",
+      "label_jp": "ブルマ",
+      "value_en": "bloomers",
+      "nsfw": false,
+      "note": "この英語では裾を絞った、ふくらみのある短いパンツを想定。体操服のブルマとは形が異なる場合がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_waist"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_leggings_001",
+      "folderId": "cg26_clothing_v1_f_leggings",
+      "label_jp": "レギンス",
+      "value_en": "leggings",
+      "nsfw": false,
+      "note": "脚にぴったり沿う伸縮性のあるボトムス。パンツより薄手の形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_leggings_002",
+      "folderId": "cg26_clothing_v1_f_leggings",
+      "label_jp": "サイクルショーツ",
+      "value_en": "cycling shorts",
+      "nsfw": false,
+      "note": "自転車用の身体に沿う短いパンツ。太もも付近までの丈が中心。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_overall_001",
+      "folderId": "cg26_clothing_v1_f_overall",
+      "label_jp": "オーバーオール",
+      "value_en": "overalls",
+      "nsfw": false,
+      "note": "胸当てと肩ひもが付いたパンツ。上側と下側が一体になっている。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_pants_length",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_overall_002",
+      "folderId": "cg26_clothing_v1_f_overall",
+      "label_jp": "サロペットスカート",
+      "value_en": "pinafore dress",
+      "nsfw": false,
+      "note": "胸当てや肩ひもを持つスカート型の衣服。シャツなどの上に重ねて着る。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_skirt_length",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_dress_001",
+      "folderId": "cg26_clothing_v1_f_dress",
+      "label_jp": "ワンピース",
+      "value_en": "dress",
+      "nsfw": false,
+      "note": "上半身とスカート部分が一体になった衣服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_trim",
+        "cg26_clothing_v1_t_neckline"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_dress_002",
+      "folderId": "cg26_clothing_v1_f_dress",
+      "label_jp": "シャツワンピース",
+      "value_en": "shirt dress",
+      "nsfw": false,
+      "note": "襟や前面のボタンなど、シャツの形を長くしたワンピース。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_dress_003",
+      "folderId": "cg26_clothing_v1_f_dress",
+      "label_jp": "キャミワンピース",
+      "value_en": "slip dress",
+      "nsfw": false,
+      "note": "細い肩ひもと、すとんと落ちる形が特徴のワンピース。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_dress_004",
+      "folderId": "cg26_clothing_v1_f_dress",
+      "label_jp": "ラップドレス",
+      "value_en": "wrap dress",
+      "nsfw": false,
+      "note": "前身頃を重ねて身体に巻き、腰ひもなどで留めるドレス。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_trim",
+        "cg26_clothing_v1_t_neckline"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_dress_005",
+      "folderId": "cg26_clothing_v1_f_dress",
+      "label_jp": "ニットワンピース",
+      "value_en": "sweater dress",
+      "nsfw": false,
+      "note": "セーターを長くしたようなニットのワンピース。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_knit",
+        "cg26_clothing_v1_t_knit_sleeve"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_dress_006",
+      "folderId": "cg26_clothing_v1_f_dress",
+      "label_jp": "サンドレス",
+      "value_en": "sundress",
+      "nsfw": false,
+      "note": "暑い季節向けの軽いワンピース。袖なしや細い肩ひもの形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_dress_007",
+      "folderId": "cg26_clothing_v1_f_dress",
+      "label_jp": "エプロンドレス",
+      "value_en": "apron dress",
+      "nsfw": false,
+      "note": "胸当てや腰ひもなど、エプロンの形を取り入れたワンピース。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_dress_008",
+      "folderId": "cg26_clothing_v1_f_dress",
+      "label_jp": "ジャンパースカート",
+      "value_en": "jumper dress",
+      "nsfw": false,
+      "note": "袖のないワンピースを、ブラウスやシャツの上に重ねる服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_buttonjacket_001",
+      "folderId": "cg26_clothing_v1_f_buttonjacket",
+      "label_jp": "テーラードジャケット",
+      "value_en": "tailored jacket",
+      "nsfw": false,
+      "note": "スーツのように形を整えた襟付きジャケット。肩と胴の輪郭がはっきりする。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_jacket_button",
+        "cg26_clothing_v1_t_rolled",
+        "cg26_clothing_v1_t_jacket_wear",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_buttonjacket_002",
+      "folderId": "cg26_clothing_v1_f_buttonjacket",
+      "label_jp": "ブレザー",
+      "value_en": "blazer",
+      "nsfw": false,
+      "note": "制服や普段着に使う襟付きジャケット。整った印象で、金属ボタンの形も多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_jacket_button",
+        "cg26_clothing_v1_t_rolled",
+        "cg26_clothing_v1_t_jacket_wear",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_fit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_buttonjacket_003",
+      "folderId": "cg26_clothing_v1_f_buttonjacket",
+      "label_jp": "デニムジャケット",
+      "value_en": "denim jacket",
+      "nsfw": false,
+      "note": "デニム生地の短めの上着。胸ポケットと丈夫な縫い目が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_jacket_button",
+        "cg26_clothing_v1_t_rolled",
+        "cg26_clothing_v1_t_jacket_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_zipjacket_001",
+      "folderId": "cg26_clothing_v1_f_zipjacket",
+      "label_jp": "ライダースジャケット",
+      "value_en": "biker jacket",
+      "nsfw": false,
+      "note": "斜めのジッパー、大きな襟、金具などが特徴のバイク用ジャケット。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_zip_jacket",
+        "cg26_clothing_v1_t_jacket_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_zipjacket_002",
+      "folderId": "cg26_clothing_v1_f_zipjacket",
+      "label_jp": "ボンバージャケット",
+      "value_en": "bomber jacket",
+      "nsfw": false,
+      "note": "丸みのある短い上着。袖口と裾を絞り、胴や袖にふくらみを持たせる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_zip_jacket",
+        "cg26_clothing_v1_t_jacket_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_zipjacket_003",
+      "folderId": "cg26_clothing_v1_f_zipjacket",
+      "label_jp": "ウィンドブレーカー",
+      "value_en": "windbreaker",
+      "nsfw": false,
+      "note": "風を防ぐ薄手の上着。軽い生地感とスポーティーな形が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_zip_jacket",
+        "cg26_clothing_v1_t_jacket_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_zipjacket_004",
+      "folderId": "cg26_clothing_v1_f_zipjacket",
+      "label_jp": "フリースジャケット",
+      "value_en": "fleece jacket",
+      "nsfw": false,
+      "note": "柔らかく起毛した生地の防寒ジャケット。表面に細かな毛羽立ちがある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_zip_jacket",
+        "cg26_clothing_v1_t_jacket_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_jacket_001",
+      "folderId": "cg26_clothing_v1_f_jacket",
+      "label_jp": "レザージャケット",
+      "value_en": "leather jacket",
+      "nsfw": false,
+      "note": "革を使った上着。表面の光沢、厚み、折れじわが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_jacket_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_jacket_002",
+      "folderId": "cg26_clothing_v1_f_jacket",
+      "label_jp": "ミリタリージャケット",
+      "value_en": "military jacket",
+      "nsfw": false,
+      "note": "軍用服をもとにした上着。大きなポケットや実用的な留め具が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_jacket_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_jacket_003",
+      "folderId": "cg26_clothing_v1_f_jacket",
+      "label_jp": "キルティングジャケット",
+      "value_en": "quilted jacket",
+      "nsfw": false,
+      "note": "中綿を縫い目で区切った上着。格子や菱形のふくらみが表面に並ぶ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_jacket_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_jacket_004",
+      "folderId": "cg26_clothing_v1_f_jacket",
+      "label_jp": "スタジアムジャンパー",
+      "value_en": "varsity jacket",
+      "nsfw": false,
+      "note": "身頃と袖を別の素材や色にした上着。リブ付きの襟と袖口が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_jacket_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_coat_001",
+      "folderId": "cg26_clothing_v1_f_coat",
+      "label_jp": "コート",
+      "value_en": "coat",
+      "nsfw": false,
+      "note": "ほかの衣服の上に着る防寒用の上着。ジャケットより長い形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_coat_length",
+        "cg26_clothing_v1_t_coat_button",
+        "cg26_clothing_v1_t_coat_wear",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_coat_002",
+      "folderId": "cg26_clothing_v1_f_coat",
+      "label_jp": "トレンチコート",
+      "value_en": "trench coat",
+      "nsfw": false,
+      "note": "大きな襟、腰ベルト、二列のボタンなどを備えたコート。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_coat_length",
+        "cg26_clothing_v1_t_coat_button",
+        "cg26_clothing_v1_t_coat_wear",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_coat_003",
+      "folderId": "cg26_clothing_v1_f_coat",
+      "label_jp": "ダッフルコート",
+      "value_en": "duffle coat",
+      "nsfw": false,
+      "note": "フードと、棒状の留め具をループに通して留める前開きが特徴のコート。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_coat_length",
+        "cg26_clothing_v1_t_coat_button",
+        "cg26_clothing_v1_t_coat_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_coat_004",
+      "folderId": "cg26_clothing_v1_f_coat",
+      "label_jp": "ピーコート",
+      "value_en": "pea coat",
+      "nsfw": false,
+      "note": "幅広い襟と二列のボタンが特徴の、厚手で比較的短いコート。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_coat_length",
+        "cg26_clothing_v1_t_coat_button",
+        "cg26_clothing_v1_t_coat_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_coat_005",
+      "folderId": "cg26_clothing_v1_f_coat",
+      "label_jp": "チェスターコート",
+      "value_en": "chesterfield coat",
+      "nsfw": false,
+      "note": "スーツに似た襟と整った輪郭を持つ、きれいめのコート。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_coat_length",
+        "cg26_clothing_v1_t_coat_button",
+        "cg26_clothing_v1_t_coat_wear",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_othercoat_001",
+      "folderId": "cg26_clothing_v1_f_othercoat",
+      "label_jp": "ロングコート",
+      "value_en": "long coat",
+      "nsfw": false,
+      "note": "膝付近やそれより下まで伸びる、丈の長いコート。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_coat_wear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_othercoat_002",
+      "folderId": "cg26_clothing_v1_f_othercoat",
+      "label_jp": "ダウンコート",
+      "value_en": "down coat",
+      "nsfw": false,
+      "note": "羽毛などの中綿を詰めた防寒コート。縫い目で区切られたふくらみが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_coat_wear",
+        "cg26_clothing_v1_t_coat_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_othercoat_003",
+      "folderId": "cg26_clothing_v1_f_othercoat",
+      "label_jp": "レインコート",
+      "value_en": "raincoat",
+      "nsfw": false,
+      "note": "雨を防ぐ上着。水をはじく生地やフードを持つ形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_coat_wear",
+        "cg26_clothing_v1_t_coat_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_othercoat_004",
+      "folderId": "cg26_clothing_v1_f_othercoat",
+      "label_jp": "パーカコート",
+      "value_en": "parka",
+      "nsfw": false,
+      "note": "フードを持つ防寒用のコート。大きなポケットなどを備えた実用的な形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_coat_wear",
+        "cg26_clothing_v1_t_coat_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_cape_001",
+      "folderId": "cg26_clothing_v1_f_cape",
+      "label_jp": "ケープ",
+      "value_en": "cape",
+      "nsfw": false,
+      "note": "肩から背中や腕を覆う袖なしの上着。比較的短い形もある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_trim",
+        "cg26_clothing_v1_t_coat_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_cape_002",
+      "folderId": "cg26_clothing_v1_f_cape",
+      "label_jp": "マント",
+      "value_en": "cloak",
+      "nsfw": false,
+      "note": "肩から身体の後ろへ長く垂れる外衣。歩くと裾が大きく動く。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_trim",
+        "cg26_clothing_v1_t_coat_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_cape_003",
+      "folderId": "cg26_clothing_v1_f_cape",
+      "label_jp": "ポンチョ",
+      "value_en": "poncho",
+      "nsfw": false,
+      "note": "中央の穴に頭を通し、肩から身体を覆う上着。幅のある布が左右へ広がる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_trim",
+        "cg26_clothing_v1_t_coat_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_cape_004",
+      "folderId": "cg26_clothing_v1_f_cape",
+      "label_jp": "ショール",
+      "value_en": "shawl",
+      "nsfw": false,
+      "note": "肩や首に巻く大きな布。柔らかく垂れる端やひだが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_cape_005",
+      "folderId": "cg26_clothing_v1_f_cape",
+      "label_jp": "羽織",
+      "value_en": "haori",
+      "nsfw": false,
+      "note": "着物の上に羽織る和風の上着。前を開け、胸元をひもで留める形がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_fabric",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_jparts_001",
+      "folderId": "cg26_clothing_v1_f_jparts",
+      "label_jp": "帯",
+      "value_en": "obi",
+      "nsfw": false,
+      "note": "着物などの腰に巻く幅のある布。背中や前の結び目で印象が変わる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_jparts_002",
+      "folderId": "cg26_clothing_v1_f_jparts",
+      "label_jp": "袴",
+      "value_en": "hakama",
+      "nsfw": false,
+      "note": "腰で結ぶひもと縦のひだを持つ和装の下半身用衣服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_jparts_003",
+      "folderId": "cg26_clothing_v1_f_jparts",
+      "label_jp": "足袋",
+      "value_en": "tabi",
+      "nsfw": false,
+      "note": "親指とほかの指が分かれた、和装用の足袋型の履物。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_jparts_004",
+      "folderId": "cg26_clothing_v1_f_jparts",
+      "label_jp": "草履",
+      "value_en": "zori",
+      "nsfw": false,
+      "note": "平らな底と鼻緒を持つ和装用の履物。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_jparts_005",
+      "folderId": "cg26_clothing_v1_f_jparts",
+      "label_jp": "下駄",
+      "value_en": "geta",
+      "nsfw": false,
+      "note": "木の台と鼻緒を持つ履物。底の歯で地面から高さを出す形がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimbasic_001",
+      "folderId": "cg26_clothing_v1_f_swimbasic",
+      "label_jp": "ワンピース水着",
+      "value_en": "one-piece swimsuit",
+      "nsfw": false,
+      "note": "上半身と下半身が一体になった水着。胴を覆う形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimbasic_002",
+      "folderId": "cg26_clothing_v1_f_swimbasic",
+      "label_jp": "ビキニ",
+      "value_en": "bikini",
+      "nsfw": false,
+      "note": "上側と下側に分かれた水着。胴の中央が出る形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimbasic_003",
+      "folderId": "cg26_clothing_v1_f_swimbasic",
+      "label_jp": "タンキニ",
+      "value_en": "tankini",
+      "nsfw": false,
+      "note": "タンクトップ型の上側と、別の下側を組み合わせた水着。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimbasic_004",
+      "folderId": "cg26_clothing_v1_f_swimbasic",
+      "label_jp": "競泳水着",
+      "value_en": "competition swimsuit",
+      "nsfw": false,
+      "note": "泳ぎやすさを重視した身体に沿う水着。装飾が少ない形が中心。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimbasic_005",
+      "folderId": "cg26_clothing_v1_f_swimbasic",
+      "label_jp": "水泳用トランクス",
+      "value_en": "swim trunks",
+      "nsfw": false,
+      "note": "泳ぐための短いパンツ。軽い生地と動きやすい形が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimbasic_006",
+      "folderId": "cg26_clothing_v1_f_swimbasic",
+      "label_jp": "ボードショーツ",
+      "value_en": "board shorts",
+      "nsfw": false,
+      "note": "サーフィンなどに使う、膝付近までの長めの水泳用パンツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimbasic_007",
+      "folderId": "cg26_clothing_v1_f_swimbasic",
+      "label_jp": "ラッシュガード",
+      "value_en": "rash guard",
+      "nsfw": false,
+      "note": "水辺で肌を覆う伸縮性のあるトップス。身体に沿う長袖の形も多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_sleeve"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimbasic_008",
+      "folderId": "cg26_clothing_v1_f_swimbasic",
+      "label_jp": "スイムドレス",
+      "value_en": "swim dress",
+      "nsfw": false,
+      "note": "水着にスカート状の裾を付けた、ワンピース風の形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimadult_001",
+      "folderId": "cg26_clothing_v1_f_swimadult",
+      "label_jp": "マイクロビキニ",
+      "value_en": "micro bikini",
+      "nsfw": true,
+      "note": "成人向け。通常のビキニより布の面積が小さい水着。露出や性行為そのものは指定しない。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimadult_002",
+      "folderId": "cg26_clothing_v1_f_swimadult",
+      "label_jp": "紐ビキニ",
+      "value_en": "string bikini",
+      "nsfw": true,
+      "note": "成人向け。細いひもで上側や下側を結ぶビキニ。脇や背中の結び目が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_swimadult_003",
+      "folderId": "cg26_clothing_v1_f_swimadult",
+      "label_jp": "ハイレグ水着",
+      "value_en": "highleg swimsuit",
+      "nsfw": true,
+      "note": "成人向け。脚の付け根の切り込みが高い水着。腰から脚への線が長く見える。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_001",
+      "folderId": "cg26_clothing_v1_f_underwear",
+      "label_jp": "ブラジャー",
+      "value_en": "bra",
+      "nsfw": false,
+      "note": "胸を支える下着。カップ、肩ひも、胴を囲む帯などで構成される。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_lace_detail"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_002",
+      "folderId": "cg26_clothing_v1_f_underwear",
+      "label_jp": "ショーツ",
+      "value_en": "panties",
+      "nsfw": false,
+      "note": "腰と股下を覆う下着。脚ぐりや腰まわりの形に幅がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_lace_detail"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_003",
+      "folderId": "cg26_clothing_v1_f_underwear",
+      "label_jp": "スポーツブラ",
+      "value_en": "sports bra",
+      "nsfw": false,
+      "note": "運動時に胸を支える下着。幅のある肩部分や、身体に沿う形が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_004",
+      "folderId": "cg26_clothing_v1_f_underwear",
+      "label_jp": "ブラレット",
+      "value_en": "bralette",
+      "nsfw": false,
+      "note": "柔らかい生地を中心にしたブラの一種。軽い形やレースを使う形がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_lace_detail"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_005",
+      "folderId": "cg26_clothing_v1_f_underwear",
+      "label_jp": "ボクサーパンツ",
+      "value_en": "boxer briefs",
+      "nsfw": false,
+      "note": "腰から太ももの付け根まで覆う、身体に沿う下着。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_006",
+      "folderId": "cg26_clothing_v1_f_underwear",
+      "label_jp": "トランクス",
+      "value_en": "boxer shorts",
+      "nsfw": false,
+      "note": "腰から太ももの付け根まで覆う、ゆったりしたパンツ型の下着。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_007",
+      "folderId": "cg26_clothing_v1_f_underwear",
+      "label_jp": "スリップ",
+      "value_en": "lingerie slip",
+      "nsfw": false,
+      "note": "ワンピースなどの下に着る薄手の下着。肩ひもがあり、胴から裾へ滑らかに落ちる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_lace_detail"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_008",
+      "folderId": "cg26_clothing_v1_f_underwear",
+      "label_jp": "ペチコート",
+      "value_en": "petticoat",
+      "nsfw": false,
+      "note": "スカートの下に重ねる下着。透け防止や裾のふくらみを整えるためのもの。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_lace_detail"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_009",
+      "folderId": "cg26_clothing_v1_f_underwear",
+      "label_jp": "ガーターベルト",
+      "value_en": "garter belt",
+      "nsfw": false,
+      "note": "腰に付けたベルトからひもを伸ばし、ストッキングを留める小物。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_lace_detail"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sleep_001",
+      "folderId": "cg26_clothing_v1_f_sleep",
+      "label_jp": "パジャマ",
+      "value_en": "pajamas",
+      "nsfw": false,
+      "note": "就寝用のトップスとパンツなどの組み合わせ。柔らかくゆったりした形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sleep_002",
+      "folderId": "cg26_clothing_v1_f_sleep",
+      "label_jp": "ナイトガウン",
+      "value_en": "nightgown",
+      "nsfw": false,
+      "note": "寝るときに着るワンピース型の衣服。ゆったりした裾や袖が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_sleeve",
+        "cg26_clothing_v1_t_trim"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sleep_003",
+      "folderId": "cg26_clothing_v1_f_sleep",
+      "label_jp": "バスローブ",
+      "value_en": "bathrobe",
+      "nsfw": false,
+      "note": "入浴後などに羽織る衣服。前身頃を重ね、腰のベルトで留める。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_coat_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sleep_004",
+      "folderId": "cg26_clothing_v1_f_sleep",
+      "label_jp": "ルームウェア",
+      "value_en": "loungewear",
+      "nsfw": false,
+      "note": "室内でくつろぐための服。柔らかな生地と身体を締め付けない形が中心。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sleep_005",
+      "folderId": "cg26_clothing_v1_f_sleep",
+      "label_jp": "寝間着シャツ",
+      "value_en": "sleep shirt",
+      "nsfw": false,
+      "note": "就寝用の丈が長いシャツ。ゆったりした輪郭。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern",
+        "cg26_clothing_v1_t_dress_length",
+        "cg26_clothing_v1_t_sleeve"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_negligee_001",
+      "folderId": "cg26_clothing_v1_f_negligee",
+      "label_jp": "ネグリジェ",
+      "value_en": "negligee",
+      "nsfw": false,
+      "note": "成人向けの軽い寝間着。柔らかい薄手の生地やレース、ゆったりした裾が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_dress_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_socks_001",
+      "folderId": "cg26_clothing_v1_f_socks",
+      "label_jp": "ソックス",
+      "value_en": "socks",
+      "nsfw": false,
+      "note": "足先から足首やすねを覆う靴下。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sock_pattern",
+        "cg26_clothing_v1_t_sock_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_socks_002",
+      "folderId": "cg26_clothing_v1_f_socks",
+      "label_jp": "くるぶし丈ソックス",
+      "value_en": "ankle socks",
+      "nsfw": false,
+      "note": "くるぶし付近までの短い靴下。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sock_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_socks_003",
+      "folderId": "cg26_clothing_v1_f_socks",
+      "label_jp": "クルーソックス",
+      "value_en": "crew socks",
+      "nsfw": false,
+      "note": "すねの途中まで伸びる靴下。くるぶし丈より長く、膝丈より短い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sock_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_socks_004",
+      "folderId": "cg26_clothing_v1_f_socks",
+      "label_jp": "ニーソックス",
+      "value_en": "knee socks",
+      "nsfw": false,
+      "note": "膝付近まで伸びる靴下。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sock_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_socks_005",
+      "folderId": "cg26_clothing_v1_f_socks",
+      "label_jp": "サイハイソックス",
+      "value_en": "thighhighs",
+      "nsfw": false,
+      "note": "太ももまで伸びる長い靴下。履き口と衣服の裾との間に隙間ができる場合がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sock_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_socks_006",
+      "folderId": "cg26_clothing_v1_f_socks",
+      "label_jp": "ルーズソックス",
+      "value_en": "loose socks",
+      "nsfw": false,
+      "note": "長い靴下をすねにたるませて履く形。重なるしわとボリュームが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sock_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_socks_007",
+      "folderId": "cg26_clothing_v1_f_socks",
+      "label_jp": "レッグウォーマー",
+      "value_en": "leg warmers",
+      "nsfw": false,
+      "note": "足首やすねを覆う筒状の防寒小物。足先は覆わない。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sock_pattern",
+        "cg26_clothing_v1_t_knit"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tights_001",
+      "folderId": "cg26_clothing_v1_f_tights",
+      "label_jp": "タイツ",
+      "value_en": "tights",
+      "nsfw": false,
+      "note": "腰から足先まで一体になった、身体に沿う脚用の衣服。厚みや透け感に幅がある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sock_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tights_002",
+      "folderId": "cg26_clothing_v1_f_tights",
+      "label_jp": "ストッキング",
+      "value_en": "stockings",
+      "nsfw": false,
+      "note": "脚を覆う薄手の靴下。太もも丈など、左右別々の形を想定。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_stocking_length",
+        "cg26_clothing_v1_t_sock_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tights_003",
+      "folderId": "cg26_clothing_v1_f_tights",
+      "label_jp": "パンティストッキング",
+      "value_en": "pantyhose",
+      "nsfw": false,
+      "note": "腰から足先まで一体になった薄手のストッキング。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_sock_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tights_004",
+      "folderId": "cg26_clothing_v1_f_tights",
+      "label_jp": "網タイツ",
+      "value_en": "fishnet tights",
+      "nsfw": false,
+      "note": "網目のある、腰から脚を一体で覆うタイツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_tights_005",
+      "folderId": "cg26_clothing_v1_f_tights",
+      "label_jp": "網ストッキング",
+      "value_en": "fishnet stockings",
+      "nsfw": false,
+      "note": "網目のあるストッキング。脚の表面に格子状の模様が見える。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_stocking_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_flatshoe_001",
+      "folderId": "cg26_clothing_v1_f_flatshoe",
+      "label_jp": "スニーカー",
+      "value_en": "sneakers",
+      "nsfw": false,
+      "note": "柔らかな底と、ひもなどを備えた運動向けの靴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_flatshoe_002",
+      "folderId": "cg26_clothing_v1_f_flatshoe",
+      "label_jp": "ハイカットスニーカー",
+      "value_en": "high-top sneakers",
+      "nsfw": false,
+      "note": "履き口がくるぶし付近まで高くなったスニーカー。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_flatshoe_003",
+      "folderId": "cg26_clothing_v1_f_flatshoe",
+      "label_jp": "ローファー",
+      "value_en": "loafers",
+      "nsfw": false,
+      "note": "靴ひもがなく、足を滑り込ませて履く革靴。甲の帯などが特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_flatshoe_004",
+      "folderId": "cg26_clothing_v1_f_flatshoe",
+      "label_jp": "オックスフォードシューズ",
+      "value_en": "oxford shoes",
+      "nsfw": false,
+      "note": "甲の部分をひもで締める、整った印象の革靴。羽根の付け根が閉じた形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_flatshoe_005",
+      "folderId": "cg26_clothing_v1_f_flatshoe",
+      "label_jp": "モカシン",
+      "value_en": "moccasins",
+      "nsfw": false,
+      "note": "柔らかな革などで足を包む靴。甲の縁に沿う縫い目が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_flatshoe_006",
+      "folderId": "cg26_clothing_v1_f_flatshoe",
+      "label_jp": "バレエシューズ",
+      "value_en": "ballet flats",
+      "nsfw": false,
+      "note": "浅い履き口と低い底を持つ靴。つま先の小さなリボンを付ける形も多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_flatshoe_007",
+      "folderId": "cg26_clothing_v1_f_flatshoe",
+      "label_jp": "スリッポン",
+      "value_en": "slip-on shoes",
+      "nsfw": false,
+      "note": "ひもを結ばずに足を入れて履く靴。甲にゴム部分を持つ形もある。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_heelshoe_001",
+      "folderId": "cg26_clothing_v1_f_heelshoe",
+      "label_jp": "パンプス",
+      "value_en": "pumps",
+      "nsfw": false,
+      "note": "甲が大きく開き、足先とかかとを覆う靴。ひもを使わない形が基本。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_heel"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_heelshoe_002",
+      "folderId": "cg26_clothing_v1_f_heelshoe",
+      "label_jp": "メリージェーン",
+      "value_en": "mary jane shoes",
+      "nsfw": false,
+      "note": "甲を横切るストラップで留める靴。丸いつま先の形が典型的。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_heel"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_heelshoe_003",
+      "folderId": "cg26_clothing_v1_f_heelshoe",
+      "label_jp": "ストラップシューズ",
+      "value_en": "strap shoes",
+      "nsfw": false,
+      "note": "足首や甲にストラップを渡して留める靴。帯の位置で印象が変わる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_heel"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_heelshoe_004",
+      "folderId": "cg26_clothing_v1_f_heelshoe",
+      "label_jp": "ピープトゥシューズ",
+      "value_en": "peep-toe shoes",
+      "nsfw": false,
+      "note": "つま先の一部が開いた靴。先端から足指が少し見える形。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_heel"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sandals_001",
+      "folderId": "cg26_clothing_v1_f_sandals",
+      "label_jp": "サンダル",
+      "value_en": "sandals",
+      "nsfw": false,
+      "note": "帯やひもで足を留める、足の甲が開いた靴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_heel"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sandals_002",
+      "folderId": "cg26_clothing_v1_f_sandals",
+      "label_jp": "スポーツサンダル",
+      "value_en": "sport sandals",
+      "nsfw": false,
+      "note": "厚みのある底と、調整できるベルトを持つ歩きやすいサンダル。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sandals_003",
+      "folderId": "cg26_clothing_v1_f_sandals",
+      "label_jp": "ビーチサンダル",
+      "value_en": "flip-flops",
+      "nsfw": false,
+      "note": "親指と人差し指の間に留め具を通す、平らな水辺用のサンダル。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sandals_004",
+      "folderId": "cg26_clothing_v1_f_sandals",
+      "label_jp": "ミュール",
+      "value_en": "mules",
+      "nsfw": false,
+      "note": "かかとを覆わず、甲側で足を支えるつっかけ型の靴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_heel"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_sandals_005",
+      "folderId": "cg26_clothing_v1_f_sandals",
+      "label_jp": "スリッパ",
+      "value_en": "slippers",
+      "nsfw": false,
+      "note": "室内で使う軽い履物。足を入れやすく、かかとが開いた形が多い。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_boots_001",
+      "folderId": "cg26_clothing_v1_f_boots",
+      "label_jp": "ブーツ",
+      "value_en": "boots",
+      "nsfw": false,
+      "note": "足先に加えて、足首や脚の一部を覆う靴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_boot_length",
+        "cg26_clothing_v1_t_heel"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_boots_002",
+      "folderId": "cg26_clothing_v1_f_boots",
+      "label_jp": "編み上げブーツ",
+      "value_en": "lace-up boots",
+      "nsfw": false,
+      "note": "前面などに靴ひもを並べて締めるブーツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_boot_length",
+        "cg26_clothing_v1_t_heel"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_boots_003",
+      "folderId": "cg26_clothing_v1_f_boots",
+      "label_jp": "ウエスタンブーツ",
+      "value_en": "cowboy boots",
+      "nsfw": false,
+      "note": "尖ったつま先、斜めのかかと、筒の装飾などを持つカウボーイ風のブーツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_heel"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_boots_004",
+      "folderId": "cg26_clothing_v1_f_boots",
+      "label_jp": "エンジニアブーツ",
+      "value_en": "engineer boots",
+      "nsfw": false,
+      "note": "靴ひもを使わず、足首などにバックル付きの帯を備えた丈夫なブーツ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_shoe_material",
+        "cg26_clothing_v1_t_boot_length"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_fixedboots_001",
+      "folderId": "cg26_clothing_v1_f_fixedboots",
+      "label_jp": "コンバットブーツ",
+      "value_en": "combat boots",
+      "nsfw": false,
+      "note": "軍用をイメージした丈夫な編み上げブーツ。厚い底が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_fixedboots_002",
+      "folderId": "cg26_clothing_v1_f_fixedboots",
+      "label_jp": "ハイキングブーツ",
+      "value_en": "hiking boots",
+      "nsfw": false,
+      "note": "登山や長い歩行向けの靴。足首を支える形と、凹凸のある底を持つ。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_fixedboots_003",
+      "folderId": "cg26_clothing_v1_f_fixedboots",
+      "label_jp": "レインブーツ",
+      "value_en": "rain boots",
+      "nsfw": false,
+      "note": "水を通しにくい素材の長靴。滑らかな表面と筒状の形が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_fixedboots_004",
+      "folderId": "cg26_clothing_v1_f_fixedboots",
+      "label_jp": "スノーブーツ",
+      "value_en": "snow boots",
+      "nsfw": false,
+      "note": "雪の中で使う防寒用ブーツ。厚い底と、ふくらみのある表面が特徴。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_summer_sailor",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "セーラー服・夏服",
+      "value_en": "school uniform, sailor collar, short sleeves, pleated skirt",
+      "nsfw": false,
+      "note": "半袖のセーラー襟トップスとスカートを合わせた夏服。学校によって配色が異なる。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_winter_sailor",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "セーラー服・冬服",
+      "value_en": "school uniform, sailor collar, long sleeves, pleated skirt",
+      "nsfw": false,
+      "note": "長袖のセーラー襟トップスとスカートを合わせた冬服。厚手の上側を想定。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_midseason_sailor",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "セーラー服・長袖の合服",
+      "value_en": "school uniform, sailor collar, long sleeves, lightweight fabric, pleated skirt",
+      "nsfw": false,
+      "note": "春秋向けの軽い長袖セーラー服。夏服と冬服の間の着方をイメージしたもの。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_cardigan_skirt",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "制服・カーディガン＋スカート",
+      "value_en": "school uniform, collared shirt, cardigan, pleated skirt",
+      "nsfw": false,
+      "note": "襟付きシャツの上にカーディガンを羽織り、プリーツスカートを合わせた制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_cardigan_color",
+        "cg26_clothing_v1_t_uniform_shirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_cardigan_button",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_vest_skirt",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "制服・ニットベスト＋スカート",
+      "value_en": "school uniform, collared shirt, sweater vest, pleated skirt",
+      "nsfw": false,
+      "note": "シャツに袖なしのニットベストとプリーツスカートを合わせた制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_vest_color",
+        "cg26_clothing_v1_t_uniform_shirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_sweater_skirt",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "制服・セーター＋スカート",
+      "value_en": "school uniform, collared shirt, sweater, pleated skirt",
+      "nsfw": false,
+      "note": "シャツの襟をセーターから出し、プリーツスカートを合わせた制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_shirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_shortshirt_skirt",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "制服・半袖シャツ＋スカート",
+      "value_en": "school uniform, short-sleeved collared shirt, pleated skirt",
+      "nsfw": false,
+      "note": "半袖の襟付きシャツとプリーツスカートを合わせた、上着のない夏向けの制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_shirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_longshirt_skirt",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "制服・長袖シャツ＋スカート",
+      "value_en": "school uniform, long-sleeved collared shirt, pleated skirt",
+      "nsfw": false,
+      "note": "長袖の襟付きシャツとプリーツスカートを合わせた、上着のない制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_shirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_rolled",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_sailor_cardigan",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "制服・セーラー服＋カーディガン",
+      "value_en": "school uniform, sailor collar, cardigan, pleated skirt",
+      "nsfw": false,
+      "note": "セーラー襟のトップスにカーディガンを重ね、スカートを合わせた制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_cardigan_color",
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_cardigan_button",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_blazer_skirt",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "制服・ブレザー＋スカート",
+      "value_en": "school uniform, collared shirt, blazer, pleated skirt",
+      "nsfw": false,
+      "note": "襟付きシャツにブレザーとプリーツスカートを合わせた制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_shirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_jacket_button",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_vest_summer",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "制服・半袖シャツ＋ベスト＋スカート",
+      "value_en": "school uniform, short-sleeved collared shirt, sweater vest, pleated skirt",
+      "nsfw": false,
+      "note": "半袖シャツにニットベストとスカートを重ねた夏向けの制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_vest_color",
+        "cg26_clothing_v1_t_uniform_shirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_school_blazer_vest",
+      "folderId": "cg26_clothing_v1_f_uniform",
+      "label_jp": "制服・ブレザー＋ベスト＋スカート",
+      "value_en": "school uniform, collared shirt, sweater vest, blazer, pleated skirt",
+      "nsfw": false,
+      "note": "シャツ、ニットベスト、ブレザーを重ね、スカートを合わせた制服。",
+      "templateIds": [
+        "cg26_clothing_v1_t_uniform_vest_color",
+        "cg26_clothing_v1_t_uniform_shirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_color",
+        "cg26_clothing_v1_t_uniform_skirt_length",
+        "cg26_clothing_v1_t_jacket_button",
+        "cg26_clothing_v1_t_school_neckwear"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_adult_thong",
+      "folderId": "cg26_clothing_v1_f_underwear_adult",
+      "label_jp": "Tバック",
+      "value_en": "thong panties",
+      "nsfw": true,
+      "note": "成人向け。後ろ側の布が細い帯状になったショーツ。前側を覆う形を想定。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_adult_tanga",
+      "folderId": "cg26_clothing_v1_f_underwear_adult",
+      "label_jp": "タンガ",
+      "value_en": "tanga panties",
+      "nsfw": true,
+      "note": "成人向け。脇が細く、後ろ側の覆う範囲も小さいショーツ。布を残した形を想定。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_adult_microbra",
+      "folderId": "cg26_clothing_v1_f_underwear_adult",
+      "label_jp": "マイクロブラ",
+      "value_en": "micro bra",
+      "nsfw": true,
+      "note": "通常より胸を覆う布の面積が小さいブラ。着用のほか、持ち物や置かれた衣装としても使う。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_underwear_adult_micropanties",
+      "folderId": "cg26_clothing_v1_f_underwear_adult",
+      "label_jp": "マイクロショーツ",
+      "value_en": "micro panties",
+      "nsfw": true,
+      "note": "通常より腰まわりの布の面積が小さいショーツ。着用のほか、持ち物や置かれた衣装としても使う。",
+      "templateIds": [
+        "cg26_clothing_v1_t_color",
+        "cg26_clothing_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "cg26_clothing_v1_w_clothing_state_opaque",
+      "folderId": "cg26_clothing_v1_f_clothing_states",
+      "label_jp": "不透明な生地",
+      "value_en": "opaque fabric",
+      "note": "透けない生地の指定。衣装の種類とは別に、必要なときだけ追加する。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_w_clothing_state_covered_nipples",
+      "folderId": "cg26_clothing_v1_f_clothing_states",
+      "label_jp": "乳首を覆った状態",
+      "value_en": "covered nipples",
+      "note": "衣装を着用し、乳首を覆う状態を指定する。持ち物や置かれた衣装には不要。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_w_clothing_state_covered_crotch",
+      "folderId": "cg26_clothing_v1_f_clothing_states",
+      "label_jp": "股部分を覆った状態",
+      "value_en": "covered crotch",
+      "note": "衣装を着用し、股部分を覆う状態を指定する。持ち物や置かれた衣装には不要。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_w_clothing_state_worn",
+      "folderId": "cg26_clothing_v1_f_clothing_states",
+      "label_jp": "衣装を着用する",
+      "value_en": "wearing clothes",
+      "note": "衣装を身につけた場面の指定。具体的な衣装カードと組み合わせる。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_w_clothing_state_hold",
+      "folderId": "cg26_clothing_v1_f_clothing_states",
+      "label_jp": "衣装を手に持つ",
+      "value_en": "holding clothing",
+      "note": "衣装を手に持つ場面の指定。着ている服ではなく持ち物として描きたいときに使う。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_w_clothing_state_table",
+      "folderId": "cg26_clothing_v1_f_clothing_states",
+      "label_jp": "衣装を机に置く",
+      "value_en": "clothing lying on a table",
+      "note": "衣装が机の上に置かれた場面の指定。人物に着用させる必要はない。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_w_clothing_state_hanger",
+      "folderId": "cg26_clothing_v1_f_clothing_states",
+      "label_jp": "衣装をハンガーに掛ける",
+      "value_en": "clothing on a hanger",
+      "note": "衣装をハンガーに掛けて見せる場面の指定。",
+      "nsfw": false
+    },
+    {
+      "id": "cg26_clothing_v1_w_clothing_state_fold",
+      "folderId": "cg26_clothing_v1_f_clothing_states",
+      "label_jp": "衣装を畳んだ状態",
+      "value_en": "folded clothing",
+      "note": "衣装を畳んだ状態で描く指定。形の見え方は畳み方によって変わる。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "cg26_clothing_v1_t_color",
+      "name": "衣服・小物の色",
+      "folderId": "衣装 / 衣服・小物の色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_color_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_1",
+          "label": "黒",
+          "value": "black"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_2",
+          "label": "灰色",
+          "value": "gray"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_3",
+          "label": "赤",
+          "value": "red"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_4",
+          "label": "ピンク",
+          "value": "pink"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_5",
+          "label": "橙",
+          "value": "orange"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_6",
+          "label": "黄",
+          "value": "yellow"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_7",
+          "label": "緑",
+          "value": "green"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_8",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_9",
+          "label": "水色",
+          "value": "light blue"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_10",
+          "label": "紫",
+          "value": "purple"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_11",
+          "label": "茶",
+          "value": "brown"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_12",
+          "label": "ベージュ",
+          "value": "beige"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_13",
+          "label": "紺",
+          "value": "navy blue"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_14",
+          "label": "ワインレッド",
+          "value": "burgundy"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_15",
+          "label": "クリーム",
+          "value": "cream"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_16",
+          "label": "オリーブ",
+          "value": "olive green"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_17",
+          "label": "青緑",
+          "value": "teal"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_18",
+          "label": "ラベンダー",
+          "value": "lavender"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_19",
+          "label": "淡いピンク",
+          "value": "pale pink"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_20",
+          "label": "金色",
+          "value": "gold"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_21",
+          "label": "銀色",
+          "value": "silver"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_pattern",
+      "name": "衣服の柄",
+      "folderId": "衣装 / 衣服の柄",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_0",
+          "label": "縦縞",
+          "value": "pinstriped"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_1",
+          "label": "横縞",
+          "value": "striped"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_2",
+          "label": "チェック",
+          "value": "plaid"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_3",
+          "label": "水玉",
+          "value": "polka dot"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_4",
+          "label": "花柄",
+          "value": "floral print"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_5",
+          "label": "迷彩",
+          "value": "camouflage"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_6",
+          "label": "豹柄",
+          "value": "leopard print"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_7",
+          "label": "幾何学柄",
+          "value": "geometric print"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_8",
+          "label": "千鳥格子",
+          "value": "houndstooth"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_fabric",
+      "name": "衣服の素材",
+      "folderId": "衣装 / 衣服の素材",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_0",
+          "label": "綿",
+          "value": "cotton"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_1",
+          "label": "リネン",
+          "value": "linen"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_2",
+          "label": "ウール",
+          "value": "wool"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_3",
+          "label": "デニム",
+          "value": "denim"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_4",
+          "label": "レザー",
+          "value": "leather"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_5",
+          "label": "サテン",
+          "value": "satin"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_6",
+          "label": "シルク",
+          "value": "silk"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_7",
+          "label": "ベルベット",
+          "value": "velvet"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_8",
+          "label": "シフォン",
+          "value": "chiffon"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_9",
+          "label": "チュール",
+          "value": "tulle"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_10",
+          "label": "レース",
+          "value": "lace"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_11",
+          "label": "コーデュロイ",
+          "value": "corduroy"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_sleeve",
+      "name": "袖丈",
+      "folderId": "衣装 / 袖丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_0",
+          "label": "ノースリーブ",
+          "value": ", sleeveless"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_1",
+          "label": "半袖",
+          "value": ", short sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_2",
+          "label": "五分袖",
+          "value": ", elbow-length sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_3",
+          "label": "七分袖",
+          "value": ", three-quarter sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_4",
+          "label": "長袖",
+          "value": ", long sleeves"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_sleeveshape",
+      "name": "袖の形",
+      "folderId": "衣装 / 袖の形",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_0",
+          "label": "パフスリーブ",
+          "value": ", puff sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_1",
+          "label": "ベルスリーブ",
+          "value": ", bell sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_2",
+          "label": "バルーンスリーブ",
+          "value": ", balloon sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_3",
+          "label": "フリル袖",
+          "value": ", frilled sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_4",
+          "label": "幅広の袖",
+          "value": ", wide sleeves"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_rolled",
+      "name": "袖の状態",
+      "folderId": "衣装 / 袖の状態",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_rolled_o_0",
+          "label": "袖をまくる",
+          "value": ", rolled-up sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_rolled_o_1",
+          "label": "袖をたくし上げる",
+          "value": ", scrunched-up sleeves"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_fit",
+      "name": "衣服のフィット感",
+      "folderId": "衣装 / 衣服のフィット感",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_fit_o_0",
+          "label": "ぴったり",
+          "value": "form-fitting"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fit_o_1",
+          "label": "ゆったり",
+          "value": "loose"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fit_o_2",
+          "label": "オーバーサイズ",
+          "value": "oversized"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_shirt_button",
+      "name": "シャツのボタン",
+      "folderId": "衣装 / シャツのボタン",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_shirt_button_o_0",
+          "label": "ボタンを留める",
+          "value": ", buttoned shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_button_o_1",
+          "label": "ボタンを開ける",
+          "value": ", open shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_button_o_2",
+          "label": "上のボタンを外す",
+          "value": ", shirt with top buttons undone"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_button_o_3",
+          "label": "一部のボタンを外す",
+          "value": ", partially unbuttoned shirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_cardigan_button",
+      "name": "カーディガンのボタン",
+      "folderId": "衣装 / カーディガンのボタン",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_cardigan_button_o_0",
+          "label": "ボタンを留める",
+          "value": ", buttoned cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_cardigan_button_o_1",
+          "label": "ボタンを開ける",
+          "value": ", open cardigan"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_jacket_button",
+      "name": "ジャケットのボタン",
+      "folderId": "衣装 / ジャケットのボタン",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_jacket_button_o_0",
+          "label": "ボタンを留める",
+          "value": ", buttoned jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_jacket_button_o_1",
+          "label": "ボタンを開ける",
+          "value": ", open jacket"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_coat_button",
+      "name": "コートのボタン",
+      "folderId": "衣装 / コートのボタン",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_coat_button_o_0",
+          "label": "ボタンを留める",
+          "value": ", buttoned coat"
+        },
+        {
+          "id": "cg26_clothing_v1_t_coat_button_o_1",
+          "label": "ボタンを開ける",
+          "value": ", open coat"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_zip_jacket",
+      "name": "ジャケットのジッパー",
+      "folderId": "衣装 / ジャケットのジッパー",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_zip_jacket_o_0",
+          "label": "閉じる",
+          "value": ", zipped-up jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_zip_jacket_o_1",
+          "label": "開ける",
+          "value": ", unzipped jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_zip_jacket_o_2",
+          "label": "途中まで下げる",
+          "value": ", partially unzipped jacket"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_zip_hoodie",
+      "name": "パーカーのジッパー",
+      "folderId": "衣装 / パーカーのジッパー",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_zip_hoodie_o_0",
+          "label": "閉じる",
+          "value": ", zipped-up hoodie"
+        },
+        {
+          "id": "cg26_clothing_v1_t_zip_hoodie_o_1",
+          "label": "開ける",
+          "value": ", unzipped hoodie"
+        },
+        {
+          "id": "cg26_clothing_v1_t_zip_hoodie_o_2",
+          "label": "途中まで下げる",
+          "value": ", partially unzipped hoodie"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_shirt_hem",
+      "name": "シャツの裾の着方",
+      "folderId": "衣装 / シャツの裾の着方",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_shirt_hem_o_0",
+          "label": "裾を入れる",
+          "value": ", tucked-in shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_hem_o_1",
+          "label": "裾を出す",
+          "value": ", untucked shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_hem_o_2",
+          "label": "片側だけ入れる",
+          "value": ", half-tucked shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_hem_o_3",
+          "label": "裾を結ぶ",
+          "value": ", shirt tied at the waist"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_top_length",
+      "name": "トップスの丈",
+      "folderId": "衣装 / トップスの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_top_length_o_0",
+          "label": "短丈",
+          "value": "cropped"
+        },
+        {
+          "id": "cg26_clothing_v1_t_top_length_o_1",
+          "label": "長め",
+          "value": "longline"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_skirt_length",
+      "name": "スカートの丈",
+      "folderId": "衣装 / スカートの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_0",
+          "label": "ミニ",
+          "value": "mini"
+        },
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_1",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_2",
+          "label": "ミディ",
+          "value": "midi"
+        },
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_3",
+          "label": "足首丈",
+          "value": "ankle-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_4",
+          "label": "床までの丈",
+          "value": "floor-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_dress_length",
+      "name": "ドレス・ワンピースの丈",
+      "folderId": "衣装 / ドレス・ワンピースの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_0",
+          "label": "ミニ",
+          "value": "mini"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_1",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_2",
+          "label": "ミディ",
+          "value": "midi"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_3",
+          "label": "足首丈",
+          "value": "ankle-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_4",
+          "label": "床までの丈",
+          "value": "floor-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_pants_length",
+      "name": "パンツの丈",
+      "folderId": "衣装 / パンツの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_pants_length_o_0",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_length_o_1",
+          "label": "七分丈",
+          "value": "capri-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_length_o_2",
+          "label": "足首丈",
+          "value": "ankle-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_length_o_3",
+          "label": "フルレングス",
+          "value": "full-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_waist",
+      "name": "ウエスト位置",
+      "folderId": "衣装 / ウエスト位置",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_waist_o_0",
+          "label": "ローライズ",
+          "value": "low-rise"
+        },
+        {
+          "id": "cg26_clothing_v1_t_waist_o_1",
+          "label": "ハイウエスト",
+          "value": "high-waisted"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_knit",
+      "name": "編み柄",
+      "folderId": "衣装 / 編み柄",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_knit_o_0",
+          "label": "ケーブル編み",
+          "value": "cable-knit"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_o_1",
+          "label": "太い編み目",
+          "value": "chunky-knit"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_o_2",
+          "label": "リブ編み",
+          "value": "ribbed-knit"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_o_3",
+          "label": "アーガイル",
+          "value": "argyle"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_coat_length",
+      "name": "コートの丈",
+      "folderId": "衣装 / コートの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_coat_length_o_0",
+          "label": "短丈",
+          "value": "short"
+        },
+        {
+          "id": "cg26_clothing_v1_t_coat_length_o_1",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_coat_length_o_2",
+          "label": "足首丈",
+          "value": "ankle-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_shoe_material",
+      "name": "靴の素材",
+      "folderId": "衣装 / 靴の素材",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_shoe_material_o_0",
+          "label": "レザー",
+          "value": "leather"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shoe_material_o_1",
+          "label": "スエード",
+          "value": "suede"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shoe_material_o_2",
+          "label": "エナメル",
+          "value": "patent leather"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shoe_material_o_3",
+          "label": "キャンバス",
+          "value": "canvas"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_heel",
+      "name": "靴のヒール",
+      "folderId": "衣装 / 靴のヒール",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_heel_o_0",
+          "label": "低いヒール",
+          "value": "low-heeled"
+        },
+        {
+          "id": "cg26_clothing_v1_t_heel_o_1",
+          "label": "高いヒール",
+          "value": "high-heeled"
+        },
+        {
+          "id": "cg26_clothing_v1_t_heel_o_2",
+          "label": "厚底",
+          "value": "platform"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_boot_length",
+      "name": "ブーツの丈",
+      "folderId": "衣装 / ブーツの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_boot_length_o_0",
+          "label": "足首丈",
+          "value": "ankle"
+        },
+        {
+          "id": "cg26_clothing_v1_t_boot_length_o_1",
+          "label": "ふくらはぎ丈",
+          "value": "mid-calf"
+        },
+        {
+          "id": "cg26_clothing_v1_t_boot_length_o_2",
+          "label": "膝丈",
+          "value": "knee-high"
+        },
+        {
+          "id": "cg26_clothing_v1_t_boot_length_o_3",
+          "label": "太もも丈",
+          "value": "thigh-high"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_sock_pattern",
+      "name": "靴下の柄",
+      "folderId": "衣装 / 靴下の柄",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_sock_pattern_o_0",
+          "label": "縞",
+          "value": "striped"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_pattern_o_1",
+          "label": "水玉",
+          "value": "polka dot"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_pattern_o_2",
+          "label": "アーガイル",
+          "value": "argyle"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_jacket_wear",
+      "name": "ジャケットの着方",
+      "folderId": "衣装 / ジャケットの着方",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_jacket_wear_o_0",
+          "label": "肩に掛ける",
+          "value": ", jacket draped over shoulders"
+        },
+        {
+          "id": "cg26_clothing_v1_t_jacket_wear_o_1",
+          "label": "肩を落として着る",
+          "value": ", jacket slipping off shoulders"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_coat_wear",
+      "name": "コートの着方",
+      "folderId": "衣装 / コートの着方",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_coat_wear_o_0",
+          "label": "肩に掛ける",
+          "value": ", coat draped over shoulders"
+        },
+        {
+          "id": "cg26_clothing_v1_t_coat_wear_o_1",
+          "label": "肩を落として着る",
+          "value": ", coat slipping off shoulders"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_trim",
+      "name": "衣服の細部",
+      "folderId": "衣装 / 衣服の細部",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_trim_o_0",
+          "label": "フリル",
+          "value": "frilled"
+        },
+        {
+          "id": "cg26_clothing_v1_t_trim_o_1",
+          "label": "刺繍",
+          "value": "embroidered"
+        },
+        {
+          "id": "cg26_clothing_v1_t_trim_o_2",
+          "label": "レースの縁取り",
+          "value": "lace-trimmed"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_wear",
+      "name": "衣服の傷み",
+      "folderId": "衣装 / 衣服の傷み",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_wear_o_0",
+          "label": "擦れ",
+          "value": "worn"
+        },
+        {
+          "id": "cg26_clothing_v1_t_wear_o_1",
+          "label": "ほつれ",
+          "value": "frayed"
+        },
+        {
+          "id": "cg26_clothing_v1_t_wear_o_2",
+          "label": "汚れ",
+          "value": "dirty"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_skirt_color",
+      "name": "制服のスカートの色",
+      "folderId": "衣装 / 制服のスカートの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_0",
+          "label": "白",
+          "value": ", white skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_1",
+          "label": "黒",
+          "value": ", black skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_2",
+          "label": "灰色",
+          "value": ", gray skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_3",
+          "label": "赤",
+          "value": ", red skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_4",
+          "label": "ピンク",
+          "value": ", pink skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_5",
+          "label": "橙",
+          "value": ", orange skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_6",
+          "label": "黄",
+          "value": ", yellow skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_7",
+          "label": "緑",
+          "value": ", green skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_8",
+          "label": "青",
+          "value": ", blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_9",
+          "label": "水色",
+          "value": ", light blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_10",
+          "label": "紫",
+          "value": ", purple skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_11",
+          "label": "茶",
+          "value": ", brown skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_13",
+          "label": "紺",
+          "value": ", navy blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_15",
+          "label": "クリーム",
+          "value": ", cream skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_17",
+          "label": "青緑",
+          "value": ", teal skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_20",
+          "label": "金色",
+          "value": ", gold skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_21",
+          "label": "銀色",
+          "value": ", silver skirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_cardigan_color",
+      "name": "制服のカーディガンの色",
+      "folderId": "衣装 / 制服のカーディガンの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_0",
+          "label": "白",
+          "value": ", white cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_1",
+          "label": "黒",
+          "value": ", black cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_2",
+          "label": "灰色",
+          "value": ", gray cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_3",
+          "label": "赤",
+          "value": ", red cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_4",
+          "label": "ピンク",
+          "value": ", pink cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_5",
+          "label": "橙",
+          "value": ", orange cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_6",
+          "label": "黄",
+          "value": ", yellow cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_7",
+          "label": "緑",
+          "value": ", green cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_8",
+          "label": "青",
+          "value": ", blue cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_9",
+          "label": "水色",
+          "value": ", light blue cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_10",
+          "label": "紫",
+          "value": ", purple cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_11",
+          "label": "茶",
+          "value": ", brown cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_13",
+          "label": "紺",
+          "value": ", navy blue cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_15",
+          "label": "クリーム",
+          "value": ", cream cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_17",
+          "label": "青緑",
+          "value": ", teal cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_20",
+          "label": "金色",
+          "value": ", gold cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_21",
+          "label": "銀色",
+          "value": ", silver cardigan"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_vest_color",
+      "name": "制服のベストの色",
+      "folderId": "衣装 / 制服のベストの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_0",
+          "label": "白",
+          "value": ", white sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_1",
+          "label": "黒",
+          "value": ", black sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_2",
+          "label": "灰色",
+          "value": ", gray sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_3",
+          "label": "赤",
+          "value": ", red sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_4",
+          "label": "ピンク",
+          "value": ", pink sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_5",
+          "label": "橙",
+          "value": ", orange sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_6",
+          "label": "黄",
+          "value": ", yellow sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_7",
+          "label": "緑",
+          "value": ", green sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_8",
+          "label": "青",
+          "value": ", blue sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_9",
+          "label": "水色",
+          "value": ", light blue sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_10",
+          "label": "紫",
+          "value": ", purple sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_11",
+          "label": "茶",
+          "value": ", brown sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_13",
+          "label": "紺",
+          "value": ", navy blue sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_15",
+          "label": "クリーム",
+          "value": ", cream sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_17",
+          "label": "青緑",
+          "value": ", teal sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_20",
+          "label": "金色",
+          "value": ", gold sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_21",
+          "label": "銀色",
+          "value": ", silver sweater vest"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_shirt_color",
+      "name": "制服のシャツの色",
+      "folderId": "衣装 / 制服のシャツの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_0",
+          "label": "白",
+          "value": ", white shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_1",
+          "label": "黒",
+          "value": ", black shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_2",
+          "label": "灰色",
+          "value": ", gray shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_3",
+          "label": "赤",
+          "value": ", red shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_4",
+          "label": "ピンク",
+          "value": ", pink shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_5",
+          "label": "橙",
+          "value": ", orange shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_6",
+          "label": "黄",
+          "value": ", yellow shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_7",
+          "label": "緑",
+          "value": ", green shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_8",
+          "label": "青",
+          "value": ", blue shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_9",
+          "label": "水色",
+          "value": ", light blue shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_10",
+          "label": "紫",
+          "value": ", purple shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_11",
+          "label": "茶",
+          "value": ", brown shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_13",
+          "label": "紺",
+          "value": ", navy blue shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_15",
+          "label": "クリーム",
+          "value": ", cream shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_17",
+          "label": "青緑",
+          "value": ", teal shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_20",
+          "label": "金色",
+          "value": ", gold shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_21",
+          "label": "銀色",
+          "value": ", silver shirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_skirt_length",
+      "name": "制服のスカートの丈",
+      "folderId": "衣装 / 制服のスカートの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_length_o_0",
+          "label": "膝上",
+          "value": ", above-knee skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_length_o_1",
+          "label": "膝丈",
+          "value": ", knee-length skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_length_o_2",
+          "label": "膝下",
+          "value": ", below-knee skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_length_o_3",
+          "label": "足首丈",
+          "value": ", ankle-length skirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_sock_length",
+      "name": "ソックスの丈",
+      "folderId": "衣装 / ソックスの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_0",
+          "label": "くるぶし丈",
+          "value": "ankle"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_1",
+          "label": "クルー丈",
+          "value": "crew"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_2",
+          "label": "ふくらはぎ丈",
+          "value": "mid-calf"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_3",
+          "label": "膝丈",
+          "value": "knee-high"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_4",
+          "label": "膝上丈",
+          "value": "over-knee"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_5",
+          "label": "太もも丈",
+          "value": "thigh-high"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_stocking_length",
+      "name": "ストッキングの丈",
+      "folderId": "衣装 / ストッキングの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_stocking_length_o_0",
+          "label": "膝丈",
+          "value": "knee-high"
+        },
+        {
+          "id": "cg26_clothing_v1_t_stocking_length_o_1",
+          "label": "太もも丈",
+          "value": "thigh-high"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_neckline",
+      "name": "トップス・ドレスの襟ぐり",
+      "folderId": "衣装 / トップス・ドレスの襟ぐり",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_neckline_o_0",
+          "label": "丸首",
+          "value": ", round neckline"
+        },
+        {
+          "id": "cg26_clothing_v1_t_neckline_o_1",
+          "label": "Vネック",
+          "value": ", v-neck"
+        },
+        {
+          "id": "cg26_clothing_v1_t_neckline_o_2",
+          "label": "スクエアネック",
+          "value": ", square neckline"
+        },
+        {
+          "id": "cg26_clothing_v1_t_neckline_o_3",
+          "label": "ボートネック",
+          "value": ", boat neckline"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_cocktail_length",
+      "name": "カクテルドレスの丈",
+      "folderId": "衣装 / カクテルドレスの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_cocktail_length_o_0",
+          "label": "ミニ",
+          "value": "mini"
+        },
+        {
+          "id": "cg26_clothing_v1_t_cocktail_length_o_1",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_cocktail_length_o_2",
+          "label": "ミディ",
+          "value": "midi"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_gown_length",
+      "name": "ロングドレスの丈",
+      "folderId": "衣装 / ロングドレスの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_gown_length_o_0",
+          "label": "足首丈",
+          "value": "ankle-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_gown_length_o_1",
+          "label": "床までの丈",
+          "value": "floor-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_dress_train",
+      "name": "ドレスの後ろ裾",
+      "folderId": "衣装 / ドレスの後ろ裾",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_dress_train_o_0",
+          "label": "短いトレーン",
+          "value": ", dress with a short train"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_train_o_1",
+          "label": "長いトレーン",
+          "value": ", dress with a long train"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_shorts_length",
+      "name": "ショートパンツの丈",
+      "folderId": "衣装 / ショートパンツの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_shorts_length_o_0",
+          "label": "太もも中ほど",
+          "value": "mid-thigh"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shorts_length_o_1",
+          "label": "膝上",
+          "value": "above-knee"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_pants_fit",
+      "name": "パンツの幅・フィット感",
+      "folderId": "衣装 / パンツの幅・フィット感",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_pants_fit_o_0",
+          "label": "細身",
+          "value": "slim-fit"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_fit_o_1",
+          "label": "身体に沿う",
+          "value": "skinny"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_fit_o_2",
+          "label": "ゆったり",
+          "value": "loose-fit"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_knit_sleeve",
+      "name": "ニットの袖丈",
+      "folderId": "衣装 / ニットの袖丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_knit_sleeve_o_0",
+          "label": "半袖",
+          "value": ", short sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_sleeve_o_1",
+          "label": "七分袖",
+          "value": ", three-quarter sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_sleeve_o_2",
+          "label": "長袖",
+          "value": ", long sleeves"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_lace_detail",
+      "name": "レースの細部",
+      "folderId": "衣装 / レースの細部",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_lace_detail_o_0",
+          "label": "レースの縁取り",
+          "value": "lace-trimmed"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_maid_color",
+      "name": "メイド服のドレスの色",
+      "folderId": "衣装 / メイド服のドレスの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_0",
+          "label": "白",
+          "value": ", white maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_1",
+          "label": "黒",
+          "value": ", black maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_2",
+          "label": "灰色",
+          "value": ", gray maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_3",
+          "label": "赤",
+          "value": ", red maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_4",
+          "label": "ピンク",
+          "value": ", pink maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_5",
+          "label": "橙",
+          "value": ", orange maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_6",
+          "label": "黄",
+          "value": ", yellow maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_7",
+          "label": "緑",
+          "value": ", green maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_8",
+          "label": "青",
+          "value": ", blue maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_9",
+          "label": "水色",
+          "value": ", light blue maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_10",
+          "label": "紫",
+          "value": ", purple maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_11",
+          "label": "茶",
+          "value": ", brown maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_13",
+          "label": "紺",
+          "value": ", navy blue maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_15",
+          "label": "クリーム",
+          "value": ", cream maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_17",
+          "label": "青緑",
+          "value": ", teal maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_20",
+          "label": "金色",
+          "value": ", gold maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_21",
+          "label": "銀色",
+          "value": ", silver maid dress"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_apron_color",
+      "name": "エプロンの色",
+      "folderId": "衣装 / エプロンの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_0",
+          "label": "白",
+          "value": ", white apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_1",
+          "label": "黒",
+          "value": ", black apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_2",
+          "label": "灰色",
+          "value": ", gray apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_3",
+          "label": "赤",
+          "value": ", red apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_4",
+          "label": "ピンク",
+          "value": ", pink apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_5",
+          "label": "橙",
+          "value": ", orange apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_6",
+          "label": "黄",
+          "value": ", yellow apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_7",
+          "label": "緑",
+          "value": ", green apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_8",
+          "label": "青",
+          "value": ", blue apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_9",
+          "label": "水色",
+          "value": ", light blue apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_10",
+          "label": "紫",
+          "value": ", purple apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_11",
+          "label": "茶",
+          "value": ", brown apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_13",
+          "label": "紺",
+          "value": ", navy blue apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_15",
+          "label": "クリーム",
+          "value": ", cream apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_17",
+          "label": "青緑",
+          "value": ", teal apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_20",
+          "label": "金色",
+          "value": ", gold apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_21",
+          "label": "銀色",
+          "value": ", silver apron"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_skirt_length",
+      "name": "衣装一式のスカート丈",
+      "folderId": "衣装 / 衣装一式のスカート丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_length_o_0",
+          "label": "膝上",
+          "value": ", above-knee skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_length_o_1",
+          "label": "膝丈",
+          "value": ", knee-length skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_length_o_2",
+          "label": "膝下",
+          "value": ", below-knee skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_length_o_3",
+          "label": "足首丈",
+          "value": ", ankle-length skirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_skirt_color",
+      "name": "衣装一式のスカートの色",
+      "folderId": "衣装 / 衣装一式のスカートの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_0",
+          "label": "白",
+          "value": ", white skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_1",
+          "label": "黒",
+          "value": ", black skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_2",
+          "label": "灰色",
+          "value": ", gray skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_3",
+          "label": "赤",
+          "value": ", red skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_4",
+          "label": "ピンク",
+          "value": ", pink skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_5",
+          "label": "橙",
+          "value": ", orange skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_6",
+          "label": "黄",
+          "value": ", yellow skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_7",
+          "label": "緑",
+          "value": ", green skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_8",
+          "label": "青",
+          "value": ", blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_9",
+          "label": "水色",
+          "value": ", light blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_10",
+          "label": "紫",
+          "value": ", purple skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_11",
+          "label": "茶",
+          "value": ", brown skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_13",
+          "label": "紺",
+          "value": ", navy blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_15",
+          "label": "クリーム",
+          "value": ", cream skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_17",
+          "label": "青緑",
+          "value": ", teal skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_20",
+          "label": "金色",
+          "value": ", gold skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_21",
+          "label": "銀色",
+          "value": ", silver skirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_pants_length",
+      "name": "衣装一式のパンツ丈",
+      "folderId": "衣装 / 衣装一式のパンツ丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_length_o_0",
+          "label": "膝丈",
+          "value": ", knee-length pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_length_o_1",
+          "label": "足首丈",
+          "value": ", ankle-length pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_length_o_2",
+          "label": "フルレングス",
+          "value": ", full-length pants"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_jacket_color",
+      "name": "衣装一式のジャケットの色",
+      "folderId": "衣装 / 衣装一式のジャケットの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_0",
+          "label": "白",
+          "value": ", white jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_1",
+          "label": "黒",
+          "value": ", black jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_2",
+          "label": "灰色",
+          "value": ", gray jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_3",
+          "label": "赤",
+          "value": ", red jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_4",
+          "label": "ピンク",
+          "value": ", pink jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_5",
+          "label": "橙",
+          "value": ", orange jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_6",
+          "label": "黄",
+          "value": ", yellow jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_7",
+          "label": "緑",
+          "value": ", green jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_8",
+          "label": "青",
+          "value": ", blue jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_9",
+          "label": "水色",
+          "value": ", light blue jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_10",
+          "label": "紫",
+          "value": ", purple jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_11",
+          "label": "茶",
+          "value": ", brown jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_13",
+          "label": "紺",
+          "value": ", navy blue jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_15",
+          "label": "クリーム",
+          "value": ", cream jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_17",
+          "label": "青緑",
+          "value": ", teal jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_20",
+          "label": "金色",
+          "value": ", gold jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_21",
+          "label": "銀色",
+          "value": ", silver jacket"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_pants_color",
+      "name": "衣装一式のパンツの色",
+      "folderId": "衣装 / 衣装一式のパンツの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_0",
+          "label": "白",
+          "value": ", white pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_1",
+          "label": "黒",
+          "value": ", black pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_2",
+          "label": "灰色",
+          "value": ", gray pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_3",
+          "label": "赤",
+          "value": ", red pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_4",
+          "label": "ピンク",
+          "value": ", pink pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_5",
+          "label": "橙",
+          "value": ", orange pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_6",
+          "label": "黄",
+          "value": ", yellow pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_7",
+          "label": "緑",
+          "value": ", green pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_8",
+          "label": "青",
+          "value": ", blue pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_9",
+          "label": "水色",
+          "value": ", light blue pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_10",
+          "label": "紫",
+          "value": ", purple pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_11",
+          "label": "茶",
+          "value": ", brown pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_13",
+          "label": "紺",
+          "value": ", navy blue pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_15",
+          "label": "クリーム",
+          "value": ", cream pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_17",
+          "label": "青緑",
+          "value": ", teal pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_20",
+          "label": "金色",
+          "value": ", gold pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_21",
+          "label": "銀色",
+          "value": ", silver pants"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_robe_length",
+      "name": "ローブの丈",
+      "folderId": "衣装 / ローブの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_robe_length_o_0",
+          "label": "膝丈",
+          "value": ", knee-length robe"
+        },
+        {
+          "id": "cg26_clothing_v1_t_robe_length_o_1",
+          "label": "足首丈",
+          "value": ", ankle-length robe"
+        },
+        {
+          "id": "cg26_clothing_v1_t_robe_length_o_2",
+          "label": "床までの丈",
+          "value": ", floor-length robe"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_school_neckwear",
+      "name": "制服の首元",
+      "folderId": "衣装 / 制服の首元",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_school_neckwear_o_0",
+          "label": "リボン",
+          "value": ", ribbon tie"
+        },
+        {
+          "id": "cg26_clothing_v1_t_school_neckwear_o_1",
+          "label": "ネクタイ",
+          "value": ", necktie"
+        },
+        {
+          "id": "cg26_clothing_v1_t_school_neckwear_o_2",
+          "label": "スカーフ",
+          "value": ", neckerchief"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    }
+  ],
+  "cards": []
+}

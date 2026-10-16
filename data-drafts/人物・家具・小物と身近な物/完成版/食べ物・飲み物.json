@@ -1,0 +1,962 @@
+{
+  "folders": [
+    {
+      "id": "po26_food_v1",
+      "name": "食べ物・飲み物",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_f_meal",
+      "name": "主食・料理",
+      "parentId": "po26_food_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_f_sweet",
+      "name": "菓子・デザート",
+      "parentId": "po26_food_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_f_produce",
+      "name": "果物・野菜",
+      "parentId": "po26_food_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_f_drink",
+      "name": "飲み物",
+      "parentId": "po26_food_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "po26_food_v1_w_meal_001",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "ご飯",
+      "value_en": "cooked rice",
+      "note": "炊いた米。器や食べる動作は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_002",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "おにぎり",
+      "value_en": "rice ball",
+      "note": "米を握った食べ物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_003",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "寿司",
+      "value_en": "sushi",
+      "note": "酢飯などを用いた料理。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_004",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "弁当",
+      "value_en": "bento",
+      "note": "複数のおかずなどをまとめた食事。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_005",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "カレーライス",
+      "value_en": "curry rice",
+      "note": "ご飯とカレーを合わせた料理。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_temperature"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_meal_006",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "ラーメン",
+      "value_en": "ramen",
+      "note": "汁と麺などを合わせた料理。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_temperature"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_meal_007",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "うどん",
+      "value_en": "udon",
+      "note": "太い麺を使う料理。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_temperature"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_meal_008",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "そば",
+      "value_en": "soba noodles",
+      "note": "蕎麦粉などを使う細めの麺。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_temperature"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_meal_009",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "パスタ",
+      "value_en": "pasta",
+      "note": "様々な形の麺料理。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_temperature"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_meal_010",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "オムライス",
+      "value_en": "omurice",
+      "note": "ご飯を卵で包むなどした料理。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_011",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "サンドイッチ",
+      "value_en": "sandwich",
+      "note": "パンで具を挟んだ料理。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_012",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "ハンバーガー",
+      "value_en": "hamburger",
+      "note": "丸いパンで肉などを挟んだ料理。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_013",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "ピザ",
+      "value_en": "pizza",
+      "note": "平たい生地に具を載せた料理。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_014",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "トースト",
+      "value_en": "toast",
+      "note": "焼いたパン。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_015",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "クロワッサン",
+      "value_en": "croissant",
+      "note": "層のある三日月形などのパン。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_016",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "バゲット",
+      "value_en": "baguette",
+      "note": "細長いパン。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_017",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "パンケーキ",
+      "value_en": "pancakes",
+      "note": "薄く丸く焼いた生地の料理。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_topping"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_meal_018",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "フライドポテト",
+      "value_en": "french fries",
+      "note": "棒状などに切って揚げたジャガイモ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_019",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "サラダ",
+      "value_en": "salad",
+      "note": "野菜などを合わせた料理。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_020",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "スープ",
+      "value_en": "soup",
+      "note": "液体を主体にした料理。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_temperature"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_meal_021",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "味噌汁",
+      "value_en": "miso soup",
+      "note": "味噌を使う汁物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_temperature"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_meal_022",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "卵焼き",
+      "value_en": "tamagoyaki",
+      "note": "卵を巻くなどして焼いた料理。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_023",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "目玉焼き",
+      "value_en": "fried egg",
+      "note": "黄身の形を残して焼いた卵。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_024",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "焼き魚",
+      "value_en": "grilled fish",
+      "note": "焼いた魚の料理。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_025",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "ステーキ",
+      "value_en": "steak",
+      "note": "厚めに切って焼いた肉。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_026",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "たこ焼き",
+      "value_en": "takoyaki",
+      "note": "たこなどを入れた丸い焼き物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_meal_027",
+      "folderId": "po26_food_v1_f_meal",
+      "label_jp": "お好み焼き",
+      "value_en": "okonomiyaki",
+      "note": "具を混ぜた生地を平たく焼く料理。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_028",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "ケーキ",
+      "value_en": "cake",
+      "note": "甘い生地などの菓子。種類は装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_flavor",
+        "po26_food_v1_t_topping"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_sweet_029",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "ショートケーキ",
+      "value_en": "strawberry shortcake",
+      "note": "苺とクリームなどを使うケーキ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_030",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "チョコレートケーキ",
+      "value_en": "chocolate cake",
+      "note": "チョコレートを使うケーキ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_031",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "チーズケーキ",
+      "value_en": "cheesecake",
+      "note": "チーズを使うケーキ。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_032",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "カップケーキ",
+      "value_en": "cupcake",
+      "note": "カップ状に焼いた小さなケーキ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_topping"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_sweet_033",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "クッキー",
+      "value_en": "cookies",
+      "note": "小さく焼いた菓子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_flavor"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_sweet_034",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "ドーナツ",
+      "value_en": "donut",
+      "note": "輪形などの揚げた生地の菓子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_flavor"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_sweet_035",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "チョコレート",
+      "value_en": "chocolate",
+      "note": "カカオなどから作る菓子。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_036",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "飴",
+      "value_en": "candy",
+      "note": "砂糖などを固めた菓子。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_037",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "棒付きキャンディー",
+      "value_en": "lollipop",
+      "note": "棒を付けた飴。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_038",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "アイスクリーム",
+      "value_en": "ice cream",
+      "note": "冷たい乳製品などの菓子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_flavor",
+        "po26_food_v1_t_topping"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_sweet_039",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "ソフトクリーム",
+      "value_en": "soft serve ice cream",
+      "note": "柔らかく巻いた形の冷菓。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_topping"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_sweet_040",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "パフェ",
+      "value_en": "parfait",
+      "note": "果物やクリームを重ねたデザート。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_topping"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_sweet_041",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "プリン",
+      "value_en": "custard pudding",
+      "note": "卵や牛乳などを固めたデザート。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_flavor"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_sweet_042",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "ゼリー",
+      "value_en": "jelly dessert",
+      "note": "透明感のある固めたデザート。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_043",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "マカロン",
+      "value_en": "macaron",
+      "note": "丸い生地でクリームなどを挟んだ菓子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_flavor"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_sweet_044",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "団子",
+      "value_en": "dango",
+      "note": "丸めた生地の和菓子。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_045",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "大福",
+      "value_en": "daifuku",
+      "note": "餅で餡などを包む和菓子。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_046",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "たい焼き",
+      "value_en": "taiyaki",
+      "note": "魚の形に焼いた菓子。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_047",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "かき氷",
+      "value_en": "shaved ice",
+      "note": "削った氷に味を付けた冷菓。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_048",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "綿あめ",
+      "value_en": "cotton candy",
+      "note": "細い砂糖を綿状に集めた菓子。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_sweet_049",
+      "folderId": "po26_food_v1_f_sweet",
+      "label_jp": "りんご飴",
+      "value_en": "candied apple",
+      "note": "りんごに飴をまとわせた菓子。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_produce_050",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "りんご",
+      "value_en": "apple",
+      "note": "丸い果物。色や切り方は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_051",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "苺",
+      "value_en": "strawberry",
+      "note": "赤い小さな果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_052",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "さくらんぼ",
+      "value_en": "cherry",
+      "note": "柄を持つ小さな果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_053",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "ぶどう",
+      "value_en": "grapes",
+      "note": "小さな実が房になる果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_054",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "バナナ",
+      "value_en": "banana",
+      "note": "曲がった細長い果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_055",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "オレンジ",
+      "value_en": "orange fruit",
+      "note": "橙色などの柑橘の果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_056",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "レモン",
+      "value_en": "lemon",
+      "note": "黄色などの酸味のある柑橘。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_057",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "桃",
+      "value_en": "peach",
+      "note": "丸く柔らかい果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_058",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "梨",
+      "value_en": "pear",
+      "note": "丸い形などの果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_059",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "スイカ",
+      "value_en": "watermelon",
+      "note": "大きく丸いなどの瓜の果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_060",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "メロン",
+      "value_en": "melon",
+      "note": "大きめの瓜の果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_061",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "パイナップル",
+      "value_en": "pineapple",
+      "note": "硬い表面と葉を持つ果物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_062",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "トマト",
+      "value_en": "tomato",
+      "note": "丸い赤色などの食材。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_063",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "にんじん",
+      "value_en": "carrot",
+      "note": "細長い橙色などの根菜。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_064",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "ジャガイモ",
+      "value_en": "potato",
+      "note": "丸い塊状の野菜。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_065",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "かぼちゃ",
+      "value_en": "pumpkin",
+      "note": "大きく丸いなどの瓜の野菜。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_produce_066",
+      "folderId": "po26_food_v1_f_produce",
+      "label_jp": "キャベツ",
+      "value_en": "cabbage",
+      "note": "葉が重なる球状の野菜。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_cut"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_drink_067",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "水",
+      "value_en": "drinking water",
+      "note": "飲用の水。容器や飲む動作は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_068",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "お茶",
+      "value_en": "tea",
+      "note": "茶葉などから作る飲み物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_drinktemp"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_drink_069",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "緑茶",
+      "value_en": "green tea",
+      "note": "緑茶の飲み物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_drinktemp"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_drink_070",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "紅茶",
+      "value_en": "black tea",
+      "note": "紅茶の飲み物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_drinktemp"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_drink_071",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "コーヒー",
+      "value_en": "coffee",
+      "note": "コーヒーの飲み物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_drinktemp"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_drink_072",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "カフェラテ",
+      "value_en": "caffe latte",
+      "note": "コーヒーとミルクを合わせた飲み物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_food_v1_t_drinktemp"
+      ]
+    },
+    {
+      "id": "po26_food_v1_w_drink_073",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "ココア",
+      "value_en": "hot cocoa",
+      "note": "温かいココアの飲み物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_074",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "牛乳",
+      "value_en": "milk",
+      "note": "乳の飲み物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_075",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "ジュース",
+      "value_en": "fruit juice",
+      "note": "果物などから作る飲み物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_076",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "レモネード",
+      "value_en": "lemonade",
+      "note": "レモンを使う飲み物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_077",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "炭酸飲料",
+      "value_en": "soda",
+      "note": "炭酸のある飲み物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_078",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "スムージー",
+      "value_en": "smoothie",
+      "note": "果物などを混ぜた濃い飲み物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_079",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "ミルクシェイク",
+      "value_en": "milkshake",
+      "note": "ミルクなどを混ぜた冷たい飲み物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_080",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "タピオカドリンク",
+      "value_en": "bubble tea",
+      "note": "小さな粒が入るお茶などの飲み物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_081",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "ビール",
+      "value_en": "beer",
+      "note": "泡などを伴う酒の飲み物。飲む人物は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_082",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "ワイン",
+      "value_en": "wine",
+      "note": "ぶどうなどを原料にした酒。人物は含めない。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_food_v1_w_drink_083",
+      "folderId": "po26_food_v1_f_drink",
+      "label_jp": "日本酒",
+      "value_en": "sake",
+      "note": "米などを原料にした酒。人物は含めない。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "po26_food_v1_t_temperature",
+      "name": "料理の温度",
+      "folderId": "食べ物・飲み物 / 料理の温度",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_food_v1_t_temperature_o_0",
+          "label": "温かい",
+          "value": "hot"
+        },
+        {
+          "id": "po26_food_v1_t_temperature_o_1",
+          "label": "冷たい",
+          "value": "cold"
+        }
+      ]
+    },
+    {
+      "id": "po26_food_v1_t_drinktemp",
+      "name": "飲み物の温度",
+      "folderId": "食べ物・飲み物 / 飲み物の温度",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_food_v1_t_drinktemp_o_0",
+          "label": "温かい",
+          "value": "hot"
+        },
+        {
+          "id": "po26_food_v1_t_drinktemp_o_1",
+          "label": "冷たい",
+          "value": "cold"
+        },
+        {
+          "id": "po26_food_v1_t_drinktemp_o_2",
+          "label": "氷入り",
+          "value": "iced"
+        }
+      ]
+    },
+    {
+      "id": "po26_food_v1_t_cut",
+      "name": "果物・野菜の切り方",
+      "folderId": "食べ物・飲み物 / 果物・野菜の切り方",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_food_v1_t_cut_o_0",
+          "label": "丸ごと",
+          "value": "whole"
+        },
+        {
+          "id": "po26_food_v1_t_cut_o_1",
+          "label": "薄切り",
+          "value": "sliced"
+        },
+        {
+          "id": "po26_food_v1_t_cut_o_2",
+          "label": "角切り",
+          "value": "diced"
+        },
+        {
+          "id": "po26_food_v1_t_cut_o_3",
+          "label": "半分",
+          "value": "halved"
+        }
+      ]
+    },
+    {
+      "id": "po26_food_v1_t_flavor",
+      "name": "菓子の味",
+      "folderId": "食べ物・飲み物 / 菓子の味",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_food_v1_t_flavor_o_0",
+          "label": "バニラ",
+          "value": "vanilla"
+        },
+        {
+          "id": "po26_food_v1_t_flavor_o_1",
+          "label": "チョコ",
+          "value": "chocolate"
+        },
+        {
+          "id": "po26_food_v1_t_flavor_o_2",
+          "label": "苺",
+          "value": "strawberry"
+        },
+        {
+          "id": "po26_food_v1_t_flavor_o_3",
+          "label": "抹茶",
+          "value": "matcha"
+        },
+        {
+          "id": "po26_food_v1_t_flavor_o_4",
+          "label": "レモン",
+          "value": "lemon"
+        }
+      ]
+    },
+    {
+      "id": "po26_food_v1_t_topping",
+      "name": "菓子のトッピング",
+      "folderId": "食べ物・飲み物 / 菓子のトッピング",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_food_v1_t_topping_o_0",
+          "label": "ホイップ",
+          "value": ", whipped cream"
+        },
+        {
+          "id": "po26_food_v1_t_topping_o_1",
+          "label": "苺",
+          "value": ", strawberries"
+        },
+        {
+          "id": "po26_food_v1_t_topping_o_2",
+          "label": "チョコのソース",
+          "value": ", chocolate sauce"
+        },
+        {
+          "id": "po26_food_v1_t_topping_o_3",
+          "label": "カラースプレー",
+          "value": ", sprinkles"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

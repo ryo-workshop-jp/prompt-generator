@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-26",
+  "status": "passed",
+  "categories": [
+    {
+      "name": "背景",
+      "words": 197,
+      "folders": 11,
+      "templates": 10,
+      "options": 61
+    },
+    {
+      "name": "ポーズ",
+      "words": 216,
+      "folders": 10,
+      "templates": 7,
+      "options": 38
+    },
+    {
+      "name": "動作",
+      "words": 202,
+      "folders": 12,
+      "templates": 4,
+      "options": 26
+    }
+  ],
+  "newWords": 615,
+  "newTemplates": 21,
+  "newOptions": 125,
+  "previousWords": 1119,
+  "mergedWords": 1734,
+  "checks": [
+    "IDs and English uniqueness",
+    "folder root reachability and template references",
+    "HTML script syntax and embedded data match",
+    "existing data and unknown fields preserved",
+    "input not mutated",
+    "reimport idempotence",
+    "category selection",
+    "normalized English duplicate skipped",
+    "duplicate existing ID rejected",
+    "existing classroom receives missing links while custom note preserved",
+    "modified English card left untouched"
+  ],
+  "browserInteractionVerified": false,
+  "imageGenerationVerified": false
+}

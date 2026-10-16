@@ -1,0 +1,2384 @@
+{
+  "templates": [
+    {
+      "id": "cg26_clothing_v1_t_color",
+      "name": "衣服・小物の色",
+      "folderId": "衣装 / 衣服・小物の色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_color_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_1",
+          "label": "黒",
+          "value": "black"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_2",
+          "label": "灰色",
+          "value": "gray"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_3",
+          "label": "赤",
+          "value": "red"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_4",
+          "label": "ピンク",
+          "value": "pink"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_5",
+          "label": "橙",
+          "value": "orange"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_6",
+          "label": "黄",
+          "value": "yellow"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_7",
+          "label": "緑",
+          "value": "green"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_8",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_9",
+          "label": "水色",
+          "value": "light blue"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_10",
+          "label": "紫",
+          "value": "purple"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_11",
+          "label": "茶",
+          "value": "brown"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_12",
+          "label": "ベージュ",
+          "value": "beige"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_13",
+          "label": "紺",
+          "value": "navy blue"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_14",
+          "label": "ワインレッド",
+          "value": "burgundy"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_15",
+          "label": "クリーム",
+          "value": "cream"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_16",
+          "label": "オリーブ",
+          "value": "olive green"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_17",
+          "label": "青緑",
+          "value": "teal"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_18",
+          "label": "ラベンダー",
+          "value": "lavender"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_19",
+          "label": "淡いピンク",
+          "value": "pale pink"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_20",
+          "label": "金色",
+          "value": "gold"
+        },
+        {
+          "id": "cg26_clothing_v1_t_color_o_21",
+          "label": "銀色",
+          "value": "silver"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_pattern",
+      "name": "衣服の柄",
+      "folderId": "衣装 / 衣服の柄",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_0",
+          "label": "縦縞",
+          "value": "pinstriped"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_1",
+          "label": "横縞",
+          "value": "striped"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_2",
+          "label": "チェック",
+          "value": "plaid"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_3",
+          "label": "水玉",
+          "value": "polka dot"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_4",
+          "label": "花柄",
+          "value": "floral print"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_5",
+          "label": "迷彩",
+          "value": "camouflage"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_6",
+          "label": "豹柄",
+          "value": "leopard print"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_7",
+          "label": "幾何学柄",
+          "value": "geometric print"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pattern_o_8",
+          "label": "千鳥格子",
+          "value": "houndstooth"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_fabric",
+      "name": "衣服の素材",
+      "folderId": "衣装 / 衣服の素材",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_0",
+          "label": "綿",
+          "value": "cotton"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_1",
+          "label": "リネン",
+          "value": "linen"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_2",
+          "label": "ウール",
+          "value": "wool"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_3",
+          "label": "デニム",
+          "value": "denim"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_4",
+          "label": "レザー",
+          "value": "leather"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_5",
+          "label": "サテン",
+          "value": "satin"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_6",
+          "label": "シルク",
+          "value": "silk"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_7",
+          "label": "ベルベット",
+          "value": "velvet"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_8",
+          "label": "シフォン",
+          "value": "chiffon"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_9",
+          "label": "チュール",
+          "value": "tulle"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_10",
+          "label": "レース",
+          "value": "lace"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fabric_o_11",
+          "label": "コーデュロイ",
+          "value": "corduroy"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_sleeve",
+      "name": "袖丈",
+      "folderId": "衣装 / 袖丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_0",
+          "label": "ノースリーブ",
+          "value": ", sleeveless"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_1",
+          "label": "半袖",
+          "value": ", short sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_2",
+          "label": "五分袖",
+          "value": ", elbow-length sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_3",
+          "label": "七分袖",
+          "value": ", three-quarter sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeve_o_4",
+          "label": "長袖",
+          "value": ", long sleeves"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_sleeveshape",
+      "name": "袖の形",
+      "folderId": "衣装 / 袖の形",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_0",
+          "label": "パフスリーブ",
+          "value": ", puff sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_1",
+          "label": "ベルスリーブ",
+          "value": ", bell sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_2",
+          "label": "バルーンスリーブ",
+          "value": ", balloon sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_3",
+          "label": "フリル袖",
+          "value": ", frilled sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sleeveshape_o_4",
+          "label": "幅広の袖",
+          "value": ", wide sleeves"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_rolled",
+      "name": "袖の状態",
+      "folderId": "衣装 / 袖の状態",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_rolled_o_0",
+          "label": "袖をまくる",
+          "value": ", rolled-up sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_rolled_o_1",
+          "label": "袖をたくし上げる",
+          "value": ", scrunched-up sleeves"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_fit",
+      "name": "衣服のフィット感",
+      "folderId": "衣装 / 衣服のフィット感",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_fit_o_0",
+          "label": "ぴったり",
+          "value": "form-fitting"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fit_o_1",
+          "label": "ゆったり",
+          "value": "loose"
+        },
+        {
+          "id": "cg26_clothing_v1_t_fit_o_2",
+          "label": "オーバーサイズ",
+          "value": "oversized"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_shirt_button",
+      "name": "シャツのボタン",
+      "folderId": "衣装 / シャツのボタン",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_shirt_button_o_0",
+          "label": "ボタンを留める",
+          "value": ", buttoned shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_button_o_1",
+          "label": "ボタンを開ける",
+          "value": ", open shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_button_o_2",
+          "label": "上のボタンを外す",
+          "value": ", shirt with top buttons undone"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_button_o_3",
+          "label": "一部のボタンを外す",
+          "value": ", partially unbuttoned shirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_cardigan_button",
+      "name": "カーディガンのボタン",
+      "folderId": "衣装 / カーディガンのボタン",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_cardigan_button_o_0",
+          "label": "ボタンを留める",
+          "value": ", buttoned cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_cardigan_button_o_1",
+          "label": "ボタンを開ける",
+          "value": ", open cardigan"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_jacket_button",
+      "name": "ジャケットのボタン",
+      "folderId": "衣装 / ジャケットのボタン",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_jacket_button_o_0",
+          "label": "ボタンを留める",
+          "value": ", buttoned jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_jacket_button_o_1",
+          "label": "ボタンを開ける",
+          "value": ", open jacket"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_coat_button",
+      "name": "コートのボタン",
+      "folderId": "衣装 / コートのボタン",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_coat_button_o_0",
+          "label": "ボタンを留める",
+          "value": ", buttoned coat"
+        },
+        {
+          "id": "cg26_clothing_v1_t_coat_button_o_1",
+          "label": "ボタンを開ける",
+          "value": ", open coat"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_zip_jacket",
+      "name": "ジャケットのジッパー",
+      "folderId": "衣装 / ジャケットのジッパー",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_zip_jacket_o_0",
+          "label": "閉じる",
+          "value": ", zipped-up jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_zip_jacket_o_1",
+          "label": "開ける",
+          "value": ", unzipped jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_zip_jacket_o_2",
+          "label": "途中まで下げる",
+          "value": ", partially unzipped jacket"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_zip_hoodie",
+      "name": "パーカーのジッパー",
+      "folderId": "衣装 / パーカーのジッパー",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_zip_hoodie_o_0",
+          "label": "閉じる",
+          "value": ", zipped-up hoodie"
+        },
+        {
+          "id": "cg26_clothing_v1_t_zip_hoodie_o_1",
+          "label": "開ける",
+          "value": ", unzipped hoodie"
+        },
+        {
+          "id": "cg26_clothing_v1_t_zip_hoodie_o_2",
+          "label": "途中まで下げる",
+          "value": ", partially unzipped hoodie"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_shirt_hem",
+      "name": "シャツの裾の着方",
+      "folderId": "衣装 / シャツの裾の着方",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_shirt_hem_o_0",
+          "label": "裾を入れる",
+          "value": ", tucked-in shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_hem_o_1",
+          "label": "裾を出す",
+          "value": ", untucked shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_hem_o_2",
+          "label": "片側だけ入れる",
+          "value": ", half-tucked shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shirt_hem_o_3",
+          "label": "裾を結ぶ",
+          "value": ", shirt tied at the waist"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_top_length",
+      "name": "トップスの丈",
+      "folderId": "衣装 / トップスの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_top_length_o_0",
+          "label": "短丈",
+          "value": "cropped"
+        },
+        {
+          "id": "cg26_clothing_v1_t_top_length_o_1",
+          "label": "長め",
+          "value": "longline"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_skirt_length",
+      "name": "スカートの丈",
+      "folderId": "衣装 / スカートの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_0",
+          "label": "ミニ",
+          "value": "mini"
+        },
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_1",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_2",
+          "label": "ミディ",
+          "value": "midi"
+        },
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_3",
+          "label": "足首丈",
+          "value": "ankle-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_skirt_length_o_4",
+          "label": "床までの丈",
+          "value": "floor-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_dress_length",
+      "name": "ドレス・ワンピースの丈",
+      "folderId": "衣装 / ドレス・ワンピースの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_0",
+          "label": "ミニ",
+          "value": "mini"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_1",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_2",
+          "label": "ミディ",
+          "value": "midi"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_3",
+          "label": "足首丈",
+          "value": "ankle-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_length_o_4",
+          "label": "床までの丈",
+          "value": "floor-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_pants_length",
+      "name": "パンツの丈",
+      "folderId": "衣装 / パンツの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_pants_length_o_0",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_length_o_1",
+          "label": "七分丈",
+          "value": "capri-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_length_o_2",
+          "label": "足首丈",
+          "value": "ankle-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_length_o_3",
+          "label": "フルレングス",
+          "value": "full-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_waist",
+      "name": "ウエスト位置",
+      "folderId": "衣装 / ウエスト位置",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_waist_o_0",
+          "label": "ローライズ",
+          "value": "low-rise"
+        },
+        {
+          "id": "cg26_clothing_v1_t_waist_o_1",
+          "label": "ハイウエスト",
+          "value": "high-waisted"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_knit",
+      "name": "編み柄",
+      "folderId": "衣装 / 編み柄",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_knit_o_0",
+          "label": "ケーブル編み",
+          "value": "cable-knit"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_o_1",
+          "label": "太い編み目",
+          "value": "chunky-knit"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_o_2",
+          "label": "リブ編み",
+          "value": "ribbed-knit"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_o_3",
+          "label": "アーガイル",
+          "value": "argyle"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_coat_length",
+      "name": "コートの丈",
+      "folderId": "衣装 / コートの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_coat_length_o_0",
+          "label": "短丈",
+          "value": "short"
+        },
+        {
+          "id": "cg26_clothing_v1_t_coat_length_o_1",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_coat_length_o_2",
+          "label": "足首丈",
+          "value": "ankle-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_shoe_material",
+      "name": "靴の素材",
+      "folderId": "衣装 / 靴の素材",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_shoe_material_o_0",
+          "label": "レザー",
+          "value": "leather"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shoe_material_o_1",
+          "label": "スエード",
+          "value": "suede"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shoe_material_o_2",
+          "label": "エナメル",
+          "value": "patent leather"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shoe_material_o_3",
+          "label": "キャンバス",
+          "value": "canvas"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_heel",
+      "name": "靴のヒール",
+      "folderId": "衣装 / 靴のヒール",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_heel_o_0",
+          "label": "低いヒール",
+          "value": "low-heeled"
+        },
+        {
+          "id": "cg26_clothing_v1_t_heel_o_1",
+          "label": "高いヒール",
+          "value": "high-heeled"
+        },
+        {
+          "id": "cg26_clothing_v1_t_heel_o_2",
+          "label": "厚底",
+          "value": "platform"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_boot_length",
+      "name": "ブーツの丈",
+      "folderId": "衣装 / ブーツの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_boot_length_o_0",
+          "label": "足首丈",
+          "value": "ankle"
+        },
+        {
+          "id": "cg26_clothing_v1_t_boot_length_o_1",
+          "label": "ふくらはぎ丈",
+          "value": "mid-calf"
+        },
+        {
+          "id": "cg26_clothing_v1_t_boot_length_o_2",
+          "label": "膝丈",
+          "value": "knee-high"
+        },
+        {
+          "id": "cg26_clothing_v1_t_boot_length_o_3",
+          "label": "太もも丈",
+          "value": "thigh-high"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_sock_pattern",
+      "name": "靴下の柄",
+      "folderId": "衣装 / 靴下の柄",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_sock_pattern_o_0",
+          "label": "縞",
+          "value": "striped"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_pattern_o_1",
+          "label": "水玉",
+          "value": "polka dot"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_pattern_o_2",
+          "label": "アーガイル",
+          "value": "argyle"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_jacket_wear",
+      "name": "ジャケットの着方",
+      "folderId": "衣装 / ジャケットの着方",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_jacket_wear_o_0",
+          "label": "肩に掛ける",
+          "value": ", jacket draped over shoulders"
+        },
+        {
+          "id": "cg26_clothing_v1_t_jacket_wear_o_1",
+          "label": "肩を落として着る",
+          "value": ", jacket slipping off shoulders"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_coat_wear",
+      "name": "コートの着方",
+      "folderId": "衣装 / コートの着方",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_coat_wear_o_0",
+          "label": "肩に掛ける",
+          "value": ", coat draped over shoulders"
+        },
+        {
+          "id": "cg26_clothing_v1_t_coat_wear_o_1",
+          "label": "肩を落として着る",
+          "value": ", coat slipping off shoulders"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_trim",
+      "name": "衣服の細部",
+      "folderId": "衣装 / 衣服の細部",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_trim_o_0",
+          "label": "フリル",
+          "value": "frilled"
+        },
+        {
+          "id": "cg26_clothing_v1_t_trim_o_1",
+          "label": "刺繍",
+          "value": "embroidered"
+        },
+        {
+          "id": "cg26_clothing_v1_t_trim_o_2",
+          "label": "レースの縁取り",
+          "value": "lace-trimmed"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_wear",
+      "name": "衣服の傷み",
+      "folderId": "衣装 / 衣服の傷み",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_wear_o_0",
+          "label": "擦れ",
+          "value": "worn"
+        },
+        {
+          "id": "cg26_clothing_v1_t_wear_o_1",
+          "label": "ほつれ",
+          "value": "frayed"
+        },
+        {
+          "id": "cg26_clothing_v1_t_wear_o_2",
+          "label": "汚れ",
+          "value": "dirty"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_skirt_color",
+      "name": "制服のスカートの色",
+      "folderId": "衣装 / 制服のスカートの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_0",
+          "label": "白",
+          "value": ", white skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_1",
+          "label": "黒",
+          "value": ", black skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_2",
+          "label": "灰色",
+          "value": ", gray skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_3",
+          "label": "赤",
+          "value": ", red skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_4",
+          "label": "ピンク",
+          "value": ", pink skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_5",
+          "label": "橙",
+          "value": ", orange skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_6",
+          "label": "黄",
+          "value": ", yellow skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_7",
+          "label": "緑",
+          "value": ", green skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_8",
+          "label": "青",
+          "value": ", blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_9",
+          "label": "水色",
+          "value": ", light blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_10",
+          "label": "紫",
+          "value": ", purple skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_11",
+          "label": "茶",
+          "value": ", brown skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_13",
+          "label": "紺",
+          "value": ", navy blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_15",
+          "label": "クリーム",
+          "value": ", cream skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_17",
+          "label": "青緑",
+          "value": ", teal skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_20",
+          "label": "金色",
+          "value": ", gold skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_color_o_21",
+          "label": "銀色",
+          "value": ", silver skirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_cardigan_color",
+      "name": "制服のカーディガンの色",
+      "folderId": "衣装 / 制服のカーディガンの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_0",
+          "label": "白",
+          "value": ", white cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_1",
+          "label": "黒",
+          "value": ", black cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_2",
+          "label": "灰色",
+          "value": ", gray cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_3",
+          "label": "赤",
+          "value": ", red cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_4",
+          "label": "ピンク",
+          "value": ", pink cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_5",
+          "label": "橙",
+          "value": ", orange cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_6",
+          "label": "黄",
+          "value": ", yellow cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_7",
+          "label": "緑",
+          "value": ", green cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_8",
+          "label": "青",
+          "value": ", blue cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_9",
+          "label": "水色",
+          "value": ", light blue cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_10",
+          "label": "紫",
+          "value": ", purple cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_11",
+          "label": "茶",
+          "value": ", brown cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_13",
+          "label": "紺",
+          "value": ", navy blue cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_15",
+          "label": "クリーム",
+          "value": ", cream cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_17",
+          "label": "青緑",
+          "value": ", teal cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_20",
+          "label": "金色",
+          "value": ", gold cardigan"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_cardigan_color_o_21",
+          "label": "銀色",
+          "value": ", silver cardigan"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_vest_color",
+      "name": "制服のベストの色",
+      "folderId": "衣装 / 制服のベストの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_0",
+          "label": "白",
+          "value": ", white sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_1",
+          "label": "黒",
+          "value": ", black sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_2",
+          "label": "灰色",
+          "value": ", gray sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_3",
+          "label": "赤",
+          "value": ", red sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_4",
+          "label": "ピンク",
+          "value": ", pink sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_5",
+          "label": "橙",
+          "value": ", orange sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_6",
+          "label": "黄",
+          "value": ", yellow sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_7",
+          "label": "緑",
+          "value": ", green sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_8",
+          "label": "青",
+          "value": ", blue sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_9",
+          "label": "水色",
+          "value": ", light blue sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_10",
+          "label": "紫",
+          "value": ", purple sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_11",
+          "label": "茶",
+          "value": ", brown sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_13",
+          "label": "紺",
+          "value": ", navy blue sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_15",
+          "label": "クリーム",
+          "value": ", cream sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_17",
+          "label": "青緑",
+          "value": ", teal sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_20",
+          "label": "金色",
+          "value": ", gold sweater vest"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_vest_color_o_21",
+          "label": "銀色",
+          "value": ", silver sweater vest"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_shirt_color",
+      "name": "制服のシャツの色",
+      "folderId": "衣装 / 制服のシャツの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_0",
+          "label": "白",
+          "value": ", white shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_1",
+          "label": "黒",
+          "value": ", black shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_2",
+          "label": "灰色",
+          "value": ", gray shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_3",
+          "label": "赤",
+          "value": ", red shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_4",
+          "label": "ピンク",
+          "value": ", pink shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_5",
+          "label": "橙",
+          "value": ", orange shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_6",
+          "label": "黄",
+          "value": ", yellow shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_7",
+          "label": "緑",
+          "value": ", green shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_8",
+          "label": "青",
+          "value": ", blue shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_9",
+          "label": "水色",
+          "value": ", light blue shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_10",
+          "label": "紫",
+          "value": ", purple shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_11",
+          "label": "茶",
+          "value": ", brown shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_13",
+          "label": "紺",
+          "value": ", navy blue shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_15",
+          "label": "クリーム",
+          "value": ", cream shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_17",
+          "label": "青緑",
+          "value": ", teal shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_20",
+          "label": "金色",
+          "value": ", gold shirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_shirt_color_o_21",
+          "label": "銀色",
+          "value": ", silver shirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_uniform_skirt_length",
+      "name": "制服のスカートの丈",
+      "folderId": "衣装 / 制服のスカートの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_length_o_0",
+          "label": "膝上",
+          "value": ", above-knee skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_length_o_1",
+          "label": "膝丈",
+          "value": ", knee-length skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_length_o_2",
+          "label": "膝下",
+          "value": ", below-knee skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_uniform_skirt_length_o_3",
+          "label": "足首丈",
+          "value": ", ankle-length skirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_sock_length",
+      "name": "ソックスの丈",
+      "folderId": "衣装 / ソックスの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_0",
+          "label": "くるぶし丈",
+          "value": "ankle"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_1",
+          "label": "クルー丈",
+          "value": "crew"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_2",
+          "label": "ふくらはぎ丈",
+          "value": "mid-calf"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_3",
+          "label": "膝丈",
+          "value": "knee-high"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_4",
+          "label": "膝上丈",
+          "value": "over-knee"
+        },
+        {
+          "id": "cg26_clothing_v1_t_sock_length_o_5",
+          "label": "太もも丈",
+          "value": "thigh-high"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_stocking_length",
+      "name": "ストッキングの丈",
+      "folderId": "衣装 / ストッキングの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_stocking_length_o_0",
+          "label": "膝丈",
+          "value": "knee-high"
+        },
+        {
+          "id": "cg26_clothing_v1_t_stocking_length_o_1",
+          "label": "太もも丈",
+          "value": "thigh-high"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_neckline",
+      "name": "トップス・ドレスの襟ぐり",
+      "folderId": "衣装 / トップス・ドレスの襟ぐり",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_neckline_o_0",
+          "label": "丸首",
+          "value": ", round neckline"
+        },
+        {
+          "id": "cg26_clothing_v1_t_neckline_o_1",
+          "label": "Vネック",
+          "value": ", v-neck"
+        },
+        {
+          "id": "cg26_clothing_v1_t_neckline_o_2",
+          "label": "スクエアネック",
+          "value": ", square neckline"
+        },
+        {
+          "id": "cg26_clothing_v1_t_neckline_o_3",
+          "label": "ボートネック",
+          "value": ", boat neckline"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_cocktail_length",
+      "name": "カクテルドレスの丈",
+      "folderId": "衣装 / カクテルドレスの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_cocktail_length_o_0",
+          "label": "ミニ",
+          "value": "mini"
+        },
+        {
+          "id": "cg26_clothing_v1_t_cocktail_length_o_1",
+          "label": "膝丈",
+          "value": "knee-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_cocktail_length_o_2",
+          "label": "ミディ",
+          "value": "midi"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_gown_length",
+      "name": "ロングドレスの丈",
+      "folderId": "衣装 / ロングドレスの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_gown_length_o_0",
+          "label": "足首丈",
+          "value": "ankle-length"
+        },
+        {
+          "id": "cg26_clothing_v1_t_gown_length_o_1",
+          "label": "床までの丈",
+          "value": "floor-length"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_dress_train",
+      "name": "ドレスの後ろ裾",
+      "folderId": "衣装 / ドレスの後ろ裾",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_dress_train_o_0",
+          "label": "短いトレーン",
+          "value": ", dress with a short train"
+        },
+        {
+          "id": "cg26_clothing_v1_t_dress_train_o_1",
+          "label": "長いトレーン",
+          "value": ", dress with a long train"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_shorts_length",
+      "name": "ショートパンツの丈",
+      "folderId": "衣装 / ショートパンツの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_shorts_length_o_0",
+          "label": "太もも中ほど",
+          "value": "mid-thigh"
+        },
+        {
+          "id": "cg26_clothing_v1_t_shorts_length_o_1",
+          "label": "膝上",
+          "value": "above-knee"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_pants_fit",
+      "name": "パンツの幅・フィット感",
+      "folderId": "衣装 / パンツの幅・フィット感",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_pants_fit_o_0",
+          "label": "細身",
+          "value": "slim-fit"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_fit_o_1",
+          "label": "身体に沿う",
+          "value": "skinny"
+        },
+        {
+          "id": "cg26_clothing_v1_t_pants_fit_o_2",
+          "label": "ゆったり",
+          "value": "loose-fit"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_knit_sleeve",
+      "name": "ニットの袖丈",
+      "folderId": "衣装 / ニットの袖丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_knit_sleeve_o_0",
+          "label": "半袖",
+          "value": ", short sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_sleeve_o_1",
+          "label": "七分袖",
+          "value": ", three-quarter sleeves"
+        },
+        {
+          "id": "cg26_clothing_v1_t_knit_sleeve_o_2",
+          "label": "長袖",
+          "value": ", long sleeves"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_lace_detail",
+      "name": "レースの細部",
+      "folderId": "衣装 / レースの細部",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_lace_detail_o_0",
+          "label": "レースの縁取り",
+          "value": "lace-trimmed"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": true,
+      "position": "before"
+    },
+    {
+      "id": "cg26_clothing_v1_t_maid_color",
+      "name": "メイド服のドレスの色",
+      "folderId": "衣装 / メイド服のドレスの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_0",
+          "label": "白",
+          "value": ", white maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_1",
+          "label": "黒",
+          "value": ", black maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_2",
+          "label": "灰色",
+          "value": ", gray maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_3",
+          "label": "赤",
+          "value": ", red maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_4",
+          "label": "ピンク",
+          "value": ", pink maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_5",
+          "label": "橙",
+          "value": ", orange maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_6",
+          "label": "黄",
+          "value": ", yellow maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_7",
+          "label": "緑",
+          "value": ", green maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_8",
+          "label": "青",
+          "value": ", blue maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_9",
+          "label": "水色",
+          "value": ", light blue maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_10",
+          "label": "紫",
+          "value": ", purple maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_11",
+          "label": "茶",
+          "value": ", brown maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_13",
+          "label": "紺",
+          "value": ", navy blue maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_15",
+          "label": "クリーム",
+          "value": ", cream maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_17",
+          "label": "青緑",
+          "value": ", teal maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_20",
+          "label": "金色",
+          "value": ", gold maid dress"
+        },
+        {
+          "id": "cg26_clothing_v1_t_maid_color_o_21",
+          "label": "銀色",
+          "value": ", silver maid dress"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_apron_color",
+      "name": "エプロンの色",
+      "folderId": "衣装 / エプロンの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_0",
+          "label": "白",
+          "value": ", white apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_1",
+          "label": "黒",
+          "value": ", black apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_2",
+          "label": "灰色",
+          "value": ", gray apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_3",
+          "label": "赤",
+          "value": ", red apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_4",
+          "label": "ピンク",
+          "value": ", pink apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_5",
+          "label": "橙",
+          "value": ", orange apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_6",
+          "label": "黄",
+          "value": ", yellow apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_7",
+          "label": "緑",
+          "value": ", green apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_8",
+          "label": "青",
+          "value": ", blue apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_9",
+          "label": "水色",
+          "value": ", light blue apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_10",
+          "label": "紫",
+          "value": ", purple apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_11",
+          "label": "茶",
+          "value": ", brown apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_13",
+          "label": "紺",
+          "value": ", navy blue apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_15",
+          "label": "クリーム",
+          "value": ", cream apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_17",
+          "label": "青緑",
+          "value": ", teal apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_20",
+          "label": "金色",
+          "value": ", gold apron"
+        },
+        {
+          "id": "cg26_clothing_v1_t_apron_color_o_21",
+          "label": "銀色",
+          "value": ", silver apron"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_skirt_length",
+      "name": "衣装一式のスカート丈",
+      "folderId": "衣装 / 衣装一式のスカート丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_length_o_0",
+          "label": "膝上",
+          "value": ", above-knee skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_length_o_1",
+          "label": "膝丈",
+          "value": ", knee-length skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_length_o_2",
+          "label": "膝下",
+          "value": ", below-knee skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_length_o_3",
+          "label": "足首丈",
+          "value": ", ankle-length skirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_skirt_color",
+      "name": "衣装一式のスカートの色",
+      "folderId": "衣装 / 衣装一式のスカートの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_0",
+          "label": "白",
+          "value": ", white skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_1",
+          "label": "黒",
+          "value": ", black skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_2",
+          "label": "灰色",
+          "value": ", gray skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_3",
+          "label": "赤",
+          "value": ", red skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_4",
+          "label": "ピンク",
+          "value": ", pink skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_5",
+          "label": "橙",
+          "value": ", orange skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_6",
+          "label": "黄",
+          "value": ", yellow skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_7",
+          "label": "緑",
+          "value": ", green skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_8",
+          "label": "青",
+          "value": ", blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_9",
+          "label": "水色",
+          "value": ", light blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_10",
+          "label": "紫",
+          "value": ", purple skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_11",
+          "label": "茶",
+          "value": ", brown skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_13",
+          "label": "紺",
+          "value": ", navy blue skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_15",
+          "label": "クリーム",
+          "value": ", cream skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_17",
+          "label": "青緑",
+          "value": ", teal skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_20",
+          "label": "金色",
+          "value": ", gold skirt"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_skirt_color_o_21",
+          "label": "銀色",
+          "value": ", silver skirt"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_pants_length",
+      "name": "衣装一式のパンツ丈",
+      "folderId": "衣装 / 衣装一式のパンツ丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_length_o_0",
+          "label": "膝丈",
+          "value": ", knee-length pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_length_o_1",
+          "label": "足首丈",
+          "value": ", ankle-length pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_length_o_2",
+          "label": "フルレングス",
+          "value": ", full-length pants"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_jacket_color",
+      "name": "衣装一式のジャケットの色",
+      "folderId": "衣装 / 衣装一式のジャケットの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_0",
+          "label": "白",
+          "value": ", white jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_1",
+          "label": "黒",
+          "value": ", black jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_2",
+          "label": "灰色",
+          "value": ", gray jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_3",
+          "label": "赤",
+          "value": ", red jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_4",
+          "label": "ピンク",
+          "value": ", pink jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_5",
+          "label": "橙",
+          "value": ", orange jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_6",
+          "label": "黄",
+          "value": ", yellow jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_7",
+          "label": "緑",
+          "value": ", green jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_8",
+          "label": "青",
+          "value": ", blue jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_9",
+          "label": "水色",
+          "value": ", light blue jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_10",
+          "label": "紫",
+          "value": ", purple jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_11",
+          "label": "茶",
+          "value": ", brown jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_13",
+          "label": "紺",
+          "value": ", navy blue jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_15",
+          "label": "クリーム",
+          "value": ", cream jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_17",
+          "label": "青緑",
+          "value": ", teal jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_20",
+          "label": "金色",
+          "value": ", gold jacket"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_jacket_color_o_21",
+          "label": "銀色",
+          "value": ", silver jacket"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_outfit_pants_color",
+      "name": "衣装一式のパンツの色",
+      "folderId": "衣装 / 衣装一式のパンツの色",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_0",
+          "label": "白",
+          "value": ", white pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_1",
+          "label": "黒",
+          "value": ", black pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_2",
+          "label": "灰色",
+          "value": ", gray pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_3",
+          "label": "赤",
+          "value": ", red pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_4",
+          "label": "ピンク",
+          "value": ", pink pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_5",
+          "label": "橙",
+          "value": ", orange pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_6",
+          "label": "黄",
+          "value": ", yellow pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_7",
+          "label": "緑",
+          "value": ", green pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_8",
+          "label": "青",
+          "value": ", blue pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_9",
+          "label": "水色",
+          "value": ", light blue pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_10",
+          "label": "紫",
+          "value": ", purple pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_11",
+          "label": "茶",
+          "value": ", brown pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_12",
+          "label": "ベージュ",
+          "value": ", beige pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_13",
+          "label": "紺",
+          "value": ", navy blue pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_14",
+          "label": "ワインレッド",
+          "value": ", burgundy pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_15",
+          "label": "クリーム",
+          "value": ", cream pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_16",
+          "label": "オリーブ",
+          "value": ", olive green pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_17",
+          "label": "青緑",
+          "value": ", teal pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_18",
+          "label": "ラベンダー",
+          "value": ", lavender pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_19",
+          "label": "淡いピンク",
+          "value": ", pale pink pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_20",
+          "label": "金色",
+          "value": ", gold pants"
+        },
+        {
+          "id": "cg26_clothing_v1_t_outfit_pants_color_o_21",
+          "label": "銀色",
+          "value": ", silver pants"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_robe_length",
+      "name": "ローブの丈",
+      "folderId": "衣装 / ローブの丈",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_robe_length_o_0",
+          "label": "膝丈",
+          "value": ", knee-length robe"
+        },
+        {
+          "id": "cg26_clothing_v1_t_robe_length_o_1",
+          "label": "足首丈",
+          "value": ", ankle-length robe"
+        },
+        {
+          "id": "cg26_clothing_v1_t_robe_length_o_2",
+          "label": "床までの丈",
+          "value": ", floor-length robe"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    },
+    {
+      "id": "cg26_clothing_v1_t_school_neckwear",
+      "name": "制服の首元",
+      "folderId": "衣装 / 制服の首元",
+      "options": [
+        {
+          "id": "cg26_clothing_v1_t_school_neckwear_o_0",
+          "label": "リボン",
+          "value": ", ribbon tie"
+        },
+        {
+          "id": "cg26_clothing_v1_t_school_neckwear_o_1",
+          "label": "ネクタイ",
+          "value": ", necktie"
+        },
+        {
+          "id": "cg26_clothing_v1_t_school_neckwear_o_2",
+          "label": "スカーフ",
+          "value": ", neckerchief"
+        }
+      ],
+      "allowFree": true,
+      "spaceEnabled": false,
+      "position": "after"
+    }
+  ]
+}

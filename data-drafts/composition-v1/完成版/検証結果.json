@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-26",
+  "status": "passed",
+  "words": 111,
+  "templates": 7,
+  "options": 40,
+  "previousWords": 1734,
+  "mergedWords": 1845,
+  "checks": [
+    "unique IDs and English",
+    "folder reachability and decoration references",
+    "cowboy shot canonical entry",
+    "face close-up and cowboy shot decoration output",
+    "HTML script syntax and embedded data match",
+    "existing cards decks favorites presets settings and unknown fields preserved",
+    "input not mutated",
+    "reimport without duplicates",
+    "missing decoration links supplemented while user note preserved",
+    "normalized English duplicate skipped",
+    "invalid existing IDs rejected"
+  ],
+  "browserInteractionVerified": false,
+  "imageGenerationVerified": false
+}

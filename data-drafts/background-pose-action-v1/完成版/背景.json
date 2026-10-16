@@ -1,0 +1,3120 @@
+{
+  "folders": [
+    {
+      "id": "lg26_background_v1",
+      "name": "背景",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_plain",
+      "name": "単色・抽象背景",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_pattern",
+      "name": "柄・素材の背景",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_nature",
+      "name": "自然・屋外",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_urban",
+      "name": "街・屋外施設",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_school",
+      "name": "学校の場所",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_commercial",
+      "name": "店・商業・公共施設",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_home",
+      "name": "住居・部屋",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_transport",
+      "name": "乗り物の内部",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_fantasy",
+      "name": "幻想・歴史・SF",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_f_density",
+      "name": "背景の人・密度",
+      "parentId": "lg26_background_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "lg26_background_v1_w_plain_001",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "背景（装飾用の基本）",
+      "value_en": "background",
+      "note": "色や柄を装飾で選ぶ基本カード。場所は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color",
+        "lg26_background_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_plain_002",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "白い単色背景",
+      "value_en": "plain white background",
+      "note": "白い一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_003",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "黒い単色背景",
+      "value_en": "plain black background",
+      "note": "黒い一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_004",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "灰色の単色背景",
+      "value_en": "plain gray background",
+      "note": "灰色の一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_005",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "紺色の単色背景",
+      "value_en": "plain navy blue background",
+      "note": "紺色の一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_006",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "赤い単色背景",
+      "value_en": "plain red background",
+      "note": "赤い一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_007",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "青い単色背景",
+      "value_en": "plain blue background",
+      "note": "青い一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_008",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "緑の単色背景",
+      "value_en": "plain green background",
+      "note": "緑の一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_009",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "黄色の単色背景",
+      "value_en": "plain yellow background",
+      "note": "黄色の一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_010",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "ピンクの単色背景",
+      "value_en": "plain pink background",
+      "note": "ピンクの一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_011",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "紫の単色背景",
+      "value_en": "plain purple background",
+      "note": "紫の一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_012",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "橙の単色背景",
+      "value_en": "plain orange background",
+      "note": "橙色の一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_013",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "茶色の単色背景",
+      "value_en": "plain brown background",
+      "note": "茶色の一色の背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_014",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "暖色系の背景",
+      "value_en": "warm-toned background",
+      "note": "赤・橙・黄などを主体にした背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_015",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "寒色系の背景",
+      "value_en": "cool-toned background",
+      "note": "青などの冷たく見える色を主体にした背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_016",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "グラデーション背景",
+      "value_en": "gradient background",
+      "note": "色や明るさが徐々に変わる背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_plain_017",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "抽象的な背景",
+      "value_en": "abstract background",
+      "note": "具体的な場所より形や色を主体にした背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_plain_018",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "ぼけた背景",
+      "value_en": "blurred background",
+      "note": "背景の輪郭をぼかした描写。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_plain_019",
+      "folderId": "lg26_background_v1_f_plain",
+      "label_jp": "透明背景",
+      "value_en": "transparent background",
+      "note": "透明背景を求める描写候補。実際の透過ファイルには対応する出力処理が必要。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_020",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "水玉の背景",
+      "value_en": "polka dot background",
+      "note": "丸い点を繰り返す背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_021",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "縞の背景",
+      "value_en": "striped background",
+      "note": "帯状の線を繰り返す背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_022",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "チェックの背景",
+      "value_en": "checkered background",
+      "note": "格子状の模様を持つ背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_023",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "花柄の背景",
+      "value_en": "floral pattern background",
+      "note": "花の模様を散らした背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_024",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "大理石模様の背景",
+      "value_en": "marble pattern background",
+      "note": "石の流れるような筋模様を持つ背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_025",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "レース模様の背景",
+      "value_en": "lace pattern background",
+      "note": "細かな透かし模様を持つ背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_026",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "幾何学模様の背景",
+      "value_en": "geometric pattern background",
+      "note": "円や多角形などを繰り返す背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_027",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "星柄の背景",
+      "value_en": "star pattern background",
+      "note": "星の形を並べた背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_028",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "ハート柄の背景",
+      "value_en": "heart pattern background",
+      "note": "ハートの形を並べた背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_029",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "紙の質感の背景",
+      "value_en": "paper texture background",
+      "note": "紙の繊維や凹凸を思わせる背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_pattern_030",
+      "folderId": "lg26_background_v1_f_pattern",
+      "label_jp": "木目の背景",
+      "value_en": "wood grain background",
+      "note": "木の筋や年輪を思わせる背景。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_color"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_031",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "砂浜",
+      "value_en": "beach",
+      "note": "海などに接する砂浜。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_032",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "海",
+      "value_en": "ocean",
+      "note": "広い海面を主体にした場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_033",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "海岸の崖",
+      "value_en": "coastal cliff",
+      "note": "海に面した高い崖。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_034",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "森",
+      "value_en": "forest",
+      "note": "木々が密集する場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_035",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "林",
+      "value_en": "grove",
+      "note": "まとまった木々がある場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_036",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "竹林",
+      "value_en": "bamboo forest",
+      "note": "竹が密集する場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_037",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "熱帯雨林",
+      "value_en": "rainforest",
+      "note": "葉の多い植物が密集する湿潤な森。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_038",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "草原",
+      "value_en": "meadow",
+      "note": "草や小さな花が広がる場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_039",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "花畑",
+      "value_en": "flower field",
+      "note": "花が一面に広がる場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_040",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "丘",
+      "value_en": "hill",
+      "note": "なだらかに盛り上がった地形。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_041",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "山",
+      "value_en": "mountain",
+      "note": "高く盛り上がった山の地形。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_042",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "山脈",
+      "value_en": "mountain range",
+      "note": "複数の山が連なる地形。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_043",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "雪山",
+      "value_en": "snowy mountain",
+      "note": "雪に覆われた山。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_044",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "渓流",
+      "value_en": "mountain stream",
+      "note": "山間を流れる小さな川。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_045",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "川",
+      "value_en": "river",
+      "note": "まとまった水が流れる場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_046",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "滝",
+      "value_en": "waterfall",
+      "note": "高い場所から水が落ちる場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_047",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "湖",
+      "value_en": "lake",
+      "note": "陸に囲まれた大きな水面。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_048",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "池",
+      "value_en": "pond",
+      "note": "陸に囲まれた小さな水面。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_049",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "湿地",
+      "value_en": "wetland",
+      "note": "水分が多く、草や浅い水面のある地形。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_050",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "砂漠",
+      "value_en": "desert",
+      "note": "砂や岩が広がる乾燥した場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_051",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "オアシス",
+      "value_en": "oasis",
+      "note": "乾燥した土地の中に水や植物がある場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_052",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "洞窟",
+      "value_en": "cave",
+      "note": "岩の中に広がる空洞。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_053",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "氷の洞窟",
+      "value_en": "ice cave",
+      "note": "氷に囲まれた空洞。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_054",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "火山",
+      "value_en": "volcano",
+      "note": "火山の地形を持つ場所。噴火は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_055",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "桜並木",
+      "value_en": "cherry blossom path",
+      "note": "桜の木が道沿いに並ぶ場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_056",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "紅葉した森",
+      "value_en": "autumn forest",
+      "note": "赤や黄に色づいた木々のある森。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_057",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "雪原",
+      "value_en": "snowfield",
+      "note": "雪に覆われた平らな土地。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_058",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "畑",
+      "value_en": "farmland",
+      "note": "作物を育てる区画が広がる場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_059",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "田んぼ",
+      "value_en": "rice paddy",
+      "note": "稲を育てる水田。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_nature_060",
+      "folderId": "lg26_background_v1_f_nature",
+      "label_jp": "水中",
+      "value_en": "underwater",
+      "note": "水の中の空間。人物の動作は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_urban_061",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "街の通り",
+      "value_en": "city street",
+      "note": "建物や道路が並ぶ街中の通り。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_062",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "都市の景観",
+      "value_en": "cityscape",
+      "note": "都市の建物群を主体にした景観。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_063",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "路地",
+      "value_en": "alleyway",
+      "note": "建物の間を通る細い道。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_064",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "高層ビル街",
+      "value_en": "skyscraper district",
+      "note": "高い建物が並ぶ街区。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_065",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "商店街",
+      "value_en": "shopping street",
+      "note": "店が道沿いに並ぶ場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_066",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "住宅街",
+      "value_en": "residential street",
+      "note": "住宅が並ぶ通り。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_067",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "横断歩道",
+      "value_en": "crosswalk",
+      "note": "道路を渡るための帯状の表示がある場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_068",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "交差点",
+      "value_en": "intersection",
+      "note": "複数の道路が交わる場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_069",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "歩道橋",
+      "value_en": "pedestrian bridge",
+      "note": "歩行者が道路などを越える橋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_070",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "街の広場",
+      "value_en": "town square",
+      "note": "街中にある開けた広場。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_071",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "屋上",
+      "value_en": "rooftop",
+      "note": "建物の最上部にある平らな場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_072",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "公園",
+      "value_en": "park",
+      "note": "木々や歩道などのある公共の屋外空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_073",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "遊び場",
+      "value_en": "playground",
+      "note": "遊具のある屋外の場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_074",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "橋",
+      "value_en": "bridge",
+      "note": "川や道路などをまたぐ構造物。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_075",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "港",
+      "value_en": "harbor",
+      "note": "船が停泊する水辺の場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_076",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "灯台",
+      "value_en": "lighthouse",
+      "note": "海辺などに立つ灯台のある景観。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_077",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "神社",
+      "value_en": "shrine",
+      "note": "鳥居や社殿を持つ和風の場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_078",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "寺",
+      "value_en": "temple",
+      "note": "寺院の建物や境内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_079",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "教会",
+      "value_en": "church",
+      "note": "礼拝堂などを持つ建物。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_080",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "墓地",
+      "value_en": "cemetery",
+      "note": "墓や記念碑が並ぶ場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_081",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "祭りの会場",
+      "value_en": "festival grounds",
+      "note": "屋台や飾りなどのある催しの場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_082",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "市場",
+      "value_en": "marketplace",
+      "note": "小さな売り場が集まる場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_083",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "駅",
+      "value_en": "train station",
+      "note": "列車を利用するための施設。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_084",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "駅のホーム",
+      "value_en": "train platform",
+      "note": "線路沿いの乗り降りする場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_urban_085",
+      "folderId": "lg26_background_v1_f_urban",
+      "label_jp": "バス停",
+      "value_en": "bus stop",
+      "note": "バスを待つための場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_086",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "教室",
+      "value_en": "classroom",
+      "note": "机や黒板などがある授業用の部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_087",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "学校の廊下",
+      "value_en": "school hallway",
+      "note": "教室などをつなぐ学校の通路。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_088",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "学校の図書室",
+      "value_en": "school library",
+      "note": "本棚や閲覧席がある学校の部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_089",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "体育館",
+      "value_en": "school gymnasium",
+      "note": "運動用の広い屋内部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_090",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "体育倉庫",
+      "value_en": "school gym storage room",
+      "note": "運動用具をしまう部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_091",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "音楽室",
+      "value_en": "music classroom",
+      "note": "楽器などを備えた授業用の部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_092",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "美術室",
+      "value_en": "art classroom",
+      "note": "画材や作業机などがある部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_093",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "理科室",
+      "value_en": "science classroom",
+      "note": "実験台などを備えた部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_094",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "校庭",
+      "value_en": "schoolyard",
+      "note": "学校の屋外の運動・活動用の場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_095",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "学校の階段",
+      "value_en": "school staircase",
+      "note": "学校内の階段。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_096",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "保健室",
+      "value_en": "school infirmary",
+      "note": "休養用のベッドなどがある学校の部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_097",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "職員室",
+      "value_en": "teachers' room",
+      "note": "教師の机や棚などを備えた部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_098",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "学校の昇降口",
+      "value_en": "school entrance",
+      "note": "靴箱などのある出入口。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_099",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "学校の屋上",
+      "value_en": "school rooftop",
+      "note": "学校の建物の上にある場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_100",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "学校の食堂",
+      "value_en": "school cafeteria",
+      "note": "学校内の食事用の広い部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_101",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "部室",
+      "value_en": "club room",
+      "note": "クラブ活動の道具や机のある部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_school_102",
+      "folderId": "lg26_background_v1_f_school",
+      "label_jp": "講堂",
+      "value_en": "auditorium",
+      "note": "舞台や多数の客席を備えた広い部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_103",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "ホテル",
+      "value_en": "hotel",
+      "note": "宿泊用の建物や施設。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_104",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "ホテルのロビー",
+      "value_en": "hotel lobby",
+      "note": "宿泊施設の受付や待合空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_105",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "ホテルの客室",
+      "value_en": "hotel room",
+      "note": "宿泊用の個室。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness",
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_106",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "カフェ",
+      "value_en": "cafe",
+      "note": "飲み物や軽食を扱う店。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_107",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "レストラン",
+      "value_en": "restaurant",
+      "note": "食事用の席やテーブルのある店。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_108",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "バー",
+      "value_en": "bar interior",
+      "note": "カウンターなどを備えた飲食店の室内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_109",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "遊園地",
+      "value_en": "amusement park",
+      "note": "遊具やアトラクションを備えた場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_110",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "水族館",
+      "value_en": "aquarium",
+      "note": "水槽などで水生生物を見られる施設。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_111",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "動物園",
+      "value_en": "zoo",
+      "note": "動物を見られる屋外・屋内の施設。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_112",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "図書館",
+      "value_en": "library",
+      "note": "本棚や閲覧席を持つ公共施設。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_113",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "書店",
+      "value_en": "bookstore",
+      "note": "本を販売する店。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_114",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "コンビニ",
+      "value_en": "convenience store",
+      "note": "小さな売り場や棚のある店。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_115",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "スーパー",
+      "value_en": "supermarket",
+      "note": "食品などの広い売り場を持つ店。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_116",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "ショッピングモール",
+      "value_en": "shopping mall",
+      "note": "複数の店が集まる大型施設。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_117",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "映画館",
+      "value_en": "movie theater",
+      "note": "スクリーンや客席を備えた施設。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_118",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "ゲームセンター",
+      "value_en": "arcade",
+      "note": "ゲーム機が並ぶ店。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_119",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "漫画喫茶の個室",
+      "value_en": "manga cafe private room",
+      "note": "漫画喫茶の机や座席を持つ小さな区画。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_120",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "カラオケルーム",
+      "value_en": "karaoke room",
+      "note": "音響設備や画面のある歌うための個室。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_121",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "美容室",
+      "value_en": "hair salon",
+      "note": "施術用の椅子や鏡を備えた店。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_122",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "病院の待合室",
+      "value_en": "hospital waiting room",
+      "note": "診療を待つための席がある空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_123",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "診察室",
+      "value_en": "examination room",
+      "note": "診療台や医療機器などを備えた部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_124",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "病室",
+      "value_en": "hospital room",
+      "note": "療養用のベッドなどがある部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_125",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "オフィス",
+      "value_en": "office",
+      "note": "仕事用の机や機器を備えた部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness",
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_126",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "会議室",
+      "value_en": "conference room",
+      "note": "打ち合わせ用の机や椅子がある部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_127",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "研究室",
+      "value_en": "laboratory",
+      "note": "研究機器や実験台を備えた部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_128",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "工場",
+      "value_en": "factory",
+      "note": "機械や作業設備を持つ大きな建物。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_129",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "倉庫",
+      "value_en": "warehouse",
+      "note": "荷物や棚を収める広い建物。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_130",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "美術館",
+      "value_en": "art museum",
+      "note": "作品を展示する施設。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_131",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "劇場",
+      "value_en": "theater",
+      "note": "舞台や客席を備えた施設。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_commercial_132",
+      "folderId": "lg26_background_v1_f_commercial",
+      "label_jp": "温室",
+      "value_en": "greenhouse",
+      "note": "透明な壁や屋根で植物を育てる場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_133",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "部屋",
+      "value_en": "room",
+      "note": "用途を固定しない室内の基本カード。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness",
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_134",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "リビング",
+      "value_en": "living room",
+      "note": "くつろぐための居住空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness",
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_135",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "寝室",
+      "value_en": "bedroom",
+      "note": "寝具などを置く部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness",
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_136",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "ダイニング",
+      "value_en": "dining room",
+      "note": "食事用の机や椅子を置く部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_137",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "キッチン",
+      "value_en": "kitchen",
+      "note": "調理台や収納を備えた部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_138",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "バスルーム",
+      "value_en": "bathroom",
+      "note": "入浴設備などを備えた部屋。入浴する人物は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_139",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "トイレの部屋",
+      "value_en": "toilet room",
+      "note": "便器などを備えた個室。動作は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_140",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "洗濯室",
+      "value_en": "laundry room",
+      "note": "洗濯機や洗濯用品を置く部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_141",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "クローゼット内",
+      "value_en": "closet interior",
+      "note": "衣類などをしまう収納空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_142",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "バルコニー",
+      "value_en": "balcony",
+      "note": "建物から張り出した屋外空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_143",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "テラス",
+      "value_en": "terrace",
+      "note": "建物につながる平らな屋外空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_144",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "ガレージ",
+      "value_en": "garage",
+      "note": "車や道具を置く建物内の空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_145",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "屋根裏部屋",
+      "value_en": "attic",
+      "note": "屋根の下にある部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_146",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "地下室",
+      "value_en": "basement",
+      "note": "地面より下にある部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_147",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "畳の部屋",
+      "value_en": "tatami room",
+      "note": "畳を敷いた和風の部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_148",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "玄関",
+      "value_en": "entryway",
+      "note": "住居の出入口の空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_149",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "縁側",
+      "value_en": "engawa",
+      "note": "和風の建物に沿う細長い板張りの空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_150",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "子供部屋",
+      "value_en": "children's room",
+      "note": "玩具や小さな家具などを置く部屋。登場人物の年齢は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_151",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "ゲーム部屋",
+      "value_en": "gaming room",
+      "note": "ゲーム用の机や機器を置く部屋。暗さや照明色は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_152",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "配信部屋",
+      "value_en": "streaming room",
+      "note": "マイクや撮影機器などを置く部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_153",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "かわいい部屋",
+      "value_en": "cute room",
+      "note": "小さな飾りなどを持つかわいらしい内装。住人の性別は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_154",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "モノトーンの部屋",
+      "value_en": "monochrome room",
+      "note": "黒・白・灰などを主体にした内装。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_155",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "散らかった部屋",
+      "value_en": "messy room",
+      "note": "物が片付かず、床や家具の周りに広がった部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_156",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "物の多い部屋",
+      "value_en": "cluttered room",
+      "note": "多くの小物や家具がある部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_157",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "ミニマルな部屋",
+      "value_en": "minimalist room",
+      "note": "家具や装飾を少なくした部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_158",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "居心地のよい部屋",
+      "value_en": "cozy room",
+      "note": "布や家具などにくつろいだ印象のある部屋。照明は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_159",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "日差しの入る部屋",
+      "value_en": "sunlit room",
+      "note": "窓などから自然光が入る部屋。時間は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_160",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "飾り付けた部屋",
+      "value_en": "decorated room",
+      "note": "小物や装飾を持つ部屋。住人の性別は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_161",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "明るい部屋",
+      "value_en": "bright room",
+      "note": "室内を明るく描く指定。光源は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_162",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "暗い部屋",
+      "value_en": "dark room",
+      "note": "室内を暗く描く指定。LEDなど特定の光源は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_163",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "白い部屋",
+      "value_en": "white room",
+      "note": "壁や家具を白を主体にした部屋。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_164",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "狭い部屋",
+      "value_en": "small room",
+      "note": "面積の小さな部屋。家具の種類は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_165",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "広い部屋",
+      "value_en": "spacious room",
+      "note": "面積に余裕のある部屋。カメラの画角は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_166",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "家具のない部屋",
+      "value_en": "empty room",
+      "note": "家具などがほとんどない空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_167",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "窓のない部屋",
+      "value_en": "windowless room",
+      "note": "窓を持たない室内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_home_168",
+      "folderId": "lg26_background_v1_f_home",
+      "label_jp": "レトロな部屋",
+      "value_en": "retro room",
+      "note": "古い家具や内装を思わせる部屋。時代や国は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_169",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "電車内",
+      "value_en": "train interior",
+      "note": "列車の座席や通路がある車内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_170",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "車内",
+      "value_en": "car interior",
+      "note": "自動車の座席や内装のある空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_171",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "バス内",
+      "value_en": "bus interior",
+      "note": "バスの座席や通路がある車内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_172",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "飛行機内",
+      "value_en": "airplane cabin",
+      "note": "旅客機の座席や通路がある内部。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_173",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "コックピット",
+      "value_en": "cockpit",
+      "note": "乗り物を操縦するための操作席の空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_174",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "船内",
+      "value_en": "ship interior",
+      "note": "船の内部の空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_175",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "船の甲板",
+      "value_en": "ship deck",
+      "note": "船の上部にある平らな屋外空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_176",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "宇宙船内",
+      "value_en": "spaceship interior",
+      "note": "宇宙船を思わせる機械的な室内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_177",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "寝台列車内",
+      "value_en": "sleeper train interior",
+      "note": "寝台や狭い通路のある列車内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_transport_178",
+      "folderId": "lg26_background_v1_f_transport",
+      "label_jp": "観覧車のゴンドラ内",
+      "value_en": "ferris wheel gondola interior",
+      "note": "観覧車の小さな乗客用の室内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_179",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "城",
+      "value_en": "castle",
+      "note": "塔や城壁などを持つ大きな建造物。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_180",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "城の広間",
+      "value_en": "castle hall",
+      "note": "高い天井などを持つ城の室内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_181",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "玉座の間",
+      "value_en": "throne room",
+      "note": "玉座を備えた大きな室内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_182",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "古い遺跡",
+      "value_en": "ancient ruins",
+      "note": "崩れた建物や石の構造物が残る場所。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_183",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "地下迷宮",
+      "value_en": "dungeon",
+      "note": "石の通路や地下の部屋が連なる空間。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_184",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "魔法の森",
+      "value_en": "enchanted forest",
+      "note": "幻想的な木々や植物を持つ森。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_185",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "魔法の図書館",
+      "value_en": "magical library",
+      "note": "幻想的な書物や棚を持つ図書館。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_windowweather",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_roomstyle",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_186",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "浮遊する島",
+      "value_en": "floating island",
+      "note": "空中に浮かぶ島の地形。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_187",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "近未来都市",
+      "value_en": "futuristic city",
+      "note": "近未来的な建物や道路を持つ都市。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_188",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "サイバーパンクの街",
+      "value_en": "cyberpunk city",
+      "note": "電子看板や密集した建物を持つ近未来の街。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_189",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "宇宙ステーション内",
+      "value_en": "space station interior",
+      "note": "宇宙施設の機械的な室内。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_lighting",
+        "lg26_background_v1_t_occupancy",
+        "lg26_background_v1_t_tidiness"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_190",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "宇宙",
+      "value_en": "outer space",
+      "note": "星や暗い空間を主体にした景観。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_191",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "星空",
+      "value_en": "starry night sky",
+      "note": "夜空に多くの星が見える背景。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_192",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "廃墟の街",
+      "value_en": "abandoned city",
+      "note": "使われなくなった建物が並ぶ街。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_fantasy_193",
+      "folderId": "lg26_background_v1_f_fantasy",
+      "label_jp": "荒廃した世界",
+      "value_en": "post-apocalyptic landscape",
+      "note": "崩れた構造物などが広がる景観。出来事の原因は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_density_194",
+      "folderId": "lg26_background_v1_f_density",
+      "label_jp": "背景にいる人々",
+      "value_en": "people in background",
+      "note": "背景側に人物がいる指定。性別・年齢・人数は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "lg26_background_v1_w_density_195",
+      "folderId": "lg26_background_v1_f_density",
+      "label_jp": "人のいない通り",
+      "value_en": "empty street",
+      "note": "人影の少ない通りの景観。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_density_196",
+      "folderId": "lg26_background_v1_f_density",
+      "label_jp": "にぎわう通り",
+      "value_en": "busy street",
+      "note": "人や乗り物などでにぎわう通り。人数は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "lg26_background_v1_t_time",
+        "lg26_background_v1_t_weather",
+        "lg26_background_v1_t_season"
+      ]
+    },
+    {
+      "id": "lg26_background_v1_w_density_197",
+      "folderId": "lg26_background_v1_f_density",
+      "label_jp": "遠くの人影",
+      "value_en": "distant silhouettes",
+      "note": "遠くに小さな人影が見える景観。人物の属性は固定しない。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "lg26_background_v1_t_color",
+      "name": "背景の色",
+      "folderId": "背景 / 背景の色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_color_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_1",
+          "label": "黒",
+          "value": "black"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_2",
+          "label": "灰",
+          "value": "gray"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_3",
+          "label": "赤",
+          "value": "red"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_4",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_5",
+          "label": "緑",
+          "value": "green"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_6",
+          "label": "黄",
+          "value": "yellow"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_7",
+          "label": "ピンク",
+          "value": "pink"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_8",
+          "label": "紫",
+          "value": "purple"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_9",
+          "label": "橙",
+          "value": "orange"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_10",
+          "label": "茶",
+          "value": "brown"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_11",
+          "label": "紺",
+          "value": "navy blue"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_12",
+          "label": "ベージュ",
+          "value": "beige"
+        },
+        {
+          "id": "lg26_background_v1_t_color_o_13",
+          "label": "淡い色",
+          "value": "pastel-colored"
+        }
+      ]
+    },
+    {
+      "id": "lg26_background_v1_t_pattern",
+      "name": "背景の柄",
+      "folderId": "背景 / 背景の柄",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_pattern_o_0",
+          "label": "水玉",
+          "value": "polka dot"
+        },
+        {
+          "id": "lg26_background_v1_t_pattern_o_1",
+          "label": "縞",
+          "value": "striped"
+        },
+        {
+          "id": "lg26_background_v1_t_pattern_o_2",
+          "label": "チェック",
+          "value": "checkered"
+        },
+        {
+          "id": "lg26_background_v1_t_pattern_o_3",
+          "label": "花柄",
+          "value": "floral pattern"
+        },
+        {
+          "id": "lg26_background_v1_t_pattern_o_4",
+          "label": "幾何学",
+          "value": "geometric pattern"
+        },
+        {
+          "id": "lg26_background_v1_t_pattern_o_5",
+          "label": "星",
+          "value": "star pattern"
+        },
+        {
+          "id": "lg26_background_v1_t_pattern_o_6",
+          "label": "ハート",
+          "value": "heart pattern"
+        }
+      ]
+    },
+    {
+      "id": "lg26_background_v1_t_time",
+      "name": "時間帯",
+      "folderId": "背景 / 時間帯",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_time_o_0",
+          "label": "朝",
+          "value": ", morning"
+        },
+        {
+          "id": "lg26_background_v1_t_time_o_1",
+          "label": "昼",
+          "value": ", daytime"
+        },
+        {
+          "id": "lg26_background_v1_t_time_o_2",
+          "label": "夕方",
+          "value": ", evening"
+        },
+        {
+          "id": "lg26_background_v1_t_time_o_3",
+          "label": "夕暮れ",
+          "value": ", sunset"
+        },
+        {
+          "id": "lg26_background_v1_t_time_o_4",
+          "label": "夜",
+          "value": ", night"
+        },
+        {
+          "id": "lg26_background_v1_t_time_o_5",
+          "label": "夜明け",
+          "value": ", dawn"
+        }
+      ]
+    },
+    {
+      "id": "lg26_background_v1_t_weather",
+      "name": "天気",
+      "folderId": "背景 / 天気",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_weather_o_0",
+          "label": "晴れ",
+          "value": ", clear sky"
+        },
+        {
+          "id": "lg26_background_v1_t_weather_o_1",
+          "label": "曇り",
+          "value": ", overcast"
+        },
+        {
+          "id": "lg26_background_v1_t_weather_o_2",
+          "label": "雨",
+          "value": ", rain"
+        },
+        {
+          "id": "lg26_background_v1_t_weather_o_3",
+          "label": "雪",
+          "value": ", falling snow"
+        },
+        {
+          "id": "lg26_background_v1_t_weather_o_4",
+          "label": "霧",
+          "value": ", fog"
+        }
+      ]
+    },
+    {
+      "id": "lg26_background_v1_t_season",
+      "name": "季節",
+      "folderId": "背景 / 季節",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_season_o_0",
+          "label": "春",
+          "value": ", spring"
+        },
+        {
+          "id": "lg26_background_v1_t_season_o_1",
+          "label": "夏",
+          "value": ", summer"
+        },
+        {
+          "id": "lg26_background_v1_t_season_o_2",
+          "label": "秋",
+          "value": ", autumn"
+        },
+        {
+          "id": "lg26_background_v1_t_season_o_3",
+          "label": "冬",
+          "value": ", winter"
+        }
+      ]
+    },
+    {
+      "id": "lg26_background_v1_t_roomstyle",
+      "name": "部屋の内装",
+      "folderId": "背景 / 部屋の内装",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_roomstyle_o_0",
+          "label": "かわいい",
+          "value": ", cute interior"
+        },
+        {
+          "id": "lg26_background_v1_t_roomstyle_o_1",
+          "label": "ミニマル",
+          "value": ", minimalist interior"
+        },
+        {
+          "id": "lg26_background_v1_t_roomstyle_o_2",
+          "label": "レトロ",
+          "value": ", retro interior"
+        },
+        {
+          "id": "lg26_background_v1_t_roomstyle_o_3",
+          "label": "モダン",
+          "value": ", modern interior"
+        },
+        {
+          "id": "lg26_background_v1_t_roomstyle_o_4",
+          "label": "和風",
+          "value": ", Japanese-style interior"
+        },
+        {
+          "id": "lg26_background_v1_t_roomstyle_o_5",
+          "label": "木目",
+          "value": ", wooden interior"
+        },
+        {
+          "id": "lg26_background_v1_t_roomstyle_o_6",
+          "label": "モノトーン",
+          "value": ", monochrome interior"
+        }
+      ]
+    },
+    {
+      "id": "lg26_background_v1_t_tidiness",
+      "name": "室内の片付き方",
+      "folderId": "背景 / 室内の片付き方",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_tidiness_o_0",
+          "label": "整っている",
+          "value": ", tidy interior"
+        },
+        {
+          "id": "lg26_background_v1_t_tidiness_o_1",
+          "label": "散らかっている",
+          "value": ", messy interior"
+        },
+        {
+          "id": "lg26_background_v1_t_tidiness_o_2",
+          "label": "物が多い",
+          "value": ", cluttered interior"
+        },
+        {
+          "id": "lg26_background_v1_t_tidiness_o_3",
+          "label": "家具がない",
+          "value": ", unfurnished interior"
+        }
+      ]
+    },
+    {
+      "id": "lg26_background_v1_t_lighting",
+      "name": "室内の照明",
+      "folderId": "背景 / 室内の照明",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_lighting_o_0",
+          "label": "明るい照明",
+          "value": ", bright lighting"
+        },
+        {
+          "id": "lg26_background_v1_t_lighting_o_1",
+          "label": "薄暗い照明",
+          "value": ", dim lighting"
+        },
+        {
+          "id": "lg26_background_v1_t_lighting_o_2",
+          "label": "暖色の照明",
+          "value": ", warm lighting"
+        },
+        {
+          "id": "lg26_background_v1_t_lighting_o_3",
+          "label": "寒色の照明",
+          "value": ", cool lighting"
+        },
+        {
+          "id": "lg26_background_v1_t_lighting_o_4",
+          "label": "蛍光灯",
+          "value": ", fluorescent lighting"
+        },
+        {
+          "id": "lg26_background_v1_t_lighting_o_5",
+          "label": "ろうそくの光",
+          "value": ", candlelight"
+        }
+      ]
+    },
+    {
+      "id": "lg26_background_v1_t_windowweather",
+      "name": "窓の外の天気",
+      "folderId": "背景 / 窓の外の天気",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_windowweather_o_0",
+          "label": "窓の外が晴れ",
+          "value": ", clear sky outside window"
+        },
+        {
+          "id": "lg26_background_v1_t_windowweather_o_1",
+          "label": "窓の外が曇り",
+          "value": ", overcast sky outside window"
+        },
+        {
+          "id": "lg26_background_v1_t_windowweather_o_2",
+          "label": "窓の外に雨",
+          "value": ", rain outside window"
+        },
+        {
+          "id": "lg26_background_v1_t_windowweather_o_3",
+          "label": "窓の外に雪",
+          "value": ", falling snow outside window"
+        },
+        {
+          "id": "lg26_background_v1_t_windowweather_o_4",
+          "label": "窓の外に霧",
+          "value": ", fog outside window"
+        }
+      ]
+    },
+    {
+      "id": "lg26_background_v1_t_occupancy",
+      "name": "室内の人の多さ",
+      "folderId": "背景 / 室内の人の多さ",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "lg26_background_v1_t_occupancy_o_0",
+          "label": "人のいない室内",
+          "value": ", unoccupied interior"
+        },
+        {
+          "id": "lg26_background_v1_t_occupancy_o_1",
+          "label": "背景に人がいる",
+          "value": ", people in background"
+        },
+        {
+          "id": "lg26_background_v1_t_occupancy_o_2",
+          "label": "人で混んだ室内",
+          "value": ", crowded interior"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

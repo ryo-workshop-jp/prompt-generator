@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-26",
+  "status": "passed",
+  "words": 117,
+  "templates": 6,
+  "options": 21,
+  "previousWords": 2064,
+  "mergedWords": 2181,
+  "referenceWords": 31,
+  "checks": [
+    "unique IDs and English",
+    "folder reachability and decoration references",
+    "HTML syntax and embedded dataset match",
+    "no unrelated folder migration",
+    "existing cards decks favorites settings presets and unknown fields preserved",
+    "input not mutated",
+    "repeat import without duplicates",
+    "existing English match keeps custom ID note and folder while supplementing decorations",
+    "invalid existing IDs rejected",
+    "decoration examples evaluated with actual WordGrid function",
+    "completed action cards not duplicated"
+  ],
+  "browserInteractionVerified": false,
+  "imageGenerationVerified": false
+}

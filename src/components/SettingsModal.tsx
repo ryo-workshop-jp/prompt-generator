@@ -6,6 +6,7 @@ import { Bars3Icon, ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/2
 import { usePrompt } from '../context/usePrompt';
 import type { FolderItem, WordItem, TemplateItem, TemplateOption, PromptFavorite, CardItem } from '../types';
 import { initialData } from '../data/initialData';
+import { MAX_IMPORT_BYTES, validateImport } from '../utils/インポート検証';
 import { COMFY_PRESET_STORAGE_KEY, COMFY_PRESET_UPDATE_EVENT, DEFAULT_COMFY_PRESET_CONFIG, readComfyPresetConfig, writeComfyPresetConfig, type ComfyPresetConfig, type ComfyQualityPreset } from '../constants/comfyPresets';
 
 
@@ -958,8 +959,13 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
         const file = event.target.files?.[0];
         if (!file || !importMode) return;
         try {
+            if (file.size > MAX_IMPORT_BYTES) {
+                alert('ImportできるJSONファイルは10MBまでです。分割して読み込んでください。');
+                return;
+            }
             const text = await file.text();
             const parsed = JSON.parse(text) as unknown;
+            validateImport(parsed, importMode, folders);
             const parsedRecord = parsed && typeof parsed === 'object' && !Array.isArray(parsed)
                 ? parsed as Record<string, unknown>
                 : {};
@@ -1041,7 +1047,7 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
             }
         } catch (error) {
             console.error('Failed to import data', error);
-            alert('JSONファイルの読み込みに失敗しました。');
+            alert(error instanceof Error ? `Importできませんでした。\n${error.message}` : 'JSONファイルの読み込みに失敗しました。');
         } finally {
             if (event.target) event.target.value = '';
             setImportMode(null);
@@ -1216,7 +1222,9 @@ const SettingsModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isO
     const applyResetAction = () => {
         if (!resetAction) return;
         if (resetAction === 'resetWords') {
-            setData({ folders: initialData.folders, words: initialData.words, templates, cards: [] });
+            const existingTemplateIds = new Set(templates.map(template => template.id));
+            const missingInitialTemplates = initialData.templates.filter(template => !existingTemplateIds.has(template.id));
+            setData({ folders: initialData.folders, words: initialData.words, templates: [...templates, ...missingInitialTemplates], cards: [] });
         } else if (resetAction === 'clearWords') {
             setData({ folders: [], words: [], templates, cards: [] });
         } else if (resetAction === 'clearExtras') {

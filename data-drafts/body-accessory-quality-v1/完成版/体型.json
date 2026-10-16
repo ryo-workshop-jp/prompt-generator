@@ -1,0 +1,892 @@
+{
+  "folders": [
+    {
+      "id": "bg26_body_v1",
+      "name": "体型",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_f_build",
+      "name": "全身の体格",
+      "parentId": "bg26_body_v1",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_f_height",
+      "name": "身長・頭身",
+      "parentId": "bg26_body_v1",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_f_shoulders",
+      "name": "肩・首・胸板",
+      "parentId": "bg26_body_v1",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_f_arms",
+      "name": "腕・手",
+      "parentId": "bg26_body_v1",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_f_breasts",
+      "name": "胸の形",
+      "parentId": "bg26_body_v1",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_f_waist",
+      "name": "腹部・ウエスト",
+      "parentId": "bg26_body_v1",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_f_hips",
+      "name": "腰・お尻",
+      "parentId": "bg26_body_v1",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_f_legs",
+      "name": "脚・足",
+      "parentId": "bg26_body_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "bg26_body_v1_w_build_001",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "標準的な体格",
+      "value_en": "average body",
+      "note": "極端に細くも大きくもない全身の体格。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_002",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "スリムな体型",
+      "value_en": "slim body",
+      "note": "全身の幅や厚みが細めの体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_003",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "とても細い体型",
+      "value_en": "skinny body",
+      "note": "スリムよりさらに細く、骨格が目立ちやすい体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_004",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "丸みのある体型",
+      "value_en": "curvy body",
+      "note": "胸・腰などの曲線がはっきりした体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_005",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "ふっくらした体型",
+      "value_en": "chubby body",
+      "note": "全身に丸みと柔らかな厚みがある体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_006",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "太めの体型",
+      "value_en": "fat body",
+      "note": "胴や手足に厚みのある大きめの体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_007",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "非常に大きな体型",
+      "value_en": "obese body",
+      "note": "胴や手足の厚みを強く表す体格の指定。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_008",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "筋肉質な体型",
+      "value_en": "muscular body",
+      "note": "全身の筋肉の厚みや輪郭が目立つ体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_009",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "小柄な体格",
+      "value_en": "petite body",
+      "note": "全身のサイズが小さめの体格。年齢は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_010",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "砂時計形の体型",
+      "value_en": "hourglass figure",
+      "note": "胸と腰に幅があり、ウエストが細くくびれた体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_011",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "柔らかな体型",
+      "value_en": "soft body",
+      "note": "角張った筋肉よりも、柔らかい曲線が目立つ体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_012",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "がっしりした体格",
+      "value_en": "well-built body",
+      "note": "肩や胴に厚みがあり、骨格がしっかりした体格。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_013",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "逆三角形の体型",
+      "value_en": "v-shaped body",
+      "note": "肩幅が広く、腰に向かって細くなる体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_014",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "細身の筋肉質",
+      "value_en": "lean muscular body",
+      "note": "余分な厚みが少なく、筋肉の輪郭が見える体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_015",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "鍛えた体型",
+      "value_en": "athletic build",
+      "note": "運動で引き締まったような、全身の筋肉のバランス。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_016",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "直線的な体型",
+      "value_en": "rectangular body shape",
+      "note": "胸・腰の幅の差が少なく、胴の輪郭が直線的な体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_build_017",
+      "folderId": "bg26_body_v1_f_build",
+      "label_jp": "下半身に幅のある体型",
+      "value_en": "pear-shaped body",
+      "note": "肩よりも腰や下半身に幅がある体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_height_018",
+      "folderId": "bg26_body_v1_f_height",
+      "label_jp": "背が高い",
+      "value_en": "tall",
+      "note": "周囲や頭に対して身長を高く見せる指定。年齢・性別は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_height_019",
+      "folderId": "bg26_body_v1_f_height",
+      "label_jp": "背が低い",
+      "value_en": "short stature",
+      "note": "身長が低めの体格。年齢は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_height_020",
+      "folderId": "bg26_body_v1_f_height",
+      "label_jp": "長い胴",
+      "value_en": "long torso",
+      "note": "肩から腰までの胴の長さが目立つ体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_height_021",
+      "folderId": "bg26_body_v1_f_height",
+      "label_jp": "短い胴",
+      "value_en": "short torso",
+      "note": "肩から腰までの胴が短めの体型。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_height_022",
+      "folderId": "bg26_body_v1_f_height",
+      "label_jp": "胴に対して小さな頭",
+      "value_en": "small head",
+      "note": "体に対する頭の比率を小さくする指定。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_height_023",
+      "folderId": "bg26_body_v1_f_height",
+      "label_jp": "胴に対して大きな頭",
+      "value_en": "large head",
+      "note": "体に対する頭の比率を大きくする指定。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_024",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "狭い肩幅",
+      "value_en": "narrow shoulders",
+      "note": "左右の肩の間隔が狭い特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_025",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "広い肩幅",
+      "value_en": "broad shoulders",
+      "note": "左右の肩の間隔が広い特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_026",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "なで肩",
+      "value_en": "sloping shoulders",
+      "note": "首元から肩先へなだらかに下がる肩。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_027",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "角張った肩",
+      "value_en": "square shoulders",
+      "note": "首元から肩先までが水平に近い肩。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_028",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "長い首",
+      "value_en": "long neck",
+      "note": "頭から肩までの首の長さが目立つ特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_029",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "短い首",
+      "value_en": "short neck",
+      "note": "頭と肩の間の首が短めに見える特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_030",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "太い首",
+      "value_en": "thick neck",
+      "note": "首の幅や厚みが大きい特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_031",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "鎖骨が目立つ",
+      "value_en": "prominent collarbones",
+      "note": "首元から肩につながる鎖骨の輪郭が目立つ特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_032",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "筋肉質な胸板",
+      "value_en": "muscular chest",
+      "note": "胸板の筋肉が目立つ特徴。性別は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_033",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "幅の広い胸板",
+      "value_en": "broad chest",
+      "note": "胸郭の左右の幅が広い特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_shoulders_034",
+      "folderId": "bg26_body_v1_f_shoulders",
+      "label_jp": "発達した胸筋",
+      "value_en": "developed pectorals",
+      "note": "胸筋の厚みと輪郭が目立つ特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_arms_035",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "腕（装飾用の基本）",
+      "value_en": "arms",
+      "note": "腕の長さや太さを装飾で組み合わせる基本カード。",
+      "nsfw": false,
+      "templateIds": [
+        "bg26_body_v1_t_arm_shape",
+        "bg26_body_v1_t_arm_length"
+      ]
+    },
+    {
+      "id": "bg26_body_v1_w_arms_036",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "細い腕",
+      "value_en": "slender arms",
+      "note": "幅や厚みが細い腕。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_arms_037",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "太い腕",
+      "value_en": "thick arms",
+      "note": "幅や厚みが大きい腕。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_arms_038",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "筋肉質な腕",
+      "value_en": "muscular arms",
+      "note": "筋肉の盛り上がりが目立つ腕。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_arms_039",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "長い腕",
+      "value_en": "long arms",
+      "note": "体に対して腕が長めの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_arms_040",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "短い腕",
+      "value_en": "short arms",
+      "note": "体に対して腕が短めの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_arms_041",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "大きな手",
+      "value_en": "large hands",
+      "note": "体に対して手が大きめの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_arms_042",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "小さな手",
+      "value_en": "small hands",
+      "note": "体に対して手が小さめの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_arms_043",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "長い指",
+      "value_en": "long fingers",
+      "note": "指の長さが目立つ手。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_arms_044",
+      "folderId": "bg26_body_v1_f_arms",
+      "label_jp": "細い指",
+      "value_en": "slender fingers",
+      "note": "指の幅が細めの手。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_045",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "胸（装飾用の基本）",
+      "value_en": "breasts",
+      "note": "胸の大きさを装飾で選ぶ基本カード。露出や衣服は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "bg26_body_v1_t_breast_size"
+      ]
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_046",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "平らな胸",
+      "value_en": "flat chest",
+      "note": "前方への胸の膨らみが少ない特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_047",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "小さな胸",
+      "value_en": "small breasts",
+      "note": "小さめの胸の膨らみ。年齢を指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_048",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "中くらいの胸",
+      "value_en": "medium breasts",
+      "note": "中程度の胸の膨らみ。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_049",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "大きな胸",
+      "value_en": "large breasts",
+      "note": "大きめの胸の膨らみ。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_050",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "非常に大きな胸",
+      "value_en": "huge breasts",
+      "note": "胸の膨らみを非常に大きくする指定。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_051",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "柔らかそうな胸",
+      "value_en": "soft breasts",
+      "note": "柔らかな曲線や重みを感じる胸の形。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_052",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "張りのある胸",
+      "value_en": "firm breasts",
+      "note": "丸みの輪郭がしっかりした胸の形。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_053",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "下がった胸の形",
+      "value_en": "sagging breasts",
+      "note": "重みによって胸の形が下方へ下がった特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_054",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "離れた胸の形",
+      "value_en": "breasts apart",
+      "note": "左右の胸の間隔が広めの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_breasts_055",
+      "folderId": "bg26_body_v1_f_breasts",
+      "label_jp": "左右非対称の胸",
+      "value_en": "asymmetrical breasts",
+      "note": "左右で胸の大きさや形に差がある特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_056",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "細いウエスト",
+      "value_en": "slender waist",
+      "note": "胴の中央が細くくびれた特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_057",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "とても細いウエスト",
+      "value_en": "tiny waist",
+      "note": "ウエストを特に細くする指定。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_058",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "極端なくびれ",
+      "value_en": "wasp waist",
+      "note": "胸や腰に比べ、極端に細くくびれたウエスト。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_059",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "太いウエスト",
+      "value_en": "thick waist",
+      "note": "胴の中央に厚みがある特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_060",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "幅の広いウエスト",
+      "value_en": "wide waist",
+      "note": "胴の中央の左右の幅が広い特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_061",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "平らなお腹",
+      "value_en": "flat stomach",
+      "note": "前への膨らみが少ない腹部。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_062",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "引き締まった腹部",
+      "value_en": "toned abs",
+      "note": "筋肉が引き締まり、腹部に控えめな輪郭が見える特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_063",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "はっきりした腹筋",
+      "value_en": "defined abs",
+      "note": "腹筋の境目や筋の線がはっきり見える特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_064",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "筋肉質な腹部",
+      "value_en": "muscular abs",
+      "note": "腹筋の厚みや盛り上がりが目立つ特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_065",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "割れた腹筋",
+      "value_en": "six-pack abs",
+      "note": "腹筋が六つ程度のブロックに分かれて見える特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_066",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "柔らかいお腹",
+      "value_en": "soft belly",
+      "note": "張り詰めた筋肉より柔らかな腹部の輪郭。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_waist_067",
+      "folderId": "bg26_body_v1_f_waist",
+      "label_jp": "ふっくらしたお腹",
+      "value_en": "chubby belly",
+      "note": "腹部に厚みと丸い膨らみがある特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_hips_068",
+      "folderId": "bg26_body_v1_f_hips",
+      "label_jp": "広い腰幅",
+      "value_en": "wide hips",
+      "note": "骨盤周辺の左右の幅が広い特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_hips_069",
+      "folderId": "bg26_body_v1_f_hips",
+      "label_jp": "狭い腰幅",
+      "value_en": "narrow hips",
+      "note": "骨盤周辺の左右の幅が狭い特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_hips_070",
+      "folderId": "bg26_body_v1_f_hips",
+      "label_jp": "丸いお尻",
+      "value_en": "round buttocks",
+      "note": "臀部の輪郭が丸い特徴。露出は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_hips_071",
+      "folderId": "bg26_body_v1_f_hips",
+      "label_jp": "小さなお尻",
+      "value_en": "small buttocks",
+      "note": "臀部の膨らみが小さめの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_hips_072",
+      "folderId": "bg26_body_v1_f_hips",
+      "label_jp": "大きなお尻",
+      "value_en": "large buttocks",
+      "note": "臀部の膨らみが大きめの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_073",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "脚（装飾用の基本）",
+      "value_en": "legs",
+      "note": "脚の長さや太さを装飾で組み合わせる基本カード。",
+      "nsfw": false,
+      "templateIds": [
+        "bg26_body_v1_t_leg_shape",
+        "bg26_body_v1_t_leg_length"
+      ]
+    },
+    {
+      "id": "bg26_body_v1_w_legs_074",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "細い脚",
+      "value_en": "slender legs",
+      "note": "脚全体の幅や厚みが細い特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_075",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "太い脚",
+      "value_en": "thick legs",
+      "note": "脚全体の幅や厚みが大きい特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_076",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "ふっくらした脚",
+      "value_en": "chubby legs",
+      "note": "丸みと柔らかな厚みがある脚。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_077",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "太い太もも",
+      "value_en": "thick thighs",
+      "note": "膝より上の脚の幅や厚みが大きい特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_078",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "太ももの付け根が太い",
+      "value_en": "thick upper thighs",
+      "note": "太ももの上部に特に幅や厚みがある特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_079",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "長い脚",
+      "value_en": "long legs",
+      "note": "胴に対して脚が長めの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_080",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "短い脚",
+      "value_en": "short legs",
+      "note": "胴に対して脚が短めの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_081",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "筋肉質な脚",
+      "value_en": "muscular legs",
+      "note": "脚の筋肉の盛り上がりが目立つ特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_082",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "細い足首",
+      "value_en": "slender ankles",
+      "note": "足首の幅が細めの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_083",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "太いふくらはぎ",
+      "value_en": "thick calves",
+      "note": "膝下のふくらはぎに幅や厚みがある特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_084",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "細いふくらはぎ",
+      "value_en": "slender calves",
+      "note": "膝下のふくらはぎが細い特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_085",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "大きな足",
+      "value_en": "large feet",
+      "note": "足先のサイズが大きめの特徴。",
+      "nsfw": false
+    },
+    {
+      "id": "bg26_body_v1_w_legs_086",
+      "folderId": "bg26_body_v1_f_legs",
+      "label_jp": "小さな足",
+      "value_en": "small feet",
+      "note": "足先のサイズが小さめの特徴。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "bg26_body_v1_t_breast_size",
+      "name": "胸の大きさ",
+      "folderId": "体型 / 胸の大きさ",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "bg26_body_v1_t_breast_size_o_0",
+          "label": "平ら",
+          "value": ", flat chest"
+        },
+        {
+          "id": "bg26_body_v1_t_breast_size_o_1",
+          "label": "小さめ",
+          "value": ", small breasts"
+        },
+        {
+          "id": "bg26_body_v1_t_breast_size_o_2",
+          "label": "中くらい",
+          "value": ", medium breasts"
+        },
+        {
+          "id": "bg26_body_v1_t_breast_size_o_3",
+          "label": "大きめ",
+          "value": ", large breasts"
+        },
+        {
+          "id": "bg26_body_v1_t_breast_size_o_4",
+          "label": "非常に大きい",
+          "value": ", huge breasts"
+        }
+      ]
+    },
+    {
+      "id": "bg26_body_v1_t_arm_shape",
+      "name": "腕の体格",
+      "folderId": "体型 / 腕の体格",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "bg26_body_v1_t_arm_shape_o_0",
+          "label": "細い",
+          "value": ", slender arms"
+        },
+        {
+          "id": "bg26_body_v1_t_arm_shape_o_1",
+          "label": "太い",
+          "value": ", thick arms"
+        },
+        {
+          "id": "bg26_body_v1_t_arm_shape_o_2",
+          "label": "筋肉質",
+          "value": ", muscular arms"
+        }
+      ]
+    },
+    {
+      "id": "bg26_body_v1_t_arm_length",
+      "name": "腕の長さ",
+      "folderId": "体型 / 腕の長さ",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "bg26_body_v1_t_arm_length_o_0",
+          "label": "長い",
+          "value": ", long arms"
+        },
+        {
+          "id": "bg26_body_v1_t_arm_length_o_1",
+          "label": "短い",
+          "value": ", short arms"
+        }
+      ]
+    },
+    {
+      "id": "bg26_body_v1_t_leg_shape",
+      "name": "脚の体格",
+      "folderId": "体型 / 脚の体格",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "bg26_body_v1_t_leg_shape_o_0",
+          "label": "細い",
+          "value": ", slender legs"
+        },
+        {
+          "id": "bg26_body_v1_t_leg_shape_o_1",
+          "label": "太い",
+          "value": ", thick legs"
+        },
+        {
+          "id": "bg26_body_v1_t_leg_shape_o_2",
+          "label": "ふっくら",
+          "value": ", chubby legs"
+        },
+        {
+          "id": "bg26_body_v1_t_leg_shape_o_3",
+          "label": "筋肉質",
+          "value": ", muscular legs"
+        }
+      ]
+    },
+    {
+      "id": "bg26_body_v1_t_leg_length",
+      "name": "脚の長さ",
+      "folderId": "体型 / 脚の長さ",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "bg26_body_v1_t_leg_length_o_0",
+          "label": "長い",
+          "value": ", long legs"
+        },
+        {
+          "id": "bg26_body_v1_t_leg_length_o_1",
+          "label": "短い",
+          "value": ", short legs"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

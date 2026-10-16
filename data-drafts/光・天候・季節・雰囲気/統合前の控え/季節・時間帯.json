@@ -1,0 +1,452 @@
+{
+  "folders": [
+    {
+      "id": "le26_time_v1",
+      "name": "季節・時間帯",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_f_season",
+      "name": "季節",
+      "parentId": "le26_time_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_f_time",
+      "name": "時間帯",
+      "parentId": "le26_time_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_f_details",
+      "name": "季節感の小物・自然",
+      "parentId": "le26_time_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "le26_time_v1_w_season_001",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "春",
+      "value_en": "spring",
+      "note": "春の季節感。花や服装は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_002",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "夏",
+      "value_en": "summer",
+      "note": "夏の季節感。水着や場所は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_003",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "秋",
+      "value_en": "autumn",
+      "note": "秋の季節感。紅葉の有無は別に指定する。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_004",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "冬",
+      "value_en": "winter",
+      "note": "冬の季節感。雪の有無は別に指定する。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_005",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "早春",
+      "value_en": "early spring",
+      "note": "春の始まりを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_006",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "晩春",
+      "value_en": "late spring",
+      "note": "春の終わりを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_007",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "真夏",
+      "value_en": "midsummer",
+      "note": "夏の盛りを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_008",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "初秋",
+      "value_en": "early autumn",
+      "note": "秋の始まりを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_009",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "晩秋",
+      "value_en": "late autumn",
+      "note": "秋の終わりを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_010",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "真冬",
+      "value_en": "midwinter",
+      "note": "冬の盛りを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_011",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "梅雨",
+      "value_en": "rainy season",
+      "note": "雨の多い季節感。場所や行動は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_time_012",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "夜明け",
+      "value_en": "dawn",
+      "note": "夜から朝に移る時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_013",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "日の出",
+      "value_en": "sunrise",
+      "note": "太陽が昇る頃の時間帯。空の色は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_014",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "早朝",
+      "value_en": "early morning",
+      "note": "朝の早い時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_015",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "朝",
+      "value_en": "morning",
+      "note": "朝の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_016",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "昼間",
+      "value_en": "daytime",
+      "note": "日中の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_017",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "正午",
+      "value_en": "midday",
+      "note": "昼の中央付近の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_018",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "午後",
+      "value_en": "afternoon",
+      "note": "昼過ぎから夕方前の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_019",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "夕方",
+      "value_en": "evening",
+      "note": "一日の終わりに近い時間帯。必ず夕焼けになるとは限らない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_020",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "日没",
+      "value_en": "sunset",
+      "note": "太陽が沈む頃の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_021",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "薄明",
+      "value_en": "twilight",
+      "note": "日の出前や日没後の薄明るい時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_022",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "ゴールデンアワー",
+      "value_en": "golden hour",
+      "note": "日の出後や日没前の暖かい低い日差しを感じる時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_023",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "ブルーアワー",
+      "value_en": "blue hour",
+      "note": "日の出前や日没後の青い薄明を感じる時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_024",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "夜",
+      "value_en": "night",
+      "note": "夜の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_025",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "深夜",
+      "value_en": "midnight",
+      "note": "夜の深い時間帯。月や星は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_026",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "花びら",
+      "value_en": "petals",
+      "note": "花の小さな片。花の種類や動きは装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_petal"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_details_027",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "桜の花びら",
+      "value_en": "cherry blossom petals",
+      "note": "桜の花の小さな片。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_petal"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_details_028",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "落ち葉",
+      "value_en": "fallen leaves",
+      "note": "地面などに落ちた葉。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_029",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "舞う落ち葉",
+      "value_en": "falling leaves",
+      "note": "空中を落ちたり舞ったりする葉。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_030",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "紅葉した葉",
+      "value_en": "autumn leaves",
+      "note": "秋らしく色づいた葉。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_031",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "新緑",
+      "value_en": "fresh green leaves",
+      "note": "若い緑の葉。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_032",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "霜の付いた葉",
+      "value_en": "frost-covered leaves",
+      "note": "葉の表面に霜が付いた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_033",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "露",
+      "value_en": "dew",
+      "note": "葉や面に付く細かな水滴。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_034",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "氷の張った水面",
+      "value_en": "frozen water surface",
+      "note": "水面が凍っている状態。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_035",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "季節の花",
+      "value_en": "seasonal flowers",
+      "note": "季節を感じさせる花。種類は別の指定と組み合わせる。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "le26_time_v1_t_time",
+      "name": "時間帯",
+      "folderId": "季節・時間帯 / 時間帯",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_time_v1_t_time_o_0",
+          "label": "朝",
+          "value": ", morning"
+        },
+        {
+          "id": "le26_time_v1_t_time_o_1",
+          "label": "昼",
+          "value": ", daytime"
+        },
+        {
+          "id": "le26_time_v1_t_time_o_2",
+          "label": "夕方",
+          "value": ", evening"
+        },
+        {
+          "id": "le26_time_v1_t_time_o_3",
+          "label": "夜",
+          "value": ", night"
+        }
+      ]
+    },
+    {
+      "id": "le26_time_v1_t_weather",
+      "name": "天気",
+      "folderId": "季節・時間帯 / 天気",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_time_v1_t_weather_o_0",
+          "label": "晴れ",
+          "value": ", clear sky"
+        },
+        {
+          "id": "le26_time_v1_t_weather_o_1",
+          "label": "曇り",
+          "value": ", overcast"
+        },
+        {
+          "id": "le26_time_v1_t_weather_o_2",
+          "label": "雨",
+          "value": ", rain"
+        },
+        {
+          "id": "le26_time_v1_t_weather_o_3",
+          "label": "雪",
+          "value": ", falling snow"
+        },
+        {
+          "id": "le26_time_v1_t_weather_o_4",
+          "label": "霧",
+          "value": ", fog"
+        }
+      ]
+    },
+    {
+      "id": "le26_time_v1_t_petal",
+      "name": "花びらの状態",
+      "folderId": "季節・時間帯 / 花びらの状態",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_time_v1_t_petal_o_0",
+          "label": "空中を舞う",
+          "value": ", floating in air"
+        },
+        {
+          "id": "le26_time_v1_t_petal_o_1",
+          "label": "落ちる",
+          "value": ", falling"
+        },
+        {
+          "id": "le26_time_v1_t_petal_o_2",
+          "label": "地面に散る",
+          "value": ", scattered on ground"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

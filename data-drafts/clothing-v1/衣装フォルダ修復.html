@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><title>衣装フォルダの表示修復</title>
+<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:48px auto;padding:0 24px;line-height:1.8;color:#222}button{padding:12px 20px;margin-top:16px}#status{white-space:pre-wrap}aside{background:#eef5ff;padding:16px}</style>
+<h1>衣装フォルダの表示修復</h1>
+<p>PromptGeneratorで現在の「全データ」をExportし、そのJSONをここで選んでください。衣装第1案の最上位フォルダの親だけを修正し、それ以外のデータを保ったJSONをダウンロードします。</p>
+<aside>ファイルはこのページ内で処理します。送信やブラウザーデータの変更は行いません。元のExportファイルも残してください。</aside>
+<p><input type="file" id="file" accept=".json,application/json"></p>
+<button id="save" disabled>修復した全データを保存</button><p id="status" role="status">ファイルを選んでください。</p>
+<h2>保存した後</h2><ol><li>元のExportファイルをバックアップとして残す。</li><li>PromptGeneratorの「全データ」Importで、修復済みファイルを選ぶ。</li><li>「衣装（初期データ第1案）」から子フォルダを開く。</li></ol>
+<p>全データImportは現在のデータを置き換えます。必ず現在のExportを修復し、Export後に編集した場合はもう一度Exportからやり直してください。</p>
+<script>
+const input=document.getElementById('file'),save=document.getElementById('save'),status=document.getElementById('status');
+let result=null;
+input.addEventListener('change',async()=>{save.disabled=true;result=null;try{
+const f=input.files[0];if(!f)return;
+const d=JSON.parse(await f.text());
+if(!d||!Array.isArray(d.folders)||!Array.isArray(d.words))throw new Error('PromptGeneratorの全データJSONを選んでください。');
+const targets=d.folders.filter(x=>x.id==='cg26_clothing_v1');
+if(targets.length!==1)throw new Error('衣装第1案のフォルダが一つだけ存在するデータを選んでください。');
+const target=targets[0];
+if(target.parentId==='root'){status.textContent='このファイルは既に修正済みです。フォルダ内の子フォルダを開いて確認してください。';return;}
+if(target.parentId!==null)throw new Error('想定と異なる親フォルダが設定されています。変更せず終了しました。');
+target.parentId='root';result=d;save.disabled=false;
+status.textContent='衣装フォルダの親設定だけを修正しました。カード '+d.words.length+' 枚。ほかの設定・データは保持します。';
+}catch(e){status.textContent=e.message;}});
+save.addEventListener('click',()=>{if(!result)return;const url=URL.createObjectURL(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}));
+const a=document.createElement('a');a.href=url;a.download='promptgen-all-衣装フォルダ修復済み.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);});
+</script></html>

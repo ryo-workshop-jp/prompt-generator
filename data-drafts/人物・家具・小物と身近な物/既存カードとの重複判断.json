@@ -1,0 +1,14 @@
+[
+  {
+    "category": "道具・小物",
+    "label": "旅行鞄",
+    "prompt": "suitcase",
+    "existing": "スーツケース"
+  },
+  {
+    "category": "道具・小物",
+    "label": "扇子",
+    "prompt": "folding fan",
+    "existing": "折り畳み扇子"
+  }
+]

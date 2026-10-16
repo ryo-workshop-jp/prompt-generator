@@ -1,0 +1,491 @@
+{
+  "folders": [],
+  "words": [
+    {
+      "id": "shoes-ururu-20261001-001",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "スニーカー",
+      "value_en": "sneakers",
+      "nsfw": false,
+      "note": "普段着に合わせやすい運動靴。種類を絞りたい場合は、ローカット・厚底などのカードを選ぶ。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-002",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ローカットスニーカー（足首が出る）",
+      "value_en": "low-top sneakers",
+      "nsfw": false,
+      "note": "足首を見せたいときのスニーカー。短い靴下や素足風の足元と合わせやすい。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-003",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ハイカットスニーカー（足首を覆う）",
+      "value_en": "high-top sneakers",
+      "nsfw": false,
+      "note": "足首まわりに高さのあるスニーカー。ストリート系やスポーティーな服装の足元に使う。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-004",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "厚底スニーカー",
+      "value_en": "platform sneakers",
+      "nsfw": false,
+      "note": "靴底の高さを強調するスニーカー。ソールの厚さを見せたい場合は、足元まで写る構図と組み合わせる。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-005",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ボリュームスニーカー（ごつい形）",
+      "value_en": "chunky sneakers",
+      "nsfw": false,
+      "note": "大きなシルエットを狙うスニーカー。厚底だけでなく、靴全体の存在感を出したいときに使う。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-006",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ランニングシューズ",
+      "value_en": "running shoes",
+      "nsfw": false,
+      "note": "走る場面や運動着に合わせる靴。競技用の細かな仕様まで再現されることを保証する指定ではない。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-007",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "スリッポン（ひもなし）",
+      "value_en": "slip-on shoes",
+      "nsfw": false,
+      "note": "ひもを結ばず履くカジュアルな靴。靴ひもを目立たせたくないデザインに使う。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-008",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "バレエ風のぺたんこ靴",
+      "value_en": "ballet flats",
+      "nsfw": false,
+      "note": "軽い印象のフラットシューズ。舞台用のトウシューズを狙う指定とは区別して使う。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-009",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "甲にストラップのある靴（メリージェーン）",
+      "value_en": "mary jane shoes",
+      "nsfw": false,
+      "note": "足の甲のストラップが目印になる靴。制服やクラシックな服装と合わせやすく、ヒールの高さは別に指定する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-010",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "麻縄風ソールの靴（エスパドリーユ）",
+      "value_en": "espadrilles",
+      "nsfw": false,
+      "note": "夏のリゾート服に合わせたい靴。布のアッパーや編んだような靴底の質感を狙うときに使う。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-011",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ローファー",
+      "value_en": "loafers",
+      "nsfw": false,
+      "note": "制服やきれいめの普段着に合わせる基本の靴。甲の装飾を決めたい場合は、別のローファーカードを選ぶ。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-012",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "定番の革飾りローファー（ペニー）",
+      "value_en": "penny loafers",
+      "nsfw": false,
+      "note": "学生靴風の足元にも使いやすいローファー。甲の帯状の革飾りを狙い、実際に硬貨が描かれる指定ではない。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-013",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "房飾り付きローファー",
+      "value_en": "tassel loafers",
+      "nsfw": false,
+      "note": "小さな房の装飾を取り入れたい靴。クラシックなジャケットや落ち着いた服装に合わせやすい。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-014",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "金具付きローファー（ビット）",
+      "value_en": "horsebit loafers",
+      "nsfw": false,
+      "note": "甲の金属飾りを見せたいローファー。金具の色や素材感を添えるとデザインの方向を指定しやすい。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-015",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "厚底ローファー",
+      "value_en": "platform loafers",
+      "nsfw": false,
+      "note": "ローファーに高さのある靴底を組み合わせたいときに使う。制服風にもモード系にも合わせやすい。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-016",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "革靴",
+      "value_en": "leather shoes",
+      "nsfw": false,
+      "note": "革の質感を軸に靴を指定する基本カード。ひもの構造や装飾まで決めたいときは、オックスフォードなどを選ぶ。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-017",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "内羽根の革靴（オックスフォード）",
+      "value_en": "oxford shoes",
+      "nsfw": false,
+      "note": "端正なひも付き革靴を狙う指定。内羽根はひもを通す部分が甲側に閉じる構造で、細部の描き分けはモデルに左右される。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-018",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "外羽根の革靴（ダービー）",
+      "value_en": "derby shoes",
+      "nsfw": false,
+      "note": "ひもを通す部分が甲の上に開く外羽根の革靴。オックスフォードとの差が小さく描かれる場合があるため、足元を拡大して確認する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-019",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "穴飾りのある革靴（ブローグ）",
+      "value_en": "brogue shoes",
+      "nsfw": false,
+      "note": "革靴の装飾模様を加えたいときに使う。ブローグは装飾を表す呼び名なので、靴の形や色は必要に応じて別に指定する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-020",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "パンプス",
+      "value_en": "pumps",
+      "nsfw": false,
+      "note": "フォーマル服やスカートに合わせる基本の靴。つま先の形、色、ヒールの高さは追加の指定で調整する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-021",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "つま先が開いたパンプス",
+      "value_en": "open-toe pumps",
+      "nsfw": false,
+      "note": "指先を少し見せるパンプス。足全体が大きく露出するサンダル風のデザインと区別したいときに使う。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-022",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "足首ストラップ付きパンプス",
+      "value_en": "ankle-strap pumps",
+      "nsfw": false,
+      "note": "足首の帯を見せるパンプス。留め具の形やストラップの太さは必要に応じて追加指定する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-023",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "T字ストラップのヒール靴",
+      "value_en": "t-strap heels",
+      "nsfw": false,
+      "note": "甲から足首に続くT字の帯を狙う靴。レトロな服装やクラシックなドレスの足元に合わせやすい。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-024",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ハイヒール",
+      "value_en": "high heels",
+      "nsfw": false,
+      "note": "ヒールの高さを中心に指定する基本カード。パンプス・サンダルなどの種類やヒールの細さは、この語だけでは固定されない。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-025",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ピンヒール（細く高いヒール）",
+      "value_en": "stiletto heels",
+      "nsfw": false,
+      "note": "細いヒールのシルエットを強調したいときに使う。靴の横側や後ろ側が見える構図だと形を確認しやすい。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-026",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "低めの細いヒール",
+      "value_en": "kitten heels",
+      "nsfw": false,
+      "note": "控えめな高さのヒールを狙う指定。高いピンヒールの指定と同時に使うと、高さの意図が競合することがある。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-027",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "前底も厚いハイヒール",
+      "value_en": "platform heels",
+      "nsfw": false,
+      "note": "つま先側にも高さを持たせたいヒール靴。ヒールだけが高い靴との差を出すため、靴底が見える構図を使う。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-028",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ウェッジヒール（くさび形の底）",
+      "value_en": "wedge heels",
+      "nsfw": false,
+      "note": "独立した細いヒールではなく、面で支える靴底を狙う指定。靴の横から見る構図で輪郭を確認しやすい。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-029",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "足首丈のショートブーツ",
+      "value_en": "ankle boots",
+      "nsfw": false,
+      "note": "短めのブーツを選びたいときに使う。パンツにもスカートにも合わせやすく、ヒールや素材は別に指定する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-030",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ブーツ",
+      "value_en": "boots",
+      "nsfw": false,
+      "note": "ブーツ全般の基本カード。丈を固定したい場合は、足首丈・膝丈・太もも丈のカードを選ぶ。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-031",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "膝付近までのロングブーツ",
+      "value_en": "knee-high boots",
+      "nsfw": false,
+      "note": "膝のあたりで終わる丈を狙うブーツ。日本語のニーハイ表記だけで判断せず、生成後の履き口の位置を確認する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-032",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "膝を越えるロングブーツ",
+      "value_en": "over-the-knee boots",
+      "nsfw": false,
+      "note": "膝が隠れる長さのブーツ。膝丈より長く、太もも丈ほど長くない足元を狙いたいときの候補。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-033",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "太もも丈のロングブーツ（サイハイ）",
+      "value_en": "thigh-high boots",
+      "nsfw": false,
+      "note": "太ももまで届く丈を狙うブーツ。丈の短い服と合わせる場合は、服の裾とブーツ上端の位置関係を確認する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-034",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "サイドゴアブーツ（横に伸縮生地）",
+      "value_en": "chelsea boots",
+      "nsfw": false,
+      "note": "側面の伸縮部分が目印になるブーツ。ひもを目立たせず、すっきりした足元を狙うときに使う。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-035",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "編み上げブーツ",
+      "value_en": "lace-up boots",
+      "nsfw": false,
+      "note": "靴ひもをデザインの中心にするブーツ。丈を決める語を添えると、短い靴か長い靴かを指定しやすい。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-036",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "厚底ブーツ",
+      "value_en": "platform boots",
+      "nsfw": false,
+      "note": "高さのある靴底を持つブーツ。ゴシック系やストリート系の服装に合わせやすく、丈は別に指定する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-037",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ハイヒールのブーツ",
+      "value_en": "high-heeled boots",
+      "nsfw": false,
+      "note": "高いヒールを付けたいブーツ。厚底ブーツとは着目点が異なるため、前底も厚くしたい場合は追加で指定する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-038",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "乗馬風ロングブーツ",
+      "value_en": "riding boots",
+      "nsfw": false,
+      "note": "乗馬スタイルや端正な服装に合わせたいブーツ。衣装としての見た目を指定するもので、実用品の性能を表すものではない。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-039",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ウエスタンブーツ（カウボーイ）",
+      "value_en": "cowboy boots",
+      "nsfw": false,
+      "note": "西部劇やカントリー風の服装に合わせるブーツ。革の色や装飾の目立ち方は追加の指定で調整する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-040",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "バイカー風ブーツ",
+      "value_en": "moto boots",
+      "nsfw": false,
+      "note": "バイク乗り風の重厚な足元を狙うブーツ。金具やベルトの描写を見せたい場合は、足元が隠れない構図を使う。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-041",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ボア付きの冬用ブーツ",
+      "value_en": "shearling boots",
+      "nsfw": false,
+      "note": "暖かそうな冬の足元を狙うブーツ。履き口の毛の質感を見せたいときは、パンツの裾で隠れないようにする。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-042",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "長靴・レインブーツ",
+      "value_en": "rain boots",
+      "nsfw": false,
+      "note": "雨の日や水辺の作業服に合わせる靴。色や丈を添えると、子ども用風・作業用風などの方向を調整しやすい。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-043",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "サンダル",
+      "value_en": "sandals",
+      "nsfw": false,
+      "note": "開放的な足元にする基本カード。帯の形やヒールを決めたいときは、目的に合うサンダルカードを選ぶ。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-044",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ビーチサンダル（鼻緒型）",
+      "value_en": "flip-flops",
+      "nsfw": false,
+      "note": "海辺やプールの服装に合わせるサンダル。ページで併記された beach sandals は別カードに分け、スラッシュをプロンプトには含めていない。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-045",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "海辺用のサンダル",
+      "value_en": "beach sandals",
+      "nsfw": false,
+      "note": "ビーチ用のラフな足元を狙う別表現。鼻緒型を明確に狙う場合は flip-flops を選ぶ。両方のカードを重ねる必要はない。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-046",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "足首ストラップ付きサンダル",
+      "value_en": "ankle-strap sandals",
+      "nsfw": false,
+      "note": "足首を留める帯を加えたいサンダル。ヒールの有無や帯の太さは別の指定で調整する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-047",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "細いストラップのサンダル",
+      "value_en": "strappy sandals",
+      "nsfw": false,
+      "note": "帯の繊細さを見せたいサンダル。ストラップの本数や交差位置はモデルに左右されるため、細部を確認する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-048",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ひもで編み上げるサンダル",
+      "value_en": "lace-up sandals",
+      "nsfw": false,
+      "note": "ひもを足首まわりに巻くデザインを狙う指定。結び目や左右のひもの形が不自然になっていないか確認する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-049",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "多段ストラップのサンダル（グラディエーター）",
+      "value_en": "gladiator sandals",
+      "nsfw": false,
+      "note": "古代風やボヘミアン風の服装に合わせたいサンダル。足首丈か脚まで伸びる形かは追加の指定で調整する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-050",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "厚底サンダル",
+      "value_en": "platform sandals",
+      "nsfw": false,
+      "note": "夏の足元に厚い靴底を加えたいときに使う。ストラップの形やヒールの輪郭は別に指定する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-051",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ハイヒールのサンダル",
+      "value_en": "high-heeled sandals",
+      "nsfw": false,
+      "note": "ドレスやきれいめの夏服に合わせたいサンダル。ヒールを細くするか太くするかは追加で指定する。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-052",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "ウェッジソールのサンダル",
+      "value_en": "wedge sandals",
+      "nsfw": false,
+      "note": "くさび形の靴底を持つサンダル。細い独立ヒールとの違いを見せたいときは、横向きの足元を含める。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-053",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "スポーツサンダル",
+      "value_en": "sport sandals",
+      "nsfw": false,
+      "note": "アウトドアやアクティブな服装に合わせたいサンダル。機能的な外観を狙う指定で、実際の安全性や性能を表すものではない。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    },
+    {
+      "id": "shoes-ururu-20261001-054",
+      "folderId": "服のプロンプト_靴",
+      "label_jp": "かかとが開いたサンダル（ミュール）",
+      "value_en": "mule sandals",
+      "nsfw": false,
+      "note": "後ろ側を覆わない靴を狙う指定。足首のストラップ付きサンダルと同時に使うと、形の意図が競合する場合がある。\n共通：色や素材は別途指定できます。生成結果はモデルや設定に依存します。\n参照：https://ururuailab.com/sd-prompt-shoes/ （説明・使い方は追加用に編集）",
+      "favorite": false
+    }
+  ]
+}

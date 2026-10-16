@@ -1,0 +1,1146 @@
+{
+  "folders": [
+    {
+      "id": "qg26_quality_v1",
+      "name": "品質・画調",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_positive",
+      "name": "ポジティブ向け",
+      "parentId": "qg26_quality_v1",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_negative",
+      "name": "ネガティブ向け",
+      "parentId": "qg26_quality_v1",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_model",
+      "name": "モデル指定のあるタグ",
+      "parentId": "qg26_quality_v1",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_style",
+      "name": "作風・画調",
+      "parentId": "qg26_quality_v1",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_syntax",
+      "name": "ツール依存の構文",
+      "parentId": "qg26_quality_v1",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_quality",
+      "name": "品質タグ",
+      "parentId": "qg26_quality_v1_f_positive",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_resolution",
+      "name": "解像感の表現",
+      "parentId": "qg26_quality_v1_f_positive",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_details",
+      "name": "細部の描写",
+      "parentId": "qg26_quality_v1_f_positive",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_lighting",
+      "name": "光・色の表現",
+      "parentId": "qg26_quality_v1_f_positive",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_structure",
+      "name": "人体の描写目標",
+      "parentId": "qg26_quality_v1_f_positive",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_negquality",
+      "name": "品質・ぼけ・ノイズ",
+      "parentId": "qg26_quality_v1_f_negative",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_neganatomy",
+      "name": "人体・手指の崩れ",
+      "parentId": "qg26_quality_v1_f_negative",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_negtext",
+      "name": "文字・透かし",
+      "parentId": "qg26_quality_v1_f_negative",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_negframe",
+      "name": "見切れ・構図",
+      "parentId": "qg26_quality_v1_f_negative",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_negoptional",
+      "name": "目的別の除外候補（任意）",
+      "parentId": "qg26_quality_v1_f_negative",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_ponypos",
+      "name": "Pony系候補：ポジティブ",
+      "parentId": "qg26_quality_v1_f_model",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_ponyneg",
+      "name": "Pony系候補：ネガティブ",
+      "parentId": "qg26_quality_v1_f_model",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_animaginepos",
+      "name": "Animagine XL 4：ポジティブ",
+      "parentId": "qg26_quality_v1_f_model",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_animagineneg",
+      "name": "Animagine XL 4：ネガティブ",
+      "parentId": "qg26_quality_v1_f_model",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_drawstyle",
+      "name": "絵の表現",
+      "parentId": "qg26_quality_v1_f_style",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_renderstyle",
+      "name": "塗り・色・立体の表現",
+      "parentId": "qg26_quality_v1_f_style",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_f_toolsyntax",
+      "name": "区切りの構文",
+      "parentId": "qg26_quality_v1_f_syntax",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "qg26_quality_v1_w_quality_001",
+      "folderId": "qg26_quality_v1_f_quality",
+      "label_jp": "最高傑作",
+      "value_en": "masterpiece",
+      "note": "作品全体を高く評価する品質タグ。対応モデルで使う候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_quality_002",
+      "folderId": "qg26_quality_v1_f_quality",
+      "label_jp": "最高品質",
+      "value_en": "best quality",
+      "note": "高品質を求めるタグ。効果や推奨の有無はモデルによって異なる。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_quality_003",
+      "folderId": "qg26_quality_v1_f_quality",
+      "label_jp": "最上級品質",
+      "value_en": "highest quality",
+      "note": "品質の高さを強調する表現。モデルによってはbest qualityに近い。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_quality_004",
+      "folderId": "qg26_quality_v1_f_quality",
+      "label_jp": "驚くほど高い品質",
+      "value_en": "amazing quality",
+      "note": "品質の高さを強調する表現。対応はモデルによって異なる。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_resolution_005",
+      "folderId": "qg26_quality_v1_f_resolution",
+      "label_jp": "高解像感",
+      "value_en": "highres",
+      "note": "細かい輪郭を求めるタグ。出力画像のピクセル数は設定側で決める。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_resolution_006",
+      "folderId": "qg26_quality_v1_f_resolution",
+      "label_jp": "非常に高い解像感",
+      "value_en": "very high resolution",
+      "note": "高い解像感を求める表現。ピクセル数の設定は変更しない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_resolution_007",
+      "folderId": "qg26_quality_v1_f_resolution",
+      "label_jp": "超高解像感",
+      "value_en": "absurdres",
+      "note": "対応モデルで使われる解像感のタグ。実際の画像寸法は別設定。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_resolution_008",
+      "folderId": "qg26_quality_v1_f_resolution",
+      "label_jp": "4K風の解像感",
+      "value_en": "4k",
+      "note": "高解像感を求める表現。3840×2160で出力する命令ではない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_resolution_009",
+      "folderId": "qg26_quality_v1_f_resolution",
+      "label_jp": "8K風の解像感",
+      "value_en": "8k",
+      "note": "高解像感を求める表現。7680×4320で出力する命令ではない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_010",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "高精細",
+      "value_en": "ultra detailed",
+      "note": "画面内の細部を細かく描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_011",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "緻密な描写",
+      "value_en": "finely detailed",
+      "note": "小さな形や線を丁寧に描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_012",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "入り組んだ細部",
+      "value_en": "intricate details",
+      "note": "細かな構造や装飾を多く持つ描写。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_013",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "シャープな焦点",
+      "value_en": "sharp focus",
+      "note": "輪郭に焦点が合った、くっきりした描写。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_014",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "背景の詳細描写",
+      "value_en": "detailed background",
+      "note": "背景の形や小物を細かく描く指定。背景の場所は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_015",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "肌の詳細描写",
+      "value_en": "detailed skin",
+      "note": "肌の表面の細かな特徴を描く指定。質感が写実寄りになる場合がある。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_016",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "顔の詳細描写",
+      "value_en": "detailed face",
+      "note": "顔の線や立体感を細かく描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_017",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "目の詳細描写",
+      "value_en": "detailed eyes",
+      "note": "虹彩や光の反射などを細かく描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_018",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "髪の詳細描写",
+      "value_en": "detailed hair",
+      "note": "毛束や髪の細かい線を描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_details_019",
+      "folderId": "qg26_quality_v1_f_details",
+      "label_jp": "布の詳細描写",
+      "value_en": "detailed fabric",
+      "note": "布の織りやしわなどを細かく描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_lighting_020",
+      "folderId": "qg26_quality_v1_f_lighting",
+      "label_jp": "美しい光の演出",
+      "value_en": "beautiful lighting",
+      "note": "光の見え方を整える表現。光源の場所は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_lighting_021",
+      "folderId": "qg26_quality_v1_f_lighting",
+      "label_jp": "映画的な光の演出",
+      "value_en": "cinematic lighting",
+      "note": "映画の一場面を思わせる光と陰影の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_lighting_022",
+      "folderId": "qg26_quality_v1_f_lighting",
+      "label_jp": "写実的な影",
+      "value_en": "realistic shadows",
+      "note": "物の形に沿う現実的な影の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_lighting_023",
+      "folderId": "qg26_quality_v1_f_lighting",
+      "label_jp": "鮮やかな色",
+      "value_en": "vibrant colors",
+      "note": "彩度が高く、鮮やかな色の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_lighting_024",
+      "folderId": "qg26_quality_v1_f_lighting",
+      "label_jp": "正面からの光",
+      "value_en": "front lighting",
+      "note": "被写体の正面側から光が当たる表現。元のlighting forwardを整理。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_lighting_025",
+      "folderId": "qg26_quality_v1_f_lighting",
+      "label_jp": "柔らかい色",
+      "value_en": "soft colors",
+      "note": "強すぎない、穏やかな色の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_lighting_026",
+      "folderId": "qg26_quality_v1_f_lighting",
+      "label_jp": "高いコントラスト",
+      "value_en": "high contrast",
+      "note": "明るい部分と暗い部分の差が大きい表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_structure_027",
+      "folderId": "qg26_quality_v1_f_structure",
+      "label_jp": "正確な人体構造を求める",
+      "value_en": "perfect anatomy",
+      "note": "人体の形を整えることを求める表現。形の正しさを保証する命令ではない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_structure_028",
+      "folderId": "qg26_quality_v1_f_structure",
+      "label_jp": "均整の取れた比率を求める",
+      "value_en": "perfect proportions",
+      "note": "頭・胴・手足の比率を整えることを求める表現。自動修正を保証しない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_029",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：低品質",
+      "value_en": "low quality",
+      "note": "ネガティブ向け。低品質な描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_030",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：最低品質",
+      "value_en": "worst quality",
+      "note": "ネガティブ向け。非常に低品質な描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_031",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：悪い品質",
+      "value_en": "bad quality",
+      "note": "ネガティブ向け。品質が悪い描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_032",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：低解像感",
+      "value_en": "lowres",
+      "note": "ネガティブ向け。粗い低解像感の描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_033",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：ぼやけ",
+      "value_en": "blurry",
+      "note": "ネガティブ向け。輪郭がぼやけた描写を避ける候補。意図したぼけも弱くなる場合がある。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_034",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：ピクセル化",
+      "value_en": "pixelated",
+      "note": "ネガティブ向け。粗い画素の描写を避ける候補。ピクセルアートでは使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_035",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：雑な描写",
+      "value_en": "poorly drawn",
+      "note": "ネガティブ向け。形や線が雑な描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_036",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：ディテール不足",
+      "value_en": "lack of detail",
+      "note": "ネガティブ向け。細部が不足した描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_037",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：ピンぼけ",
+      "value_en": "out of focus",
+      "note": "ネガティブ向け。焦点が合っていない描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_038",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：JPEGのノイズ",
+      "value_en": "jpeg artifacts",
+      "note": "ネガティブ向け。圧縮で生じるブロック状のノイズを避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negquality_039",
+      "folderId": "qg26_quality_v1_f_negquality",
+      "label_jp": "避けたい：過剰なノイズ",
+      "value_en": "noise",
+      "note": "ネガティブ向け。画面の雑音のような模様を避ける候補。意図した粒子感にも影響しうる。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_040",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：人体構造の崩れ",
+      "value_en": "bad anatomy",
+      "note": "ネガティブ向け。不自然な人体の形を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_041",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：余分な手足",
+      "value_en": "extra limbs",
+      "note": "ネガティブ向け。手足が余計に増えた描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_042",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：手足の欠損",
+      "value_en": "missing limbs",
+      "note": "ネガティブ向け。手足が不足した描写を避ける候補。意図した身体の特徴には使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_043",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：手の崩れ",
+      "value_en": "bad hands",
+      "note": "ネガティブ向け。不自然な手の形を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_044",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：変形した手",
+      "value_en": "mutated hands",
+      "note": "ネガティブ向け。変形した手の形を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_045",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：手の不自然な形",
+      "value_en": "malformed hands",
+      "note": "ネガティブ向け。形が不自然な手を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_046",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：余分な指",
+      "value_en": "extra fingers",
+      "note": "ネガティブ向け。指が多すぎる描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_047",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：指の不足",
+      "value_en": "missing fingers",
+      "note": "ネガティブ向け。指が不足した描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_048",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：雑な手の描写",
+      "value_en": "poorly drawn hands",
+      "note": "ネガティブ向け。手の描写の粗さを避ける候補。指の変形だけに限定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_049",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：つながった指",
+      "value_en": "fused fingers",
+      "note": "ネガティブ向け。指同士がつながった形を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_050",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：腕の不足",
+      "value_en": "missing arms",
+      "note": "ネガティブ向け。腕が不足した描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_051",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：余分な腕",
+      "value_en": "extra arms",
+      "note": "ネガティブ向け。腕が多すぎる描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_052",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：脚の不足",
+      "value_en": "missing legs",
+      "note": "ネガティブ向け。脚が不足した描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_053",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：余分な脚",
+      "value_en": "extra legs",
+      "note": "ネガティブ向け。脚が多すぎる描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_054",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：雑な顔の描写",
+      "value_en": "poorly drawn face",
+      "note": "ネガティブ向け。顔の線や形の粗さを避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_055",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：複製された顔",
+      "value_en": "cloned face",
+      "note": "ネガティブ向け。顔が複製されたような描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_neganatomy_056",
+      "folderId": "qg26_quality_v1_f_neganatomy",
+      "label_jp": "避けたい：頭の欠損",
+      "value_en": "missing head",
+      "note": "ネガティブ向け。頭がない描写を避ける候補。単なるフレーム外とは分ける。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negtext_057",
+      "folderId": "qg26_quality_v1_f_negtext",
+      "label_jp": "避けたい：文字",
+      "value_en": "text",
+      "note": "ネガティブ向け。画面内の文字を避ける候補。看板などの文字にも影響しうる。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negtext_058",
+      "folderId": "qg26_quality_v1_f_negtext",
+      "label_jp": "避けたい：署名",
+      "value_en": "signature",
+      "note": "ネガティブ向け。署名のような文字を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negtext_059",
+      "folderId": "qg26_quality_v1_f_negtext",
+      "label_jp": "避けたい：透かし",
+      "value_en": "watermark",
+      "note": "ネガティブ向け。透かし状の表示を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negtext_060",
+      "folderId": "qg26_quality_v1_f_negtext",
+      "label_jp": "避けたい：ユーザー名",
+      "value_en": "username",
+      "note": "ネガティブ向け。ユーザー名のような文字を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negtext_061",
+      "folderId": "qg26_quality_v1_f_negtext",
+      "label_jp": "避けたい：ロゴ",
+      "value_en": "logo",
+      "note": "ネガティブ向け。ロゴのような表示を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negframe_062",
+      "folderId": "qg26_quality_v1_f_negframe",
+      "label_jp": "避けたい：悪い構図",
+      "value_en": "bad composition",
+      "note": "ネガティブ向け。まとまりに欠けた構図を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negframe_063",
+      "folderId": "qg26_quality_v1_f_negframe",
+      "label_jp": "避けたい：見切れ",
+      "value_en": "cropped",
+      "note": "ネガティブ向け。被写体の一部が画面端で切れた描写を避ける候補。接写では使わない場合がある。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negframe_064",
+      "folderId": "qg26_quality_v1_f_negframe",
+      "label_jp": "避けたい：フレーム外",
+      "value_en": "out of frame",
+      "note": "ネガティブ向け。被写体が画面の外に出た描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negframe_065",
+      "folderId": "qg26_quality_v1_f_negframe",
+      "label_jp": "避けたい：髪の見切れ",
+      "value_en": "hair cropped",
+      "note": "ネガティブ向け。髪が画面端で切れた描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negframe_066",
+      "folderId": "qg26_quality_v1_f_negframe",
+      "label_jp": "避けたい：パースの崩れ",
+      "value_en": "bad perspective",
+      "note": "ネガティブ向け。不自然な遠近感を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negframe_067",
+      "folderId": "qg26_quality_v1_f_negframe",
+      "label_jp": "避けたい：不自然な影",
+      "value_en": "bad shadows",
+      "note": "ネガティブ向け。物の形に合わない影を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negframe_068",
+      "folderId": "qg26_quality_v1_f_negframe",
+      "label_jp": "避けたい：不自然な光",
+      "value_en": "bad lighting",
+      "note": "ネガティブ向け。不自然な光の配置を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_069",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：余分な人物",
+      "value_en": "extra people",
+      "note": "ネガティブ向け。想定より人物が増えた描写を避ける候補。人物数の正確な制御は保証しない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_070",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：他の人物",
+      "value_en": "other people",
+      "note": "ネガティブ向け。他の人物を避ける候補。複数人の絵では使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_071",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：群衆",
+      "value_en": "crowd",
+      "note": "ネガティブ向け。群衆を避ける候補。意図した群衆には使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_072",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：集団",
+      "value_en": "group",
+      "note": "ネガティブ向け。集団を避ける候補。複数人の絵では使わない場合がある。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_073",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：体から離れた手",
+      "value_en": "disembodied hand",
+      "note": "ネガティブ向け。体につながっていない手を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_074",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：他の人の手",
+      "value_en": "another person's hand",
+      "note": "ネガティブ向け。他者の手を避ける候補。複数人の接触シーンでは使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_075",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：画面外の手",
+      "value_en": "off-screen hand",
+      "note": "ネガティブ向け。画面外から入る手を避ける候補。意図した構図では使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_076",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：見る側の手",
+      "value_en": "viewer hand",
+      "note": "ネガティブ向け。見る側に相当する手を避ける候補。一人称視点では使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_077",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：一人称の手",
+      "value_en": "pov hands",
+      "note": "ネガティブ向け。一人称視点の手を避ける候補。一人称視点では使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_078",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：髪色の混ざり",
+      "value_en": "mixed hair color",
+      "note": "ネガティブ向け。髪色が混ざる描写を避ける候補。メッシュ等にも影響しうる。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_079",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：髪型の混ざり",
+      "value_en": "mixed hairstyle",
+      "note": "ネガティブ向け。髪型が混ざる描写を避ける候補。人物の領域分離を保証する指定ではない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_080",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：服装の混ざり",
+      "value_en": "mixed outfit",
+      "note": "ネガティブ向け。服装が混ざる描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_081",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：同じ髪型",
+      "value_en": "same hairstyle",
+      "note": "ネガティブ向け。人物同士の髪型が同じになる描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_082",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：同じ髪色",
+      "value_en": "same hair color",
+      "note": "ネガティブ向け。人物同士の髪色が同じになる描写を避ける候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_083",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：同じ服装",
+      "value_en": "same outfit",
+      "note": "ネガティブ向け。人物同士の服装が同じになる描写を避ける候補。制服を揃えたい場合は使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_negoptional_084",
+      "folderId": "qg26_quality_v1_f_negoptional",
+      "label_jp": "任意の除外：同じ外見",
+      "value_en": "identical appearance",
+      "note": "ネガティブ向け。人物同士の外見が同一になる描写を避ける候補。双子等には使わない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_ponypos_085",
+      "folderId": "qg26_quality_v1_f_ponypos",
+      "label_jp": "Pony系候補：評価9",
+      "value_en": "score_9",
+      "note": "Pony系の品質スコア候補。SDXL全般に共通する品質タグではない。使用モデルの説明を確認する。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_ponypos_086",
+      "folderId": "qg26_quality_v1_f_ponypos",
+      "label_jp": "Pony系候補：評価8以上",
+      "value_en": "score_8_up",
+      "note": "Pony系のスコア候補。単独の効果や推奨の組合せはモデルに依存する。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_ponypos_087",
+      "folderId": "qg26_quality_v1_f_ponypos",
+      "label_jp": "Pony系候補：評価7以上",
+      "value_en": "score_7_up",
+      "note": "Pony系のスコア候補。使用モデルの説明に合わせて使う。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_ponypos_088",
+      "folderId": "qg26_quality_v1_f_ponypos",
+      "label_jp": "Pony系候補：評価6以上",
+      "value_en": "score_6_up",
+      "note": "Pony系のスコア候補。使用モデルの説明に合わせて使う。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_ponypos_089",
+      "folderId": "qg26_quality_v1_f_ponypos",
+      "label_jp": "Pony系候補：評価5以上",
+      "value_en": "score_5_up",
+      "note": "Pony系のスコア候補。使用モデルの説明に合わせて使う。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_ponyneg_090",
+      "folderId": "qg26_quality_v1_f_ponyneg",
+      "label_jp": "Pony系候補：評価4を避ける",
+      "value_en": "score_4",
+      "note": "Pony系のネガティブ向けスコア候補。推奨の有無は使用モデルの説明を確認する。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_ponyneg_091",
+      "folderId": "qg26_quality_v1_f_ponyneg",
+      "label_jp": "Pony系候補：評価3を避ける",
+      "value_en": "score_3",
+      "note": "Pony系のネガティブ向けスコア候補。推奨の有無は使用モデルの説明を確認する。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_ponyneg_092",
+      "folderId": "qg26_quality_v1_f_ponyneg",
+      "label_jp": "Pony系候補：評価2を避ける",
+      "value_en": "score_2",
+      "note": "Pony系のネガティブ向けスコア候補。推奨の有無は使用モデルの説明を確認する。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_animaginepos_093",
+      "folderId": "qg26_quality_v1_f_animaginepos",
+      "label_jp": "Animagine XL 4：高いスコア",
+      "value_en": "high score",
+      "note": "Animagine XL 4で案内されている品質スコアタグ。Ponyのscore_9とは別の語。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_animaginepos_094",
+      "folderId": "qg26_quality_v1_f_animaginepos",
+      "label_jp": "Animagine XL 4：優れたスコア",
+      "value_en": "great score",
+      "note": "Animagine XL 4で案内されている品質スコアタグ。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_animaginepos_095",
+      "folderId": "qg26_quality_v1_f_animaginepos",
+      "label_jp": "Animagine XL 4：良いスコア",
+      "value_en": "good score",
+      "note": "Animagine XL 4が対応する品質スコアタグ。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_animagineneg_096",
+      "folderId": "qg26_quality_v1_f_animagineneg",
+      "label_jp": "Animagine XL 4：平均スコアを避ける",
+      "value_en": "average score",
+      "note": "Animagine XL 4のネガティブ向け品質スコア候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_animagineneg_097",
+      "folderId": "qg26_quality_v1_f_animagineneg",
+      "label_jp": "Animagine XL 4：悪いスコアを避ける",
+      "value_en": "bad score",
+      "note": "Animagine XL 4のネガティブ向け品質スコア候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_animagineneg_098",
+      "folderId": "qg26_quality_v1_f_animagineneg",
+      "label_jp": "Animagine XL 4：低いスコアを避ける",
+      "value_en": "low score",
+      "note": "Animagine XL 4のネガティブ向け品質スコア候補。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_099",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "アニメ調",
+      "value_en": "anime style",
+      "note": "アニメのような線や人物表現を求める画調。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_100",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "90年代アニメ調",
+      "value_en": "90s anime style",
+      "note": "1990年代のアニメを思わせる線や色の画調。特定作品は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_101",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "漫画調",
+      "value_en": "manga style",
+      "note": "漫画のような線や画面表現を求める画調。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_102",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "油絵調",
+      "value_en": "oil painting",
+      "note": "絵の具の厚みや筆跡を持つ油絵の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_103",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "水彩画調",
+      "value_en": "watercolor painting",
+      "note": "にじみや淡い色の重なりを持つ水彩の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_104",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "線画",
+      "value_en": "line art",
+      "note": "輪郭線を主体にした絵の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_105",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "ピクセルアート",
+      "value_en": "pixel art",
+      "note": "小さな画素を形として見せる絵の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_106",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "写実的",
+      "value_en": "photorealistic",
+      "note": "写真に近い質感や立体感の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_107",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "リアル寄りのアニメ調",
+      "value_en": "realistic anime style",
+      "note": "アニメ的な人物を、現実的な陰影や質感で描く表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_108",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "鉛筆画",
+      "value_en": "pencil drawing",
+      "note": "鉛筆の線や濃淡を主体にした表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_109",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "インク画",
+      "value_en": "ink drawing",
+      "note": "インクの線や塗りを主体にした表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_110",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "パステル画",
+      "value_en": "pastel drawing",
+      "note": "粉っぽい色の重なりを持つパステル画の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_111",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "デジタルイラスト",
+      "value_en": "digital illustration",
+      "note": "デジタル作画のイラスト表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_drawstyle_112",
+      "folderId": "qg26_quality_v1_f_drawstyle",
+      "label_jp": "ちびキャラ調",
+      "value_en": "chibi style",
+      "note": "頭を大きく、体を小さく描くデフォルメの画調。年齢は指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_113",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "セル塗り",
+      "value_en": "cel shading",
+      "note": "影を段階的な色面に分けたアニメ的な塗り。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_114",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "平面的な塗り",
+      "value_en": "flat shading",
+      "note": "面ごとに単純な色や陰影を付ける表現。低品質とは限らない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_115",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "モノクロ",
+      "value_en": "monochrome",
+      "note": "一色または同系色の濃淡を主体にした画面。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_116",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "アニメフィギュア風",
+      "value_en": "anime scale figure",
+      "note": "アニメの人物を模型のような立体物として描く表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_117",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "リアル寄りアクションフィギュア",
+      "value_en": "realistic action figure",
+      "note": "可動式の模型を思わせる立体物の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_118",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "シンプルな背景",
+      "value_en": "simple background",
+      "note": "背景の要素を少なくした画面。低品質とは限らない。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_119",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "厚塗り",
+      "value_en": "painterly",
+      "note": "筆で色を重ねたような塗りの表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_120",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "ラフスケッチ",
+      "value_en": "sketch",
+      "note": "下描きのような粗い線を残した表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_121",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "淡いパステルカラー",
+      "value_en": "pastel colors",
+      "note": "淡く明るい色を主体にした画面。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_122",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "色数を絞った画面",
+      "value_en": "limited palette",
+      "note": "使う色の種類を少なくした画面。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_123",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "グレースケール",
+      "value_en": "grayscale",
+      "note": "白・黒・灰色の濃淡を使う画面。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_renderstyle_124",
+      "folderId": "qg26_quality_v1_f_renderstyle",
+      "label_jp": "3Dレンダリング調",
+      "value_en": "3d render",
+      "note": "立体モデルを描画したような質感や陰影の表現。",
+      "nsfw": false
+    },
+    {
+      "id": "qg26_quality_v1_w_toolsyntax_125",
+      "folderId": "qg26_quality_v1_f_toolsyntax",
+      "label_jp": "BREAK（対応ツール用）",
+      "value_en": "BREAK",
+      "note": "AUTOMATIC1111系の対応する処理でプロンプトのチャンクを区切る構文。人物分離の命令ではなく、他のツールでは対応を確認する。",
+      "nsfw": false
+    }
+  ],
+  "templates": [],
+  "cards": []
+}

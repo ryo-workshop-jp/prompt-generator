@@ -1,0 +1,1368 @@
+{
+  "folders": [
+    {
+      "id": "po26_objects_v1",
+      "name": "道具・小物",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_f_digital",
+      "name": "電子機器・撮影",
+      "parentId": "po26_objects_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_f_stationery",
+      "name": "本・文具",
+      "parentId": "po26_objects_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_f_tableware",
+      "name": "食器・調理道具",
+      "parentId": "po26_objects_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_f_life",
+      "name": "生活・旅行・飾り",
+      "parentId": "po26_objects_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_f_music",
+      "name": "楽器",
+      "parentId": "po26_objects_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_f_sport",
+      "name": "スポーツ・工具・幻想の道具",
+      "parentId": "po26_objects_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "po26_objects_v1_w_digital_001",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "スマートフォン",
+      "value_en": "smartphone",
+      "note": "携帯用の画面を持つ機器。持つ動作は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_002",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "携帯電話",
+      "value_en": "mobile phone",
+      "note": "携帯用の電話機。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_003",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "ノートパソコン",
+      "value_en": "laptop",
+      "note": "折りたためる携帯用のパソコン。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_004",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "デスクトップパソコン",
+      "value_en": "desktop computer",
+      "note": "机上などで使うパソコン。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_005",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "タブレット端末",
+      "value_en": "tablet computer",
+      "note": "板状の携帯用コンピューター。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_006",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "モニター",
+      "value_en": "computer monitor",
+      "note": "パソコンなどの画面。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_007",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "キーボード",
+      "value_en": "keyboard",
+      "note": "文字などを入力する機器。楽器の鍵盤とは別。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_008",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "マウス",
+      "value_en": "computer mouse",
+      "note": "手で動かす入力機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_009",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "カメラ",
+      "value_en": "camera",
+      "note": "写真や映像を撮る機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_010",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "三脚",
+      "value_en": "tripod",
+      "note": "機器などを支える三本脚の台。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_011",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "マイク",
+      "value_en": "microphone",
+      "note": "音を収録・伝達する機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_012",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "スピーカー",
+      "value_en": "speaker",
+      "note": "音を出す機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_013",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "ゲーム機",
+      "value_en": "game console",
+      "note": "ゲームを動かす機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_014",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "ゲームコントローラー",
+      "value_en": "game controller",
+      "note": "ゲームを操作する手持ち機器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_015",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "携帯ゲーム機",
+      "value_en": "handheld game console",
+      "note": "画面と操作部を一体にした携帯用のゲーム機。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_016",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "充電ケーブル",
+      "value_en": "charging cable",
+      "note": "電力を送るケーブル。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_digital_017",
+      "folderId": "po26_objects_v1_f_digital",
+      "label_jp": "リモコン",
+      "value_en": "remote control",
+      "note": "離れた場所から機器を操作する道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_018",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "本",
+      "value_en": "book",
+      "note": "紙のページなどを綴じたもの。持つ・読むは含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_019",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "開いた本",
+      "value_en": "open book",
+      "note": "ページを開いた本。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_020",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "ノート",
+      "value_en": "notebook",
+      "note": "書き込むページを綴じたもの。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_021",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "教科書",
+      "value_en": "textbook",
+      "note": "学習内容をまとめた本。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_022",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "手帳",
+      "value_en": "planner",
+      "note": "予定などを書き込む冊子。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_023",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "紙",
+      "value_en": "paper",
+      "note": "薄い書く材料。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_024",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "手紙",
+      "value_en": "letter",
+      "note": "相手に送る文章を書いた紙など。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_025",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "封筒",
+      "value_en": "envelope",
+      "note": "手紙などを入れる袋。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_026",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "鉛筆",
+      "value_en": "pencil",
+      "note": "芯で書く筆記具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_027",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "ペン",
+      "value_en": "pen",
+      "note": "インクなどで書く筆記具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_028",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "万年筆",
+      "value_en": "fountain pen",
+      "note": "ペン先からインクを出す筆記具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_029",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "消しゴム",
+      "value_en": "eraser",
+      "note": "鉛筆などの線を消す道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_030",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "定規",
+      "value_en": "ruler",
+      "note": "直線や長さの目安に使う道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_031",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "はさみ",
+      "value_en": "scissors",
+      "note": "二枚の刃で切る道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_032",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "筆箱",
+      "value_en": "pencil case",
+      "note": "筆記具をまとめる入れ物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_033",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "クリップボード",
+      "value_en": "clipboard",
+      "note": "紙を挟んで支える板。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_034",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "黒板",
+      "value_en": "blackboard",
+      "note": "チョークなどで書く板。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_035",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "チョーク",
+      "value_en": "chalk",
+      "note": "黒板などに書く棒状の材料。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_036",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "画筆",
+      "value_en": "paintbrush",
+      "note": "絵具を塗る筆。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_037",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "パレット",
+      "value_en": "artist palette",
+      "note": "絵具を載せる板や容器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_stationery_038",
+      "folderId": "po26_objects_v1_f_stationery",
+      "label_jp": "イーゼル",
+      "value_en": "easel",
+      "note": "絵などを立てて支える台。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_039",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "マグカップ",
+      "value_en": "mug",
+      "note": "取っ手のある飲用の器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_tablematerial"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_040",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "ティーカップ",
+      "value_en": "teacup",
+      "note": "お茶などに使う小さなカップ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_tablematerial"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_041",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "グラス",
+      "value_en": "drinking glass",
+      "note": "飲み物を入れる透明な器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_042",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "皿",
+      "value_en": "plate",
+      "note": "平たい食器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_tablematerial"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_043",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "ボウル",
+      "value_en": "bowl",
+      "note": "深さのある器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_tablematerial"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_044",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "茶碗",
+      "value_en": "rice bowl",
+      "note": "ご飯などを盛る器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_tablematerial"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_045",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "箸",
+      "value_en": "chopsticks",
+      "note": "二本の棒状の食器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_046",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "スプーン",
+      "value_en": "spoon",
+      "note": "すくうための食器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_047",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "フォーク",
+      "value_en": "fork",
+      "note": "先が分かれた食器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_048",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "ナイフ",
+      "value_en": "table knife",
+      "note": "食事用の刃物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_049",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "ティーポット",
+      "value_en": "teapot",
+      "note": "お茶を入れて注ぐ器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_tablematerial"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_050",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "水筒",
+      "value_en": "water bottle",
+      "note": "飲み物を携帯する容器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_051",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "弁当箱",
+      "value_en": "lunch box",
+      "note": "食事を携帯する箱。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_052",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "トレー",
+      "value_en": "tray",
+      "note": "食器や物を載せて運ぶ平たい台。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_tablematerial"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_053",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "フライパン",
+      "value_en": "frying pan",
+      "note": "浅い調理用の鍋。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_054",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "鍋",
+      "value_en": "cooking pot",
+      "note": "深い調理用の器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_055",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "やかん",
+      "value_en": "kettle",
+      "note": "湯を沸かす注ぎ口付きの器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_056",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "包丁",
+      "value_en": "kitchen knife",
+      "note": "食材を切る調理用の刃物。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_057",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "まな板",
+      "value_en": "cutting board",
+      "note": "食材を切るときに敷く板。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_058",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "お玉",
+      "value_en": "ladle",
+      "note": "汁などをすくう深い道具。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_tableware_059",
+      "folderId": "po26_objects_v1_f_tableware",
+      "label_jp": "泡立て器",
+      "value_en": "whisk",
+      "note": "混ぜたり泡立てたりする道具。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_life_060",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "傘",
+      "value_en": "umbrella",
+      "note": "雨や日差しを遮る携帯の覆い。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_open"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_061",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "タオル",
+      "value_en": "towel",
+      "note": "水分を拭く布。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_062",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "ハンカチ",
+      "value_en": "handkerchief",
+      "note": "小さな携帯用の布。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_063",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "歯ブラシ",
+      "value_en": "toothbrush",
+      "note": "歯を磨く道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_064",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "ヘアブラシ",
+      "value_en": "hairbrush",
+      "note": "髪をとかす道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_065",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "櫛",
+      "value_en": "comb",
+      "note": "歯の並んだ髪をとかす道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_066",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "手鏡",
+      "value_en": "hand mirror",
+      "note": "手に持てる小さな鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_067",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "鍵",
+      "value_en": "key",
+      "note": "錠などを開ける道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_068",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "財布",
+      "value_en": "wallet",
+      "note": "お金などを入れる小物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_070",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "地図",
+      "value_en": "map",
+      "note": "場所や経路を示す図。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_life_071",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "コンパス",
+      "value_en": "compass",
+      "note": "方角を示す道具。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_life_072",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "双眼鏡",
+      "value_en": "binoculars",
+      "note": "両目で遠くを見る道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_073",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "テント",
+      "value_en": "tent",
+      "note": "布などを張った携帯用の住まい。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_074",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "ぬいぐるみ",
+      "value_en": "stuffed toy",
+      "note": "布や綿で形を作った玩具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_size"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_075",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "テディベア",
+      "value_en": "teddy bear",
+      "note": "熊の形をしたぬいぐるみ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_size"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_076",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "人形",
+      "value_en": "doll",
+      "note": "人物などの形の玩具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_size"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_077",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "風船",
+      "value_en": "balloon",
+      "note": "空気やガスで膨らむ薄い袋。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_size"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_078",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "花瓶",
+      "value_en": "vase",
+      "note": "花を挿す容器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_size"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_079",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "鉢",
+      "value_en": "flower pot",
+      "note": "植物を育てる容器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_size"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_080",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "贈り物の箱",
+      "value_en": "gift box",
+      "note": "贈り物を入れる箱。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_open",
+        "po26_objects_v1_t_size"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_081",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "リボン付きの箱",
+      "value_en": "ribbon-wrapped box",
+      "note": "リボンを掛けた箱。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_life_083",
+      "folderId": "po26_objects_v1_f_life",
+      "label_jp": "うちわ",
+      "value_en": "hand fan",
+      "note": "柄を持つ、あおぐ道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_music_084",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "ギター",
+      "value_en": "guitar",
+      "note": "弦を弾く、胴と長い首を持つ楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_085",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "アコースティックギター",
+      "value_en": "acoustic guitar",
+      "note": "木製の胴などで音を響かせるギター。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_086",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "エレキギター",
+      "value_en": "electric guitar",
+      "note": "電気的に音を増幅するギター。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_087",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "ベース",
+      "value_en": "bass guitar",
+      "note": "低音域を担うギター型の楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_088",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "ピアノ",
+      "value_en": "piano",
+      "note": "鍵盤を持つ大きな楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_089",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "電子キーボード",
+      "value_en": "musical keyboard",
+      "note": "電子的に音を出す鍵盤楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_090",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "バイオリン",
+      "value_en": "violin",
+      "note": "肩付近で支えて弓で弾く弦楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_091",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "チェロ",
+      "value_en": "cello",
+      "note": "大きな胴を持ち、立てて弾く弦楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_092",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "フルート",
+      "value_en": "flute",
+      "note": "横向きに構える管楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_093",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "トランペット",
+      "value_en": "trumpet",
+      "note": "金属の管とベルを持つ楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_094",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "サックス",
+      "value_en": "saxophone",
+      "note": "曲がった管を持つ管楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_095",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "ドラムセット",
+      "value_en": "drum kit",
+      "note": "複数の打楽器を組み合わせたもの。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_096",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "ハープ",
+      "value_en": "harp",
+      "note": "枠に多数の弦を張った楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_097",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "和太鼓",
+      "value_en": "taiko drum",
+      "note": "日本の太鼓。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_music_098",
+      "folderId": "po26_objects_v1_f_music",
+      "label_jp": "三味線",
+      "value_en": "shamisen",
+      "note": "長い首と三本の弦を持つ日本の楽器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_sport_099",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "ボール",
+      "value_en": "ball",
+      "note": "丸い遊具や競技用の道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_100",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "サッカーボール",
+      "value_en": "soccer ball",
+      "note": "サッカー用のボール。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_101",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "バスケットボール",
+      "value_en": "basketball",
+      "note": "バスケットボール競技用の球。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_102",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "野球のバット",
+      "value_en": "baseball bat",
+      "note": "野球で球を打つ棒。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_103",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "野球グローブ",
+      "value_en": "baseball glove",
+      "note": "球を受ける競技用の手袋。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_104",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "テニスラケット",
+      "value_en": "tennis racket",
+      "note": "網を張ったテニス用の道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_105",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "スケートボード",
+      "value_en": "skateboard",
+      "note": "車輪のある乗用の板。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_106",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "釣り竿",
+      "value_en": "fishing rod",
+      "note": "糸を垂らす細長い釣り道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_107",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "ハンマー",
+      "value_en": "hammer",
+      "note": "物を打つ工具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_108",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "ドライバー",
+      "value_en": "screwdriver",
+      "note": "ねじを回す工具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_109",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "レンチ",
+      "value_en": "wrench",
+      "note": "ナットなどを回す工具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_110",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "剣",
+      "value_en": "sword",
+      "note": "柄と長い刃を持つ武器。使う動作は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_111",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "刀",
+      "value_en": "katana",
+      "note": "日本の刀の形の武器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_112",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "槍",
+      "value_en": "spear",
+      "note": "長い柄と先端の刃を持つ武器。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_113",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "盾",
+      "value_en": "shield",
+      "note": "攻撃を防ぐ板状などの道具。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_114",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "弓",
+      "value_en": "bow (weapon)",
+      "note": "弦を張った弓の武器。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_sport_115",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "矢",
+      "value_en": "arrow",
+      "note": "弓で放つ細長い飛び道具。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_sport_116",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "魔法の杖",
+      "value_en": "magic staff",
+      "note": "魔法を思わせる長い杖。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_objects_v1_w_sport_117",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "魔導書",
+      "value_en": "spellbook",
+      "note": "魔法の内容を思わせる本。",
+      "nsfw": false
+    },
+    {
+      "id": "po26_objects_v1_w_sport_118",
+      "folderId": "po26_objects_v1_f_sport",
+      "label_jp": "宝箱",
+      "value_en": "treasure chest",
+      "note": "宝物を収める箱。中身や開閉は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_objects_v1_t_color",
+        "po26_objects_v1_t_open"
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "id": "po26_objects_v1_t_color",
+      "name": "小物の色",
+      "folderId": "道具・小物 / 小物の色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_objects_v1_t_color_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "po26_objects_v1_t_color_o_1",
+          "label": "黒",
+          "value": "black"
+        },
+        {
+          "id": "po26_objects_v1_t_color_o_2",
+          "label": "灰",
+          "value": "gray"
+        },
+        {
+          "id": "po26_objects_v1_t_color_o_3",
+          "label": "赤",
+          "value": "red"
+        },
+        {
+          "id": "po26_objects_v1_t_color_o_4",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "po26_objects_v1_t_color_o_5",
+          "label": "緑",
+          "value": "green"
+        },
+        {
+          "id": "po26_objects_v1_t_color_o_6",
+          "label": "黄",
+          "value": "yellow"
+        },
+        {
+          "id": "po26_objects_v1_t_color_o_7",
+          "label": "ピンク",
+          "value": "pink"
+        },
+        {
+          "id": "po26_objects_v1_t_color_o_8",
+          "label": "茶",
+          "value": "brown"
+        }
+      ]
+    },
+    {
+      "id": "po26_objects_v1_t_tablematerial",
+      "name": "器の素材",
+      "folderId": "道具・小物 / 器の素材",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_objects_v1_t_tablematerial_o_0",
+          "label": "陶器",
+          "value": "ceramic"
+        },
+        {
+          "id": "po26_objects_v1_t_tablematerial_o_1",
+          "label": "ガラス",
+          "value": "glass"
+        },
+        {
+          "id": "po26_objects_v1_t_tablematerial_o_2",
+          "label": "木",
+          "value": "wooden"
+        },
+        {
+          "id": "po26_objects_v1_t_tablematerial_o_3",
+          "label": "金属",
+          "value": "metal"
+        }
+      ]
+    },
+    {
+      "id": "po26_objects_v1_t_open",
+      "name": "本・入れ物の開閉",
+      "folderId": "道具・小物 / 本・入れ物の開閉",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_objects_v1_t_open_o_0",
+          "label": "開いた",
+          "value": "open"
+        },
+        {
+          "id": "po26_objects_v1_t_open_o_1",
+          "label": "閉じた",
+          "value": "closed"
+        }
+      ]
+    },
+    {
+      "id": "po26_objects_v1_t_size",
+      "name": "小物の大きさ",
+      "folderId": "道具・小物 / 小物の大きさ",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_objects_v1_t_size_o_0",
+          "label": "小さい",
+          "value": "small"
+        },
+        {
+          "id": "po26_objects_v1_t_size_o_1",
+          "label": "大きい",
+          "value": "large"
+        },
+        {
+          "id": "po26_objects_v1_t_size_o_2",
+          "label": "小型",
+          "value": "miniature"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

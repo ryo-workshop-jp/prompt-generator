@@ -1,0 +1,1127 @@
+{
+  "folders": [
+    {
+      "id": "le26_weather_v1",
+      "name": "季節・時間・天候",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_f_season",
+      "name": "季節",
+      "parentId": "le26_weather_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_f_time",
+      "name": "時間帯",
+      "parentId": "le26_weather_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_f_details",
+      "name": "季節感の小物・自然",
+      "parentId": "le26_weather_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_f_sky",
+      "name": "空模様",
+      "parentId": "le26_weather_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_f_rain",
+      "name": "雨・雷",
+      "parentId": "le26_weather_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_f_snow",
+      "name": "雪・氷",
+      "parentId": "le26_weather_v1",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_f_air",
+      "name": "霧・風・空気",
+      "parentId": "le26_weather_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "le26_time_v1_w_season_001",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "春",
+      "value_en": "spring",
+      "note": "春の季節感。花や服装は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_002",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "夏",
+      "value_en": "summer",
+      "note": "夏の季節感。水着や場所は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_003",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "秋",
+      "value_en": "autumn",
+      "note": "秋の季節感。紅葉の有無は別に指定する。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_004",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "冬",
+      "value_en": "winter",
+      "note": "冬の季節感。雪の有無は別に指定する。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_005",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "早春",
+      "value_en": "early spring",
+      "note": "春の始まりを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_006",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "晩春",
+      "value_en": "late spring",
+      "note": "春の終わりを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_007",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "真夏",
+      "value_en": "midsummer",
+      "note": "夏の盛りを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_008",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "初秋",
+      "value_en": "early autumn",
+      "note": "秋の始まりを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_009",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "晩秋",
+      "value_en": "late autumn",
+      "note": "秋の終わりを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_010",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "真冬",
+      "value_en": "midwinter",
+      "note": "冬の盛りを感じさせる時期。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time",
+        "le26_time_v1_t_weather"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_season_011",
+      "folderId": "le26_time_v1_f_season",
+      "label_jp": "梅雨",
+      "value_en": "rainy season",
+      "note": "雨の多い季節感。場所や行動は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_time_012",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "夜明け",
+      "value_en": "dawn",
+      "note": "夜から朝に移る時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_013",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "日の出",
+      "value_en": "sunrise",
+      "note": "太陽が昇る頃の時間帯。空の色は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_014",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "早朝",
+      "value_en": "early morning",
+      "note": "朝の早い時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_015",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "朝",
+      "value_en": "morning",
+      "note": "朝の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_016",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "昼間",
+      "value_en": "daytime",
+      "note": "日中の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_017",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "正午",
+      "value_en": "midday",
+      "note": "昼の中央付近の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_018",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "午後",
+      "value_en": "afternoon",
+      "note": "昼過ぎから夕方前の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_019",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "夕方",
+      "value_en": "evening",
+      "note": "一日の終わりに近い時間帯。必ず夕焼けになるとは限らない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_020",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "日没",
+      "value_en": "sunset",
+      "note": "太陽が沈む頃の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_021",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "薄明",
+      "value_en": "twilight",
+      "note": "日の出前や日没後の薄明るい時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_022",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "ゴールデンアワー",
+      "value_en": "golden hour",
+      "note": "日の出後や日没前の暖かい低い日差しを感じる時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_023",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "ブルーアワー",
+      "value_en": "blue hour",
+      "note": "日の出前や日没後の青い薄明を感じる時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_024",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "夜",
+      "value_en": "night",
+      "note": "夜の時間帯。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_time_025",
+      "folderId": "le26_time_v1_f_time",
+      "label_jp": "深夜",
+      "value_en": "midnight",
+      "note": "夜の深い時間帯。月や星は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_026",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "花びら",
+      "value_en": "petals",
+      "note": "花の小さな片。花の種類や動きは装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_petal"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_details_027",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "桜の花びら",
+      "value_en": "cherry blossom petals",
+      "note": "桜の花の小さな片。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_time_v1_t_petal"
+      ]
+    },
+    {
+      "id": "le26_time_v1_w_details_028",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "落ち葉",
+      "value_en": "fallen leaves",
+      "note": "地面などに落ちた葉。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_029",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "舞う落ち葉",
+      "value_en": "falling leaves",
+      "note": "空中を落ちたり舞ったりする葉。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_030",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "紅葉した葉",
+      "value_en": "autumn leaves",
+      "note": "秋らしく色づいた葉。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_031",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "新緑",
+      "value_en": "fresh green leaves",
+      "note": "若い緑の葉。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_032",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "霜の付いた葉",
+      "value_en": "frost-covered leaves",
+      "note": "葉の表面に霜が付いた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_033",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "露",
+      "value_en": "dew",
+      "note": "葉や面に付く細かな水滴。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_034",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "氷の張った水面",
+      "value_en": "frozen water surface",
+      "note": "水面が凍っている状態。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_time_v1_w_details_035",
+      "folderId": "le26_time_v1_f_details",
+      "label_jp": "季節の花",
+      "value_en": "seasonal flowers",
+      "note": "季節を感じさせる花。種類は別の指定と組み合わせる。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_001",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "快晴",
+      "value_en": "clear sky",
+      "note": "雲が少ない晴れた空。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_sky_002",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "青空",
+      "value_en": "blue sky",
+      "note": "青い色の空。時刻や場所は固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_003",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "少し雲のある空",
+      "value_en": "partly cloudy sky",
+      "note": "晴れ間と雲がある空。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_sky_004",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "曇り",
+      "value_en": "overcast",
+      "note": "空が広く雲に覆われた天候。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_sky_005",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "雲",
+      "value_en": "clouds",
+      "note": "空などに雲がある指定。量や形は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_cloud",
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_sky_006",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "積乱雲",
+      "value_en": "cumulonimbus clouds",
+      "note": "大きく縦に発達した雲。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_007",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "薄い雲",
+      "value_en": "thin clouds",
+      "note": "薄く広がる雲。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_008",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "嵐の雲",
+      "value_en": "storm clouds",
+      "note": "暗く重い雲。雷や雨は自動では指定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_009",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "太陽",
+      "value_en": "sun",
+      "note": "太陽そのものを描く指定。太陽光とは別。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_010",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "月",
+      "value_en": "moon",
+      "note": "月そのものを描く指定。月明かりとは別。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_011",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "満月",
+      "value_en": "full moon",
+      "note": "丸く見える月。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_012",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "三日月",
+      "value_en": "crescent moon",
+      "note": "細い弧のように見える月。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_013",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "星",
+      "value_en": "stars",
+      "note": "空に星を描く指定。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_014",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "天の川",
+      "value_en": "Milky Way",
+      "note": "帯状に広がる星の集まりを思わせる空。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_015",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "夕焼け空",
+      "value_en": "sunset sky",
+      "note": "夕日の色が広がる空。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_016",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "朝焼け空",
+      "value_en": "sunrise sky",
+      "note": "日の出の色が広がる空。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_sky_017",
+      "folderId": "le26_weather_v1_f_sky",
+      "label_jp": "オーロラ",
+      "value_en": "aurora",
+      "note": "空に帯状などの光が現れる描写。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_rain_018",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "雨",
+      "value_en": "rain",
+      "note": "雨が降る指定。強さは装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_rain",
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_rain_019",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "小雨",
+      "value_en": "light rain",
+      "note": "弱く細かな雨。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_rain_020",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "大雨",
+      "value_en": "heavy rain",
+      "note": "強く降る雨。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_rain_021",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "霧雨",
+      "value_en": "drizzle",
+      "note": "細かな粒の弱い雨。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_rain_022",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "土砂降り",
+      "value_en": "torrential rain",
+      "note": "非常に強く降る雨。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_rain_023",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "天気雨",
+      "value_en": "sunshower",
+      "note": "晴れ間がある状態で降る雨。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_rain_024",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "雷雨",
+      "value_en": "thunderstorm",
+      "note": "雷を伴う嵐のような雨。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_rain_025",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "稲妻",
+      "value_en": "lightning",
+      "note": "空などを走る閃光。雨を固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_rain_026",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "雨上がり",
+      "value_en": "after rain",
+      "note": "雨が止んだあとの場面。晴れるとは限らない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_rain_027",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "虹",
+      "value_en": "rainbow",
+      "note": "弧状などの虹を描く指定。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_rain_028",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "水たまり",
+      "value_en": "puddles",
+      "note": "地面にたまった水。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_rain_029",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "濡れた地面",
+      "value_en": "wet ground",
+      "note": "地面が濡れている状態。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_rain_030",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "雨粒",
+      "value_en": "raindrops",
+      "note": "粒として見える雨。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_rain_031",
+      "folderId": "le26_weather_v1_f_rain",
+      "label_jp": "窓の雨粒",
+      "value_en": "raindrops on window",
+      "note": "窓ガラスに付いた雨の粒。室内外の向きは固定しない。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_snow_032",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "降る雪",
+      "value_en": "falling snow",
+      "note": "空から雪が降る描写。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_snow_033",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "降雪（強さ装飾用）",
+      "value_en": "snowfall",
+      "note": "雪が降る基本指定。強さを装飾で選べる。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_snow",
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_snow_034",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "小雪",
+      "value_en": "light snowfall",
+      "note": "弱く降る雪。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_snow_035",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "大雪",
+      "value_en": "heavy snowfall",
+      "note": "強く降る雪。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_snow_036",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "吹雪",
+      "value_en": "blizzard",
+      "note": "強い風と雪が混ざる天候。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_snow_037",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "みぞれ",
+      "value_en": "sleet",
+      "note": "雨と雪が混ざるような降水。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_snow_038",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "雹",
+      "value_en": "hail",
+      "note": "氷の粒が降る天候。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_snow_039",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "霜",
+      "value_en": "frost",
+      "note": "表面に細かな氷が付いた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_snow_040",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "つらら",
+      "value_en": "icicles",
+      "note": "垂れ下がる細長い氷。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_snow_041",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "雪片",
+      "value_en": "snowflakes",
+      "note": "形や粒として見える雪。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_snow_042",
+      "folderId": "le26_weather_v1_f_snow",
+      "label_jp": "積雪",
+      "value_en": "snow-covered ground",
+      "note": "地面に雪が積もった状態。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_air_043",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "霧",
+      "value_en": "fog",
+      "note": "空気中に霧が広がる描写。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_air_044",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "薄霧",
+      "value_en": "mist",
+      "note": "細かな水分による薄いもや。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_air_045",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "濃霧",
+      "value_en": "dense fog",
+      "note": "見通しの悪い濃い霧。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_air_046",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "朝もや",
+      "value_en": "morning mist",
+      "note": "朝の場面に広がる薄いもや。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_air_047",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "風",
+      "value_en": "wind",
+      "note": "風がある指定。人物の髪や衣装は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_wind",
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_air_048",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "そよ風",
+      "value_en": "gentle breeze",
+      "note": "弱い穏やかな風。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_air_049",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "強風",
+      "value_en": "strong wind",
+      "note": "強く吹く風。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_air_050",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "突風",
+      "value_en": "gust of wind",
+      "note": "一時的に強く吹く風。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_air_051",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "砂嵐",
+      "value_en": "sandstorm",
+      "note": "砂が強い風で舞う天候。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_air_052",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "空気のかすみ",
+      "value_en": "haze",
+      "note": "遠くがかすむような空気。",
+      "nsfw": false,
+      "templateIds": [
+        "le26_weather_v1_t_time"
+      ]
+    },
+    {
+      "id": "le26_weather_v1_w_air_053",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "陽炎",
+      "value_en": "heat haze",
+      "note": "熱で景色が揺らいで見える描写。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_air_054",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "ほこりの粒",
+      "value_en": "dust motes",
+      "note": "空気中に浮かぶ細かなほこり。",
+      "nsfw": false
+    },
+    {
+      "id": "le26_weather_v1_w_air_055",
+      "folderId": "le26_weather_v1_f_air",
+      "label_jp": "白い息",
+      "value_en": "visible breath",
+      "note": "冷たい空気に呼気が白く見える状態。人物の表情は固定しない。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "le26_time_v1_t_time",
+      "name": "時間帯",
+      "folderId": "季節・時間・天候 / 季節・時間 / 時間帯",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_time_v1_t_time_o_0",
+          "label": "朝",
+          "value": ", morning"
+        },
+        {
+          "id": "le26_time_v1_t_time_o_1",
+          "label": "昼",
+          "value": ", daytime"
+        },
+        {
+          "id": "le26_time_v1_t_time_o_2",
+          "label": "夕方",
+          "value": ", evening"
+        },
+        {
+          "id": "le26_time_v1_t_time_o_3",
+          "label": "夜",
+          "value": ", night"
+        }
+      ]
+    },
+    {
+      "id": "le26_time_v1_t_weather",
+      "name": "天気",
+      "folderId": "季節・時間・天候 / 季節・時間 / 天気",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_time_v1_t_weather_o_0",
+          "label": "晴れ",
+          "value": ", clear sky"
+        },
+        {
+          "id": "le26_time_v1_t_weather_o_1",
+          "label": "曇り",
+          "value": ", overcast"
+        },
+        {
+          "id": "le26_time_v1_t_weather_o_2",
+          "label": "雨",
+          "value": ", rain"
+        },
+        {
+          "id": "le26_time_v1_t_weather_o_3",
+          "label": "雪",
+          "value": ", falling snow"
+        },
+        {
+          "id": "le26_time_v1_t_weather_o_4",
+          "label": "霧",
+          "value": ", fog"
+        }
+      ]
+    },
+    {
+      "id": "le26_time_v1_t_petal",
+      "name": "花びらの状態",
+      "folderId": "季節・時間・天候 / 季節・時間 / 花びらの状態",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_time_v1_t_petal_o_0",
+          "label": "空中を舞う",
+          "value": ", floating in air"
+        },
+        {
+          "id": "le26_time_v1_t_petal_o_1",
+          "label": "落ちる",
+          "value": ", falling"
+        },
+        {
+          "id": "le26_time_v1_t_petal_o_2",
+          "label": "地面に散る",
+          "value": ", scattered on ground"
+        }
+      ]
+    },
+    {
+      "id": "le26_weather_v1_t_rain",
+      "name": "雨の強さ",
+      "folderId": "季節・時間・天候 / 天候 / 雨の強さ",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_weather_v1_t_rain_o_0",
+          "label": "小雨",
+          "value": "light"
+        },
+        {
+          "id": "le26_weather_v1_t_rain_o_1",
+          "label": "大雨",
+          "value": "heavy"
+        },
+        {
+          "id": "le26_weather_v1_t_rain_o_2",
+          "label": "土砂降り",
+          "value": "torrential"
+        }
+      ]
+    },
+    {
+      "id": "le26_weather_v1_t_snow",
+      "name": "雪の強さ",
+      "folderId": "季節・時間・天候 / 天候 / 雪の強さ",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_weather_v1_t_snow_o_0",
+          "label": "小雪",
+          "value": "light"
+        },
+        {
+          "id": "le26_weather_v1_t_snow_o_1",
+          "label": "大雪",
+          "value": "heavy"
+        }
+      ]
+    },
+    {
+      "id": "le26_weather_v1_t_wind",
+      "name": "風の強さ",
+      "folderId": "季節・時間・天候 / 天候 / 風の強さ",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_weather_v1_t_wind_o_0",
+          "label": "弱い",
+          "value": "light"
+        },
+        {
+          "id": "le26_weather_v1_t_wind_o_1",
+          "label": "強い",
+          "value": "strong"
+        },
+        {
+          "id": "le26_weather_v1_t_wind_o_2",
+          "label": "突風のある",
+          "value": "gusty"
+        }
+      ]
+    },
+    {
+      "id": "le26_weather_v1_t_cloud",
+      "name": "雲の量",
+      "folderId": "季節・時間・天候 / 天候 / 雲の量",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_weather_v1_t_cloud_o_0",
+          "label": "少ない",
+          "value": "sparse"
+        },
+        {
+          "id": "le26_weather_v1_t_cloud_o_1",
+          "label": "多い",
+          "value": "dense"
+        }
+      ]
+    },
+    {
+      "id": "le26_weather_v1_t_time",
+      "name": "時間帯",
+      "folderId": "季節・時間・天候 / 天候 / 時間帯",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "le26_weather_v1_t_time_o_0",
+          "label": "朝",
+          "value": ", morning"
+        },
+        {
+          "id": "le26_weather_v1_t_time_o_1",
+          "label": "昼",
+          "value": ", daytime"
+        },
+        {
+          "id": "le26_weather_v1_t_time_o_2",
+          "label": "夕方",
+          "value": ", evening"
+        },
+        {
+          "id": "le26_weather_v1_t_time_o_3",
+          "label": "夜",
+          "value": ", night"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

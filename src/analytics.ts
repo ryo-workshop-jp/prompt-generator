@@ -43,8 +43,18 @@ const injectScript = () => {
 };
 
 const sanitizeParams = (params: AnalyticsParams = {}) => {
+    // ID・独自名などの文字列は送信せず、件数と状態だけを計測する。
+    const numericKeys = ['removed_folder_count', 'affected_count', 'template_count', 'image_count', 'job_count', 'width', 'height', 'steps', 'cfg_scale', 'text_length', 'word_count'];
+    const booleanKeys = ['has_note', 'has_positive', 'has_negative'];
     return Object.fromEntries(
-        Object.entries(params).filter(([, value]) => value !== undefined && value !== null)
+        Object.entries(params).filter(([key, value]) => {
+            if (numericKeys.includes(key)) return typeof value === 'number' && Number.isFinite(value);
+            if (booleanKeys.includes(key)) return typeof value === 'boolean';
+            if (key === 'copy_scope') return value === 'pos' || value === 'neg' || value === 'both';
+            if (key === 'save_mode') return value === 'favorite' || value === 'quality_template' || value === 'deck';
+            if (key === 'prompt_type') return value === 'positive' || value === 'negative';
+            return false;
+        })
     );
 };
 
@@ -55,6 +65,9 @@ export const initAnalytics = () => {
     injectScript();
     window.gtag?.('js', new Date());
     window.gtag?.('config', GA_ID, {
+        // URL内のクエリ・ハッシュ・参照元に含まれる情報を計測から除外する。
+        page_location: window.location.origin + window.location.pathname,
+        page_referrer: '',
         send_page_view: false,
         anonymize_ip: true,
         debug_mode: import.meta.env.DEV
@@ -64,16 +77,17 @@ export const initAnalytics = () => {
     trackPageView();
 };
 
-export const trackPageView = (pagePath?: string) => {
+export const trackPageView = () => {
     if (!ANALYTICS_ENABLED || !canUseDom()) return;
     if (!initialized) initAnalytics();
     if (typeof window.gtag !== 'function') return;
 
-    const path = pagePath ?? `${window.location.pathname}${window.location.search}`;
+    const path = window.location.pathname;
     window.gtag('event', 'page_view', {
         page_path: path,
         page_title: document.title,
-        page_location: window.location.href
+        page_location: window.location.origin + path,
+        page_referrer: ''
     });
 };
 

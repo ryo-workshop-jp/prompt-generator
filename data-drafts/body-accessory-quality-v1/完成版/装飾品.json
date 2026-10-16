@@ -1,0 +1,3693 @@
+{
+  "folders": [
+    {
+      "id": "ag26_accessory_v1",
+      "name": "装飾品",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_eyes",
+      "name": "目・顔の装飾",
+      "parentId": "ag26_accessory_v1",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_glasses",
+      "name": "眼鏡・サングラス",
+      "parentId": "ag26_accessory_v1_f_eyes",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_eyepatch",
+      "name": "眼帯・モノクル",
+      "parentId": "ag26_accessory_v1_f_eyes",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_blindfold",
+      "name": "アイマスク",
+      "parentId": "ag26_accessory_v1_f_eyes",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_masks",
+      "name": "仮面・口元のマスク",
+      "parentId": "ag26_accessory_v1_f_eyes",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_goggles",
+      "name": "ゴーグル・バイザー",
+      "parentId": "ag26_accessory_v1_f_eyes",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_neck",
+      "name": "首まわり",
+      "parentId": "ag26_accessory_v1",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_collars",
+      "name": "首輪・チョーカー",
+      "parentId": "ag26_accessory_v1_f_neck",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_necklaces",
+      "name": "ネックレス・ペンダント",
+      "parentId": "ag26_accessory_v1_f_neck",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_scarves",
+      "name": "スカーフ・首まわりの布",
+      "parentId": "ag26_accessory_v1_f_neck",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_hair",
+      "name": "髪飾り",
+      "parentId": "ag26_accessory_v1",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_clips",
+      "name": "ヘアピン・クリップ",
+      "parentId": "ag26_accessory_v1_f_hair",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_ties",
+      "name": "ヘアゴム・カチューシャ",
+      "parentId": "ag26_accessory_v1_f_hair",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_headdress",
+      "name": "花飾り・ヘッドドレス",
+      "parentId": "ag26_accessory_v1_f_hair",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_costumehead",
+      "name": "装飾用の耳・角・幻想的装飾",
+      "parentId": "ag26_accessory_v1_f_hair",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_hats",
+      "name": "帽子",
+      "parentId": "ag26_accessory_v1",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_casualhats",
+      "name": "カジュアルな帽子",
+      "parentId": "ag26_accessory_v1_f_hats",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_classichats",
+      "name": "クラシックな帽子",
+      "parentId": "ag26_accessory_v1_f_hats",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_seasonhats",
+      "name": "季節・屋外の帽子",
+      "parentId": "ag26_accessory_v1_f_hats",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_helmets",
+      "name": "ヘルメット・機能帽",
+      "parentId": "ag26_accessory_v1_f_hats",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_uniformhats",
+      "name": "職業・制服の帽子",
+      "parentId": "ag26_accessory_v1_f_hats",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_fantasyhats",
+      "name": "ファンタジーの帽子",
+      "parentId": "ag26_accessory_v1_f_hats",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_jewelry",
+      "name": "耳・腕・手の装飾",
+      "parentId": "ag26_accessory_v1",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_earrings",
+      "name": "耳飾り",
+      "parentId": "ag26_accessory_v1_f_jewelry",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_bracelets",
+      "name": "腕飾り・時計",
+      "parentId": "ag26_accessory_v1_f_jewelry",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_rings",
+      "name": "指輪",
+      "parentId": "ag26_accessory_v1_f_jewelry",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_brooches",
+      "name": "ブローチ・胸飾り",
+      "parentId": "ag26_accessory_v1_f_jewelry",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_carrying",
+      "name": "腰まわり・持ち物",
+      "parentId": "ag26_accessory_v1",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_belts",
+      "name": "ベルト・腰飾り",
+      "parentId": "ag26_accessory_v1_f_carrying",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_bags",
+      "name": "バッグ",
+      "parentId": "ag26_accessory_v1_f_carrying",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_misc",
+      "name": "その他の装飾品",
+      "parentId": "ag26_accessory_v1_f_carrying",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_f_wearing",
+      "name": "装飾品の位置・着け方",
+      "parentId": "ag26_accessory_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "ag26_accessory_v1_w_glasses_001",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "眼鏡",
+      "value_en": "eyeglasses",
+      "note": "視力補助などに使う、左右のレンズを持つ眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_002",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "丸眼鏡",
+      "value_en": "round eyeglasses",
+      "note": "レンズの外形が丸い眼鏡。素材は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_003",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "四角い眼鏡",
+      "value_en": "square eyeglasses",
+      "note": "レンズの外形が四角い眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_004",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "楕円の眼鏡",
+      "value_en": "oval eyeglasses",
+      "note": "横長の楕円形のレンズを持つ眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_005",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "キャッツアイ眼鏡",
+      "value_en": "cat-eye glasses",
+      "note": "フレームの外側が吊り上がった眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_006",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "読書用眼鏡",
+      "value_en": "reading glasses",
+      "note": "手元を見るための眼鏡。フレームの太さは固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_007",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "伊達眼鏡",
+      "value_en": "fashion glasses",
+      "note": "服飾用として使う眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_008",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "サングラス",
+      "value_en": "sunglasses",
+      "note": "光を遮る色付きレンズの眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_009",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "ミラーサングラス",
+      "value_en": "mirrored sunglasses",
+      "note": "鏡面のように反射するレンズのサングラス。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_010",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "アビエーターサングラス",
+      "value_en": "aviator sunglasses",
+      "note": "下側が丸く垂れたレンズのサングラス。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_011",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "透明レンズの眼鏡",
+      "value_en": "clear-lens glasses",
+      "note": "透明なレンズを持つ眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color",
+        "ag26_accessory_v1_t_frame_material"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_012",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "縁なし眼鏡",
+      "value_en": "rimless glasses",
+      "note": "レンズの周囲を囲むフレームがない眼鏡。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_013",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "半縁眼鏡",
+      "value_en": "semi-rimless glasses",
+      "note": "レンズの片側だけに縁がある眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_glasses_014",
+      "folderId": "ag26_accessory_v1_f_glasses",
+      "label_jp": "アンダーリム眼鏡",
+      "value_en": "under-rim glasses",
+      "note": "レンズの下側に縁がある眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_frame_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_eyepatch_015",
+      "folderId": "ag26_accessory_v1_f_eyepatch",
+      "label_jp": "モノクル",
+      "value_en": "monocle",
+      "note": "片目だけに使う丸いレンズ。時代や色は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_eyepatch_016",
+      "folderId": "ag26_accessory_v1_f_eyepatch",
+      "label_jp": "眼帯",
+      "value_en": "eyepatch",
+      "note": "片目を覆う小さなカバー。位置や理由は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_eyepatch_017",
+      "folderId": "ag26_accessory_v1_f_eyepatch",
+      "label_jp": "医療用眼帯",
+      "value_en": "medical eyepatch",
+      "note": "布やガーゼを使う医療用の眼帯。色は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_eyepatch_018",
+      "folderId": "ag26_accessory_v1_f_eyepatch",
+      "label_jp": "海賊風眼帯",
+      "value_en": "pirate eyepatch",
+      "note": "片目を覆う海賊風の眼帯。素材は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_blindfold_019",
+      "folderId": "ag26_accessory_v1_f_blindfold",
+      "label_jp": "アイマスク",
+      "value_en": "blindfold",
+      "note": "両目を覆うカバー。用途や場面は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_blindfold_020",
+      "folderId": "ag26_accessory_v1_f_blindfold",
+      "label_jp": "睡眠用アイマスク",
+      "value_en": "sleep mask",
+      "note": "眠るときに光を遮る目元のカバー。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_blindfold_021",
+      "folderId": "ag26_accessory_v1_f_blindfold",
+      "label_jp": "布のアイマスク",
+      "value_en": "cloth blindfold",
+      "note": "布製の目元のカバー。結び方は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_blindfold_022",
+      "folderId": "ag26_accessory_v1_f_blindfold",
+      "label_jp": "ベルト式アイマスク",
+      "value_en": "buckled blindfold",
+      "note": "バックルで留める帯状のアイマスク。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_blindfold_023",
+      "folderId": "ag26_accessory_v1_f_blindfold",
+      "label_jp": "レースのアイマスク",
+      "value_en": "lace blindfold",
+      "note": "レース模様のある目元のカバー。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_024",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "仮面",
+      "value_en": "mask",
+      "note": "顔の一部または全体を覆う仮面。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_025",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "オペラ風仮面",
+      "value_en": "opera mask",
+      "note": "顔の一部を覆う舞台風の仮面。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_026",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "狐面",
+      "value_en": "kitsune mask",
+      "note": "狐の顔をかたどった和風の仮面。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_027",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "能面",
+      "value_en": "noh mask",
+      "note": "能の舞台で使われる表情を持つ仮面。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_028",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "片側を覆う仮面",
+      "value_en": "asymmetric face mask",
+      "note": "顔の片側などを覆う左右非対称の仮面。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_029",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "装飾的な全顔仮面",
+      "value_en": "decorative full-face mask",
+      "note": "顔全体を覆う装飾的な仮面。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_030",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "舞踏会の仮面",
+      "value_en": "masquerade mask",
+      "note": "目元を中心に覆う舞踏会用の仮面。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_031",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "口元のマスク",
+      "value_en": "mouth mask",
+      "note": "鼻や口の周りを覆うマスク。着け方は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_032",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "ガスマスク",
+      "value_en": "gas mask",
+      "note": "呼吸器やフィルターを持つマスク。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_masks_033",
+      "folderId": "ag26_accessory_v1_f_masks",
+      "label_jp": "ペスト医師の仮面",
+      "value_en": "plague doctor mask",
+      "note": "長いくちばし形の鼻部分を持つ仮面。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_034",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "ゴーグル",
+      "value_en": "goggles",
+      "note": "目の周囲を保護する大きなレンズの眼鏡。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_035",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "飛行用ゴーグル",
+      "value_en": "pilot goggles",
+      "note": "飛行服などと組み合わせる、帯で留めるゴーグル。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_036",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "スチームパンクゴーグル",
+      "value_en": "steampunk goggles",
+      "note": "金属部品などを使う機械的な装飾のゴーグル。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_037",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "サイバーパンクゴーグル",
+      "value_en": "cyberpunk goggles",
+      "note": "近未来的な電子装飾を持つゴーグル。発光は別指定。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_038",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "水中ゴーグル",
+      "value_en": "diving goggles",
+      "note": "水中で目を保護するゴーグル。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_039",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "水泳ゴーグル",
+      "value_en": "swimming goggles",
+      "note": "左右の小さなレンズを帯で留める水泳用ゴーグル。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_040",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "透明バイザー",
+      "value_en": "transparent visor",
+      "note": "顔の前に透明な板状のカバーがある装備。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_041",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "半透明バイザー",
+      "value_en": "translucent visor",
+      "note": "光を通すが向こうがくっきり見えないバイザー。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_042",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "HUDバイザー",
+      "value_en": "HUD visor",
+      "note": "情報表示を重ねた近未来的なバイザー。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_goggles_043",
+      "folderId": "ag26_accessory_v1_f_goggles",
+      "label_jp": "スキーゴーグル",
+      "value_en": "ski goggles",
+      "note": "雪上で使う幅広いレンズのゴーグル。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_044",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "首輪",
+      "value_en": "collar",
+      "note": "首を囲む帯状のアクセサリー。用途や場面は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_045",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "革の首輪",
+      "value_en": "leather collar",
+      "note": "革製の首まわりの帯。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_046",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "スタッズ付き首輪",
+      "value_en": "studded collar",
+      "note": "小さな金属の突起を付けた首輪。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_047",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "鈴付き首輪",
+      "value_en": "bell collar",
+      "note": "小さな鈴の付いた首輪。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_048",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "南京錠付き首輪",
+      "value_en": "padlock collar",
+      "note": "南京錠を装飾として付けた首輪。場面は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_049",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "チョーカー",
+      "value_en": "choker",
+      "note": "首に沿って密着する短い首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_050",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "レースチョーカー",
+      "value_en": "lace choker",
+      "note": "レース素材の短い首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_051",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "ベルベットチョーカー",
+      "value_en": "velvet choker",
+      "note": "毛足の短いベルベット素材の首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_052",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "チェーンチョーカー",
+      "value_en": "chain choker",
+      "note": "鎖を使う短い首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_053",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "パールチョーカー",
+      "value_en": "pearl choker",
+      "note": "真珠の粒を使う短い首飾り。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_054",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "ラインストーンチョーカー",
+      "value_en": "rhinestone choker",
+      "note": "光る模造宝石を並べた短い首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_055",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "タトゥーチョーカー",
+      "value_en": "tattoo choker",
+      "note": "細い線を編んだ模様が首に沿うチョーカー。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_056",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "リボンチョーカー",
+      "value_en": "ribbon choker",
+      "note": "リボンを使った短い首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_057",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "花模様チョーカー",
+      "value_en": "floral choker",
+      "note": "花の模様や花飾りを持つチョーカー。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_collars_058",
+      "folderId": "ag26_accessory_v1_f_collars",
+      "label_jp": "レースの首輪",
+      "value_en": "lace collar",
+      "note": "襟や首まわりを飾るレースの帯。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_059",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "ネックレス",
+      "value_en": "necklace",
+      "note": "首から下げる鎖やひも状の装身具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_060",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "ペンダント",
+      "value_en": "pendant",
+      "note": "鎖やひもから下がる小さな飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_gem"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_061",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "パールネックレス",
+      "value_en": "pearl necklace",
+      "note": "真珠の粒をつないだ首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_062",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "ロザリオ",
+      "value_en": "rosary",
+      "note": "数珠状の珠と十字架などを持つ首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_063",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "宝石ネックレス",
+      "value_en": "gemstone necklace",
+      "note": "宝石を飾りに使う首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_064",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "一粒ダイヤのネックレス",
+      "value_en": "solitaire diamond necklace",
+      "note": "一つのダイヤモンドを主役にした首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_065",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "チェーンネックレス",
+      "value_en": "chain necklace",
+      "note": "鎖を主体にした首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_066",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "十字架ネックレス",
+      "value_en": "cross necklace",
+      "note": "十字架の飾りが下がる首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_067",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "月のネックレス",
+      "value_en": "moon necklace",
+      "note": "月の形をした飾りを持つ首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_068",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "星のネックレス",
+      "value_en": "star necklace",
+      "note": "星の形をした飾りを持つ首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_069",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "鍵のネックレス",
+      "value_en": "key necklace",
+      "note": "鍵の形をした飾りを持つ首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_070",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "羽根のネックレス",
+      "value_en": "feather necklace",
+      "note": "羽根の形をした飾りを持つ首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_071",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "アメジストネックレス",
+      "value_en": "amethyst necklace",
+      "note": "紫色のアメジストを使う首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_072",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "ローズクォーツネックレス",
+      "value_en": "rose quartz necklace",
+      "note": "淡い桃色の石を使う首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_073",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "ロケットペンダント",
+      "value_en": "locket pendant",
+      "note": "小さなふた付き容器のような飾りが下がるペンダント。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_074",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "コインネックレス",
+      "value_en": "coin necklace",
+      "note": "円形のコイン状の飾りを持つ首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_075",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "天使の翼ネックレス",
+      "value_en": "angel wing necklace",
+      "note": "翼の形をした飾りを持つ首飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_necklaces_076",
+      "folderId": "ag26_accessory_v1_f_necklaces",
+      "label_jp": "重ねたネックレス",
+      "value_en": "layered necklaces",
+      "note": "長さの異なる複数の首飾りを重ねた形。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_chain_length"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_077",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "スカーフ",
+      "value_en": "scarf",
+      "note": "首元などに使う布。素材や巻き方は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_078",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "ストール",
+      "value_en": "stole",
+      "note": "肩や首に使う幅のある布。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_079",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "首元のバンダナ",
+      "value_en": "neck bandana",
+      "note": "首元に使う三角形などのバンダナ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_080",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "ネックウォーマー",
+      "value_en": "neck warmer",
+      "note": "首を囲んで保温する筒状の布。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_081",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "シルクスカーフ",
+      "value_en": "silk scarf",
+      "note": "絹の滑らかな質感を持つスカーフ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_082",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "レーススカーフ",
+      "value_en": "lace scarf",
+      "note": "透かし模様のあるスカーフ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_083",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "ファーの付け襟",
+      "value_en": "fur collar",
+      "note": "毛皮状の素材を使う取り外し可能な襟。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_084",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "スヌード",
+      "value_en": "snood",
+      "note": "輪になった布を首元に使う装飾。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_085",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "ネッカチーフ",
+      "value_en": "neckerchief",
+      "note": "首元で結ぶ小さな布。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_scarves_086",
+      "folderId": "ag26_accessory_v1_f_scarves",
+      "label_jp": "リボンタイ",
+      "value_en": "neck ribbon",
+      "note": "襟元や首元を飾るリボン。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_087",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "ヘアピン",
+      "value_en": "hairpin",
+      "note": "髪を留めたり飾ったりする小さなピン。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_088",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "ボビーピン",
+      "value_en": "bobby pin",
+      "note": "細い金属を折り返した髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_089",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "クロスしたヘアピン",
+      "value_en": "criss-cross bobby pins",
+      "note": "複数の細いピンを交差させた髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_090",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "ヘアクリップ",
+      "value_en": "hairclip",
+      "note": "髪を挟んで留めるクリップ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_091",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "クロークリップ",
+      "value_en": "claw clip",
+      "note": "爪状の歯で髪をまとめる大きなクリップ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_092",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "バレッタ",
+      "value_en": "barrette",
+      "note": "横長の金具で髪を留める飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_093",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "スナップクリップ",
+      "value_en": "snap clip",
+      "note": "反らせて開閉する平たい髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_094",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "バナナクリップ",
+      "value_en": "banana clip",
+      "note": "湾曲した二つの部品で髪を挟む髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_095",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "U字ピン",
+      "value_en": "U-shaped hairpin",
+      "note": "U字状の髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_096",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "サイドコーム",
+      "value_en": "side hair comb",
+      "note": "櫛の歯を髪に差して留める飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_097",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "コイル状のヘアピン",
+      "value_en": "spiral hairpin",
+      "note": "らせん形の髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_098",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "かんざし",
+      "value_en": "kanzashi",
+      "note": "髪に差し込む和風の装飾。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_099",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "ヘアスティック",
+      "value_en": "hair stick",
+      "note": "棒状の髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_100",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "ヘアフォーク",
+      "value_en": "hair fork",
+      "note": "二本以上の先端がある棒状の髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_101",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "真珠付きヘアピン",
+      "value_en": "pearl hairpin",
+      "note": "真珠の粒を飾りに使うヘアピン。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_102",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "ラインストーンヘアピン",
+      "value_en": "rhinestone hairpin",
+      "note": "光る模造宝石を飾ったヘアピン。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_103",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "宝石付きヘアピン",
+      "value_en": "jeweled hairpin",
+      "note": "宝石状の飾りを持つヘアピン。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_104",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "ヘアリング",
+      "value_en": "hair ring",
+      "note": "髪の束などを囲む小さな輪。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_clips_105",
+      "folderId": "ag26_accessory_v1_f_clips",
+      "label_jp": "ヘアカフ",
+      "value_en": "hair cuff",
+      "note": "髪の束を囲む幅のある金属状の飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_ties_106",
+      "folderId": "ag26_accessory_v1_f_ties",
+      "label_jp": "シュシュ",
+      "value_en": "scrunchie",
+      "note": "布を寄せて作る輪状の髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_ties_107",
+      "folderId": "ag26_accessory_v1_f_ties",
+      "label_jp": "カチューシャ",
+      "value_en": "headband",
+      "note": "頭の上を弧状に囲む髪飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_ties_108",
+      "folderId": "ag26_accessory_v1_f_ties",
+      "label_jp": "布のヘアバンド",
+      "value_en": "fabric hairband",
+      "note": "帯状の布で髪を押さえる髪飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_ties_109",
+      "folderId": "ag26_accessory_v1_f_ties",
+      "label_jp": "ポンポン付き髪留め",
+      "value_en": "hair bobbles",
+      "note": "丸い飾りが付いた髪留め。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_ties_110",
+      "folderId": "ag26_accessory_v1_f_ties",
+      "label_jp": "お団子カバー",
+      "value_en": "hair bun cover",
+      "note": "まとめたお団子状の髪を覆う飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_ties_111",
+      "folderId": "ag26_accessory_v1_f_ties",
+      "label_jp": "ヘアゴム",
+      "value_en": "hair tie",
+      "note": "髪の束をまとめる輪状のゴム。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_ties_112",
+      "folderId": "ag26_accessory_v1_f_ties",
+      "label_jp": "髪のリボン",
+      "value_en": "hair ribbon",
+      "note": "髪を飾るリボン。結び目の形は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_113",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "ティアラ",
+      "value_en": "tiara",
+      "note": "額から頭上に沿う小さな冠状の飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_114",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "冠",
+      "value_en": "crown",
+      "note": "頭上を囲む輪状の装飾。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_115",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "ヘッドドレス",
+      "value_en": "headdress",
+      "note": "頭部を広く飾る装飾品。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_116",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "メイドヘッドドレス",
+      "value_en": "maid headdress",
+      "note": "フリルなどを持つメイド風の頭飾り。衣装一式は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_117",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "髪の花飾り",
+      "value_en": "hair flower",
+      "note": "髪に付ける花の飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_118",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "花冠",
+      "value_en": "flower crown",
+      "note": "花を輪状に並べた頭飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_119",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "星形の髪飾り",
+      "value_en": "star hair ornament",
+      "note": "星の形をした髪の飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_120",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "蝶形の髪飾り",
+      "value_en": "butterfly hair ornament",
+      "note": "蝶の形をした髪の飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_121",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "ヘッドチェーン",
+      "value_en": "head chain",
+      "note": "頭や額に沿って下げる鎖状の飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_headdress_122",
+      "folderId": "ag26_accessory_v1_f_headdress",
+      "label_jp": "コサージュ",
+      "value_en": "corsage",
+      "note": "服や髪に付ける小さな花束状の飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_costumehead_123",
+      "folderId": "ag26_accessory_v1_f_costumehead",
+      "label_jp": "猫耳カチューシャ",
+      "value_en": "cat ear headband",
+      "note": "猫の耳を模したカチューシャ。生来の耳とは別の装飾。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_costumehead_124",
+      "folderId": "ag26_accessory_v1_f_costumehead",
+      "label_jp": "狐耳カチューシャ",
+      "value_en": "fox ear headband",
+      "note": "狐の耳を模したカチューシャ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_costumehead_125",
+      "folderId": "ag26_accessory_v1_f_costumehead",
+      "label_jp": "兎耳カチューシャ",
+      "value_en": "bunny ear headband",
+      "note": "長い兎の耳を模したカチューシャ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_costumehead_126",
+      "folderId": "ag26_accessory_v1_f_costumehead",
+      "label_jp": "狼耳カチューシャ",
+      "value_en": "wolf ear headband",
+      "note": "狼の耳を模したカチューシャ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_costumehead_127",
+      "folderId": "ag26_accessory_v1_f_costumehead",
+      "label_jp": "熊耳カチューシャ",
+      "value_en": "bear ear headband",
+      "note": "丸い熊の耳を模したカチューシャ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_costumehead_128",
+      "folderId": "ag26_accessory_v1_f_costumehead",
+      "label_jp": "悪魔の角カチューシャ",
+      "value_en": "devil horn headband",
+      "note": "角を模したカチューシャ。生来の角は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_costumehead_129",
+      "folderId": "ag26_accessory_v1_f_costumehead",
+      "label_jp": "ユニコーンの角カチューシャ",
+      "value_en": "unicorn horn headband",
+      "note": "一本の角を模したカチューシャ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_costumehead_130",
+      "folderId": "ag26_accessory_v1_f_costumehead",
+      "label_jp": "天使の輪",
+      "value_en": "halo",
+      "note": "頭上などに浮く輪状の幻想的な飾り。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_costumehead_131",
+      "folderId": "ag26_accessory_v1_f_costumehead",
+      "label_jp": "ヘッドホン",
+      "value_en": "headphones",
+      "note": "耳を覆う左右の音響機器。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_132",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "帽子",
+      "value_en": "hat",
+      "note": "頭を覆う帽子。色・素材・つばの形は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_hat_brim"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_133",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "ベースボールキャップ",
+      "value_en": "baseball cap",
+      "note": "前に長いつばを持つ丸い帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_134",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "バケットハット",
+      "value_en": "bucket hat",
+      "note": "筒状の頭部と下向きのつばを持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_135",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "ワークキャップ",
+      "value_en": "work cap",
+      "note": "平らな頂部と前つばを持つ作業帽風の帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_136",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "キャスケット",
+      "value_en": "newsboy cap",
+      "note": "ふくらんだ頂部と短い前つばを持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_137",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "ハンチング帽",
+      "value_en": "flat cap",
+      "note": "平たい頂部と短い前つばを持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_138",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "ニット帽",
+      "value_en": "beanie",
+      "note": "頭に沿う、つばのないニット帽。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_139",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "ポンポン付きニット帽",
+      "value_en": "pom-pom beanie",
+      "note": "頂部に丸い飾りが付いたニット帽。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_140",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "フェルトハット",
+      "value_en": "felt hat",
+      "note": "フェルト素材の帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_hat_brim"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_casualhats_141",
+      "folderId": "ag26_accessory_v1_f_casualhats",
+      "label_jp": "キャップ",
+      "value_en": "cap",
+      "note": "前つばのある帽子。形は細かく固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_classichats_142",
+      "folderId": "ag26_accessory_v1_f_classichats",
+      "label_jp": "ボーラーハット",
+      "value_en": "bowler hat",
+      "note": "丸い硬めの頂部と短いつばを持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_classichats_143",
+      "folderId": "ag26_accessory_v1_f_classichats",
+      "label_jp": "クロッシェ帽",
+      "value_en": "cloche hat",
+      "note": "釣鐘形に頭を包む、短いつばの帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_classichats_144",
+      "folderId": "ag26_accessory_v1_f_classichats",
+      "label_jp": "フェドラ帽",
+      "value_en": "fedora",
+      "note": "頂部にくぼみを持つ、つば付きの帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_hat_brim"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_classichats_145",
+      "folderId": "ag26_accessory_v1_f_classichats",
+      "label_jp": "トーク帽",
+      "value_en": "pillbox hat",
+      "note": "平らな頂部を持つ、小さなつばなし帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_classichats_146",
+      "folderId": "ag26_accessory_v1_f_classichats",
+      "label_jp": "フラッパー風帽子",
+      "value_en": "flapper hat",
+      "note": "ビーズなどの装飾を持つクラシックな帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_classichats_147",
+      "folderId": "ag26_accessory_v1_f_classichats",
+      "label_jp": "シルクハット",
+      "value_en": "top hat",
+      "note": "高い筒状の頂部とつばを持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_classichats_148",
+      "folderId": "ag26_accessory_v1_f_classichats",
+      "label_jp": "ボンネット",
+      "value_en": "bonnet",
+      "note": "頭の左右や後ろを包む、ひも付きの帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_classichats_149",
+      "folderId": "ag26_accessory_v1_f_classichats",
+      "label_jp": "マリンキャップ",
+      "value_en": "sailor cap",
+      "note": "水兵風の短いつばや帯を持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_classichats_150",
+      "folderId": "ag26_accessory_v1_f_classichats",
+      "label_jp": "ベレー帽",
+      "value_en": "beret",
+      "note": "丸く柔らかな、つばのない帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_151",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "麦わら帽子",
+      "value_en": "straw hat",
+      "note": "麦わらなどを編んで作るつば付きの帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_hat_brim"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_152",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "カンカン帽",
+      "value_en": "boater hat",
+      "note": "平らな頂部とつばを持つ硬めの麦わら帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_153",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "パナマ帽",
+      "value_en": "panama hat",
+      "note": "軽い編み目の素材で作るつば付きの帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_154",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "サンハット",
+      "value_en": "sun hat",
+      "note": "日差しを遮るための、つばの広い帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_hat_brim"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_155",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "つば広帽子",
+      "value_en": "wide-brimmed hat",
+      "note": "周囲に広いつばを持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_156",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "トラッパーハット",
+      "value_en": "trapper hat",
+      "note": "耳当てを持つ防寒用の帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_157",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "ウシャーンカ",
+      "value_en": "ushanka",
+      "note": "左右に毛皮状の耳当てを持つ防寒帽。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_158",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "耳当て付き帽子",
+      "value_en": "ear-flap hat",
+      "note": "左右の耳を覆う部分がある帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_159",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "カウボーイハット",
+      "value_en": "cowboy hat",
+      "note": "大きく湾曲したつばを持つ西部風の帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_hat_brim"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_seasonhats_160",
+      "folderId": "ag26_accessory_v1_f_seasonhats",
+      "label_jp": "サファリハット",
+      "value_en": "safari hat",
+      "note": "屋外活動向けのつば付き帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_hat_brim"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_helmets_161",
+      "folderId": "ag26_accessory_v1_f_helmets",
+      "label_jp": "サイクリングキャップ",
+      "value_en": "cycling cap",
+      "note": "短い前つばを持つ自転車用の帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_helmets_162",
+      "folderId": "ag26_accessory_v1_f_helmets",
+      "label_jp": "スポーツヘルメット",
+      "value_en": "sports helmet",
+      "note": "頭を保護するスポーツ用のヘルメット。種目は固定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_helmets_163",
+      "folderId": "ag26_accessory_v1_f_helmets",
+      "label_jp": "バイクヘルメット",
+      "value_en": "motorcycle helmet",
+      "note": "バイク用の頭部保護具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_helmets_164",
+      "folderId": "ag26_accessory_v1_f_helmets",
+      "label_jp": "サンバイザー",
+      "value_en": "sun visor",
+      "note": "頂部が開いていて、前つばだけを持つ日除け。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_helmets_165",
+      "folderId": "ag26_accessory_v1_f_helmets",
+      "label_jp": "水泳帽",
+      "value_en": "swim cap",
+      "note": "頭に密着する水泳用の帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_helmets_166",
+      "folderId": "ag26_accessory_v1_f_helmets",
+      "label_jp": "自転車ヘルメット",
+      "value_en": "bicycle helmet",
+      "note": "通気用の穴などを持つ自転車用ヘルメット。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_uniformhats_167",
+      "folderId": "ag26_accessory_v1_f_uniformhats",
+      "label_jp": "コック帽",
+      "value_en": "chef hat",
+      "note": "調理服と組み合わせる高さのある帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_uniformhats_168",
+      "folderId": "ag26_accessory_v1_f_uniformhats",
+      "label_jp": "軍帽",
+      "value_en": "military cap",
+      "note": "軍服風の形を持つ帽子。階級や所属は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_uniformhats_169",
+      "folderId": "ag26_accessory_v1_f_uniformhats",
+      "label_jp": "探偵帽",
+      "value_en": "deerstalker",
+      "note": "前後のつばと耳当てを持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_uniformhats_170",
+      "folderId": "ag26_accessory_v1_f_uniformhats",
+      "label_jp": "卒業帽",
+      "value_en": "mortarboard",
+      "note": "平らな四角い頂部を持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_uniformhats_171",
+      "folderId": "ag26_accessory_v1_f_uniformhats",
+      "label_jp": "看護師の帽子",
+      "value_en": "nurse cap",
+      "note": "看護服と組み合わせる小さな帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_uniformhats_172",
+      "folderId": "ag26_accessory_v1_f_uniformhats",
+      "label_jp": "警察帽",
+      "value_en": "police cap",
+      "note": "警察の制服風のつば付き帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_uniformhats_173",
+      "folderId": "ag26_accessory_v1_f_uniformhats",
+      "label_jp": "消防ヘルメット",
+      "value_en": "firefighter helmet",
+      "note": "消防装備と組み合わせる頭部保護具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_uniformhats_174",
+      "folderId": "ag26_accessory_v1_f_uniformhats",
+      "label_jp": "工事用ヘルメット",
+      "value_en": "hard hat",
+      "note": "作業現場で使う硬い頭部保護具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_fantasyhats_175",
+      "folderId": "ag26_accessory_v1_f_fantasyhats",
+      "label_jp": "魔女の帽子",
+      "value_en": "witch hat",
+      "note": "尖った頂部と広いつばを持つ帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_hat_brim"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_fantasyhats_176",
+      "folderId": "ag26_accessory_v1_f_fantasyhats",
+      "label_jp": "魔法使いの帽子",
+      "value_en": "wizard hat",
+      "note": "尖った高い頂部を持つ魔法使い風の帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_hat_brim"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_fantasyhats_177",
+      "folderId": "ag26_accessory_v1_f_fantasyhats",
+      "label_jp": "装飾的な魔法少女帽",
+      "value_en": "magical girl hat",
+      "note": "リボンなどを飾った魔法少女風の帽子。衣装一式は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_fantasyhats_178",
+      "folderId": "ag26_accessory_v1_f_fantasyhats",
+      "label_jp": "狐耳付き帽子",
+      "value_en": "fox ear hat",
+      "note": "狐の耳を模した飾りが付いた帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_fantasyhats_179",
+      "folderId": "ag26_accessory_v1_f_fantasyhats",
+      "label_jp": "猫耳付き帽子",
+      "value_en": "cat ear hat",
+      "note": "猫の耳を模した飾りが付いた帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_fantasyhats_180",
+      "folderId": "ag26_accessory_v1_f_fantasyhats",
+      "label_jp": "キノコ帽",
+      "value_en": "mushroom hat",
+      "note": "キノコの傘を模した丸い帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_fantasyhats_181",
+      "folderId": "ag26_accessory_v1_f_fantasyhats",
+      "label_jp": "三角帽",
+      "value_en": "tricorn hat",
+      "note": "つばを三方向に折り上げた帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_fantasyhats_182",
+      "folderId": "ag26_accessory_v1_f_fantasyhats",
+      "label_jp": "パーティーハット",
+      "value_en": "party hat",
+      "note": "円すい形などの祝い事向けの帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_fantasyhats_183",
+      "folderId": "ag26_accessory_v1_f_fantasyhats",
+      "label_jp": "道化師の帽子",
+      "value_en": "jester hat",
+      "note": "複数の先端や鈴を持つ道化師風の帽子。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_184",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "耳飾り",
+      "value_en": "earrings",
+      "note": "耳元に付ける小さな装身具。左右の数は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size",
+        "ag26_accessory_v1_t_gem"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_185",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "スタッド型耳飾り",
+      "value_en": "stud earrings",
+      "note": "耳元に密着する小さな飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_186",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "フープ型耳飾り",
+      "value_en": "hoop earrings",
+      "note": "輪の形をした耳飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_187",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "垂れ下がる耳飾り",
+      "value_en": "dangle earrings",
+      "note": "耳から下へ揺れる飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_188",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "チェーン耳飾り",
+      "value_en": "chain earrings",
+      "note": "鎖を使って下へ延びる耳飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_189",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "パール耳飾り",
+      "value_en": "pearl earrings",
+      "note": "真珠を使った耳飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_190",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "宝石耳飾り",
+      "value_en": "gemstone earrings",
+      "note": "宝石を使った耳飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_191",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "星形耳飾り",
+      "value_en": "star earrings",
+      "note": "星の形をした耳飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_192",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "ハート形耳飾り",
+      "value_en": "heart earrings",
+      "note": "ハートの形をした耳飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_193",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "イヤーカフ",
+      "value_en": "ear cuff",
+      "note": "耳の外縁を挟む輪や帯状の飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_194",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "耳のピアス",
+      "value_en": "ear piercing",
+      "note": "耳に付けるピアス。耳以外の位置は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_earrings_195",
+      "folderId": "ag26_accessory_v1_f_earrings",
+      "label_jp": "片耳の耳飾り",
+      "value_en": "single earring",
+      "note": "片方の耳だけに付ける耳飾り。左右は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_196",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "ブレスレット",
+      "value_en": "bracelet",
+      "note": "手首を囲む装身具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_197",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "バングル",
+      "value_en": "bangle",
+      "note": "硬い輪状の腕飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_198",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "チェーンブレスレット",
+      "value_en": "chain bracelet",
+      "note": "鎖を使う腕飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_199",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "ビーズブレスレット",
+      "value_en": "beaded bracelet",
+      "note": "小さな珠を並べた腕飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_200",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "パールブレスレット",
+      "value_en": "pearl bracelet",
+      "note": "真珠を使った腕飾り。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_201",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "チャームブレスレット",
+      "value_en": "charm bracelet",
+      "note": "小さな飾りを複数下げた腕飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_202",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "革のリストバンド",
+      "value_en": "leather wristband",
+      "note": "手首に付ける革製の帯。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_203",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "汗止めリストバンド",
+      "value_en": "sweatband",
+      "note": "手首などに使う吸汗用の帯。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_204",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "腕時計",
+      "value_en": "wristwatch",
+      "note": "手首に付ける時計。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_205",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "懐中時計",
+      "value_en": "pocket watch",
+      "note": "鎖などにつなぐ携帯用の時計。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_206",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "上腕の飾り",
+      "value_en": "armlet",
+      "note": "上腕に付ける輪や帯状の装身具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bracelets_207",
+      "folderId": "ag26_accessory_v1_f_bracelets",
+      "label_jp": "スマートウォッチ",
+      "value_en": "smartwatch",
+      "note": "画面を持つ電子式の腕時計。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_rings_208",
+      "folderId": "ag26_accessory_v1_f_rings",
+      "label_jp": "指輪",
+      "value_en": "ring",
+      "note": "指を囲む小さな輪状の装身具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size",
+        "ag26_accessory_v1_t_gem"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_rings_209",
+      "folderId": "ag26_accessory_v1_f_rings",
+      "label_jp": "宝石の指輪",
+      "value_en": "gemstone ring",
+      "note": "宝石を付けた指輪。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_rings_210",
+      "folderId": "ag26_accessory_v1_f_rings",
+      "label_jp": "印台の指輪",
+      "value_en": "signet ring",
+      "note": "平らな印台状の飾りを持つ指輪。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_rings_211",
+      "folderId": "ag26_accessory_v1_f_rings",
+      "label_jp": "シンプルな輪の指輪",
+      "value_en": "band ring",
+      "note": "飾りの少ない帯状の指輪。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_rings_212",
+      "folderId": "ag26_accessory_v1_f_rings",
+      "label_jp": "重ねた指輪",
+      "value_en": "stacked rings",
+      "note": "複数の指輪を重ねた形。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_rings_213",
+      "folderId": "ag26_accessory_v1_f_rings",
+      "label_jp": "足指の指輪",
+      "value_en": "toe ring",
+      "note": "足の指に付ける小さな輪。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_brooches_214",
+      "folderId": "ag26_accessory_v1_f_brooches",
+      "label_jp": "ブローチ",
+      "value_en": "brooch",
+      "note": "服の胸元などに留める装身具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size",
+        "ag26_accessory_v1_t_gem"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_brooches_215",
+      "folderId": "ag26_accessory_v1_f_brooches",
+      "label_jp": "宝石のブローチ",
+      "value_en": "gemstone brooch",
+      "note": "宝石を飾ったブローチ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_brooches_216",
+      "folderId": "ag26_accessory_v1_f_brooches",
+      "label_jp": "花のブローチ",
+      "value_en": "flower brooch",
+      "note": "花をかたどったブローチ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_brooches_217",
+      "folderId": "ag26_accessory_v1_f_brooches",
+      "label_jp": "蝶のブローチ",
+      "value_en": "butterfly brooch",
+      "note": "蝶をかたどったブローチ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_brooches_218",
+      "folderId": "ag26_accessory_v1_f_brooches",
+      "label_jp": "勲章",
+      "value_en": "medal",
+      "note": "服に付ける記章やメダル。所属や功績は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_brooches_219",
+      "folderId": "ag26_accessory_v1_f_brooches",
+      "label_jp": "胸章",
+      "value_en": "badge",
+      "note": "服やバッグに付ける小さな記章。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_brooches_220",
+      "folderId": "ag26_accessory_v1_f_brooches",
+      "label_jp": "ラペルピン",
+      "value_en": "lapel pin",
+      "note": "上着の襟に付ける小さなピン。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_belts_221",
+      "folderId": "ag26_accessory_v1_f_belts",
+      "label_jp": "ベルト",
+      "value_en": "belt",
+      "note": "腰などを囲む帯状の装飾品。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_belts_222",
+      "folderId": "ag26_accessory_v1_f_belts",
+      "label_jp": "細いベルト",
+      "value_en": "thin belt",
+      "note": "幅の細いベルト。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_belts_223",
+      "folderId": "ag26_accessory_v1_f_belts",
+      "label_jp": "太いベルト",
+      "value_en": "wide belt",
+      "note": "幅の広いベルト。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_belts_224",
+      "folderId": "ag26_accessory_v1_f_belts",
+      "label_jp": "編みベルト",
+      "value_en": "braided belt",
+      "note": "細い素材を編んだベルト。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_belts_225",
+      "folderId": "ag26_accessory_v1_f_belts",
+      "label_jp": "チェーンベルト",
+      "value_en": "chain belt",
+      "note": "鎖を使う腰飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_belts_226",
+      "folderId": "ag26_accessory_v1_f_belts",
+      "label_jp": "サッシュ",
+      "value_en": "sash",
+      "note": "腰や体に巻く幅のある布の帯。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_belts_227",
+      "folderId": "ag26_accessory_v1_f_belts",
+      "label_jp": "ウエストチェーン",
+      "value_en": "waist chain",
+      "note": "腰まわりに下げる細い鎖の飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_belts_228",
+      "folderId": "ag26_accessory_v1_f_belts",
+      "label_jp": "バックル",
+      "value_en": "belt buckle",
+      "note": "ベルトを留める金具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_belts_229",
+      "folderId": "ag26_accessory_v1_f_belts",
+      "label_jp": "サスペンダー",
+      "value_en": "suspenders",
+      "note": "肩から下げてズボンなどを支える帯。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_230",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "バッグ",
+      "value_en": "bag",
+      "note": "物を入れる袋状の持ち物。持ち方は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size",
+        "ag26_accessory_v1_t_bag_strap"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_231",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "ハンドバッグ",
+      "value_en": "handbag",
+      "note": "持ち手のある小型のバッグ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size",
+        "ag26_accessory_v1_t_bag_strap"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_232",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "ショルダーバッグ",
+      "value_en": "shoulder bag",
+      "note": "肩に掛けるストラップを持つバッグ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size",
+        "ag26_accessory_v1_t_bag_strap"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_233",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "斜め掛けバッグ",
+      "value_en": "crossbody bag",
+      "note": "斜め掛け向けの長いストラップを持つバッグ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size",
+        "ag26_accessory_v1_t_bag_strap"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_234",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "トートバッグ",
+      "value_en": "tote bag",
+      "note": "二つの持ち手を持つ、上部が広く開くバッグ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size",
+        "ag26_accessory_v1_t_bag_strap"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_235",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "リュック",
+      "value_en": "backpack",
+      "note": "背負うための二本のストラップを持つバッグ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_236",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "メッセンジャーバッグ",
+      "value_en": "messenger bag",
+      "note": "大きなふたを持つ斜め掛け向けのバッグ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_237",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "クラッチバッグ",
+      "value_en": "clutch bag",
+      "note": "持ち手が少ない小型のバッグ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_238",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "巾着袋",
+      "value_en": "drawstring bag",
+      "note": "ひもで口を絞る袋。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_239",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "ポーチ",
+      "value_en": "pouch",
+      "note": "小物を入れる小さな袋。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_240",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "ウエストポーチ",
+      "value_en": "waist bag",
+      "note": "腰に付ける帯のある小型バッグ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_fabric",
+        "ag26_accessory_v1_t_pattern",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_241",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "かごバッグ",
+      "value_en": "basket bag",
+      "note": "編んだ素材を使ったバッグ。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_242",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "通学かばん",
+      "value_en": "school bag",
+      "note": "通学用として使うかばん。持ち主の年齢は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_243",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "ランドセル",
+      "value_en": "randoseru",
+      "note": "箱形の背負い式通学かばん。持ち主の年齢は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_bags_244",
+      "folderId": "ag26_accessory_v1_f_bags",
+      "label_jp": "スーツケース",
+      "value_en": "suitcase",
+      "note": "旅行用の箱形かばん。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_size"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_misc_245",
+      "folderId": "ag26_accessory_v1_f_misc",
+      "label_jp": "足首の飾り",
+      "value_en": "anklet",
+      "note": "足首を囲む輪や鎖状の装身具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color",
+        "ag26_accessory_v1_t_metal"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_misc_246",
+      "folderId": "ag26_accessory_v1_f_misc",
+      "label_jp": "アームウォーマー",
+      "value_en": "arm warmers",
+      "note": "腕を覆う筒状の防寒用の布。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_misc_247",
+      "folderId": "ag26_accessory_v1_f_misc",
+      "label_jp": "耳当て",
+      "value_en": "earmuffs",
+      "note": "左右の耳を覆う防寒具。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_misc_248",
+      "folderId": "ag26_accessory_v1_f_misc",
+      "label_jp": "イヤホン",
+      "value_en": "earphones",
+      "note": "耳に入れて使う小型の音響機器。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_misc_249",
+      "folderId": "ag26_accessory_v1_f_misc",
+      "label_jp": "ヘッドセット",
+      "value_en": "headset",
+      "note": "マイクなどを持つ頭部用の音響機器。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_misc_250",
+      "folderId": "ag26_accessory_v1_f_misc",
+      "label_jp": "羽扇",
+      "value_en": "feather fan",
+      "note": "羽根を使った扇。持ち方は指定しない。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_misc_251",
+      "folderId": "ag26_accessory_v1_f_misc",
+      "label_jp": "折り畳み扇子",
+      "value_en": "folding fan",
+      "note": "骨を折り畳める扇。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_misc_252",
+      "folderId": "ag26_accessory_v1_f_misc",
+      "label_jp": "キーリング",
+      "value_en": "keychain",
+      "note": "鍵などに付ける輪と飾り。",
+      "nsfw": false,
+      "templateIds": [
+        "ag26_accessory_v1_t_color"
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_w_wearing_252",
+      "folderId": "ag26_accessory_v1_f_wearing",
+      "label_jp": "眼鏡を頭にのせる",
+      "value_en": "glasses on head",
+      "note": "眼鏡を額より上に置く状態。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_wearing_253",
+      "folderId": "ag26_accessory_v1_f_wearing",
+      "label_jp": "眼鏡を襟に掛ける",
+      "value_en": "glasses on shirt collar",
+      "note": "眼鏡を服の襟元に掛けた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_wearing_254",
+      "folderId": "ag26_accessory_v1_f_wearing",
+      "label_jp": "眼鏡をずらす",
+      "value_en": "glasses lowered",
+      "note": "眼鏡を鼻の下側へずらした状態。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_wearing_255",
+      "folderId": "ag26_accessory_v1_f_wearing",
+      "label_jp": "マスクを顎に下げる",
+      "value_en": "mask under chin",
+      "note": "口元のマスクを顎の下まで下げた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_wearing_256",
+      "folderId": "ag26_accessory_v1_f_wearing",
+      "label_jp": "ヘッドホンを首に掛ける",
+      "value_en": "headphones around neck",
+      "note": "ヘッドホンを耳から外し、首に掛けた状態。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_wearing_257",
+      "folderId": "ag26_accessory_v1_f_wearing",
+      "label_jp": "帽子を手に持つ",
+      "value_en": "holding hat",
+      "note": "帽子を手で持つ動作。帽子の種類は別カードで指定できる。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_wearing_258",
+      "folderId": "ag26_accessory_v1_f_wearing",
+      "label_jp": "バッグを手に持つ",
+      "value_en": "holding bag",
+      "note": "バッグを手で持つ動作。バッグの種類は別カードで指定できる。",
+      "nsfw": false
+    },
+    {
+      "id": "ag26_accessory_v1_w_wearing_259",
+      "folderId": "ag26_accessory_v1_f_wearing",
+      "label_jp": "髪飾りを手に持つ",
+      "value_en": "holding hair ornament",
+      "note": "髪飾りを手で持つ動作。装飾品だけのカードにはこの動作を付けない。",
+      "nsfw": false
+    }
+  ],
+  "templates": [
+    {
+      "id": "ag26_accessory_v1_t_color",
+      "name": "装飾品の色",
+      "folderId": "装飾品 / 装飾品の色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_color_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_1",
+          "label": "黒",
+          "value": "black"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_2",
+          "label": "灰",
+          "value": "gray"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_3",
+          "label": "赤",
+          "value": "red"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_4",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_5",
+          "label": "緑",
+          "value": "green"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_6",
+          "label": "黄",
+          "value": "yellow"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_7",
+          "label": "橙",
+          "value": "orange"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_8",
+          "label": "紫",
+          "value": "purple"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_9",
+          "label": "ピンク",
+          "value": "pink"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_10",
+          "label": "茶",
+          "value": "brown"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_11",
+          "label": "ベージュ",
+          "value": "beige"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_12",
+          "label": "紺",
+          "value": "navy blue"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_13",
+          "label": "金色",
+          "value": "gold-colored"
+        },
+        {
+          "id": "ag26_accessory_v1_t_color_o_14",
+          "label": "銀色",
+          "value": "silver-colored"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_frame_color",
+      "name": "眼鏡フレームの色",
+      "folderId": "装飾品 / 眼鏡フレームの色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_0",
+          "label": "白",
+          "value": "white-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_1",
+          "label": "黒",
+          "value": "black-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_2",
+          "label": "灰",
+          "value": "gray-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_3",
+          "label": "赤",
+          "value": "red-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_4",
+          "label": "青",
+          "value": "blue-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_5",
+          "label": "緑",
+          "value": "green-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_6",
+          "label": "黄",
+          "value": "yellow-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_7",
+          "label": "橙",
+          "value": "orange-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_8",
+          "label": "紫",
+          "value": "purple-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_9",
+          "label": "ピンク",
+          "value": "pink-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_10",
+          "label": "茶",
+          "value": "brown-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_11",
+          "label": "ベージュ",
+          "value": "beige-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_color_o_12",
+          "label": "紺",
+          "value": "navy blue-framed"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_frame_material",
+      "name": "眼鏡フレームの素材",
+      "folderId": "装飾品 / 眼鏡フレームの素材",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_frame_material_o_0",
+          "label": "金属",
+          "value": "metal-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_material_o_1",
+          "label": "プラスチック",
+          "value": "plastic-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_material_o_2",
+          "label": "べっ甲調",
+          "value": "tortoiseshell-framed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_frame_material_o_3",
+          "label": "透明なフレーム",
+          "value": "clear-framed"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_metal",
+      "name": "金属の素材",
+      "folderId": "装飾品 / 金属の素材",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_metal_o_0",
+          "label": "金",
+          "value": "gold"
+        },
+        {
+          "id": "ag26_accessory_v1_t_metal_o_1",
+          "label": "銀",
+          "value": "silver"
+        },
+        {
+          "id": "ag26_accessory_v1_t_metal_o_2",
+          "label": "真鍮",
+          "value": "brass"
+        },
+        {
+          "id": "ag26_accessory_v1_t_metal_o_3",
+          "label": "青銅",
+          "value": "bronze"
+        },
+        {
+          "id": "ag26_accessory_v1_t_metal_o_4",
+          "label": "銅",
+          "value": "copper"
+        },
+        {
+          "id": "ag26_accessory_v1_t_metal_o_5",
+          "label": "ステンレス",
+          "value": "stainless steel"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_fabric",
+      "name": "布・革の素材",
+      "folderId": "装飾品 / 布・革の素材",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_0",
+          "label": "綿",
+          "value": "cotton"
+        },
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_1",
+          "label": "麻",
+          "value": "linen"
+        },
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_2",
+          "label": "ウール",
+          "value": "wool"
+        },
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_3",
+          "label": "絹",
+          "value": "silk"
+        },
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_4",
+          "label": "サテン",
+          "value": "satin"
+        },
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_5",
+          "label": "ベルベット",
+          "value": "velvet"
+        },
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_6",
+          "label": "デニム",
+          "value": "denim"
+        },
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_7",
+          "label": "革",
+          "value": "leather"
+        },
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_8",
+          "label": "レース",
+          "value": "lace"
+        },
+        {
+          "id": "ag26_accessory_v1_t_fabric_o_9",
+          "label": "ニット",
+          "value": "knitted"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_pattern",
+      "name": "布の模様",
+      "folderId": "装飾品 / 布の模様",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_pattern_o_0",
+          "label": "縞",
+          "value": "striped"
+        },
+        {
+          "id": "ag26_accessory_v1_t_pattern_o_1",
+          "label": "チェック",
+          "value": "checkered"
+        },
+        {
+          "id": "ag26_accessory_v1_t_pattern_o_2",
+          "label": "水玉",
+          "value": "polka-dot"
+        },
+        {
+          "id": "ag26_accessory_v1_t_pattern_o_3",
+          "label": "花柄",
+          "value": "floral"
+        },
+        {
+          "id": "ag26_accessory_v1_t_pattern_o_4",
+          "label": "無地",
+          "value": "plain"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_size",
+      "name": "装飾品の大きさ",
+      "folderId": "装飾品 / 装飾品の大きさ",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_size_o_0",
+          "label": "小さい",
+          "value": "small"
+        },
+        {
+          "id": "ag26_accessory_v1_t_size_o_1",
+          "label": "大きい",
+          "value": "large"
+        },
+        {
+          "id": "ag26_accessory_v1_t_size_o_2",
+          "label": "特大",
+          "value": "oversized"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_gem",
+      "name": "宝石の種類",
+      "folderId": "装飾品 / 宝石の種類",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_gem_o_0",
+          "label": "ダイヤ",
+          "value": "diamond"
+        },
+        {
+          "id": "ag26_accessory_v1_t_gem_o_1",
+          "label": "ルビー",
+          "value": "ruby"
+        },
+        {
+          "id": "ag26_accessory_v1_t_gem_o_2",
+          "label": "サファイア",
+          "value": "sapphire"
+        },
+        {
+          "id": "ag26_accessory_v1_t_gem_o_3",
+          "label": "エメラルド",
+          "value": "emerald"
+        },
+        {
+          "id": "ag26_accessory_v1_t_gem_o_4",
+          "label": "アメジスト",
+          "value": "amethyst"
+        },
+        {
+          "id": "ag26_accessory_v1_t_gem_o_5",
+          "label": "クリスタル",
+          "value": "crystal"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_hat_brim",
+      "name": "帽子のつば",
+      "folderId": "装飾品 / 帽子のつば",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_hat_brim_o_0",
+          "label": "広い",
+          "value": "wide-brimmed"
+        },
+        {
+          "id": "ag26_accessory_v1_t_hat_brim_o_1",
+          "label": "狭い",
+          "value": "narrow-brimmed"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_bag_strap",
+      "name": "バッグのストラップ",
+      "folderId": "装飾品 / バッグのストラップ",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_bag_strap_o_0",
+          "label": "短い",
+          "value": "short-strapped"
+        },
+        {
+          "id": "ag26_accessory_v1_t_bag_strap_o_1",
+          "label": "長い",
+          "value": "long-strapped"
+        }
+      ]
+    },
+    {
+      "id": "ag26_accessory_v1_t_chain_length",
+      "name": "ネックレスの長さ",
+      "folderId": "装飾品 / ネックレスの長さ",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "ag26_accessory_v1_t_chain_length_o_0",
+          "label": "短い",
+          "value": "short"
+        },
+        {
+          "id": "ag26_accessory_v1_t_chain_length_o_1",
+          "label": "長い",
+          "value": "long"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

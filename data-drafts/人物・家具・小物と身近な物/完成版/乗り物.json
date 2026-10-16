@@ -1,0 +1,707 @@
+{
+  "folders": [
+    {
+      "id": "po26_vehicle_v1",
+      "name": "乗り物",
+      "parentId": "root",
+      "nsfw": false
+    },
+    {
+      "id": "po26_vehicle_v1_f_land",
+      "name": "陸の乗り物",
+      "parentId": "po26_vehicle_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_vehicle_v1_f_rail",
+      "name": "鉄道",
+      "parentId": "po26_vehicle_v1",
+      "nsfw": false
+    },
+    {
+      "id": "po26_vehicle_v1_f_airsea",
+      "name": "空・海・幻想",
+      "parentId": "po26_vehicle_v1",
+      "nsfw": false
+    }
+  ],
+  "words": [
+    {
+      "id": "po26_vehicle_v1_w_land_001",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "車",
+      "value_en": "car",
+      "note": "自動車の基本。車種や色は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_002",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "セダン",
+      "value_en": "sedan",
+      "note": "独立した荷室などを持つ乗用車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_003",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "小型車",
+      "value_en": "compact car",
+      "note": "小さめの乗用車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_004",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "スポーツカー",
+      "value_en": "sports car",
+      "note": "低い形などの走行を意識した車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_005",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "オープンカー",
+      "value_en": "convertible car",
+      "note": "屋根を開けられる車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_006",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "SUV",
+      "value_en": "SUV",
+      "note": "背が高いなどの多用途の乗用車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_007",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "ワゴン",
+      "value_en": "station wagon",
+      "note": "客室から荷室へ続く形の乗用車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_008",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "バン",
+      "value_en": "van",
+      "note": "大きな箱状の荷室や客室を持つ車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_009",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "トラック",
+      "value_en": "truck",
+      "note": "荷物を運ぶ車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_010",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "バス",
+      "value_en": "bus",
+      "note": "多数の座席などを持つ車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_011",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "スクールバス",
+      "value_en": "school bus",
+      "note": "学校の移動などに使うバス。乗員の年齢は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_012",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "タクシー",
+      "value_en": "taxi",
+      "note": "客を運ぶ営業用の車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_013",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "救急車",
+      "value_en": "ambulance",
+      "note": "救急の移動などに使う車。事故や患者は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_014",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "消防車",
+      "value_en": "fire engine",
+      "note": "消防用の設備を持つ車。火災は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_015",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "パトカー",
+      "value_en": "police car",
+      "note": "警察用の車。事件や人物は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_016",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "自転車",
+      "value_en": "bicycle",
+      "note": "ペダルで進む二輪の乗り物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_017",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "マウンテンバイク",
+      "value_en": "mountain bike",
+      "note": "太いタイヤなどを持つ自転車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_018",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "ロードバイク",
+      "value_en": "road bicycle",
+      "note": "舗装路向けの細いタイヤなどの自転車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_019",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "オートバイ",
+      "value_en": "motorcycle",
+      "note": "エンジンなどで進む二輪車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_020",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "スクーター",
+      "value_en": "motor scooter",
+      "note": "足を置く床などを持つ二輪車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_021",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "電動キックボード",
+      "value_en": "electric kick scooter",
+      "note": "立って乗る床とハンドルを持つ電動の乗り物。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_land_022",
+      "folderId": "po26_vehicle_v1_f_land",
+      "label_jp": "馬車",
+      "value_en": "horse-drawn carriage",
+      "note": "馬などが引く車。馬の数や人物は別に選ぶ。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_rail_023",
+      "folderId": "po26_vehicle_v1_f_rail",
+      "label_jp": "列車",
+      "value_en": "train",
+      "note": "線路を走る車両の基本。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_rail_024",
+      "folderId": "po26_vehicle_v1_f_rail",
+      "label_jp": "電車",
+      "value_en": "electric train",
+      "note": "電力で走る鉄道車両。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_rail_025",
+      "folderId": "po26_vehicle_v1_f_rail",
+      "label_jp": "蒸気機関車",
+      "value_en": "steam locomotive",
+      "note": "蒸気を用いる機関車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_rail_026",
+      "folderId": "po26_vehicle_v1_f_rail",
+      "label_jp": "新幹線",
+      "value_en": "Shinkansen",
+      "note": "日本の高速鉄道の車両。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_rail_027",
+      "folderId": "po26_vehicle_v1_f_rail",
+      "label_jp": "路面電車",
+      "value_en": "tram",
+      "note": "街路などを走る鉄道車両。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_rail_028",
+      "folderId": "po26_vehicle_v1_f_rail",
+      "label_jp": "地下鉄",
+      "value_en": "subway train",
+      "note": "地下鉄の車両。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_rail_029",
+      "folderId": "po26_vehicle_v1_f_rail",
+      "label_jp": "モノレール",
+      "value_en": "monorail",
+      "note": "一本の軌道などを用いる列車。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_rail_030",
+      "folderId": "po26_vehicle_v1_f_rail",
+      "label_jp": "寝台列車",
+      "value_en": "sleeper train",
+      "note": "寝台を備えた列車。内部背景は別カード。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_landstate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_031",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "飛行機",
+      "value_en": "airplane",
+      "note": "翼を持つ航空機。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_air"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_032",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "旅客機",
+      "value_en": "airliner",
+      "note": "旅客用の大型などの航空機。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_air"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_033",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "小型飛行機",
+      "value_en": "light aircraft",
+      "note": "少人数などの小型航空機。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_air"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_034",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "ヘリコプター",
+      "value_en": "helicopter",
+      "note": "回転翼を持つ航空機。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_air"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_035",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "熱気球",
+      "value_en": "hot air balloon",
+      "note": "温めた空気で浮く気球。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_036",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "飛行船",
+      "value_en": "airship",
+      "note": "細長い船体などを持つ飛行体。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_air"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_037",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "船",
+      "value_en": "ship",
+      "note": "水上を進む大きな船の基本。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_seastate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_038",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "小舟",
+      "value_en": "boat",
+      "note": "水上を進む小さめの船。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_seastate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_039",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "帆船",
+      "value_en": "sailboat",
+      "note": "帆を使って進む船。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_seastate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_040",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "ヨット",
+      "value_en": "yacht",
+      "note": "航海や遊びなどに使う船。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_seastate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_041",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "カヌー",
+      "value_en": "canoe",
+      "note": "細長く櫂などで進む小舟。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_seastate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_042",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "手漕ぎボート",
+      "value_en": "rowboat",
+      "note": "オールなどで進む小舟。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_seastate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_043",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "フェリー",
+      "value_en": "ferry",
+      "note": "人や車などを運ぶ船。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color",
+        "po26_vehicle_v1_t_seastate"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_044",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "潜水艦",
+      "value_en": "submarine",
+      "note": "水中を進む船。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_045",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "宇宙船",
+      "value_en": "spaceship",
+      "note": "宇宙を移動する機体。内部背景は別カード。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_046",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "ロケット",
+      "value_en": "rocket",
+      "note": "噴射で飛ぶ機体。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color"
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_w_airsea_047",
+      "folderId": "po26_vehicle_v1_f_airsea",
+      "label_jp": "魔法の箒",
+      "value_en": "flying broom",
+      "note": "飛行する魔法の乗り物を思わせる箒。乗る人物は含めない。",
+      "nsfw": false,
+      "templateIds": [
+        "po26_vehicle_v1_t_color"
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "id": "po26_vehicle_v1_t_color",
+      "name": "乗り物の色",
+      "folderId": "乗り物 / 乗り物の色",
+      "position": "before",
+      "spaceEnabled": true,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_vehicle_v1_t_color_o_0",
+          "label": "白",
+          "value": "white"
+        },
+        {
+          "id": "po26_vehicle_v1_t_color_o_1",
+          "label": "黒",
+          "value": "black"
+        },
+        {
+          "id": "po26_vehicle_v1_t_color_o_2",
+          "label": "灰",
+          "value": "gray"
+        },
+        {
+          "id": "po26_vehicle_v1_t_color_o_3",
+          "label": "赤",
+          "value": "red"
+        },
+        {
+          "id": "po26_vehicle_v1_t_color_o_4",
+          "label": "青",
+          "value": "blue"
+        },
+        {
+          "id": "po26_vehicle_v1_t_color_o_5",
+          "label": "緑",
+          "value": "green"
+        },
+        {
+          "id": "po26_vehicle_v1_t_color_o_6",
+          "label": "黄",
+          "value": "yellow"
+        },
+        {
+          "id": "po26_vehicle_v1_t_color_o_7",
+          "label": "ピンク",
+          "value": "pink"
+        },
+        {
+          "id": "po26_vehicle_v1_t_color_o_8",
+          "label": "茶",
+          "value": "brown"
+        }
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_t_landstate",
+      "name": "陸の乗り物の状態",
+      "folderId": "乗り物 / 陸の乗り物の状態",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_vehicle_v1_t_landstate_o_0",
+          "label": "停車",
+          "value": ", stationary"
+        },
+        {
+          "id": "po26_vehicle_v1_t_landstate_o_1",
+          "label": "移動中",
+          "value": ", moving"
+        }
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_t_seastate",
+      "name": "船の状態",
+      "folderId": "乗り物 / 船の状態",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_vehicle_v1_t_seastate_o_0",
+          "label": "係留",
+          "value": ", moored"
+        },
+        {
+          "id": "po26_vehicle_v1_t_seastate_o_1",
+          "label": "航行",
+          "value": ", sailing"
+        }
+      ]
+    },
+    {
+      "id": "po26_vehicle_v1_t_air",
+      "name": "航空機の状態",
+      "folderId": "乗り物 / 航空機の状態",
+      "position": "after",
+      "spaceEnabled": false,
+      "allowFree": true,
+      "options": [
+        {
+          "id": "po26_vehicle_v1_t_air_o_0",
+          "label": "地上",
+          "value": ", on ground"
+        },
+        {
+          "id": "po26_vehicle_v1_t_air_o_1",
+          "label": "飛行中",
+          "value": ", flying"
+        }
+      ]
+    }
+  ],
+  "cards": []
+}

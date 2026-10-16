@@ -1,0 +1,51 @@
+{
+  "date": "2026-09-26",
+  "status": "passed",
+  "categories": [
+    {
+      "name": "光の演出",
+      "words": 89,
+      "templates": 4,
+      "options": 20
+    },
+    {
+      "name": "季節・時間・天候",
+      "words": 90,
+      "templates": 8,
+      "options": 26
+    },
+    {
+      "name": "雰囲気",
+      "words": 40,
+      "templates": 2,
+      "options": 13
+    }
+  ],
+  "newWords": 219,
+  "newTemplates": 14,
+  "newOptions": 59,
+  "previousWords": 1845,
+  "mergedWords": 2064,
+  "legacyImport": {
+    "wordsAdded": 158,
+    "sameEnglishSkipped": 61,
+    "decorationLinksAdded": 41
+  },
+  "checks": [
+    "unique IDs and English",
+    "folder reachability and decoration references",
+    "HTML script syntax and embedded datasets match",
+    "existing cards favorites decks settings presets unknown fields preserved",
+    "input not mutated",
+    "repeat import without duplicates",
+    "individual category selection",
+    "legacy light cards supplemented without changing IDs or custom notes",
+    "normalized English duplicate skipped",
+    "invalid existing IDs rejected",
+    "decoration examples evaluated with actual WordGrid function",
+    "old categories consolidated while preserving all card IDs and custom child folders/decks",
+    "unselected categories not migrated"
+  ],
+  "browserInteractionVerified": false,
+  "imageGenerationVerified": false
+}
