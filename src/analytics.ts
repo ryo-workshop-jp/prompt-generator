@@ -23,8 +23,10 @@ const ensureGtag = () => {
     if (!canUseDom()) return false;
     window.dataLayer = window.dataLayer || [];
     if (typeof window.gtag !== 'function') {
-        window.gtag = (...args: unknown[]) => {
-            window.dataLayer.push(args);
+        window.gtag = function () {
+            // gtag.js requires an Arguments object; plain arrays are not commands.
+            // eslint-disable-next-line prefer-rest-params
+            window.dataLayer.push(arguments);
         };
     }
     return true;
